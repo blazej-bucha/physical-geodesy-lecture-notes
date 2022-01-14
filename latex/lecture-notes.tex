@@ -1,0 +1,79 @@
+% -----------------------------------------------------------------------------
+%
+% This is the LaTeX source code of the lecture notes.
+%
+% Author:   Blazej Bucha
+% Year:     2022
+% Contact:  blazej.bucha@stuba.sk
+% Encoding: UTF-8
+%
+% -----------------------------------------------------------------------------
+
+
+
+
+
+
+% LaTeX Packages
+% -----------------------------------------------------------------------------
+
+\documentclass[a4paper, 12pt]{book}
+\usepackage[slovak]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% -----------------------------------------------------------------------------
+
+
+
+
+
+
+% Define and set the style of code listings
+% -----------------------------------------------------------------------------
+
+% Define custom colours
+\definecolor{comments}{rgb}{0.65, 0.65, 0.65}
+\definecolor{strings}{rgb}{0.0, 0.3, 0.6}
+\definecolor{linenumbers}{rgb}{0.5, 0.5, 0.5}
+\definecolor{keywords}{rgb}{0.85, 0.0, 0.0}
+\definecolor{backcolour}{rgb}{0.98, 0.98, 0.98}
+
+
+% Define custom listing style
+\lstdefinestyle{codestyle}
+{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{comments},
+    keywordstyle=\color{keywords},
+    numberstyle=\tiny\color{linenumbers},
+    stringstyle=\color{strings},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+
+% Apply the custom listing style
+\lstset{style=codestyle}
+
+% -----------------------------------------------------------------------------
+
+
+
+
+
+
+
+\begin{document}
+
+\end{document}
