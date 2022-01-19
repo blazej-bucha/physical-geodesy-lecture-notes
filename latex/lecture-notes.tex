@@ -21,10 +21,14 @@
 \documentclass[a4paper, 12pt]{book}
 \usepackage[slovak]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[round]{natbib}
+\usepackage{amsmath}
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage[round]{natbib}
 \usepackage{graphicx}
+\usepackage{accsupp}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\linespread{1.2}
 
 % =============================================================================
 
@@ -38,7 +42,7 @@
 
 % Define custom colours
 \definecolor{comments}{rgb}{0.65, 0.65, 0.65}
-\definecolor{strings}{rgb}{0.0, 0.3, 0.6}
+\definecolor{strings}{rgb}{0.0, 0.3, 0.7}
 \definecolor{linenumbers}{rgb}{0.5, 0.5, 0.5}
 \definecolor{keywords}{rgb}{0.85, 0.0, 0.0}
 \definecolor{backcolour}{rgb}{0.98, 0.98, 0.98}
@@ -50,7 +54,8 @@
     backgroundcolor=\color{backcolour},
     commentstyle=\color{comments},
     keywordstyle=\color{keywords},
-    numberstyle=\tiny\color{linenumbers},
+    numberstyle=\tiny\noncopynumber,
+    columns=flexible,
     stringstyle=\color{strings},
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,
@@ -66,9 +71,77 @@
 }
 
 
+% Defines a new command that ensures we can copy the source code from the 
+% compiled PDF without copying the line numbers
+\newcommand{\noncopynumber}[1]
+{
+    \BeginAccSupp{method=escape,ActualText={}}
+    #1
+    \EndAccSupp{}
+}
+
+
 % Apply the custom listing style
 \lstset{style=codestyle}
 
+
+% It seems the "listings" package is not able to encode the nice special Slovak 
+% characters such as "á", "ľ", etc.  Next follows a brute force solution.
+\lstset{
+  literate={á}{{\'a}}1
+           {ä}{{\" a}}1
+           {č}{{\v c}}1
+           {ď}{{d\kern-0.07cm\char39\kern-0.07cm}}1
+           {é}{{\'e}}1
+           {í}{{\'i}}1
+           {ĺ}{{\'l}}1
+           {ľ}{{l\kern-0.12cm\char39\kern-0.05cm}}1
+           {ň}{{\v n}}1
+           {ó}{{\'o}}1
+           {ô}{{\^o}}1
+           {ŕ}{{\'r}}1
+           {š}{{\v s}}1
+           {ť}{{t\kern-0.10cm\char39\kern-0.05cm}}1
+           {ú}{{\'u}}1
+           {ý}{{\'y}}1
+           {ž}{{\v z}}1
+           {Á}{{\'A}}1
+           {Ä}{{\" A}}1
+           {Č}{{\v C}}1
+           {Ď}{{\v D}}1
+           {É}{{\'E}}1
+           {Í}{{\'I}}1
+           {Ĺ}{{\'L}}1
+           {Ľ}{{L\kern-0.12cm\char39\kern-0.00cm}}1
+           {Ň}{{\v N}}1
+           {Ó}{{\'O}}1
+           {Ô}{{\^O}}1
+           {Ŕ}{{\'R}}1
+           {Š}{{\v S}}1
+           {Ť}{{\v T}}1
+           {Ú}{{\'U}}1
+           {Ý}{{\'Y}}1
+           {Ž}{{\v Z}}1
+}
+
+
+% Add the "as" keyword to the Python listings
+\lstdefinelanguage{mypython}[]{Python}{morekeywords={as,True,False}}
+
+
+% Caption title for listings
+\renewcommand\lstlistingname{Zdrojový kód}
+
+% =============================================================================
+
+
+
+
+
+
+% Custom commands
+% =============================================================================
+\newcommand{\diff}{\mathrm d}
 % =============================================================================
 
 
@@ -78,7 +151,13 @@
 
 % =============================================================================
 
+\sloppy
 \begin{document}
+
+% -----------------------------------------------------------------------------
+\tableofcontents
+\newpage
+% -----------------------------------------------------------------------------
 
 
 
@@ -97,6 +176,85 @@
 % -----------------------------------------------------------------------------
 
 \chapter{Fyzikálna geodézia}
+
+Tvar Zeme môžeme definovať niekoľkými spôsobmi v závislosti od kontextu 
+\citep{MoritzTheFigureOfTheEarth}.  Azda najprirodzenejšie je definovať tvar 
+Zeme jej fyzickým povrchom, teda tou časťou Zeme, ktorá je viditeľná voľným 
+okom.  Prirodzene, skutočný povrch Zeme je komplikovaný a matematickými 
+metódami len ťažko modelovateľný.  Dôvodom je prítomnosť nespočetného množstva 
+zložitých terénnych útvarov, napríklad s náhlou skokovitou zmenou terénu.  Hoci 
+sú takéto oblasti krásne na pohľad, znemožňujú aplikovať časť potrebného 
+matematického aparátu, napríklad plošnú integráciu.  Skúmať takto chápaný 
+zemský povrch je preto možné až po istom vyhladení.
+
+Pri definovaní tvaru Zeme však môžeme vziať v úvahu skutočnosť, že približne 
+dve tretiny zemského povrchu tvorí voda v podobe oceánov a morí.  Ak by sme 
+s podobnou mierou hladkosti dokázali predĺžiť povrch oceánov a morí aj popod, 
+resp. ponad pevnú časť zemského povrchu, získali by sme v porovnaní s fyzickým 
+povrchom Zeme značne jednoduchší a hladší, no pritom stále verný tvar Zeme.  
+Voda má za istých okolností navyše takú výhodnú vlastnosť, že existuje 
+fyzikálna veličina, ktorá je na jej povrchu konštantná.  Táto vlastnosť by teda 
+následne mohla umožniť akúsi predikciu morskej hladiny aj pod, resp. nad 
+kontinentmi.  Inými slovami, v tejto definícií tvaru Zeme by išlo opäť 
+o geometrickú plochu, avšak tentokrát už s istými relatívne jednoducho 
+popísateľnými fyzikálnymi vlastnosťami.  Takto definovaný tvar Zeme bol 
+navrhnutý C. F. Gaussom (1777--1855) a podľa návrhu J. B. Listinga (1808--1882) 
+ho nazývame \emph{geoid}.  Veličina, ktorá je konštantná na povrchu geoidu sa 
+nazýva \emph{tiažový potenciál}.
+
+\emph{Fyzikálna geodézia} je vedná disciplína zaoberajúca sa určovaním tvaru 
+Zeme, jej tiažovým poľom a ich zmenami v čase.  Študované sú oba vyššie opísané 
+prístupy k tvaru Zeme, pričom historicky bol predmetom záujmu ako prvý geoid.  
+Hoci prirodzená, no matematicky odvážna myšlienka určovať priamo fyzický povrch 
+Zeme pochádza už od E. H. Brunsa (1848--1919), do popredia záujmu ju dostal až 
+v polovici 20. storočia M. S. Molodenskij (1909--1991).  Dôležitá je 
+skutočnosť, že i v tomto prípade je tvar Zeme určovaný na základe informácie 
+o tiažovom poli, hoci vďaka rôznym družicovým misiám existujú aj (na prvý 
+pohľad) výhradne geometrické metódy.
+
+\section{Newtonov integrál}
+
+Určovať tvar a tiažové pole Zeme znamená predovšetkým skúmať \emph{gravitačný 
+potenciál} vyplývajúci z gravitačného zákona formulovaného I. Newtonom 
+(1642--1727),
+%
+\begin{equation}
+\label{eq:newton}
+V(P) = G \iiint_{\tau} \frac{\rho(Q)}{l(P, Q)} \diff \tau(Q){,}
+\end{equation}
+%
+následne hľadať veličiny, ktoré sú s ním spojené a je možné ich odmerať, 
+a nakoniec zo získaných meraní vypočítať tvar Zeme v zmysle zvolenej definície.
+
+\begin{figure}[bt]
+\centering
+\includegraphics{../figs/gravitating-body/gravitating-body.pdf}
+\caption{Teleso generujúce gravitačný potenciál a výpočtový bod $P$}
+\end{figure}
+
+%Dva hmotné body s hmotnosťami $M_P$ a $M_Q$ sa priťahujú silou o veľkosti
+%%
+%\begin{equation}
+%F = G \frac{M_P \, M_Q}{l_{PQ}}{,}
+%\end{equation}
+%%
+%kde $l_{PQ}$ je vzdialenosť medzi hmotnými bodmi.  Gravitačná sila pôsobí 
+%v smere spojnice hmotných bodov $P$ a $Q$.
+Vo vzťahu (\ref{eq:newton}) predstavuje symbol $V$ gravitačný potenciál v bode 
+$P$ generovaný telesom s objemom $\tau$ a hustotou $\rho(P')$, ktorá môže 
+závisieť od polohy integračného elementu $\diff \tau(P')$ vo vnútri telesa.  
+Symbolom $l$ budeme označovať Euklidovskú vzdialenosť, v tomto prípade medzi 
+výpočtovým bodom $P$ a integračným elementom $\diff \tau(P')$ vo vnútri telesa, 
+ktoré generuje gravitačne pole.
+
+\subsection{Tak počkať\ldots  A čo teória relativity, či teórie $A$, $B$, $C$, 
+\ldots?}
+
+
+
+
+
+
 
 \section{Súradnicový systém}
 
@@ -117,6 +275,17 @@
 % skalár, vektor, tenzor + ukážky + kódy
 % gradient, divergencia, rotácia
 % Newtonov gravitačný zákon + pár slov k teórii relativity
+
+
+\lstinputlisting[caption=Výpočet a~zobrazenie funkcie a~jej gradientu v~gride, 
+language=mypython]{../python/f-gradf.py}
+
+\begin{figure}[bt]
+\centering
+\includegraphics{../figs/f-gradf.pdf}
+\caption{Funkcia $f(x, y) = \sin(2x) + \cos(2y)$ a~jej gradient $\nabla f(x, 
+y)$ na~intervale $x, y \in [-1, 1]$}
+\end{figure}
 
 
 
@@ -152,6 +321,49 @@
 % sférických harmonických funkcií v matematickom zápise + obrázky + kód, 
 % normovanie, Legendreove polynómy + funkcie, definícia, grafy + kód
 
+\lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov, 
+language=mypython]{../python/legendre-polynomials.py}
+
+\begin{figure}[bt]
+\centering
+\includegraphics{../figs/legendre-polynomials.pdf}
+\caption{Legendreove polynómy}
+\end{figure}
+
+
+\lstinputlisting[caption=Výpočet a~zobrazenie nenormovaných sférických 
+harmonických funkcií, language=mypython]{../python/spherical-harmonics.py}
+
+\begin{figure}[bt]
+\centering
+\includegraphics{../figs/spherical-harmonic-n3-m0.pdf}
+\includegraphics{../figs/spherical-harmonic-n3-m1.pdf}
+\includegraphics{../figs/spherical-harmonic-n3-m3.pdf}
+\includegraphics{../figs/spherical-harmonic-n4-m0.pdf}
+\includegraphics{../figs/spherical-harmonic-n4-m1.pdf}
+\includegraphics{../figs/spherical-harmonic-n4-m4.pdf}
+\caption{Nenormované plošné sférické harmonické funkcie.  Záporné hodnoty sú 
+zobrazené odtieňmi modrej farby, kladné hodnoty odtieňmi červenej farby.  
+\textit{Vrchný rad} (zľava): $Y_{3,0}(\varphi, \lambda)$, $Y_{3,1}(\varphi, 
+\lambda)$, $Y_{3,3}(\varphi, \lambda)$.  \textit{Spodný rad} (zľava): 
+$Y_{4,0}(\varphi, \lambda)$, $Y_{4,1}(\varphi, \lambda)$, $Y_{4,4}(\varphi, 
+\lambda)$}
+\label{fig:sh}
+\end{figure}
+
+
+\begin{figure}[bt]
+\centering
+\includegraphics{../figs/spherical-harmonic-n3-m0-3d.pdf}
+\includegraphics{../figs/spherical-harmonic-n3-m1-3d.pdf}
+\includegraphics{../figs/spherical-harmonic-n3-m3-3d.pdf}
+\includegraphics{../figs/spherical-harmonic-n4-m0-3d.pdf}
+\includegraphics{../figs/spherical-harmonic-n4-m1-3d.pdf}
+\includegraphics{../figs/spherical-harmonic-n4-m4-3d.pdf}
+\caption{Nenormované plošné sférické harmonické funkcie z Obr.~\ref{fig:sh} 
+zobrazené ako odľahlosť nadobúdanej hodnoty od jednotkovej sféry}
+\label{fig:sh3d}
+\end{figure}
 
 
 
@@ -248,3 +460,4 @@
 
 % =============================================================================
 % End of the code
+
