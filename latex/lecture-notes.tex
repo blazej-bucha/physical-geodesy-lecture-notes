@@ -142,6 +142,7 @@
 % Custom commands
 % =============================================================================
 \newcommand{\diff}{\mathrm d}
+\let\vec\mathbf
 % =============================================================================
 
 
@@ -177,29 +178,28 @@
 
 \chapter{Fyzikálna geodézia}
 
-Tvar Zeme môžeme definovať niekoľkými spôsobmi v závislosti od kontextu 
+Tvar Zeme možno definovať niekoľkými spôsobmi v závislosti od kontextu 
 \citep{MoritzTheFigureOfTheEarth}.  Azda najprirodzenejšie je definovať tvar 
-Zeme jej fyzickým povrchom, teda tou časťou Zeme, ktorá je viditeľná voľným 
-okom.  Prirodzene, skutočný povrch Zeme je komplikovaný a matematickými 
-metódami len ťažko modelovateľný.  Dôvodom je prítomnosť nespočetného množstva 
-zložitých terénnych útvarov, napríklad s náhlou skokovitou zmenou terénu.  Hoci 
-sú takéto oblasti krásne na pohľad, znemožňujú aplikovať časť potrebného 
-matematického aparátu, napríklad plošnú integráciu.  Skúmať takto chápaný 
-zemský povrch je preto možné až po istom vyhladení.
+Zeme jej skutočným fyzickým povrchom, teda tou časťou Zeme, ktorá je viditeľná 
+voľným okom.  Takýto povrch by však obsahoval aj nespočetné množstvo zložitých 
+terénnych útvarov, napríklad náhle skokovité zmeny terénu.  Hoci sú takéto 
+oblasti krásne na pohľad, znemožňujú aplikovať časť potrebného matematického 
+aparátu, napríklad plošnú integráciu.  Skúmať takto chápaný zemský povrch je 
+preto možné až po istom vyhladení.  Napriek tomu, ide o veľmi komplexnú plochu.
 
 Pri definovaní tvaru Zeme však môžeme vziať v úvahu skutočnosť, že približne 
 dve tretiny zemského povrchu tvorí voda v podobe oceánov a morí.  Ak by sme 
 s podobnou mierou hladkosti dokázali predĺžiť povrch oceánov a morí aj popod, 
 resp. ponad pevnú časť zemského povrchu, získali by sme v porovnaní s fyzickým 
 povrchom Zeme značne jednoduchší a hladší, no pritom stále verný tvar Zeme.  
-Voda má za istých okolností navyše takú výhodnú vlastnosť, že existuje 
-fyzikálna veličina, ktorá je na jej povrchu konštantná.  Táto vlastnosť by teda 
-následne mohla umožniť akúsi predikciu morskej hladiny aj pod, resp. nad 
-kontinentmi.  Inými slovami, v tejto definícií tvaru Zeme by išlo opäť 
-o geometrickú plochu, avšak tentokrát už s istými relatívne jednoducho 
-popísateľnými fyzikálnymi vlastnosťami.  Takto definovaný tvar Zeme bol 
-navrhnutý C. F. Gaussom (1777--1855) a podľa návrhu J. B. Listinga (1808--1882) 
-ho nazývame \emph{geoid}.  Veličina, ktorá je konštantná na povrchu geoidu sa 
+Voda má za istých okolností navyše tú výhodnú vlastnosť, že existuje fyzikálna 
+veličina, ktorá je na jej povrchu konštantná.  Táto vlastnosť by teda následne 
+mohla umožniť akúsi predikciu morskej hladiny aj popod, resp. ponad kontinenty.  
+Inými slovami, v tejto definícií tvaru Zeme by išlo o geometricky jednoduchšiu 
+plochu, navyše tentokrát už aj s istými relatívne jednoducho popísateľnými 
+fyzikálnymi vlastnosťami.  Takto definovaný tvar Zeme bol navrhnutý 
+C. F. Gaussom (1777--1855) a podľa návrhu J. B. Listinga (1808--1882) ho 
+nazývame \emph{geoid}.  Veličina, ktorá je konštantná na povrchu geoidu sa 
 nazýva \emph{tiažový potenciál}.
 
 \emph{Fyzikálna geodézia} je vedná disciplína zaoberajúca sa určovaním tvaru 
@@ -207,16 +207,87 @@ Zeme, jej tiažovým poľom a ich zmenami v čase.  Študované sú oba vyššie
 prístupy k tvaru Zeme, pričom historicky bol predmetom záujmu ako prvý geoid.  
 Hoci prirodzená, no matematicky odvážna myšlienka určovať priamo fyzický povrch 
 Zeme pochádza už od E. H. Brunsa (1848--1919), do popredia záujmu ju dostal až 
-v polovici 20. storočia M. S. Molodenskij (1909--1991).  Dôležitá je 
-skutočnosť, že i v tomto prípade je tvar Zeme určovaný na základe informácie 
-o tiažovom poli, hoci vďaka rôznym družicovým misiám existujú aj (na prvý 
-pohľad) výhradne geometrické metódy.
+v polovici 20. storočia M. S. Molodenskij (1909--1991).  Dôležitá je však 
+skutočnosť, že i v tomto prípade je tvar Zeme určovaný z informácie o tiažovom 
+poli.  Študovať tvar Zeme, čo je jedna zo základných úloh geodézie, teda 
+znamená študovať aj tiažové pole Zeme.
 
 \section{Newtonov integrál}
 
-Určovať tvar a tiažové pole Zeme znamená predovšetkým skúmať \emph{gravitačný 
-potenciál} vyplývajúci z gravitačného zákona formulovaného I. Newtonom 
-(1642--1727),
+%Uvažujme hmotný bod o hmotnosti $m$.  V zmysle gravitačného zákona 
+%formulovaného I. Newtonom (1642--1727) tento hmotný bod generuje gravitačný 
+%potenciál $V$.  Vo vzdialenosti $l$ od tohto hmotného je gravitačný potenciál 
+%daný vzťahom
+%%
+%\begin{equation}
+%V = G \frac{m}{l}{,}
+%\end{equation}
+%%
+%kde $G = 6.6742 \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1} 
+%\ \mathrm{s}^{-2}$ je Newtonova gravitačná konštanta.
+
+Dva hmotné body $P$ a $Q$ nachádzajúce sa od seba vo vzájomnej vzdialenosti $l$ 
+sa navzájom priťahujú \emph{gravitačnou silou}
+%
+\begin{equation}
+\label{eq:gravity_law}
+\vec{F} = -G \frac{m_P \, m_Q}{l^2} \, \frac{\vec{l}}{l}{.}
+\end{equation}
+%
+Symbol $G$ označuje gravitačnú konštantu, $m_P$ a $m_Q$ predstavujú hmotnosti 
+hmotných bodov a $\vec l$ je vektor medzi $P$ a $Q$ so začiatkom v~bode $Q$.  
+Záporné znamienko v rovnici znamená, že vektor sily $\vec F$ má začiatok v bode 
+$P$ a smeruje do bodu $Q$, teda hmotný bod $P$ je priťahovaný hmotným bodom 
+$Q$.
+
+Rovnica~(\ref{eq:gravity_law}) predstavuje \emph{gravitačný zákon} formulovaný 
+I. Newtonom (1642--1727).  Hovorí, že ľubovoľné dva hmotné body vo vesmíre sú 
+vzájomne priťahované silou, ktorej veľkosť je priamo úmerná súčinu ich 
+hmotností a nepriamo úmerná štvorcu ich vzájomnej vzdialenosti.  Hmotný bod je 
+idealizovaný pojem predstavujúci časticu s nulovým rozmerom a konečnou 
+hmotnosťou (teda nekonečnou hustotou).  Rovnicu~(\ref{eq:gravity_law}) možno 
+s rozumnou mierou aproximácie aplikovať napr. na popis pohybu planét Slnečnej 
+sústavy.  Rozmery týchto telies sú totiž natoľko zanedbateľné v porovnaní s ich 
+vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej chyby, ak ich 
+budeme považovať za hmotné body a aplikujeme na ne Newtonov gravitačný zákon.
+
+Rovnica~(\ref{eq:gravity_law}) závisí od hmotnosti oboch hmotných bodov, čo 
+komplikuje skúmanie gravitačného poľa v ich okolí.  Skúsme preto normovať 
+veľkosť gravitačnej sily hmotnosťou hmotného bodu $P$,
+%
+\begin{equation}
+\frac{\vec F}{m_P}{,}
+\end{equation}
+%
+prípadne uvažujme, že $m_P = 1\ \mathrm{kg}$.  Oba spôsoby vedú ekvivalentne 
+k veličine, ktorá sa nazýva \emph{gravitačné zrýchlenie},
+%
+\begin{equation}
+\label{eq:gravitational_vector}
+\vec g_g = -G \frac{m}{l^2} \, \frac{\vec l}{l}{,}
+\end{equation}
+%
+pričom $m = m_Q$.  Vektor gravitačného zrýchlenia má teda začiatok v bode $P$ 
+a smeruje do bodu $Q$, o ktorom hovoríme, že generuje vektor gravitačného 
+zrýchlenia v bode $P$.  Vektor gravitačného zrýchlenia veľmi úzko súvisí 
+s veličinou, ktorú je možné odmerať na povrchu Zeme, a tak má kľúčový význam 
+v procese určovania tvaru Zeme.
+
+Ak by sme chceli v bode $P$ vypočítať gravitačné zrýchlenie generované $N$ 
+hmotnými bodmi, vektorovo sčítame jednotlivé vektory gravitačného zrýchlenia, 
+teda
+%
+\begin{equation}
+\vec g_g = \sum_{i = 0}^{N}\vec g_i = -G \sum_{i = 0}^{N} \frac{m_i}{l_i^2} \, 
+\frac{\vec l_i}{l_i}{.}
+\end{equation}
+
+Newtonov gravitačný zákon formulovaný vyššie uvedeným spôsobom platí spolu 
+s následne získaným gravitačným zrýchlením iba pre hmotné body.  Zaujímavosti 
+sa začnú diať, keď sa pokúsime o výpočet gravitačného zrýchlenia generovaného 
+nie $N$ hmotnými bodmi, ale telesom konečných rozmerov s hoci premenlivou, no 
+konečnou hustotou.
+
 %
 \begin{equation}
 \label{eq:newton}
