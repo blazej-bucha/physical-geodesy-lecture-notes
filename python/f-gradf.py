@@ -1,5 +1,3 @@
-# Vykreslenie funkcie "f(x, y)" a jej gradientu
-
 # Import modulov
 import numpy as np
 import matplotlib.pyplot as plt

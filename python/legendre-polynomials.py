@@ -1,5 +1,3 @@
-# Vykreslenie Legendreových polynómov
-
 # Import modulov
 import numpy as np
 import matplotlib.pyplot as plt

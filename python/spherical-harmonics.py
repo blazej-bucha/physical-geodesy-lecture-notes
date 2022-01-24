@@ -1,5 +1,3 @@
-# Vykreslenie sférických harmonických funkcií
-
 # Import modulov
 import numpy as np
 import matplotlib as mpl
