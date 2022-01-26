@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 # Výpočtová oblasť
 xmin   = -1.0
 xmax   =  1.0
-xn     = 201  # Počet vzorkovacích bodov funkcie "f" na intervale "[xmin, xmax]"
+xn     = 101  # Počet vzorkovacích bodov funkcie "f" na intervale "[xmin, xmax]"
 ymin   = xmin
 ymax   = xmax
 yn     = xn  # Počet vzorkovacích bodov funkcie "f" na intervale "[ymin, ymax]"
-xngrad = 20  # Zobrazený bude každý "xngrad" vzorkovací bod v smere osi "x"
+xngrad = 10  # Zobrazený bude každý "xngrad" vzorkovací bod v smere osi "x"
 yngrad = xngrad  # Zobrazený bude každý "yngrad" vzorkovací bod v smere osi "y"
 
 # Tvorba gridu
