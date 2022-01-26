@@ -24,7 +24,8 @@ fy = -2.0 * np.sin(2.0 * y)
 
 # Vykreslenie
 fig, ax = plt.subplots(figsize=(12.0 / 2.54, 8.0 / 2.54))
-im = ax.imshow(f, extent=(xmin, xmax, ymin, ymax), cmap="bwr")
+im = ax.imshow(f, extent=(xmin, xmax, ymin, ymax), cmap="bwr",
+               vmin=-np.abs(f).max(), vmax=np.abs(f).max())
 ax.quiver( x[::xngrad, ::xngrad],  y[::yngrad, ::yngrad],
           fx[::xngrad, ::xngrad], fy[::yngrad, ::yngrad])
 ax.set_xlabel("$x$")

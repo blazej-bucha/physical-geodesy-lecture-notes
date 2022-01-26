@@ -146,6 +146,10 @@
 \newcommand{\grad}{\mathrm{grad}}
 \newcommand{\gidx}{\mathrm g}
 \let\vec\mathbf
+
+% Let's change the "Dodatok" label of chapters after Conclusions to "Príloha"
+\addto\captionsslovak{\renewcommand\appendixname{Príloha}}
+
 % =============================================================================
 
 
@@ -217,6 +221,7 @@ poli.  Študovať tvar Zeme, čo je jedna zo základných úloh geodézie, teda
 znamená študovať aj tiažové pole Zeme.
 
 \section{Newtonov gravitačný zákon}
+\label{sec:Newtons_gravitational_law}
 
 %Uvažujme hmotný bod o hmotnosti $m$.  V zmysle gravitačného zákona 
 %formulovaného I. Newtonom (1642--1727) tento hmotný bod generuje gravitačný 
@@ -244,83 +249,39 @@ v~bode $Q$.  Záporné znamienko v rovnici znamená, že vektor sily $\vec F$ m�
 začiatok v bode $P$ a smeruje do bodu $Q$.
 
 Rovnica~(\ref{eq:gravitational_law}) predstavuje \emph{gravitačný zákon} 
-formulovaný I. Newtonom (1642--1727).  Hovorí, že dva hmotné body sú 
-priťahované silou, ktorej smer je daný spojnicou týchto bodov a veľkosť je 
-priamo úmerná súčinu ich hmotností a nepriamo úmerná štvorcu ich vzájomnej 
-vzdialenosti \citep{Kellogg1967}.  \emph{Hmotný bod} je idealizovaný pojem 
-predstavujúci časticu s nulovým rozmerom a konečnou nenulovou hmotnosťou bez 
-akýchkoľvek ďalších vlastností či štruktúry.  \emph{Philosophi\ae Naturalis 
-Principia Mathematica} (1687), práca v ktorej Newton sformuloval gravitačný 
-zákon, nevyčísľuje hodnotu gravitačnej konštanty.  Hodnota odporúčaná od roku 
-2018 \emph{Komisiou pre dáta vo vede a technológiách} (CODATA) je
+publikovaný I. Newtonom (1642--1727) v práci \emph{Philosophi\ae Naturalis 
+Principia Mathematica} z roku 1687.  Hovorí, že každý hmotný bod vo vesmíre 
+priťahuje každý iný hmotný bod silou, ktorej smer je daný spojnicou týchto 
+bodov a veľkosť je priamo úmerná súčinu ich hmotností a nepriamo úmerná štvorcu 
+ich vzájomnej vzdialenosti \citep{Kellogg1967}.  \emph{Hmotný bod} je 
+idealizovaný pojem predstavujúci časticu s nulovým rozmerom a konečnou 
+nenulovou hmotnosťou bez akýchkoľvek ďalších vlastností či štruktúry.  Hodnota 
+gravitačnej konštanty odporúčaná od roku 2018 \emph{Komisiou pre dáta vo vede 
+a technológiách} (CODATA) je
 %
 \begin{equation}
 G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1} 
 \ \mathrm{s}^{-2}{.}
 \end{equation}
 
-Rovnicu~(\ref{eq:gravitational_law}) možno aplikovať napr. na popis pohybu 
-planét Slnečnej sústavy.  Rozmery planét sú totiž natoľko zanedbateľné 
-v porovnaní s ich vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej 
-chyby, ak hmotnosti týchto telies sústredíme do ich ťažiska a zanedbáme ich 
-tvar.  Je pozoruhodné, že hoci Newtonov gravitačný zákon bol odpozorovaný 
-z pohybu nebeských telies, zhoduje sa i s experimentmi, ktoré boli vykonané na 
-vzdialenosť niekoľkých desiatok mikrometrov \citep{Lee2020}.  Je však známe, že 
-\emph{Newtonov gravitačný zákon je nesprávny} \citep{Feynman}.  Spomeňme 
-napríklad, že podľa Newtonovej teórie má zmena hmotnosti a vzdialenosti 
-okamžitý gravitačný účinok, teda i v prípade telies nachádzajúcich sa vo 
-veľkých vzdialenostiach.  Tento predpoklad je však v rozpore s experimentálne 
-potvrdenou Einsteinovou špeciálnou teóriou relativity.  Tá hovorí, že žiadny 
-signál, a teda ani ten gravitačný, nie je možné poslať rýchlosťou väčšou ako je 
-rýchlosť svetla.  Pre účely fyzikálnej geodézie sú však chyby spôsobené 
-nepresnosťami Newtonovho gravitačného zákona väčšinou zanedbateľné.  Táto 
-teória, aj dnes, viac ako tristo rokov od jej vzniku, veľmi dobre vysvetľuje 
-obrovské množstvo experimentálnych meraní, medzi inými aj tých geodetických.  
+Newtonov gravitačný zákon vysvetľuje mnoho prírodných javov.  Popisuje 
+mechanizmus pohybu planét Slnečnej sústavy, prílivu a odlivu, či odpovedá na 
+otázku, prečo majú veľmi hmotné objekty, napríklad planéty, či Slnko, približne 
+sférický tvar.  Je pozoruhodné, že hoci Newtonov gravitačný zákon bol 
+odpozorovaný z pohybu nebeských telies, zhoduje sa i s experimentmi, ktoré boli 
+vykonané na vzdialenosť niekoľkých desiatok mikrometrov \citep{Lee2020}.
 
-%Rovnica~(\ref{eq:gravitational_law}) predstavuje \emph{gravitačný zákon} formulovaný 
-%I. Newtonom (1642--1727).  Hovorí, že dva ľubovoľné hmotné body sú vzájomne 
-%priťahované silou, ktorej veľkosť je priamo úmerná súčinu ich hmotností 
-%a nepriamo úmerná štvorcu ich vzájomnej vzdialenosti.  \emph{Hmotný bod} je 
-%idealizovaný pojem predstavujúci časticu s nulovým rozmerom a konečnou 
-%nenulovou hmotnosťou bez akýchkoľvek ďalších vlastností či štruktúry.  
-%Rovnicu~(\ref{eq:gravitational_law}) možno aplikovať napr. na popis pohybu 
-%planét Slnečnej sústavy.  Rozmery planét sú totiž natoľko zanedbateľné 
-%v porovnaní s ich vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej 
-%chyby, ak hmotnosti týchto telies sústredíme do ich ťažiska a zanedbáme ich 
-%tvar.  Gravitačnú silu je možné skúmať aj s použitím bežnejších hmotností 
-%a vzdialeností.  Hodnota gravitačnej konštanty\footnote{Prevzaté z odporúčaní 
-%\emph{Komisie pre dáta vo vede a technológiách} (CODATA) z roku 2018.}
-%%
-%\begin{equation}
-%G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1} 
-%\ \mathrm{s}^{-2}
-%\end{equation}
-%%
-%spolu s rovnicou~(\ref{eq:gravitational_law}) však napovedajú, že gravitačná 
-%sila bude veľmi malá, v mnohých geodetických aplikáciach dokonca zanedbateľná.  
-%Napriek tomu, súčasnými geodetickými prístrojmi je možné zaznamenať gravitačný 
-%vplyv i tak malých objektov, akými sú budova, auto, či dospelý človek.  Čím má 
-%objekt menšiu hmotnosť, tým bližšie (pozri rovnicu~\ref{eq:gravitational_law}) 
-%sa musí nachádzať pri meracom zariadení, aby bol jeho vplyv merateľný 
-%geodetickými prístrojmi.  V prípade dospelého človeka ide o vzdialenosti 
-%niekoľkých desiatok, či stoviek centimetrov.
-%
-%Newtonov gravitačný zákon je ale v zhode so špecializovanými presnými meraniami 
-%i v prípade tak malých vzdialeností ako $52\ \upmu\mathrm{m}$ \citep{Lee2020}.  
-%Táto skutočnosť je pozoruhodná, obzvlášť ak uvážime, že tento zákon bol 
-%odpozorovaný z pohybu nebeských telies po oblohe.  Popisuje Newtonov gravitačný 
-%zákon dostatočne presne realitu aj na subatomárnej úrovni?  Všetko nasvedčuje 
-%tomu, že nie.  Nie je to však prekvapivé, pretože \emph{Newtonov gravitačný 
-%zákon je nesprávny}.  Podľa Newtonovej teórie je napríklad gravitačný vplyv 
-%okamžitý, čo je v rozpore s experimentálne potvrdenou Einsteinovou teóriou 
-%relativity.  Tá hovorí, že žiadny signál, a teda ani ten gravitačný, nie je 
-%možné poslať rýchlosťou väčšou ako je rýchlosť svetla.  Neplatnosť Newtonovej 
-%teórie gravitácie bola dokázaná nezávislými experimentmi.  Pre účely fyzikálnej 
-%geodézie sú však aproximácie v Newtonovom gravitačnom zákone zanedbateľné, 
-%pretože sú nemerateľné bežnými geodetickými prístrojmi.  Navyše, táto teória 
-%ešte stále veľmi dobre a jednoducho popisuje obrovské množstvo experimentálnych 
-%meraní, medzi inými aj tých geodetických.  Azda nič by preto nemalo brániť 
-%pôžitku zo skúmania tohto viac ako tristoročného zákona opisujúceho gravitáciu.
+Hoci rovnica~(\ref{eq:gravitational_law}) vysvetľuje množstvo javov, je azda 
+potrebné spomenúť, že Newtonov gravitačný zákon je v skutočnosti 
+\emph{nesprávny} \citep{Feynman}.  Predpokladá napríklad, že zmena hmotnosti či 
+vzdialenosti má okamžitý gravitačný účinok, teda i v prípade telies 
+nachádzajúcich sa vo veľkých vzdialenostiach.  Tento predpoklad je však 
+v rozpore s experimentálne potvrdenou Einsteinovou špeciálnou teóriou 
+relativity.  Tá hovorí, že žiadny signál, a teda ani ten gravitačný, sa nemôže 
+šíriť rýchlosťou väčšou ako je rýchlosť svetla.  Pre účely fyzikálnej geodézie 
+sú však chyby spôsobené nepresnosťami Newtonovho gravitačného zákona väčšinou 
+zanedbateľné, a tak táto teória, aj dnes, viac ako tristo rokov od jej vzniku, 
+tvorí chrbtovú kosť fyzikálnej geodézie.
 
 \subsection{Gravitačné zrýchlenie}
 
@@ -335,17 +296,19 @@ zrýchlenie},
 \vec g_\gidx(P) = \frac{\vec F}{m_P} = -G \frac{m}{l^2} \, \frac{\vec r}{l}{,}
 \end{equation}
 %
-kde $m = m_Q$.  Rovnica~(\ref{eq:gravitational_vector}) hovorí, že hmotnému 
-bodu $P$ je v dôsledku gravitačnej príťažlivosti hmotného bodu $Q$ udeľované 
-zrýchlenie $\vec g_\gidx(P)$.   Inými slovami, gravitačné zrýchlenie nezávisí 
-od hmotnosti hmotného bodu $P$, začiatok má v bode $P$ a smeruje do hmotného 
-bodu $Q$.  Skutočnosť, že gravitačné zrýchlenie priťahovaného telesa nezávisí 
-od jeho hmotnosti experimentálne potvrdil Gaileo Gailei (1564--1642).  
-V súvislosti s hmotným bodom $P$ je preto možné pre jednoduchosť vynechať 
-prívlastok \emph{hmotný} a považovať $P$ za geometrický bod bez fyzikálnych 
-vlastností.
+kde $m = m_Q$.  Rovnica~(\ref{eq:gravitational_vector}) hovorí, že hmotný 
+bod~$Q$ udeľuje hmotnému bodu $P$ zrýchlenie $\vec g_\gidx(P)$.   Inými 
+slovami, gravitačné zrýchlenie $\vec g_\gidx(P)$ nezávisí od hmotnosti hmotného 
+bodu $P$, začiatok má v bode $P$ a smeruje do hmotného bodu $Q$.  Skutočnosť, 
+že gravitačné zrýchlenie priťahovaného telesa nezávisí od jeho hmotnosti 
+experimentálne potvrdil Gaileo Gailei (1564--1642).  V súvislosti s hmotným 
+bodom $P$ je preto možné pre jednoduchosť vynechať prívlastok \emph{hmotný} 
+a považovať $P$ za geometrický bod bez fyzikálnych vlastností.
 
-V prípade $N$ hmotných bodov je gravitačné zrýchlenie dané vektorovým súčtom,
+Z predchádzajúcej kapitoly vyplýva, že v sústave $N$ hmotných bodov je pre 
+získanie celkového gravitačného zrýchlenia potrebné započítať všetky čiastkové 
+zrýchlenia udeľované jednotlivými hmotnými bodmi.  Gravitačné zrýchlenie je 
+v takom prípade dané vektorovým súčtom,
 %
 \begin{equation}
 \label{eq:gravitational_vector_N_point_masses}
@@ -353,26 +316,38 @@ V prípade $N$ hmotných bodov je gravitačné zrýchlenie dané vektorovým sú
 \frac{m_i}{l_i^2} \, \frac{\vec r_i}{l_i}{.}
 \end{equation}
 
-Newtonov gravitačný zákon v tvare~(\ref{eq:gravitational_law}) 
+Newtonov gravitačný zákon~(\ref{eq:gravitational_law}) 
 a rovnice~(\ref{eq:gravitational_vector}) 
 a (\ref{eq:gravitational_vector_N_point_masses}) platia iba pre hmotné body.  
-Ak by sme ich aplikovali v blízkosti objektu, ktorý je komplikovaný z hľadiska 
-tvaru a hustoty, s veľkou pravdepodobnosťou by sme sa dopustili 
-nezanedbateľných chýb.  Príkladom je výpočet gravitačného zrýchlenia, ktoré Zem 
-udeľuje družici na nízkej obežnej dráhe.  Družica je vzdialená od Zeme rádovo 
-iba niekoľko stoviek kilometrov, čo je zanedbateľná vzdialenosť vzhľadom na 
-polomer samotnej Zeme (rozmer družice môžeme v tejto chvíli zanedbať).  
-V takýchto situáciach je potrebné nahradiť priťahujúci hmotný bod telesom 
-s konečným objemom $\tau$ a ohraničenou hustotou $\rho$.  Takéto teleso budeme 
-nazývať \emph{všeobecné teleso}.
+Tento tvar je možné aplikovať napríklad na popis pohybu planét Slnečnej 
+sústavy.  Rozmery planét sú totiž natoľko zanedbateľné v porovnaní s ich 
+vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej chyby, ak hmotnosti 
+týchto telies sústredíme do ich ťažísk a zanedbáme ich tvar.  Menej priaznivá 
+situácia nastáva vtedy, keď sa bod $P$ nachádza v blízkosti priťahujúceho 
+telesa, ktoré má komplikovaný tvar a hustotu.  Príkladom je družica na nízkej 
+obežnej dráhe Zeme.  V súlade s predchádzajúcim odsekom skúsme preto nahradiť 
+Zem množinou hmotných bodov, či už s konečným alebo nekonečným počtom, 
+a získajme výsledné gravitačné zrýchlenie pôsobiace na družicu 
+vzťahom~(\ref{eq:gravitational_vector_N_point_masses}).  Označenie takéhoto 
+riešenia za nesprávne nebude prekvapivé, keď si spomenieme 
+(Kapitola~\ref{sec:Newtons_gravitational_law}), že hmotný bod bol definovaný 
+ako bezrozmerný.  Bezrozmernými hmotnými bodmi nemožno aproximovať objem 
+telesa.
 
-Rozdeľme všeobecné teleso na nekonečne veľa diferenciálnych objemových 
-elementov $\diff\tau$ s hustotou $\rho$, ktorá môže závisieť od $\diff\tau$.  
+Zaveďme pojem \emph{všeobecné teleso}, ktoré má konečný objem $\tau$ 
+a ohraničenú hustotu $\rho$.  Rozdeľme toto teleso na nekonečne veľa 
+diferenciálnych hmotných elementov $\diff m = \rho \, \diff \tau$.  Hustota 
+$\rho$ sa môže meniť medzi hmotnými elementmi $\diff m$ v závislosti od 
+štruktúry daného telesa, ale nesmie sa meniť v rámci elementu samotného.  Aby 
+sme mohli aplikovať Newtonov gravitačný zákon, ktorý je formulovaný pre hmotné 
+body, budeme musieť predpokladať, že diferenciálne hmotné elementy $\diff m$, 
+akokoľvek sú malé, nikdy nie sú totožné s hmotnými bodmi; navyše, hmota týchto 
+elementov je koncentrovaná do jedného bodu \citep{Kellogg1967}.
+
 Po uvážení $\diff m = \rho \, \diff \tau$ bude gravitačné zrýchlenie generované 
-elementom $\diff m$ dané vzťahom
+hmotným elementom $\diff m$ dané vzťahom
 %
 \begin{equation}
-\label{eq:gravitational_vector}
 \diff \vec g_\gidx(P) = -G \frac{\vec r}{l^3} \rho \, \diff\tau{.}
 \end{equation}
 %
@@ -382,6 +357,10 @@ Celkové gravitačné zrýchlenie generované všeobecným telesom je teda
 \label{eq:gravitational_vector_integral}
 \vec g_\gidx(P) = -G \iiint_{\tau} \frac{\vec r}{l^3} \, \rho \, \diff\tau{.}
 \end{equation}
+%
+Tento vzťah už môže byť korektne použitý na výpočet gravitačného zrýchlenia, 
+ktoré udeľuje všeobecné teleso inému telesu s ťažiskom v bode $P$ (napríklad 
+Zem družici).
 
 Vektor gravitačného zrýchlenia veľmi úzko súvisí s veličinou, ktorú je možné 
 odmerať na povrchu Zeme, a tak má pre fyzikálnu geodéziu kľúčový význam.  
@@ -409,15 +388,18 @@ g_{\gidx,z}(P)
 %
 V niektorých situáciach je výhodnejšie pracovať so skalárnou veličinou, teda 
 takou, ktorá má v bode~$P$ definované práve jedno reálne číslo.  Tento prístup 
-je mladší ako Newtonov gravitačný zákon približne o jedno storočie 
-\citep{Jekeli2015} a chápe fenomén gravitácie ako \emph{pole}, ktorého 
-vlastnosti môžu byť popísané rôznymi veličinami z rôznych uhlov pohľadu, pričom 
-však ide stále o to isté pole.  Skalárna veličina gravitačného poľa sa nazýva 
-\emph{gravitačný potenciál} a označuje sa symbolom $V$.  Gravitačný potenciál 
-definujeme pomocou gravitačného zrýchlenia, ktoré, ako sme videli 
-v predchádzajúcej časti, je definované pomocou gravitačnej sily vyplývajúcej 
-priamo z Newtonovho gravitačného zákona.  Pre lepšie pochopenie vzťahu medzi 
-gravitačným zrýchlením a gravitačným potenciálom však najprv predstavíme 
+je mladší ako Newtonov gravitačný zákon \citep{Jekeli2015} a chápe fenomén 
+gravitácie ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi 
+veličinami, pričom však ide stále o to isté pole.  Ak by sme teda našli 
+skalárnu veličinu gravitačného poľa, informáciu poskytnutú troma číslami 
+v podobe gravitačného vektora by sme dokázali zredukovať na jedno jediné číslo 
+bez straty informácie o poli samotnom.  Skalárna veličina gravitačného poľa sa 
+nazýva \emph{gravitačný potenciál} a označuje sa symbolom $V$.
+
+Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia, ktoré, ako sme 
+videli v predchádzajúcej časti, je definované pomocou gravitačnej sily 
+vyplývajúcej z Newtonovho gravitačného zákona.  Pre lepšie pochopenie vzťahu 
+medzi gravitačným zrýchlením a gravitačným potenciálom však najprv predstavíme 
 diferenciálny operátor gradient a až následne pristúpime k samotnej definícii.
 
 V trojrozmernom pravouhlom súradnicovom systéme $x$, $y$, $z$ je operátor 
@@ -437,100 +419,54 @@ gradient definovaný nasledovne,
 %
 kde $\vec e_1$, $\vec e_2$ a $\vec e_3$ predstavujú jednotkové vektory 
 rovnobežné so smerom súradnicových osí $x$, $y$ a $z$.  Aplikáciou operátora 
-gradient na \emph{skalárnu} funkciu $f$ získame \emph{vektorovú} funkciu
+gradient na \emph{skalárnu} funkciu $f(x, y, z)$ získame \emph{vektorovú} 
+funkciu,
 %
 \begin{equation}
-\vec f(x, y, z) = \nabla f(x, y, z) = \grad \ f(x, y, z) = \vec e_1 
-\frac{\partial f}{\partial x} + \vec e_2 \frac{\partial f}{\partial y} + \vec 
-e_3 \frac{\partial f}{\partial z} =
+\begin{split}
+\vec f(x, y, z) &= \nabla f(x, y, z) = \grad \ f(x, y, z)\\
+%
+&= \vec e_1 \frac{\partial f(x, y, z)}{\partial x} + \vec e_2 \frac{\partial 
+f(x, y, z)}{\partial y} + \vec e_3 \frac{\partial f(x, y, z)}{\partial z} =
 \begin{bmatrix}
 \dfrac{\partial f(x, y, z)}{\partial x} \\[2ex]
 \dfrac{\partial f(x, y, z)}{\partial y} \\[2ex]
 \dfrac{\partial f(x, y, z)}{\partial z}
 \end{bmatrix}
-{,}
-\end{equation}
-%
-ktorá \emph{udáva smer a veľkosť najväčšieho nárastu} funkcie $f$ v bode so 
-súradnicami $x$, $y$ a $z$.
-
-Uvažujme dvojrozmerný pravouhlý súradnicový systém, v ktorom je definovaná 
-skalárna funkcia
-%
-\begin{equation}
-\label{eq:f}
-f(x, y) = \sin(2x) + \cos(2y){.}
-\end{equation}
-%
-Aplikáciou operátora gradient získame v zmysle rovnice~(\ref{eq:gradient}) 
-vektorovú funkciu
-%
-\begin{equation}
-\label{eq:gradf}
-\vec f(x, y) =
-\begin{bmatrix}
-\dfrac{\partial f(x, y)}{\partial x} \\[2ex]
-\dfrac{\partial f(x, y)}{\partial y}
-\end{bmatrix}
-=
-\begin{bmatrix}
-2 \cos(2x) \\[2ex]
--2 \sin(2y)
-\end{bmatrix}
 {.}
+\end{split}
 \end{equation}
 %
-Ukážka numerického výpočtu funkcie~(\ref{eq:f}) a jej 
-gradientu~(\ref{eq:gradf}) na~intervale $x, y \in [-1, 1]$ je uvedená 
-v Zdrojovom~kóde~\ref{src:f_gradf}.  Grafické znázornenie je uvedené na 
-Obr.~\ref{fig:f_gradf}.
+Vektorová funkcia $\vec f$ \emph{udáva smer a veľkosť najväčšieho nárastu} 
+funkcie $f$ v bode so súradnicami $x$, $y$ a $z$.
 
-\lstinputlisting[caption=Výpočet a~zobrazenie funkcie dvoch premenných a~jej 
-gradientu v programovacom jazyku Python, language=mypython, label=src:f_gradf, 
-captionpos=t]{../python/f-gradf.py}
+Operátor gradient hrá v teórii fyzikálnych polí dôležitú úlohu, pretože 
+umožňuje získať informácie o lokálnych charakteristikách poľa.  Medzi tieto 
+informácie patrí smer a veľkosť najväčšieho nárastu funkcie, ale aj popis 
+rýchlosti jej zmeny v smere jednotlivých súradnicových osí.  Vhodnou aplikáciou 
+rotačných matíc je možné následne získať informáciu o rýchlosti zmeny funkcie 
+v ľubovoľnom smere, čo je v mnohých situáciach veľmi nápomocné.  Rýchlosť zmeny 
+funkcie je tu myslená v priestorovom, nie časovom zmysle.  Ak si predstavíme 
+povrch Zeme ako dvojrozmernú funkciu zemepisnej šírky a dĺžky, potom aplikáciou 
+operátora gradient na túto funkciu získame (nielen) v kopcovitom teréne 
+informáciu o smere, ktorým sa z tohto bodu zrejme nechceme vydať na bicykli.  
+Stačí však dať pred túto vektorovú funkciu znamienko mínus a zvyšok práce 
+nechať na gravitáciu.  Numerická ukážka aplikácie operátora gradient je spolu 
+so zdrojovým kódom uvedená 
+v Prílohe~\ref{app:numerical_application_of_gradient}.
 
-\begin{figure}[bt]
-\centering
-\includegraphics{../figs/f-gradf.pdf}
-\caption{Skalárna funkcia $f(x, y) = \sin(2x) + \cos(2y)$ a~jej gradient 
-$\nabla f(x, y)$ na~intervale $x, y \in [-1, 1]$.  Skalárna funkcia je 
-znázornená hypsometricky.  Gradient je zobrazený orientovanými šípkami, pričom 
-smer šípky udáva smer najväčšieho nárastu funkcie $f(x, y)$ v danom bode 
-a dĺžka šípky znázorňuje veľkosť nárastu ***FAREBNA SKALA***}
-\label{fig:f_gradf}
-\end{figure}
-
-
+Po tejto príprave môžeme definovať gravitačný potenciál nasledovne.  Gravitačný 
+potenciál je skalárna funkcia, ktorá vyhovuje rovnici
 %
 \begin{equation}
-\label{eq:newton}
-V(P) = G \iiint_{\tau} \frac{\rho(Q)}{l(P, Q)} \diff \tau(Q){,}
+\vec g_\gidx(P) = \nabla V(P)
 \end{equation}
 %
-následne hľadať veličiny, ktoré sú s ním spojené a je možné ich odmerať, 
-a nakoniec zo získaných meraní vypočítať tvar Zeme v zmysle zvolenej definície.
-
-\begin{figure}[bt]
-\centering
-\includegraphics{../figs/gravitating-body/gravitating-body.pdf}
-\caption{Všeobecné teleso a výpočtový bod $P$ ***VEKTOR R***}
-\end{figure}
-
-Vzťah medzi vektorom gravitačného zrýchlenia a gravitačným potenciálom je daný 
-vzťahom
+a spĺňa podmienku
 %
 \begin{equation}
-\vec g_\gidx(P) = \nabla V(P) = \grad \ V(P){,}
+\lim_{r \to \infty} V(r) = 0{.}
 \end{equation}
-%
-
-Vo vzťahu (\ref{eq:newton}) predstavuje symbol $V$ gravitačný potenciál v bode 
-$P$ generovaný telesom s objemom $\tau$ a hustotou $\rho(P')$, ktorá môže 
-závisieť od polohy integračného elementu $\diff \tau(P')$ vo vnútri telesa.  
-Symbolom $l$ budeme označovať Euklidovskú vzdialenosť, v tomto prípade medzi 
-výpočtovým bodom $P$ a integračným elementom $\diff \tau(P')$ vo vnútri telesa, 
-ktoré generuje gravitačne pole.
-
 
 
 
@@ -719,6 +655,58 @@ zobrazené ako odľahlosť nadobúdanej hodnoty od jednotkovej sféry}
 
 
 
+
+% -----------------------------------------------------------------------------
+
+\appendix
+\chapter{Numerická aplikácia operátora gradient}
+\label{app:numerical_application_of_gradient}
+
+Uvažujme dvojrozmerný pravouhlý súradnicový systém so súradnicovými osami $x$, 
+$y$.  Nech $f(x, y)$ je skalárna funkcia dvoch premenných daná vzťahom
+%
+\begin{equation}
+\label{eq:f}
+f(x, y) = \sin(2x) + \cos(2y){.}
+\end{equation}
+%
+Aplikáciou operátora gradient na skalárnu funkciu $f(x, y)$ získame v zmysle 
+rovnice~(\ref{eq:gradient}) vektorovú funkciu
+%
+\begin{equation}
+\label{eq:gradf}
+\vec f(x, y) =
+\begin{bmatrix}
+\dfrac{\partial f(x, y)}{\partial x} \\[2ex]
+\dfrac{\partial f(x, y)}{\partial y}
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \cos(2x) \\[2ex]
+-2 \sin(2y)
+\end{bmatrix}
+{.}
+\end{equation}
+
+Ukážka numerického výpočtu funkcie~(\ref{eq:f}) a jej 
+gradientu~(\ref{eq:gradf}) na~intervale $x, y \in [-1, 1]$ je uvedená 
+v Zdrojovom~kóde~\ref{src:f_gradf}.  Grafické znázornenie je uvedené na 
+Obr.~\ref{fig:f_gradf}.  Všimnime si, v ktorých bodoch má šípka malú či veľkú 
+dĺžku a pokúsme sa danú situáciu interpretovať.
+
+\lstinputlisting[caption=Výpočet a~zobrazenie funkcie dvoch premenných a~jej 
+gradientu v programovacom jazyku Python, language=mypython, label=src:f_gradf, 
+captionpos=t]{../python/f-gradf.py}
+
+\begin{figure}[bt]
+\centering
+\includegraphics{../figs/f-gradf.pdf}
+\caption{Skalárna funkcia $f(x, y) = \sin(2x) + \cos(2y)$ a~jej gradient 
+$\nabla f(x, y)$ na~intervale $x, y \in [-1, 1]$.  Skalárna funkcia je 
+znázornená hypsometricky.  Gradient je zobrazený orientovanými šípkami, pričom 
+šípka udáva smer a veľkosť najväčšieho nárastu funkcie $f(x, y)$ v danom bode}
+\label{fig:f_gradf}
+\end{figure}
 
 % Bibliography
 % -----------------------------------------------------------------------------
