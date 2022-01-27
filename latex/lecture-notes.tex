@@ -245,8 +245,15 @@ navzájom priťahujú \emph{gravitačnou silou}
 %
 Symbol $G$ označuje gravitačnú konštantu, $m_P$ a $m_Q$ predstavujú hmotnosti 
 hmotných bodov a $\vec r$ je vektor definovaný bodmi $P$ a $Q$ so začiatkom 
-v~bode $Q$.  Záporné znamienko v rovnici znamená, že vektor sily $\vec F$ má 
-začiatok v bode $P$ a smeruje do bodu $Q$.
+v~bode $Q$.  Záporné znamienko v rovnici znamená, že vektor sily má začiatok 
+v bode $P$ a smeruje do bodu $Q$ (Obrázok~\ref{fig:newton-law}).
+
+\begin{figure}[b]
+\centering
+\input{./fig-newton-law.pdf_tex}
+\caption{Gravitačná sila $\vec F$ pôsobiaca medzi hmotnými bodmi $P$ a $Q$} 
+\label{fig:newton-law}
+\end{figure}
 
 Rovnica~(\ref{eq:gravitational_law}) predstavuje \emph{gravitačný zákon} 
 publikovaný I. Newtonom (1642--1727) v práci \emph{Philosophi\ae Naturalis 
@@ -266,10 +273,10 @@ G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1}
 
 Newtonov gravitačný zákon vysvetľuje mnoho prírodných javov.  Popisuje 
 mechanizmus pohybu planét Slnečnej sústavy, prílivu a odlivu, či odpovedá na 
-otázku, prečo majú veľmi hmotné objekty, napríklad planéty, či Slnko, približne 
-sférický tvar.  Je pozoruhodné, že hoci Newtonov gravitačný zákon bol 
-odpozorovaný z pohybu nebeských telies, zhoduje sa i s experimentmi, ktoré boli 
-vykonané na vzdialenosť niekoľkých desiatok mikrometrov \citep{Lee2020}.
+otázku, prečo majú planéty približne sférický tvar.  Je pozoruhodné, že hoci 
+Newtonov gravitačný zákon bol odpozorovaný z pohybu nebeských telies, zhoduje 
+sa i s experimentmi, ktoré boli vykonané na vzdialenosť niekoľkých desiatok 
+mikrometrov \citep{Lee2020}.
 
 Hoci rovnica~(\ref{eq:gravitational_law}) vysvetľuje množstvo javov, je azda 
 potrebné spomenúť, že Newtonov gravitačný zákon je v skutočnosti 
@@ -305,16 +312,25 @@ experimentálne potvrdil Gaileo Gailei (1564--1642).  V súvislosti s hmotným
 bodom $P$ je preto možné pre jednoduchosť vynechať prívlastok \emph{hmotný} 
 a považovať $P$ za geometrický bod bez fyzikálnych vlastností.
 
-Z predchádzajúcej kapitoly vyplýva, že v sústave $N$ hmotných bodov je pre 
+Z predchádzajúcej kapitoly vyplýva, že v sústave $N$ hmotných bodov je na 
 získanie celkového gravitačného zrýchlenia potrebné započítať všetky čiastkové 
-zrýchlenia udeľované jednotlivými hmotnými bodmi.  Gravitačné zrýchlenie je 
-v takom prípade dané vektorovým súčtom,
+zrýchlenia udeľované jednotlivými hmotnými bodmi 
+(Obrázok~\ref{fig:gg_n_point_masses}).  Gravitačné zrýchlenie je v takom 
+prípade dané vektorovým súčtom,
 %
 \begin{equation}
 \label{eq:gravitational_vector_N_point_masses}
 \vec g_\gidx(P) = \sum_{i = 1}^{N}\vec g_{\gidx,i}(P) = -G \sum_{i = 1}^{N} 
 \frac{m_i}{l_i^2} \, \frac{\vec r_i}{l_i}{.}
 \end{equation}
+
+\begin{figure}[b]
+\centering
+\input{./fig-gg-n-point-masses.pdf_tex}
+\caption{Vektory gravitačného zrýchlenia v bode $P$ generované sústavou piatich 
+hmotných bodov}
+\label{fig:gg_n_point_masses}
+\end{figure}
 
 Newtonov gravitačný zákon~(\ref{eq:gravitational_law}) 
 a rovnice~(\ref{eq:gravitational_vector}) 
@@ -334,21 +350,51 @@ riešenia za nesprávne nebude prekvapivé, keď si spomenieme
 ako bezrozmerný.  Bezrozmernými hmotnými bodmi nemožno aproximovať objem 
 telesa.
 
-Zaveďme pojem \emph{všeobecné teleso}, ktoré má konečný objem $\tau$ 
-a ohraničenú hustotu $\rho$.  Rozdeľme toto teleso na nekonečne veľa 
-diferenciálnych hmotných elementov $\diff m = \rho \, \diff \tau$.  Hustota 
-$\rho$ sa môže meniť medzi hmotnými elementmi $\diff m$ v závislosti od 
-štruktúry daného telesa, ale nesmie sa meniť v rámci elementu samotného.  Aby 
-sme mohli aplikovať Newtonov gravitačný zákon, ktorý je formulovaný pre hmotné 
-body, budeme musieť predpokladať, že diferenciálne hmotné elementy $\diff m$, 
-akokoľvek sú malé, nikdy nie sú totožné s hmotnými bodmi; navyše, hmota týchto 
-elementov je koncentrovaná do jedného bodu \citep{Kellogg1967}.
+Zaveďme preto pojem \emph{všeobecné teleso}, ktoré má konečný objem $\tau$ 
+a ohraničenú hustotu $\rho$ (Obrázok~\ref{fig:gravitating_body}).  Rozdeľme 
+toto teleso na nekonečne veľa diferenciálnych hmotných elementov $\diff 
+m = \rho \, \diff \tau$.  Hustota $\rho$ sa môže meniť medzi hmotnými elementmi 
+$\diff m$ v závislosti od štruktúry daného telesa, ale nesmie sa meniť v rámci 
+elementu samotného.  Aby sme mohli aplikovať Newtonov gravitačný zákon, ktorý 
+je formulovaný pre hmotné body, budeme musieť predpokladať, že diferenciálne 
+hmotné elementy $\diff m$, akokoľvek sú malé, nikdy nie sú identické s hmotnými 
+bodmi; navyše, hmota týchto elementov je koncentrovaná do jedného bodu 
+\citep{Kellogg1967}.
+
+\begin{figure}
+\centering
+\input{./fig-gravitating-body.pdf_tex}
+\caption{Všeobecné teleso}
+\label{fig:gravitating_body}
+\end{figure}
 
 Po uvážení $\diff m = \rho \, \diff \tau$ bude gravitačné zrýchlenie generované 
 hmotným elementom $\diff m$ dané vzťahom
 %
 \begin{equation}
-\diff \vec g_\gidx(P) = -G \frac{\vec r}{l^3} \rho \, \diff\tau{.}
+\diff \vec g_\gidx(P) = -G \frac{\vec r}{l^3} \rho \, \diff\tau{,}
+\end{equation}
+%
+kde vektor $\vec r$ je definovaný rozdielom polohových vektorov bodov $P$ 
+a $Q$,
+%
+\begin{equation}
+\label{eq:r}
+\vec r = \vec r_P - \vec r_Q =
+%
+\begin{bmatrix}
+x_P - x_Q \\
+y_P - y_Q \\
+z_P - z_Q
+\end{bmatrix}
+{,}
+\end{equation}
+%
+a $l$ je Euklidovská vzdialenosť medzi týmito bodmi,
+%
+\begin{equation}
+\label{eq:l}
+l = | \vec r | = \sqrt{(x_P - x_Q)^2 + (y_P - y_Q)^2 + (z_P - z_Q)^2}{.}
 \end{equation}
 %
 Celkové gravitačné zrýchlenie generované všeobecným telesom je teda
@@ -364,7 +410,7 @@ Zem družici).
 
 Vektor gravitačného zrýchlenia veľmi úzko súvisí s veličinou, ktorú je možné 
 odmerať na povrchu Zeme, a tak má pre fyzikálnu geodéziu kľúčový význam.  
-V systéme jednotiek SI má gravitačné zrýchlenie jednotku $\mathrm{m}\ 
+V sústave jednotiek SI má gravitačné zrýchlenie jednotku $\mathrm{m}\ 
 \mathrm{s}^{-2}$.  Veľmi často je možné stretnúť sa aj s jednotkou $1\ 
 \mathrm{Gal} = 10^{-2}\ \mathrm{m}\ \mathrm{s}^{-2}$ pomenovanou podľa Galilea 
 Galileiho, prípadne s jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\ 
@@ -388,13 +434,14 @@ g_{\gidx,z}(P)
 %
 V niektorých situáciach je výhodnejšie pracovať so skalárnou veličinou, teda 
 takou, ktorá má v bode~$P$ definované práve jedno reálne číslo.  Tento prístup 
-je mladší ako Newtonov gravitačný zákon \citep{Jekeli2015} a chápe fenomén 
-gravitácie ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi 
-veličinami, pričom však ide stále o to isté pole.  Ak by sme teda našli 
-skalárnu veličinu gravitačného poľa, informáciu poskytnutú troma číslami 
-v podobe gravitačného vektora by sme dokázali zredukovať na jedno jediné číslo 
-bez straty informácie o poli samotnom.  Skalárna veličina gravitačného poľa sa 
-nazýva \emph{gravitačný potenciál} a označuje sa symbolom $V$.
+je mladší ako Newtonov gravitačný zákon o jedno storočie 
+\citep{MacMillan1930,Jekeli2015} a chápe fenomén gravitácie ako \emph{pole}, 
+ktorého vlastnosti môžu byť popísané rôznymi veličinami, pričom však ide stále 
+o to isté pole.  Ak by sme teda našli skalárnu veličinu gravitačného poľa, 
+informáciu poskytnutú troma číslami v podobe gravitačného vektora by sme 
+dokázali zredukovať na jedno jediné číslo bez straty informácie o poli 
+samotnom.  Skalárna veličina gravitačného poľa sa nazýva \emph{gravitačný 
+potenciál} a označuje sa symbolom $V_\gidx$.
 
 Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia, ktoré, ako sme 
 videli v predchádzajúcej časti, je definované pomocou gravitačnej sily 
@@ -443,49 +490,89 @@ funkcie $f$ v bode so súradnicami $x$, $y$ a $z$.
 Operátor gradient hrá v teórii fyzikálnych polí dôležitú úlohu, pretože 
 umožňuje získať informácie o lokálnych charakteristikách poľa.  Medzi tieto 
 informácie patrí smer a veľkosť najväčšieho nárastu funkcie, ale aj popis 
-rýchlosti jej zmeny v smere jednotlivých súradnicových osí.  Vhodnou aplikáciou 
+rýchlosti jej zmeny v smere súradnicových osí.\footnote{Rýchlosť zmeny funkcie 
+je tu myslená v priestorovom zmysle, nie časovom.}  Vhodnou aplikáciou 
 rotačných matíc je možné následne získať informáciu o rýchlosti zmeny funkcie 
-v ľubovoľnom smere, čo je v mnohých situáciach veľmi nápomocné.  Rýchlosť zmeny 
-funkcie je tu myslená v priestorovom, nie časovom zmysle.  Ak si predstavíme 
-povrch Zeme ako dvojrozmernú funkciu zemepisnej šírky a dĺžky, potom aplikáciou 
-operátora gradient na túto funkciu získame (nielen) v kopcovitom teréne 
-informáciu o smere, ktorým sa z tohto bodu zrejme nechceme vydať na bicykli.  
-Stačí však dať pred túto vektorovú funkciu znamienko mínus a zvyšok práce 
-nechať na gravitáciu.  Numerická ukážka aplikácie operátora gradient je spolu 
-so zdrojovým kódom uvedená 
+v ľubovoľnom smere, čo je v mnohých situáciach veľmi nápomocné.  Ak si 
+predstavíme povrch Zeme ako dvojrozmernú funkciu zemepisnej šírky a dĺžky, 
+potom aplikáciou operátora gradient na túto funkciu získame (nielen) 
+v kopcovitom teréne informáciu o smere, ktorým sa z tohto bodu zrejme nechceme 
+vydať na bicykli.  Ak však dáme pred vektorovú funkciu znamienko mínus, zvyšok 
+práce môžeme nechať na gravitačné pole.  Numerická ukážka aplikácie operátora 
+gradient je spolu so zdrojovým kódom uvedená 
 v Prílohe~\ref{app:numerical_application_of_gradient}.
 
 Po tejto príprave môžeme definovať gravitačný potenciál nasledovne.  Gravitačný 
-potenciál je skalárna funkcia, ktorá vyhovuje rovnici
+potenciál je skalárna funkcia, ktorá vyhovuje rovnici 
+\citep{SansoGeoidDetermination}
 %
 \begin{equation}
-\vec g_\gidx(P) = \nabla V(P)
+\label{eq:gg_vg}
+\vec g_\gidx(P) = \nabla V_\gidx(P)
 \end{equation}
 %
 a spĺňa podmienku
 %
 \begin{equation}
-\lim_{r \to \infty} V(r) = 0{.}
+\label{eq:vg_infty}
+\lim_{r \to \infty} V_\gidx(r) = 0{.}
+\end{equation}
+%
+V rovnici~(\ref{eq:vg_infty}) predstavuje symbol $r$ veľkosť polohového vektora 
+bodu $P$, teda vzdialenosť bodu $P$ od začiatku súradnicového systému.  
+Vzťah~(\ref{eq:gg_vg}) hovorí, že gravitačné zrýchlenie udáva smer a veľkosť 
+najväčšieho nárastu gravitačného potenciálu.  Rovnica~(\ref{eq:vg_infty}) 
+zabezpečuje, že existuje práve jedna funkcia $V_\gidx$ vyhovujúca 
+rovnici~(\ref{eq:gg_vg}).  Keďže podmienka (\ref{eq:vg_infty}) bola zvolená, 
+možno konštatovať, že gravitačný potenciál je \emph{relatívna veličina}.
+
+Použitím rovníc~(\ref{eq:gravitational_vector}), (\ref{eq:r}), (\ref{eq:l}) 
+a (\ref{eq:gg_vg}) nie je náročné presvedčiť sa, že v prípade hmotného bodu je 
+gravitačný potenciál daný vzťahom
+%
+\begin{equation}
+V_\gidx(P) = \frac{G \, m}{l}
+\end{equation}
+%
+a že tento vzťah spĺňa podmienku~(\ref{eq:vg_infty}).  V sústave $N$ hmotných 
+bodov je celkový gravitačný potenciál daný súčtom jednotlivých čiastkových 
+príspevkov,
+%
+\begin{equation}
+V_\gidx(P) = \sum_{i = 1}^{N} V_{\gidx,i}(P) = G \sum_{i = 1}^{N}\frac{
+m_i}{l_i}{,}
+\end{equation}
+%
+a v prípade všeobecného telesa platí
+%
+\begin{equation}
+\label{eq:gravitational_vector_integral}
+V_\gidx(P) = G \iiint_{\tau} \frac{\rho}{l} \diff\tau{.}
 \end{equation}
 
+K interpretácii gravitačného potenciálu je možné pristúpiť aj z fyzikálneho 
+hľadiska.  V tejto práci sa obmedzíme iba na tvrdenie, že hodnota gravitačného 
+potenciálu predstavuje prácu, ktorú musí vykonať gravitačné pole pri 
+premiestnení hmotného bodu s hmotnosťou $1\ \mathrm{kg}$ z miesta s nulovým 
+potenciálom (v geodézii nekonečno) do bodu $P$ 
+\citep{MacMillan1930,Kellogg1967,TorgeGeodesy}.
+
+Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedokážeme 
+priamo merať.  Vo fyzikálnej geodézii vystupuje často ako neznáma funkcia, 
+ktorú sa snažíme určiť, napríklad z vektora gravitačného zrýchlenia.  Jednou 
+z hlavných úloh fyzikálnej geodézie je teda v istom zmysle obrátiť 
+vzťah~(\ref{eq:gg_vg}) tak, aby v ňom gravitačný potenciál nevystupoval pod 
+operátorom gradient.  V sústave SI má gravitačný potenciál fyzikálnu jednotku 
+$\mathrm{m}^2\ \mathrm{s}^{-2}$.
 
 
 
 
 
-\section{Súradnicový systém}
 
-\begin{figure}[bt]
-\centering
-\includegraphics{../figs/coordinate-systems/cart-sph.pdf}
-\caption{Pravouhlé a~sférické súradnice}
-\end{figure}
+% -----------------------------------------------------------------------------
 
-
-\section{Polia}
-
-\section{Operátory poľa}
-
+\section{Teória potenciálu}
 % čo to je?
 % súradnicový systém?
 % polia
