@@ -221,7 +221,7 @@ poli.  Študovať tvar Zeme, čo je jedna zo základných úloh geodézie, teda
 znamená študovať aj tiažové pole Zeme.
 
 \section{Newtonov gravitačný zákon}
-\label{sec:Newtons_gravitational_law}
+\label{sec:newton_law}
 
 %Uvažujme hmotný bod o hmotnosti $m$.  V zmysle gravitačného zákona 
 %formulovaného I. Newtonom (1642--1727) tento hmotný bod generuje gravitačný 
@@ -239,23 +239,23 @@ Dva hmotné body $P$ a $Q$ nachádzajúce sa od seba vo vzdialenosti $l$ sa
 navzájom priťahujú \emph{gravitačnou silou}
 %
 \begin{equation}
-\label{eq:gravitational_law}
+\label{eq:newton_law}
 \vec F = -G \frac{m_P \, m_Q}{l^2} \, \frac{\vec r}{l}{.}
 \end{equation}
 %
 Symbol $G$ označuje gravitačnú konštantu, $m_P$ a $m_Q$ predstavujú hmotnosti 
 hmotných bodov a $\vec r$ je vektor definovaný bodmi $P$ a $Q$ so začiatkom 
 v~bode $Q$.  Záporné znamienko v rovnici znamená, že vektor sily má začiatok 
-v bode $P$ a smeruje do bodu $Q$ (Obrázok~\ref{fig:newton-law}).
+v bode $P$ a smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
 
 \begin{figure}[b]
 \centering
 \input{./fig-newton-law.pdf_tex}
 \caption{Gravitačná sila $\vec F$ pôsobiaca medzi hmotnými bodmi $P$ a $Q$} 
-\label{fig:newton-law}
+\label{fig:newton_law}
 \end{figure}
 
-Rovnica~(\ref{eq:gravitational_law}) predstavuje \emph{gravitačný zákon} 
+Rovnica~(\ref{eq:newton_law}) predstavuje \emph{gravitačný zákon} 
 publikovaný I. Newtonom (1642--1727) v práci \emph{Philosophi\ae Naturalis 
 Principia Mathematica} z roku 1687.  Hovorí, že každý hmotný bod vo vesmíre 
 priťahuje každý iný hmotný bod silou, ktorej smer je daný spojnicou týchto 
@@ -278,7 +278,7 @@ Newtonov gravitačný zákon bol odpozorovaný z pohybu nebeských telies, zhodu
 sa i s experimentmi, ktoré boli vykonané na vzdialenosť niekoľkých desiatok 
 mikrometrov \citep{Lee2020}.
 
-Hoci rovnica~(\ref{eq:gravitational_law}) vysvetľuje množstvo javov, je azda 
+Hoci rovnica~(\ref{eq:newton_law}) vysvetľuje množstvo javov, je azda 
 potrebné spomenúť, že Newtonov gravitačný zákon je v skutočnosti 
 \emph{nesprávny} \citep{Feynman}.  Predpokladá napríklad, že zmena hmotnosti či 
 vzdialenosti má okamžitý gravitačný účinok, teda i v prípade telies 
@@ -291,19 +291,20 @@ zanedbateľné, a tak táto teória, aj dnes, viac ako tristo rokov od jej vznik
 tvorí chrbtovú kosť fyzikálnej geodézie.
 
 \subsection{Gravitačné zrýchlenie}
+\label{sec:gg}
 
-Gravitačná sila~(\ref{eq:gravitational_law}) závisí od hmotnosti oboch hmotných 
+Gravitačná sila~(\ref{eq:newton_law}) závisí od hmotnosti oboch hmotných 
 bodov medzi ktorými pôsobí.  Skúsme preto normovať gravitačnú silu hmotnosťou 
 hmotného bodu $P$, prípadne aplikovať podmienku $m_P = 1\ \mathrm{kg}$.  Oba 
 spôsoby vedú ekvivalentne k veličine, ktorá sa nazýva \emph{gravitačné 
 zrýchlenie},
 %
 \begin{equation}
-\label{eq:gravitational_vector}
+\label{eq:gg_point_mass}
 \vec g_\gidx(P) = \frac{\vec F}{m_P} = -G \frac{m}{l^2} \, \frac{\vec r}{l}{,}
 \end{equation}
 %
-kde $m = m_Q$.  Rovnica~(\ref{eq:gravitational_vector}) hovorí, že hmotný 
+kde $m = m_Q$.  Rovnica~(\ref{eq:gg_point_mass}) hovorí, že hmotný 
 bod~$Q$ udeľuje hmotnému bodu $P$ zrýchlenie $\vec g_\gidx(P)$.   Inými 
 slovami, gravitačné zrýchlenie $\vec g_\gidx(P)$ nezávisí od hmotnosti hmotného 
 bodu $P$, začiatok má v bode $P$ a smeruje do hmotného bodu $Q$.  Skutočnosť, 
@@ -312,14 +313,14 @@ experimentálne potvrdil Gaileo Gailei (1564--1642).  V súvislosti s hmotným
 bodom $P$ je preto možné pre jednoduchosť vynechať prívlastok \emph{hmotný} 
 a považovať $P$ za geometrický bod bez fyzikálnych vlastností.
 
-Z predchádzajúcej kapitoly vyplýva, že v sústave $N$ hmotných bodov je na 
-získanie celkového gravitačného zrýchlenia potrebné započítať všetky čiastkové 
+Z predchádzajúcej kapitoly vyplýva, že v sústave $N$ hmotných bodov je potrebné 
+na získanie celkového gravitačného zrýchlenia započítať všetky čiastkové 
 zrýchlenia udeľované jednotlivými hmotnými bodmi 
 (Obrázok~\ref{fig:gg_n_point_masses}).  Gravitačné zrýchlenie je v takom 
 prípade dané vektorovým súčtom,
 %
 \begin{equation}
-\label{eq:gravitational_vector_N_point_masses}
+\label{eq:gg_N_point_masses}
 \vec g_\gidx(P) = \sum_{i = 1}^{N}\vec g_{\gidx,i}(P) = -G \sum_{i = 1}^{N} 
 \frac{m_i}{l_i^2} \, \frac{\vec r_i}{l_i}{.}
 \end{equation}
@@ -328,13 +329,13 @@ prípade dané vektorovým súčtom,
 \centering
 \input{./fig-gg-n-point-masses.pdf_tex}
 \caption{Vektory gravitačného zrýchlenia v bode $P$ generované sústavou piatich 
-hmotných bodov}
+hmotných bodov ***CENTROVAT OBRAZOK***}
 \label{fig:gg_n_point_masses}
 \end{figure}
 
-Newtonov gravitačný zákon~(\ref{eq:gravitational_law}) 
-a rovnice~(\ref{eq:gravitational_vector}) 
-a (\ref{eq:gravitational_vector_N_point_masses}) platia iba pre hmotné body.  
+Newtonov gravitačný zákon~(\ref{eq:newton_law}) 
+a rovnice~(\ref{eq:gg_point_mass}) 
+a (\ref{eq:gg_N_point_masses}) platia iba pre hmotné body.  
 Tento tvar je možné aplikovať napríklad na popis pohybu planét Slnečnej 
 sústavy.  Rozmery planét sú totiž natoľko zanedbateľné v porovnaní s ich 
 vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej chyby, ak hmotnosti 
@@ -344,9 +345,9 @@ telesa, ktoré má komplikovaný tvar a hustotu.  Príkladom je družica na níz
 obežnej dráhe Zeme.  V súlade s predchádzajúcim odsekom skúsme preto nahradiť 
 Zem množinou hmotných bodov, či už s konečným alebo nekonečným počtom, 
 a získajme výsledné gravitačné zrýchlenie pôsobiace na družicu 
-vzťahom~(\ref{eq:gravitational_vector_N_point_masses}).  Označenie takéhoto 
+vzťahom~(\ref{eq:gg_N_point_masses}).  Označenie takéhoto 
 riešenia za nesprávne nebude prekvapivé, keď si spomenieme 
-(Kapitola~\ref{sec:Newtons_gravitational_law}), že hmotný bod bol definovaný 
+(Kapitola~\ref{sec:newton_law}), že hmotný bod bol definovaný 
 ako bezrozmerný.  Bezrozmernými hmotnými bodmi nemožno aproximovať objem 
 telesa.
 
@@ -380,12 +381,12 @@ a $Q$,
 %
 \begin{equation}
 \label{eq:r}
-\vec r = \vec r_P - \vec r_Q =
+\vec r = 
 %
 \begin{bmatrix}
-x_P - x_Q \\
-y_P - y_Q \\
-z_P - z_Q
+x - x_Q \\
+y - y_Q \\
+z - z_Q
 \end{bmatrix}
 {,}
 \end{equation}
@@ -394,13 +395,13 @@ a $l$ je Euklidovská vzdialenosť medzi týmito bodmi,
 %
 \begin{equation}
 \label{eq:l}
-l = | \vec r | = \sqrt{(x_P - x_Q)^2 + (y_P - y_Q)^2 + (z_P - z_Q)^2}{.}
+l = | \vec r | = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
 \end{equation}
 %
 Celkové gravitačné zrýchlenie generované všeobecným telesom je teda
 %
 \begin{equation}
-\label{eq:gravitational_vector_integral}
+\label{eq:gg_body}
 \vec g_\gidx(P) = -G \iiint_{\tau} \frac{\vec r}{l^3} \, \rho \, \diff\tau{.}
 \end{equation}
 %
@@ -418,11 +419,13 @@ Galileiho, prípadne s jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\
 \mathrm{s}^{-2}$.
 
 \subsection{Gravitačný potenciál}
+\label{sec:vg}
 
 Gravitačné zrýchlenie $\vec g_\gidx$ je vektorová veličina, ktorá má v každom 
 bode definovanú trojicu reálnych čísel,
 %
 \begin{equation}
+\label{eq:gg_elements}
 \vec g_{\gidx}(P) =
 \begin{bmatrix}
 g_{\gidx,x}(P) \\[2ex]
@@ -434,14 +437,16 @@ g_{\gidx,z}(P)
 %
 V niektorých situáciach je výhodnejšie pracovať so skalárnou veličinou, teda 
 takou, ktorá má v bode~$P$ definované práve jedno reálne číslo.  Tento prístup 
-je mladší ako Newtonov gravitačný zákon o jedno storočie 
-\citep{MacMillan1930,Jekeli2015} a chápe fenomén gravitácie ako \emph{pole}, 
-ktorého vlastnosti môžu byť popísané rôznymi veličinami, pričom však ide stále 
-o to isté pole.  Ak by sme teda našli skalárnu veličinu gravitačného poľa, 
-informáciu poskytnutú troma číslami v podobe gravitačného vektora by sme 
-dokázali zredukovať na jedno jediné číslo bez straty informácie o poli 
-samotnom.  Skalárna veličina gravitačného poľa sa nazýva \emph{gravitačný 
-potenciál} a označuje sa symbolom $V_\gidx$.
+je mladší ako Newtonov gravitačný zákon zhruba o jedno storočie 
+\citep{MacMillan1930,Jekeli2015} a fenomén gravitácie chápe ako \emph{pole}, 
+ktorého vlastnosti môžu byť popísané rôznymi vzájomne súvisiacimi veličinami, 
+pričom však ide stále o to isté pole.  S konceptom potenciálu poľa prišiel 
+podľa \cite{MacMillan1930} taliansky matematik a astronóm J. L. Lagrange 
+(1736--1813).  Ak by sme teda našli skalárnu veličinu gravitačného poľa, 
+informáciu poskytnutú troma číslami v podobe gravitačného vektora 
+(vzťah~\ref{eq:gg_elements}) by sme dokázali zredukovať na jedno jediné číslo 
+bez straty informácie o poli samotnom.  Skalárna veličina gravitačného poľa sa 
+nazýva \emph{gravitačný potenciál} a označuje sa symbolom $V_\gidx$.
 
 Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia, ktoré, ako sme 
 videli v predchádzajúcej časti, je definované pomocou gravitačnej sily 
@@ -507,46 +512,80 @@ potenciál je skalárna funkcia, ktorá vyhovuje rovnici
 \citep{SansoGeoidDetermination}
 %
 \begin{equation}
-\label{eq:gg_vg}
+\label{eq:gg_grad_vg}
 \vec g_\gidx(P) = \nabla V_\gidx(P)
 \end{equation}
 %
 a spĺňa podmienku
 %
 \begin{equation}
-\label{eq:vg_infty}
-\lim_{r \to \infty} V_\gidx(r) = 0{.}
+\label{eq:vg_at_infty}
+\lim_{P \to \infty} V_\gidx(P) = 0{.}
 \end{equation}
 %
-V rovnici~(\ref{eq:vg_infty}) predstavuje symbol $r$ veľkosť polohového vektora 
-bodu $P$, teda vzdialenosť bodu $P$ od začiatku súradnicového systému.  
-Vzťah~(\ref{eq:gg_vg}) hovorí, že gravitačné zrýchlenie udáva smer a veľkosť 
-najväčšieho nárastu gravitačného potenciálu.  Rovnica~(\ref{eq:vg_infty}) 
-zabezpečuje, že existuje práve jedna funkcia $V_\gidx$ vyhovujúca 
-rovnici~(\ref{eq:gg_vg}).  Keďže podmienka (\ref{eq:vg_infty}) bola zvolená, 
-možno konštatovať, že gravitačný potenciál je \emph{relatívna veličina}.
+Vzťah~(\ref{eq:gg_grad_vg}) hovorí, že vektor gravitačného zrýchlenia udáva 
+smer a veľkosť najväčšieho nárastu gravitačného potenciálu.  
+Rovnica~(\ref{eq:vg_at_infty}) znamená, že gravitačný potenciál nadobúda 
+v nekonečnej vzdialenosti od telesa nulovú hodnotu a zabezpečuje, že existuje 
+práve jedna funkcia $V_\gidx$ vyhovujúca rovnici~(\ref{eq:gg_grad_vg}).  Keďže 
+podmienka (\ref{eq:vg_at_infty}) bola definovaná (zvolená) dodatočne, 
+\emph{gravitačný potenciál je relatívna veličina}.
 
-Použitím rovníc~(\ref{eq:gravitational_vector}), (\ref{eq:r}), (\ref{eq:l}) 
-a (\ref{eq:gg_vg}) nie je náročné presvedčiť sa, že v prípade hmotného bodu je 
-gravitačný potenciál daný vzťahom
+Gravitačný potenciál hmotného bodu je daný nasledovne,
 %
 \begin{equation}
-V_\gidx(P) = \frac{G \, m}{l}
+\label{eq:vg_point_mass}
+V_\gidx(P) = \frac{G \, m}{l}{.}
 \end{equation}
 %
-a že tento vzťah spĺňa podmienku~(\ref{eq:vg_infty}).  V sústave $N$ hmotných 
-bodov je celkový gravitačný potenciál daný súčtom jednotlivých čiastkových 
-príspevkov,
+Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg}) 
+a (\ref{eq:vg_at_infty}).  Vektor gravitačného zrýchlenia $\vec g_\gidx(P)$ 
+získame priamo aplikovaním operátora gradient~(\ref{eq:gradient}) na gravitačný 
+potenciál~(\ref{eq:vg_point_mass}),
+%
+\begin{equation}
+\nabla V_\gidx(P) = G \, m \, \nabla \left( \frac{1}{l} \right) =
+%
+G \, m
+\begin{bmatrix}
+\dfrac{\partial}{\partial x} \left( \dfrac{1}{l} \right)\\[2ex]
+\dfrac{\partial}{\partial y} \left( \dfrac{1}{l} \right)\\[2ex]
+\dfrac{\partial}{\partial z} \left( \dfrac{1}{l} \right)
+\end{bmatrix}
+%
+=
+%
+-G \, m
+%
+\begin{bmatrix}
+\dfrac{x - x_Q}{l^3}{,}\\[2ex]
+\dfrac{y - y_Q}{l^3}{,}\\[2ex]
+\dfrac{z - z_Q}{l^3}
+\end{bmatrix}
+{,}
+\end{equation}
+%
+čím bola dokázaná rovnosť~(\ref{eq:gg_grad_vg}).  Platnosť 
+vzťahu~(\ref{eq:vg_at_infty}), teda
+%
+\begin{equation}
+\lim_{l \to \infty} \frac{G \, m}{l} = 0{,}
+\end{equation}
+%
+je zrejmá.
+
+V sústave $N$ hmotných bodov je celkový gravitačný potenciál daný súčtom 
+čiastkových príspevkov v dôsledku jednotlivých hmotných bodov,
 %
 \begin{equation}
 V_\gidx(P) = \sum_{i = 1}^{N} V_{\gidx,i}(P) = G \sum_{i = 1}^{N}\frac{
-m_i}{l_i}{,}
+m_i}{l_i}{.}
 \end{equation}
 %
-a v prípade všeobecného telesa platí
+V prípade všeobecného telesa platí
 %
 \begin{equation}
-\label{eq:gravitational_vector_integral}
+\label{eq:vg_body}
 V_\gidx(P) = G \iiint_{\tau} \frac{\rho}{l} \diff\tau{.}
 \end{equation}
 
@@ -554,16 +593,13 @@ K interpretácii gravitačného potenciálu je možné pristúpiť aj z fyzikál
 hľadiska.  V tejto práci sa obmedzíme iba na tvrdenie, že hodnota gravitačného 
 potenciálu predstavuje prácu, ktorú musí vykonať gravitačné pole pri 
 premiestnení hmotného bodu s hmotnosťou $1\ \mathrm{kg}$ z miesta s nulovým 
-potenciálom (v geodézii nekonečno) do bodu $P$ 
+potenciálom (v geodézii nekonečno, pozri vzťah~\ref{eq:vg_at_infty}) do bodu $P$ 
 \citep{MacMillan1930,Kellogg1967,TorgeGeodesy}.
 
 Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedokážeme 
 priamo merať.  Vo fyzikálnej geodézii vystupuje často ako neznáma funkcia, 
-ktorú sa snažíme určiť, napríklad z vektora gravitačného zrýchlenia.  Jednou 
-z hlavných úloh fyzikálnej geodézie je teda v istom zmysle obrátiť 
-vzťah~(\ref{eq:gg_vg}) tak, aby v ňom gravitačný potenciál nevystupoval pod 
-operátorom gradient.  V sústave SI má gravitačný potenciál fyzikálnu jednotku 
-$\mathrm{m}^2\ \mathrm{s}^{-2}$.
+ktorú sa snažíme určiť, napríklad z vektora gravitačného zrýchlenia.  V sústave 
+SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2}$.
 
 
 
@@ -573,6 +609,98 @@ $\mathrm{m}^2\ \mathrm{s}^{-2}$.
 % -----------------------------------------------------------------------------
 
 \section{Teória potenciálu}
+
+Rovnica~(\ref{eq:vg_body}) sa v literatúre zvykne nazývať \emph{Newtonov 
+integrál}.  Hovorí, že ak poznáme tvar a priestorové rozloženie hustoty telesa, 
+gravitačný potenciál generovaný týmto telesom môže byť vypočítaný.  Keď 
+uvážime, že v gravitačnom potenciáli je obsiahnutá informácia o celom 
+gravitačnom poli (pozri Kapitolu~\ref{sec:newton_law}), kľúčový význam tohto 
+integrálu pre fyzikálnu geodéziu nadobúda jasnejšie obrysy.  Zo 
+vzťahu~(\ref{eq:vg_body}) je možné odvodiť množstvo ďalších veličín 
+gravitačného poľa, okrem iného i vektor gravitačného 
+zrýchlenia~(\ref{eq:gg_body}) (vzťahy~\ref{eq:vg_body} a \ref{eq:l} dosadíme do 
+\ref{eq:gg_grad_vg}).
+
+Newtonov integrál položil základy novej oblasti matematiky a matematickej 
+fyziky s názvom \emph{teória potenciálu}.  Podľa \cite{MacMillan1930} siahajú 
+jej začiatky k francúzskemu matematikovi, fyzikovi, astronómovi a politikovi 
+P. S. Laplaceovi (1749--1827).  Ten si uvedomil, že gravitačný potenciál 
+každého všeobecného telesa (v zmysle definície z Kapitoly~\ref{sec:gg}) spĺňa 
+určité podmienky, čím vzniká zaujímavá množina funkcií hodná podrobnejšieho 
+štúdia.  Významnosť teórie potenciálu iba potvrdzuje skutočnosť známa približne 
+od čias C. F. Gaussa, a síce že túto teóriu je možné aplikovať nielen na 
+gravitačné pole, ale  napríklad aj na magnetické, či elektrostatické pole 
+(spomeňme si na Coulombov zákon a porovnajme ho s Newtonovým gravitačným 
+zákonom~\ref{eq:newton_law}).  Teória potenciálu teda študuje 
+vzťah~(\ref{eq:vg_body}) vo všeobecnom zmysle, pričom sa zaoberá rozličnými 
+zdrojmi poľa (hmotný bod, hmotná priamka, všeobecné teleso a pod.) s rôznym 
+priestorovým rozložením hustôt (konštantná, premenlivá, kladná, dokonca 
+i záporna a pod.) a neobmedzuje sa iba na gravitačné pole.  Hoci môže azda táto 
+úloha pôsobiť jednoducho, v skutočnosti je nesmierne náročná.  Čo sa napríklad 
+stane v prípade, ak sa v rovnici~(\ref{eq:vg_body}) nachádza výpočtový bod $P$ 
+vo vnútri telesa?  Za takýchto okolností musí nevyhnutne dôjsť k tomu, že 
+súradnice bodu $P$, v ktorom hľadáme gravitačný potenciál, budú identické so 
+súradnicami jedného hmotného elementu $\diff m$, teda ich vzájomná vzdialenosť 
+vystupujúca v menovateli bude $l = 0$.  Konverguje alebo diverguje v takejto 
+situácii integrál~(\ref{eq:vg_body})?  Jednou z mnohých ďalších výziev sú 
+objekty komplikovaného tvaru s náhlymi ostrými zmenami tvaru (napríklad zemský 
+povrch), či s nekonečným rozmerom (napr. nekonečne dlhá doska).  Je preto 
+prirodzené, že tieto matematické výzvy pritiahli záujem brilantných matematikov 
+akými boli, okrem iných, J. L. Lagrange, P. S. Laplace, britský samouk G. Green 
+(1793--1841), či C. F. Gauss.
+
+P. S. Laplace zistil, že gravitačný potenciál každého všeobecného telesa spĺňa 
+v bode $P(x, y, z)$ mimo tohto telesa rovnicu
+%
+\begin{equation}
+\label{eq:vg_laplace_cart}
+\nabla^2 V_\gidx(x, y, z) = \Delta V_\gidx(x, y, z) = \frac{\partial^2 
+V_\gidx(x, y, z)}{\partial x^2}
++ \frac{\partial^2 V_\gidx(x, y, z)}{\partial y^2}
++ \frac{\partial^2 V_\gidx(x, y, z)}{\partial z^2} = 0{.}
+\end{equation}
+%
+Operátor $\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor} 
+a rovnica~(\ref{eq:vg_laplace_cart}) na nazýva \emph{Laplaceova rovnica} pre 
+gravitačný potenciál.
+
+Skúsme overiť, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}) 
+vyhovuje Laplaceovej rovnici.  Budeme uvažovať, že $l > 0$, nakoľko gravitačný 
+potenciál hmotného bodu nie je definovaný pre $l = 0$.  Vypočítajme druhé 
+derivácie gravitačného potenciálu~(\ref{eq:vg_point_mass}),
+%
+\begin{equation}
+\begin{split}
+\frac{\partial^2 V_\gidx(P)}{\partial x^2} = G\, m \, 
+\frac{\partial^2}{\partial x^2} \left( \frac{1}{l} \right) &= -G\, m \, 
+\frac{\partial}{\partial x} \left( \frac{x - x_Q}{l^3} \right) = G \, m \, 
+\left(3 \frac{(x - x_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
+%
+\frac{\partial^2 V_\gidx(P)}{\partial y^2} = G\, m \, 
+\frac{\partial^2}{\partial y^2} \left( \frac{1}{l} \right) &= -G\, m \, 
+\frac{\partial}{\partial y} \left( \frac{y - y_Q}{l^3} \right) = G \, m \, 
+\left(3 \frac{(y - y_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
+%
+\frac{\partial^2 V_\gidx(P)}{\partial z^2} = G\, m \, 
+\frac{\partial^2}{\partial z^2} \left( \frac{1}{l} \right) &= -G\, m \, 
+\frac{\partial}{\partial z} \left( \frac{z - z_Q}{l^3} \right) = G \, m \, 
+\left(3 \frac{(z - z_Q)^2}{l^5} - \frac{1}{l^3} \right){.}
+\end{split}
+\end{equation}
+%
+Súčet členov na pravej strane predošlých troch rovníc je nulový, čím bolo 
+dokázané, že gravitačný potenciál hmotného bodu pre $l > 0$ vyhovuje 
+Laplaceovej diferenciálnej rovnici~(\ref{eq:vg_laplace_cart}).
+
+
+
+\begin{figure}[b]
+\centering
+\input{./fig-cart-sph.pdf_tex}
+\caption{Pravouhlé a sférické súradnice bodu $P$}
+\label{fig:cart_sph}
+\end{figure}
+
 % čo to je?
 % súradnicový systém?
 % polia
