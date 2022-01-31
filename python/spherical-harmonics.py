@@ -13,8 +13,8 @@ m = 0
 zobrazenie_3d = True
 
 # Tvorba gridu na jednotkovej sfére
-lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 76)
-lon = np.linspace(0.0, 2.0 * np.pi, 151)
+lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 181)
+lon = np.linspace(0.0, 2.0 * np.pi, 361)
 lon, lat = np.meshgrid(lon, lat)
 
 # Výpočet sférickej harmonickej funkcie s trigonometrickou funkciou "cos" pre 
@@ -43,6 +43,7 @@ norm = mpl.colors.Normalize()
 ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap=plt.cm.bwr,
                 facecolors=plt.cm.bwr(norm(ynm)))
 ax.set_axis_off()
+ax.set_rasterized(True)
 plt.tight_layout(pad=-2.0)
 plt.show()
 
@@ -52,4 +53,4 @@ if zobrazenie_3d:
     fileout += "-3d.pdf"
 else:
     fileout += ".pdf"
-fig.savefig(fileout)
+fig.savefig(fileout, dpi=300)
