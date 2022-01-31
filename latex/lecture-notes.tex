@@ -543,6 +543,7 @@ a (\ref{eq:vg_at_infty}).  Aplikovaním operátora gradient~(\ref{eq:gradient})
 na gravitačný potenciál~(\ref{eq:vg_point_mass}),
 %
 \begin{equation}
+\label{eq:gg_from_vg_point_mass}
 \nabla V_\gidx(P) = G \, m \, \nabla \left( \frac{1}{l} \right) =
 %
 G \, m
@@ -578,16 +579,29 @@ V sústave $N$ hmotných bodov je celkový gravitačný potenciál daný súčto
 čiastkových príspevkov v dôsledku jednotlivých hmotných bodov,
 %
 \begin{equation}
+\label{eq:vg_N_point_masses}
 V_\gidx(P) = \sum_{i = 1}^{N} V_{\gidx,i}(P) = G \sum_{i = 1}^{N}\frac{
 m_i}{l_i}{.}
 \end{equation}
 %
-V prípade všeobecného telesa následne platí
+Obdobným spôsobom ako v rovnici~(\ref{eq:gg_from_vg_point_mass}) je možné 
+presvedčiť sa, že aplikovaním operátora gradient na gravitačný 
+potenciál~(\ref{eq:vg_N_point_masses}) získame vektor gravitačného 
+zrýchlenia~(\ref{eq:gg_N_point_masses}).  Teda i v prípade gravitačného 
+potenciálu generovaného sústavou $N$ hmotných bodov sú 
+rovnice~(\ref{eq:gg_grad_vg}) a (\ref{eq:vg_at_infty}) splnené.
+
+Použitím podobnej úvahy ako v Kapitole~\ref{sec:gg} zistíme, že gravitačný 
+potenciál všeobecného telesa je daný vzťahom
 %
 \begin{equation}
 \label{eq:vg_body}
 V_\gidx(P) = G \iiint_{\tau} \frac{\rho}{l} \diff\tau{.}
 \end{equation}
+%
+Dôkaz, že i rovnica~(\ref{eq:vg_body}) vyhovuje prijatej definícii gravitačného 
+potenciálu (\ref{eq:gg_grad_vg} a \ref{eq:vg_at_infty}) je možné nájsť 
+napríklad v \cite{MacMillan1930}.
 
 K interpretácii gravitačného potenciálu je možné pristúpiť aj z fyzikálneho 
 hľadiska.  V tejto práci sa obmedzíme iba na tvrdenie, že hodnota gravitačného 
@@ -612,14 +626,13 @@ SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2
 
 Rovnica~(\ref{eq:vg_body}) sa v literatúre zvykne nazývať \emph{Newtonov 
 integrál}.  Hovorí, že ak poznáme tvar a priestorové rozloženie hustoty telesa, 
-gravitačný potenciál generovaný týmto telesom môže byť vypočítaný.  Keď 
-uvážime, že v gravitačnom potenciáli je obsiahnutá informácia o celom 
-gravitačnom poli (pozri Kapitolu~\ref{sec:newton_law}), kľúčový význam tohto 
-integrálu pre fyzikálnu geodéziu nadobúda jasnejšie obrysy.  Zo 
-vzťahu~(\ref{eq:vg_body}) je možné odvodiť množstvo ďalších veličín 
-gravitačného poľa, okrem iného i vektor gravitačného 
-zrýchlenia~(\ref{eq:gg_body}) (vzťahy~\ref{eq:vg_body} a \ref{eq:l} dosadíme do 
-\ref{eq:gg_grad_vg}).
+gravitačný potenciál generovaný týmto telesom môže byť vypočítaný.  Newtonov 
+integrál má kľúčový význam pre fyzikálnu geodéziu, nakoľko v gravitačnom 
+potenciáli je obsiahnutá informácia o celom gravitačnom poli (pozri 
+Kapitolu~\ref{sec:newton_law}).  Zo vzťahu~(\ref{eq:vg_body}) je možné odvodiť 
+množstvo ďalších veličín gravitačného poľa, okrem iného napríklad i vektor 
+gravitačného zrýchlenia~(\ref{eq:gg_body}) (vzťahy~\ref{eq:vg_body} 
+a \ref{eq:l} dosadíme do \ref{eq:gg_grad_vg}).
 
 Newtonov integrál položil základy novej oblasti matematiky a matematickej 
 fyziky s názvom \emph{teória potenciálu}.  Podľa \cite{MacMillan1930} siahajú 
@@ -643,62 +656,166 @@ súradnice bodu $P$, v ktorom hľadáme gravitačný potenciál, budú identick�
 súradnicami jedného hmotného elementu $\diff m$, teda ich vzájomná vzdialenosť 
 vystupujúca v menovateli bude $l = 0$.  Konverguje alebo diverguje v takejto 
 situácii integrál~(\ref{eq:vg_body})?  Jednou z mnohých ďalších výziev sú 
-objekty komplikovaného tvaru s náhlymi ostrými zmenami tvaru (napríklad zemský 
-povrch), či s nekonečným rozmerom (napr. nekonečne dlhá doska).  Je preto 
+gravitačné polia generované objektmi komplikovaného tvaru, napríklad s náhlymi 
+ostrými zmenami tvaru ako je tomu v prípade zemského povrchu.  Je preto 
 prirodzené, že tieto matematické výzvy pritiahli záujem brilantných matematikov 
 akými boli, okrem iných, J. L. Lagrange, P. S. Laplace, britský samouk G. Green 
 (1793--1841), či C. F. Gauss.
 
+\subsection{Laplaceova rovnica}
+
 P. S. Laplace zistil, že gravitačný potenciál každého všeobecného telesa spĺňa 
-v bode $P(x, y, z)$ mimo tohto telesa rovnicu
+v bode $P(x, y, z)$ \emph{mimo tohto telesa} rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
-\nabla^2 V_\gidx(x, y, z) = \Delta V_\gidx(x, y, z) = \frac{\partial^2 
-V_\gidx(x, y, z)}{\partial x^2}
-+ \frac{\partial^2 V_\gidx(x, y, z)}{\partial y^2}
-+ \frac{\partial^2 V_\gidx(x, y, z)}{\partial z^2} = 0{.}
+\nabla^2 V_\gidx = \Delta V_\gidx = \frac{\partial^2 V_\gidx}{\partial x^2}
++ \frac{\partial^2 V_\gidx}{\partial y^2} + \frac{\partial^2 V_\gidx}{\partial 
+z^2} = 0{.}
 \end{equation}
 %
 Operátor $\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor} 
 a rovnica~(\ref{eq:vg_laplace_cart}) na nazýva \emph{Laplaceova rovnica} pre 
-gravitačný potenciál.
+gravitačný potenciál.  Jednou z dôležitých vlastností Laplaceovho operátors je 
+tá, že \emph{lineárny}, teda pre funkcie $f$ a $g$ vyhovujúce 
+rovnici~(\ref{eq:vg_laplace_cart}) a konštantu $c$ platí
+%
+\begin{equation}
+\label{eq:laplace_additivity}
+\nabla^2 \left(f + g \right) = \nabla^2 f + \nabla^2 g
+\end{equation}
+%
+a
+%
+\begin{equation}
+\label{eq:laplace_homogenity}
+\nabla^2 (c \, f) = c \, \nabla^2 f{.}
+\end{equation}
 
 Skúsme overiť, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}) 
 vyhovuje Laplaceovej rovnici.  Budeme uvažovať, že $l > 0$, nakoľko gravitačný 
-potenciál hmotného bodu nie je definovaný pre $l = 0$.  Vypočítajme druhé 
-derivácie gravitačného potenciálu~(\ref{eq:vg_point_mass}),
+potenciál hmotného bodu nie je definovaný pre $l = 0$.  
+S uvážením~(\ref{eq:laplace_homogenity}), postačuje dokázať, že
 %
 \begin{equation}
+\nabla^2 \left( \frac{1}{l} \right) = 0{,}
+\end{equation}
+%
+pričom $c = G \, m$.  Vypočítajme teda druhé parciálne derivácie funkcie $1 
+\slash l$,
+%
+\begin{equation}
+\label{eq:l_2nd_derivatives}
 \begin{split}
-\frac{\partial^2 V_\gidx(P)}{\partial x^2} = G\, m \, 
-\frac{\partial^2}{\partial x^2} \left( \frac{1}{l} \right) &= -G\, m \, 
-\frac{\partial}{\partial x} \left( \frac{x - x_Q}{l^3} \right) = G \, m \, 
-\left(3 \frac{(x - x_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
+\frac{\partial^2}{\partial x^2} \left( \frac{1}{l} \right) &= 
+-\frac{\partial}{\partial x} \left( \frac{x - x_Q}{l^3} \right) = \left(3 
+\frac{(x - x_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
 %
-\frac{\partial^2 V_\gidx(P)}{\partial y^2} = G\, m \, 
-\frac{\partial^2}{\partial y^2} \left( \frac{1}{l} \right) &= -G\, m \, 
-\frac{\partial}{\partial y} \left( \frac{y - y_Q}{l^3} \right) = G \, m \, 
-\left(3 \frac{(y - y_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
+\frac{\partial^2}{\partial y^2} \left( \frac{1}{l} \right) &= 
+-\frac{\partial}{\partial y} \left( \frac{y - y_Q}{l^3} \right) = \left(3 
+\frac{(y - y_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
 %
-\frac{\partial^2 V_\gidx(P)}{\partial z^2} = G\, m \, 
-\frac{\partial^2}{\partial z^2} \left( \frac{1}{l} \right) &= -G\, m \, 
-\frac{\partial}{\partial z} \left( \frac{z - z_Q}{l^3} \right) = G \, m \, 
-\left(3 \frac{(z - z_Q)^2}{l^5} - \frac{1}{l^3} \right){.}
+\frac{\partial^2}{\partial z^2} \left( \frac{1}{l} \right) &= 
+-\frac{\partial}{\partial z} \left( \frac{z - z_Q}{l^3} \right) = \left(3 
+\frac{(z - z_Q)^2}{l^5} - \frac{1}{l^3} \right){.}
 \end{split}
 \end{equation}
 %
 Súčet členov na pravej strane predošlých troch rovníc je nulový, čím bolo 
-dokázané, že gravitačný potenciál hmotného bodu pre $l > 0$ vyhovuje 
-Laplaceovej diferenciálnej rovnici~(\ref{eq:vg_laplace_cart}).
+dokázané, že gravitačný potenciál hmotného bodu vyhovuje Laplaceovej 
+diferenciálnej rovnici~(\ref{eq:vg_laplace_cart}) pre $l > 0$.
 
+Využitím vzťahov~(\ref{eq:l_2nd_derivatives}) a vlastností Laplaceovho 
+operátora~(\ref{eq:laplace_additivity}) a (\ref{eq:laplace_homogenity}) je 
+možné presvedčiť sa, že Laplaceovej rovnici vyhovuje i gravitačný potenciál 
+generovaný sústavou $N$ hmotných bodov,
+%
+\begin{equation}
+\nabla^2 \left( \sum_{i = 1}^N V_{\gidx,i} \right) = \sum_{i = 1}^N \nabla^2 
+V_{\gidx,i} = 0{,}
+\end{equation}
+%
+ako aj gravitačný potenciál všeobecného telesa v bode \emph{mimo telesa},
+%
+\begin{equation}
+\nabla^2 V_\gidx = G\, \iiint_\tau \rho \, \left[ \frac{\partial^2}{\partial 
+x^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial 
+y^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial 
+z^2}\left(\frac{1}{l}\right) \right] \diff\tau = 0{.}
+\end{equation}
 
+Podľa \cite{MacMillan1930} Laplace predstavil 
+rovnicu~(\ref{eq:vg_laplace_cart}) po prvýkrát nie v pravouhlých súradniciach 
+$x$, $y$ a $z$, ale vo sférických súradniciach,
+%
+\begin{equation}
+\label{eq:vg_laplace_sph}
+\nabla^2 V_\gidx = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 
+\frac{\partial V_\gidx}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi} 
+\frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial 
+V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \, 
+\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{,}
+\end{equation}
+%
+kde $r$ je sprievodič, $\varphi$ je sférická šírka a $\lambda$ je sférická 
+dĺžka bodu $P$ (Obrázok~\ref{fig:cart_sph}).  Existuje tiež všeobecný zápis 
+Laplaceovej rovnice v ľubovoľných pravouhlých súradniciach \citep[pozri 
+napríklad][]{MoritzPhysicalGeodesy}.
 
 \begin{figure}[b]
 \centering
 \input{./fig-cart-sph.pdf_tex}
 \caption{Pravouhlé a sférické súradnice bodu $P$}
 \label{fig:cart_sph}
+\end{figure}
+
+
+\subsection{Harmonická funkcia}
+
+Laplaceovej rovnici vyhovuje nielen gravitačný potenciál mimo telesa, ale 
+nekonečné množstvo funkcií.  Zaveďme preto pojem \emph{harmonická funkcia}.  
+Harmonická funkcia je taká funkcia, ktorá má spojité prvé a druhé parciálne 
+derivácie na otvorenej množine $\Omega$ a vyhovuje Laplaceovej rovnici
+%
+\begin{equation}
+\nabla^2 f = 0
+\end{equation}
+%
+v každom bode oblasti $\Omega$.\footnote{Oblasť $\Omega$ môže v prípade 
+gravitačného poľa predstavovať napríklad priestor mimo telesa, ktoré generuje 
+gravitačné pole.}
+
+Každá harmonická funkcia je \emph{analytická} v oblasti, v ktorej vyhovuje 
+Laplaceovej rovnici \citep{MoritzPhysicalGeodesy}.  To znamená, že každá 
+harmonická funkcia je spojitá, má spojité všetky derivácie a v každom bode 
+oblasti $\Omega$ ju možno rozvinúť do mocninového radu (napríklad Taylorovho), 
+ktorý konverguje.  Táto vlastnosť je kľúčová pre fyzikálnu geodéziu, preto sa 
+pri nej na chvíľku pristavme.
+
+Uvažujme všeobecné teleso generujúce gravitačné pole.  Nech sú dané dva body, 
+$P_1(r, \varphi, \lambda)$ a $P_2(r + \Delta r, \varphi, \lambda)$, $\Delta 
+r > 0$, nachádzajúce sa mimo tohto telesa a na tej istej spojnici so začiatkom 
+súradnicového systému, ktorý sa nachádza v ťažisku telesa.  Vieme, že 
+gravitačný potenciál je harmonická, a teda analytická, funkcia, preto ho môžeme 
+v bode $P_1$ rozvinúť do Taylorovho radu, ktorý konverguje,
+%
+\begin{equation}
+V_\gidx(P_2) = \sum_{i = 0}^\infty \frac{1}{i!} \, \frac{\partial^i 
+V_\gidx(P_1)}{\partial r^i} \, \Delta r^i{.}
+\end{equation}
+%
+Táto rovnica hovorí, že ak poznáme všetky derivácie gravitačného potenciálu 
+v bode $P_1$ v smere sprievodiča $r$ a ak poznáme vzdialenosť $\Delta r$, je 
+možné vypočítať (predikovať) hodnotu gravitačného potenciálu v inom bode $P_2$!  
+Inými slovami, z lokálnych vlastností gravitačného potenciálu, ktoré sú 
+obsiahnuté v člene $\partial^i V_\gidx \slash \partial r^i$, dokážeme určiť 
+hodnotu gravitačného potenciálu v bode.
+
+\begin{figure}[b]
+\centering
+\input{./fig-analytical-continuation.pdf_tex}
+\caption{Analytické pokračovanie gravitačného poľa z bodu $P_1$ do bodu $P_2$}
+\label{fig:analytical_continuation}
 \end{figure}
 
 % čo to je?
