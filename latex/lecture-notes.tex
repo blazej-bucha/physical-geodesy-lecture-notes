@@ -145,6 +145,7 @@
 \newcommand{\diff}{\mathrm d}
 \newcommand{\grad}{\mathrm{grad}}
 \newcommand{\gidx}{\mathrm g}
+\newcommand{\cidx}{\mathrm c}
 \let\vec\mathbf
 
 % Let's change the "Dodatok" label of chapters after Conclusions to "Príloha"
@@ -183,7 +184,8 @@
 
 % -----------------------------------------------------------------------------
 
-\chapter{Fyzikálna geodézia}
+\chapter{Gravitačné a tiažové pole}
+\label{sec:gravitational_and_gravity_field}
 
 Tvar Zeme možno definovať niekoľkými spôsobmi v závislosti od kontextu 
 \citep{MoritzTheFigureOfTheEarth}.  Azda najprirodzenejšie je definovať tvar 
@@ -223,24 +225,12 @@ znamená študovať aj tiažové pole Zeme.
 \section{Newtonov gravitačný zákon}
 \label{sec:newton_law}
 
-%Uvažujme hmotný bod o hmotnosti $m$.  V zmysle gravitačného zákona 
-%formulovaného I. Newtonom (1642--1727) tento hmotný bod generuje gravitačný 
-%potenciál $V$.  Vo vzdialenosti $l$ od tohto hmotného je gravitačný potenciál 
-%daný vzťahom
-%%
-%\begin{equation}
-%V = G \frac{m}{l}{,}
-%\end{equation}
-%%
-%kde $G = 6.6742 \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1} 
-%\ \mathrm{s}^{-2}$ je Newtonova gravitačná konštanta.
-
 Dva hmotné body $P$ a $Q$ nachádzajúce sa od seba vo vzdialenosti $l$ sa 
 navzájom priťahujú \emph{gravitačnou silou}
 %
 \begin{equation}
 \label{eq:newton_law}
-\vec F = -G \frac{m_P \, m_Q}{l^2} \, \frac{\vec r}{l}{.}
+\vec F_\gidx = -G \frac{m_P \, m_Q}{l^2} \, \frac{\vec r}{l}{.}
 \end{equation}
 %
 Symbol $G$ označuje gravitačnú konštantu, $m_P$ a $m_Q$ predstavujú hmotnosti 
@@ -251,7 +241,9 @@ v bode $P$ a smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
 \begin{figure}[b]
 \centering
 \input{./fig-newton-law.pdf_tex}
-\caption{Gravitačná sila $\vec F$ pôsobiaca medzi hmotnými bodmi $P$ a $Q$} 
+\caption{Gravitačná sila $\vec F_\gidx$ pôsobiaca medzi hmotnými bodmi $P$ 
+a $Q$.  Vektor $\vec F_\gidx$ je z dôvodov vizualizácie mierne odsadený od 
+spojnice bodov $P$ a $Q$}
 \label{fig:newton_law}
 \end{figure}
 
@@ -301,7 +293,8 @@ zrýchlenie},
 %
 \begin{equation}
 \label{eq:gg_point_mass}
-\vec g_\gidx(P) = \frac{\vec F}{m_P} = -G \frac{m}{l^2} \, \frac{\vec r}{l}{,}
+\vec g_\gidx(P) = \frac{\vec F_\gidx}{m_P} = -G \frac{m}{l^2} \, \frac{\vec 
+r}{l}{,}
 \end{equation}
 %
 kde $m = m_Q$.  Rovnica~(\ref{eq:gg_point_mass}) hovorí, že hmotný 
@@ -329,7 +322,7 @@ prípade dané vektorovým súčtom,
 \centering
 \input{./fig-gg-n-point-masses.pdf_tex}
 \caption{Vektory gravitačného zrýchlenia v bode $P$ generované sústavou piatich 
-hmotných bodov ***CENTROVAT OBRAZOK***}
+hmotných bodov}
 \label{fig:gg_n_point_masses}
 \end{figure}
 
@@ -435,7 +428,7 @@ g_{\gidx,z}(P)
 {.}
 \end{equation}
 %
-V niektorých situáciach je výhodnejšie pracovať so skalárnou veličinou, teda 
+V niektorých situáciách je výhodnejšie pracovať so skalárnou veličinou, teda 
 takou, ktorá má v bode~$P$ definované práve jedno reálne číslo.  Tento prístup 
 je mladší ako Newtonov gravitačný zákon zhruba o jedno storočie 
 \citep{MacMillan1930,Jekeli2015} a fenomén gravitácie chápe ako \emph{pole}, 
@@ -498,7 +491,7 @@ informácie patrí smer a veľkosť najväčšieho nárastu funkcie, ale aj popi
 rýchlosti jej zmeny v smere súradnicových osí.\footnote{Rýchlosť zmeny funkcie 
 je tu myslená v priestorovom zmysle, nie časovom.}  Vhodnou aplikáciou 
 rotačných matíc je možné následne získať informáciu o rýchlosti zmeny funkcie 
-v ľubovoľnom smere, čo je v mnohých situáciach veľmi nápomocné.  Ak si 
+v ľubovoľnom smere, čo je v mnohých situáciách veľmi nápomocné.  Ak si 
 predstavíme povrch Zeme ako dvojrozmernú funkciu zemepisnej šírky a dĺžky, 
 potom aplikáciou operátora gradient na túto funkciu získame (nielen) 
 v kopcovitom teréne informáciu o smere, ktorým sa z tohto bodu zrejme nechceme 
@@ -627,12 +620,9 @@ SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2
 Rovnica~(\ref{eq:vg_body}) sa v literatúre zvykne nazývať \emph{Newtonov 
 integrál}.  Hovorí, že ak poznáme tvar a priestorové rozloženie hustoty telesa, 
 gravitačný potenciál generovaný týmto telesom môže byť vypočítaný.  Newtonov 
-integrál má kľúčový význam pre fyzikálnu geodéziu, nakoľko v gravitačnom 
+integrál má vo fyzikálnej geodézii kľúčový význam, nakoľko v gravitačnom 
 potenciáli je obsiahnutá informácia o celom gravitačnom poli (pozri 
-Kapitolu~\ref{sec:newton_law}).  Zo vzťahu~(\ref{eq:vg_body}) je možné odvodiť 
-množstvo ďalších veličín gravitačného poľa, okrem iného napríklad i vektor 
-gravitačného zrýchlenia~(\ref{eq:gg_body}) (vzťahy~\ref{eq:vg_body} 
-a \ref{eq:l} dosadíme do \ref{eq:gg_grad_vg}).
+Kapitolu~\ref{sec:newton_law}).
 
 Newtonov integrál položil základy novej oblasti matematiky a matematickej 
 fyziky s názvom \emph{teória potenciálu}.  Podľa \cite{MacMillan1930} siahajú 
@@ -646,26 +636,35 @@ gravitačné pole, ale  napríklad aj na magnetické, či elektrostatické pole
 (spomeňme si na Coulombov zákon a porovnajme ho s Newtonovým gravitačným 
 zákonom~\ref{eq:newton_law}).  Teória potenciálu teda študuje 
 vzťah~(\ref{eq:vg_body}) vo všeobecnom zmysle, pričom sa zaoberá rozličnými 
-zdrojmi poľa (hmotný bod, hmotná priamka, všeobecné teleso a pod.) s rôznym 
-priestorovým rozložením hustôt (konštantná, premenlivá, kladná, dokonca 
-i záporna a pod.) a neobmedzuje sa iba na gravitačné pole.  Hoci môže azda táto 
-úloha pôsobiť jednoducho, v skutočnosti je nesmierne náročná.  Čo sa napríklad 
-stane v prípade, ak sa v rovnici~(\ref{eq:vg_body}) nachádza výpočtový bod $P$ 
-vo vnútri telesa?  Za takýchto okolností musí nevyhnutne dôjsť k tomu, že 
-súradnice bodu $P$, v ktorom hľadáme gravitačný potenciál, budú identické so 
-súradnicami jedného hmotného elementu $\diff m$, teda ich vzájomná vzdialenosť 
-vystupujúca v menovateli bude $l = 0$.  Konverguje alebo diverguje v takejto 
-situácii integrál~(\ref{eq:vg_body})?  Jednou z mnohých ďalších výziev sú 
-gravitačné polia generované objektmi komplikovaného tvaru, napríklad s náhlymi 
-ostrými zmenami tvaru ako je tomu v prípade zemského povrchu.  Je preto 
-prirodzené, že tieto matematické výzvy pritiahli záujem brilantných matematikov 
-akými boli, okrem iných, J. L. Lagrange, P. S. Laplace, britský samouk G. Green 
+zdrojmi poľa (hmotný bod, hmotná priamka, nekonečne tenká vrstva, všeobecné 
+teleso a pod.) s rôznym priestorovým rozložením hustôt (konštantná, premenlivá, 
+kladná, dokonca i záporná a pod.) a neobmedzuje sa iba na gravitačné pole.  
+Táto úloha je nesmierne náročná.  Čo sa napríklad stane v prípade, ak sa 
+v rovnici~(\ref{eq:vg_body}) nachádza výpočtový bod $P$ vo vnútri telesa?  Za 
+takýchto okolností musí nevyhnutne dôjsť k tomu, že súradnice bodu $P$, 
+v ktorom hľadáme gravitačný potenciál, budú identické so súradnicami jedného 
+hmotného elementu $\diff m$, teda ich vzájomná vzdialenosť vystupujúca 
+v menovateli bude $l = 0$.  Konverguje alebo diverguje v takejto situácii 
+integrál~(\ref{eq:vg_body})?  Jednou z mnohých ďalších výziev sú gravitačné 
+polia generované objektmi komplikovaného tvaru, napríklad s náhlymi ostrými 
+zmenami tvaru ako je tomu v prípade zemského povrchu.  Je preto prirodzené, že 
+tieto matematické výzvy pritiahli záujem brilantných matematikov akými boli, 
+okrem iných, J. L. Lagrange, P. S. Laplace, britský samouk G. Green 
 (1793--1841), či C. F. Gauss.
 
+V nasledujúcich troch kapitolách (\ref{sec:laplace_equation}~-- 
+\ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými 
+vlastnosťami gravitačného potenciálu, ktoré vyplývajú z teórie potenciálu.  
+Vlastnosti budú popísané pre gravitačný potenciál mimo telesa, vnútri telesa 
+a na jeho povrchu.
+
+
+
 \subsection{Laplaceova rovnica}
+\label{sec:laplace_equation}
 
 P. S. Laplace zistil, že gravitačný potenciál každého všeobecného telesa spĺňa 
-v bode $P(x, y, z)$ \emph{mimo tohto telesa} rovnicu
+v bode $P(x, y, z)$ \emph{mimo} tohto telesa rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
@@ -676,9 +675,8 @@ z^2} = 0{.}
 %
 Operátor $\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor} 
 a rovnica~(\ref{eq:vg_laplace_cart}) na nazýva \emph{Laplaceova rovnica} pre 
-gravitačný potenciál.  Jednou z dôležitých vlastností Laplaceovho operátors je 
-tá, že \emph{lineárny}, teda pre funkcie $f$ a $g$ vyhovujúce 
-rovnici~(\ref{eq:vg_laplace_cart}) a konštantu $c$ platí
+gravitačný potenciál.  Laplaceov operátor je \emph{lineárny}, teda pre funkcie 
+$f$ a $g$ vyhovujúce rovnici~(\ref{eq:vg_laplace_cart}) a konštantu $c$ platí
 %
 \begin{equation}
 \label{eq:laplace_additivity}
@@ -701,8 +699,8 @@ S uvážením~(\ref{eq:laplace_homogenity}), postačuje dokázať, že
 \nabla^2 \left( \frac{1}{l} \right) = 0{,}
 \end{equation}
 %
-pričom $c = G \, m$.  Vypočítajme teda druhé parciálne derivácie funkcie $1 
-\slash l$,
+pretože $G \, m$ je konštanta, teda $G \, m = c$.  Vypočítajme teda druhé 
+parciálne derivácie funkcie $1 \slash l$,
 %
 \begin{equation}
 \label{eq:l_2nd_derivatives}
@@ -762,7 +760,7 @@ dĺžka bodu $P$ (Obrázok~\ref{fig:cart_sph}).  Existuje tiež všeobecný záp
 Laplaceovej rovnice v ľubovoľných pravouhlých súradniciach \citep[pozri 
 napríklad][]{MoritzPhysicalGeodesy}.
 
-\begin{figure}[b]
+\begin{figure}
 \centering
 \input{./fig-cart-sph.pdf_tex}
 \caption{Pravouhlé a sférické súradnice bodu $P$}
@@ -781,9 +779,7 @@ derivácie na otvorenej množine $\Omega$ a vyhovuje Laplaceovej rovnici
 \nabla^2 f = 0
 \end{equation}
 %
-v každom bode oblasti $\Omega$.\footnote{Oblasť $\Omega$ môže v prípade 
-gravitačného poľa predstavovať napríklad priestor mimo telesa, ktoré generuje 
-gravitačné pole.}
+v každom bode oblasti $\Omega$.
 
 Každá harmonická funkcia je \emph{analytická} v oblasti, v ktorej vyhovuje 
 Laplaceovej rovnici \citep{MoritzPhysicalGeodesy}.  To znamená, že každá 
@@ -795,40 +791,118 @@ pri nej na chvíľku pristavme.
 Uvažujme všeobecné teleso generujúce gravitačné pole.  Nech sú dané dva body, 
 $P_1(r, \varphi, \lambda)$ a $P_2(r + \Delta r, \varphi, \lambda)$, $\Delta 
 r > 0$, nachádzajúce sa mimo tohto telesa a na tej istej spojnici so začiatkom 
-súradnicového systému, ktorý sa nachádza v ťažisku telesa.  Vieme, že 
-gravitačný potenciál je harmonická, a teda analytická, funkcia, preto ho môžeme 
-v bode $P_1$ rozvinúť do Taylorovho radu, ktorý konverguje,
+súradnicového systému, ktorý sa nachádza v ťažisku telesa 
+(Obrázok~\ref{fig:analytical_continuation}).  Keďže gravitačný potenciál mimo 
+telesa je harmonická, a teda analytická, funkcia, môžeme ho v bode $P_1$ 
+rozvinúť do Taylorovho radu, ktorý konverguje,
 %
 \begin{equation}
+\label{eq:vg_analytical_continuation}
 V_\gidx(P_2) = \sum_{i = 0}^\infty \frac{1}{i!} \, \frac{\partial^i 
 V_\gidx(P_1)}{\partial r^i} \, \Delta r^i{.}
 \end{equation}
-%
-Táto rovnica hovorí, že ak poznáme všetky derivácie gravitačného potenciálu 
-v bode $P_1$ v smere sprievodiča $r$ a ak poznáme vzdialenosť $\Delta r$, je 
-možné vypočítať (predikovať) hodnotu gravitačného potenciálu v inom bode $P_2$!  
-Inými slovami, z lokálnych vlastností gravitačného potenciálu, ktoré sú 
-obsiahnuté v člene $\partial^i V_\gidx \slash \partial r^i$, dokážeme určiť 
-hodnotu gravitačného potenciálu v bode.
 
-\begin{figure}[b]
+\begin{figure}
 \centering
 \input{./fig-analytical-continuation.pdf_tex}
 \caption{Analytické pokračovanie gravitačného poľa z bodu $P_1$ do bodu $P_2$}
 \label{fig:analytical_continuation}
 \end{figure}
 
-% čo to je?
-% súradnicový systém?
-% polia
-% skalár, vektor, tenzor + ukážky + kódy
-% gradient, divergencia, rotácia
-% Newtonov gravitačný zákon + pár slov k teórii relativity
+Rovnica~(\ref{eq:vg_analytical_continuation}) hovorí, že z lokálnych vlastností 
+gravitačného potenciálu, ktoré sú obsiahnuté v deriváciách $\partial^i V_\gidx 
+\slash \partial r^i$, dokážeme určiť hodnotu gravitačného potenciálu 
+v ľubovoľnom bode v radiálnom smere pre $\Delta r > 0$.  Tento proces sa nazýva 
+\emph{analytické pokračovanie} gravitačného potenciálu.  Čím väčšia vzdialenosť 
+$\Delta r$ na ktorú predikujeme gravitačný potenciál, tým pomalšie 
+rad~(\ref{eq:vg_analytical_continuation}) konverguje a naopak.  Analyticky 
+pokračovať je možné aj v iných smeroch ako v radiálnom.  V takom prípade je 
+potrebné derivovať gravitačný potenciál v príslušnom smere.  Rovnako tak je 
+možné analyticky pokračovať aj iné veličiny gravitačného poľa, napríklad vektor 
+gravitačného zrýchlenia,
+%
+\begin{equation}
+\vec g_\gidx(P_2) = \sum_{i = 0}^{\infty} \frac{1}{i!} \, \frac{\partial^i \vec 
+g_\gidx(P_1)}{\partial r^i} \, \Delta r^i{.}
+\end{equation}
+
+Na záver dodajme, že situácia je výrazne komplikovanejšia, ak analyticky 
+pokračujeme z bodu $P_2$ do bodu $P_1$.  Táto úloha je zvyčajne zle podmienená 
+\citep{SansoGeodeticBoundaryValueProblem}.  V praktických numerických 
+aplikáciách to znamená, že i malá chyba vo vstupných dátach spôsobuje veľké 
+chyby vo výsledkoch.  Takáto úloha sa nazýva \emph{numericky nestabilná}.  
+
+\subsection{Poissonova rovnica}
+\label{sec:poisson_equation}
+
+Z Kapitoly~\ref{sec:laplace_equation} vieme, že Laplaceova rovnica pre 
+gravitačný potenciál platí v každom bode mimo telesa.  \emph{Vo vnútri} telesa 
+platí \emph{Poissonova rovnica},
+%
+\begin{equation}
+\label{eq:vg_poisson_equation}
+\nabla^2 V_\gidx(P) = -4 \pi \, G \, \rho(P){,}
+\end{equation}
+%
+kde $\rho(P)$ je hustota v bode $P$.  Odvodenie Poissonovej rovnice je možné 
+nájsť napríklad v \cite{MacMillan1930}, \cite{Kellogg1967} či 
+\cite{SansoGeoidDetermination}.
+
+Je vhodné spomenúť, že Poissonovu rovnicu je možné vnímať ako zovšeobecnenie 
+Laplaceovej rovnice.  Ak sa bod $P$ vo vzťahu~(\ref{eq:vg_poisson_equation}) 
+nachádza mimo telesa generujúceho potenciál, jeho hustota $\rho(P) = 0$, čím 
+dostávame Laplaceovu rovnicu~(\ref{eq:vg_laplace_cart}).
+
+Posledná oblasť, v ktorej sa môže nachádzať bod $P$, no nie je pokrytá ani 
+Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Vo 
+všeobecnosti, druhé derivácie gravitačného potenciálu vystupujúce v operátore 
+$\nabla^2$ (pozri rovnice~\ref{eq:vg_laplace_cart} a \ref{eq:vg_laplace_sph}) 
+nie sú v takom prípade definované \citep{Kellogg1967}.  Dôvodom je nespojitosť 
+hustoty $\rho$, ktorá sa na povrchu mení z $\rho \neq 0$ na 0, resp. naopak, 
+v závislosti od smeru prechodu.
 
 
 
 
 
+\section{Odstredivé pole a tiažové pole}
+
+Gravitačné pole Zeme a nebeských telies je väčšinou študované v súradnicovom 
+systéme, ktorý má začiatok v ťažisku telesa a je pevne spojený s telesom.  Ak 
+teleso rotuje, rotuje s ním teda i súradnicovým systém.  V takomto súradnicovom 
+systéme pôsobí na objekty nielen gravitačná sila $\vec F_\gidx$ v zmysle 
+Newtonovho gravitačného zákona (Kapitola~\ref{sec:newton_law}), ale 
+i \emph{odstredivá sila} $\vec F_\cidx$.
+
+Uvažujme trojrozmerný pravouhlý súradnicový systém so začiatkom v ťažisku 
+telesa a s osou $z$, ktorá je totožná s osou rotácie telesa.  Nech súradnicový 
+systém aj teleso rotujú konštantnou \emph{uhlovou rýchlosťou rotácie} $\omega$.  
+Potom \emph{odstredivé zrýchlenie} udeľované hmotnému bodu $P(x, y, z)$ 
+s hmotnosťou $m = 1\ \mathrm{kg}$ je dané vzťahom
+%
+\begin{equation}
+\label{eq:fc}
+\vec g_\cidx = \boldsymbol{\omega}^2 = 
+%
+\begin{bmatrix}
+\omega^2 \, x\\
+\omega^2 \, y\\
+0
+\end{bmatrix}
+{,}
+\end{equation}
+%
+kde $\boldsymbol{\omega}$ je vektor konštantnej uhlovej rýchlosti rotácie 
+s veľkosťou
+%
+\begin{equation}
+| \boldsymbol{\omega} | = \omega^2 \sqrt{x^2 + y^2}{,}
+\end{equation}
+%
+pričom $\sqrt{x^2 + y^2}$ je vzdialenosť hmotného bodu $P$ od osi 
+rotácie.
+
+***Odstredivá sila zmenšuje tiažové zrýchlenie***
 
 % -----------------------------------------------------------------------------
 
