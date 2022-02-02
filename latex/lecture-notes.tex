@@ -28,6 +28,8 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{accsupp}
+\usepackage[unicode, pdfborder={0 
+0 0},colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \linespread{1.2}
 
@@ -222,6 +224,11 @@ skutočnosť, že i v tomto prípade je tvar Zeme určovaný z informácie o tia
 poli.  Študovať tvar Zeme, čo je jedna zo základných úloh geodézie, teda 
 znamená študovať aj tiažové pole Zeme.
 
+
+
+
+
+
 \section{Newtonov gravitačný zákon}
 \label{sec:newton_law}
 
@@ -281,6 +288,11 @@ relativity.  Tá hovorí, že žiadny signál, a teda ani ten gravitačný, sa n
 sú však chyby spôsobené nepresnosťami Newtonovho gravitačného zákona väčšinou 
 zanedbateľné, a tak táto teória, aj dnes, viac ako tristo rokov od jej vzniku, 
 tvorí chrbtovú kosť fyzikálnej geodézie.
+
+
+
+
+
 
 \subsection{Gravitačné zrýchlenie}
 \label{sec:gg}
@@ -411,6 +423,11 @@ Galileiho, prípadne s jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\
 \mathrm{s}^{-2}$ a $1\ \upmu \mathrm{Gal} = 10^{-8}\ \mathrm{m}\ 
 \mathrm{s}^{-2}$.
 
+
+
+
+
+
 \subsection{Gravitačný potenciál}
 \label{sec:vg}
 
@@ -431,7 +448,7 @@ g_{\gidx,z}(P)
 V niektorých situáciách je výhodnejšie pracovať so skalárnou veličinou, teda 
 takou, ktorá má v bode~$P$ definované práve jedno reálne číslo.  Tento prístup 
 je mladší ako Newtonov gravitačný zákon zhruba o jedno storočie 
-\citep{MacMillan1930,Jekeli2015} a fenomén gravitácie chápe ako \emph{pole}, 
+\citep{MacMillan1930,Jekeli2015}.  Fenomén gravitácie chápe ako \emph{pole}, 
 ktorého vlastnosti môžu byť popísané rôznymi vzájomne súvisiacimi veličinami, 
 pričom však ide stále o to isté pole.  S konceptom potenciálu poľa prišiel 
 podľa \cite{MacMillan1930} taliansky matematik a astronóm J. L. Lagrange 
@@ -584,8 +601,10 @@ zrýchlenia~(\ref{eq:gg_N_point_masses}).  Teda i v prípade gravitačného
 potenciálu generovaného sústavou $N$ hmotných bodov sú 
 rovnice~(\ref{eq:gg_grad_vg}) a (\ref{eq:vg_at_infty}) splnené.
 
-Použitím podobnej úvahy ako v Kapitole~\ref{sec:gg} zistíme, že gravitačný 
-potenciál všeobecného telesa je daný vzťahom
+Od gravitačného potenciálu, ktorý je generovaný $N$ hmotnými bodmi prejdeme ku 
+gravitačnému potenciálu všeobecného telesa podobnou úvahou ako 
+v Kapitole~\ref{sec:gg}.  Teleso rozdelíme na diferenciálne hmotné elementy 
+$\diff m$ a gravitačný potenciál získame integráciou,
 %
 \begin{equation}
 \label{eq:vg_body}
@@ -593,8 +612,8 @@ V_\gidx(P) = G \iiint_{\tau} \frac{\rho}{l} \diff\tau{.}
 \end{equation}
 %
 Dôkaz, že i rovnica~(\ref{eq:vg_body}) vyhovuje prijatej definícii gravitačného 
-potenciálu (\ref{eq:gg_grad_vg} a \ref{eq:vg_at_infty}) je možné nájsť 
-napríklad v \cite{MacMillan1930}.
+potenciálu (\ref{eq:gg_grad_vg} a \ref{eq:vg_at_infty}) vynecháme, no je 
+dostupný napríklad v \cite{MacMillan1930}.
 
 K interpretácii gravitačného potenciálu je možné pristúpiť aj z fyzikálneho 
 hľadiska.  V tejto práci sa obmedzíme iba na tvrdenie, že hodnota gravitačného 
@@ -612,8 +631,6 @@ SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2
 
 
 
-
-% -----------------------------------------------------------------------------
 
 \section{Teória potenciálu}
 
@@ -639,9 +656,9 @@ vzťah~(\ref{eq:vg_body}) vo všeobecnom zmysle, pričom sa zaoberá rozličným
 zdrojmi poľa (hmotný bod, hmotná priamka, nekonečne tenká vrstva, všeobecné 
 teleso a pod.) s rôznym priestorovým rozložením hustôt (konštantná, premenlivá, 
 kladná, dokonca i záporná a pod.) a neobmedzuje sa iba na gravitačné pole.  
-Táto úloha je nesmierne náročná.  Čo sa napríklad stane v prípade, ak sa 
-v rovnici~(\ref{eq:vg_body}) nachádza výpočtový bod $P$ vo vnútri telesa?  Za 
-takýchto okolností musí nevyhnutne dôjsť k tomu, že súradnice bodu $P$, 
+Táto úloha je nesmierne náročná.  Čo sa napríklad stane v prípade, ak 
+v rovnici~(\ref{eq:vg_body}) sa nachádza výpočtový bod $P$ vo vnútri telesa?  
+Za takýchto okolností musí nevyhnutne dôjsť k tomu, že súradnice bodu $P$, 
 v ktorom hľadáme gravitačný potenciál, budú identické so súradnicami jedného 
 hmotného elementu $\diff m$, teda ich vzájomná vzdialenosť vystupujúca 
 v menovateli bude $l = 0$.  Konverguje alebo diverguje v takejto situácii 
@@ -655,8 +672,10 @@ okrem iných, J. L. Lagrange, P. S. Laplace, britský samouk G. Green
 V nasledujúcich troch kapitolách (\ref{sec:laplace_equation}~-- 
 \ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými 
 vlastnosťami gravitačného potenciálu, ktoré vyplývajú z teórie potenciálu.  
-Vlastnosti budú popísané pre gravitačný potenciál mimo telesa, vnútri telesa 
-a na jeho povrchu.
+Vlastnosti budú popísané pre gravitačný potenciál mimo telesa a vo vnútri 
+telesa.
+
+
 
 
 
@@ -768,6 +787,10 @@ napríklad][]{MoritzPhysicalGeodesy}.
 \end{figure}
 
 
+
+
+
+
 \subsection{Harmonická funkcia}
 
 Laplaceovej rovnici vyhovuje nielen gravitačný potenciál mimo telesa, ale 
@@ -785,8 +808,8 @@ Každá harmonická funkcia je \emph{analytická} v oblasti, v ktorej vyhovuje
 Laplaceovej rovnici \citep{MoritzPhysicalGeodesy}.  To znamená, že každá 
 harmonická funkcia je spojitá, má spojité všetky derivácie a v každom bode 
 oblasti $\Omega$ ju možno rozvinúť do mocninového radu (napríklad Taylorovho), 
-ktorý konverguje.  Táto vlastnosť je kľúčová pre fyzikálnu geodéziu, preto sa 
-pri nej na chvíľku pristavme.
+ktorý konverguje.  Táto vlastnosť je dôležitá, preto sa pri nej na chvíľku 
+pristavme.
 
 Uvažujme všeobecné teleso generujúce gravitačné pole.  Nech sú dané dva body, 
 $P_1(r, \varphi, \lambda)$ a $P_2(r + \Delta r, \varphi, \lambda)$, $\Delta 
@@ -832,6 +855,11 @@ pokračujeme z bodu $P_2$ do bodu $P_1$.  Táto úloha je zvyčajne zle podmiene
 aplikáciách to znamená, že i malá chyba vo vstupných dátach spôsobuje veľké 
 chyby vo výsledkoch.  Takáto úloha sa nazýva \emph{numericky nestabilná}.  
 
+
+
+
+
+
 \subsection{Poissonova rovnica}
 \label{sec:poisson_equation}
 
@@ -848,10 +876,10 @@ kde $\rho(P)$ je hustota v bode $P$.  Odvodenie Poissonovej rovnice je možné
 nájsť napríklad v \cite{MacMillan1930}, \cite{Kellogg1967} či 
 \cite{SansoGeoidDetermination}.
 
-Je vhodné spomenúť, že Poissonovu rovnicu je možné vnímať ako zovšeobecnenie 
-Laplaceovej rovnice.  Ak sa bod $P$ vo vzťahu~(\ref{eq:vg_poisson_equation}) 
-nachádza mimo telesa generujúceho potenciál, jeho hustota $\rho(P) = 0$, čím 
-dostávame Laplaceovu rovnicu~(\ref{eq:vg_laplace_cart}).
+Poissonovu rovnicu je možné vnímať ako zovšeobecnenie Laplaceovej rovnice.  Ak 
+sa bod $P$ vo vzťahu~(\ref{eq:vg_poisson_equation}) nachádza mimo telesa 
+generujúceho potenciál, potom $\rho(P) = 0$, čím dostávame Laplaceovu 
+rovnicu~(\ref{eq:vg_laplace_cart}).
 
 Posledná oblasť, v ktorej sa môže nachádzať bod $P$, no nie je pokrytá ani 
 Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Vo 
@@ -865,50 +893,167 @@ v závislosti od smeru prechodu.
 
 
 
+
 \section{Odstredivé pole a tiažové pole}
+\label{sec:centrifugal_gravity_field}
 
-Gravitačné pole Zeme a nebeských telies je väčšinou študované v súradnicovom 
-systéme, ktorý má začiatok v ťažisku telesa a je pevne spojený s telesom.  Ak 
-teleso rotuje, rotuje s ním teda i súradnicovým systém.  V takomto súradnicovom 
-systéme pôsobí na objekty nielen gravitačná sila $\vec F_\gidx$ v zmysle 
-Newtonovho gravitačného zákona (Kapitola~\ref{sec:newton_law}), ale 
-i \emph{odstredivá sila} $\vec F_\cidx$.
+Newtonov gravitačný zákon~(\ref{eq:newton_law}) platí v súradnicovom systéme, 
+ktorý je v pokoji alebo je v stave rovnomerného priamočiareho pohybu.  Takýto 
+súradnicový systém sa nazýva \emph{inerciálny súradnicový systém}.
 
-Uvažujme trojrozmerný pravouhlý súradnicový systém so začiatkom v ťažisku 
-telesa a s osou $z$, ktorá je totožná s osou rotácie telesa.  Nech súradnicový 
-systém aj teleso rotujú konštantnou \emph{uhlovou rýchlosťou rotácie} $\omega$.  
-Potom \emph{odstredivé zrýchlenie} udeľované hmotnému bodu $P(x, y, z)$ 
-s hmotnosťou $m = 1\ \mathrm{kg}$ je dané vzťahom
+Uvažujme súradnicový systém so začiatkom v ťažisku Zeme a s osou $z$, ktorá je 
+totožná s rotačnou osou Zeme.  Nech tento súradnicový systém rotuje spolu so 
+Zemou uhlovou rýchlosťou $\omega$.  Takýto súradnicový systém nie je 
+inerciálny, pretože vzhľadom na inerciálny súradnicový systém v ňom dochádza 
+prinajmenšom k dvom nelineárnym pohybom.  Jeden vzniká v dôsledku rotácie Zeme 
+okolo vlastnej osi, druhý je spôsobený obehom Zeme okolo Slnka.  Ak teda chceme 
+študovať sily pôsobiace na Zemi v takomto neinerciálnom súradnicovom systéme, 
+potrebné je uvážiť nielen gravitačnú silu, ale i ďalšie sily v zmysle 
+Newtonovho pohybového zákona.  Na objekt, ktorý sa nachádza na rotujúcej Zemi 
+a je vzhľadom k nej v pokoji pôsobí okrem gravitačnej sily aj \emph{odstredivá 
+sila}.  Ak je objekt v pohybe, pôsobí naň i tretia sila, ktorá sa nazýva 
+\emph{Coriolisova sila}.  Azda väčšina meracích geodetických zariadení je počas 
+merania v pokoji vzhľadom k Zemi, preto Coriolisovu silu nebudeme ďalej 
+uvažovať.  Spomeňme tiež, že ak sa uhlová rýchlosť rotácie $\omega$ mení 
+v čase, potrebné je uvážiť i \emph{Eulerovu silu}.  Tieto tri sily, odstredivá, 
+Coriolisova a Eulerova, sa zaraďujú medzi \emph{zotrvačné sily}, niekedy tiež 
+nazývané fiktívne sily, a nevznikajú vzájomným silovým pôsobením medzi objektmi 
+ako je tomu v prípade gravitačnej sily.
+
+
+
+
+
+
+\subsection{Odstredivé a tiažové zrýchlenie}
+
+Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je \emph{odstredivá sila} 
+$\vec F_\cidx$.  Uvažujme súradnicový systém v zmysle predošlého odseku 
+a hmotný bod $P(x, y, z)$ s hmotnosťou $1\ \mathrm{kg}$.  V dôsledku rotácie 
+súradnicového systému je hmotnému bodu $P$ udeľované \emph{odstredivé 
+zrýchlenie}.  Odstredivé zrýchlenie v bode $P$ budeme označovať symbolom $\vec 
+g_\cidx(P)$ a je dané vzťahom
 %
 \begin{equation}
-\label{eq:fc}
-\vec g_\cidx = \boldsymbol{\omega}^2 = 
+\label{eq:gc}
+\vec g_\cidx(P) = \omega^2 \, \vec p =
 %
 \begin{bmatrix}
 \omega^2 \, x\\
 \omega^2 \, y\\
 0
 \end{bmatrix}
-{,}
+{.}
 \end{equation}
 %
-kde $\boldsymbol{\omega}$ je vektor konštantnej uhlovej rýchlosti rotácie 
-s veľkosťou
+Za predpokladu konštantnej uhlovej rýchlosti rotácie $\omega$ teda závisí 
+veľkosť odstredivého zrýchlenia,
 %
 \begin{equation}
-| \boldsymbol{\omega} | = \omega^2 \sqrt{x^2 + y^2}{,}
+| \vec g_\cidx | = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2}{,}
 \end{equation}
 %
-pričom $\sqrt{x^2 + y^2}$ je vzdialenosť hmotného bodu $P$ od osi 
-rotácie.
+iba od vzdialenosti $p = | \vec p |$ bodu $P$ od rotačnej osi 
+(Obrázok~\ref{fig:gravity_vector}).  Čím je väčšia vzdialenosť, tým je väčšie 
+odstredivé zrýchlenie a naopak.  Zo vzťahu~(\ref{eq:gc}) je zrejmé, že 
+odstredivé zrýchlenie je kolmé na os rotácie a má smer vzdiaľujúci sa rotačnej 
+osi.  Uhlová rýchlosť rotácie Zeme je približne rovná \citep{GRS80}
+%
+\begin{equation}
+\omega = 7\, 292\, 115 \times 10^{-11} \ \mathrm{rad} \ \mathrm{s}^{-1}{.}
+\end{equation}
 
-***Odstredivá sila zmenšuje tiažové zrýchlenie***
+\begin{figure}
+\centering
+\input{./fig-gravity-vector.pdf_tex}
+\caption{Vektory gravitačného $\vec g_\gidx$, odstredivého $\vec g_\cidx$ 
+a tiažového zrýchlenia $\vec g$ v bode $P$ na povrchu idealizovanej rotujúcej 
+Zeme sférického tvaru a konštantnej hustoty}
+\label{fig:gravity_vector}
+\end{figure}
 
-% -----------------------------------------------------------------------------
+Uvážením dominantných síl, gravitačnej a odstredivej, je možné v zmysle 
+Newtonovho pohybového zákona získať výsledné zrýchlenie pôsobiace na hmotný bod 
+s hmotnosťou $1 \ \mathrm{kg}$ v neinerciálnom súradnicovom systéme.  Toto 
+zrýchlenie sa nazýva \emph{tiažové zrýchlenie}, označuje sa symbolom $\vec 
+g(P)$ a je možné vypočítať ho vektorovým súčtom gravitačného~(\ref{eq:gg_body}) 
+a odstredivého~(\ref{eq:gc}) zrýchlenia (Obrázok~\ref{fig:gravity_vector}),
+%
+\begin{equation}
+\vec g(P) = \vec g_\gidx(P) + \vec g_\cidx(P){.}
+\end{equation}
 
-\chapter{Gravitačné a tiažové pole homogénnej gule}
+Vektor tiažového zrýchlenia je možné na zemskom povrchu odmerať, a tak 
+predstavuje ústrednú veličinu v procese určovania tvaru Zeme.  Prístroj, ktorým 
+sa meria veľkosť vektora tiažového zrýchlenia $| \vec g |$ sa nazýva 
+\emph{gravimeter}.  V súčasnosti bežne dosiahnuteľná presnosť určenia $| \vec 
+g |$ dosahuje hodnotu približne $5 \times 10^{-8} \ \mathrm{m}\ \mathrm{s}^{-2} 
+= 5\ \upmu\mathrm{Gal}$.  Smer vektora tiažového zrýchlenia je možné odmerať 
+astronomickým určením zemepisnej šírky a zemepisnej dĺžky daného bodu $P$.  
+Presnosť astronomických súradníc sa v súčasnosti pohybuje v desatinách uhlovej 
+sekundy.
 
-% polia, označenia, jednotky
+
+
+
+
+
+\subsection{Odstredivý a tiažový potenciál}
+
+Podobne ako v prípade gravitačného poľa, i odstredivé a tiažové zrýchlenie je 
+možné definovať pomocou skalárnych veličín.  Tieto skalárne veličiny sa 
+nazývajú \emph{odstredivý potenciál},
+%
+\begin{equation}
+\label{eq:vc}
+V_c(P) = \frac{1}{2} \, \omega^2 \, (x^2 + y^2){,}
+\end{equation}
+%
+a \emph{tiažový potenciál},
+%
+\begin{equation}
+W(P) = V_\gidx(P) + V_\cidx(P){.}
+\end{equation}
+%
+Príslušné zrýchlenia získame aplikovaním operátora gradient na tieto rovnice,
+%
+\begin{equation}
+\label{eq:gc_vc}
+\vec g_\cidx(P) = \nabla V_c(P)
+\end{equation}
+%
+a
+%
+\begin{equation}
+\label{eq:g_gradW}
+\vec g(P) = \nabla W(P) = \nabla V_\gidx(P) + \nabla V_\cidx(P) = \vec 
+g_\gidx(P) + \vec g_\cidx(P){.}
+\end{equation}
+%
+V zmysle vlastností operátora gradient (Kapitola~\ref{sec:vg}), vektory $\vec 
+g_\cidx(P)$ a $\vec g(P)$ udávajú veľkosť a smer najväčšieho nárastu 
+odstredivého a tiažového potenciálu $V_\cidx(P)$ a $W(P)$ v bode $P$.  Platnosť 
+rovnice~(\ref{eq:gc_vc}) možno overiť pomocou~(\ref{eq:gradient}) 
+a (\ref{eq:vc}), čím získame (\ref{eq:gc}).  V rovnici~(\ref{eq:g_gradW}) bola 
+využitá skutočnosť, že \emph{operátor gradient je lineárny}, teda tie isté 
+vlastnosti ako pre Laplaceov operátor, (\ref{eq:laplace_additivity}) 
+a (\ref{eq:laplace_homogenity}), platia aj pre operátor gradient.
+
+***Ekvipotenciálne plochy
+
+Tiažový potenciál je veličina, pomocou ktorej je definovaný geoid, teda tvar 
+Zeme v zmysle druhej z definícií 
+z Kapitoly~\ref{sec:gravitational_and_gravity_field}.
+
+Ide o veličinu, ktorú nedokážeme priamo odmerať, podobne ako nedokážeme priamo 
+odmerať gravitačný a odstredivý potenciál.***
+
+
+
+
+
+
+\section{Gravitačné a tiažové pole homogénnej gule}
 
 
 
