@@ -179,16 +179,6 @@
 
 \chapter*{Úvod}
 
-
-
-
-
-
-% -----------------------------------------------------------------------------
-
-\chapter{Gravitačné a tiažové pole}
-\label{sec:gravitational_and_gravity_field}
-
 Tvar Zeme možno definovať niekoľkými spôsobmi v závislosti od kontextu 
 \citep{MoritzTheFigureOfTheEarth}.  Azda najprirodzenejšie je definovať tvar 
 Zeme jej skutočným fyzickým povrchom, teda tou časťou Zeme, ktorá je viditeľná 
@@ -229,6 +219,16 @@ znamená študovať aj tiažové pole Zeme.
 
 
 
+% -----------------------------------------------------------------------------
+
+\chapter{Gravitačné a tiažové pole}
+\label{sec:gravitational_and_gravity_field}
+
+
+
+
+
+
 \section{Newtonov gravitačný zákon}
 \label{sec:newton_law}
 
@@ -248,8 +248,8 @@ v bode $P$ a smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
 \begin{figure}[b]
 \centering
 \input{./fig-newton-law.pdf_tex}
-\caption{Gravitačná sila $\vec F_\gidx$ pôsobiaca medzi hmotnými bodmi $P$ 
-a $Q$.  Vektor $\vec F_\gidx$ je z dôvodov vizualizácie mierne odsadený od 
+\caption{Gravitačná sila $\vec F_\gidx$, ktorou pôsobí hmotný bod $Q$ na hmotný 
+bod $P$.  Vektor $\vec F_\gidx$ je z dôvodov vizualizácie mierne odsadený od 
 spojnice bodov $P$ a $Q$}
 \label{fig:newton_law}
 \end{figure}
@@ -259,35 +259,90 @@ publikovaný I. Newtonom (1642--1727) v práci \emph{Philosophi\ae Naturalis
 Principia Mathematica} z roku 1687.  Hovorí, že každý hmotný bod vo vesmíre 
 priťahuje každý iný hmotný bod silou, ktorej smer je daný spojnicou týchto 
 bodov a veľkosť je priamo úmerná súčinu ich hmotností a nepriamo úmerná štvorcu 
-ich vzájomnej vzdialenosti \citep{Kellogg1967}.  \emph{Hmotný bod} je 
-idealizovaný pojem predstavujúci časticu s nulovým rozmerom a konečnou 
-nenulovou hmotnosťou bez akýchkoľvek ďalších vlastností či štruktúry.  Hodnota 
-gravitačnej konštanty odporúčaná od roku 2018 \emph{Komisiou pre dáta vo vede 
-a technológiách} (CODATA) je
+ich vzdialenosti \citep{Kellogg1967}.  \emph{Hmotný bod} je idealizovaný pojem 
+predstavujúci časticu s nulovým rozmerom a konečnou nenulovou hmotnosťou bez 
+akýchkoľvek ďalších vlastností či štruktúry.  Hodnota gravitačnej konštanty 
+odporúčaná od roku 2018 \emph{Komisiou pre dáta vo vede a technológiách} 
+(CODATA) je
 %
 \begin{equation}
 G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1} 
 \ \mathrm{s}^{-2}{.}
 \end{equation}
 
-Newtonov gravitačný zákon vysvetľuje mnoho prírodných javov.  Popisuje 
-mechanizmus pohybu planét Slnečnej sústavy, prílivu a odlivu, či odpovedá na 
-otázku, prečo majú planéty približne sférický tvar.  Je pozoruhodné, že hoci 
-Newtonov gravitačný zákon bol odpozorovaný z pohybu nebeských telies, zhoduje 
-sa i s experimentmi, ktoré boli vykonané na vzdialenosť niekoľkých desiatok 
-mikrometrov \citep{Lee2020}.
+Sila gravitačnej sily spočíva v tom, že je to sila.  \emph{Sila} vyjadruje 
+mieru pôsobenia hmotného objektu na iný hmotný objekt.  V prípade pohybujúceho 
+sa objektu má schopnosť zrýchliť alebo spomaliť jeho pohyb, či zmeniť smer 
+pohybu.  Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  
+Označme polohu planéty v čase $t_0$ symbolom $P(t_0)$ a jej okamžitú rýchlosť 
+symbolom $v(t_0)$.  Ak by Slnko prestalo pôsobiť na planétu gravitačnou silou, 
+\emph{Newtonov pohybový zákon} hovorí, že planéta by sa ďalej pohybovala 
+rovnomerným priamočiarym pohybom.  Za istý čas by sa teda dostala do bodu 
+$P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je pôsobením sily na planétu.  
+Z rovnice~(\ref{eq:newton_law}) vyplýva, že v čase $t_0$ pôsobí na planétu 
+gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom smer sily je daný spojnicou 
+planéty a Slnka.  Keďže má však planéta udelenú počiatočnú rýchlosť $v(t_0)$, 
+v nasledujúcom okamihu nezačne v dôsledku tejto sily padať k Slnku.  Namiesto 
+toho zmení svoju hypotetickú trajektóriu, ktorou by sa pohybovala bez 
+prítomnosti gravitačnej sily, a dostane sa do bodu $P(t_1$).  V čase $t_1$ sa 
+opísaná situácia opakuje, pričom vektory rýchlosti a sily už majú iný smer 
+a s vysokou pravdepodobnosťou aj inú veľkosť.  Vo výsledku opíše planéta za 
+dobu jedného obehu elipsu.
+%
+\begin{figure}
+\centering
+\input{./fig-orbital-motion.pdf_tex}
+\caption{Obeh planéty okolo Slnka}
+\label{fig:orbital_motion}
+\end{figure}
 
-Hoci rovnica~(\ref{eq:newton_law}) vysvetľuje množstvo javov, je azda 
-potrebné spomenúť, že Newtonov gravitačný zákon je v skutočnosti 
-\emph{nesprávny} \citep{Feynman}.  Predpokladá napríklad, že zmena hmotnosti či 
-vzdialenosti má okamžitý gravitačný účinok, teda i v prípade telies 
-nachádzajúcich sa vo veľkých vzdialenostiach.  Tento predpoklad je však 
-v rozpore s experimentálne potvrdenou Einsteinovou špeciálnou teóriou 
-relativity.  Tá hovorí, že žiadny signál, a teda ani ten gravitačný, sa nemôže 
-šíriť rýchlosťou väčšou ako je rýchlosť svetla.  Pre účely fyzikálnej geodézie 
-sú však chyby spôsobené nepresnosťami Newtonovho gravitačného zákona väčšinou 
-zanedbateľné, a tak táto teória, aj dnes, viac ako tristo rokov od jej vzniku, 
-tvorí chrbtovú kosť fyzikálnej geodézie.
+%Rovnica~(\ref{eq:newton_law}) popisuje silu pôsobiacu medzi hmotnými bodmi, no 
+%nepopisuje jej pôvod ani spôsob jej prenosu.  V druhom vydaní \emph{Principií} 
+%(1713) poznamenáva Newton k pôvodu gravitačnej sily nasledovné:
+%%
+%\begin{quote}
+%\textit{Ale dodnes som nedokázal určiť príčinu týchto vlastností gravitácie 
+%z javov, a nevytváram žiadnu hypotézu.  Pretože čokoľvek nie je dedukované 
+%z javov, musí byť nazvané hypotéza; a hypotéza, či už metafyzická alebo 
+%fyzická, alebo založená na skrytých vlastnostiach, alebo mechanická, nemá 
+%miesto v experimentálnej filozofii.  V tejto filozofii sa jednotlivé tvrdenia 
+%odvodzujú z javov, a následne sa zovšeobecňujú indukciou.}\footnote{Autorov 
+%voľný preklad z anglického prekladu.}
+%\end{quote}
+%%
+%Pokiaľ ide o prenos gravitačnej sily, Newton píše v liste Richardovi Bentleymu:
+%%
+%\begin{quote}
+%To, že gravitácia by mala byť vrodenou vlastnosťou hmoty, tak že jedno teleso 
+%môže pôsobiť na iné na diaľku cez vákuum bez akéhokoľvek spostredkovania
+%\end{quote}
+%
+%That gravity should be innate inherent & {essential} to matter so that one body 
+%may act upon another at a distance through a vacuum without the mediation of 
+%any thing else by & through which their action or force {may} be conveyed from 
+%one to another is to me so great an absurdity that I beleive no man who has in 
+%philosophical matters any competent faculty of thinking can ever fall into 
+%it. Gravity must be caused by an agent {acting} <7v> consta{ntl}y according to 
+%certain laws, but whether this agent be material or immaterial is a question 
+%I have left to the consideration of my readers.
+
+
+Obdobným spôsobom je možné Newtonovým gravitačným zákonom vysvetliť i mnoho 
+ďalších pozorovaných prírodných javov, napríklad príliv a odliv, či zodpovedať 
+otázku, prečo majú planéty približne sférický tvar.  Je pozoruhodné, že hoci 
+rovnica~(\ref{eq:newton_law}) bola odpozorovaná z pohybu nebeských telies, 
+zhoduje sa i s experimentmi, ktoré boli vykonané na vzdialenosť niekoľkých 
+desiatok mikrometrov \citep{Lee2020}.  Napriek uvedenému, je azda potrebné 
+spomenúť, že Newtonov gravitačný zákon je v skutočnosti \emph{nesprávny} 
+\citep{Feynman}.  Predpokladá napríklad, že zmena hmotnosti či vzdialenosti má 
+okamžitý gravitačný účinok, teda i v prípade telies nachádzajúcich sa vo 
+veľkých vzdialenostiach.  Tento predpoklad je však v rozpore s experimentálne 
+potvrdenou Einsteinovou špeciálnou teóriou relativity.  Tá hovorí, že žiadny 
+signál, a teda ani ten gravitačný, sa nemôže šíriť rýchlosťou väčšou ako je 
+rýchlosť svetla.  Pre účely fyzikálnej geodézie sú však chyby spôsobené 
+nepresnosťami Newtonovho gravitačného zákona väčšinou zanedbateľné, a tak táto 
+teória, aj dnes, viac ako tristo rokov od jej vzniku, tvorí chrbtovú kosť 
+fyzikálnej geodézie.
 
 
 
@@ -299,8 +354,7 @@ tvorí chrbtovú kosť fyzikálnej geodézie.
 
 Gravitačná sila~(\ref{eq:newton_law}) závisí od hmotnosti oboch hmotných 
 bodov medzi ktorými pôsobí.  Skúsme preto normovať gravitačnú silu hmotnosťou 
-hmotného bodu $P$, prípadne aplikovať podmienku $m_P = 1\ \mathrm{kg}$.  Oba 
-spôsoby vedú ekvivalentne k veličine, ktorá sa nazýva \emph{gravitačné 
+hmotného bodu $P$.  Získame tým veličinu, ktorá sa nazýva \emph{gravitačné 
 zrýchlenie},
 %
 \begin{equation}
@@ -905,7 +959,7 @@ Uvažujme súradnicový systém so začiatkom v ťažisku Zeme a s osou $z$, kto
 totožná s rotačnou osou Zeme.  Nech tento súradnicový systém rotuje spolu so 
 Zemou uhlovou rýchlosťou $\omega$.  Takýto súradnicový systém nie je 
 inerciálny, pretože vzhľadom na inerciálny súradnicový systém v ňom dochádza 
-prinajmenšom k dvom nelineárnym pohybom.  Jeden vzniká v dôsledku rotácie Zeme 
+prinajmenšom k dvom nelineárnym pohybom.  Prvý vzniká v dôsledku rotácie Zeme 
 okolo vlastnej osi, druhý je spôsobený obehom Zeme okolo Slnka.  Ak teda chceme 
 študovať sily pôsobiace na Zemi v takomto neinerciálnom súradnicovom systéme, 
 potrebné je uvážiť nielen gravitačnú silu, ale i ďalšie sily v zmysle 
@@ -929,10 +983,10 @@ ako je tomu v prípade gravitačnej sily.
 
 Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je \emph{odstredivá sila} 
 $\vec F_\cidx$.  Uvažujme súradnicový systém v zmysle predošlého odseku 
-a hmotný bod $P(x, y, z)$ s hmotnosťou $1\ \mathrm{kg}$.  V dôsledku rotácie 
-súradnicového systému je hmotnému bodu $P$ udeľované \emph{odstredivé 
-zrýchlenie}.  Odstredivé zrýchlenie v bode $P$ budeme označovať symbolom $\vec 
-g_\cidx(P)$ a je dané vzťahom
+a hmotný bod $P(x, y, z)$ s hmotnosťou $1\ \mathrm{kg}$.  V neinerciálnom 
+súradnicovom systéme pôsobí na hmotný bod $P$ \emph{odstredivé zrýchlenie}.  
+Odstredivé zrýchlenie v bode $P$ budeme označovať symbolom $\vec g_\cidx(P)$ 
+a je dané vzťahom
 %
 \begin{equation}
 \label{eq:gc}
@@ -947,17 +1001,18 @@ g_\cidx(P)$ a je dané vzťahom
 \end{equation}
 %
 Za predpokladu konštantnej uhlovej rýchlosti rotácie $\omega$ teda závisí 
-veľkosť odstredivého zrýchlenia,
+veľkosť odstredivého zrýchlenia iba od vzdialenosti $p = | \vec p |$ bodu $P$ 
+od rotačnej osi (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
-| \vec g_\cidx | = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2}{,}
+| \vec g_\cidx | = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2}{.}
 \end{equation}
 %
-iba od vzdialenosti $p = | \vec p |$ bodu $P$ od rotačnej osi 
-(Obrázok~\ref{fig:gravity_vector}).  Čím je väčšia vzdialenosť, tým je väčšie 
-odstredivé zrýchlenie a naopak.  Zo vzťahu~(\ref{eq:gc}) je zrejmé, že 
-odstredivé zrýchlenie je kolmé na os rotácie a má smer vzdiaľujúci sa rotačnej 
-osi.  Uhlová rýchlosť rotácie Zeme je približne rovná \citep{GRS80}
+Čím je vzdialenosť $p$ väčšia, tým je väčšie i odstredivé zrýchlenie a naopak.  
+Zo vzťahu~(\ref{eq:gc}) je zrejmé, že odstredivé zrýchlenie je kolmé na os 
+rotácie a má smer vzdiaľujúci sa od rotačnej osi 
+(Obrázok~\ref{fig:gravity_vector}).  Uhlová rýchlosť rotácie Zeme je približne 
+rovná \citep{GRS80}
 %
 \begin{equation}
 \omega = 7\, 292\, 115 \times 10^{-11} \ \mathrm{rad} \ \mathrm{s}^{-1}{.}
@@ -972,23 +1027,24 @@ Zeme sférického tvaru a konštantnej hustoty}
 \label{fig:gravity_vector}
 \end{figure}
 
-Uvážením dominantných síl, gravitačnej a odstredivej, je možné v zmysle 
-Newtonovho pohybového zákona získať výsledné zrýchlenie pôsobiace na hmotný bod 
-s hmotnosťou $1 \ \mathrm{kg}$ v neinerciálnom súradnicovom systéme.  Toto 
-zrýchlenie sa nazýva \emph{tiažové zrýchlenie}, označuje sa symbolom $\vec 
-g(P)$ a je možné vypočítať ho vektorovým súčtom gravitačného~(\ref{eq:gg_body}) 
-a odstredivého~(\ref{eq:gc}) zrýchlenia (Obrázok~\ref{fig:gravity_vector}),
+Výsledné zrýchlenie pôsobiace na hmotný bod s hmotnosťou $1 \ \mathrm{kg}$ je 
+v neinerciálnom systéme dané súčtom gravitačnej a odstredivej 
+sily.\footnote{Ostatné sily sme pre túto chvíľu s rozumnou mierou aproximácie 
+zanedbali.}  Toto zrýchlenie sa nazýva \emph{tiažové zrýchlenie}, označuje sa 
+symbolom $\vec g(P)$ a je možné vypočítať ho vektorovým súčtom 
+gravitačného~(\ref{eq:gg_body}) a odstredivého~(\ref{eq:gc}) zrýchlenia 
+(Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
+\label{eq:g}
 \vec g(P) = \vec g_\gidx(P) + \vec g_\cidx(P){.}
 \end{equation}
 
-Vektor tiažového zrýchlenia je možné na zemskom povrchu odmerať, a tak 
-predstavuje ústrednú veličinu v procese určovania tvaru Zeme.  Prístroj, ktorým 
-sa meria veľkosť vektora tiažového zrýchlenia $| \vec g |$ sa nazýva 
-\emph{gravimeter}.  V súčasnosti bežne dosiahnuteľná presnosť určenia $| \vec 
-g |$ dosahuje hodnotu približne $5 \times 10^{-8} \ \mathrm{m}\ \mathrm{s}^{-2} 
-= 5\ \upmu\mathrm{Gal}$.  Smer vektora tiažového zrýchlenia je možné odmerať 
+Vektor tiažového zrýchlenia je možné odmerať, a tak predstavuje ústrednú 
+veličinu v procese určovania tvaru Zeme.  Prístroj, ktorým sa meria veľkosť 
+vektora tiažového zrýchlenia $| \vec g |$ sa nazýva \emph{gravimeter}.  
+V súčasnosti bežne dosiahnuteľná presnosť určenia $| \vec g |$ dosahuje hodnotu 
+niekoľkých mikroGalov.  Smer vektora tiažového zrýchlenia je možné odmerať 
 astronomickým určením zemepisnej šírky a zemepisnej dĺžky daného bodu $P$.  
 Presnosť astronomických súradníc sa v súčasnosti pohybuje v desatinách uhlovej 
 sekundy.
@@ -1015,7 +1071,8 @@ a \emph{tiažový potenciál},
 W(P) = V_\gidx(P) + V_\cidx(P){.}
 \end{equation}
 %
-Príslušné zrýchlenia získame aplikovaním operátora gradient na tieto rovnice,
+Príslušné zrýchlenia~(\ref{eq:gc}) a (\ref{eq:g}) získame aplikovaním operátora 
+gradient na tieto rovnice,
 %
 \begin{equation}
 \label{eq:gc_vc}
@@ -1039,7 +1096,18 @@ využitá skutočnosť, že \emph{operátor gradient je lineárny}, teda tie ist
 vlastnosti ako pre Laplaceov operátor, (\ref{eq:laplace_additivity}) 
 a (\ref{eq:laplace_homogenity}), platia aj pre operátor gradient.
 
+Zaveďme pojem {ekvipotenciálna plocha.  \emph{Ekvipotenciálna plocha} je 
+plocha, na ktorej je hodnota tiažového potenciálu $W$ konštantná v každom bode 
+jej povrchu.  Pre fyzikálnu geodéziu majú ekvipotenciálne plochy veľký význam.  
+Spomeňme si na úvodnú kapitolu, v ktorej jeden z prístupov definoval tvar Zeme 
+ako geoid, teda tú ekvipotenciálnu plochu, ktorá koinciduje s hladinou morí 
+a oceánov.  
+
 ***Ekvipotenciálne plochy
+
+Nepretínajú sa.
+
+Ak sú husto pri sebe, tiažové zrýchlenie bude veľké a naopak.
 
 Tiažový potenciál je veličina, pomocou ktorej je definovaný geoid, teda tvar 
 Zeme v zmysle druhej z definícií 
