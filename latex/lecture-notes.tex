@@ -281,13 +281,14 @@ rovnomerným priamočiarym pohybom.  Za istý čas by sa teda dostala do bodu
 $P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je pôsobením sily na planétu.  
 Z rovnice~(\ref{eq:newton_law}) vyplýva, že v čase $t_0$ pôsobí na planétu 
 gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom smer sily je daný spojnicou 
-planéty a Slnka.  Keďže má však planéta udelenú počiatočnú rýchlosť $v(t_0)$, 
-v nasledujúcom okamihu nezačne v dôsledku tejto sily padať k Slnku.  Namiesto 
-toho zmení svoju hypotetickú trajektóriu, ktorou by sa pohybovala bez 
-prítomnosti gravitačnej sily, a dostane sa do bodu $P(t_1$).  V čase $t_1$ sa 
+planéty a Slnka.  Pôsobením tejto sily sa však planéta nezačne pohybovať 
+v smere sily, pretože okamžitý vektor rýchlosti $\vec v(t_0)$ má iný smer ako 
+sila $\vec F_\gidx(t_0)$.  Stane sa to, že gravitačná sila zmení hypotetickú 
+trajektóriu, ktorou by sa planéta pohybovala bez jej pôsobenia, a planéta sa 
+tak dostane nie do bodu $P'(t_1)$, ale do bodu $P(t_1)$.  V čase $t_1$ sa 
 opísaná situácia opakuje, pričom vektory rýchlosti a sily už majú iný smer 
-a s vysokou pravdepodobnosťou aj inú veľkosť.  Vo výsledku opíše planéta za 
-dobu jedného obehu elipsu.
+a s vysokou pravdepodobnosťou aj inú veľkosť.  Takýmto spôsobom gravitačná sila 
+Slnka určuje v každom okamihu obežnú dráhu planéty.
 %
 \begin{figure}
 \centering
@@ -295,37 +296,6 @@ dobu jedného obehu elipsu.
 \caption{Obeh planéty okolo Slnka}
 \label{fig:orbital_motion}
 \end{figure}
-
-%Rovnica~(\ref{eq:newton_law}) popisuje silu pôsobiacu medzi hmotnými bodmi, no 
-%nepopisuje jej pôvod ani spôsob jej prenosu.  V druhom vydaní \emph{Principií} 
-%(1713) poznamenáva Newton k pôvodu gravitačnej sily nasledovné:
-%%
-%\begin{quote}
-%\textit{Ale dodnes som nedokázal určiť príčinu týchto vlastností gravitácie 
-%z javov, a nevytváram žiadnu hypotézu.  Pretože čokoľvek nie je dedukované 
-%z javov, musí byť nazvané hypotéza; a hypotéza, či už metafyzická alebo 
-%fyzická, alebo založená na skrytých vlastnostiach, alebo mechanická, nemá 
-%miesto v experimentálnej filozofii.  V tejto filozofii sa jednotlivé tvrdenia 
-%odvodzujú z javov, a následne sa zovšeobecňujú indukciou.}\footnote{Autorov 
-%voľný preklad z anglického prekladu.}
-%\end{quote}
-%%
-%Pokiaľ ide o prenos gravitačnej sily, Newton píše v liste Richardovi Bentleymu:
-%%
-%\begin{quote}
-%To, že gravitácia by mala byť vrodenou vlastnosťou hmoty, tak že jedno teleso 
-%môže pôsobiť na iné na diaľku cez vákuum bez akéhokoľvek spostredkovania
-%\end{quote}
-%
-%That gravity should be innate inherent & {essential} to matter so that one body 
-%may act upon another at a distance through a vacuum without the mediation of 
-%any thing else by & through which their action or force {may} be conveyed from 
-%one to another is to me so great an absurdity that I beleive no man who has in 
-%philosophical matters any competent faculty of thinking can ever fall into 
-%it. Gravity must be caused by an agent {acting} <7v> consta{ntl}y according to 
-%certain laws, but whether this agent be material or immaterial is a question 
-%I have left to the consideration of my readers.
-
 
 Obdobným spôsobom je možné Newtonovým gravitačným zákonom vysvetliť i mnoho 
 ďalších pozorovaných prírodných javov, napríklad príliv a odliv, či zodpovedať 
@@ -670,11 +640,17 @@ potenciálu (\ref{eq:gg_grad_vg} a \ref{eq:vg_at_infty}) vynecháme, no je
 dostupný napríklad v \cite{MacMillan1930}.
 
 K interpretácii gravitačného potenciálu je možné pristúpiť aj z fyzikálneho 
-hľadiska.  V tejto práci sa obmedzíme iba na tvrdenie, že hodnota gravitačného 
-potenciálu predstavuje prácu, ktorú musí vykonať gravitačné pole pri 
-premiestnení hmotného bodu s hmotnosťou $1\ \mathrm{kg}$ z miesta s nulovým 
-potenciálom (v geodézii nekonečno, pozri vzťah~\ref{eq:vg_at_infty}) do bodu $P$ 
-\citep{MacMillan1930,Kellogg1967,TorgeGeodesy}.
+hľadiska.  Bez podrobného odvodenia sa obmedzíme na tvrdenie, že hodnota 
+gravitačného potenciálu v bode $P$ predstavuje prácu, ktorú musí vykonať 
+gravitačné pole pri premiestnení hmotného bodu s hmotnosťou $1\ \mathrm{kg}$ 
+z miesta s nulovým potenciálom (v geodézii nekonečno, pozri 
+vzťah~\ref{eq:vg_at_infty}) do bodu $P$ 
+\citep{MacMillan1930,Kellogg1967,TorgeGeodesy}.  \emph{Práca} je dráhový účinok 
+sily, v tomto prípade gravitačnej.  Gravitačná sila má tú vlastnosť, že práca 
+spôsobená jej silovým účinkom \emph{nezávisí} od dráhy, dôležitý je iba 
+začiatočný a koncový bod dráhy.  Ak sú začiatočný a koncový bod totožné, práca 
+je nulová.  Bez tejto vlastnosti by nebolo možné nájsť skalárnu funkciu 
+$V_\gidx$, ktorá by vyhovovala rovnici~(\ref{eq:gg_grad_vg}).
 
 Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedokážeme 
 priamo merať.  Vo fyzikálnej geodézii vystupuje často ako neznáma funkcia, 
@@ -1068,6 +1044,7 @@ V_c(P) = \frac{1}{2} \, \omega^2 \, (x^2 + y^2){,}
 a \emph{tiažový potenciál},
 %
 \begin{equation}
+\label{eq:w}
 W(P) = V_\gidx(P) + V_\cidx(P){.}
 \end{equation}
 %
@@ -1096,22 +1073,50 @@ využitá skutočnosť, že \emph{operátor gradient je lineárny}, teda tie ist
 vlastnosti ako pre Laplaceov operátor, (\ref{eq:laplace_additivity}) 
 a (\ref{eq:laplace_homogenity}), platia aj pre operátor gradient.
 
-Zaveďme pojem {ekvipotenciálna plocha.  \emph{Ekvipotenciálna plocha} je 
-plocha, na ktorej je hodnota tiažového potenciálu $W$ konštantná v každom bode 
-jej povrchu.  Pre fyzikálnu geodéziu majú ekvipotenciálne plochy veľký význam.  
-Spomeňme si na úvodnú kapitolu, v ktorej jeden z prístupov definoval tvar Zeme 
+\subsubsection{Ekvipotenciálna plocha}
+
+Plocha, na ktorej je hodnota tiažového potenciálu $W$ konštantná sa nazýva 
+\emph{ekvipotenciálna plocha} (Obrázok~\ref{fig:equipotential_surfaces}).  
+Spomeňme si na úvodnú kapitolu, v ktorej jeden z prístupov definuje tvar Zeme 
 ako geoid, teda tú ekvipotenciálnu plochu, ktorá koinciduje s hladinou morí 
-a oceánov.  
+a oceánov.  Pre fyzikálnu geodéziu majú teda ekvipotenciálne plochy veľký 
+význam.  Zamerajme sa preto na niektoré ich vlastnosti.
+
+\begin{figure}
+\centering
+\input{./fig-equipotential-surfaces.pdf_tex}
+\caption{Ekvipotenciálne plochy}
+\label{fig:equipotential_surfaces}
+\end{figure}
+
+\begin{itemize}
+\item Ekvipotenciálne plochy sú spojité.  Táto vlastnosť vyplýva zo 
+skutočnosti, že gravitačný potenciál~(\ref{eq:vg_body}), a teda i tiažový 
+potenciál~(\ref{eq:w}), je spojitou funkciou v celom priestore 
+\citep{Janak2006}.
+
+\item Ekvipotenciálne plochy sú uzavreté \citep{VanicekGeodesy}.
+
+\item Ekvipotenciálne plochy mimo telesa sú analytickými plochami.  
+Ekvipotenciálne plochy, ktoré sa celé nachádzajú vo vnútri telesa alebo ho 
+pretínajú nie sú analytické, pretože ich krivosť sa môže nespojito meniť 
+v závislosti od hustoty.  Všetky ekvipotenciálne plochy sú hladké a neobsahujú 
+hrany \citep{MoritzPhysicalGeodesy}.
+
+\item Ekvipotenciálne plochy sa nikde nepretínajú.  Tiažový potenciál $W$ má 
+v každom bode definované práve jedno číslo (skalárna veličina), preto sa 
+ekvipotenciálne plochy nemôžu pretnúť \citep{MacMillan1930}.
+
+\item Vektor tiažového zrýchlenia v ľubovoľnom bode je kolmý na ekvipotenciálnu 
+plochu prechádzajúcu týmto bodom \citep{MoritzPhysicalGeodesy}.  Toto tvrdenie 
+vyplýva priamo z rovnice~(\ref{eq:g_gradW}).
+\end{itemize}
 
 ***Ekvipotenciálne plochy
 
-Nepretínajú sa.
+Spojitosť s meraním, libela, atď
 
 Ak sú husto pri sebe, tiažové zrýchlenie bude veľké a naopak.
-
-Tiažový potenciál je veličina, pomocou ktorej je definovaný geoid, teda tvar 
-Zeme v zmysle druhej z definícií 
-z Kapitoly~\ref{sec:gravitational_and_gravity_field}.
 
 Ide o veličinu, ktorú nedokážeme priamo odmerať, podobne ako nedokážeme priamo 
 odmerať gravitačný a odstredivý potenciál.***
