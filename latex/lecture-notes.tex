@@ -270,25 +270,21 @@ G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1}
 \ \mathrm{s}^{-2}{.}
 \end{equation}
 
-Sila gravitačnej sily spočíva v tom, že je to sila.  \emph{Sila} vyjadruje 
-mieru pôsobenia hmotného objektu na iný hmotný objekt.  V prípade pohybujúceho 
-sa objektu má schopnosť zrýchliť alebo spomaliť jeho pohyb, či zmeniť smer 
-pohybu.  Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  
-Označme polohu planéty v čase $t_0$ symbolom $P(t_0)$ a jej okamžitú rýchlosť 
-symbolom $v(t_0)$.  Ak by Slnko prestalo pôsobiť na planétu gravitačnou silou, 
+Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme 
+polohu planéty v čase $t_0$ symbolom $P(t_0)$ a jej okamžitú rýchlosť symbolom 
+$v(t_0)$.  Ak by Slnko prestalo pôsobiť na planétu gravitačnou silou, 
 \emph{Newtonov pohybový zákon} hovorí, že planéta by sa ďalej pohybovala 
 rovnomerným priamočiarym pohybom.  Za istý čas by sa teda dostala do bodu 
 $P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je pôsobením sily na planétu.  
 Z rovnice~(\ref{eq:newton_law}) vyplýva, že v čase $t_0$ pôsobí na planétu 
 gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom smer sily je daný spojnicou 
-planéty a Slnka.  Pôsobením tejto sily sa však planéta nezačne pohybovať 
-v smere sily, pretože okamžitý vektor rýchlosti $\vec v(t_0)$ má iný smer ako 
-sila $\vec F_\gidx(t_0)$.  Stane sa to, že gravitačná sila zmení hypotetickú 
-trajektóriu, ktorou by sa planéta pohybovala bez jej pôsobenia, a planéta sa 
-tak dostane nie do bodu $P'(t_1)$, ale do bodu $P(t_1)$.  V čase $t_1$ sa 
-opísaná situácia opakuje, pričom vektory rýchlosti a sily už majú iný smer 
-a s vysokou pravdepodobnosťou aj inú veľkosť.  Takýmto spôsobom gravitačná sila 
-Slnka určuje v každom okamihu obežnú dráhu planéty.
+planéty a Slnka.  Gravitačná sila preto pritiahne planétu v smere vektora $\vec 
+F_\gidx(t_0)$, čím zmení hypotetickú trajektóriu, ktorou by sa planéta 
+pohybovala bez pôsobenia tejto sily.  V kombinácii s vektorom rýchlosti $\vec 
+v(t_0)$ sa tak planéta sa dostane do bodu $P(t_1)$.  V čase $t_1$ sa opísaná 
+situácia opakuje, pričom vektory rýchlosti a sily už majú iný smer a s vysokou 
+pravdepodobnosťou aj inú veľkosť.  Gravitačná sila Slnka teda zakrivuje 
+trajektóriu planéty \emph{v každom okamihu}.
 %
 \begin{figure}
 \centering
@@ -663,6 +659,7 @@ SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2
 
 
 \section{Teória potenciálu}
+\label{sec:potential_theory}
 
 Rovnica~(\ref{eq:vg_body}) sa v literatúre zvykne nazývať \emph{Newtonov 
 integrál}.  Hovorí, že ak poznáme tvar a priestorové rozloženie hustoty telesa, 
@@ -1073,19 +1070,24 @@ využitá skutočnosť, že \emph{operátor gradient je lineárny}, teda tie ist
 vlastnosti ako pre Laplaceov operátor, (\ref{eq:laplace_additivity}) 
 a (\ref{eq:laplace_homogenity}), platia aj pre operátor gradient.
 
+Odstredivý ani tiažový potenciál nedokážeme priamo odmerať, podobne ako 
+nedokážeme priamo odmerať gravitačný potenciál.  V sústave SI majú odstredivý 
+a tiažový potenciál jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$.
+
 \subsubsection{Ekvipotenciálna plocha}
 
 Plocha, na ktorej je hodnota tiažového potenciálu $W$ konštantná sa nazýva 
 \emph{ekvipotenciálna plocha} (Obrázok~\ref{fig:equipotential_surfaces}).  
-Spomeňme si na úvodnú kapitolu, v ktorej jeden z prístupov definuje tvar Zeme 
-ako geoid, teda tú ekvipotenciálnu plochu, ktorá koinciduje s hladinou morí 
-a oceánov.  Pre fyzikálnu geodéziu majú teda ekvipotenciálne plochy veľký 
-význam.  Zamerajme sa preto na niektoré ich vlastnosti.
+V úvodnej kapitole jeden z prístupov definuje tvar Zeme ako geoid, teda tú 
+ekvipotenciálnu plochu, ktorá koinciduje s hladinou morí a oceánov.  Pre 
+fyzikálnu geodéziu majú teda ekvipotenciálne plochy veľký význam.  Zamerajme sa 
+preto na niektoré ich vlastnosti.
 
 \begin{figure}
 \centering
 \input{./fig-equipotential-surfaces.pdf_tex}
-\caption{Ekvipotenciálne plochy}
+\caption{Ekvipotenciálne plochy s konštantným krokom tiažového potenciálu 
+$\Delta W$}
 \label{fig:equipotential_surfaces}
 \end{figure}
 
@@ -1099,27 +1101,72 @@ potenciál~(\ref{eq:w}), je spojitou funkciou v celom priestore
 
 \item Ekvipotenciálne plochy mimo telesa sú analytickými plochami.  
 Ekvipotenciálne plochy, ktoré sa celé nachádzajú vo vnútri telesa alebo ho 
-pretínajú nie sú analytické, pretože ich krivosť sa môže nespojito meniť 
-v závislosti od hustoty.  Všetky ekvipotenciálne plochy sú hladké a neobsahujú 
-hrany \citep{MoritzPhysicalGeodesy}.
+pretínajú nie sú analytické, pretože ich krivosť sa môže meniť nespojito 
+v závislosti od hustoty \citep{MoritzPhysicalGeodesy}.
 
-\item Ekvipotenciálne plochy sa nikde nepretínajú.  Tiažový potenciál $W$ má 
-v každom bode definované práve jedno číslo (skalárna veličina), preto sa 
-ekvipotenciálne plochy nemôžu pretnúť \citep{MacMillan1930}.
+\item Všetky ekvipotenciálne plochy sú hladké a neobsahujú hrany 
+\citep{MoritzPhysicalGeodesy}.
+
+\item Ekvipotenciálne plochy sa nepretínajú.  Tiažový potenciál $W$ má v každom 
+bode definované práve jedno číslo (skalárna veličina), preto sa ekvipotenciálne 
+plochy nemôžu pretnúť \citep{MacMillan1930}.
 
 \item Vektor tiažového zrýchlenia v ľubovoľnom bode je kolmý na ekvipotenciálnu 
 plochu prechádzajúcu týmto bodom \citep{MoritzPhysicalGeodesy}.  Toto tvrdenie 
 vyplýva priamo z rovnice~(\ref{eq:g_gradW}).
 \end{itemize}
 
-***Ekvipotenciálne plochy
+Matematický popis tvaru ekvipotenciálnych plôch realných telies je náročný.  
+Z Newtonovho integrálu~(\ref{eq:vg_body}) vieme (pozri tiež 
+Kapitolu~\ref{sec:potential_theory}), že sú to tvar a hustota telesa, ktoré 
+definujú jeho gravitačné pole.  Zložité nepravidelné tvary či rozloženia 
+hustoty majú za následok zvlnenia ekvipotenciálnych plôch od ideálneho 
+sférického tvaru.\footnote{Na tvar ekvipotenciálnych plôch vplýva aj odstredivý 
+potenciál $V_\cidx$ (vzťah~\ref{eq:w}).  Ten sa mení so zmenou uhlovej 
+rýchlosti rotácie telesa $\omega$ a zmenou polohy bodu voči osi rotácie.  Zmeny 
+týchto parametrov majú v prípade Zeme výrazne menší vplyv na tvar 
+ekvipotenciálnych plôch ako tvar a hustota Zeme, preto ich pre túto chvíľu 
+zanedbajme.}  Na regionálnej úrovni je nepravidelný tvar ekvipotenciálnych 
+plôch spôsobený do veľkej miery lokálnymi hmotami, napríklad pohoriami.  
+Z globálneho pohľadu je tvar ekvipotenciálnych plôch daný skôr celkovou 
+geometriou telesa ako takého (napríklad sploštenie Zeme), či rozsiahlymi 
+hustotnými kontrastami.  Práve tieto skutočnosti výrazne komplikujú presný 
+výpočet geoidu, jednej ekvipotenciálnej plochy z nekonečného množstva 
+ekvipotenciálnych plôch.
 
-Spojitosť s meraním, libela, atď
+Obrázok~\ref{fig:equipotential_surfaces} schematicky znázorňuje ekvipotenciálne 
+plochy tiažového poľa Zeme s konštantným krokom tiažového potenciálu $\Delta 
+W$.  Možno si všimnúť, že priestorový rozostup ekvipotenciálnych plôch je väčší 
+v rovníkových oblastiach ako v polárnych oblastiach.  Malý rozostup 
+ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a naopak.  Veľkosť 
+vektora tiažového zrýchlenia $| \vec g |$ je teda väčšia v oblasti pólov ako 
+v oblasti rovníka.  Z pohľadu tiažového poľa Zeme je preto náročnejšie prekonať 
+svetový rekord v skoku do výšky na póle ako na rovníku.
 
-Ak sú husto pri sebe, tiažové zrýchlenie bude veľké a naopak.
+Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna 
+rovina je dotyková k ekvipotenciálnej ploche, ktorá prechádza stredom libely.  
+Z dôvodu zvlnenia ekvipotenciálnych plôch však nemožno vo všeobecnosti 
+predpokladať rovnobežnosť horizontálnych rovín na dvoch rôznych stanoviskách.  
+V prípade teodolitu sú v tejto rovine merané vodorovné smery.  Preto ak je 
+vyžadovaná presnosť vysoká alebo záujmová lokalita je rozsiahla a má zložitú 
+topografiu, potrebné je korigovať merania o vplyv tiažového poľa.
 
-Ide o veličinu, ktorú nedokážeme priamo odmerať, podobne ako nedokážeme priamo 
-odmerať gravitačný a odstredivý potenciál.***
+\subsubsection{Tiažnica}
+
+Siločiara tiažového poľa sa nazýva \emph{tiažnica}.  Tiažnica je priestorová 
+krivka kolmá na všetky ekvipotenciálne plochy 
+(Obrázok~\ref{fig:equipotential_surfaces}).  Dotyčnica k tiažnici sa nazýva 
+\emph{zvislica}.  Smer zvislice je daný smerom vektora tiažového zrýchlenia, 
+teda smer vektora tiažového zrýchlenia predstavuje dotyčnicu k tiažnici.
+
+Z pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad 
+teodolitu) bola totožná s lokálnou zvislicou.  Táto podmienka je splnená po 
+horizontovaní prístroja za predpokladu, že horizontálna os prístroja je kolmá 
+na jeho vertikálnu os.  K lokálnej zvislici sa vzťahujú merané vertikálne 
+smery.  Zvlnenie ekvipotenciálnych plôch spôsobuje, že vertikálne osi 
+zhorizontovaných prístrojov nie sú medzi dvoma stanoviskami vo všeobecnosti 
+rovnobežné.  Podobne ako pri vodorovných smeroch, presné merania si môžu 
+vyžadovať zavedenie korekcii z tiažového poľa.
 
 
 
