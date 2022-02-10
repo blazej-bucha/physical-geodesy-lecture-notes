@@ -28,8 +28,12 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{accsupp}
-\usepackage[unicode, pdfborder={0 
-0 0},colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\usepackage[unicode,
+            pdfborder={0 0 0},
+            colorlinks=true,
+            urlcolor=blue,
+            citecolor=blue,
+            linkcolor=blue]{hyperref}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \linespread{1.2}
 
@@ -181,7 +185,7 @@
 
 Mnohé geodetické merania a úkony využívajú pôsobenie tiažového poľa alebo sú 
 ním ovplyvnené, od použitia olovnice až po merania založené na globálnych 
-navigačných družicových systémov.  Táto práca stručne popisuje tiažové pole 
+navigačných družicových systémov.  Táto práca sa zaoberá tiažovým poľom 
 s dôrazom na geodetický kontext.  Určená je predovšetkým ako doplňujúci učebný 
 text k predmetom \emph{Fyzikálna geodézia~1} a \emph{Fyzikálna geodézia~2} pre 
 študentov odboru Geodézia a kartografia Stavebnej fakulty STU.  Niektoré časti 
@@ -196,36 +200,35 @@ funkcie (Kapitola~\ref{sec:spherical_harmonics}), normálne a poruchové pole
 Zeme (Kapitoly~\ref{sec:normal_gravity_field} a \ref{sec:disturbing_field}) 
 a základy určovania geoidu (Kapitola~\ref{sec:geoid_determination}).  Snažili 
 sme sa zvoliť formu, ktorú na základe desaťročných skúseností s výučbou 
-fyzikálnej geodézie považujeme za najvhodnejšiu pre hlavného adresáta, 
+fyzikálnej geodézie považujeme za najvhodnejšiu pre očakávaných čitateľov, 
 študentov geodézie a kartografie.  Znamená to, že hoci intelektuálne potešenie 
 zo spoznávania tiažového poľa je bezodné, predsa len si vyžaduje pokročilé 
 matematické zručnosti a nepochybne i isté zanietenie.  Snažili sme sa preto 
-o výklad, ktorý by bol jednoduchý, zrozumiteľný, úplný, nápomocný, podnecujúci 
-a, samozrejme, správny.  Na miestach, kde sme to považovali za vhodné, doplnili 
-sme text o počítačový kód prakticky demonštrujúci diskutovanú problematiku.  
-Spravidla ide o matematické koncepty, ktorých porozumenie si môže vyžadovať 
-väčšie prvotné úsilie.  Nádejáme sa, že vlastným štúdiom, testovaním a úpravou 
-tohto nenáročného kódu je možné jednoduchšie porozumieť diskutovanej 
-problematike.
+o výklad, ktorý by bol jednoduchý, zrozumiteľný, úplný, nápomocný a súčasne 
+i podnecujúci.  Na miestach, kde sme to považovali za vhodné, doplnili sme text 
+o počítačový kód prakticky demonštrujúci diskutovanú problematiku.  Spravidla 
+ide o matematické koncepty, ktorých porozumenie si môže vyžadovať väčšie 
+prvotné úsilie.  Nádejáme sa, že vlastným štúdiom, testovaním a úpravou tohto 
+nenáročného kódu je možné jednoduchšie porozumieť diskutovanej problematike.
 
 Bolo by prostoduché a azda i neskromné očakávať, že v práci sa nenájdu časti, 
 ktoré mohli byť spracované zrozumiteľnejšie, či témy, ktoré v nej obsiahnuté 
 nie sú, no mohli či mali byť diskutované.  Skôr ako za uzavretý študijný 
-podklad považujeme tento učebný text za otvorený postupne sa zdokonaľujúci 
+podklad považujeme tento učebný text za živý postupne sa zdokonaľujúci 
 materiál.  Všetky zdrojové kódy sú preto voľne prístupné a pripomienkovateľné 
 na adrese \url{https://github.com/blazej-bucha/physical-geodesy-lecture-notes}.
 
 Práca bola napísaná v textovom editore Vim~v8.2 použitím typografického systému 
 \TeX.  Skompilovaná bola programom \texttt{pdfTex}~v3.14159265-2.6-1.40.21.  
-Obrázky boli zhotovené v programe \texttt{Inkscape}~v1.0.2.  Väčšina uvedeného 
-výpočtového kódu je napísaná a otestovaná v jazyku \texttt{Python}~v3.9.2 
-použitím modulov \texttt{NumPy}~v1.20.3, \texttt{Matplotlib}~v3.5.0 
-a \texttt{SciPy}~v1.7.3.  Časť výpočtového kódu je napísaná v jazyku~C 
-a v prostredí~MATLAB~R2021b.  S tými aplikáciami sme interagovali pod operačným 
-systémom Debian GNU/Linux 11 (Bullseye).  S výnimkou programu MATLAB ide 
-o slobodný voľne šíriteľný software.  Vyslovujeme preto vďaku a slová ocenenia 
-veľkej komunite programátorov za to, že poskytujú slobodný prvotriedny 
-software.
+Mapy boli pripravené v \texttt{GMT}~v6.1.1.  Obrázky boli zhotovené v programe 
+\texttt{Inkscape}~v1.0.2.  Väčšina uvedeného výpočtového kódu je napísaná 
+a otestovaná v jazyku \texttt{Python}~v3.9.2 použitím modulov 
+\texttt{NumPy}~v1.20.3, \texttt{Matplotlib}~v3.5.0 a \texttt{SciPy}~v1.7.3.  
+Časť výpočtového kódu je napísaná v jazyku~C a v prostredí~MATLAB~R2021b.  
+S týmito aplikáciami sme interagovali pod operačným systémom Debian GNU/Linux 
+11 (Bullseye).  S výnimkou programu MATLAB ide o slobodný voľne šíriteľný 
+software.  Vyslovujeme preto vďaku a slová ocenenia veľkej komunite špičkových 
+programátorov za to, že poskytujú slobodný prvotriedny software.
 
 Úprimné slová vďaky patria v neposlednom rade všetkým, ktorí akýmkoľvek 
 spôsobom prispeli k tejto práci. \emph{Na záver tu budeš doplnený/á, ak s tým 
@@ -508,6 +511,16 @@ Galileiho, prípadne s jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\
 \mathrm{s}^{-2}$ a $1\ \upmu \mathrm{Gal} = 10^{-8}\ \mathrm{m}\ 
 \mathrm{s}^{-2}$.
 
+\begin{figure}
+\centering
+\includegraphics{./fig-gg-grav-sr-2arcsec.pdf}
+\caption{Veľkosť vektora gravitačného zrýchlenia $| \vec g_\gidx |$ na zemskom 
+povrchu v oblasti Vysokých a Nízkych Tatier (jednotky mGal).  Dáta prevzaté 
+z modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
+\label{fig:gg_grav_sr_2arcsec}
+\end{figure}
+
+
 
 
 
@@ -715,6 +728,15 @@ Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedok�
 priamo merať.  Vo fyzikálnej geodézii vystupuje často ako neznáma funkcia, 
 ktorú sa snažíme určiť, napríklad z vektora gravitačného zrýchlenia.  V sústave 
 SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2}$.
+
+\begin{figure}
+\centering
+\includegraphics{./fig-vg-grav-sr-2arcsec.pdf}
+\caption{Gravitačný potenciál $V_\gidx$ na zemskom povrchu v oblasti Vysokých 
+a Nízkych Tatier (jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$).  Dáta prevzaté 
+z modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
+\label{fig:vg_grav_sr_2arcsec}
+\end{figure}
 
 
 
