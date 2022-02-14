@@ -511,6 +511,18 @@ Galileiho, prípadne s jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\
 \mathrm{s}^{-2}$ a $1\ \upmu \mathrm{Gal} = 10^{-8}\ \mathrm{m}\ 
 \mathrm{s}^{-2}$.
 
+Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebehu veľkosti vektora 
+gravitačného zrýchlenia v oblasti Vysokých a Nízkych Tatier.  Z porovnania 
+s topografiou (Obrázok~\ref{fig:h_grav_sr_2arcsec}) je zrejmé, že gravitačné 
+zrýchlenie je veľmi závislé od lokálnych hmôt, teda od hustoty a tvaru blízkych 
+diferenciálnych elementov $\diff m = \rho \, \diff \tau$ a ich vzdialenosti $l$ 
+od bodu $P$, v ktorom je gravitačné zrýchlenie skúmané (pozri 
+vzťah~\ref{eq:gg_body}).  Na lokálnej úrovni je možné pozorovať, že v miestach 
+s veľkou nadmorskou výškou je veľkosť gravitačného zrýchlenia spravidla menšia 
+ako v miestach s malou nadmorskou výškou a naopak.  Z globálneho hľadiska je 
+tiažové zrýchlenie ovplyvnené najmä tvarom Zeme, predovšetkým jej sploštením, 
+a rozsiahlymi hustotnými celkami vo vnútri Zeme.
+
 \begin{figure}
 \centering
 \includegraphics{./fig-gg-grav-sr-2arcsec.pdf}
@@ -518,6 +530,15 @@ Galileiho, prípadne s jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\
 povrchu v oblasti Vysokých a Nízkych Tatier (jednotky mGal).  Dáta prevzaté 
 z modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
 \label{fig:gg_grav_sr_2arcsec}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{./fig-h-grav-sr-2arcsec.pdf}
+\caption{Topografia v oblasti Vysokých a Nízkych Tatier vyjadrená pomocou 
+elipsoidickej výšky (jednotky~m).  Dáta prevzaté z modelu 
+\texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
+\label{fig:h_grav_sr_2arcsec}
 \end{figure}
 
 
@@ -727,7 +748,9 @@ $V_\gidx$, ktorá by vyhovovala rovnici~(\ref{eq:gg_grad_vg}).
 Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedokážeme 
 priamo merať.  Vo fyzikálnej geodézii vystupuje často ako neznáma funkcia, 
 ktorú sa snažíme určiť, napríklad z vektora gravitačného zrýchlenia.  V sústave 
-SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2}$.
+SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2}$.  
+Ukážka priebehu gravitačného potenciálu v oblasti Vysokých a Nízkych Tatier je 
+uvedená na Obrázku~\ref{fig:vg_grav_sr_2arcsec}.
 
 \begin{figure}
 \centering
@@ -828,6 +851,7 @@ potenciál hmotného bodu nie je definovaný pre $l = 0$.
 S uvážením~(\ref{eq:laplace_homogenity}), postačuje dokázať, že
 %
 \begin{equation}
+\label{eq:nabla_l}
 \nabla^2 \left( \frac{1}{l} \right) = 0{,}
 \end{equation}
 %
@@ -1218,7 +1242,9 @@ pohoriami.  Z globálneho pohľadu je tvar ekvipotenciálnych plôch daný skôr
 celkovou geometriou telesa ako takého (napríklad sploštenie Zeme) či 
 rozsiahlymi hustotnými kontrastami.  Práve tieto skutočnosti výrazne komplikujú 
 presný výpočet geoidu, jednej ekvipotenciálnej plochy z nekonečného množstva 
-ekvipotenciálnych plôch.
+ekvipotenciálnych plôch.  Podrobnejší popis niektorých dôležitých vlastností 
+ekvipotenciálnych plôch, napríklad ich krivostí, je možne nájsť napríklad 
+v \cite{Janak2006} či v \cite{MoritzPhysicalGeodesy}.
 
 Obrázok~\ref{fig:equipotential_surfaces} schematicky znázorňuje ekvipotenciálne 
 plochy tiažového poľa Zeme s konštantným krokom tiažového potenciálu $\Delta 
@@ -1226,8 +1252,7 @@ W$.  Možno si všimnúť, že priestorový rozostup ekvipotenciálnych plôch j
 v rovníkových oblastiach ako v polárnych oblastiach.  Malý rozostup 
 ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a naopak.  Veľkosť 
 vektora tiažového zrýchlenia $| \vec g |$ je teda väčšia v oblasti pólov ako 
-v oblasti rovníka.  Z pohľadu tiažového poľa Zeme je preto náročnejšie prekonať 
-svetový rekord v skoku do výšky na póle ako na rovníku.
+v oblasti rovníka.
 
 Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna 
 rovina je dotyková k ekvipotenciálnej ploche, ktorá prechádza stredom libely.  
@@ -1243,16 +1268,20 @@ horizontálnych rovín medzi stanoviskami.
 Siločiara tiažového poľa sa nazýva \emph{tiažnica}.  Tiažnica je priestorová 
 krivka kolmá na všetky ekvipotenciálne plochy 
 (Obrázok~\ref{fig:equipotential_surfaces}).  Dotyčnica k tiažnici sa nazýva 
-\emph{zvislica}.  Smer zvislice je daný smerom vektora tiažového zrýchlenia.
+\emph{zvislica}.  Smer zvislice je daný smerom vektora tiažového zrýchlenia.  
+V geodézii sa tiažnice využívajú napríklad na definovanie fyzikálnych 
+(nadmorských) výšok.  Jedna taká výška má názov \emph{ortometrická výška} a je 
+meraná pozdĺž tiažnice od geoidu po bod $P$ (pozri 
+Obrázok~\ref{fig:equipotential_surfaces}).
 
 Z pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad 
 teodolitu) bola totožná s lokálnou zvislicou.  Táto podmienka je splnená po 
 zhorizontovaní prístroja za predpokladu, že horizontálna os prístroja je kolmá 
-na jeho vertikálnu os.  K lokálnej zvislici sa vzťahujú merané vertikálne 
-smery.  Sférický tvar Zeme a zvlnenie ekvipotenciálnych plôch spôsobujú, že 
-vertikálne osi zhorizontovaných prístrojov nie sú vo všeobecnosti rovnobežné 
-medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné merania si 
-môžu vyžadovať zavedenie korekcii.
+na jeho vertikálnu os.  K lokálnej zvislici sa vzťahujú napríklad merané 
+vertikálne smery.  Sférický tvar Zeme a zvlnenie ekvipotenciálnych plôch 
+spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo všeobecnosti 
+rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné 
+merania si môžu vyžadovať zavedenie korekcii.
 
 
 
@@ -1270,9 +1299,167 @@ môžu vyžadovať zavedenie korekcii.
 \chapter{Sférické harmonické funkcie}
 \label{sec:spherical_harmonics}
 
-% čo to je, definícia, porovnanie s jednotkovými vektormi, delenie, ukážka 
-% sférických harmonických funkcií v matematickom zápise + obrázky + kód, 
-% normovanie, Legendreove polynómy + funkcie, definícia, grafy + kód
+Newtonov integrál~(\ref{eq:vg_body}) nie je z praktického hľadiska vhodný na 
+priamy výpočet gravitačného poľa Zeme.  Predpokladá totiž, že poznáme dve 
+matematické funkcie: jednu, ktorá definuje tvar telesa a druhú, ktorá opisuje 
+jeho hustotu.  Problematická je obzvlášť hustota.  Hoci existujú hustotné 
+modely Zeme \citep[napríklad][]{Dziewonski1981}, ich použitie vo 
+vzťahu~(\ref{eq:vg_body}) ešte stále neposkytuje vyžadovanú geodetickú 
+presnosť.  V tejto situácii nie sú postačujúce ani regionálne hustotné modely.  
+Hoci tie poskytujú vyššiu presnosť a priestorové rozlíšenie, v geodézii sa 
+používajú prevažne ako cenná doplnková informácia o zdroji gravitačného poľa, 
+nie však ako kľúčové dáta na výpočet tiažového poľa Zeme.
+
+V tejto kapitole sa zameriame na jeden z mnohých spôsobov praktického 
+modelovania gravitačného poľa Zeme a nebeských telies.  \emph{Tento prístup 
+umožňuje vypočítať Newtonov integrál aj bez priamej znalosti hustoty}.  
+V súčasnosti je v geodézii z opodstatnených dôvodov azda najrozšírenejší, no 
+zďaleka nie je jediný.  Ďalšie metódy budú stručne spomenuté na záver kapitoly.  
+Pred samotným predstavením metódy však skúsme ilustrovať jej základnú myšlienku 
+a širší kontext.
+
+
+
+
+
+
+\section{Jednotkové vektory v trojrozmernom pravouhlom súradnicovom systéme}
+
+Nech je daný trojrozmerný pravouhlý súradnicový systém so začiatkom v bode $O$ 
+a so súradnicovými osami $x$, $y$ a $z$.  Označme symbolmi $\vec e_1$, $\vec 
+e_2$ a $\vec e_3$ jednotkové vektory v smere týchto súradnicových osí,
+%
+\begin{equation}
+\vec e_1 =
+\begin{bmatrix}
+1\\
+0\\
+0\\
+\end{bmatrix}
+{,} \quad
+%
+\vec e_2 =
+\begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix}
+%
+{,}\quad
+%
+\vec e_3 =
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+{.}
+\end{equation}
+%
+Jednotkové vektory sú teda na seba kolmé a ich veľkosť je rovná 1,
+%
+\begin{equation}
+| \vec e_1 | = | \vec e_2 | = | \vec e_3 | = 1{.}
+\end{equation}
+%
+Nech symbol $\vec r$ predstavuje ľubovoľný vektor v tomto priestore,
+
+\begin{equation}
+\vec r =
+\begin{bmatrix}
+r_1\\
+r_2\\
+r_3
+\end{bmatrix}
+{.}
+\end{equation}
+
+Jednotkové vektory majú tú vlastnosť, že umožňujú vyjadriť ľubovoľný vektor 
+$\vec r$ vzťahom
+%
+\begin{equation}
+\label{eq:r_synthesis}
+\vec r = \sum_{i = 1}^3 r_i \, \vec e_i{.}
+\end{equation}
+%
+Konštanta $r_i$ predstavuje váhu jednotkového vektora $\vec e_i$ v lineárnej 
+kombinácii, resp. v smere $i$-tej súradnicovej osi.  Môžeme tiež povedať, že 
+konštanty $r_i$ sú súradnice koncového bodu vektora $\vec r$.  Takýmto bodom 
+môže byť napríklad koncový bod polohového vektora bodu na povrchu Zeme 
+v geocentrickom pravouhlom súradnicovom systéme.  Nie je náročné presvedčiť sa, 
+že konštanta $r_i$ je daná skalárnym súčinom vektora $\vec r$ a príslušného 
+jednotkového vektora $\vec e_i$,
+%
+\begin{equation}
+\label{eq:r_analysis}
+r_i = \vec r \cdot \vec e_i{,}
+\end{equation}
+%
+kde symbol $\cdot$ označuje skalárny súčin.
+
+Povedané slovne, vzťah~(\ref{eq:r_synthesis}) hovorí, že ak poznáme konštanty 
+$r_i$, poznáme vektor $\vec r$.  Vzťah~(\ref{eq:r_analysis}) hovorí, ako tieto 
+konštanty vypočítať z vektora $\vec r$.  Bolo by výhodné, ak by sme podobným 
+spôsobom dokázali vyjadriť nielen polohový vektor $\vec r$, ale aj gravitačný 
+potenciál $V_g$, teda istým spôsobom gravitačný potenciál rozložiť na súradnice 
+a následne ho z týchto súradníc zrekonštruovať.  Samozrejme, gravitačný 
+potenciál nepatrí do vyššie opísaného trojrozmerného priestoru vektorov $\vec 
+r$.  V abstraktnejšom chápaní slova priestor je však aj gravitačný potenciál 
+súčasťou nejaké priestoru, napríklad priestoru funkcií, ktoré sú harmonické 
+mimo Zeme.  Vieme už, že medzi takéto funkcie patrí okrem gravitačného 
+potenciálu napríklad aj funkcia $1 \slash l$, pričom $l$ je vzdialenosť bodu 
+nachádzajúceho sa mimo Zeme od ťažiska Zeme (pozri rovnice~\ref{eq:nabla_l} 
+a \ref{eq:l_2nd_derivatives}).  Takýchto funkcií je nespočetné množstvo 
+a tvoria v matematickom zmysle istý priestor.  Podobne ako v trojrozmernom 
+priestore vektorov $\vec r$, i v tomto priestore možno nájsť matematické 
+objekty, ktorými môžeme každý jeho prvok, napríklad gravitačný potenciál, 
+rozložiť na súradnice,
+%
+\begin{equation}
+\label{eq:vg_analysis}
+v_{nm} = \frac{1}{4\pi} \, \iint_{\sigma} V_\gidx(R, \varphi, \lambda) \, 
+Y_{nm}(\varphi, \lambda) \, \diff \sigma{,}
+\end{equation}
+%
+a následne spätne zrekonštruovať,
+%
+\begin{equation}
+\label{eq:vg_synthesis}
+V_\gidx(R, \varphi, \lambda) = \sum_{n = 0}^{\infty} \sum_{m = -n}^{n} v_{nm} 
+\, Y_{nm}(\varphi, \lambda){.}
+\end{equation}
+%
+Vzťah~(\ref{eq:vg_analysis}) je obdobou vzťahu (\ref{eq:r_analysis}), teda 
+konštanty $v_{nm}$ predstavujú súradnice gravitačného potenciálu vo vyššie 
+opísanom abstraktom priestore harmonických funkcií a symbol $Y_{nm}(\varphi, 
+\lambda)$ označuje \emph{sférické harmonické funkcie}, teda analógiu 
+jednotkových vektorov $\vec e_i$ v trojrozmernom pravouhlom súradnicovom 
+priestore.  Samotný integrál na jednotkovej sfére $\sigma$ možno zase chápať 
+ako skalárny súčin dvoch funkcií, $V_\gidx$ a $Y_{nm}$.  Naproti tomu, 
+vzťah~(\ref{eq:vg_synthesis}) je akousi analógiou 
+vzťahu~(\ref{eq:r_synthesis}), a to v tom zmysle, že zo súradníc gravitačného 
+potenciálu $v_{nm}$ umožňuje zrekonštruovať samotný gravitačný potenciál.
+
+Je zrejmé, že v prípade gravitačného potenciálu (rovnice \ref{eq:vg_analysis} 
+a \ref{eq:vg_synthesis}) je situácia komplikovanejšia ako v prípade polohových 
+vektorov (rovnice \ref{eq:r_analysis} a \ref{eq:r_synthesis}).  Súradníc 
+$v_{nm}$ je nekonečne veľa (pozri limity prvej sumácie vo 
+vzťahu~\ref{eq:vg_synthesis}), sumácia je dvojitá a sférické harmonické funkcie 
+$Y_{nm}(\varphi, \lambda)$ závisia od sférickej šírky $\varphi$ a sférickej 
+dĺžky $\lambda$.  Napriek tomu, samotný princíp zostáva rovnaký a azda 
+demonštruje, že ak poznáme súradnice $v_{nm}$, potom 
+integrály~(\ref{eq:vg_body}) či (\ref{eq:gg_body}) vieme vypočítať aj bez 
+priameho použitia hustoty.  Hustota Zeme je pritom ukrytá v samotných 
+súradniciach $v_{nm}$, a účelom nasledujúcich strán je ukázať, akým spôsobom sa 
+v nich táto hustota nachádza, ako je možné prejsť od vzťahu~(\ref{eq:vg_body}) 
+až ku vzťahu~(\ref{eq:vg_synthesis}) a ako je možné súradnice $v_{nm}$ 
+vypočítať.
+
+
+
+\section{Rozvoj gravitačného potenciálu do radu sférických harmonických 
+funkcií}
+
 
 \lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov, 
 language=mypython]{../python/legendre-polynomials.py}
@@ -1333,6 +1520,7 @@ zobrazené ako odľahlosť nadobúdanej hodnoty od jednotkovej sféry}
 
 
 
+\section{Ďalšie prístupy k modelovaniu tiažového poľa Zeme}
 % -----------------------------------------------------------------------------
 
 \chapter{Normálne tiažové pole}
