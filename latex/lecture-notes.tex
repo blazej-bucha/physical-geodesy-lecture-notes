@@ -483,11 +483,12 @@ z - z_Q
 {,}
 \end{equation}
 %
-a $l$ je Euklidovská vzdialenosť medzi týmito bodmi,
+a $l = | \vec r |$ je jeho veľkosť, teda Euklidovská vzdialenosť medzi bodmi 
+$P$ a $Q$,
 %
 \begin{equation}
 \label{eq:l}
-l = | \vec r | = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
+l = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
 \end{equation}
 %
 Celkové gravitačné zrýchlenie generované všeobecným telesom získame teda 
@@ -1299,22 +1300,17 @@ merania si môžu vyžadovať zavedenie korekcii.
 \chapter{Sférické harmonické funkcie}
 \label{sec:spherical_harmonics}
 
-Newtonov integrál~(\ref{eq:vg_body}) nie je z praktického hľadiska vhodný na 
-priamy výpočet gravitačného poľa Zeme.  Predpokladá totiž, že poznáme dve 
-matematické funkcie: jednu, ktorá definuje tvar telesa a druhú, ktorá opisuje 
-jeho hustotu.  Problematická je obzvlášť hustota.  Hoci existujú hustotné 
-modely Zeme \citep[napríklad][]{Dziewonski1981}, ich použitie vo 
-vzťahu~(\ref{eq:vg_body}) ešte stále neposkytuje vyžadovanú geodetickú 
-presnosť.  V tejto situácii nie sú postačujúce ani regionálne hustotné modely.  
-Hoci tie poskytujú vyššiu presnosť a priestorové rozlíšenie, v geodézii sa 
-používajú prevažne ako cenná doplnková informácia o zdroji gravitačného poľa, 
-nie však ako kľúčové dáta na výpočet tiažového poľa Zeme.
-
-V tejto kapitole sa zameriame na jeden z mnohých spôsobov praktického 
-modelovania gravitačného poľa Zeme a nebeských telies.  \emph{Tento prístup 
-umožňuje vypočítať Newtonov integrál aj bez priamej znalosti hustoty}.  
-V súčasnosti je v geodézii z opodstatnených dôvodov azda najrozšírenejší, no 
-zďaleka nie je jediný.  Ďalšie metódy budú stručne spomenuté na záver kapitoly.  
+Newtonov integrál~(\ref{eq:vg_body}) nie je vhodný na priamy praktický výpočet 
+gravitačného poľa Zeme.  Predpokladá totiž, že poznáme dve matematické funkcie: 
+jednu, ktorá definuje tvar telesa a druhú, ktorá opisuje jeho hustotu.  
+Problematická je obzvlášť hustota.  Hoci existujú hustotné modely Zeme 
+\citep[napríklad][]{Dziewonski1981}, ich použitie vo vzťahu~(\ref{eq:vg_body}) 
+ešte stále neposkytuje vyžadovanú geodetickú presnosť.  V tejto situácii nie sú 
+postačujúce ani regionálne hustotné modely.  Hoci tie poskytujú vyššiu presnosť 
+a priestorové rozlíšenie, v geodézii sa používajú prevažne ako cenná doplnková 
+informácia o zdroji gravitačného poľa, nie však ako hlavné dáta na výpočet 
+tiažového poľa Zeme.  V tejto kapitole sa zameriame na praktický spôsob 
+modelovania gravitačného poľa Zeme \emph{bez potreby priamej znalosti hustoty}.  
 Pred samotným predstavením metódy však skúsme ilustrovať jej základnú myšlienku 
 a širší kontext.
 
@@ -1356,13 +1352,15 @@ e_2$ a $\vec e_3$ jednotkové vektory v smere týchto súradnicových osí,
 {.}
 \end{equation}
 %
-Jednotkové vektory sú teda na seba kolmé a ich veľkosť je rovná 1,
-%
-\begin{equation}
-| \vec e_1 | = | \vec e_2 | = | \vec e_3 | = 1{.}
-\end{equation}
-%
 Nech symbol $\vec r$ predstavuje ľubovoľný vektor v tomto priestore,
+
+\begin{figure}
+\centering
+\input{./fig-unit-vectors.pdf_tex}
+\caption{Jednotkové vektory $\vec e_1$, $\vec e_2$, $\vec e_3$ trojrozmerného 
+pravouhlého súradnicového systému a polohový vektor $\vec r$ bodu $P$}
+\label{fig:unit_vectors}
+\end{figure}
 
 \begin{equation}
 \vec r =
@@ -1382,9 +1380,9 @@ $\vec r$ vzťahom
 \vec r = \sum_{i = 1}^3 r_i \, \vec e_i{.}
 \end{equation}
 %
-Konštanta $r_i$ predstavuje váhu jednotkového vektora $\vec e_i$ v lineárnej 
-kombinácii, resp. v smere $i$-tej súradnicovej osi.  Môžeme tiež povedať, že 
-konštanty $r_i$ sú súradnice koncového bodu vektora $\vec r$.  Takýmto bodom 
+Konštanta $r_i$ predstavuje váhu, ktorou sa jednotkový vektor $\vec e_i$ 
+podieľa na lineárnej kombinácii~(\ref{eq:r_synthesis}).  Môžeme tiež povedať, 
+že konštanty $r_i$ sú súradnice koncového bodu vektora $\vec r$.  Takýmto bodom 
 môže byť napríklad koncový bod polohového vektora bodu na povrchu Zeme 
 v geocentrickom pravouhlom súradnicovom systéme.  Nie je náročné presvedčiť sa, 
 že konštanta $r_i$ je daná skalárnym súčinom vektora $\vec r$ a príslušného 
@@ -1399,46 +1397,47 @@ kde symbol $\cdot$ označuje skalárny súčin.
 
 Povedané slovne, vzťah~(\ref{eq:r_synthesis}) hovorí, že ak poznáme konštanty 
 $r_i$, poznáme vektor $\vec r$.  Vzťah~(\ref{eq:r_analysis}) hovorí, ako tieto 
-konštanty vypočítať z vektora $\vec r$.  Bolo by výhodné, ak by sme podobným 
-spôsobom dokázali vyjadriť nielen polohový vektor $\vec r$, ale aj gravitačný 
-potenciál $V_g$, teda istým spôsobom gravitačný potenciál rozložiť na súradnice 
-a následne ho z týchto súradníc zrekonštruovať.  Samozrejme, gravitačný 
-potenciál nepatrí do vyššie opísaného trojrozmerného priestoru vektorov $\vec 
-r$.  V abstraktnejšom chápaní slova priestor je však aj gravitačný potenciál 
-súčasťou nejaké priestoru, napríklad priestoru funkcií, ktoré sú harmonické 
-mimo Zeme.  Vieme už, že medzi takéto funkcie patrí okrem gravitačného 
-potenciálu napríklad aj funkcia $1 \slash l$, pričom $l$ je vzdialenosť bodu 
-nachádzajúceho sa mimo Zeme od ťažiska Zeme (pozri rovnice~\ref{eq:nabla_l} 
-a \ref{eq:l_2nd_derivatives}).  Takýchto funkcií je nespočetné množstvo 
-a tvoria v matematickom zmysle istý priestor.  Podobne ako v trojrozmernom 
-priestore vektorov $\vec r$, i v tomto priestore možno nájsť matematické 
-objekty, ktorými môžeme každý jeho prvok, napríklad gravitačný potenciál, 
-rozložiť na súradnice,
+konštanty vypočítať z vektora $\vec r$.  Bolo by výhodné, ak by sme obdobným 
+spôsobom dokázali vyjadriť aj gravitačný potenciál $V_g$, teda istým spôsobom 
+ho rozložiť na súradnice a následne ho z týchto súradníc zrekonštruovať.  
+Samozrejme, gravitačný potenciál nepatrí do vyššie opísaného trojrozmerného 
+priestoru vektorov $\vec r$.  V abstraktnejšom chápaní slova priestor je však 
+aj gravitačný potenciál súčasťou nejakého priestoru, napríklad priestoru 
+funkcií, ktoré sú harmonické mimo Zeme.  Vieme už, že medzi takéto funkcie 
+patrí okrem gravitačného potenciálu napríklad aj funkcia $1 \slash l$, pričom 
+$l$ je vzdialenosť bodu nachádzajúceho sa mimo Zeme od ťažiska Zeme (pozri 
+rovnice~\ref{eq:nabla_l} a \ref{eq:l_2nd_derivatives}).  Takýchto funkcií je 
+nespočetné množstvo a tvoria v matematickom zmysle istý priestor.  Podobne ako 
+v trojrozmernom priestore vektorov $\vec r$, i v tomto priestore možno nájsť 
+matematické objekty, ktorými môžeme každý prvok patriaci do tohto priestoru, 
+napríklad gravitačný potenciál, rozložiť na súradnice,
 %
 \begin{equation}
 \label{eq:vg_analysis}
-v_{nm} = \frac{1}{4\pi} \, \iint_{\sigma} V_\gidx(R, \varphi, \lambda) \, 
+v_{nm} = \frac{1}{4\pi} \, \iint_{\sigma} V_\gidx(r, \varphi, \lambda) \, 
 Y_{nm}(\varphi, \lambda) \, \diff \sigma{,}
 \end{equation}
 %
-a následne spätne zrekonštruovať,
+a následne ho spätne zrekonštruovať,
 %
 \begin{equation}
 \label{eq:vg_synthesis}
-V_\gidx(R, \varphi, \lambda) = \sum_{n = 0}^{\infty} \sum_{m = -n}^{n} v_{nm} 
+V_\gidx(r, \varphi, \lambda) = \sum_{n = 0}^{\infty} \sum_{m = -n}^{n} v_{nm} 
 \, Y_{nm}(\varphi, \lambda){.}
 \end{equation}
 %
-Vzťah~(\ref{eq:vg_analysis}) je obdobou vzťahu (\ref{eq:r_analysis}), teda 
-konštanty $v_{nm}$ predstavujú súradnice gravitačného potenciálu vo vyššie 
-opísanom abstraktom priestore harmonických funkcií a symbol $Y_{nm}(\varphi, 
-\lambda)$ označuje \emph{sférické harmonické funkcie}, teda analógiu 
-jednotkových vektorov $\vec e_i$ v trojrozmernom pravouhlom súradnicovom 
-priestore.  Samotný integrál na jednotkovej sfére $\sigma$ možno zase chápať 
-ako skalárny súčin dvoch funkcií, $V_\gidx$ a $Y_{nm}$.  Naproti tomu, 
-vzťah~(\ref{eq:vg_synthesis}) je akousi analógiou 
-vzťahu~(\ref{eq:r_synthesis}), a to v tom zmysle, že zo súradníc gravitačného 
-potenciálu $v_{nm}$ umožňuje zrekonštruovať samotný gravitačný potenciál.
+Konštanty $v_{nm}$ vo vzťahu~(\ref{eq:vg_analysis}) predstavujú súradnice 
+gravitačného potenciálu $V_\gidx(r, \varphi, \lambda)$ vo vyššie opísanom 
+abstraktom priestore harmonických funkcií a symbol $Y_{nm}(\varphi, \lambda)$ 
+označuje \emph{sférické harmonické funkcie}.  Vzťah~(\ref{eq:vg_analysis}) je 
+teda obdobou vzťahu (\ref{eq:r_analysis}), súradnice $v_{nm}$ možno prirovnať 
+k súradniciam $r_i$ a sférické harmonické funkcie $Y_{nm}(\varphi, \lambda)$ 
+možno prirovnať k jednotkovým vektorom $\vec e_i$.  Samotný integrál na 
+jednotkovej sfére $\sigma$ možno potom chápať ako skalárny súčin funkcií 
+$V_\gidx$ a $Y_{nm}$, ktorý je obdobou skalárneho súčinu vektorov $\vec r \cdot 
+\vec e_i$.  Pokiaľ ide o vzťah~(\ref{eq:vg_synthesis}), ten plní podobnú úlohu 
+ako rovnica~(\ref{eq:r_synthesis}), a to v tom zmysle, že umožňuje 
+zrekonštruovať gravitačný potenciál z jeho súradníc $v_{nm}$.
 
 Je zrejmé, že v prípade gravitačného potenciálu (rovnice \ref{eq:vg_analysis} 
 a \ref{eq:vg_synthesis}) je situácia komplikovanejšia ako v prípade polohových 
@@ -1448,17 +1447,169 @@ vzťahu~\ref{eq:vg_synthesis}), sumácia je dvojitá a sférické harmonické fu
 $Y_{nm}(\varphi, \lambda)$ závisia od sférickej šírky $\varphi$ a sférickej 
 dĺžky $\lambda$.  Napriek tomu, samotný princíp zostáva rovnaký a azda 
 demonštruje, že ak poznáme súradnice $v_{nm}$, potom 
-integrály~(\ref{eq:vg_body}) či (\ref{eq:gg_body}) vieme vypočítať aj bez 
-priameho použitia hustoty.  Hustota Zeme je pritom ukrytá v samotných 
-súradniciach $v_{nm}$, a účelom nasledujúcich strán je ukázať, akým spôsobom sa 
+integrál~(\ref{eq:vg_body}) (a teda i \ref{eq:gg_body}) vieme vypočítať aj bez 
+priameho použitia hustoty.  Hustota Zeme je pritom obsiahnutá v samotných 
+súradniciach $v_{nm}$, a je účelom nasledujúcich strán ukázať, akým spôsobom sa 
 v nich táto hustota nachádza, ako je možné prejsť od vzťahu~(\ref{eq:vg_body}) 
-až ku vzťahu~(\ref{eq:vg_synthesis}) a ako je možné súradnice $v_{nm}$ 
-vypočítať.
+až k formálne veľmi odlišnému vzťahu~(\ref{eq:vg_synthesis}) či ako je možné 
+súradnice $v_{nm}$ vypočítať.
 
 
 
 \section{Rozvoj gravitačného potenciálu do radu sférických harmonických 
 funkcií}
+
+Nech je dané všeobecné teleso s objemom $\tau$ a hustotou $\rho$ 
+(Obrázok~\ref{fig:gravitating_body}).  Hustota $\rho$ sa v telese môže meniť, 
+no budeme predpokladať, že v každom diferenciálnom elemente $\diff \tau(Q)$ je 
+konečná.  Nech je ďalej daný bod $P$, ktorý sa nachádza \emph{mimo} všeobecného 
+telesa, teda v tej časti priestoru, v ktorom je gravitačný potenciál harmonický 
+(Kapitola~\ref{sec:laplace_equation}).  Trojicu sférických súradníc 
+(Obrázok~\ref{fig:cart_sph}) bodov $P$ a $Q$ označme symbolmi $(r, \varphi, 
+\lambda)$ a $(r_Q, \varphi_Q, \lambda_Q)$.
+
+Vyjadrime vzdialenosť $l$ medzi bodmi $P$ a $Q$ 
+(Obrázok~\ref{fig:gravitating_body}) aplikovaním kosínusovej vety 
+v trojuholníku $OPQ$,
+%
+\begin{equation}
+l = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
+\end{equation}
+%
+kde $\psi$ je uhol medzi spojnicami $OQ$ a $OP$ v rovine trojuholníka $OPQ$.  
+Prevrátenú hodnotu vzdialenosti $1 \slash l$ vystupujúcu vo 
+vzťahu~(\ref{eq:vg_body}) môžeme teda vyjadriť nasledovne,
+%
+\begin{equation}
+\label{eq:1l}
+\frac{1}{l} = \left( r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi 
+\right)^{-\frac{1}{2}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r} 
+\right)^2 - 2 \dfrac{r_Q}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
+\end{equation}
+
+Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
+matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátvorka 
+obsahuje tri sčítance umocnené na $-\frac{1}{2}$.  Výhodnejšie je rozvinúť 
+hranatú zátvorku spolu s jej exponentom do mocninového radu.  Jeden zo spôsobov 
+rozvinutia funkcie do mocninového radu je pomocou Taylorovho radu.  Nech je 
+daná analytická funkcia $f(x)$, ktorá je nekonečne diferencovateľná v bode 
+$x_0$.  Taylorov rozvoj tejto funkcie v bode $x_0$ má tvar (porovnaj 
+s rovnicou~\ref{eq:vg_analytical_continuation})
+%
+\begin{equation}
+f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n f(x_0)}{\partial 
+x^n} \left( x - x_0 \right)^n{.}
+\end{equation}
+%
+Ak je funkcia $f(x)$ rovinutá do Taylorovho radu v bode $x_0 = 0$, takýto rad 
+sa nazýva \emph{Maclaurinov} rad,
+%
+\begin{equation}
+f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n f(0)}{\partial x^n} 
+x^n{.}
+\end{equation}
+
+Kvôli zjednodušeniu zápisu zaveďme substitúciu pre hranatú zátvorku a jej 
+exponent z rovnice~(\ref{eq:1l}),
+%
+\begin{equation}
+\label{eq:generic_function_for_lps}
+H(\alpha, t) = \left(1 + \alpha^2 - 2 \, \alpha\, t \right)^{-\frac{1}{2}}{,}
+\end{equation}
+%
+kde $\alpha = \frac{r_Q}{r}$ a $t = \cos\psi$.  Nech $\alpha < 1$.  Funkciu 
+$H(\alpha, t)$ potom môžeme rozvinúť do rovnomerne konvergentného Maclaurinovho 
+radu pre $\alpha = 0$,
+%
+\begin{equation}
+\label{eq:maclaurin_series_of_generic_function}
+H(\alpha, t) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n H(0, 
+t)}{\partial \alpha^n} \, \alpha^n = \sum_{n = 0}^\infty P_n(t) \, \alpha^n{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\label{eq:pn}
+P_n(t) = \frac{1}{n!} \, \frac{\partial^n H(0, t)}{\partial \alpha^n}{.}
+\end{equation}
+%
+Člen $P_n(t)$ sa nazýva \emph{Legendreov polynóm stupňa $n$} a funkcia 
+$H(\alpha, t)$ sa nazýva \emph{generická funkcia} pre Legendreove polynómy.  
+Dosadením~(\ref{eq:pn}), (\ref{eq:maclaurin_series_of_generic_function}), 
+(\ref{eq:generic_function_for_lps}) a (\ref{eq:1l}) do~(\ref{eq:vg_body}) 
+dostaneme vzťah
+%
+\begin{equation}
+\label{eq:vg_legpol}
+V_\gidx(P) = \frac{G}{r} \, \iiint_{\tau} \rho(Q) \, \sum_{n = 0}^{\infty} 
+\left( \frac{r_Q}{r} \right)^n \, P_n(\cos\psi) \, \diff\tau(Q){.}
+\end{equation}
+
+V prípade telies približne sférického tvaru, napríklad Zeme či iných planét, je 
+výhodné vyjadriť hranice integrácie vo vzťahu~(\ref{eq:vg_legpol}) vo 
+sférických súradniciach.  Po uvážení
+%
+\begin{equation}
+\diff \tau = r_Q^2 \, \cos\varphi_Q \, \diff r_Q \, \diff\varphi_Q \, 
+\diff\lambda_Q{,}
+\end{equation}
+%
+prejde rovnica~(\ref{eq:vg_legpol}) do tvaru
+%
+\begin{equation}
+\label{eq:vg_legpol_sph}
+\begin{split}
+V_\gidx(P) =& \frac{G}{r} \, \int_{\lambda_Q = 0}^{2\pi} \int_{\varphi_Q 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int_{r_Q = 0}^{r_{\mathrm{S}}(\varphi_Q, 
+\lambda_Q)} \rho(r_Q, \varphi_Q, \lambda_Q) \, \sum_{n = 0}^{\infty} \left( 
+\frac{r_Q}{r} \right)^n \, P_n(\cos\psi)\\
+%
+&\times r_Q^2 \, \cos\varphi_Q \, \diff r_Q \, \diff\varphi_Q \, 
+\diff\lambda_Q{,}
+\end{split}
+\end{equation}
+%
+kde symbol $r_\mathrm{S}(\varphi_Q, \lambda_Q)$ predstavuje dĺžku sprievodiča 
+od začiatku súradnicového systému $O$ po bod na povrchu telesa so sférickou 
+šírkou $\varphi_Q$ a sférickou dĺžkou $\lambda_Q$.
+
+Z pohľadu integračných premenných $\diff r$, $\diff\varphi$ a $\diff\lambda$ je 
+Legendreov polynóm $P_n(\cos\psi)$ vo vzťahu~(\ref{eq:vg_legpol_sph}) je 
+zložená funkcia, pretože je funkciou $\cos\psi$, pričom $\psi$ samotné je 
+funkciou sférických súradníc bodov $Q$ a $P$,
+%
+\begin{equation}
+\label{eq:cospsi}
+\cos\psi = \sin\varphi \, \sin\varphi_Q + \cos\varphi \, \cos\varphi_Q \, 
+\cos(\lambda - \lambda_Q){.}
+\end{equation}
+%
+Bolo by preto vhodné nájsť taký vzťah pre Legendreov polynóm $P_n(\cos\psi)$, 
+ktorý by závisel od súradníc $\varphi, \lambda$ a $\varphi_Q, \lambda_Q$, 
+podobne ako je tomu vo vzťahu~(\ref{eq:cospsi}).
+
+
+
+%Pred ďalšími úpravami rovnice~(\ref{eq:vg_legpol}) sa pristavme pri 
+%predchádzajúcich vzťahoch.  Rovnica~(\ref{eq:vg_legpol}) je síce formálne 
+%zložitejšia ako vzťah~(\ref{eq:vg_body}), poskytuje však niektoré výhody.  Pre 
+%mnohé telesá sa napríklad jednoduchšie prakticky počíta.  Jedna z dôležitých 
+%vlastností rovnice~(\ref{eq:vg_legpol}) je tá, že poradie integrácie a sumácie 
+%môže byť zamenené.  Takúto úpravu je však možné vykonať iba v prípade, že 
+%rad~(\ref{eq:maclaurin_series_of_generic_function}) je rovnomerne 
+%konvergentný.  Všimnime si, že pred samotným 
+%rozvojom~(\ref{eq:maclaurin_series_of_generic_function}) sme vyslovili 
+%podmienku $\alpha = \frac{r_Q}{r} < 1$, teda predpokladáme, že zámena poradia 
+%integrácie a sumácie je možná.  Táto podmienka bude veľmi dôležitá pre 
+%výsledný vzťah, ktorý získame.
+
+\begin{figure}
+\centering
+\input{./fig-spherical-harmonics-convergence.pdf_tex}
+\caption{****}
+\label{fig:spherical_harmonics_convergence}
+\end{figure}
 
 
 \lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov, 
@@ -1469,6 +1620,12 @@ language=mypython]{../python/legendre-polynomials.py}
 \includegraphics{../figs/legendre-polynomials.pdf}
 \caption{Legendreove polynómy}
 \end{figure}
+
+
+
+\section{Legendreove polynómy a Legendreove funkcie}
+
+
 
 
 \lstinputlisting[caption=Výpočet a~zobrazenie nenormovaných sférických 
