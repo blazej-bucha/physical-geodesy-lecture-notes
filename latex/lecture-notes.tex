@@ -23,6 +23,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[round]{natbib}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{upgreek}
 \usepackage{listings}
 \usepackage{xcolor}
@@ -1320,6 +1321,7 @@ a širší kontext.
 
 
 \section{Jednotkové vektory v trojrozmernom pravouhlom súradnicovom systéme}
+\label{sec:unit_vectors}
 
 Nech je daný trojrozmerný pravouhlý súradnicový systém so začiatkom v bode $O$ 
 a so súradnicovými osami $x$, $y$ a $z$.  Označme symbolmi $\vec e_1$, $\vec 
@@ -1459,18 +1461,26 @@ súradnice $v_{nm}$ vypočítať.
 \section{Rozvoj gravitačného potenciálu do radu sférických harmonických 
 funkcií}
 
+Cieľom tejto kapitoly je odvodiť vzťah~(\ref{eq:vg_synthesis}) 
+z rovnice~(\ref{eq:vg_body}).  Zavedených bude niekoľko nových pojmov, ktoré 
+samé o sebe si vyžadujú podrobnú diskusiu.  Aby sme však pričasto neprerušovali 
+prirodzený myšlienkový postup odvodenia, nové pojmy predstavíme v tejto 
+kapitole len vo forme nevyhnutnej na pochopenie odvodenia samotného.  Vrátime 
+k nim však v nasledujúcich kapitolách, podobne ako sa čitateľ môže vrátiť 
+k tejto kapitole po prečítaní dovysvetľujúcich kapitol.
+
 Nech je dané všeobecné teleso s objemom $\tau$ a hustotou $\rho$ 
 (Obrázok~\ref{fig:gravitating_body}).  Hustota $\rho$ sa v telese môže meniť, 
 no budeme predpokladať, že v každom diferenciálnom elemente $\diff \tau(Q)$ je 
 konečná.  Nech je ďalej daný bod $P$, ktorý sa nachádza \emph{mimo} všeobecného 
 telesa, teda v tej časti priestoru, v ktorom je gravitačný potenciál harmonický 
-(Kapitola~\ref{sec:laplace_equation}).  Trojicu sférických súradníc 
-(Obrázok~\ref{fig:cart_sph}) bodov $P$ a $Q$ označme symbolmi $(r, \varphi, 
+(Kapitola~\ref{sec:laplace_equation}).  Trojicu sférických súradníc (pozri 
+Obrázok~\ref{fig:cart_sph}) bodov $P$ a $Q$ označme symbolmi $(r, \varphi, 
 \lambda)$ a $(r_Q, \varphi_Q, \lambda_Q)$.
 
 Vyjadrime vzdialenosť $l$ medzi bodmi $P$ a $Q$ 
-(Obrázok~\ref{fig:gravitating_body}) aplikovaním kosínusovej vety 
-v trojuholníku $OPQ$,
+z Obrázku~\ref{fig:gravitating_body} aplikovaním kosínusovej vety 
+v trojuholníku $OPQ$ (Obrázok~\ref{fig:distance_l}),
 %
 \begin{equation}
 l = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
@@ -1486,6 +1496,13 @@ vzťahu~(\ref{eq:vg_body}) môžeme teda vyjadriť nasledovne,
 \right)^{-\frac{1}{2}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r} 
 \right)^2 - 2 \dfrac{r_Q}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
 \end{equation}
+
+\begin{figure}
+\centering
+\input{./fig-distance-l.pdf_tex}
+\caption{Rovinný trojuholník $OPQ$ z Obrázku~\ref{fig:gravitating_body}}
+\label{fig:distance_l}
+\end{figure}
 
 Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
 matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátvorka 
@@ -1534,8 +1551,34 @@ kde
 P_n(t) = \frac{1}{n!} \, \frac{\partial^n H(0, t)}{\partial \alpha^n}{.}
 \end{equation}
 %
-Člen $P_n(t)$ sa nazýva \emph{Legendreov polynóm stupňa $n$} a funkcia 
-$H(\alpha, t)$ sa nazýva \emph{generická funkcia} pre Legendreove polynómy.  
+Funkcie $P_n(t)$ dostali názov podľa ich objaviteľa, francúzskeho matematika 
+A.--M. Legendrea (1752~-- 1833), a nazývajú sa \emph{Legendreove polynómy 
+stupňa $n$}.  Funkcia $H(\alpha, t)$ sa nazýva \emph{generická funkcia} pre 
+Legendreove polynómy.  Derivovaním generickej funkcie podľa $\alpha$, dosadením 
+$\alpha = 0$ do výsledku derivovania a následným dosadením získaného výrazu 
+do~(\ref{eq:pn}) sa možno presvedčiť, že Legendreove polynómy stupňov $n = 0, 
+1, 2$ sú rovné
+%
+\begin{equation}
+\begin{split}
+P_0(t) & = 1{,}\\
+P_1(t) & = t{,}\\
+P_2(t) & = \frac{1}{2} \left( 3t^2  - 1 \right){.}
+\end{split}
+\end{equation}
+%
+Legendreove je možné vypočítať aj Rodriguesovým vzorcom 
+\citep[napríklad][]{SansoGeoidDetermination},
+%
+\begin{equation}
+\label{eq:pn_rodrigues}
+P_n(t) = \frac{1}{2^n \, n!} \, \frac{\diff^n (t^2 - 1)^n}{\diff t^n}{.}
+\end{equation}
+%
+So zvyšujúcim sa stupňom $n$ sa však oba spôsoby výpočtu stávajú nepraktické.  
+V Kapitole~\ref{sec:legendre_polynomials_and_legendre_functions} budú preto 
+ukázané efektívnejšie spôsoby výpočtu Legendreových polynómov.
+
 Dosadením~(\ref{eq:pn}), (\ref{eq:maclaurin_series_of_generic_function}), 
 (\ref{eq:generic_function_for_lps}) a (\ref{eq:1l}) do~(\ref{eq:vg_body}) 
 dostaneme vzťah
@@ -1545,7 +1588,7 @@ dostaneme vzťah
 V_\gidx(P) = \frac{G}{r} \, \iiint_{\tau} \rho(Q) \, \sum_{n = 0}^{\infty} 
 \left( \frac{r_Q}{r} \right)^n \, P_n(\cos\psi) \, \diff\tau(Q){.}
 \end{equation}
-
+%
 V prípade telies približne sférického tvaru, napríklad Zeme či iných planét, je 
 výhodné vyjadriť hranice integrácie vo vzťahu~(\ref{eq:vg_legpol}) vo 
 sférických súradniciach.  Po uvážení
@@ -1575,9 +1618,9 @@ od začiatku súradnicového systému $O$ po bod na povrchu telesa so sférickou
 šírkou $\varphi_Q$ a sférickou dĺžkou $\lambda_Q$.
 
 Z pohľadu integračných premenných $\diff r$, $\diff\varphi$ a $\diff\lambda$ je 
-Legendreov polynóm $P_n(\cos\psi)$ vo vzťahu~(\ref{eq:vg_legpol_sph}) je 
-zložená funkcia, pretože je funkciou $\cos\psi$, pričom $\psi$ samotné je 
-funkciou sférických súradníc bodov $Q$ a $P$,
+Legendreov polynóm $P_n(\cos\psi)$ vo vzťahu~(\ref{eq:vg_legpol_sph}) zložená 
+funkcia, pretože je funkciou $\cos\psi$, pričom samotná funkcia $\cos\psi$ 
+závisí od uhlovej časti sférických súradníc bodov $Q$ a $P$,
 %
 \begin{equation}
 \label{eq:cospsi}
@@ -1586,23 +1629,139 @@ funkciou sférických súradníc bodov $Q$ a $P$,
 \end{equation}
 %
 Bolo by preto vhodné nájsť taký vzťah pre Legendreov polynóm $P_n(\cos\psi)$, 
-ktorý by závisel od súradníc $\varphi, \lambda$ a $\varphi_Q, \lambda_Q$, 
-podobne ako je tomu vo vzťahu~(\ref{eq:cospsi}).
+v ktorom by každá prípadná funkcia závisela iba od jednej z premenných 
+$\varphi$, $ \lambda$, $\varphi_Q$ alebo $\lambda_Q$, a nie od viacerých 
+premenných ako je tomu po dosadení~(\ref{eq:cospsi}) 
+do~(\ref{eq:vg_legpol_sph}).  Na tento účel slúži \emph{dekompozičný vzorec pre 
+Legendreove polynómy}, niekedy tiež nazývaný aj adičný teorém či súčtová veta.  
+Podľa \cite{Hobson} bol tento vzťah po prvýkrát odvodený samotným 
+A.--M. Legendreom v roku~1782.  Odvodenie kvôli zložitosti v tejto práci 
+vynecháme, no je možné vyhľadať ho napríklad v sekcii~90 Kapitoly~IV knihy 
+\cite{Hobson}.
+
+Dekompizičný vzorec pre Legendreove polynómy možno zapísať vo viacerých 
+ekvivalentných formách, napríklad 
+\citep{Hobson,MoritzPhysicalGeodesy,SansoGeoidDetermination}
+%
+\begin{equation}
+\label{eq:pn_decomposition_formula}
+\begin{split}
+P_n(\cos\psi) &= P_n(\sin\varphi) \, P_n(\sin\varphi_Q)\\
+%
+&\phantom{={}} +2 \sum_{m = 1}^{n} \frac{(n - m)!}{(n + m)!} \, 
+P_{nm}(\sin\varphi) \, P_{nm}(\sin\varphi_Q) \, \cos\left[k (\lambda 
+- \lambda_Q) \right]\\
+%
+&= (2 - \delta_{m0}) \, \sum_{m = 0}^{n} \frac{(n - m)!}{(n + m)!} \, \left[ 
+P_{nm}(\sin\varphi) \, \cos(m\lambda) \, P_{nm}(\sin\varphi_Q) \, 
+\cos(k\lambda_Q)\right.\\
+%
+&\phantom{={}}+\left. P_{nm}(\sin\varphi) \, \sin(m\lambda) \, 
+P_{nm}(\sin\varphi_Q) \, \sin(k\lambda_Q)\right]{.}
+\end{split}
+\end{equation}
+%
+Člen $P_{nm}(t)$ sa nazýva \emph{pridružená Legendreova funkcia prvého druhu} 
+a je daný vzťahom
+%
+\begin{equation}
+\label{eq:pnm_def}
+P_{nm}(t) = (1 - t^2)^{\frac{m}{2}} \, \frac{\diff^m P_n(t)}{\diff t^m}{,}
+\end{equation}
+%
+kde symbol $m$ môže nadobúdať hodnoty $m = 0, 1, \dots, n$ (pozri druhú sumáciu 
+vo vzťahu~\ref{eq:pn_decomposition_formula}) a nazýva sa \emph{rád}.  Ak je rád 
+nulový, zvykne sa v zápise vynechať, teda $P_n(t) = P_{n0}(t)$.  Zo 
+vzťahu~(\ref{eq:pnm_def}) vidíme, že Legendreova funkcia stupňa $n$ a rádu $m$ 
+súvisí s $m$-tou deriváciou Legendreoveho polynómu stupňa $n$.  Vo 
+vzťahu~(\ref{eq:pnm_def}) pribudol ešte člen $\delta_{m0}$, ktorý má názov 
+Kronekerovo delta a je daný podmieneným spôsobom,
+%
+\begin{equation}
+\delta_{m0} =
+%
+\begin{cases}
+1{,} \quad \mathrm{ak} \quad m = 0{,}\\
+0{,} \quad \mathrm{ak} \quad m \neq 0{.}
+\end{cases}
+\end{equation}
+
+Dosadením rovnice~(\ref{eq:pn_decomposition_formula}) do~(\ref{eq:vg_legpol}) 
+získame výsledný vzťah
+%
+\begin{equation}
+\label{eq:vg_sh_no_norm}
+V_\gidx(P) = G \sum_{n = 0}^\infty \frac{1}{r^{n + 1}} \sum_{m = 0}^{n} \left( 
+C_{nm} \, \cos(m\lambda) + S_{nm} \, \sin(m\lambda)\right) \, 
+P_{nm}(\sin\varphi){,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\label{eq:vg_shc_no_norm}
+\begin{rcases}
+C_{nm}\\
+S_{nm}
+\end{rcases}
+= (2 - \delta_{m0}) \frac{(n - m)!}{(n + m)!} \iiint_{\tau} \rho(r_Q, 
+\varphi_Q, \lambda_Q) \, r_Q^n \, P_{nm}(\sin\varphi_Q)
+%
+\begin{Bmatrix}
+\cos(m\lambda_Q)\\
+\sin(m\lambda_Q)
+\end{Bmatrix}
+%
+\diff\tau{.}
+\end{equation}
+%
+Všimnime si, že vo vzťahu~(\ref{eq:vg_sh_no_norm}) sú premennými iba súradnice 
+$r, \varphi, \lambda$ výpočtového bodu $P$, v ktorom určujeme gravitačný 
+potenciál (pozri Obrázok~\ref{fig:gravitating_body}).  Naproti tomu, vo 
+vzťahu~(\ref{eq:vg_shc_no_norm}) sú (integračné) premenné iba súradnice 
+$r_Q,\varphi_Q, \lambda_Q$ diferenciálneho elementu $\diff\tau(Q)$ 
+(Obrázok~\ref{fig:gravitating_body}).  Navyše, koeficienty $C_{nm}$ a $S_{nm}$ 
+sú pre dané teleso \emph{konštantné}.  Inými slovami, ak poznáme konštanty 
+$C_{nm}$ a $S_{nm}$ telesa, ktoré generuje gravitačné pole, potom vďaka 
+vzťahu~(\ref{eq:vg_sh_no_norm}) poznáme gravitačný potenciál $V_\gidx$ 
+v (takmer) ľubovoľnom bode $P$.  Nepripomína to situáciu 
+z Kapitoly~\ref{sec:unit_vectors}, v ktorej sme tvrdili, že ak poznáme 
+súradnice $r_i$ vektora $\vec r$, potom poznáme vektor $\vec r$?  Hoci to ešte 
+nemusí byť na prvý pohľad zrejmé, koeficienty $C_{nm}$ a $S_{nm}$ sú 
+v skutočnosti súradnicami $v_{nm}$ gravitačného potenciálu 
+z rovnice~(\ref{eq:vg_synthesis}).
+
+Označme
+%
+\begin{equation}
+\begin{rcases}
+\tilde{C}_{nm}\\
+\tilde{S}_{nm}
+\end{rcases}
+= \frac{1}{M \, R^n}
+\begin{cases}
+C_{nm}{,}\\
+S_{nm}{,}
+\end{cases}
+\end{equation}
+%
+kde $M$ je hmotnosť telesa, ktoré generuje gravitačný potenciál a $R$ je 
+polomer najmenšej sféry, v ktorej sa celé toto teleso nachádza, teda $R 
+= \max(r_\mathrm{S}(\varphi_Q, \lambda_Q))$.  Vzťah~(\ref{eq:vg_sh_no_norm}) 
+potom prejde na tvar
+%
+\begin{equation}
+\label{eq:vg_sh_1st_norm}
+V_\gidx(P) = \frac{G \, M}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n 
++ 1} \sum_{m = 0}^{n} \left( \tilde{C}_{nm} \, \cos(m\lambda) + \tilde{S}_{nm} 
+\, \sin(m\lambda)\right) \, P_{nm}(\sin\varphi){.}
+\end{equation}
 
 
 
-%Pred ďalšími úpravami rovnice~(\ref{eq:vg_legpol}) sa pristavme pri 
-%predchádzajúcich vzťahoch.  Rovnica~(\ref{eq:vg_legpol}) je síce formálne 
-%zložitejšia ako vzťah~(\ref{eq:vg_body}), poskytuje však niektoré výhody.  Pre 
-%mnohé telesá sa napríklad jednoduchšie prakticky počíta.  Jedna z dôležitých 
-%vlastností rovnice~(\ref{eq:vg_legpol}) je tá, že poradie integrácie a sumácie 
-%môže byť zamenené.  Takúto úpravu je však možné vykonať iba v prípade, že 
-%rad~(\ref{eq:maclaurin_series_of_generic_function}) je rovnomerne 
-%konvergentný.  Všimnime si, že pred samotným 
-%rozvojom~(\ref{eq:maclaurin_series_of_generic_function}) sme vyslovili 
-%podmienku $\alpha = \frac{r_Q}{r} < 1$, teda predpokladáme, že zámena poradia 
-%integrácie a sumácie je možná.  Táto podmienka bude veľmi dôležitá pre 
-%výsledný vzťah, ktorý získame.
+
+
+
 
 \begin{figure}
 \centering
@@ -1624,6 +1783,7 @@ language=mypython]{../python/legendre-polynomials.py}
 
 
 \section{Legendreove polynómy a Legendreove funkcie}
+\label{sec:legendre_polynomials_and_legendre_functions}
 
 
 
