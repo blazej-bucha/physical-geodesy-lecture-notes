@@ -4,7 +4,7 @@ The source code of lecture notes on Physical Geodesy (in Slovak).
 
 Starting with Newton's law of gravitation, discussed are fundamental quantities 
 and concepts of Physical Geodesy such as the gravitational potential, the 
-gravitational vector or the equipotential surfaces.  The next chapter is 
+gravitational vector and the equipotential surfaces.  The next chapter is 
 centered around the spherical harmonic expansion of the Earth's external 
 gravitational field, focusing on Legendre polynomials, Legendre functions, 
 spherical harmonics and their normalization.  Next, introduced is the normal 
@@ -16,11 +16,11 @@ discussed in the final chapter.
 
 * The textbook is written in LaTeX using UTF-8 encoding.
 
-* Figures are drawn in Inkscape.
+* The figures are drawn in Inkscape.
 
-* Maps are produced using GMT.
+* The maps are produced using GMT.
 
-* Numerical examples are written in Python (requires NumPy, Matplotlib and 
+* The numerical examples are written in Python (requires NumPy, Matplotlib and 
   SciPy), C and MATLAB.
 
 Work in progress.
