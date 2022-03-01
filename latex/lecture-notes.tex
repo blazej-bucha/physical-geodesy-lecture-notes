@@ -1789,7 +1789,7 @@ P_n(t) = \frac{2n - 1}{n} \, t \, P_{n - 1}(t) - \frac{n - 1}{n} \, P_{n
 - 2}(t){,} \quad n \geq 2{,} \quad t \in [-1, 1]{,}
 \end{equation}
 %
-so začiatočnými hodnotami $P_0(t) = 0$ a $P_1(t) = 1$ (pozri 
+so začiatočnými hodnotami $P_0(t) = 1$ a $P_1(t) = t$ (pozri 
 rovnicu~\ref{eq:p0_to_p5}).
 
 Grafické znázornenie Legendreových polynómov stupňov $n =0, \dots, 5$ je 
@@ -1897,20 +1897,25 @@ Z vlastností Legendreových polynómov spomeňme ešte aspoň nasledovné
 \citep{Freeden2009},
 %
 \begin{equation}
+\label{eq:pn_property1}
 P_n(1) = 1{,}
 \end{equation}
 %
 \begin{equation}
+\label{eq:pn_property2}
 |P_n(t)| \leq P_n(1) = 1{,} \quad t \in [-1, 1]{,}
 \end{equation}
 %
 \begin{equation}
+\label{eq:pn_property3}
 P_n'(1) = \frac{n \, (n + 1)}{2}{,}
 \end{equation}
 %
-kde $P_n'(t) = \diff P_n(t) \slash \diff t$.  Pre širokú škálu ďalších 
-vlastností Legendreovych polynómov, ich derivácií či integrálov, pozri 
-napríklad \cite{Gradshteyn2007}, \cite{Freeden2009} alebo \cite{Olver2010}.
+kde $P_n'(t) = \diff P_n(t) \slash \diff t$.  Vzťahy~(\ref{eq:pn_property1}) až 
+(\ref{eq:pn_property3}) platia pre $n \geq 0$.   Širokú škálu ďalších 
+vlastností Legendreovych polynómov, ich derivácií či integrálov je možné nájsť 
+napríklad v prácach \cite{Gradshteyn2007}, \cite{Freeden2009} alebo 
+\cite{Olver2010}.
 
 Na záver pre úplnosť dodajme, že vzťahy~(\ref{eq:f_synthesis}) 
 a~(\ref{eq:f_analysis}) možno aplikovať nielen na spojité funkcie $f(t)$ na 
