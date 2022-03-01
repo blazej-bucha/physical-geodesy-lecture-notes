@@ -20,7 +20,7 @@ discussed in the final chapter.
 
 * The maps are produced using GMT.
 
-* The numerical examples are written in Python (requires NumPy, Matplotlib and 
+* The numerical examples are written in Python (require NumPy, Matplotlib and 
   SciPy), C and MATLAB.
 
 Work in progress.
