@@ -1519,7 +1519,7 @@ f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n f(x_0)}{\partial
 x^n} \left( x - x_0 \right)^n{.}
 \end{equation}
 %
-Ak je funkcia $f(x)$ rovinutá do Taylorovho radu v bode $x_0 = 0$, takýto rad 
+Ak funkcia $f(x)$ je rozvinutá do Taylorovho radu v bode $x_0 = 0$, takýto rad 
 sa nazýva \emph{Maclaurinov rad},
 %
 \begin{equation}
@@ -1555,9 +1555,8 @@ P_n(t) = \frac{1}{n!} \, \frac{\partial^n H(0, t)}{\partial \alpha^n}{.}
 Funkcie $P_n(t)$ dostali názov podľa ich objaviteľa, francúzskeho matematika 
 A.--M. Legendrea (1752~-- 1833), a nazývajú sa \emph{Legendreove polynómy 
 stupňa $n$}.  Funkcia $H(\alpha, t)$ sa nazýva \emph{generická funkcia pre 
-Legendreove polynómy}.
-
-Dosadením~(\ref{eq:pn}), (\ref{eq:maclaurin_series_of_generic_function}), 
+Legendreove polynómy}.  Dosadením~(\ref{eq:pn}), 
+(\ref{eq:maclaurin_series_of_generic_function}), 
 (\ref{eq:generic_function_for_lps}) a (\ref{eq:1l}) do~(\ref{eq:vg_body}) 
 dostaneme vzťah
 %
@@ -1566,7 +1565,7 @@ dostaneme vzťah
 V_\gidx(P) = \frac{G}{r} \, \iiint_{\tau} \rho(Q) \, \sum_{n = 0}^{\infty} 
 \left( \frac{r_Q}{r} \right)^n \, P_n(\cos\psi) \, \diff\tau(Q){.}
 \end{equation}
-%
+
 V prípade telies približne sférického tvaru, napríklad Zeme či iných planét, je 
 výhodné vyjadriť hranice integrácie vo vzťahu~(\ref{eq:vg_legpol}) vo 
 sférických súradniciach.  Po uvážení
@@ -1696,8 +1695,8 @@ S_{nm}
 Všimnime si, že vo vzťahu~(\ref{eq:vg_sh_no_norm}) sú premennými iba súradnice 
 $r, \varphi, \lambda$ výpočtového bodu $P$, v ktorom určujeme gravitačný 
 potenciál (pozri Obrázok~\ref{fig:gravitating_body}).  Naproti tomu, vo 
-vzťahu~(\ref{eq:vg_shc_no_norm}) sú (integračné) premenné iba súradnice 
-$r_Q,\varphi_Q, \lambda_Q$ diferenciálneho elementu $\diff\tau(Q)$ 
+vzťahu~(\ref{eq:vg_shc_no_norm}) sú premenné iba súradnice $r_Q,\varphi_Q, 
+\lambda_Q$ diferenciálneho elementu $\diff\tau(Q)$ 
 (Obrázok~\ref{fig:gravitating_body}).  Navyše, koeficienty $C_{nm}$ a $S_{nm}$ 
 sú pre dané teleso \emph{konštantné}.  Inými slovami, ak poznáme konštanty 
 $C_{nm}$ a $S_{nm}$ telesa, ktoré generuje gravitačné pole, potom vďaka 
@@ -1707,26 +1706,16 @@ z Kapitoly~\ref{sec:unit_vectors}, v ktorej sme tvrdili, že ak poznáme
 súradnice $r_i$ vektora $\vec r$, potom poznáme vektor $\vec r$?  Hoci to ešte 
 nemusí byť na prvý pohľad zrejmé, koeficienty $C_{nm}$ a $S_{nm}$ sú 
 v skutočnosti veľmi úzko spojené so súradnicami $v_{nm}$ 
-z rovnice~(\ref{eq:vg_synthesis}).  Po nahradení nekonečna nezáporným celým 
-číslom $N$ je možné vzťah~(\ref{eq:vg_sh_no_norm}) i prakticky vypočítať.  
-V geovedách je takýto výpočet veľmi rozšírený a azda by sme mohli povedať, že 
-v súčastnosti tvorí vzťah~(\ref{eq:vg_sh_no_norm}) jednu zo základným metód 
-modelovania vonkajšieho gravitačného poľa Zeme a nebeských telies.
+z rovnice~(\ref{eq:vg_synthesis}).
 
-Zaveďme v rovnici~(\ref{eq:vg_sh_no_norm}) substitúciu pre členy, ktoré závisia 
-iba od uhlovej časti sférických súradníc, teda $\varphi$ a $\lambda$,
-%
-\begin{equation}
-Y_{nm}(\varphi, \lambda) = P_{nm}(\sin\varphi)
-%
-\begin{cases}
-\cos(m\lambda){,}\\
-\sin(m\lambda){.}
-\end{cases}
-\end{equation}
-%
-Funkcia $Y_{nm}(\varphi, \lambda)$ sa nazýva \emph{plošná sférická harmonická 
-funkcia stupňa $n$ a rádu $k$} a vzťah~(\ref{eq:vg_sh_no_norm}) predstavuje 
+Po nahradení nekonečna nezáporným celým číslom $N$ je možné 
+vzťah~(\ref{eq:vg_sh_no_norm}) i prakticky vypočítať.  V geovedách je takýto 
+výpočet veľmi rozšírený a azda by sme mohli povedať, že v súčastnosti tvorí 
+vzťah~(\ref{eq:vg_sh_no_norm}) jednu zo základným metód modelovania vonkajšieho 
+gravitačného poľa Zeme a nebeských telies.  Členy $P_{nm}(\sin\varphi) \, 
+\cos(m\lambda)$ a $ P_{nm}(\sin\varphi) \, \sin(m\lambda)$ 
+v rovnici~(\ref{eq:vg_sh_no_norm}) sa nazývajú \emph{plošné sférické harmonické 
+funkcie stupňa $n$ a rádu $m$} a vzťah~(\ref{eq:vg_sh_no_norm}) predstavuje 
 \emph{rozvoj gravitačného potenciálu do radu sférických harmonických funkcií}.
 
 V nasledujúcich kapitolách sa budeme podrobnejšie venovať 
@@ -1793,16 +1782,17 @@ so začiatočnými hodnotami $P_0(t) = 1$ a $P_1(t) = t$ (pozri
 rovnicu~\ref{eq:p0_to_p5}).
 
 Grafické znázornenie Legendreových polynómov stupňov $n =0, \dots, 5$ je 
-uvedené na Obrázku~\ref{fig:lp}.  Obrázok bol pripravený Zdrojovým 
-kódom~\ref{src:lp} z Prílohy~\ref{app:lp}.  Z obrázku, ale i zo 
-vzťahov~(\ref{eq:p0_to_p5}) je zrejmé, že s narastajúcim stupňom $n$ sa 
-Legendreove polynómy stávajú zložitejšie.
+uvedené na Obrázku~\ref{fig:lp}.  Z rovnice~(\ref{eq:pn_bonnet}) je zrejmé 
+(pozri tiež Obrázok~\ref{fig:lp} a vzťahy~\ref{eq:p0_to_p5}), že Legendreove 
+polynómy párnych stupňov $n = 0, 2, 4, \dots$ sú párne funkcie a polynómy 
+nepárnych stupňov $n = 1, 3, 5, \dots$ sú nepárne funkcie.
 
 \begin{figure}[bt]
 \label{fig:lp}
 \centering
 \includegraphics{../figs/legendre-polynomials.pdf}
-\caption{Legendreove polynómy}
+\caption{Legendreove polynómy.  Obrázok bol pripravený Zdrojovým 
+kódom~\ref{src:lp} z Prílohy~\ref{app:lp}}
 \end{figure}
 
 V Kapitole~\ref{sec:unit_vectors} sme ukázali, že ľubovoľný vektor $\vec r$ 
@@ -1887,11 +1877,10 @@ vzťah~(\ref{eq:1l_lp}).  Hoci ide o triviálny príklad, demonštruje rozvinuti
 funkcie do radu Legendreových polynómov, ktoré je v istom zmysle obdobné 
 vyjadreniu vektora $\vec r$ pomocou jednotkových vektorov $\vec e_i$ 
 z Kapitoly~\ref{sec:unit_vectors}.  Takýto rozvoj je v mnohých situáciách 
-výhodný, pretože môže napríklad výrazne zjednodušiť odvodenie.  Konieckoncov, 
-najlepšie to demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, 
-v ktorej sme funkciu $1 \slash l$ rozvinuli do radu Legendreových polynómov 
-a následne Legendreových funkcií, čím sme získali 
-vzťah~(\ref{eq:vg_sh_no_norm}).
+výhodný, pretože môže napríklad zjednodušiť odvodenie.  Konieckoncov, najlepšie 
+to demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v ktorej sme 
+funkciu $1 \slash l$ rozvinuli do radu Legendreových polynómov a následne 
+Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
 
 Z vlastností Legendreových polynómov spomeňme ešte aspoň nasledovné
 \citep{Freeden2009},
@@ -1903,19 +1892,24 @@ P_n(1) = 1{,}
 %
 \begin{equation}
 \label{eq:pn_property2}
-|P_n(t)| \leq P_n(1) = 1{,} \quad t \in [-1, 1]{,}
+P_n(-1) = (-1)^n{,}
 \end{equation}
 %
 \begin{equation}
 \label{eq:pn_property3}
+|P_n(t)| \leq P_n(1) = 1{,} \quad t \in [-1, 1]{,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:pn_property4}
 P_n'(1) = \frac{n \, (n + 1)}{2}{,}
 \end{equation}
 %
 kde $P_n'(t) = \diff P_n(t) \slash \diff t$.  Vzťahy~(\ref{eq:pn_property1}) až 
-(\ref{eq:pn_property3}) platia pre $n \geq 0$.   Širokú škálu ďalších 
+(\ref{eq:pn_property4}) platia pre $n \geq 0$.   Širokú škálu ďalších 
 vlastností Legendreovych polynómov, ich derivácií či integrálov je možné nájsť 
-napríklad v prácach \cite{Gradshteyn2007}, \cite{Freeden2009} alebo 
-\cite{Olver2010}.
+napríklad v prácach \cite{Gradshteyn2007}, \cite{Freeden2009} 
+a \cite{Olver2010}.
 
 Na záver pre úplnosť dodajme, že vzťahy~(\ref{eq:f_synthesis}) 
 a~(\ref{eq:f_analysis}) možno aplikovať nielen na spojité funkcie $f(t)$ na 
@@ -1938,6 +1932,7 @@ Dosadením Rodriguesovho vzorca~(\ref{eq:pn_rodrigues}) do~(\ref{eq:pnm_def})
 získame vzťah pre Legendreove funkcie,
 %
 \begin{equation}
+\label{eq:pnm_ferrer}
 P_{nm}(t) = \frac{1}{2^n \, n!} (1 - t^2)^{ m \slash 2} \, \frac{\diff^{n + m} 
 (t^2 - 1)^n}{\diff t^{n + m}}{.}
 \end{equation}
@@ -1958,8 +1953,9 @@ množstvo rekurentných vzorcov, napríklad \citep{Freeden2009}
 P_{nm}(t) = \frac{2n - 1}{n - m} \, t \, P_{n - 1, m}(t) + \frac{n + m - 1}{n 
 - m} \, P_{n - 2, m}(t){.}
 \end{equation}
-
-Niekoľko prvých Legendreových funkcií ma nasledovný tvar,
+%
+Niekoľko prvých Legendreových funkcií ma nasledovný tvar 
+(Obrázok~\ref{fig:lf}),
 %
 \begin{equation}
 \label{eq:lf00_to_lf22}
@@ -1972,9 +1968,6 @@ P_{2,1}(t) & = 3t \, \sqrt{1 - t^2}{,}\\
 P_{2,2}(t) & = 3(1 - t^2){.}\\
 \end{split}
 \end{equation}
-%
-Legendreove funkcie~(\ref{eq:lf00_to_lf22}) sú zobrazené na 
-Obrázku~\ref{fig:lf}.
 
 \begin{figure}[bt]
 \label{fig:lf}
@@ -1997,6 +1990,26 @@ Pre dve Legendreove funkcie rovnakého stupňa a rádu platí
 \end{equation}
 
 
+\section{Sférické harmonické funkcie}
+\label{sec:spherical_harmonics}
+
+V rovnici~(\ref{eq:vg_sh_no_norm}) zaveďme substitúciu pre členy, ktoré závisia 
+iba od uhlovej časti sférických súradníc,
+%
+\begin{equation}
+\label{eq:ynk}
+Y_{nk}(\varphi, \lambda) = P_{n|k|}(\sin\varphi)
+%
+\begin{cases}
+\cos(k\lambda)    &\text{pre} \quad k \geq 0{,}\\
+\sin(|k|\lambda)  &\text{pre} \quad k < 0{,}\\
+\end{cases}
+\end{equation}
+%
+pričom $n = 0, 1, 2, \dots$ a $k = -n, \dots, n$.  Funkcia $Y_{nk}(\varphi, 
+\lambda)$ sa nazýva \emph{plošná sférická harmonická funkcia stupňa $n$ a rádu 
+$k$}.
+
 \begin{figure}[bt]
 \centering
 \includegraphics{../figs/spherical-harmonic-n3-m0.pdf}
@@ -2005,15 +2018,15 @@ Pre dve Legendreove funkcie rovnakého stupňa a rádu platí
 \includegraphics{../figs/spherical-harmonic-n4-m0.pdf}
 \includegraphics{../figs/spherical-harmonic-n4-m1.pdf}
 \includegraphics{../figs/spherical-harmonic-n4-m4.pdf}
-\caption{Nenormované plošné sférické harmonické funkcie.  Záporné hodnoty sú 
-zobrazené odtieňmi modrej farby, kladné hodnoty odtieňmi červenej farby.  
-\textit{Vrchný rad} (zľava): $Y_{3,0}(\varphi, \lambda)$, $Y_{3,1}(\varphi, 
-\lambda)$, $Y_{3,3}(\varphi, \lambda)$.  \textit{Spodný rad} (zľava): 
-$Y_{4,0}(\varphi, \lambda)$, $Y_{4,1}(\varphi, \lambda)$, $Y_{4,4}(\varphi, 
-\lambda)$}
+\caption{Plošné sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$.  
+Záporné hodnoty sú zobrazené odtieňmi modrej farby, kladné hodnoty odtieňmi 
+červenej farby.  \textit{Vrchný rad} (zľava): $Y_{3,0}(\varphi, \lambda)$, 
+$Y_{3,1}(\varphi, \lambda)$, $Y_{3,3}(\varphi, \lambda)$.  \textit{Spodný rad} 
+(zľava): $Y_{4,0}(\varphi, \lambda)$, $Y_{4,1}(\varphi, \lambda)$, 
+$Y_{4,4}(\varphi, \lambda)$.  Obrázok bol pripravený Zdrojovým 
+kódom~\ref{src:ynk} z Prílohy~\ref{app:sh}}
 \label{fig:sh}
 \end{figure}
-
 
 \begin{figure}[bt]
 \centering
@@ -2023,16 +2036,65 @@ $Y_{4,0}(\varphi, \lambda)$, $Y_{4,1}(\varphi, \lambda)$, $Y_{4,4}(\varphi,
 \includegraphics{../figs/spherical-harmonic-n4-m0-3d.pdf}
 \includegraphics{../figs/spherical-harmonic-n4-m1-3d.pdf}
 \includegraphics{../figs/spherical-harmonic-n4-m4-3d.pdf}
-\caption{Nenormované plošné sférické harmonické funkcie z Obr.~\ref{fig:sh} 
-zobrazené ako odľahlosť nadobúdanej hodnoty od jednotkovej sféry}
+\caption{Plošné sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$ 
+z Obrázku~\ref{fig:sh} zobrazené odľahlosťou nadobúdanej hodnoty od jednotkovej 
+sféry.  Obrázok bol pripravený Zdrojovým kódom~\ref{src:ynk} 
+z Prílohy~\ref{app:sh}}
 \label{fig:sh3d}
 \end{figure}
 
+Pozrime sa bližšie na grafickú reprezentáciu sférických harmonických funkcií 
+(Obrázky~\ref{fig:sh} a \ref{fig:sh3d}).  Možno si všimnúť, že sférické 
+harmonické funkcie rádu $k = 0$ striedavo rozdeľujú sféru v smere sférickej 
+šírky na oblasti s kladnými hodnotami a na oblasti so zápornými hodnotami.  
+Nezávisia tiež od sférickej dĺžky.  Tieto vlastnosti možno overiť dosadením 
+rádu $k = 0$ do rovnice~(\ref{eq:ynk}),
+%
+\begin{equation}
+\label{eq:yn0}
+Y_{n0}(\varphi, \lambda) = P_n(\sin\varphi){.}
+\end{equation}
+%
+Funkcia $Y_{n0}(\varphi, \lambda)$ mení $n$-krát znamienko na intervale 
+$\varphi \in [-\frac{\pi}{2}, \frac{\pi}{2}]$ (porovnaj rovnicu~\ref{eq:yn0} 
+a Obrázok~\ref{fig:lp}).  Možno si tiež všimnúť, že parita stupňa $n$ určuje 
+symetriu funkcie $Y_{n0}(\varphi, \lambda)$ voči rovine rovníka; ak $n = 0, 2, 
+4, \dots$, sférická harmonická funkcia je symetrická voči rovine rovníka 
+a nesymetrická ak $n = 1, 3, 5, \dots$ (pozri 
+Kapitolu~\ref{sec:legendre_polynomials}). Sférická harmonická funkcia rádu $k 
+= 0$ sa nazýva \emph{zonálna sférická harmonická funkcia}.
 
+Ak $0 < |k| < n$, sférická harmonická funkcia mení znamienko s oboma 
+súradnicami.  V smere sférickej šírky dochádza k $n - |k|$ zmenám znamienka 
+a v smere sférickej dĺžky sa znamienko mení $2|k|$-krát.  Počet $n - |k|$ 
+vyplýva zo skutočnosti, že Legendreova funkcia $P_{n|k|}(\sin\varphi)$ súvisí 
+s $|k|$-tou deriváciou Legendreovho polynómu $P_n(\sin\varphi)$ (pozri 
+rovnice~\ref{eq:pnm_def} a \ref{eq:pnm_ferrer}).  Deriváciou polynómu sa 
+znižuje jeho stupeň, teda aj počet miest, v ktorých funkcia môže pretínať 
+vodorovnú os.  Počet nulových hodnôt v smere sférickej dĺžky $2|k|$ vyplýva 
+z vlastností trigonometrických funkcií $\cos(k\lambda)$ a $\sin(|k|\lambda)$.  
+Sférická harmonická funkcia rádu $0 < |k| < n$ má prívlastok \emph{teserálna}.
 
-\section{Sférické harmonické funkcie}
-\label{sec:spherical_harmonics}
+Na záver, ak $|k| = n$, sférická harmonická funkcia mení znamienko $2|k|$-krát 
+v smere sférickej dĺžky, no $0$-krát v smere sférickej šírky, pretože $n - |k| 
+= n - n = 0$.  Takáto funkcia sa nazýva \emph{sektorálna sférická harmonická 
+funkcia}.
 
+V Kapitole~\ref{sec:unit_vectors} sme ukázali, že ľubovoľný vektor $\vec r$ 
+z trojrozmerného priestoru je možné popísať pomocou jeho súradníc $r_i$, $i 
+= 1, 2, 3$.  Sférické harmonické funkcie majú podobné využitie ako jednotkové 
+vektory, avšak v priestore funkcií na sfére.  Je možné ukázať, že pre ľubovoľnú 
+spojitú funkciu $f(\varphi, \lambda)$ platí
+%
+\begin{equation}
+f_{nk} = \frac{1}{4\pi} \iint_{\sigma} f(\varphi, \lambda) \, Y_{nk}(\varphi, 
+\lambda) \, \diff \sigma{,}
+\end{equation}
+%
+\begin{equation}
+f(\varphi, \lambda) = \sum_{n = 0}^\infty \sum_{k = -n}^n f_{nk} \, 
+Y_{nk}(\varphi, \lambda){.}
+\end{equation}
 
 
 
@@ -2253,8 +2315,8 @@ $\varphi \in [-\frac{\pi}{2}, \frac{\pi}{2}]$.  Polynómy sú počítané Bonnet
 rekurentným vzťahom~(\ref{eq:pn_bonnet}), ktorý je vhodný na praktickú 
 numerickú implementáciu.
 
-\lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov, 
-language=mypython, label=src:lp, 
+\lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov 
+v programovacom jazyku Python, language=mypython, label=src:lp, 
 captionpos=t]{../python/legendre-polynomials.py}
 
 
@@ -2266,8 +2328,8 @@ captionpos=t]{../python/legendre-polynomials.py}
 
 
 \lstinputlisting[caption=Výpočet a~zobrazenie nenormovaných sférických 
-harmonických funkcií, language=mypython, 
-captionpos=t]{../python/spherical-harmonics.py}
+harmonických funkcií v programovacom jazyku Python, label=src:ynk, 
+language=mypython, captionpos=t]{../python/spherical-harmonics.py}
 
 % Bibliography
 % -----------------------------------------------------------------------------

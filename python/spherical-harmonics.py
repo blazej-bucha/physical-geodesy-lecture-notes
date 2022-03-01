@@ -4,9 +4,9 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy.special import lpmv
 
-# Sférický harmonický stupeň "n" a rád "m"
+# Sférický harmonický stupeň "n" a rád "k"
 n = 3
-m = 0
+k = 0
 
 # "False" pre zobrazenie na jednotkovej sfére, "True" pre zobrazenie pomocou 
 # odhľahlostí od jednotkovej sféry
@@ -17,12 +17,14 @@ lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 181)
 lon = np.linspace(0.0, 2.0 * np.pi, 361)
 lon, lat = np.meshgrid(lon, lat)
 
-# Výpočet sférickej harmonickej funkcie s trigonometrickou funkciou "cos" pre 
-# sféricke dĺžky
-ynm  = lpmv(m, n, np.sin(lat)) * np.cos(m * lon)
+# Výpočet sférickej harmonickej funkcie
+if k >= 0:
+    ynm  = lpmv(k, n, np.sin(lat)) * np.cos(k * lon)
+else:
+    ynm  = lpmv(np.abs(k), n, np.sin(lat)) * np.sin(np.abs(k) * lon)
 
 # Odstránenie Condon--Shortley fázového faktora
-ynm *= (-1)**m
+ynm *= (-1)**np.abs(k)
 
 # Sprievodič
 if zobrazenie_3d:
@@ -48,7 +50,7 @@ plt.tight_layout(pad=-2.0)
 plt.show()
 
 # Nazov výstupného súboru
-fileout = "../figs/spherical-harmonic-n%d-m%d" % (n, m)
+fileout = "../figs/spherical-harmonic-n%d-k%d" % (n, k)
 if zobrazenie_3d:
     fileout += "-3d.pdf"
 else:
