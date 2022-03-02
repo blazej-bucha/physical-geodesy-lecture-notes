@@ -339,11 +339,12 @@ G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1}
 \end{equation}
 
 Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme 
-polohu planéty v čase $t_0$ symbolom $P(t_0)$ a jej okamžitú rýchlosť symbolom 
-$v(t_0)$.  Ak by Slnko prestalo pôsobiť na planétu gravitačnou silou, 
-\emph{Newtonov pohybový zákon} hovorí, že planéta by sa ďalej pohybovala 
-rovnomerným priamočiarym pohybom.  Za istý čas by sa teda dostala do bodu 
-$P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je pôsobením sily na planétu.  
+polohu planéty v čase $t_0$ symbolom $P(t_0)$ a vektor jej okamžitej rýchlosti 
+symbolom $\vec v(t_0)$, $| \vec v(t_0) | > 0$.  Ak by v čase $t_0$ nepôsobila 
+na planétu žiadna sila, \emph{Newtonov pohybový zákon} hovorí, že planéta by sa 
+ďalej pohybovala rovnomerným priamočiarym pohybom v smere vektora $\vec 
+v(t_0)$.  Za istý čas by sa teda dostala do bodu $P'(t_1)$.  Jediný spôsob ako 
+zmeniť túto dráhu je pôsobením sily na planétu.  
 Z rovnice~(\ref{eq:newton_law}) vyplýva, že v čase $t_0$ pôsobí na planétu 
 gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom smer sily je daný spojnicou 
 planéty a Slnka.  Gravitačná sila preto pritiahne planétu v smere vektora $\vec 
@@ -502,8 +503,8 @@ integráciou vzťahu~(\ref{eq:gg_dm}),
 \end{equation}
 %
 Tento vzťah už môže byť korektne použitý na výpočet gravitačného zrýchlenia, 
-ktoré udeľuje všeobecné teleso inému telesu s ťažiskom v bode $P$ (napríklad 
-Zem družici).
+ktoré generuje všeobecné teleso (napríklad Zem) v bode $P$ (napríklad ťažisko 
+družice).
 
 Vektor gravitačného zrýchlenia veľmi úzko súvisí s veličinou, ktorú je možné 
 odmerať na povrchu Zeme, a tak má pre fyzikálnu geodéziu kľúčový význam.  
@@ -1417,8 +1418,8 @@ napríklad gravitačný potenciál, rozložiť na súradnice,
 %
 \begin{equation}
 \label{eq:vg_analysis}
-v_{nk} = \frac{1}{4\pi} \, \iint_{\sigma} V_\gidx(r, \varphi, \lambda) \, 
-Y_{nk}(\varphi, \lambda) \, \diff \sigma{,}
+v_{nk} = \frac{N^2_{n|k|}}{4\pi} \, \iint_{\sigma} V_\gidx(r, \varphi, \lambda) 
+\, Y_{nk}(\varphi, \lambda) \, \diff \sigma{,}
 \end{equation}
 %
 a následne ho spätne zrekonštruovať,
@@ -1432,7 +1433,8 @@ V_\gidx(r, \varphi, \lambda) = \sum_{n = 0}^{\infty} \sum_{k = -n}^{n} v_{nk}
 Konštanty $v_{nk}$ vo vzťahu~(\ref{eq:vg_analysis}) predstavujú súradnice 
 gravitačného potenciálu $V_\gidx(r, \varphi, \lambda)$ vo vyššie opísanom 
 abstraktom priestore harmonických funkcií a symbol $Y_{nk}(\varphi, \lambda)$ 
-označuje \emph{sférické harmonické funkcie}.  Vzťah~(\ref{eq:vg_analysis}) je 
+označuje \emph{sférické harmonické funkcie}.  Koeficienty $N_{n|k|}$ závisia 
+iba od $n$ a $k$ a budú diskutované neskôr.  Vzťah~(\ref{eq:vg_analysis}) je 
 teda obdobou vzťahu (\ref{eq:r_analysis}), súradnice $v_{nk}$ možno prirovnať 
 k súradniciam $r_i$ a sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$ 
 možno prirovnať k jednotkovým vektorom $\vec e_i$.  Samotný integrál na 
@@ -1827,6 +1829,7 @@ nájsť napríklad vo \cite{Freeden2009} či v \cite{SansoGeoidDetermination}.
 Podobne ako skalárny súčin dvoch rôznych jednotkových vektorov je nulový,
 %
 \begin{equation}
+\label{eq:ei_orthogonality}
 \vec e_i \cdot \vec e_j = 0{,} \quad i \neq j{,}
 \end{equation}
 %
@@ -1980,11 +1983,13 @@ Legendreove funkcie rôznych stupňov $n$, $l$ a rovnakého rádu $m$ sú
 ortogonálne \citep{Freeden2009},
 %
 \begin{equation}
+\label{eq:pnm_orthogonality}
 \int_{-1}^{1} P_{nm}(t) \, P_{lm}(t) \, \diff t = 0{,} \quad n \neq l{.}
 \end{equation}
 %
 Pre dve Legendreove funkcie rovnakého stupňa a rádu platí
 \begin{equation}
+\label{eq:pnm_times_pnm}
 \int_{-1}^{1} P^2_{nm}(t) \, \diff t = \frac{2}{2n + 1} \, \frac{(n + m)!}{(n 
 - m)!}{.}
 \end{equation}
@@ -1997,7 +2002,7 @@ V rovnici~(\ref{eq:vg_sh_no_norm}) zaveďme substitúciu pre členy, ktoré záv
 iba od uhlovej časti sférických súradníc,
 %
 \begin{equation}
-\label{eq:ynk}
+\label{eq:ynk_no_norm}
 Y_{nk}(\varphi, \lambda) = P_{n|k|}(\sin\varphi)
 %
 \begin{cases}
@@ -2043,58 +2048,201 @@ z Prílohy~\ref{app:sh}}
 \label{fig:sh3d}
 \end{figure}
 
-Pozrime sa bližšie na grafickú reprezentáciu sférických harmonických funkcií 
-(Obrázky~\ref{fig:sh} a \ref{fig:sh3d}).  Možno si všimnúť, že sférické 
-harmonické funkcie rádu $k = 0$ striedavo rozdeľujú sféru v smere sférickej 
-šírky na oblasti s kladnými hodnotami a na oblasti so zápornými hodnotami.  
-Nezávisia tiež od sférickej dĺžky.  Tieto vlastnosti možno overiť dosadením 
-rádu $k = 0$ do rovnice~(\ref{eq:ynk}),
+Grafická reprezentácia sférických harmonických funkcií je uvedená na 
+Obrázkoch~\ref{fig:sh} a \ref{fig:sh3d}.  Možno si všimnúť, že sférické 
+harmonické funkcie rádu $k = 0$ (ľavý stĺpec na obrázkoch) menia znamienko 
+v smere sférickej šírky a nezávisia od sférickej dĺžky.  Obe vlastnosti možno 
+overiť dosadením rádu $k = 0$ do rovnice~(\ref{eq:ynk_no_norm}),
 %
 \begin{equation}
 \label{eq:yn0}
 Y_{n0}(\varphi, \lambda) = P_n(\sin\varphi){.}
 \end{equation}
 %
-Funkcia $Y_{n0}(\varphi, \lambda)$ mení $n$-krát znamienko na intervale 
-$\varphi \in [-\frac{\pi}{2}, \frac{\pi}{2}]$ (porovnaj rovnicu~\ref{eq:yn0} 
-a Obrázok~\ref{fig:lp}).  Možno si tiež všimnúť, že parita stupňa $n$ určuje 
-symetriu funkcie $Y_{n0}(\varphi, \lambda)$ voči rovine rovníka; ak $n = 0, 2, 
-4, \dots$, sférická harmonická funkcia je symetrická voči rovine rovníka 
-a nesymetrická ak $n = 1, 3, 5, \dots$ (pozri 
-Kapitolu~\ref{sec:legendre_polynomials}). Sférická harmonická funkcia rádu $k 
-= 0$ sa nazýva \emph{zonálna sférická harmonická funkcia}.
+Sférická harmonická funkcia $Y_{n0}(\varphi, \lambda)$ mení $n$-krát znamienko 
+na intervale $\varphi \in [-\frac{\pi}{2}, \frac{\pi}{2}]$ (porovnaj 
+rovnicu~\ref{eq:yn0} a Obrázok~\ref{fig:lp}).  Možno si tiež všimnúť, že parita 
+stupňa $n$ určuje symetriu funkcie $Y_{n0}(\varphi, \lambda)$ voči rovine 
+rovníka; funkcia $Y_{n0}(\varphi, \lambda)$ je symetrická voči rovine rovníka 
+pre $n = 0, 2, 4, \dots$ a nesymetrická pre $n = 1, 3, 5, \dots$ (pozri 
+Kapitolu~\ref{sec:legendre_polynomials}). Funkcie $Y_{n0}(\varphi, \lambda)$ sa 
+nazývajú \emph{zonálne sférické harmonické funkcie}.
 
-Ak $0 < |k| < n$, sférická harmonická funkcia mení znamienko s oboma 
-súradnicami.  V smere sférickej šírky dochádza k $n - |k|$ zmenám znamienka 
-a v smere sférickej dĺžky sa znamienko mení $2|k|$-krát.  Počet $n - |k|$ 
-vyplýva zo skutočnosti, že Legendreova funkcia $P_{n|k|}(\sin\varphi)$ súvisí 
-s $|k|$-tou deriváciou Legendreovho polynómu $P_n(\sin\varphi)$ (pozri 
-rovnice~\ref{eq:pnm_def} a \ref{eq:pnm_ferrer}).  Deriváciou polynómu sa 
-znižuje jeho stupeň, teda aj počet miest, v ktorých funkcia môže pretínať 
-vodorovnú os.  Počet nulových hodnôt v smere sférickej dĺžky $2|k|$ vyplýva 
-z vlastností trigonometrických funkcií $\cos(k\lambda)$ a $\sin(|k|\lambda)$.  
-Sférická harmonická funkcia rádu $0 < |k| < n$ má prívlastok \emph{teserálna}.
+Ak $0 < |k| < n$ (prostredný stĺpec na obrázkoch), sférická harmonická funkcia 
+mení znamienko s oboma súradnicami.  V smere sférickej šírky dochádza k $n 
+- |k|$ zmenám znamienka.  Počet $n - |k|$ vyplýva zo skutočnosti, že 
+Legendreova funkcia $P_{n|k|}(\sin\varphi)$ súvisí s $|k|$-tou deriváciou 
+Legendreovho polynómu $P_n(\sin\varphi)$ (pozri rovnice~\ref{eq:pnm_def} 
+a \ref{eq:pnm_ferrer}).  Deriváciou polynómu sa znižuje jeho stupeň, a teda aj 
+počet možností meniť znamienko.  V smere sférickej dĺžky sa znamienko mení 
+$2|k|$-krát.  Táto hodnota vyplýva z vlastností trigonometrických funkcií 
+$\cos(k\lambda)$ a $\sin(|k|\lambda)$.  Sférická harmonická funkcia rádu $0 
+< |k| < n$ má prívlastok \emph{teserálna}.
 
-Na záver, ak $|k| = n$, sférická harmonická funkcia mení znamienko $2|k|$-krát 
-v smere sférickej dĺžky, no $0$-krát v smere sférickej šírky, pretože $n - |k| 
-= n - n = 0$.  Takáto funkcia sa nazýva \emph{sektorálna sférická harmonická 
-funkcia}.
+Na záver, ak $|k| = n$ (pravý stĺpec na obrázkoch), sférická harmonická funkcia 
+mení znamienko $0$-krát v smere sférickej šírky, pretože $n - |k| = n - n = 0$, 
+a $2|k|$-krát v smere sférickej dĺžky.  Takáto funkcia sa nazýva 
+\emph{sektorálna sférická harmonická funkcia}.
 
-V Kapitole~\ref{sec:unit_vectors} sme ukázali, že ľubovoľný vektor $\vec r$ 
-z trojrozmerného priestoru je možné popísať pomocou jeho súradníc $r_i$, $i 
-= 1, 2, 3$.  Sférické harmonické funkcie majú podobné využitie ako jednotkové 
-vektory, avšak v priestore funkcií na sfére.  Je možné ukázať, že pre ľubovoľnú 
-spojitú funkciu $f(\varphi, \lambda)$ platí
+Podobne ako jednotkové vektory, Legendreove polynómy či niektoré Legendreove 
+funkcie, i sférické harmonické funkcie sú ortogonálne.  Táto vlastnosť vyplýva 
+z nulového skalárneho súčinu dvoch rôznych sférických harmonických funkcií 
+$Y_{nk}(\varphi, \lambda)$ a $Y_{rs}(\varphi, \lambda)$,
 %
 \begin{equation}
-f_{nk} = \frac{1}{4\pi} \iint_{\sigma} f(\varphi, \lambda) \, Y_{nk}(\varphi, 
-\lambda) \, \diff \sigma{,}
+\label{eq:ynk_no_norm_orthogonality}
+\iint_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{rs}(\varphi, \lambda) \, \diff 
+\sigma = 0{,}
 \end{equation}
 %
+pričom buď $n \neq r$ alebo $k \neq s$ alebo platia obe podmienky súčasne.  Pre 
+skalárny súčin dvoch rovnakých sférických harmonických funkcií platí
+%
 \begin{equation}
+\label{eq:ynk_times_ynk}
+\iint_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{nk}(\varphi, \lambda) \, \diff 
+\sigma =
+%
+\dfrac{4\pi}{(2 - \delta_{k0}) \, (2n + 1)} \, \dfrac{(n + |k|)!}{(n 
+- |k|)!}{.}
+\end{equation}
+%
+Overenie vzťahov~(\ref{eq:ynk_no_norm_orthogonality}) 
+a (\ref{eq:ynk_times_ynk}) prenecháme na čitateľa.\footnote{Poznámka: Je 
+potrebné použiť rovnice~(\ref{eq:pnm_orthogonality}), (\ref{eq:pnm_times_pnm}), 
+(\ref{eq:ynk_no_norm}) a vypočítať integrály $\displaystyle\int_{0}^{2\pi} 
+\cos(k \lambda) \, \diff\lambda$ a $\displaystyle\int_{0}^{2\pi} \sin(|k| 
+\lambda) \, \diff\lambda${.}}
+%
+
+Nech $f(\varphi, \lambda)$ je funkcia na jednotkovej sfére $\sigma$.  Nech pre 
+funkciu $f(\varphi, \lambda)$ ďalej platí nerovnosť
+%
+\begin{equation}
+\label{eq:f_l2}
+\iint_\sigma f^2(\varphi, \lambda) \, \diff \sigma < \infty{.}
+\end{equation}
+%
+Podmienku~(\ref{eq:f_l2}) spĺňa napríklad každá spojitá funkcia na jednotkovej 
+sfére.  Každú takúto funkciu $f(\varphi, \lambda)$ možno rozvinúť do radu 
+sférických harmonických funkcií \citep[napríklad][]{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\label{eq:f_shs_no_norm}
 f(\varphi, \lambda) = \sum_{n = 0}^\infty \sum_{k = -n}^n f_{nk} \, 
 Y_{nk}(\varphi, \lambda){.}
 \end{equation}
+%
+Koeficienty $f_{nk}$ je možné získať nasledovne.  Vynásobme 
+rovnicu~(\ref{eq:f_shs_no_norm}) sférickou harmonickou funkciou $Y_{rs}(\varphi, 
+\lambda)$ a následne rovnicu zintegrujme na jednotkovej sfére $\sigma$.  
+Použitím vzťahov~(\ref{eq:ynk_no_norm_orthogonality}) 
+a (\ref{eq:ynk_times_ynk}) získame hľadané koeficienty
+%
+\begin{equation}
+\label{eq:f_sha_no_norm}
+f_{nk} = \frac{(2 - \delta_{k0}) \, (2n + 1)}{4\pi} \, \frac{(n - |k|)!}{(n 
++ |k|)!} \, \iint_{\sigma} f(\varphi, \lambda) \, Y_{nk}(\varphi, \lambda) \, 
+\diff \sigma{.}
+\end{equation}
+%
+
+Povedané slovne, ak funkcia $f(\varphi, \lambda)$ spĺňa 
+podmienku~(\ref{eq:f_l2}), potom možno pomocou sférických harmonických funkcií 
+túto funkciu rozložiť na jej súradnice $f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) 
+a následne ju zrekonštruovať z jej súradníc (vzťah~\ref{eq:f_shs_no_norm}).  
+V priestore funkcií $f(\varphi, \lambda)$, ktoré sú definované na sfére 
+a spĺňajú podmienku~($\ref{eq:f_l2}$) plnia teda sférické harmonické funkcie 
+$Y_{nk}(\varphi, \lambda)$ podobnú úlohu ako plnia jednotkové vektory $\vec 
+e_i$ v priestore trojrozmerných vektorov $\vec r$.  Funkcia 
+$f(\varphi,\lambda)$ môže byť napríklad gravitačný či magnetický potenciál 
+telesa na sfére, ktorá obopína celé teleso, topografia Zeme či inej planéty 
+a množstvo ďalších funkcií.  Každú takúto funkciu možno rozvinúť do vlastného 
+radu sférických harmonických funkcií (vzťah~\ref{eq:f_shs_no_norm}), pričom 
+každá funkcia bude mať vlastné súradnice $f_{nk}$, podobne ako každý vektor 
+$\vec r$ má vlastné súradnice $r_i$.  Všimnime si, že ak označíme
+%
+\begin{equation}
+\label{eq:sh_norm}
+N_{n|k|} = \sqrt{(2 - \delta_{k0}) (2n + 1) \, \frac{(n - |k|)!}{(n 
++ |k|)!}}{,}
+\end{equation}
+%
+potom vzťahy~(\ref{eq:f_sha_no_norm}) a (\ref{eq:f_shs_no_norm}) sú totožné so 
+vzťahmi~(\ref{eq:vg_analysis}) a (\ref{eq:vg_synthesis}) pre $r = 1$.
+
+
+\section{Normovanie Legendreových funkcií a sférických harmonických funkcií}
+
+Pre skalárny súčin dvoch rovnakých jednotkových vektorov platí vzťah
+%
+\begin{equation}
+\vec e_i \cdot \vec e_i = 1{.}
+\end{equation}
+%
+Z teoretického aj z praktického hľadiska by bolo výhodné, aby aj skalárny súčin 
+dvoch rovnakých sférických harmonických funkcií bol rovný $1$.  Túto vlastnosť 
+možno zabezpečiť vynásobením Legendreových funkcií $P_{nm}(\sin\varphi)$ členom 
+$N_{n|k|}$ (rovnica~\ref{eq:sh_norm}), ktorý nazývame \emph{norma}.  Získame 
+tým \emph{úplne normované Legendreove funkcie},
+%
+\begin{equation}
+\bar{P}_{nm}(\varphi) = N_{nm} \, P_{nm}(\varphi){,} \quad  n = 0, 1, \dots, 
+\quad m = 0, 1, \dots, n{,}
+\end{equation}
+%
+a \emph{úplne normované sférické harmonické funkcie}
+%
+\begin{equation}
+\label{eq:ynk_norm}
+\begin{split}
+\bar{Y}_{nk}(\varphi, \lambda) = N_{n|k|} \, Y_{nk}(\varphi, \lambda) 
+= \bar{P}_{n|k|}(\sin\varphi)
+%
+\begin{cases}
+\cos(k\lambda)    &\text{pre} \quad k \geq 0{,}\\
+\sin(|k|\lambda)  &\text{pre} \quad k < 0{,}
+\end{cases}
+&
+%
+\\
+n = 0, 1, \dots, \quad k = -n, \dots, n{.}&
+\end{split}
+\end{equation}
+%
+Použitím normy~(\ref{eq:sh_norm}) je možné obdobne ako v prípade 
+rovnice~(\ref{eq:ynk_no_norm_orthogonality}) ukázať, že platí
+%
+\begin{equation}
+\label{eq:ynk_norm_orthogonality}
+\frac{1}{4\pi} \, \iint_{\sigma} \bar{Y}_{nk}(\varphi, \lambda) \, 
+\bar{Y}_{rs}(\varphi, \lambda) \, \diff \sigma = \delta_{nr} \, \delta_{ks}{.}
+\end{equation}
+%
+Skalárny súčin~(\ref{eq:ynk_norm_orthogonality}) dvoch rôznych úplne 
+normovaných sférických harmonických funkcií je teda rovný 0, zatiaľ čo skalárny 
+súčin dvoch rovnakých úplne normovaných sférických harmonických funkcií je 
+rovný $1$.
+
+V prípade úplne normovaných sférických harmonických funkcií prejdu 
+vzťahy~(\ref{eq:f_shs_no_norm}) a (\ref{eq:f_sha_no_norm}) do tvaru
+%
+\begin{equation}
+\label{eq:f_shs}
+f(\varphi, \lambda) = \sum_{n = 0}^\infty \sum_{k = -n}^n \bar{f}_{nk} \, 
+\bar{Y}_{nk}(\varphi, \lambda){.}
+\end{equation}
+%
+a
+%
+\begin{equation}
+\label{eq:f_sha}
+\bar{f}_{nk} = \frac{1}{4\pi} \, \iint_{\sigma} f(\varphi, \lambda) \, 
+\bar{Y}_{nk}(\varphi, \lambda) \, \diff \sigma{.}
+\end{equation}
+
+
+
 
 
 
@@ -2120,7 +2268,7 @@ S_{nm}{,}
 \end{equation}
 %
 kde $M$ je hmotnosť telesa, ktoré generuje gravitačný potenciál a $R$ je 
-polomer najmenšej sféry, v ktorej sa celé toto teleso nachádza, teda $R 
+polomer najmenšej sféry, v ktorej sa celé teleso nachádza, teda $R 
 = \max(r_\mathrm{S}(\varphi_Q, \lambda_Q))$.  Vzťah~(\ref{eq:vg_sh_no_norm}) 
 potom prejde na tvar
 %

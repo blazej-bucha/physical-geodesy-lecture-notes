@@ -7,9 +7,9 @@ and concepts of Physical Geodesy such as the gravitational potential, the
 gravitational vector and the equipotential surfaces.  The next chapter is 
 centered around the spherical harmonic expansion of the Earth's external 
 gravitational field, focusing on Legendre polynomials, Legendre functions, 
-spherical harmonics and their normalization.  Next, introduced is the normal 
-gravity field, after which the basic concepts of the geoid determination are 
-discussed in the final chapter.
+spherical harmonics and their normalization.  Next, introduced are the normal 
+and the disturbing gravity field, after which the basic concepts of the geoid 
+determination are discussed in the final chapter.
 
 
 # Notes
