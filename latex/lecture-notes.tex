@@ -356,10 +356,10 @@ gravitačná sila spôsobí, že planéta sa dostane do bodu $P(t_1)$.  V čase 
 sa opísaná situácia opakuje, pričom vektory rýchlosti a sily už majú iný smer 
 a s vysokou pravdepodobnosťou aj inú veľkosť.  Gravitačná sila Slnka teda 
 zakrivuje trajektóriu planéty \emph{v každom okamihu}.
-%
+
 \begin{figure}
 \centering
-\input{./fig-orbital-motion.pdf_tex}
+\input{./fig-orbital-motion-ideal.pdf_tex}
 \caption{Obeh planéty okolo Slnka}
 \label{fig:orbital_motion}
 \end{figure}
@@ -821,8 +821,8 @@ telesa.
 \subsection{Laplaceova rovnica}
 \label{sec:laplace_equation}
 
-P. S. Laplace zistil, že gravitačný potenciál každého všeobecného telesa spĺňa 
-v bode $P(x, y, z)$ \emph{mimo} tohto telesa rovnicu
+Pierre-Simon Laplace zistil, že gravitačný potenciál každého všeobecného telesa 
+spĺňa v bode $P(x, y, z)$ \emph{mimo} tohto telesa rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
@@ -1734,6 +1734,11 @@ funkcie stupňa $n$ a rádu $m$} a členy $C_{nm}$ a $S_{nm}$ sa nazývajú sfé
 harmonické koeficienty.  Vzťah~(\ref{eq:vg_sh_no_norm}) predstavuje 
 \emph{rozvoj gravitačného potenciálu do radu sférických harmonických funkcií}.
 
+Na záver dodajme, že vzťah~(\ref{eq:vg_sh_no_norm}) možno odvodiť aj iným 
+spôsobom, ako v tejto práci.  Jednou z možností je riešiť Laplaceovu 
+diferenciálnu rovnicu~(\ref{eq:vg_laplace_sph}) metódou separácie premenných 
+\citep[napríklad][]{MoritzPhysicalGeodesy,Janak2006}.
+
 V nasledujúcich kapitolách sa budeme podrobnejšie venovať 
 vzťahu~(\ref{eq:vg_sh_no_norm}) a súvisiacim témam.  
 V Kapitolách~\ref{sec:legendre_polynomials}, \ref{sec:legendre_functions} 
@@ -1741,10 +1746,11 @@ a \ref{sec:spherical_harmonics} sa budeme zaoberať Legendreovými polynómami,
 Legendreovými funkciami a sférickými harmonickými funkciami.  Cieľom je nielen 
 popísať základné vlastností týchto novozavedných funkcií, ale i predstaviť ich 
 v širšom kontexte.  V Kapitolách~\ref{sec:normalization}, 
-\ref{sec:spherical_harmonics_applications} 
-a \ref{sec:physical_meaning_of_spherical_harmonic_coefficients} následne 
-popíšeme normovanie sférických harmonických funkcií, ich praktické aplikácie 
-a fyzikálny význam niektorých sférických harmonických koeficientov.
+\ref{sec:physical_meaning_of_spherical_harmonic_coefficients} 
+a \ref{sec:spherical_harmonics_applications} následne popíšeme normovanie 
+sférických harmonických funkcií a koeficientov, fyzikálnym význam niektorých 
+sférických harmonických koeficientov a praktické aplikácie 
+rovnice~(\ref{eq:vg_sh_no_norm}).
 
 
 
@@ -2302,7 +2308,7 @@ rozsah dvojitej presnosti je v dvojitej presnosti reprezentované nekonečnom.
 Po vynásobení nekonečna normou $N_{nm}$ by sme teda získali znovu nekonečno.  
 Namiesto toho sa počítajú priamo úplne normované Legendre funkcie 
 $\bar{P}_{nm}(\sin\varphi)$, a to pomocou rekurentných vzťahov, ktoré sú 
-podobné tým nenormovaným~(\ref{eq:pnm_recurrence}) (pozri napríklad 
+formálne podobné tým nenormovaným~(\ref{eq:pnm_recurrence}) (pozri napríklad 
 \citealt{Holmes2002a} či \citealt{Fukushima2012a}).
 
 
@@ -2342,9 +2348,9 @@ V_\gidx(P) = \frac{G \, M}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
 \, \sin(m\lambda)\right) \, P_{nm}(\sin\varphi){.}
 \end{equation}
 
-Ak používame sférické harmonické funkcie normované členom $N_{n|k|}$, potom 
-sférické harmonické koeficienty musia byť normou $N_{n|k|}$ vydelené, aby sa 
-zachovala rovnosť vo vzťahoch~(\ref{eq:vg_sh_no_norm}) 
+Ak majú byť použité sférické harmonické funkcie normované členom $N_{n|k|}$, 
+potom sférické harmonické koeficienty musia byť normou $N_{n|k|}$ vydelené, aby 
+sa zachovala rovnosť vo vzťahoch~(\ref{eq:vg_sh_no_norm}) 
 a (\ref{eq:vg_sh_1st_norm}).  Druhá norma sférických harmonických koeficientov 
 má preto tvar
 %
@@ -2394,17 +2400,9 @@ Koeficienty $\bar{C}_{nm}$ a $\bar{S}_{nm}$, resp. $\bar{v}_{nk}$, sa nazývajú
 Podobne ako v prípade úplne normovaných Legendreových funkcií, ani sférické 
 harmonické koeficienty sa nezvyknú počítať samostatne od normy.  Namiesto toho 
 sa vypočítajú úplne normované sférické harmonické funkcie 
-$\bar{Y}_{nk}(\varphi, \lambda)$ a napríklad vzťahom~(\ref{eq:f_sha}) sa 
-získajú priamo úplne normované sférické harmonické koeficienty.
-
-
-
-
-
-
-
-\section{Aplikácie sférického harmonického rozvoja}
-\label{sec:spherical_harmonics_applications}
+$\bar{Y}_{nk}(\varphi, \lambda)$ a následne sa napríklad 
+vzťahom~(\ref{eq:f_sha}) získajú priamo úplne normované sférické harmonické 
+koeficienty.
 
 
 
@@ -2422,8 +2420,24 @@ do rovnice~(\ref{eq:vg_shc_no_norm}) pre $n = 0$ a $m = 0$,
 C_{0,0} = \iiint_{\tau} \rho(Q) \, \diff \tau(Q) = M{.}
 \end{equation}
 %
-Koeficient $C_{0,0}$ má teda fyzikálny význam; je rovný hmotnosti telesa $M$.
-
+Koeficient $C_{0,0}$ má teda fyzikálny význam; je rovný hmotnosti telesa $M$.  
+Ak obmedzíme nekonečné rady~(\ref{eq:vg_sh_no_norm}), 
+(\ref{eq:vg_sh_1st_norm}), (\ref{eq:vg_sh_2nd_norm}) či 
+(\ref{eq:vg_sh_2nd_norm_ynk}) na maximálny stupeň $N = 0$, získame vzťah
+%
+\begin{equation}
+\label{eq:vg_sh_0degree}
+V_\gidx(P) = \frac{G \, M}{r}{.}
+\end{equation}
+%
+Vzťah~(\ref{eq:vg_sh_0degree}) vyjadruje gravitačný potenciál hmotného bodu 
+s hmotnosťou $M$ vo vzdialenosti $r$ od hmotného bodu (pozri 
+rovnicu~\ref{eq:vg_point_mass}).  Pomocou Newtonovho 
+integrálu~(\ref{eq:vg_body}) možno ukázať, že gravitačný potenciál gule 
+s konštantnou hustotou (homogénna guľa) je tiež ekvivalentný so 
+vzťahom~(\ref{eq:vg_sh_0degree}).  Ak teda obmedzíme nekonečný sférický 
+harmonický rozvoj gravitačného potenciálu na maximálny stupeň $N = 0$, získame 
+gravitačný potenciál homogénnej gule, ktorá nahrádza skutočné teleso.
 
 Vydeľme rovnicu~(\ref{eq:vg_shc_no_norm}) hmotnosťou $M$ a zopakujme postup pre 
 stupeň $n = 1$ a rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) získame
@@ -2456,15 +2470,147 @@ už, zdá sa, nemajú priamočiaru fyzikálnu interpretáciu.
 
 % -----------------------------------------------------------------------------
 
+\section{Aplikácie sférického harmonického rozvoja}
+\label{sec:spherical_harmonics_applications}
+
+Z predchádzajúcich kapitol vieme, že gravitačný potenciál skutočnej Zeme je 
+možné približne vypočítať vzťahom~(\ref{eq:vg_sh_2nd_norm}).  Príslovku 
+\emph{približne} sme použili preto, lebo nekonečný sférický harmonický rad musí 
+byť v praxi vždy obmedzený na konečný maximálny stupeň~$N$.  Tým dochádza 
+k aproximačným chybám.  Z teoretického hľadiska je možné povedať, že čím vyšší 
+je maximálny stupeň $N$, tým lepšiu aproximáciu gravitačného potenciálu 
+získame.\footnote{Toto tvrdenie však neplatí nevyhnutne.  O niektorých 
+špecifických situáciách si povieme viac 
+v Kapitole~\ref{sec:convergence_of_spherical_harmonics}.}  Na výpočet 
+vzťahu~(\ref{eq:vg_sh_2nd_norm}) potrebujeme poznať sférické harmonické 
+koeficienty $\bar{C}_{nm}$ a $\bar{S}_{nm}$ a sférické súradnice výpočtového 
+bodu $P$.
+
+Sférické harmonické koeficienty $\bar{C}_{nm}$ a $\bar{S}_{nm}$ je možné 
+vypočítať napríklad z obežnej dráhy umelej družice Zeme.  Z príkladu 
+z Kapitoly~\ref{sec:newton_law} vieme, že Zem vplýva prostredníctvom svojho 
+gravitačného poľa na dráhu družice.  V skutočnosti je však situácia zložitejšia 
+ako na Obrázku~\ref{fig:orbital_motion}.  Zem má komplikovaný tvar 
+a nehomogénne rozloženú hustotu.  Z Newtonovho integrálu~(\ref{eq:vg_body}) 
+preto vyplýva, že zemské gravitačné pole sa v priestore nepravidelne mení 
+(pozri Obrázky~\ref{fig:gg_grav_sr_2arcsec} a \ref{fig:vg_grav_sr_2arcsec}).  
+Aj (hoci nielen) v dôsledku premenlivého gravitačného poľa Zeme preto družica 
+neobieha po elipse.  Jej skutočná dráha je komplikovaná priestorová krivka 
+a elipsa je len jej priblíženie (Obrázok~\ref{fig:orbital_motion_real}).  Ak by 
+sme teda poznali skutočnú dráhu družice, mali by sme byť schopní inverzným 
+spôsobom vypočítať to pole, ktoré je príčinou neeliptickej dráhy.  Inými 
+slovami, zo skutočnej dráhy družice je možné vypočítať sférické harmonické 
+koeficienty $\bar{C}_{nm}$ a $\bar{S}_{nm}$.  Koeficienty $\bar{C}_{nm}$ 
+a $\bar{S}_{nm}$ je možné vypočítať i z mnohých iných geodetických meraní, či 
+už družicových alebo pozemných.  Podrobnejšie informácie o družicových misiách 
+a jednotlivých technikách je možné nájsť napríklad v prácach 
+\cite{SeeberSatelliteGeodesy} a \cite{MoritzPhysicalGeodesy}.
+
+\begin{figure}
+\centering
+\input{./fig-orbital-motion-real.pdf_tex}
+\caption{Pohyb umelej družice Zeme}
+\label{fig:orbital_motion_real}
+\end{figure}
+
+ICGEM (\emph{International Centre for Global Earth Models}) je služba zriadená 
+Medzinárodnou geodetickou asociáciou (\emph{International Association of 
+Geodesy}, IAG).  Okrem iného je jej cieľom zbierať, archivovať a poskytovať 
+globálne modely gravitačného poľa Zeme, najčastejšie práve vo forme sférických 
+harmonických koeficientov $\bar{C}_{nm}$ a $\bar{S}_{nm}$.  Na domovskej 
+stránke tejto služby\footnote{\url{http://icgem.gfz-potsdam.de/home}} je možné 
+nájsť desiatky sád sférických harmonických koeficientov, získané z rôznych dát 
+a rozličnými metódami výpočtu.  Dostupné sú aj časovo premenlivé modely 
+gravitačného poľa, služba na výpočet vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely 
+gravitačného poľa nebeských telies (napríklad Mars, Venuša, Mesiac či asteroidy 
+Slnečnej sústavy).
+
+V Kapitolách~\ref{sec:vg} a \ref{sec:potential_theory} sme uviedli, že 
+v gravitačnom potenciáli $V_\gidx$ je obsiahnutá informácia o celom gravitačnom 
+poli.  Zo vzťahu~(\ref{eq:vg_sh_2nd_norm}) je preto možné vyťažiť oveľa viac 
+ako len informáciu o gravitačnom poli.  V rovnici~(\ref{eq:vg_laplace_sph}) 
+napríklad vystupujú prvé a druhé parciálne derivácie gravitačného potenciálu.  
+Tie môžeme získať deriváciou vzťahu~(\ref{eq:vg_sh_2nd_norm}),
+%
+\begin{equation}
+\label{eq:vgr_sh_2nd_norm}
+\frac{\partial V_\gidx(P)}{\partial r} = - \frac{G \, M}{R^2} \sum_{n 
+= 0}^\infty (n + 1) \, \left( \frac{R}{r} \right)^{n + 2} \sum_{m = 0}^{n} 
+\left( \bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right) 
+\, \bar{P}_{nm}(\sin\varphi){.}
+\end{equation}
+%
+\begin{equation}
+\label{eq:vglat_sh_2nd_norm}
+\frac{\partial V_\gidx(P)}{\partial \varphi} = \frac{G \, M}{R} \sum_{n 
+= 0}^\infty \left( \frac{R}{r} \right)^{n + 1} \sum_{m = 0}^{n} \left( 
+\bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right) \, 
+\frac{\diff \bar{P}_{nm}(\sin\varphi)}{\diff \varphi}{.}
+\end{equation}
+%
+\begin{equation}
+\label{eq:vglon_sh_2nd_norm}
+\frac{\partial V_\gidx(P)}{\partial \lambda} = \frac{G \, M}{R} \sum_{n 
+= 0}^\infty \left( \frac{R}{r} \right)^{n + 1} \sum_{m = 0}^{n}\left( 
+\bar{S}_{nm} \, \cos(m\lambda) - \bar{C}_{nm} \, \sin(m\lambda)\right) \, m \, 
+\bar{P}_{nm}(\sin\varphi){.}
+\end{equation}
+%
+Obdobne by sme postupovali v prípade druhých derivácií.  Pomocou sférických 
+harmonických rozvojov preto môžeme vypočítať prakticky akúkoľvek veličinu 
+gravitačného či tiažového poľa, od gravitačného potenciálu, cez gravitačné 
+zrýchlenie až po zvislicové odchýlky či geoid.
+
+
+
+
+
+
+
+% -----------------------------------------------------------------------------
+
 \section{Konvergencia sférického harmonického rozvoja na povrchu Zeme}
 \label{sec:convergence_of_spherical_harmonics}
+
+Pred rozvinutím generickej funkcie pre Legendreove polynómy do Maclaurinovho 
+radu (vzťah~\ref{eq:maclaurin_series_of_generic_function}) sme vyslovili 
+predpoklad $\frac{r_Q}{r} < 1$.  Bez splnenia tejto podmienky 
+rad~(\ref{eq:maclaurin_series_of_generic_function}) nemusí konvergovať.  
+V takom prípade nie je možné pokračovať v odvodení 
+z Kapitoly~\ref{sec:vg_sh_expansion}.  Ak totiž 
+rad~(\ref{eq:maclaurin_series_of_generic_function}) diverguje, zámena poradia 
+integrácie a sumácie, krok, ktorý sme využili na získanie 
+vzťahu~(\ref{eq:vg_sh_no_norm}), nie je možná.
+
+Podmienku $\frac{r_Q}{r} < 1$ môžeme prepísať do tvaru $r > r_Q$.  Táto 
+nerovnosť je splnená pre \emph{všetky} diferenciálne elementy $\diff \tau(r_Q, 
+\varphi_Q, \lambda_Q)$ iba vtedy, ak pre sprievodič $r$ výpočtového bodu $P(r, 
+\varphi, \lambda)$ platí
+%
+\begin{equation}
+r > \max(r_Q) = R{,}
+\end{equation}
+%
+kde $R$ je sprievodič najvzdialenejšieho diferenciálneho elementu $\diff\tau$ 
+od začiatku súradnicového systému.  Sféra s polomerom $R$ sa nazýva sféra 
+konvergencie \citep{Hotine} 
+(Obrázok~\ref{fig:spherical_harmonics_convergence}).  Vo vonkajšom priestore 
+sféry konvergencie rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne 
+a absolútne.  Na tejto sfére, resp. v jej vnútri, konvergencia 
+radu~(\ref{eq:vg_sh_no_norm}) zaručená nie je.
 
 \begin{figure}
 \centering
 \input{./fig-spherical-harmonics-convergence.pdf_tex}
-\caption{****}
+\caption{Konvergencia sférického harmonického radu~(\ref{eq:vg_sh_no_norm}).  
+Rad konverguje rovnomerne a absolútne vo vonkajšom priestore sféry 
+konvergencie.  Svetlosivá farba označuje oblasť, v ktorej nie je zaručená 
+konvergencia.  Tmavosivá farba predstavuje hmoty telesa, ktoré generuje 
+gravitačné pole.  V tejto oblasti rad~(\ref{eq:vg_sh_no_norm}) nepopisuje 
+skutočný gravitačný potenciál}
 \label{fig:spherical_harmonics_convergence}
 \end{figure}
+
 
 
 
