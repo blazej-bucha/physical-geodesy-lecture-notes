@@ -50,7 +50,7 @@ plt.tight_layout(pad=-2.0)
 plt.show()
 
 # Nazov výstupného súboru
-fileout = "../figs/spherical-harmonic-n%d-k%d" % (n, k)
+fileout = "../latex/fig-spherical-harmonic-n%d-k%d" % (n, k)
 if zobrazenie_3d:
     fileout += "-3d.pdf"
 else:

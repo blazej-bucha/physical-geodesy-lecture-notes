@@ -10,9 +10,16 @@ set -e
 # List of directories with inkscape figures
 DIRS="./analytical-continuation/
       ./coordinate-systems/
+      ./distance-l/
+      ./equipotenital-surfaces/
       ./gg-n-point-masses/
       ./gravitating-body/
-      ./newton-law/"
+      ./gravity-vector/
+      ./newton-law/
+      ./orbital-motion-ideal/
+      ./orbital-motion-real/
+      ./spherical-harmonics-convergence/
+      ./unit-vectors/"
 
 
 for DIR in $DIRS

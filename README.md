@@ -28,7 +28,7 @@ Work in progress.
 
 # Contributing
 
-Did you find a typo or an error?  Do you find some topics missing or excessive?  
+Did you find a typo or an error?  Do you find some topics missing or excessive? 
 Any contributions are welcome!
 
 
