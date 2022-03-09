@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
+rc('text', usetex=True)
 
 # Maximálny stupeň Legendreových polynómov
 nmax = 5
@@ -29,7 +30,6 @@ for n in range(nmax + 1):
     labels[n] = "$P_%d$" % n
 ax.legend(labels, loc="center", bbox_to_anchor=(0.5, -0.35), ncol=nmax + 1)
 fig.subplots_adjust(bottom=0.3, top=0.98)
-rc('text', usetex=True)
 plt.show()
 
 fig.savefig("../figs/legendre-polynomials.pdf")

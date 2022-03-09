@@ -1,6 +1,8 @@
 # Import modulov
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rc
+rc('text', usetex=True)
 
 # Výpočtová oblasť
 xmin   = -1.0
@@ -36,4 +38,4 @@ fig.colorbar(im)
 plt.show()
 
 
-fig.savefig("../figs/f-gradf.pdf")
+fig.savefig("../latex/fig-f-gradf.pdf")
