@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# DESCRIPTION:  Generates "pdf" and "pdf_tex" files for all inkscape figures in 
+# DESCRIPTION:  Generates "pdf" and "pdf_tex" files for all inkscape figures in
 # a single run.
 
 

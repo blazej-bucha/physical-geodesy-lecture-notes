@@ -8,7 +8,7 @@ from scipy.special import lpmv
 n = 3
 k = 0
 
-# "False" pre zobrazenie na jednotkovej sfére, "True" pre zobrazenie pomocou 
+# "False" pre zobrazenie na jednotkovej sfére, "True" pre zobrazenie pomocou
 # odhľahlostí od jednotkovej sféry
 zobrazenie_3d = True
 

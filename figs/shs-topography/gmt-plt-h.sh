@@ -9,8 +9,8 @@ set -e
 # INPUTS
 # ====================================================================
 
-# Prefix of the input files to be plotted.  To limit the size of the 
-# repository, these files are not distributed but can be obtained by executing 
+# Prefix of the input files to be plotted.  To limit the size of the
+# repository, these files are not distributed but can be obtained by executing
 # the "../../matlab/shs_h.m" script
 infile="topography-nmax"
 
