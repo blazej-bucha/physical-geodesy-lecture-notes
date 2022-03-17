@@ -249,6 +249,7 @@ budeš súhlasiť!}
 % -----------------------------------------------------------------------------
 
 \chapter{Úvod}
+\label{sec:introduction}
 
 Tvar Zeme možno definovať niekoľkými spôsobmi v~závislosti od kontextu 
 \citep{MoritzTheFigureOfTheEarth}.  Azda najprirodzenejšie je definovať tvar 
@@ -1203,6 +1204,7 @@ kombináciou gravimetrie a nivelácie.  V~sústave SI majú odstredivý a~tiažo
 potenciál jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$.
 
 \subsubsection{Ekvipotenciálna plocha}
+\label{sec:equipotential_surface}
 
 Plocha, na ktorej je hodnota tiažového potenciálu $W$ konštantná sa nazýva
 \emph{ekvipotenciálna plocha} (Obrázok~\ref{fig:equipotential_surfaces}).
@@ -2714,43 +2716,86 @@ Možno\dots
 
 Fyzikálna geodézia určuje tvar Zeme z~informácie o~jej tiažovom poli, napríklad 
 z~tiažového potenciálu a z~vektora tiažového zrýchlenia na povrchu Zeme.  Táto 
-úloha je neľahká, pretože vzťah medzi tiažovým poľom a samotným zemským 
+úloha je neľahká, pretože vzťah medzi tiažovým poľom a hľadaným zemským 
 povrchom je nelineárny.  Spravidla sa preto pristupuje k~linearizácii rozvojom 
 do Taylorovho radu, pričom členy druhého a vyšších rádov sa zanedbajú.  
-Z~dôvodu minimalizácie chýb spôsobených linearizáciou je potrebné dostatočne 
-presne poznať približné hodnoty, ktoré vstupujú do Taylorovho rozvoja (pozri 
-napríklad vzťah~\ref{eq:f_taylor}).
-
 \emph{Normálne tiažové pole Zeme} je jednoduchý a súčasne dostatočne presný 
-model skutočného tiažového poľa Zeme, využívaný na výpočet približných hodnôt 
-v linearizovaných úlohách fyzikálnej geodézie.  Požiadavka jednoduchosti je 
-odôvodnená potrebou prijateľne náročných výpočtov v normálnom poli, napríklad 
-tiažového zrýchlenia, či tiažového potenciálu.  Dostatočná presnosť je potrebná 
-nato, aby bolo možné s rozumnou mierou aproximácie zanedbať nelineárne členy 
-Taylorovho rozvoja.  Obe požiadavky si odporujú, preto je potrebné nájsť medzi 
-nimi vhodný kompromis.
+model skutočného tiažového poľa Zeme, využívaný práve na výpočet približných 
+hodnôt v linearizovaných úlohách fyzikálnej geodézie.  Požiadavka jednoduchosti 
+je odôvodnená potrebou prijateľne náročných výpočtov v normálnom poli, 
+napríklad pomocou uzavretých vzťahov pre normálne tiažové zrýchlenie či 
+normálny tiažový potenciál.  Dostatočná presnosť je potrebná nato, aby bolo 
+možné s rozumnou mierou aproximácie zanedbať nelineárne členy Taylorovho 
+rozvoja.  Obe požiadavky si odporujú, preto je potrebné nájsť medzi nimi vhodný 
+kompromis.
 
 \section{Voľba normálneho tiažového poľa}
 
-Jedno z najjednoduchších telies vhodných na definíciu normálneho tiažového poľa 
-Zeme je \emph{homogénna rotujúca guľa} definovaná nezávislými parametrami $GM$, 
-$R$ a $\omega$, teda geocentrickou gravitačnou konštantou, polomerom gule 
-a uhlovou rýchlosťou rotácie.  V Kapitole~\ref{sec:homogeneous_ball_ext} bolo 
-ukázané, že vonkajšie tiažové pole homogénnej gule je jednoducho matematicky 
-opísateľné, a tak spĺňa požiadavku jednoduchosti.  Nevyhovuje však väčšine 
-súčasných aplikácií z hľadiska presnosti, hoci v~niektorých situáciach je táto 
-voľba ešte stále opodstatnená a výhodná.
+Jedno z najjednoduchších telies ponúkajúcich sa na definíciu normálneho 
+tiažového poľa Zeme je \emph{homogénna rotujúca guľa} definovaná nezávislými 
+parametrami $GM$, $R$ a $\omega$, teda geocentrickou gravitačnou konštantou, 
+polomerom gule a uhlovou rýchlosťou rotácie.  
+Z Kapitoly~\ref{sec:homogeneous_ball_ext} vieme, že vonkajšie tiažové pole 
+homogénnej gule je jednoducho matematicky opísateľné, a tak spĺňa požiadavku 
+jednoduchosti.  Nevyhovuje však väčšine súčasných aplikácií z hľadiska 
+presnosti, hoci v~niektorých situáciach je táto voľba ešte stále opodstatnená 
+a vhodná.
 
-V~praxi sa volí za model normálneho tiažového poľa najčastejšie \emph{dvojosový 
-rotačný ekvipotenciálny elipsoid} definovaný štyrmi nezávislými 
-\emph{základnými parametrami}.  Jedna možností definície je pomocou hlavnej 
-polosi~$a$, sférického harmonického koeficientu~$J_{2,0}$, geocentrickej 
-gravitačnej konštanty~$GM$ a uhlovej rýchlosti rotácie $\omega$ 
-(ekvipotenciálny elipsoid \emph{GRS80}, Tabuľka~\ref{tab:1}).  Ďalšou možnosťou 
-je namiesto koeficientu~$J_{2,0}$ použiť sploštenie elipsoidu~$f$ 
-(ekvipotenciálny elipsoid \emph{WGS4}, Tabuľka~\ref{tab:2}) či dĺžku vedľajšej 
-polosi~$b$.
+V dôsledku sploštenia Zeme je dvojosový rotačný elipsoid presnejšou 
+geometrickou aproximáciou geoidu ako sféra.  Okrem svojho geometrického tvaru 
+je geoid špecifický tým, že hodnota skutočného tiažového potenciálu $W_0$ je 
+konštantná v~každom jeho bode (pozri Kapitoly~\ref{sec:introduction} 
+a \ref{sec:equipotential_surface}).  Túto vlastnosť by bolo výhodné zužitkovať 
+aj pri voľbe normálneho tiažového poľa.  Budeme preto požadovať, aby 
+\emph{normálny tiažový potenciál} $U_0$ bol na povrchu elipsoidu konštantný.  
+Vhodnou voľbou geometrických parametrov (napríklad hlavná a vedľajšia polos) 
+a fyzikálnych parametrov (napríklad normálny tiažový potenciál $U_0$) potom 
+získame vernú aproximáciu geoidu, alebo inými slovami, dostatočne presné 
+približné hodnoty na linearizáciu úloh spojených s určovaním geoidu.  Dvojosový 
+rotačný elipsoid s~konštantným normálnym tiažovým potenciálom na svojom povrchu 
+sa nazýva \emph{ekvipotenciálny elipsoid}.  V~súčasnosti je to najčastejší 
+spôsob voľby normálneho tiažového poľa Zeme.
 
+Ďalšou možnosťou voľby normálneho tiažového poľa je sférický harmonický rozvoj 
+gravitačného potenciálu do konečného harmonického stupňa 
+(rovnice~\ref{eq:vg_sh_no_norm}, \ref{eq:vg_sh_1st_norm}, 
+\ref{eq:vg_sh_2nd_norm} a \ref{eq:vg_sh_2nd_norm_ynk}).  Plocha, na ktorej je 
+takto definovaný normálny tiažový potenciál konštantný sa nazýva 
+\emph{sféroid}.  Obmedzením rozvoja potenciálu na stupeň~2 získame 
+\emph{Brunsov sféroid} a obmedzením na stupeň~4 získame \emph{Helmertov 
+sféroid} \citep{Moritz1967}.  V~oboch prípadoch sú koeficienty stupňa~1 nulové, 
+pretože začiatok súradnicového systému je vložený do ťažiska Zeme 
+(pozri~Kapitolu~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}).  
+V definícii Helmertovho sféroidu sú nulové navyše aj koeficienty stupňa~3 
+z dôvodu zabezpečenia symetrie voči rovine rovníka (pozri geometrickú 
+interpretáciu sférických harmonických funkcií 
+v~Kapitole~\ref{sec:spherical_harmonics}).  V súčasnosti sa Brunsov ani 
+Helmertov sféroid nezvyknú používať v praktických aplikáciách.  Obe plochy sú 
+totiž veľmi blízke dvojosovému rotačnému elipsoidu, no sú výrazne zložitejšie.  
+Navyše, získaná dodatočná presnosť zväčša nie je významná \citep{Moritz1967}.
+
+Či už ide o homogénnu rotujúcu guľu, ekvipotenciálny elipsoid alebo sféroid, 
+všimnime si, že v ani jednom prípade sme nevyslovili predpoklad o~priestorovom 
+rozložení hustôt vo vnútri telesa.  Z pohľadu fyzikálnej geodézie, ktorá 
+využíva normálne pole predovšetkým na účely linearizácie, sa zdá byť kľúčové 
+najmä to, aby plocha normálneho telesa bola blízka geoidu, ďalej aby normálny 
+tiažový potenciál na tejto ploche bol konštantný a nakoniec aby geometrická aj 
+fyzikálna časť normálneho poľa boli jednoducho matematicky popísateľné.
+
+
+
+\section{Ekvipotenciálny elipsoid}
+
+Ekvipotenciálny elipsoid je definovaný štyrmi nezávislými \emph{základnými 
+parametrami}.  Jednu štvoricu základných parametrov tvorí hlavná polos~$a$, 
+sférický harmonický koeficient~$J_{2,0}$, geocentrická gravitačná 
+konštanta~$GM$ a uhlová rýchlosť rotácie $\omega$.  Týmto základnými 
+parametrami je definovaný napríklad ekvipotenciálny elipsoid \emph{GRS80} 
+(Tabuľka~\ref{tab:1}).  Ďalšou možnosťou je namiesto koeficientu~$J_{2,0}$ 
+použiť sploštenie elipsoidu~$f$ (ekvipotenciálny elipsoid \emph{WGS4}, 
+Tabuľka~\ref{tab:2}) či dĺžku vedľajšej polosi~$b$.
+
+***geocentrický***
 
 \begin{table*}
 \begin{center}
