@@ -205,7 +205,7 @@ problematike.
 
 Bolo by prostoduché a~azda i~neskromné očakávať, že v~práci sa nenájdu časti,
 ktoré mohli byť spracované zrozumiteľnejšie, či témy, ktoré v~nej obsiahnuté
-nie sú, no mohli či mali byť diskutované.  Skôr ako za uzavretý študijný
+nie sú, no mohli či mali byť diskutované.  Skôr než za uzavretý študijný
 podklad považujeme tento učebný text za živý postupne sa zdokonaľujúci
 materiál.  Všetky zdrojové kódy sú preto voľne prístupné a~pripomienkovateľné
 na adrese \url{https://github.com/blazej-bucha/physical-geodesy-lecture-notes}.
@@ -1155,6 +1155,7 @@ uhlovej sekundy.
 
 
 \subsection{Odstredivý a~tiažový potenciál}
+\label{sec:centrifugal_and_gravity_potential}
 
 Podobne ako v~prípade gravitačného poľa, i~odstredivé a~tiažové zrýchlenie je
 možné definovať pomocou skalárnych veličín.  Tieto skalárne veličiny sa
@@ -1201,7 +1202,17 @@ pre operátor gradient.
 Odstredivý ani tiažový potenciál nedokážeme priamo odmerať.  \emph{Rozdiel} 
 tiažového potenciálu medzi dvoma bodmi však môže byť nepriamo určený 
 kombináciou gravimetrie a nivelácie.  V~sústave SI majú odstredivý a~tiažový 
-potenciál jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$.
+potenciál jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$.  Rozdiel tiažového 
+potenciálu medzi dvoma bodmi sa niekedy udáva aj v~geopotenciálnych jednotkách,
+%
+\begin{equation}
+\label{eq:gpu_unit}
+1\ \mathrm{g.p.u.} = 1\ \mathrm{kgal} \ \mathrm{m} = 1000\ \mathrm{gal}\ 
+\mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
+\end{equation}
+%
+Presnosť určenia rozdielu tiažového potenciálu je približne $0.1\ \mathrm{gal} 
+\ \mathrm{m}$ na vzdialenosť jedného kilometra \citep{MoritzPhysicalGeodesy}.
 
 \subsubsection{Ekvipotenciálna plocha}
 \label{sec:equipotential_surface}
@@ -2723,11 +2734,12 @@ do Taylorovho radu, pričom členy druhého a vyšších rádov sa zanedbajú.
 model skutočného tiažového poľa Zeme, využívaný práve na výpočet približných 
 hodnôt v linearizovaných úlohách fyzikálnej geodézie.  Požiadavka jednoduchosti 
 je odôvodnená potrebou prijateľne náročných výpočtov v normálnom poli, 
-napríklad pomocou uzavretých vzťahov pre normálne tiažové zrýchlenie či 
-normálny tiažový potenciál.  Dostatočná presnosť je potrebná nato, aby bolo 
-možné s rozumnou mierou aproximácie zanedbať nelineárne členy Taylorovho 
-rozvoja.  Obe požiadavky si odporujú, preto je potrebné nájsť medzi nimi vhodný 
-kompromis.
+napríklad pomocou uzavretých vzťahov pre \emph{normálne tiažové zrýchlenie} 
+$\boldsymbol{\gamma}$ či \emph{normálny tiažový potenciál} $U$.  Dostatočná 
+presnosť je potrebná nato, aby bolo možné s rozumnou mierou aproximácie 
+zanedbať nelineárne členy Taylorovho rozvoja.  Požiadavky jednoduchosti 
+a presnosti normálneho tiažového poľa si vzájomne odporujú, preto je potrebné 
+nájsť medzi nimi vhodný kompromis.
 
 \section{Voľba normálneho tiažového poľa}
 
@@ -2771,37 +2783,77 @@ z dôvodu zabezpečenia symetrie voči rovine rovníka (pozri geometrickú
 interpretáciu sférických harmonických funkcií 
 v~Kapitole~\ref{sec:spherical_harmonics}).  V súčasnosti sa Brunsov ani 
 Helmertov sféroid nezvyknú používať v praktických aplikáciách.  Obe plochy sú 
-totiž veľmi blízke dvojosovému rotačnému elipsoidu, no sú výrazne zložitejšie.  
-Navyše, získaná dodatočná presnosť zväčša nie je významná \citep{Moritz1967}.
+totiž veľmi blízke dvojosovému rotačnému elipsoidu, no sú výrazne zložitejšie, 
+a získaná dodatočná presnosť zväčša nie je významná \citep{Moritz1967}.
 
 Či už ide o homogénnu rotujúcu guľu, ekvipotenciálny elipsoid alebo sféroid, 
-všimnime si, že v ani jednom prípade sme nevyslovili predpoklad o~priestorovom 
-rozložení hustôt vo vnútri telesa.  Z pohľadu fyzikálnej geodézie, ktorá 
-využíva normálne pole predovšetkým na účely linearizácie, sa zdá byť kľúčové 
-najmä to, aby plocha normálneho telesa bola blízka geoidu, ďalej aby normálny 
-tiažový potenciál na tejto ploche bol konštantný a nakoniec aby geometrická aj 
-fyzikálna časť normálneho poľa boli jednoducho matematicky popísateľné.
+všimnime si, že v~ani jednom prípade sme nepotrebovali vysloviť predpoklad 
+o~priestorovom rozložení hustôt vo vnútri týchto telies.  Fyzikálna geodézia 
+využíva normálne pole predovšetkým na účely linearizácie, a tak sa zdá byť 
+kľúčové najmä to, aby plocha normálneho telesa bola blízka geoidu, ďalej aby 
+normálny tiažový potenciál na tejto ploche bol konštantný a nakoniec aby 
+geometrická aj fyzikálna časť normálneho poľa boli jednoducho matematicky 
+popísateľné.  Pre niektoré príbuzné vedné odbory, napríklad geofyziku, je však 
+znalosť hustoty v~normálnom telese potrebná \citep{Karcol2017}.  Zdá sa, že 
+v~takýchto situáciách nie je voľba ekvipotenciálneho elipsoidu najvýhodnejšia.  
+Diskusiu k~možnostiam priestorového rozloženia hustoty vo vnútri 
+ekvipotenciálneho elipsoidu je možné nájsť napríklad v~prácach 
+\cite{MoritzTheFigureOfTheEarth}, \cite{TorgeGeodesy}, \cite{Conway2000} či 
+\cite{Karcol2017}.
 
 
 
 \section{Ekvipotenciálny elipsoid}
 
-Ekvipotenciálny elipsoid je definovaný štyrmi nezávislými \emph{základnými 
-parametrami}.  Jednu štvoricu základných parametrov tvorí hlavná polos~$a$, 
-sférický harmonický koeficient~$J_{2,0}$, geocentrická gravitačná 
-konštanta~$GM$ a uhlová rýchlosť rotácie $\omega$.  Týmto základnými 
-parametrami je definovaný napríklad ekvipotenciálny elipsoid \emph{GRS80} 
-(Tabuľka~\ref{tab:1}).  Ďalšou možnosťou je namiesto koeficientu~$J_{2,0}$ 
-použiť sploštenie elipsoidu~$f$ (ekvipotenciálny elipsoid \emph{WGS4}, 
-Tabuľka~\ref{tab:2}) či dĺžku vedľajšej polosi~$b$.
+\emph{Stokesov--Poincarého} teorém hovorí, že ak teleso o~celkovej 
+hmotnosti~$M$ rotuje konštantnou uhlovou rýchlosťou~$\omega$ okolo pevnej osi, 
+a ak $S$ je ekvipotenciálna plocha jeho tiažového poľa obklopujúca celé teleso, 
+potom tiažový potenciál vo vonkajšom priestore plochy~$S$ je jednoznačne určený 
+konštantami $M$ a $\omega$ a parametrami definujúcimi plochu~$S$ 
+\citep{TorgeGeodesy}.
 
-***geocentrický***
+Na jednoznačné zadefinovanie ekvipotenciálneho elipsoidu a jeho vonkajšieho 
+tiažového poľa preto postačuje určiť štyri nezávislé \emph{základné parametre}.  
+Dva z týchto parametrov sú geometrické, resp. veľmi úzko súvisia s geometriou 
+elipsoidu (napríklad hlavná polos a sploštenie elipsoidu), a dva parametre sú 
+fyzikálne (hmotnosť a uhlová rýchlosť rotácie).  Všetky ostatné veličiny 
+normálneho tiažového poľa je možné vypočítať z~týchto základných parametrov, či 
+už ide o geometrické parametre (napríklad vedľajšia polos či lineárna 
+excentricita elipsoidu) alebo fyzikálne parametre (normálny tiažový potenciál 
+a pod.).
+
+Jednu z možných štvoríc základných parametrov tvorí hlavná polos~$a$, dynamický 
+koeficient~$J_{2,0}$, geocentrická gravitačná konštanta~$GM$ a uhlová rýchlosť 
+rotácie $\omega$.  Týmto základnými parametrami je definovaný ekvipotenciálny 
+elipsoid \emph{GRS80}.  Základné parametre GRS80 (Tabuľka~\ref{tab:1}) boli 
+prijaté Medzinárodnou úniou geodézie a geofyziky (angl. \textit{International 
+Union of Geodesy and Geophysics}, IUGG) a Medzinárodnou asociáciou geodézie 
+(angl. \textit{International Association of Geodesy}, IAG) na 17.~generálnom 
+zasadnutí IUGG v Canberra v decembri 1979.  Dôležité je spomenúť, že použitá 
+hodnota konštanty $GM$ zahŕňa hmotnosť Zeme \emph{a} hmotnosť zemskej atmosféry 
+a koeficient $J_{2,0}$ nezahŕňa účinok permanentnej slapovej deformácie.  Medzi 
+koeficientmi $J_{2,0}$, $C_{2,0}$ a $\bar{C}_{2,0}$ platia nasledovné vzťahy 
+\citep{Moritz1967,MoritzPhysicalGeodesy},
+%
+\begin{equation}
+C_{2,0} = -J_{2,0}{,}
+\end{equation}
+%
+\begin{equation}
+\bar{C}_{2,0} = \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
+\end{equation}
+%
+Elipsoid GRS80 je oficiálny referenčný systém Medzinárodnej asociácie geodézie.
 
 \begin{table*}
 \begin{center}
 \caption{Základné parametre ekvipotenciálneho elipsoidu GRS80 \citep{GRS80}}
 \label{tab:1}
 \begin{tabular}{l l l l l}
+\hline
+Názov     & Hlavná polos & Dynamický faktor & Geocentrická & Uhlová rýchlosť \\
+          &              &                  & gravitačná  &  rotácie\\
+          &              &                  & konštanta               & \\
 \hline
 Označenie & $a$ & $J_{2,0}$ & $GM$ & $\omega$\\
 Hodnota   & $6\,378\,137$ & $108\,263 \times 10^{-8}$ & $3\,986\,005 \times 
@@ -2813,11 +2865,34 @@ Jednotka  & $\mathrm{m}$ & Bezrozmerné & $\mathrm{m}^3 \ \mathrm{s}^{-2}$
 \end{center}
 \end{table*}
 
+Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť sploštenie~$f 
+= \frac{a - b}{b}$ namiesto koeficientu~$J_{2,0}$.  Týmto spôsobom je 
+definovaný ekvipotenciálny elipsoid \emph{WGS4} (Tabuľka~\ref{tab:2}), ktorý 
+vychádza z~GRS80.  Z hľadiska tvaru sú si oba elipsoidy podobné; dĺžka ich 
+hlavnej polosi je $6\, 378\, 137\ \mathrm{m}$ a dĺžka vedľajšej polosi sa 
+odlišuje iba o~desatinu milimetra, $b^{\mathrm{GRS80}} = 6\, 356\, 752.3141\ 
+\mathrm{m}$ voči $b^{\mathrm{WGS84}} = 6\, 356\, 752.3142\ \mathrm{m}$ 
+\citep{MoritzPhysicalGeodesy}.  Z fyzikálneho hľadiska je už medzi elipsoidmi 
+rozdiel väčší.  Uhlová rýchlosť rotácie oboch elipsoidov je síce rovnaká, no 
+odlišné hodnoty geocentrických gravitačných konštánt spôsobujú rozdiel 
+v~normálnom tiažovom potenciáli na elipsoide, $U_{0}^{\mathrm{GRS80}} = 62\, 
+636\, 860.850\ \mathrm{m}^2 \, \mathrm{s}^{-2}$ a $U_{0}^{\mathrm{WGS84}} 
+= 62\, 636\, 851.715\ \mathrm{m}^2 \, \mathrm{s}^{-2}$ 
+\citep{MoritzPhysicalGeodesy}.  Rozdiel $|U_0^{\mathrm{GRS80}} 
+- U_0^{\mathrm{WGS84}}|$ je teda približne o~5 rádov väčší ako presnosť určenia 
+rozdielu skutočného tiažového potenciálu medzi dvoma bodmi (pozri 
+Kapitolu~\ref{sec:centrifugal_and_gravity_potential} 
+a rovnicu~\ref{eq:gpu_unit}).
+
 \begin{table*}
 \begin{center}
 \caption{Základné parametre ekvipotenciálneho elipsoidu WGS84 \citep{WGS84}}
 \label{tab:2}
 \begin{tabular}{l l l l l}
+\hline
+Názov     & Hlavná polos & Prevrátená & Geocentrická & Uhlová rýchlosť \\
+          &              & hodnota    & gravitačná  &  rotácie\\
+          &              & sploštenia & konštanta               & \\
 \hline
 Označenie & $a$ & $1 \slash f$ & $GM$ & $\omega$\\
 Hodnota   & $6\,378\,137$ & $298.257223563$ & $3\,986\,004.418 \times 10^8$ 
@@ -2828,6 +2903,14 @@ Jednotka  & $\mathrm{m}$ & Bezrozmerné & $\mathrm{m}^3 \ \mathrm{s}^{-2}$
 \end{tabular}
 \end{center}
 \end{table*}
+
+Základné parametre ekvipotenciálnych elipsoidov sú v súčasnosti určované 
+spravidla pomocou družicových techník a astronomických meraní.  Historický 
+prehľad geodetických referenčných systémov a spôsoby ich určenia je možné nájsť 
+napríklad v~prácach \cite{TorgeGeodesy} a~\cite{MoritzPhysicalGeodesy}.
+
+V ďalších častiach tejto kapitoly sa budeme venovať gravitačnému a tiažovému 
+poľu ekvipotenciálneho eliposoidu.
 
 
 
