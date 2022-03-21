@@ -18,10 +18,11 @@
 % LaTeX Packages
 % =============================================================================
 
-\documentclass[a4paper, 12pt]{book}
+\documentclass[a4paper,12pt]{book}
 \usepackage[slovak]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[round]{natbib}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{upgreek}
@@ -166,6 +167,23 @@
 
 
 
+% Custom hyphenation for some English words in a Slovak text
+% =============================================================================
+
+% Isn't there a more clever way to achieve the same?
+\hyphenation{New-ton}
+\hyphenation{New-to-nov}
+\hyphenation{New-to-nom}
+\hyphenation{New-to-nov-ho}
+\hyphenation{New-to-no-vým}
+
+% =============================================================================
+
+
+
+
+
+
 % =============================================================================
 
 \sloppy
@@ -199,7 +217,7 @@ bezodné, predsa len si vyžaduje pokročilé matematické zručnosti a~nepochyb
 aj~isté zanietenie.  Snažili sme sa preto o~výklad, ktorý by bol jednoduchý,
 zrozumiteľný, úplný, nápomocný a~súčasne i~podnecujúci.  Na miestach, kde sme
 to považovali za vhodné, text sme doplnili o~počítačový kód prakticky
-demonštrujúci diskutovanú problematiku.  Nádejáme sa, že vlastným štúdiom,
+demonštrujúci diskutovanú problematiku.  Nádejame sa, že vlastným štúdiom,
 testovaním a~úpravou tohto kódu je možné jednoduchšie porozumieť diskutovanej
 problematike.
 
@@ -299,25 +317,25 @@ pole Zeme.
 \section{Newtonov gravitačný zákon}
 \label{sec:newton_law}
 
-Dva hmotné body $P$ a~$Q$ nachádzajúce sa od seba vo vzdialenosti $l$ sa
-navzájom priťahujú \emph{gravitačnou silou}
+Dva hmotné body $P$ a~$Q$ sa navzájom priťahujú \emph{gravitačnou silou}
 %
 \begin{equation}
 \label{eq:newton_law}
 \vec F_\gidx = -G \frac{m_P \, m_Q}{l^2} \, \frac{\vec r}{l}{.}
 \end{equation}
 %
-Symbol $G$ označuje gravitačnú konštantu, $m_P$ a~$m_Q$ predstavujú hmotnosti
-hmotných bodov a~$\vec r$ je vektor definovaný bodmi $P$ a~$Q$ so začiatkom
-v~bode $Q$.  Záporné znamienko v~rovnici znamená, že vektor sily má začiatok
-v~bode $P$ a~smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
+Symbol $G$ označuje gravitačnú konštantu, $m_P$ a~$m_Q$ predstavujú hmotnosti 
+hmotných bodov, $\vec r$ je vektor definovaný polohou bodov $P$ a~$Q$ so 
+začiatkom v~bode $Q$ a~$l$ je vzdialenosť medzi hmotnými bodmi, $l = \| \vec 
+r \|$.  Záporné znamienko v~rovnici znamená, že vektor sily má začiatok v~bode 
+$P$ a~smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
 
 \begin{figure}[b]
 \centering
 \input{./fig-newton-law.pdf_tex}
 \caption{Gravitačná sila $\vec F_\gidx$, ktorou pôsobí hmotný bod $Q$ na hmotný
 bod $P$.  Vektor $\vec F_\gidx$ je z~dôvodov vizualizácie mierne odsadený od
-spojnice bodov $P$ a~$Q$}
+spojnice bodov $P$ a~$Q$.}
 \label{fig:newton_law}
 \end{figure}
 
@@ -337,22 +355,23 @@ G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1}
 \ \mathrm{s}^{-2}{.}
 \end{equation}
 
-Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme
-polohu planéty v~čase $t_0$ symbolom $P(t_0)$ a~vektor jej okamžitej rýchlosti
-symbolom $\vec v(t_0)$, $| \vec v(t_0) | > 0$.  Ak by od času $t_0$ nepôsobila
-na planétu žiadna sila, \emph{Newtonov pohybový zákon} hovorí, že planéta by sa
-ďalej pohybovala rovnomerným priamočiarym pohybom v~smere vektora $\vec
-v(t_0)$.  Za istý čas by sa teda dostala do bodu $P'(t_1)$.  Jediný spôsob ako
-zmeniť túto dráhu je pôsobením sily na planétu.
-Z~rovnice~(\ref{eq:newton_law}) vyplýva, že v~čase $t_0$ pôsobí na planétu
-gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom smer sily je daný spojnicou
-planéty a~Slnka.  Gravitačná sila preto pritiahne planétu v~smere vektora $\vec
-F_\gidx(t_0)$, čím zmení hypotetickú trajektóriu, ktorou by sa planéta
-pohybovala bez pôsobenia tejto sily.  V~kombinácii s~vektorom rýchlosti
-gravitačná sila spôsobí, že planéta sa dostane do bodu $P(t_1)$.  V~čase $t_1$
-sa opísaná situácia opakuje, pričom vektory rýchlosti a~sily už majú iný smer
-a~s~vysokou pravdepodobnosťou aj inú veľkosť.  Gravitačná sila Slnka teda
-zakrivuje trajektóriu planéty \emph{v každom okamihu}.
+Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme 
+polohu planéty v~čase $t_0$ symbolom $P(t_0)$ a~vektor jej okamžitej rýchlosti 
+symbolom $\vec v(t_0)$.  Predpokladajme, že planéta je v pohybe, teda $\| \vec 
+v(t_0) \| > 0$.  Ak by od času $t_0$ nepôsobila na planétu žiadna sila, 
+\emph{Newtonov pohybový zákon} hovorí, že planéta by sa ďalej pohybovala 
+rovnomerným priamočiarym pohybom v~smere vektora $\vec v(t_0)$.  Za istý čas by 
+sa teda dostala do bodu $P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je 
+pôsobením sily na planétu.  Z~rovnice~(\ref{eq:newton_law}) vyplýva, že v~čase 
+$t_0$ pôsobí na planétu gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom 
+smer sily je daný spojnicou planéty a~Slnka.  Gravitačná sila preto pritiahne 
+planétu v~smere vektora $\vec F_\gidx(t_0)$, čím zmení hypotetickú trajektóriu, 
+ktorou by sa planéta pohybovala bez pôsobenia tejto sily.  V~kombinácii 
+s~vektorom rýchlosti gravitačná sila spôsobí, že planéta sa dostane do bodu 
+$P(t_1)$.  V~čase $t_1$ sa opísaná situácia opakuje, pričom vektory rýchlosti 
+a~sily už majú iný smer a~s~vysokou pravdepodobnosťou aj inú veľkosť.  
+Gravitačná sila Slnka teda zakrivuje trajektóriu planéty \emph{v každom 
+okamihu}.
 
 \begin{figure}
 \centering
@@ -386,10 +405,10 @@ fyzikálnej geodézie.
 \subsection{Gravitačné zrýchlenie}
 \label{sec:gg}
 
-Gravitačná sila~(\ref{eq:newton_law}) závisí od hmotnosti oboch hmotných
-bodov medzi ktorými pôsobí.  Skúsme preto normovať gravitačnú silu hmotnosťou
-hmotného bodu $P$.  Získame tým veličinu, ktorá sa nazýva \emph{gravitačné
-zrýchlenie},
+Gravitačná sila~(\ref{eq:newton_law}) pôsobiaca medzi hmotnými bodmi~$P$ 
+a~$Q$~závisí od hmotnosti oboch hmotných bodov.  Skúsme preto normovať vektor 
+gravitačnej sily hmotnosťou $m_P$.  Získame tým vektorovú veličinu, ktorá sa 
+nazýva \emph{gravitačné zrýchlenie},
 %
 \begin{equation}
 \label{eq:gg_point_mass}
@@ -484,7 +503,7 @@ z - z_Q
 {,}
 \end{equation}
 %
-a~$l = | \vec r |$ je jeho veľkosť, teda Euklidovská vzdialenosť medzi bodmi
+a~$l = \| \vec r \|$ je jeho veľkosť, teda Euklidovská vzdialenosť medzi bodmi
 $P$ a~$Q$,
 %
 \begin{equation}
@@ -500,8 +519,8 @@ integráciou vzťahu~(\ref{eq:gg_dm}),
 \vec g_\gidx(P) = -G \iiint_{\tau} \frac{\vec r}{l^3} \, \rho \, \diff\tau{.}
 \end{equation}
 %
-Tento vzťah už môže byť korektne použitý na výpočet gravitačného zrýchlenia,
-ktoré generuje všeobecné teleso (napríklad Zem) v~bode $P$ (napríklad ťažisko
+Tento vzťah už môže byť korektne použitý na výpočet gravitačného zrýchlenia 
+všeobecného telesa (napríklad Zeme) v~ľubovoľnom bode~$P$ (napríklad v~ťažisku 
 družice).
 
 Vektor gravitačného zrýchlenia veľmi úzko súvisí s~veličinou, ktorú je možné
@@ -513,7 +532,7 @@ Galileiho, prípadne s~jej násobkami $1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\
 \mathrm{s}^{-2}$ a~$1\ \upmu \mathrm{Gal} = 10^{-8}\ \mathrm{m}\
 \mathrm{s}^{-2}$.
 
-Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebehu veľkosti vektora
+Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti vektora
 gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Z~porovnania
 s~topografiou (Obrázok~\ref{fig:h_grav_sr_2arcsec}) je zrejmé, že gravitačné
 zrýchlenie je veľmi závislé od lokálnych hmôt, teda od hustoty a~tvaru blízkych
@@ -528,18 +547,18 @@ a~rozsiahlymi hustotnými celkami vo vnútri Zeme.
 \begin{figure}
 \centering
 \includegraphics{./fig-gg-grav-sr-2arcsec.pdf}
-\caption{Veľkosť vektora gravitačného zrýchlenia $| \vec g_\gidx |$ na zemskom
-povrchu v~oblasti Vysokých a~Nízkych Tatier (jednotky mGal).  Dáta prevzaté
-z~modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
+\caption{Veľkosť vektora gravitačného zrýchlenia $\| \vec g_\gidx \|$ na 
+zemskom povrchu v~oblasti Vysokých a~Nízkych Tatier (jednotky mGal).  Dáta sú 
+prevzaté z~modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}.}
 \label{fig:gg_grav_sr_2arcsec}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{./fig-h-grav-sr-2arcsec.pdf}
-\caption{Topografia v~oblasti Vysokých a~Nízkych Tatier vyjadrená pomocou
-elipsoidickej výšky (jednotky~m).  Dáta prevzaté z~modelu
-\texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
+\caption{Topografia v~oblasti Vysokých a~Nízkych Tatier vyjadrená pomocou 
+elipsoidickej výšky (jednotky~m).  Dáta sú prevzaté z~modelu 
+\texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}.}
 \label{fig:h_grav_sr_2arcsec}
 \end{figure}
 
@@ -552,31 +571,18 @@ elipsoidickej výšky (jednotky~m).  Dáta prevzaté z~modelu
 \subsection{Gravitačný potenciál}
 \label{sec:vg}
 
-Gravitačné zrýchlenie $\vec g_\gidx$ je vektorová veličina, ktorá má v~každom
-bode definovanú trojicu reálnych čísel,
-%
-\begin{equation}
-\label{eq:gg_elements}
-\vec g_{\gidx}(P) =
-\begin{bmatrix}
-g_{\gidx,x}(P) \\[2ex]
-g_{\gidx,y}(P) \\[2ex]
-g_{\gidx,z}(P)
-\end{bmatrix}
-{.}
-\end{equation}
-%
-V~niektorých situáciách je výhodnejšie pracovať so skalárnou veličinou, teda
-takou, ktorá má v~bode~$P$ definované práve jedno reálne číslo.  Tento prístup
-je mladší ako Newtonov gravitačný zákon zhruba o~jedno storočie
-\citep{MacMillan1930,Jekeli2015}.  Fenomén gravitácie chápe ako \emph{pole},
-ktorého vlastnosti môžu byť popísané rôznymi vzájomne súvisiacimi veličinami,
-pričom však ide stále o~to isté pole.  S~konceptom potenciálu poľa prišiel
-podľa \cite{MacMillan1930} taliansky matematik a~astronóm J.~L.~Lagrange
-(1736--1813).  Ak by sme teda našli skalárnu veličinu gravitačného poľa,
-informáciu poskytnutú troma číslami v~podobe gravitačného vektora
-(vzťah~\ref{eq:gg_elements}) by sme dokázali zredukovať na jedno jediné číslo
-bez straty informácie o~poli samotnom.  Skalárna veličina gravitačného poľa sa
+Gravitačné zrýchlenie $\vec g_\gidx$ je vektorová veličina, ktorá má v~každom 
+bode definovanú trojicu reálnych čísel.  V~niektorých situáciách je výhodnejšie 
+pracovať so skalárnou veličinou, teda takou, ktorá má v~bode~$P$ definované 
+práve jedno reálne číslo.  Tento prístup je mladší ako Newtonov gravitačný 
+zákon zhruba o~jedno storočie \citep{MacMillan1930,Jekeli2015}.  Fenomén 
+gravitácie chápe ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi 
+vzájomne súvisiacimi veličinami, pričom však ide stále o~to isté pole.  
+S~konceptom potenciálu poľa prišiel podľa \cite{MacMillan1930} taliansky 
+matematik a~astronóm J.~L.~Lagrange (1736--1813).  Ak by sme teda našli 
+skalárnu veličinu gravitačného poľa, informáciu poskytnutú troma číslami 
+v~podobe gravitačného vektora by sme dokázali zredukovať na jedno jediné číslo 
+bez straty informácie o~poli samotnom.  Skalárna veličina gravitačného poľa sa 
 nazýva \emph{gravitačný potenciál} a~označuje sa symbolom $V_\gidx$.
 
 Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia.  Pre lepšie
@@ -600,9 +606,38 @@ gradient definovaný nasledovne,
 \end{equation}
 %
 kde $\vec e_1$, $\vec e_2$ a~$\vec e_3$ predstavujú jednotkové vektory
-rovnobežné so smerom súradnicových osí $x$, $y$ a~$z$.  Aplikáciou operátora
-gradient na \emph{skalárnu} funkciu $f(x, y, z)$ získame \emph{vektorovú}
-funkciu,
+rovnobežné so smerom súradnicových osí,
+%
+\begin{equation}
+\label{eq:unit_vectors}
+\vec e_1 =
+\begin{bmatrix}
+1\\
+0\\
+0\\
+\end{bmatrix}
+{,} \quad
+%
+\vec e_2 =
+\begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix}
+%
+{,}\quad
+%
+\vec e_3 =
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+{.}
+\end{equation}
+%
+Aplikáciou operátora gradient na \emph{skalárnu} funkciu $f(x, y, z)$ získame 
+\emph{vektorovú} funkciu,
 %
 \begin{equation}
 \begin{split}
@@ -655,7 +690,7 @@ práve jedna funkcia $V_\gidx$ vyhovujúca rovnici~(\ref{eq:gg_grad_vg}).  Keď�
 podmienka (\ref{eq:vg_at_infty}) bola definovaná (zvolená) dodatočne,
 \emph{gravitačný potenciál je relatívna veličina}.
 
-Gravitačný potenciál hmotného bodu je daný nasledovne,
+Gravitačný potenciál hmotného bodu je daný vzťahom
 %
 \begin{equation}
 \label{eq:vg_point_mass}
@@ -663,8 +698,8 @@ V_\gidx(P) = \frac{G \, m}{l}{.}
 \end{equation}
 %
 Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg})
-a~(\ref{eq:vg_at_infty}).  Aplikovaním operátora gradient~(\ref{eq:gradient})
-na gravitačný potenciál~(\ref{eq:vg_point_mass}),
+a~(\ref{eq:vg_at_infty}).  Aplikujme operátor gradient~(\ref{eq:gradient})
+na gravitačný potenciál~(\ref{eq:vg_point_mass}) s~využitím~(\ref{eq:l}),
 %
 \begin{equation}
 \label{eq:gg_from_vg_point_mass}
@@ -686,11 +721,11 @@ G \, m
 \dfrac{y - y_Q}{l^3}{,}\\[2ex]
 \dfrac{z - z_Q}{l^3}
 \end{bmatrix}
-{,}
+{.}
 \end{equation}
 %
-získame vektor gravitačného zrýchlenia $\vec g_\gidx(P)$
-z~rovnice~(\ref{eq:gg_point_mass}), čím bola dokázaná
+Vzťah~(\ref{eq:gg_from_vg_point_mass}) predstavuje gravitačné zrýchlenie $\vec 
+g_\gidx(P)$ z~rovnice~(\ref{eq:gg_point_mass}), čím bola dokázaná 
 rovnosť~(\ref{eq:gg_grad_vg}).  Platnosť vzťahu~(\ref{eq:vg_at_infty}), teda
 %
 \begin{equation}
@@ -753,8 +788,8 @@ uvedená na Obrázku~\ref{fig:vg_grav_sr_2arcsec}.
 \centering
 \includegraphics{./fig-vg-grav-sr-2arcsec.pdf}
 \caption{Gravitačný potenciál $V_\gidx$ na zemskom povrchu v~oblasti Vysokých
-a~Nízkych Tatier (jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$).  Dáta prevzaté
-z~modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}}
+a~Nízkych Tatier (jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$).  Dáta sú prevzaté
+z~modelu \texttt{grav-sr-2arcsec} \citep{GravSR2arcsec}.}
 \label{fig:vg_grav_sr_2arcsec}
 \end{figure}
 
@@ -843,7 +878,7 @@ a
 Skúsme overiť, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass})
 vyhovuje Laplaceovej rovnici.  Budeme uvažovať, že $l > 0$, nakoľko gravitačný
 potenciál hmotného bodu nie je definovaný pre $l = 0$.
-S~uvážením~(\ref{eq:laplace_homogenity}), postačuje dokázať, že
+S~uvážením~(\ref{eq:laplace_homogenity}) postačuje dokázať rovnosť
 %
 \begin{equation}
 \label{eq:nabla_l}
@@ -1064,10 +1099,12 @@ súradnicovom systéme, potrebné je uvážiť nielen gravitačnú silu, ale aj~
 sily v~zmysle Newtonovho pohybového zákona.  Na objekt, ktorý sa nachádza na
 rotujúcej Zemi a~je vzhľadom k~nej v~pokoji pôsobí okrem gravitačnej sily aj
 \emph{odstredivá sila}.  Ak je objekt v~pohybe, pôsobí naň i~tretia sila, ktorá
-sa nazýva \emph{Coriolisova sila}.  Azda väčšina geodetických meracích
+sa nazýva \emph{Coriolisova sila} \citep{Torge1989,SansoGeoidDetermination}.  
+Azda väčšina geodetických meracích
 zariadení je počas merania vzhľadom k~Zemi v~pokoji, preto Coriolisovu silu
 nebudeme ďalej uvažovať.  Spomeňme tiež, že ak sa uhlová rýchlosť rotácie
-$\omega$ v~čase mení, potrebné je uvážiť aj~\emph{Eulerovu silu}.  Tieto tri
+$\omega$ v~čase mení, potrebné je uvážiť aj~\emph{Eulerovu silu} 
+\citep{Torge1989,SansoGeoidDetermination}.  Tieto tri
 sily, odstredivá, Coriolisova a~Eulerova, sa zaraďujú medzi \emph{zotrvačné
 sily}, niekedy tiež nazývané fiktívne sily.  Zotrvačné sily nevznikajú
 vzájomným silovým pôsobením medzi objektmi.
@@ -1098,11 +1135,11 @@ y\\
 \end{equation}
 %
 Za predpokladu konštantnej uhlovej rýchlosti rotácie $\omega$ sa veľkosť
-odstredivého zrýchlenia mení iba so vzdialenosťou $p = | \vec p |$ od rotačnej
-osi (Obrázok~\ref{fig:gravity_vector}),
+odstredivého zrýchlenia mení iba so vzdialenosťou $p = \| \vec p \|$ od 
+rotačnej osi (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
-| \vec g_\cidx | = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2}{.}
+\| \vec g_\cidx \| = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2}{.}
 \end{equation}
 %
 Čím je vzdialenosť $p$ väčšia, tým je väčšie i~odstredivé zrýchlenie a~naopak.
@@ -1119,7 +1156,7 @@ rovná \citep{GRS80}
 \centering
 \input{./fig-gravity-vector.pdf_tex}
 \caption{Vektory gravitačného $\vec g_\gidx$, odstredivého $\vec g_\cidx$
-a~tiažového zrýchlenia $\vec g$ v~bode $P$ na povrchu idealizovanej rotujúcej
+a~tiažového zrýchlenia $\vec g$ v~bode~$P$ na povrchu idealizovanej rotujúcej
 Zeme sférického tvaru a~konštantnej hustoty}
 \label{fig:gravity_vector}
 \end{figure}
@@ -1137,14 +1174,14 @@ zrýchlenie} a budeme ho označovať symbolom $\vec g(P)$
 \vec g(P) = \vec g_\gidx(P) + \vec g_\cidx(P){.}
 \end{equation}
 
-Vektor tiažového zrýchlenia je možné odmerať, a~tak predstavuje ústrednú
-veličinu v~procese určovania tvaru Zeme.  Prístroj na meranie veľkosti vektora
-tiažového zrýchlenia $| \vec g(P) |$ sa nazýva \emph{gravimeter}.  Vedný odbor
-zaoberajúci sa meraním tiažového zrýchlenia sa nazýva \emph{gravimetria} (pozri
-napríklad \citealt{Torge1989,Rozimant1994} či \citealt{Janak2010}).
-V~súčasnosti bežne dosiahnuteľná presnosť určenia $| \vec g(P) |$ dosahuje
-hodnotu niekoľkých mikroGalov.  Smer vektora tiažového zrýchlenia je možné
-odmerať astronomickým určením zemepisnej šírky a~zemepisnej dĺžky bodu $P$.
+Vektor tiažového zrýchlenia je možné odmerať, a~tak predstavuje ústrednú 
+veličinu v~procese určovania tvaru Zeme.  Prístroj na meranie veľkosti vektora 
+tiažového zrýchlenia $\| \vec g(P) \|$ sa nazýva \emph{gravimeter}.  Vedný 
+odbor zaoberajúci sa meraním tiažového zrýchlenia sa nazýva \emph{gravimetria} 
+(pozri napríklad \citealt{Torge1989,Rozimant1994} či \citealt{Janak2010}).  
+V~súčasnosti bežne dosiahnuteľná presnosť určenia $\| \vec g(P) \|$ dosahuje 
+hodnotu niekoľkých mikroGalov.  Smer vektora tiažového zrýchlenia je možné 
+odmerať astronomickým určením zemepisnej šírky a~zemepisnej dĺžky bodu $P$.  
 Presnosť určenia astronomických súradníc sa v~súčasnosti pohybuje približne 
 v~desatinách uhlovej sekundy.
 
@@ -1227,7 +1264,7 @@ sa na niektoré ich vlastnosti.
 \centering
 \input{./fig-equipotential-surfaces.pdf_tex}
 \caption{Ekvipotenciálne plochy s~konštantným krokom tiažového potenciálu
-$\Delta W$}
+$\delta W$}
 \label{fig:equipotential_surfaces}
 \end{figure}
 
@@ -1267,15 +1304,15 @@ plôch daný skôr celkovou geometriou telesa ako takého (napríklad splošteni
 Zeme) či rozsiahlymi hustotnými kontrastami.  Práve tieto skutočnosti výrazne
 komplikujú presný výpočet geoidu, jednej ekvipotenciálnej plochy z~nekonečného
 množstva ekvipotenciálnych plôch.  Podrobnejší popis niektorých dôležitých
-vlastností ekvipotenciálnych plôch, napríklad ich krivostí, je možne nájsť
-napríklad v~\cite{Janak2006} či v~\cite{MoritzPhysicalGeodesy}.
+vlastností ekvipotenciálnych plôch, napríklad ich krivostí, je možné nájsť
+napríklad v~prácach \cite{Janak2006} a~\cite{MoritzPhysicalGeodesy}.
 
 Obrázok~\ref{fig:equipotential_surfaces} schematicky znázorňuje ekvipotenciálne
-plochy tiažového poľa Zeme s~konštantným krokom tiažového potenciálu $\Delta
+plochy tiažového poľa Zeme s~konštantným krokom tiažového potenciálu $\delta
 W$.  Možno si všimnúť, že priestorový rozostup ekvipotenciálnych plôch je väčší
 v~rovníkových oblastiach ako v~polárnych oblastiach.  Malý rozostup
 ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a~naopak.  Veľkosť
-vektora tiažového zrýchlenia $| \vec g |$ je teda väčšia v~oblasti pólov ako
+vektora tiažového zrýchlenia $\| \vec g \|$ je teda väčšia v~oblasti pólov ako
 v~oblasti rovníka.
 
 Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna
@@ -1301,7 +1338,7 @@ Obrázok~\ref{fig:equipotential_surfaces}).
 Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad
 teodolitu) bola totožná s~lokálnou zvislicou.  Táto podmienka je splnená po
 zhorizontovaní prístroja za predpokladu, že horizontálna os prístroja je kolmá
-na jeho vertikálnu os.  K~lokálnej zvislici sa vzťahujú napríklad merané
+na vertikálnu os.  K~lokálnej zvislici sa vzťahujú napríklad merané
 vertikálne smery.  Sférický tvar Zeme a~zvlnenie ekvipotenciálnych plôch
 spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo všeobecnosti
 rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné
@@ -1355,42 +1392,14 @@ a~širší kontext.
 
 Nech je daný trojrozmerný pravouhlý súradnicový systém so začiatkom v~bode $O$
 a~so súradnicovými osami $x$, $y$ a~$z$.  Označme symbolmi $\vec e_1$, $\vec
-e_2$ a~$\vec e_3$ jednotkové vektory v~smere týchto súradnicových osí,
-%
-\begin{equation}
-\vec e_1 =
-\begin{bmatrix}
-1\\
-0\\
-0\\
-\end{bmatrix}
-{,} \quad
-%
-\vec e_2 =
-\begin{bmatrix}
-0\\
-1\\
-0
-\end{bmatrix}
-%
-{,}\quad
-%
-\vec e_3 =
-\begin{bmatrix}
-0\\
-0\\
-1
-\end{bmatrix}
-{.}
-\end{equation}
-%
-Nech symbol $\vec r$ predstavuje ľubovoľný vektor v~tomto priestore,
-
+e_2$ a~$\vec e_3$ jednotkové vektory v~smere týchto súradnicových osí (pozri 
+rovnicu~\ref{eq:unit_vectors}).  Nech symbol $\vec r$ predstavuje ľubovoľný 
+vektor v~tomto priestore (Obrázok~\ref{fig:unit_vectors}),
 \begin{figure}
 \centering
 \input{./fig-unit-vectors.pdf_tex}
 \caption{Jednotkové vektory $\vec e_1$, $\vec e_2$, $\vec e_3$ trojrozmerného
-pravouhlého súradnicového systému a~polohový vektor $\vec r$ bodu $P$}
+pravouhlého súradnicového systému a~polohový vektor $\vec r$ bodu~$P$}
 \label{fig:unit_vectors}
 \end{figure}
 
@@ -1523,8 +1532,8 @@ vzťahu~(\ref{eq:vg_body}) môžeme teda vyjadriť nasledovne,
 %
 \begin{equation}
 \label{eq:1l}
-\frac{1}{l} = \left( r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi
-\right)^{-\frac{1}{2}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r}
+\frac{1}{l} = \frac{1}{\sqrt{ r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi
+}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r}
 \right)^2 - 2 \dfrac{r_Q}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
 \end{equation}
 
@@ -1759,11 +1768,11 @@ vzťahu~(\ref{eq:vg_sh_no_norm}) a~súvisiacim témam.
 V~Kapitolách~\ref{sec:legendre_polynomials}, \ref{sec:legendre_functions}
 a~\ref{sec:spherical_harmonics} sa budeme zaoberať Legendreovými polynómami,
 Legendreovými funkciami a~sférickými harmonickými funkciami.  Cieľom je nielen
-popísať základné vlastností týchto novozavedných funkcií, ale i~predstaviť ich
+popísať základné vlastnosti týchto nových funkcií, ale i~predstaviť ich
 v~širšom kontexte.  V~Kapitolách~\ref{sec:normalization},
 \ref{sec:physical_meaning_of_spherical_harmonic_coefficients}
 a~\ref{sec:spherical_harmonics_applications} následne popíšeme normovanie
-sférických harmonických funkcií a~koeficientov, fyzikálnym význam niektorých
+sférických harmonických funkcií a~koeficientov, fyzikálny význam niektorých
 sférických harmonických koeficientov a~praktické aplikácie
 rovnice~(\ref{eq:vg_sh_no_norm}).
 
@@ -1831,7 +1840,7 @@ polynómy nepárnych stupňov $n = 1, 3, 5, \dots$ sú nepárne funkcie.
 \centering
 \includegraphics{./fig-legendre-polynomials.pdf}
 \caption{Legendreove polynómy.  Obrázok bol pripravený Zdrojovým
-kódom~\ref{src:lp} z~Prílohy~\ref{app:lp}}
+kódom~\ref{src:lp} z~Prílohy~\ref{app:lp}.}
 \end{figure}
 
 V~Kapitole~\ref{sec:unit_vectors} sme ukázali, že ľubovoľný vektor $\vec r$
@@ -2086,7 +2095,7 @@ Záporné hodnoty sú zobrazené odtieňmi modrej farby, kladné hodnoty odtieň
 $Y_{3,1}(\varphi, \lambda)$, $Y_{3,3}(\varphi, \lambda)$.  \textit{Spodný rad}
 (zľava): $Y_{4,0}(\varphi, \lambda)$, $Y_{4,1}(\varphi, \lambda)$,
 $Y_{4,4}(\varphi, \lambda)$.  Obrázok bol pripravený Zdrojovým
-kódom~\ref{src:ynk} z~Prílohy~\ref{app:sh}}
+kódom~\ref{src:ynk} z~Prílohy~\ref{app:sh}.}
 \label{fig:sh}
 \end{figure}
 
@@ -2101,7 +2110,7 @@ kódom~\ref{src:ynk} z~Prílohy~\ref{app:sh}}
 \caption{Plošné sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$
 z~Obrázku~\ref{fig:sh} zobrazené odľahlosťou nadobúdanej hodnoty od jednotkovej
 sféry.  Obrázok bol pripravený Zdrojovým kódom~\ref{src:ynk}
-z~Prílohy~\ref{app:sh}}
+z~Prílohy~\ref{app:sh}.}
 \label{fig:sh3d}
 \end{figure}
 
@@ -2626,8 +2635,8 @@ maximálneho stupňa $N$ teda zvyšujeme podrobnosť funkcie $H(\varphi, \lambda
 \includegraphics{./fig-h-shs-nmax90.pdf}
 \includegraphics{./fig-h-shs-nmax360.pdf}
 \caption{Sférický harmonický rozvoj zemskej topografie do stupňov~$N = 30$
-(vrchná mapa), $90$~ (prostredná mapa) a~$360$~(vrchná mapa).  Výpočet bol
-uskutočnený Zdrojovým kódom~\ref{src:h_shs}}
+(vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  Výpočet bol
+uskutočnený Zdrojovým kódom~\ref{src:h_shs}.}
 \label{fig:shs_h}
 \end{figure}
 
@@ -2686,7 +2695,7 @@ diskutovanou témou geodetickej literatúry
 vonkajšom priestore sféry konvergencie.  Svetlosivá farba označuje oblasť,
 v~ktorej nie je zaručená konvergencia.  Tmavosivá farba predstavuje hmoty
 telesa, ktoré generuje gravitačné pole.  V~tejto oblasti
-rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál}
+rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
 \label{fig:spherical_harmonics_convergence}
 \end{figure}
 
@@ -3002,7 +3011,7 @@ captionpos=t]{../python/f-gradf.py}
 \caption{Skalárna funkcia $f(x, y) = \sin(2x) + \cos(2y)$ a~jej gradient
 $\nabla f(x, y)$ na~intervale $x, y \in [-1, 1]$.  Skalárna funkcia je
 znázornená hypsometricky.  Gradient je zobrazený orientovanými šípkami, pričom
-šípka udáva smer a~veľkosť najväčšieho nárastu funkcie $f(x, y)$ v~danom bode}
+šípka udáva smer a~veľkosť najväčšieho nárastu funkcie $f(x, y)$ v~danom bode.}
 \label{fig:f_gradf}
 \end{figure}
 
