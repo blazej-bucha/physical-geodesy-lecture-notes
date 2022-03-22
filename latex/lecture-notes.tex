@@ -31,6 +31,7 @@
 \usepackage{graphicx}
 \usepackage{accsupp}
 \usepackage{csquotes}
+\usepackage[width=0.95\textwidth]{caption}
 \usepackage[unicode,
             pdfborder={0 0 0},
             colorlinks=true,
@@ -293,7 +294,7 @@ budeš súhlasiť!}
 
 % -----------------------------------------------------------------------------
 
-\chapter{Úvod}
+\chapter*{Úvod}
 \label{sec:introduction}
 
 Tvar Zeme možno definovať niekoľkými spôsobmi v~závislosti od kontextu 
@@ -360,8 +361,9 @@ $P$ a~smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
 \begin{figure}[b]
 \centering
 \input{./fig-newton-law.pdf_tex}
-\caption{Gravitačná sila $\vec F_\gidx$, ktorou pôsobí hmotný bod $Q$ na hmotný
-bod $P$.  Vektor $\vec F_\gidx$ je z~dôvodov vizualizácie mierne odsadený od
+%\captionsetup{width=0.8\textwidth}
+\caption{Gravitačná sila $\vec F_\gidx$, ktorou pôsobí hmotný bod $Q$ na hmotný 
+bod $P$.  Vektor $\vec F_\gidx$ je z~dôvodov vizualizácie mierne odsadený od 
 spojnice bodov $P$ a~$Q$.}
 \label{fig:newton_law}
 \end{figure}
@@ -384,21 +386,21 @@ G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1}
 
 Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme 
 polohu planéty v~čase $t_0$ symbolom $P(t_0)$ a~vektor jej okamžitej rýchlosti 
-symbolom $\vec v(t_0)$.  Predpokladajme, že planéta je v pohybe, teda $\| \vec 
-v(t_0) \| > 0$.  Ak by od času $t_0$ nepôsobila na planétu žiadna sila, 
-\emph{Newtonov pohybový zákon} hovorí, že planéta by sa ďalej pohybovala 
-rovnomerným priamočiarym pohybom v~smere vektora $\vec v(t_0)$.  Za istý čas by 
-sa teda dostala do bodu $P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je 
-pôsobením sily na planétu.  Z~rovnice~(\ref{eq:newton_law}) vyplýva, že v~čase 
-$t_0$ pôsobí na planétu gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom 
-smer sily je daný spojnicou planéty a~Slnka.  Gravitačná sila preto pritiahne 
-planétu v~smere vektora $\vec F_\gidx(t_0)$, čím zmení hypotetickú trajektóriu, 
-ktorou by sa planéta pohybovala bez pôsobenia tejto sily.  V~kombinácii 
-s~vektorom rýchlosti gravitačná sila spôsobí, že planéta sa dostane do bodu 
-$P(t_1)$.  V~čase $t_1$ sa opísaná situácia opakuje, pričom vektory rýchlosti 
-a~sily už majú iný smer a~s~vysokou pravdepodobnosťou aj inú veľkosť.  
-Gravitačná sila Slnka teda zakrivuje trajektóriu planéty \emph{v každom 
-okamihu}.
+symbolom $\vec v(t_0)$.  Predpokladajme, že planéta má v~čase $t_0$ udelenú 
+nenulovú rýchlosť, teda $\| \vec v(t_0) \| > 0$.  Ak by od času $t_0$ 
+nepôsobila na planétu žiadna sila, \emph{Newtonov pohybový zákon} hovorí, že 
+planéta by sa ďalej pohybovala rovnomerným priamočiarym pohybom v~smere vektora 
+$\vec v(t_0)$.  Za istý čas by sa teda dostala do bodu $P'(t_1)$.  Jediný 
+spôsob ako zmeniť túto dráhu je pôsobiť na planétu silou.  
+Z~rovnice~(\ref{eq:newton_law}) vyplýva, že v~čase $t_0$ pôsobí na planétu 
+gravitačnou silou $\vec F_\gidx(t_0)$ Slnko, pričom smer sily je daný spojnicou 
+planéty a~Slnka.  Gravitačná sila preto pritiahne planétu v~smere vektora $\vec 
+F_\gidx(t_0)$, čím zmení hypotetickú trajektóriu, ktorou by sa planéta 
+pohybovala bez pôsobenia tejto sily.  V~kombinácii s~vektorom rýchlosti 
+gravitačná sila spôsobí, že planéta sa dostane do bodu $P(t_1)$.  V~čase $t_1$ 
+sa opísaná situácia opakuje, pričom vektory rýchlosti a~sily už majú iný smer 
+a~s~vysokou pravdepodobnosťou aj inú veľkosť.  Gravitačná sila Slnka teda 
+zakrivuje trajektóriu planéty \emph{v každom okamihu}.
 
 \begin{figure}
 \centering
@@ -1051,7 +1053,7 @@ gravitačného potenciálu, ktoré sú obsiahnuté v~deriváciách $\partial^i V
 \slash \partial r^i$, dokážeme určiť hodnotu gravitačného potenciálu
 v~ľubovoľnom bode v~radiálnom smere pre $\Delta r > 0$.  Tento proces sa nazýva
 \emph{analytické pokračovanie} gravitačného potenciálu nahor.  Čím je väčšia
-vzdialenosť $\Delta r$ na ktorú predikujeme gravitačný potenciál, tým pomalšie
+vzdialenosť $\Delta r$, tým pomalšie
 rad~(\ref{eq:vg_analytical_continuation}) konverguje a~naopak.  Analyticky
 pokračovať je možné aj v~iných smeroch ako v~radiálnom.  V~takom prípade je
 potrebné derivovať gravitačný potenciál v~príslušnom smere.  Rovnako tak je
@@ -1183,7 +1185,7 @@ rovná \parencite{GRS80}
 \centering
 \input{./fig-gravity-vector.pdf_tex}
 \caption{Vektory gravitačného $\vec g_\gidx$, odstredivého $\vec g_\cidx$
-a~tiažového zrýchlenia $\vec g$ v~bode~$P$ na povrchu idealizovanej rotujúcej
+a~tiažového zrýchlenia~$\vec g$ v~bode~$P$ na povrchu idealizovanej rotujúcej
 Zeme sférického tvaru a~konštantnej hustoty}
 \label{fig:gravity_vector}
 \end{figure}
@@ -1370,7 +1372,7 @@ na vertikálnu os.  K~lokálnej zvislici sa vzťahujú napríklad merané
 vertikálne smery.  Sférický tvar Zeme a~zvlnenie ekvipotenciálnych plôch
 spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo všeobecnosti
 rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné
-merania si môžu vyžadovať zavedenie korekcii.
+merania si môžu vyžadovať zavedenie korekcií.
 
 
 
@@ -1534,7 +1536,7 @@ V~tejto kapitole odvodíme vzťah~(\ref{eq:vg_synthesis})
 z~rovnice~(\ref{eq:vg_body}).  Zavedených bude niekoľko nových pojmov.  Aby sme
 však pričasto neprerušovali prirodzený myšlienkový postup odvodenia, nové pojmy
 predstavíme len vo forme nevyhnutnej na pochopenie odvodenia samotného.
-Vrátime k~nim v~nasledujúcich kapitolách, podobne ako sa čitateľ môže vrátiť
+Vrátime sa k~nim v~nasledujúcich kapitolách, podobne ako sa čitateľ môže vrátiť
 k~tejto kapitole po prečítaní dovysvetľujúcich kapitol.
 
 Nech je dané všeobecné teleso s~objemom $\tau$ a~hustotou $\rho$
@@ -1864,11 +1866,11 @@ polynómy párnych stupňov $n = 0, 2, 4, \dots$ sú párne funkcie a~Legendreov
 polynómy nepárnych stupňov $n = 1, 3, 5, \dots$ sú nepárne funkcie.
 
 \begin{figure}[bt]
-\label{fig:lp}
 \centering
 \includegraphics{./fig-legendre-polynomials.pdf}
 \caption{Legendreove polynómy.  Obrázok bol pripravený Zdrojovým
 kódom~\ref{src:lp} z~Prílohy~\ref{app:lp}.}
+\label{fig:lp}
 \end{figure}
 
 V~Kapitole~\ref{sec:unit_vectors} sme ukázali, že ľubovoľný vektor $\vec r$
@@ -1949,15 +1951,15 @@ f_n = \frac{1}{r_Q} \, \frac{2}{2n + 1} \, \left( \frac{r_Q}{r} \right)^{n
 + 1}{.}
 \end{equation}
 %
-Dosadením týchto koeficientov do vzťahu~(\ref{eq:f_synthesis}) získame pôvodný
-vzťah~(\ref{eq:1l_lp}).  Hoci ide o~triviálny príklad, demonštruje rozvinutie
-funkcie do radu Legendreových polynómov.  Takéto rozvinutie funkcie $f(t)$
-pomocou Legendreových polynónom $P_n(t)$ je v~istom zmysle obdobné vyjadreniu
-vektora $\vec r$ pomocou jednotkových vektorov $\vec e_i$
-z~Kapitoly~\ref{sec:unit_vectors}.  Tento rozvoj je v~mnohých situáciách
-výhodný, pretože môže napríklad zjednodušiť odvodenie.  Konieckoncov, najlepšie
-to demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme
-funkciu $1 \slash l$ rozvinuli do radu Legendreových polynómov a~následne
+Dosadením týchto koeficientov do vzťahu~(\ref{eq:f_synthesis}) získame pôvodný 
+vzťah~(\ref{eq:1l_lp}).  Hoci ide o~triviálny príklad, demonštruje rozvinutie 
+funkcie do radu Legendreových polynómov.  Takéto rozvinutie funkcie $f(t)$ 
+pomocou Legendreových polynónom $P_n(t)$ je v~istom zmysle obdobné vyjadreniu 
+vektora $\vec r$ pomocou jednotkových vektorov $\vec e_i$ 
+z~Kapitoly~\ref{sec:unit_vectors}.  Tento rozvoj je v~mnohých situáciách 
+výhodný, pretože môže napríklad zjednodušiť odvodenie.  Napokon, najlepšie to 
+demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme 
+funkciu $1 \slash l$ rozvinuli do radu Legendreových polynómov a~následne 
 Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
 
 Z~vlastností Legendreových polynómov spomeňme ešte aspoň nasledovné
@@ -2045,10 +2047,10 @@ P_{2,2}(t) & = 3(1 - t^2){.}\\
 \end{equation}
 
 \begin{figure}[bt]
-\label{fig:lf}
 \centering
 \includegraphics{./fig-legendre-functions.pdf}
 \caption{Legendreove funkcie}
+\label{fig:lf}
 \end{figure}
 
 Legendreove funkcie rôznych stupňov $n$, $l$ a~rovnakého rádu $m$ sú
@@ -2574,17 +2576,17 @@ a~\textcite{MoritzPhysicalGeodesy}.
 \label{fig:orbital_motion_real}
 \end{figure}
 
-ICGEM (\emph{International Centre for Global Earth Models}) je služba zriadená
-Medzinárodnou geodetickou asociáciou (\emph{International Association of
-Geodesy}, IAG).  Okrem iného je jej cieľom zbierať, archivovať a~poskytovať
-globálne modely gravitačného poľa Zeme, najčastejšie práve vo forme sférických
-harmonických koeficientov $\bar{C}_{nm}$ a~$\bar{S}_{nm}$.  Na domovskej
-stránke služby\footnote{\url{http://icgem.gfz-potsdam.de/home}} je možné nájsť
-desiatky sád sférických harmonických koeficientov, získané z~rôznych dát
-a~rozličnými metódami výpočtu.  Dostupné sú aj časovo premenlivé modely
-gravitačného poľa, služba na výpočet vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely
-gravitačného poľa nebeských telies (napríklad Mars, Venuša, Mesiac či asteroidy
-Slnečnej sústavy).
+ICGEM (angl. \emph{International Centre for Global Earth Models}) je služba 
+zriadená Medzinárodnou geodetickou asociáciou (angl. \emph{International 
+Association of Geodesy}, IAG).  Okrem iného je jej cieľom zbierať, archivovať 
+a~poskytovať globálne modely gravitačného poľa Zeme, najčastejšie práve vo 
+forme sférických harmonických koeficientov $\bar{C}_{nm}$ a~$\bar{S}_{nm}$.  Na 
+domovskej stránke služby možné nájsť desiatky sád sférických harmonických 
+koeficientov, získané z~rôznych dát a~rozličnými metódami 
+výpočtu.\footnote{\url{http://icgem.gfz-potsdam.de/home}} je  Dostupné sú aj 
+časovo premenlivé modely gravitačného poľa, služba na výpočet 
+vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely gravitačného poľa nebeských telies 
+(napríklad Mars, Venuša, Mesiac či asteroidy Slnečnej sústavy).
 
 V~Kapitolách~\ref{sec:vg} a~\ref{sec:potential_theory} sme uviedli, že
 v~gravitačnom potenciáli $V_\gidx$ je obsiahnutá informácia o~celom gravitačnom
@@ -2704,7 +2706,7 @@ od začiatku súradnicového systému.  Sféra s~polomerom $R$ sa nazýva sféra
 konvergencie \parencite{Hotine} 
 (Obrázok~\ref{fig:spherical_harmonics_convergence}).  Vo vonkajšom priestore 
 sféry konvergencie rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne 
-a~absolútne.  Na tejto sfére ani v~jej vnútri, konvergencia zaručená nie je.
+a~absolútne.  Na tejto sfére ani v~jej vnútri konvergencia zaručená nie je.
 
 Nanešťastie, celý povrchu Zeme, teda oblasť kľúčová pre fyzikálnu geodéziu, sa
 nachádza v~oblasti, v~ktorej sférický harmonický rozvoj gravitačného potenciálu
@@ -2794,17 +2796,17 @@ a vhodná.
 V dôsledku sploštenia Zeme je dvojosový rotačný elipsoid presnejšou 
 geometrickou aproximáciou geoidu ako sféra.  Okrem svojho geometrického tvaru 
 je geoid špecifický tým, že hodnota skutočného tiažového potenciálu $W_0$ je 
-konštantná v~každom jeho bode (pozri Kapitoly~\ref{sec:introduction} 
-a \ref{sec:equipotential_surface}).  Túto vlastnosť by bolo výhodné zužitkovať 
-aj pri voľbe normálneho tiažového poľa.  Budeme preto požadovať, aby 
-\emph{normálny tiažový potenciál} $U_0$ bol na povrchu elipsoidu konštantný.  
-Vhodnou voľbou geometrických parametrov (napríklad hlavná a vedľajšia polos) 
-a fyzikálnych parametrov (napríklad normálny tiažový potenciál $U_0$) potom 
-získame vernú aproximáciu geoidu, alebo inými slovami, dostatočne presné 
-približné hodnoty na linearizáciu úloh spojených s určovaním geoidu.  Dvojosový 
-rotačný elipsoid s~konštantným normálnym tiažovým potenciálom na svojom povrchu 
-sa nazýva \emph{ekvipotenciálny elipsoid}.  V~súčasnosti je to najčastejší 
-spôsob voľby normálneho tiažového poľa Zeme.
+konštantná v~každom jeho bode (pozri Kapitolu~\ref{sec:equipotential_surface}).  
+Túto vlastnosť by bolo výhodné zužitkovať aj pri voľbe normálneho tiažového 
+poľa.  Budeme preto požadovať, aby \emph{normálny tiažový potenciál} $U_0$ bol 
+na povrchu elipsoidu konštantný.  Vhodnou voľbou geometrických parametrov 
+(napríklad hlavná a vedľajšia polos) a fyzikálnych parametrov (napríklad 
+normálny tiažový potenciál $U_0$) potom získame vernú aproximáciu geoidu, alebo 
+inými slovami, dostatočne presné približné hodnoty na linearizáciu úloh 
+spojených s určovaním geoidu.  Dvojosový rotačný elipsoid s~konštantným 
+normálnym tiažovým potenciálom na svojom povrchu sa nazýva 
+\emph{ekvipotenciálny elipsoid}.  V~súčasnosti je to najčastejší spôsob voľby 
+normálneho tiažového poľa Zeme.
 
 Ďalšou možnosťou voľby normálneho tiažového poľa je sférický harmonický rozvoj 
 gravitačného potenciálu do konečného harmonického stupňa 
@@ -2865,13 +2867,12 @@ koeficient~$J_{2,0}$, geocentrická gravitačná konštanta~$GM$ a uhlová rých
 rotácie $\omega$.  Týmto základnými parametrami je definovaný ekvipotenciálny 
 elipsoid \emph{GRS80}.  Základné parametre GRS80 (Tabuľka~\ref{tab:1}) boli 
 prijaté Medzinárodnou úniou geodézie a geofyziky (angl. \textit{International 
-Union of Geodesy and Geophysics}, IUGG) a Medzinárodnou asociáciou geodézie 
-(angl. \textit{International Association of Geodesy}, IAG) na 17.~generálnom 
-zasadnutí IUGG v Canberra v decembri 1979.  Dôležité je spomenúť, že použitá 
-hodnota konštanty $GM$ zahŕňa hmotnosť Zeme \emph{a} hmotnosť zemskej atmosféry 
-a koeficient $J_{2,0}$ nezahŕňa účinok permanentnej slapovej deformácie.  Medzi 
-koeficientmi $J_{2,0}$, $C_{2,0}$ a $\bar{C}_{2,0}$ platia nasledovné vzťahy 
-\parencite{Moritz1967,MoritzPhysicalGeodesy},
+Union of Geodesy and Geophysics}, IUGG) a Medzinárodnou asociáciou geodézie IAG 
+na 17.~generálnom zasadnutí IUGG v Canberra v decembri 1979.  Dôležité je 
+spomenúť, že použitá hodnota konštanty $GM$ zahŕňa hmotnosť Zeme \emph{a} 
+hmotnosť zemskej atmosféry a koeficient $J_{2,0}$ nezahŕňa účinok permanentnej 
+slapovej deformácie.  Medzi koeficientmi $J_{2,0}$, $C_{2,0}$ a $\bar{C}_{2,0}$ 
+platia nasledovné vzťahy \parencite{Moritz1967,MoritzPhysicalGeodesy},
 %
 \begin{equation}
 C_{2,0} = -J_{2,0}{,}
