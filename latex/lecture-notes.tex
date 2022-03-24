@@ -247,7 +247,7 @@ to považovali za vhodné, text sme doplnili o~počítačový kód, ktorý prakt
 demonštruje diskutovanú problematiku.  Nádejame sa, že jeho štúdiom,
 testovaním a~úpravou je možné niektorým konceptom porozumieť jednoduchšie.
 
-Aj keď príprave tejto práce bolo venované veľké úsilie, bolo by prekvapivé, ak 
+Aj keď napísaniu tejto práce bolo venované veľké úsilie, bolo by prekvapivé, ak 
 by sa v~nej nenašli časti, ktoré mohli byť spracované zrozumiteľnejšie, či 
 témy, ktoré v~nej obsiahnuté nie sú, no mohli či mali byť diskutované.  Skôr 
 než za uzavretý študijný podklad považujeme tento učebný text za živý postupne 
@@ -985,13 +985,14 @@ Inverzná transformácia má tvar
 \label{eq:cart2sph}
 \begin{split}
 r &= \sqrt{x^2 + y^2 + z^2}{,}\\
-y &= \arctan \frac{z}{\sqrt{x^2 + y^2}}{,}\\
-z &= \arctan \frac{y}{x}{.}\\
+\varphi &= \arctan \frac{z}{\sqrt{x^2 + y^2}}{,}\\
+\lambda &= \arctan \frac{y}{x}{.}\\
 \end{split}
 \end{equation}
 %
 Existuje tiež všeobecný zápis Laplaceovej rovnice v~ľubovoľných pravouhlých
-súradniciach \parencite[pozri napríklad][]{MoritzPhysicalGeodesy}.
+súradniciach \parencite[pozri 
+napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination}.
 
 \begin{figure}
 \centering
@@ -1000,6 +1001,41 @@ súradniciach \parencite[pozri napríklad][]{MoritzPhysicalGeodesy}.
 \label{fig:cart_sph}
 \end{figure}
 
+
+\subsubsection{Praktický význam Laplaceovej rovnice}
+
+Jedným z~cieľov fyzikálnej geodézie je určiť vonkajšie gravitačné pole Zeme 
+z odmeraných veličín gravitačného poľa.  Z~praktických dôvodov je však možné 
+vykonávať merania iba v~malej časti priestoru mimo Zeme, napríklad 
+v~bezprostrednej blízkosti zemského povrchu či na dráhe umelej družice.  Ak 
+teda chceme určiť gravitačné pole v~celom priestore mimo Zeme, bolo by vhodné 
+porozumieť tomu, ako sa gravitačný potenciál v~priestore mení.  Ak by nejaký 
+princíp existoval a bol by objavený, znamenalo by to, že hoci naše merania sú 
+dostupné iba v~malej časti vonkajšieho priestoru Zeme, bolo by možné predikovať 
+gravitačný potenciál kdekoľvek mimo Zeme, teda aj v~oblastiach bez dostupných 
+meraní.
+
+Tento princíp bol objavený a je ním práve Laplaceova rovnica.  
+V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
+zákon~(\ref{eq:newton_law}) vysvetľuje \emph{princíp} (mechanizmus) pohybu 
+planéty okolo Slnka.  Ak teda poznáme niekoľko vstupných údajov v čase $t_0$ 
+(polohy planéty a Slnka, ich rýchlosti a pôsobiace gravitačné sily), 
+aplikovaním Newtonovho gravitačného zákona môžeme vypočítať polohu planéty 
+v~ľubovoľnom čase v~budúcnosti či v~minulosti.  Úloha je síce výrazne 
+komplikovanejšia, ak uvážime prítomnosť ďalšich nebeských telies, pretože aj 
+tie ovplyvňujú svojou gravitačnou silou našu planétu a naša planéta ovplyvňuje 
+svojou gravitačnou silou ostatné planéty, no úloha je riešiteľná rovnakým 
+spôsobom.  Situácia je veľmi podobná v~súvislosti s~Laplaceovou rovnicou.  Ak 
+poznáme napríklad gravitačný potenciál či gravitačné zrýchlenie na celom 
+povrchu Zeme, znalosť \emph{princípu} zmeny gravitačného potenciálu mimo Zeme 
+v~podobe Laplaceovej rovnice umožňuje vypočítať gravitačný potenciál 
+v~ľubovoľnom bode tejto oblasti.  Laplaceova rovnica má teda kľúčový význam 
+v~procese určovania vonkajšieho gravitačného poľa Zeme.
+
+Na záver dodajme, že v~prípade výpočtu pohybu nebeských telies i~vonkajšieho 
+gravitačného poľa ide o~riešenie diferenciálnych rovníc, v~prvom prípade so 
+zadanou začiatočnou podmienkou v~čase $t_0$ a~v~druhom prípade so zadanou 
+okrajovou podmienkou na zemskom povrchu.
 
 
 
@@ -1200,16 +1236,19 @@ zrýchlenie} a budeme ho označovať symbolom $\vec g(P)$
 \vec g(P) = \vec g_\gidx(P) + \vec g_\cidx(P){.}
 \end{equation}
 
+
+\subsubsection{Meranie tiažového zrýchlenia}
+
 Vektor tiažového zrýchlenia je možné odmerať, a~tak predstavuje ústrednú 
 veličinu v~procese určovania tvaru Zeme.  Prístroj na meranie veľkosti vektora 
-tiažového zrýchlenia $\| \vec g(P) \|$ sa nazýva \emph{gravimeter}.  Vedný 
-odbor zaoberajúci sa meraním tiažového zrýchlenia sa nazýva \emph{gravimetria} 
-(pozri napríklad \cite{Torge1989,Rozimant1994} či \cite{Janak2010}).  
+tiažového zrýchlenia $\| \vec g(P) \|$ sa nazýva \emph{gravimeter}.  
 V~súčasnosti bežne dosiahnuteľná presnosť určenia $\| \vec g(P) \|$ dosahuje 
 hodnotu niekoľkých mikroGalov.  Smer vektora tiažového zrýchlenia je možné 
 odmerať astronomickým určením zemepisnej šírky a~zemepisnej dĺžky bodu $P$.  
 Presnosť určenia astronomických súradníc sa v~súčasnosti pohybuje približne 
-v~desatinách uhlovej sekundy.
+v~desatinách uhlovej sekundy.    Vedný odbor zaoberajúci sa meraním tiažového 
+zrýchlenia sa nazýva \emph{gravimetria} (pozri napríklad 
+\cite{Torge1989,Rozimant1994} či \cite{Janak2010}).
 
 
 
@@ -1261,21 +1300,8 @@ vlastnosti ako pre Laplaceov operátor (pozri
 rovnice~\ref{eq:laplace_additivity} a~\ref{eq:laplace_homogenity}) platia aj
 pre operátor gradient.
 
-Odstredivý ani tiažový potenciál nedokážeme priamo odmerať.  \emph{Rozdiel} 
-tiažového potenciálu medzi dvoma bodmi však môže byť nepriamo určený 
-kombináciou gravimetrie a nivelácie.  V~sústave SI majú odstredivý a~tiažový 
-potenciál jednotky $\mathrm{m}^2 \ \mathrm{s}^{-2}$.  Rozdiel tiažového 
-potenciálu medzi dvoma bodmi sa niekedy udáva aj v~geopotenciálnych jednotkách,
-%
-\begin{equation}
-\label{eq:gpu_unit}
-1\ \mathrm{g.p.u.} = 1\ \mathrm{kgal} \ \mathrm{m} = 1000\ \mathrm{gal}\ 
-\mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
-\end{equation}
-%
-Presnosť určenia rozdielu tiažového potenciálu je približne $0.1\ \mathrm{gal} 
-\ \mathrm{m}$ na vzdialenosť jedného kilometra 
-\parencite{MoritzPhysicalGeodesy}.
+Odstredivý ani tiažový potenciál nedokážeme priamo odmerať.  V~sústave SI 
+prislúcha obom veličinám jednotka $\mathrm{m}^2 \ \mathrm{s}^{-2}$.
 
 \subsubsection{Ekvipotenciálna plocha}
 \label{sec:equipotential_surface}
@@ -1371,6 +1397,118 @@ spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo všeob
 rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné
 merania si môžu vyžadovať zavedenie korekcií.
 
+\subsubsection{Určenie rozdielu tiažového potenciálu}
+
+Hoci nedokážeme priamo odmerať tiažový potenciál, \emph{rozdiel} tiažového 
+potenciálu určený môže byť, a~to nepriamo kombináciou gravimetrie a nivelácie.
+
+\emph{Totálny diferenciál} tiažového potenciálu je daný vzťahom
+%
+\begin{equation}
+\label{eq:w_totdiff_scalar}
+\diff W = \frac{\partial W}{\partial x} \, \diff x + \, \frac{\partial 
+W}{\partial y} \, \diff y + \frac{\partial W}{\partial z} \, \diff z = \nabla 
+W \cdot \diff \vec x = \vec g \cdot \diff \vec x{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\diff \vec x =
+\begin{bmatrix}
+\diff x\\
+\diff y\\
+\diff z
+\end{bmatrix}
+\end{equation}
+%
+a symbol $\cdot$ označuje skalárny súčin dvoch vektorov.
+
+Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ pozdĺž 
+ekvipotenciálnej plochy s~konštantným tiažovým potenciálom, potom totálny 
+diferenciál $\diff W$ je nulový.  To znamená, že skalárny súčin~vektorov $\vec 
+g$ a $\diff \vec x$ je v~takom prípade nulový, a teda dokázali sme, že 
+vektor~$\vec g$ je kolmý na ekvipotenciálnu plochu.
+
+Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ pozdĺž tiažnice smerom 
+od geocentra, potom medzi vektormi $\vec g$ a $\diff \vec x$ je uhol 
+$180^{\circ}$ a totálny diferenciál tiažového potenciálu je daný vzťahom
+%
+\begin{equation}
+\label{eq:w_totdiff_plumb}
+\diff W = \vec g \cdot \diff \vec x = g \, \diff H \, \cos(180^{\circ}) = -g \, 
+\diff H{,}
+\end{equation}
+%
+kde $H$ je diferenciálna dĺžka tiažnice.  Integráciou 
+rovnice~(\ref{eq:w_totdiff_plumb}) je možné určiť rozdiel tiažového potenciálu 
+medzi bodmi~$A$ a~$B$,
+%
+\begin{equation}
+\label{eq:w_ab}
+\delta W_{AB} = W_B - W_A = -\int_{A}^{B} g \, \diff H{,}
+\end{equation}
+%
+kde symboly $W_A$ a~$W_B$ označujú tiažový potenciál v~bodoch~$A$ a~$B$.  
+Osobitný význam pre fyzikálnu geodéziu má rozdiel tiažového potenciálu na 
+geoide a~vo~zvolenom bode.  Táto veličina sa nazýva \emph{geopotenciálna kóta} 
+a~je daná vzťahom
+%
+\begin{equation}
+\label{eq:geopotential_number}
+C = W_0 - W = \int_0^H g \, \diff H{.}
+\end{equation}
+
+Geopotenciálnu kótu, teda rozdiel tiažového potenciálu, je možné určiť pomocou 
+nivelácie~($\diff H$) a gravimetrie~($g$).  Namiesto jednotky $\mathrm{m}^2\ 
+\mathrm{s}^{-2}$ sa niekedy zvykne udávať v~geopotenciálnych jednotkách,
+%
+\begin{equation}
+\label{eq:gpu_unit}
+1\ \mathrm{g.p.u.} = 1\ \mathrm{kgal} \ \mathrm{m} = 1000\ \mathrm{gal}\ 
+\mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
+\end{equation}
+%
+V~súčasnosti dosiahnuteľná presnosť určenia rozdielu tiažového potenciálu je 
+približne $0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
+\parencite{MoritzPhysicalGeodesy}.
+
+\subsubsection{Fyzikálne výšky}
+
+Rovnice~(\ref{eq:w_totdiff_plumb}) a (\ref{eq:w_ab}) a~ich rôzne obmeny sa 
+spolu so~vzťahom~(\ref{eq:geopotential_number}) využívajú na definíciu 
+rozličných typov fyzikálnych výšok.  Ak totiž 
+z~rovnice~(\ref{eq:w_totdiff_plumb}) vyjadríme diferenciál~$\diff H$ a~získanú 
+rovnicu zintegrujeme od $W_0$ po $W$,
+%
+\begin{equation}
+\label{eq:orthometric_height_1}
+H = -\int_{W_0}^{W} \frac{\diff W}{g} = \int_{0}^{C} \frac{\diff C}{g}{,}
+\end{equation}
+%
+získame vzťah na výpočet dĺžky tiažnice od geoidu po daný bod.  Pre praktické 
+aplikácie je výhodné upraviť rovnice~(\ref{eq:geopotential_number}) 
+a (\ref{eq:orthometric_height_1}) nasledovne \parencite{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+C = H \, \frac{1}{H} \, \int_0^H g \, \diff H = H \, \bar{g}{,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:orthometric_height_2}
+H = \frac{C}{\bar{g}}{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\bar{g} = \frac{1}{H} \, \int_0^H g \, \diff H
+\end{equation}
+%
+je priemerná hodnota tiažového zrýchlenia pozdĺž tiažnice medzi geoidom~a daným 
+bodom.  Rovnica~(\ref{eq:orthometric_height_2}) definuje ortometrickú výšku (na 
+Obrázku~\ref{fig:equipotential_surfaces} dĺžka tiažnice od geoidu po bod~$P$).
+
 
 
 \section{Homogénna rotujúca guľa}
@@ -1458,10 +1596,8 @@ jednotkového vektora $\vec e_i$,
 %
 \begin{equation}
 \label{eq:r_analysis}
-r_i = \vec r \cdot \vec e_i{,}
+r_i = \vec r \cdot \vec e_i{.}
 \end{equation}
-%
-kde symbol $\cdot$ označuje skalárny súčin.
 
 Povedané slovne, vzťah~(\ref{eq:r_synthesis}) hovorí, že ak poznáme konštanty
 $r_i$, poznáme vektor $\vec r$.  Vzťah~(\ref{eq:r_analysis}) hovorí, ako tieto
@@ -1900,14 +2036,16 @@ Dôkaz platnosti rovníc~(\ref{eq:f_synthesis}) a~(\ref{eq:f_analysis}) je možn
 nájsť napríklad vo \textcite{Freeden2009} či 
 v~\textcite{SansoGeoidDetermination}.
 
-Podobne ako skalárny súčin dvoch rôznych jednotkových vektorov je nulový,
+Podobne ako skalárny súčin dvoch rôznych jednotkových vektorov $\vec e_i$ 
+a $ \vec e_j$ je nulový,
 %
 \begin{equation}
 \label{eq:ei_orthogonality}
 \vec e_i \cdot \vec e_j = 0{,} \quad i \neq j{,}
 \end{equation}
 %
-nulový je i~skalárny súčin dvoch rôznych Legendreovych polynómov,
+nulový je i~skalárny súčin dvoch rôznych Legendreovych polynómov $P_n(t)$ 
+a $P_l(t)$,
 %
 \begin{equation}
 \label{eq:lp_orthogonality}
@@ -2282,9 +2420,20 @@ vzťahmi~(\ref{eq:vg_analysis}) a~(\ref{eq:vg_synthesis}) pre $r = 1$.
 \section{Normovanie}
 \label{sec:normalization}
 
-\subsection{Legendreove funkcie a~sférické harmonické funkcie}
+V~praktických aplikáciách sa sférické harmonické funkcie zvyknú definovať tak, 
+že sú vynásobené členom, ktorý závisí od sférického harmonického stupňa a rádu.  
+Tento člen sa nazýva \emph{norma} a~jeho použitím dostaneme \emph{normované} 
+sférické harmonické funkcie.  Normovaním získame niektoré vlastnosti, ktoré sú 
+výhodne z~teoretického aj z~praktického hľadiska.  Tieto vlastnosti budú 
+diskutované v~Kapitolách~\ref{sec:leg_sh_norm} a~\ref{sec:shc_norm}.  Existuje 
+niekoľko typov noriem, napríklad Schmidtova polovičná norma, ortogonálna norma 
+či úplná norma \parencite{SHTOOLS}.  V~geodézii sa používa takmer výhradne 
+posledná menovaná norma, preto ju bližšie popíšeme.
 
-Pre skalárny súčin dvoch rovnakých jednotkových vektorov platí vzťah
+\subsection{Legendreove funkcie a~sférické harmonické funkcie}
+\label{sec:leg_sh_norm}
+
+Pre skalárny súčin dvoch rovnakých jednotkových vektorov $\vec e_i$ platí vzťah
 %
 \begin{equation}
 \vec e_i \cdot \vec e_i = 1{.}
@@ -2293,8 +2442,8 @@ Pre skalárny súčin dvoch rovnakých jednotkových vektorov platí vzťah
 Z~teoretického aj z~praktického hľadiska by bolo výhodné, aby aj skalárny súčin
 dvoch rovnakých sférických harmonických funkcií bol rovný $1$.  Túto vlastnosť
 možno zabezpečiť vynásobením Legendreových funkcií $P_{nm}(\sin\varphi)$ členom
-$N_{n|k|}$ (rovnica~\ref{eq:sh_norm}), ktorý nazývame \emph{norma}.  Získame
-tým \emph{úplne normované Legendreove funkcie},
+$N_{n|k|}$ (rovnica~\ref{eq:sh_norm}), ktorý nazývame \emph{úplná norma}.  
+Získame tým \emph{úplne normované Legendreove funkcie},
 %
 \begin{equation}
 \bar{P}_{nm}(\varphi) = N_{nm} \, P_{nm}(\varphi){,} \quad  n = 0, 1, \dots,
@@ -2360,23 +2509,24 @@ P_n(\cos\psi) = \frac{1}{2n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
 \lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q){.}
 \end{equation}
 
-Z~numerického hľadiska je výpočet nenormovaných Legendreových funkcií
-problematický, a~to už i~pre stupne a~rády presahujúce niekoľko stoviek.
-Dôvodom je ich pomerne rýchlo narastajúca hodnota, ktorá dokonca prekročí
-rozsah dvojitej presnosti.  Dvojitá presnosť je v~súčasnosti najčastejšie
-používaný štandard na počítačovú reprezentáciu čísel s~pohyblivou desatinnou
-čiarkou.  Číslo väčšie ako horný rozsah dvojitej presnosti je v~dvojitej
-presnosti reprezentované nekonečnom.  Z~tohto dôvodu je z~praktického hľadiska
-výhodnejšie pracovať s~úplne normovanými Legendreovými funkciami.  Kvôli
-opísaným numerickým problémom sa však nepočíta zvlášť norma $N_{nm}$ a~zvlášť
-nenormované Legendreove funkcie $P_{nm}(\sin\varphi)$, ale počítajú sa priamo
-úplne normované Legendre funkcie $\bar{P}_{nm}(\sin\varphi)$ pomocou upravených
-rekurentných vzťahov (pozri napríklad \cite{Holmes2002a} či
+Z~numerického hľadiska je výpočet nenormovaných Legendreových funkcií 
+problematický, a~to už i~pre stupne a~rády presahujúce niekoľko stoviek.  
+Dôvodom je ich pomerne rýchlo narastajúca hodnota, ktorá dokonca prekročí 
+rozsah dvojitej presnosti.  Dvojitá presnosť je v~súčasnosti najčastejšie 
+používaný štandard na počítačovú reprezentáciu čísel s~pohyblivou desatinnou 
+čiarkou.  Číslo väčšie ako horný rozsah dvojitej presnosti je v~dvojitej 
+presnosti reprezentované nekonečnom.  Z~tohto dôvodu je z~praktického hľadiska 
+výhodnejšie pracovať s~úplne normovanými Legendreovými funkciami.  Kvôli 
+opísaným numerickým problémom sa však nepočíta zvlášť norma $N_{nm}$ a~zvlášť 
+nenormované Legendreove funkcie $P_{nm}(\sin\varphi)$, ale počítajú sa priamo 
+úplne normované Legendreove funkcie $\bar{P}_{nm}(\sin\varphi)$ pomocou 
+upravených rekurentných vzťahov (pozri napríklad \cite{Holmes2002a} či 
 \cite{Fukushima2012a}).
 
 
 
 \subsection{Sférické harmonické koeficienty}
+\label{sec:shc_norm}
 
 Sférické harmonické koeficienty $C_{nm}$ a~$S_{nm}$ zo
 vzťahu~(\ref{eq:vg_sh_no_norm}) sú zvyčajne normované dvakrát.  Prvá norma
@@ -2444,7 +2594,7 @@ $\bar{Y}_{nk}(\varphi, \lambda)$,
 \begin{equation}
 \label{eq:vg_sh_2nd_norm_ynk}
 V_\gidx(P) = \frac{G \, M}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
-+ 1} \sum_{m = -n}^{n} \bar{v}_{nk} \, \bar{Y}_{nk}(\varphi, \lambda){,}
++ 1} \sum_{k = -n}^{n} \bar{v}_{nk} \, \bar{Y}_{nk}(\varphi, \lambda){,}
 \end{equation}
 kde
 %
@@ -2483,9 +2633,9 @@ do rovnice~(\ref{eq:vg_shc_no_norm}) pre $n = 0$ a~$m = 0$,
 C_{0,0} = \iiint_{\tau} \rho(Q) \, \diff \tau(Q) = M{.}
 \end{equation}
 %
-Nenormovaný koeficient $C_{0,0}$ má teda fyzikálny význam; je rovný hmotnosti
-telesa $M$.  Ak obmedzíme nekonečné rady~(\ref{eq:vg_sh_no_norm}),
-(\ref{eq:vg_sh_1st_norm}), (\ref{eq:vg_sh_2nd_norm}) či
+Nenormovaný koeficient $C_{0,0}$ má teda fyzikálny význam, je rovný hmotnosti 
+telesa~$M$.  Ak obmedzíme nekonečné rady~(\ref{eq:vg_sh_no_norm}), 
+(\ref{eq:vg_sh_1st_norm}), (\ref{eq:vg_sh_2nd_norm}) či 
 (\ref{eq:vg_sh_2nd_norm_ynk}) na maximálny stupeň $N = 0$, získame vzťah
 %
 \begin{equation}
