@@ -1399,16 +1399,19 @@ merania si môžu vyžadovať zavedenie korekcií.
 
 \subsubsection{Určenie rozdielu tiažového potenciálu}
 
-Hoci nedokážeme priamo odmerať tiažový potenciál, \emph{rozdiel} tiažového 
-potenciálu určený môže byť, a~to nepriamo kombináciou gravimetrie a nivelácie.
+Hoci tiažový potenciál priamo odmerať nedokážeme, \emph{rozdiel} tiažového 
+potenciálu môže byť určený nepriamo.  Pred vysvetlením metódy určovania 
+rozdielu tiažového potenciálu sa však pristavme pri pojme totálny diferenciál.
 
-\emph{Totálny diferenciál} tiažového potenciálu je daný vzťahom
+\emph{Totálny diferenciál} tiažového potenciálu je daný vzťahom 
+\parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
 \label{eq:w_totdiff_scalar}
 \diff W = \frac{\partial W}{\partial x} \, \diff x + \, \frac{\partial 
 W}{\partial y} \, \diff y + \frac{\partial W}{\partial z} \, \diff z = \nabla 
-W \cdot \diff \vec x = \vec g \cdot \diff \vec x{,}
+W \cdot \diff \vec x = \vec g \cdot \diff \vec x = \| \vec g \| \, \| \diff 
+\vec x \| \, \cos\alpha{,}
 \end{equation}
 %
 kde
@@ -1420,19 +1423,57 @@ kde
 \diff y\\
 \diff z
 \end{bmatrix}
+{,}
 \end{equation}
 %
-a symbol $\cdot$ označuje skalárny súčin dvoch vektorov.
+a $\alpha$ je uhol medzi vektormi~$\vec g$ a~$\diff \vec x$.  Symbol~$\cdot$ 
+označuje skalárny súčin dvoch vektorov.  Ak sa poloha bodu $\vec x$,
+%
+\begin{equation}
+\vec x =
+\begin{bmatrix}
+x\\
+y\\
+z
+\end{bmatrix}
+{,}
+\end{equation}
+%
+zmení o~vektor~$\Delta \vec x$,
+%
+\begin{equation}
+\Delta \vec x =
+\begin{bmatrix}
+\Delta x\\
+\Delta y\\
+\Delta z
+\end{bmatrix}
+{,}
+\end{equation}
+%
+potom tiažový potenciál $W(\vec x)$ sa zmení o~hodnotu~$\delta W(\vec x, \Delta 
+\vec x)$.  Totálny diferenciál~(\ref{eq:w_totdiff_scalar}) \emph{aproximuje} 
+skutočnú zmenu tiažového potenciálu~$\delta W(\vec x, \Delta \vec x)$ v~zadanom 
+bode $\vec x$ a zadanom smere~$\Delta \vec x$.  Skrátením vzdialenosti~$\Delta 
+\vec x$ na~$\diff \vec x$ je možné zmenšiť aproximačnú chybu na ľubovoľne malú 
+hodnotu.
 
 Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ pozdĺž 
 ekvipotenciálnej plochy s~konštantným tiažovým potenciálom, potom totálny 
-diferenciál $\diff W$ je nulový.  To znamená, že skalárny súčin~vektorov $\vec 
-g$ a $\diff \vec x$ je v~takom prípade nulový, a teda dokázali sme, že 
-vektor~$\vec g$ je kolmý na ekvipotenciálnu plochu.
+diferenciál $\diff W$ je nulový.  Toto tvrdenie môžeme vysvetliť tým, že 
+vektor~$\vec g$ je kolmý na ekvipotenciálnu plochu (a~teda na vektor~$\diff 
+\vec x$), preto $\diff W = \| \vec g \| \, \| \diff \vec x \| \, 
+\cos(90^{\circ}) = 0$.  Naopak, k~najväčšej zmene tiažového potenciálu dochádza 
+vtedy, keď vektory~$\vec g$ a~$\diff \vec x$ majú rovnaký smer, teda keď 
+k~diferenciálnej zmene polohy~$\diff \vec x$ dochádza v~smere kolmom na 
+ekvipotenciálnu plochu.  V~takom prípade $\alpha = 0$, a teda $\diff W = \| 
+\vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| \, \| \diff \vec 
+x \|$.
 
-Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ pozdĺž tiažnice smerom 
-od geocentra, potom medzi vektormi $\vec g$ a $\diff \vec x$ je uhol 
-$180^{\circ}$ a totálny diferenciál tiažového potenciálu je daný vzťahom
+Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ v~smere vektora $-\vec 
+g$, teda pozdĺž tiažnice smerom od geocentra, potom medzi vektormi $\vec g$ 
+a $\diff \vec x$ je uhol $180^{\circ}$ a totálny diferenciál tiažového 
+potenciálu je daný vzťahom
 %
 \begin{equation}
 \label{eq:w_totdiff_plumb}
@@ -1440,7 +1481,8 @@ $180^{\circ}$ a totálny diferenciál tiažového potenciálu je daný vzťahom
 \diff H{,}
 \end{equation}
 %
-kde $H$ je diferenciálna dĺžka tiažnice.  Integráciou 
+kde~$g = \| \vec g \|$ je veľkosť vektora tiažového zrýchlenia a~$\diff H = \| 
+\diff \vec x \|$ je diferenciálna dĺžka tiažnice.  Integráciou 
 rovnice~(\ref{eq:w_totdiff_plumb}) je možné určiť rozdiel tiažového potenciálu 
 medzi bodmi~$A$ a~$B$,
 %
@@ -1469,8 +1511,8 @@ nivelácie~($\diff H$) a gravimetrie~($g$).  Namiesto jednotky $\mathrm{m}^2\
 \mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
 \end{equation}
 %
-V~súčasnosti dosiahnuteľná presnosť určenia rozdielu tiažového potenciálu je 
-približne $0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
+Rozdiel tiažového potenciálu je v~súčanosti možné určiť približne s presnosťou 
+$0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
 \parencite{MoritzPhysicalGeodesy}.
 
 \subsubsection{Fyzikálne výšky}
@@ -1487,16 +1529,11 @@ H = -\int_{W_0}^{W} \frac{\diff W}{g} = \int_{0}^{C} \frac{\diff C}{g}{,}
 \end{equation}
 %
 získame vzťah na výpočet dĺžky tiažnice od geoidu po daný bod.  Pre praktické 
-aplikácie je výhodné upraviť rovnice~(\ref{eq:geopotential_number}) 
-a (\ref{eq:orthometric_height_1}) nasledovne \parencite{MoritzPhysicalGeodesy},
+aplikácie je výhodné upraviť rovnicu~(\ref{eq:geopotential_number}) nasledovne 
+\parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 C = H \, \frac{1}{H} \, \int_0^H g \, \diff H = H \, \bar{g}{,}
-\end{equation}
-%
-\begin{equation}
-\label{eq:orthometric_height_2}
-H = \frac{C}{\bar{g}}{,}
 \end{equation}
 %
 kde
@@ -1506,8 +1543,15 @@ kde
 \end{equation}
 %
 je priemerná hodnota tiažového zrýchlenia pozdĺž tiažnice medzi geoidom~a daným 
-bodom.  Rovnica~(\ref{eq:orthometric_height_2}) definuje ortometrickú výšku (na 
-Obrázku~\ref{fig:equipotential_surfaces} dĺžka tiažnice od geoidu po bod~$P$).
+bodom.  Vzťah~(\ref{eq:orthometric_height_1}) potom prejde do tvaru
+%
+\begin{equation}
+\label{eq:orthometric_height_2}
+H = \frac{C}{\bar{g}}{,}
+\end{equation}
+%
+Rovnica~(\ref{eq:orthometric_height_2}) definuje ortometrickú výšku, teda dĺžku 
+tiažnice od geoidu po daný bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces}).
 
 
 
@@ -1709,24 +1753,23 @@ vzťahu~(\ref{eq:vg_body}) môžeme teda vyjadriť nasledovne,
 
 Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie
 matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátvorka
-obsahuje tri sčítance umocnené na $-\frac{1}{2}$.  Výhodnejšie je rozvinúť
+obsahuje tri sčítance umocnené na~$-\frac{1}{2}$.  Výhodnejšie je rozvinúť
 hranatú zátvorku spolu s~jej exponentom do mocninového radu.  Jeden zo spôsobov
-rozvinutia funkcie do mocninového radu je pomocou Taylorovho radu.  Nech je
-daná analytická funkcia $f(x)$, ktorá je nekonečne diferencovateľná v~bode
-$x_0$.  Taylorov rozvoj tejto funkcie v~bode $x_0$ má tvar (porovnaj
-s~rovnicou~\ref{eq:vg_analytical_continuation})
+rozvinutia funkcie do mocninového radu je pomocou Taylorovho radu.  Nech je 
+daná analytická funkcia $f(x)$, ktorá je nekonečne diferencovateľná 
+v~bode~$x_0$.  Taylorov rozvoj funkcie~$f(x)$ v~bode $x_0$ má tvar
 %
 \begin{equation}
 \label{eq:f_taylor}
-f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n f(x_0)}{\partial
-x^n} \left( x - x_0 \right)^n{.}
+f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\diff^n f(x_0)}{\diff x^n} (x 
+- x_0)^n{,}
 \end{equation}
 %
-Ak funkcia $f(x)$ je rozvinutá do Taylorovho radu v~bode $x_0 = 0$, takýto rad
-sa nazýva \emph{Maclaurinov rad},
+Ak funkcia $f(x)$ je rozvinutá do Taylorovho radu~(\ref{eq:f_taylor}) v~bode 
+$x_0 = 0$, takýto rad sa nazýva \emph{Maclaurinov rad},
 %
 \begin{equation}
-f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n f(0)}{\partial x^n}
+f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\diff^n f(0)}{\diff x^n}
 x^n{.}
 \end{equation}
 
