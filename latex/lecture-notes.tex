@@ -542,7 +542,8 @@ integráciou vzťahu~(\ref{eq:gg_dm}),
 %
 \begin{equation}
 \label{eq:gg_body}
-\vec g_\gidx(P) = -G \iiint_{\tau} \frac{\vec r}{l^3} \, \rho \, \diff\tau{.}
+\vec g_\gidx(P) = -G \iiint\limits_{\tau} \frac{\vec r}{l^3} \, \rho \, 
+\diff\tau{.}
 \end{equation}
 %
 Tento vzťah už môže byť korektne použitý na výpočet gravitačného zrýchlenia 
@@ -783,7 +784,7 @@ $\diff m = \rho \, \diff \tau$ a~gravitačný potenciál získame integráciou,
 %
 \begin{equation}
 \label{eq:vg_body}
-V_\gidx(P) = G \iiint_{\tau} \frac{\rho}{l} \diff\tau{.}
+V_\gidx(P) = G \iiint\limits_{\tau} \frac{\rho}{l} \diff\tau{.}
 \end{equation}
 %
 Dôkaz, že rovnica~(\ref{eq:vg_body}) vyhovuje prijatej definícii gravitačného
@@ -948,7 +949,8 @@ V_{\gidx,i} = 0{,}
 ako aj gravitačný potenciál všeobecného telesa v~bode \emph{mimo telesa},
 %
 \begin{equation}
-\nabla^2 V_\gidx = G\, \iiint_\tau \rho \, \left[ \frac{\partial^2}{\partial
+\nabla^2 V_\gidx = G\, \iiint\limits_\tau \rho \, \left[ 
+\frac{\partial^2}{\partial
 x^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial
 y^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial
 z^2}\left(\frac{1}{l}\right) \right] \diff\tau = 0{.}
@@ -1403,31 +1405,7 @@ Hoci tiažový potenciál nedokážeme priamo odmerať, \emph{rozdiel} tiažové
 potenciálu dokážeme určiť nepriamo.  Pred vysvetlením metódy určovania rozdielu 
 tiažového potenciálu sa však pristavme pri pojme totálny diferenciál.
 
-\emph{Totálny diferenciál} tiažového potenciálu je daný vzťahom 
-\parencite{MoritzPhysicalGeodesy}
-%
-\begin{equation}
-\label{eq:w_totdiff_scalar}
-\diff W = \frac{\partial W}{\partial x} \, \diff x + \, \frac{\partial 
-W}{\partial y} \, \diff y + \frac{\partial W}{\partial z} \, \diff z = \nabla 
-W \cdot \diff \vec x = \vec g \cdot \diff \vec x = \| \vec g \| \, \| \diff 
-\vec x \| \, \cos\alpha{,}
-\end{equation}
-%
-kde
-%
-\begin{equation}
-\diff \vec x =
-\begin{bmatrix}
-\diff x\\
-\diff y\\
-\diff z
-\end{bmatrix}
-{,}
-\end{equation}
-%
-a $\alpha$ je uhol medzi vektormi~$\vec g$ a~$\diff \vec x$.  Symbol~$\cdot$ 
-označuje skalárny súčin dvoch vektorov.  Ak sa poloha bodu $\vec x$,
+Ak sa poloha bodu $\vec x$,
 %
 \begin{equation}
 \vec x =
@@ -1442,6 +1420,7 @@ z
 zmení o~vektor~$\Delta \vec x$,
 %
 \begin{equation}
+\label{eq:deltax}
 \Delta \vec x =
 \begin{bmatrix}
 \Delta x\\
@@ -1452,11 +1431,35 @@ zmení o~vektor~$\Delta \vec x$,
 \end{equation}
 %
 potom tiažový potenciál $W(\vec x)$ sa zmení o~hodnotu~$\delta W(\vec x, \Delta 
-\vec x)$.  Totálny diferenciál~(\ref{eq:w_totdiff_scalar}) \emph{aproximuje} 
-skutočnú zmenu tiažového potenciálu~$\delta W(\vec x, \Delta \vec x)$ v~zadanom 
-bode $\vec x$ a v~zadanom smere~$\Delta \vec x$.  Skrátením 
-vzdialenosti~$\Delta \vec x$ na~$\diff \vec x$ je možné zmenšiť aproximačnú 
-chybu na ľubovoľne malú hodnotu.
+\vec x)$.  \emph{Totálny diferenciál} aproximuje skutočnú zmenu tiažového 
+potenciálu~$\delta W(\vec x, \Delta \vec x)$ vzťahom
+%
+\begin{equation}
+\label{eq:w_totdiff_scalar}
+\diff W = \frac{\partial W}{\partial x} \, \diff x + \, \frac{\partial 
+W}{\partial y} \, \diff y + \frac{\partial W}{\partial z} \, \diff z = \nabla 
+W \cdot \diff \vec x = \vec g \cdot \diff \vec x = \| \vec g \| \, \| \diff 
+\vec x \| \, \cos\alpha{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\label{eq:diffx}
+\diff \vec x =
+\begin{bmatrix}
+\diff x\\
+\diff y\\
+\diff z
+\end{bmatrix}
+\end{equation}
+%
+a $\alpha$ je uhol medzi vektormi~$\vec g$ a~$\diff \vec x$.  Symbol~$\cdot$ 
+označuje skalárny súčin dvoch vektorov.  Skracovaním vzdialenosti~$\diff \vec 
+x$ v~rovnici~(\ref{eq:w_totdiff_scalar}) je možné zmenšiť aproximačnú chybu 
+totálneho diferenciálu~$\diff W(\vec x, \diff \vec x)$ voči skutočnej zmene 
+tiažového potenciálu $\delta W(\vec x, \diff \vec x)$ na ľubovoľne malú 
+hodnotu.
 
 Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ pozdĺž 
 ekvipotenciálnej plochy s~konštantným tiažovým potenciálom, potom totálny 
@@ -1488,7 +1491,7 @@ medzi bodmi~$A$ a~$B$,
 %
 \begin{equation}
 \label{eq:w_ab}
-\delta W_{AB} = W_B - W_A = -\int_{A}^{B} g \, \diff H{,}
+\delta W_{AB} = W_B - W_A = -\int\limits_{A}^{B} g \, \diff H{,}
 \end{equation}
 %
 kde symboly $W_A$ a~$W_B$ označujú tiažový potenciál v~bodoch~$A$ a~$B$.  
@@ -1498,7 +1501,7 @@ a~je daná vzťahom
 %
 \begin{equation}
 \label{eq:geopotential_number}
-C = W_0 - W = \int_0^H g \, \diff H{.}
+C = W_0 - W = \int\limits_0^H g \, \diff H{.}
 \end{equation}
 
 Geopotenciálnu kótu, teda rozdiel tiažového potenciálu, je možné určiť pomocou 
@@ -1525,7 +1528,8 @@ rovnicu zintegrujeme od $W_0$ po $W$,
 %
 \begin{equation}
 \label{eq:orthometric_height_1}
-H = -\int_{W_0}^{W} \frac{\diff W}{g} = \int_{0}^{C} \frac{\diff C}{g}{,}
+H = -\int\limits_{W_0}^{W} \frac{\diff W}{g} = \int\limits_{0}^{C} \frac{\diff 
+C}{g}{,}
 \end{equation}
 %
 získame vzťah na výpočet dĺžky tiažnice od geoidu po daný bod.  Pre praktické 
@@ -1533,13 +1537,13 @@ aplikácie je výhodné upraviť rovnicu~(\ref{eq:geopotential_number}) nasledov
 \parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
-C = H \, \frac{1}{H} \, \int_0^H g \, \diff H = H \, \bar{g}{,}
+C = H \, \frac{1}{H} \, \int\limits_0^H g \, \diff H = H \, \bar{g}{,}
 \end{equation}
 %
 kde
 %
 \begin{equation}
-\bar{g} = \frac{1}{H} \, \int_0^H g \, \diff H
+\bar{g} = \frac{1}{H} \, \int\limits_0^H g \, \diff H
 \end{equation}
 %
 je priemerná hodnota tiažového zrýchlenia pozdĺž tiažnice medzi geoidom~a daným 
@@ -1555,17 +1559,146 @@ tiažnice od geoidu po daný bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces})
 
 
 
-\section{Homogénna rotujúca guľa}
-\label{sec:homogeneous_ball}
-
-\subsection{Bod vo vnútri gule}
-\label{sec:homogeneous_ball_int}
-
-\subsection{Bod na povrchu gule}
-\label{sec:homogeneous_ball_sur}
-
-\subsection{Bod mimo gule}
-\label{sec:homogeneous_ball_ext}
+%\section{Homogénna rotujúca guľa}
+%\label{sec:homogeneous_ball}
+%
+%\emph{Homogénna guľa} je teleso sférického tvaru s~konštantnou hustotou 
+%v~každom bode.  Tiažové pole vhodne definovanej homogénnej rotujúcej gule je 
+%jedna z~najjednoduchších rozumne presných aproximácií zemského tiažového poľa.  
+%Na tomto jednoduchom príklade preto ukážeme, ako vyzerá gravitačné a tiažové 
+%pole Zeme v~prvej aproximácii.  Neskôr 
+%v~Kapitole~\ref{sec:spherical_harmonic_expansion} ukážeme jeden z~možných 
+%prístupov k~popisu skutočného tiažového poľa Zeme.
+%
+%Gravitačný potenciál homogénnej gule, tak ako gravitačný potenciál každého 
+%telesa, je daný vzťahom~(\ref{eq:vg_body}).  Objem diferenciálneho elementu 
+%$\diff \tau$ vystupujúci v~tomto vzťahu je možné v~trojrozmernom pravouhlom 
+%súradnicovom systéme vyjadriť vzťahom
+%%
+%\begin{equation}
+%\label{eq:dtau_cart}
+%\diff \tau = \diff x \, \diff y \, \diff z{.}
+%\end{equation}
+%%
+%V~tejto kapitole však chceme skúmať gravitačné a tiažové pole telesa sférického 
+%tvaru.  Nezdá sa byť preto nerozumné očakávať, že takúto úlohu bude vhodnejšie 
+%riešiť vo sférických súradniciach, podobne ako gravitačné pole kocky je azda 
+%jednoduchšie skúmať v~pravouhlých súradniciach.  Našou prvou úlohou preto bude 
+%vyjadriť Newtonov integrál~(\ref{eq:vg_body}) v~krivočiarych sférických 
+%súradniciach.  Táto úloha nie je triviálna, pretože každá z integračných 
+%premenných, $x$, $y$ a $z$, závisí od viac ako jednej sférickej súradnice 
+%(pozri vzťah~\ref{eq:sph2cart}), teda $x(r, \varphi, \lambda)$, $y(r, \varphi, 
+%\lambda)$ a $z(r, \varphi)$.
+%
+%Zámenu troch integračných premenných $x_1$, $x_2$, $x_3$ za integračné premenné 
+%$u_1(x_1, x_2, x_3)$, $u_2(x_1, x_2, x_3)$ a $u_3(x_1, x_2, x_3)$ je možné 
+%vykonať vzťahom \parencite[pozri napríklad][]{Olver2010}
+%%
+%\begin{equation}
+%\label{eq:iiint_change_of_variable}
+%\begin{split}
+%\iiint\limits_{V} f(x_1, x_2, x_3) \, \diff x_1 \, \diff x_2 \, \diff x_3 &= 
+% \iiint\limits_{V'} f[x_1(u_1, u_2, u_3), x_2(u_1, u_2, u_3), x_3(u_1, u_2, 
+% u_3)] \\
+%&\phantom{={}} | \det(\mathbf{J}) | \, \diff u_1 \, \diff u_2 \, \diff u_3{,}
+%\end{split}
+%\end{equation}
+%%
+%kde $\det(\mathbf{J})$ je determinant Jacobiho matice
+%%
+%\begin{equation}
+%\mathbf{J} = 
+%\begin{bmatrix}
+%\dfrac{\partial x}{\partial{u}} & \dfrac{\partial x}{\partial{v}} 
+%& \dfrac{\partial x}{\partial{w}}\\[2ex]
+%%
+%\dfrac{\partial y}{\partial{u}} & \dfrac{\partial y}{\partial{v}} 
+%& \dfrac{\partial y}{\partial{w}}\\[2ex]
+%%
+%\dfrac{\partial z}{\partial{u}} & \dfrac{\partial z}{\partial{v}} 
+%& \dfrac{\partial z}{\partial{w}}
+%\end{bmatrix}
+%\end{equation}
+%%
+%a $V$ 
+%
+%Jacobiho maticu potrebnú na zámenu pravouhlých integračných premenných $x(r, 
+%\varphi, \lambda)$, $y(r, \varphi, \lambda)$, $z(r, \varphi)$ za krivočiare 
+%integračné premenné $r$, $\varphi$, $\lambda$ v~Newtonovom 
+%integrále~(\ref{eq:vg_body}) získame deriváciou vzťahov~(\ref{eq:sph2cart}) 
+%podľa sférických súradníc,
+%%
+%\begin{equation}
+%\label{eq:j_cart_sph}
+%\mathbf{J} =
+%\begin{bmatrix}
+%\dfrac{\partial x}{\partial{r}} & \dfrac{\partial x}{\partial \varphi} 
+%& \dfrac{\partial x}{\partial \lambda}\\[2ex]
+%%
+%\dfrac{\partial y}{\partial{r}} & \dfrac{\partial y}{\partial{\varphi}} 
+%& \dfrac{\partial y}{\partial{\lambda}}\\[2ex]
+%%
+%\dfrac{\partial z}{\partial{r}} & \dfrac{\partial z}{\partial{\varphi}} 
+%& \dfrac{\partial z}{\partial{\lambda}}
+%\end{bmatrix}
+%%
+%=
+%\begin{bmatrix}
+%\cos\varphi \, \cos\lambda & -r \, \sin\varphi \, \cos\lambda & -r \, 
+%\cos\varphi \, \sin\lambda\\[2ex]
+%\cos\varphi \, \sin\lambda & -r \, \sin\varphi \, \sin\lambda & r \, 
+%\cos\varphi \, \cos\lambda\\[2ex]
+%\sin\varphi                &  r \, \cos\varphi                & 0
+%\end{bmatrix}
+%%
+%{.}
+%\end{equation}
+%%
+%Determinant Jacobiho matice~(\ref{eq:j_cart_sph}) je daný vzťahom
+%%
+%\begin{equation}
+%\det (\mathbf{J}) = -r^2 \, \cos\varphi{,}
+%\end{equation}
+%%
+%teda
+%%
+%\begin{equation}
+%\diff \tau = \diff x \, \diff y \, \diff z = | \det (\mathbf{J}) | \, \diff 
+%r \, \diff \varphi \, \diff \lambda = r^2 \, \cos\varphi \, \diff r \, \diff 
+%\varphi \, \diff \lambda{.}
+%\end{equation}
+%%
+%
+%Pomocou vzťahu~(\ref{eq:iiint_change_of_variable}) môžeme po uvážení 
+%konštantnej hustoty homogénnej gule $\rho$ prepísať Newtonov 
+%integrál~(\ref{eq:vg_body}) do tvaru
+%%
+%\begin{equation}
+%V = G \, \rho \int\limits_{\lambda_Q = 0}^{2\pi} \int\limits_{\varphi_Q  
+%= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{r_Q = 0}^{R} \frac{r_Q^2 \, 
+%\cos\varphi_Q}{l} \, \diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q{,}
+%\end{equation}
+%%
+%kde $R$ je polomer gule a~vzdialenosť~$l$ je daná vzťahom
+%%
+%\begin{equation}
+%\label{eq:l_homogeneous_ball}
+%l = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos(90^{\circ} - \varphi_Q)} 
+%= \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \sin(\varphi_Q)}{,}
+%\end{equation}
+%%
+%pričom $(r, \varphi\, \lambda)$ je trojica sférických súradníc výpočtového bodu 
+%a $(r_Q, \varphi_Q, \lambda_Q)$ sú sférické súradnice integračného elementu.
+%
+%
+%\subsection{Bod mimo gule}
+%\label{sec:homogeneous_ball_int}
+%
+%\subsection{Bod na povrchu gule}
+%\label{sec:homogeneous_ball_sur}
+%
+%\subsection{Bod vo vnútri gule}
+%\label{sec:homogeneous_ball_ext}
 
 
 
@@ -1662,8 +1795,8 @@ napríklad gravitačný potenciál, rozložiť na súradnice,
 %
 \begin{equation}
 \label{eq:vg_analysis}
-v_{nk} = \frac{N^2_{n|k|}}{4\pi} \, \iint_{\sigma} V_\gidx(r, \varphi, \lambda)
-\, Y_{nk}(\varphi, \lambda) \, \diff \sigma{,}
+v_{nk} = \frac{N^2_{n|k|}}{4\pi} \, \iint\limits_{\sigma} V_\gidx(r, \varphi, 
+\lambda) \, Y_{nk}(\varphi, \lambda) \, \diff \sigma{,}
 \end{equation}
 %
 a~následne ho spätne zrekonštruovať,
@@ -1808,42 +1941,15 @@ dostaneme vzťah
 %
 \begin{equation}
 \label{eq:vg_legpol}
-V_\gidx(P) = \frac{G}{r} \, \iiint_{\tau} \rho(Q) \, \sum_{n = 0}^{\infty}
-\left( \frac{r_Q}{r} \right)^n \, P_n(\cos\psi) \, \diff\tau(Q){.}
+V_\gidx(P) = \frac{G}{r} \, \iiint\limits_{\tau} \rho(Q) \, \sum_{n 
+= 0}^{\infty} \left( \frac{r_Q}{r} \right)^n \, P_n(\cos\psi) \, 
+\diff\tau(Q){.}
 \end{equation}
 
-V~prípade telies približne sférického tvaru, napríklad Zeme či iných planét, je
-výhodné vyjadriť hranice integrácie vo vzťahu~(\ref{eq:vg_legpol}) vo
-sférických súradniciach.  Po uvážení
-%
-\begin{equation}
-\diff \tau = r_Q^2 \, \cos\varphi_Q \, \diff r_Q \, \diff\varphi_Q \,
-\diff\lambda_Q{,}
-\end{equation}
-%
-prejde rovnica~(\ref{eq:vg_legpol}) do tvaru
-%
-\begin{equation}
-\label{eq:vg_legpol_sph}
-\begin{split}
-V_\gidx(P) =& \frac{G}{r} \, \int_{\lambda_Q = 0}^{2\pi} \int_{\varphi_Q
-= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int_{r_Q = 0}^{r_{\mathrm{S}}(\varphi_Q,
-\lambda_Q)} \rho(r_Q, \varphi_Q, \lambda_Q) \, \sum_{n = 0}^{\infty} \left(
-\frac{r_Q}{r} \right)^n \, P_n(\cos\psi)\\
-%
-&\times r_Q^2 \, \cos\varphi_Q \, \diff r_Q \, \diff\varphi_Q \,
-\diff\lambda_Q{,}
-\end{split}
-\end{equation}
-%
-kde symbol $r_\mathrm{S}(\varphi_Q, \lambda_Q)$ predstavuje dĺžku sprievodiča
-od začiatku súradnicového systému $O$ po bod na povrchu telesa so sférickou
-šírkou $\varphi_Q$ a~sférickou dĺžkou $\lambda_Q$.
-
-Z~pohľadu integračných premenných $\diff r$, $\diff\varphi$ a~$\diff\lambda$ je
-Legendreov polynóm $P_n(\cos\psi)$ vo vzťahu~(\ref{eq:vg_legpol_sph}) zložená
-funkcia, pretože je funkciou $\cos\psi$, pričom samotná funkcia $\cos\psi$
-závisí od uhlovej časti sférických súradníc bodov $Q$ a~$P$,
+Z~pohľadu sférických súradníc je Legendreov polynóm $P_n(\cos\psi)$ vo 
+vzťahu~(\ref{eq:vg_legpol}) zložená funkcia, pretože je funkciou $\cos\psi$, 
+pričom samotná funkcia $\cos\psi$ závisí od uhlovej časti sférických súradníc 
+bodov $Q$ a~$P$,
 %
 \begin{equation}
 \label{eq:cospsi}
@@ -1855,7 +1961,7 @@ Bolo by preto vhodné nájsť taký vzťah pre Legendreov polynóm $P_n(\cos\psi
 v~ktorom by každá prípadná funkcia závisela iba od jednej z~premenných
 $\varphi$, $ \lambda$, $\varphi_Q$ alebo $\lambda_Q$, a~nie od viacerých
 premenných ako je tomu po dosadení~(\ref{eq:cospsi})
-do~(\ref{eq:vg_legpol_sph}).  Na tento účel slúži \emph{dekompozičný vzorec pre
+do~(\ref{eq:vg_legpol}).  Na tento účel slúži \emph{dekompozičný vzorec pre
 Legendreove polynómy}, niekedy tiež nazývaný aj adičný teorém či súčtová veta.
 Podľa \textcite{Hobson} bol tento vzťah po prvýkrát odvodený samotným
 A.--M.~Legendreom v~roku~1782.  Odvodenie kvôli zložitosti v~tejto práci
@@ -1927,7 +2033,7 @@ kde
 C_{nm}\\
 S_{nm}
 \end{rcases}
-= (2 - \delta_{m0}) \frac{(n - m)!}{(n + m)!} \iiint_{\tau} \rho(r_Q,
+= (2 - \delta_{m0}) \frac{(n - m)!}{(n + m)!} \iiint\limits_{\tau} \rho(r_Q,
 \varphi_Q, \lambda_Q) \, r_Q^n \, P_{nm}(\sin\varphi_Q)
 %
 \begin{Bmatrix}
@@ -2072,7 +2178,7 @@ a~$P_n(t)$ (porovnaj s~\ref{eq:r_analysis}),
 %
 \begin{equation}
 \label{eq:f_analysis}
-f_n = \int_{-1}^1 f(t) \, P_n(t) \, \diff t{.}
+f_n = \int\limits_{-1}^1 f(t) \, P_n(t) \, \diff t{.}
 \end{equation}
 %
 Dôkaz platnosti rovníc~(\ref{eq:f_synthesis}) a~(\ref{eq:f_analysis}) je možné 
@@ -2092,7 +2198,7 @@ a $P_l(t)$,
 %
 \begin{equation}
 \label{eq:lp_orthogonality}
-\int_{-1}^1 P_n(t) \, P_l(t) \, \diff t = 0{,} \quad n \neq l{.}
+\int\limits_{-1}^1 P_n(t) \, P_l(t) \, \diff t = 0{,} \quad n \neq l{.}
 \end{equation}
 %
 Hovoríme preto, podobne ako v~súvislosti s~jednotkovými vektormi, že
@@ -2102,7 +2208,8 @@ Rovnicu~(\ref{eq:lp_orthogonality}) možno zovšeobecniť doplnením prípadu $n
 %
 \begin{equation}
 \label{eq:lp_orthogonality_2}
-\int_{-1}^1 P_n(t) \, P_l(t) \, \diff t = \frac{2}{2n + 1} \, \delta_{nl}{.}
+\int\limits_{-1}^1 P_n(t) \, P_l(t) \, \diff t = \frac{2}{2n + 1} \, 
+\delta_{nl}{.}
 \end{equation}
 
 Rovnice~(\ref{eq:f_synthesis}) a~(\ref{eq:f_analysis}) sú vo fyzikálnej
@@ -2236,14 +2343,14 @@ ortogonálne \parencite{Freeden2009},
 %
 \begin{equation}
 \label{eq:pnm_orthogonality}
-\int_{-1}^{1} P_{nm}(t) \, P_{lm}(t) \, \diff t = 0{,} \quad n \neq l{.}
+\int\limits_{-1}^{1} P_{nm}(t) \, P_{lm}(t) \, \diff t = 0{,} \quad n \neq l{.}
 \end{equation}
 %
 Pre dve Legendreove funkcie rovnakého stupňa a~rádu platí
 \begin{equation}
 \label{eq:pnm_times_pnm}
-\int_{-1}^{1} P^2_{nm}(t) \, \diff t = \frac{2}{2n + 1} \, \frac{(n + m)!}{(n
-- m)!}{.}
+\int\limits_{-1}^{1} P^2_{nm}(t) \, \diff t = \frac{2}{2n + 1} \, \frac{(n 
++ m)!}{(n - m)!}{.}
 \end{equation}
 
 Spomeňme ešte aspoň dve ďalšie vlastnosti Legendreových funkcií,
@@ -2366,8 +2473,8 @@ $Y_{nk}(\varphi, \lambda)$ a~$Y_{rs}(\varphi, \lambda)$,
 %
 \begin{equation}
 \label{eq:ynk_no_norm_orthogonality}
-\iint_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{rs}(\varphi, \lambda) \, \diff
-\sigma = 0{,}
+\iint\limits_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{rs}(\varphi, \lambda) \, 
+\diff \sigma = 0{,}
 \end{equation}
 %
 pričom buď $n \neq r$ alebo $k \neq s$ alebo platia obe podmienky súčasne.  Pre
@@ -2375,8 +2482,8 @@ skalárny súčin dvoch rovnakých sférických harmonických funkcií platí
 %
 \begin{equation}
 \label{eq:ynk_times_ynk}
-\iint_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{nk}(\varphi, \lambda) \, \diff
-\sigma =
+\iint\limits_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{nk}(\varphi, \lambda) \, 
+\diff \sigma =
 %
 \dfrac{4\pi}{(2 - \delta_{k0}) \, (2n + 1)} \, \dfrac{(n + |k|)!}{(n
 - |k|)!}{.}
@@ -2388,16 +2495,16 @@ rovnice~(\ref{eq:pnm_orthogonality}), (\ref{eq:pnm_times_pnm}),
 (\ref{eq:ynk_no_norm}) a~vypočítať integrály
 %
 \begin{equation}
-\int_{0}^{2\pi} \cos(k \lambda) \, \diff\lambda \quad \text{a} \quad
-\int_{0}^{2\pi} \sin(|k| \lambda) \, \diff\lambda{.}
+\int\limits_{0}^{2\pi} \cos(k \lambda) \, \diff\lambda \quad \text{a} \quad
+\int\limits_{0}^{2\pi} \sin(|k| \lambda) \, \diff\lambda{.}
 \end{equation}
 %
 Vo vzťahoch~(\ref{eq:pnm_orthogonality}) a~(\ref{eq:pnm_times_pnm}) je potrebné
 aplikovať substitúciu integračnej premennej,
 %
 \begin{equation}
-\int_{-1}^{1} P_{nm}(t) \, P_{rs}(t) \, \diff
-t~= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} P_{nm}(\sin\varphi) \,
+\int\limits_{-1}^{1} P_{nm}(t) \, P_{rs}(t) \, \diff
+t~= \int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}} P_{nm}(\sin\varphi) \,
 P_{rs}(\sin\varphi) \, \cos\varphi \, \diff \varphi{.}
 \end{equation}
 
@@ -2407,7 +2514,7 @@ funkciu $f(\varphi, \lambda)$ ďalej platí nerovnosť
 %
 \begin{equation}
 \label{eq:f_l2}
-\iint_\sigma f^2(\varphi, \lambda) \, \diff \sigma < \infty{.}
+\iint\limits_\sigma f^2(\varphi, \lambda) \, \diff \sigma < \infty{.}
 \end{equation}
 %
 Podmienku~(\ref{eq:f_l2}) spĺňa napríklad každá spojitá funkcia na jednotkovej
@@ -2420,17 +2527,17 @@ f(\varphi, \lambda) = \sum_{n = 0}^\infty \sum_{k = -n}^n f_{nk} \,
 Y_{nk}(\varphi, \lambda){.}
 \end{equation}
 %
-Koeficienty $f_{nk}$ je možné získať nasledovne.  Vynásobme
-rovnicu~(\ref{eq:f_shs_no_norm}) sférickou harmonickou funkciou $Y_{rs}(\varphi,
-\lambda)$ a~následne rovnicu zintegrujme na jednotkovej sfére $\sigma$.
-Použitím vzťahov~(\ref{eq:ynk_no_norm_orthogonality})
+Koeficienty $f_{nk}$ je možné získať nasledovne.  Vynásobme 
+rovnicu~(\ref{eq:f_shs_no_norm}) sférickou harmonickou funkciou 
+$Y_{rs}(\varphi, \lambda)$ a~následne rovnicu zintegrujme na jednotkovej sfére 
+$\sigma$.  Použitím vzťahov~(\ref{eq:ynk_no_norm_orthogonality}) 
 a~(\ref{eq:ynk_times_ynk}) získame hľadané koeficienty
 %
 \begin{equation}
 \label{eq:f_sha_no_norm}
-f_{nk} = \frac{(2 - \delta_{k0}) \, (2n + 1)}{4\pi} \, \frac{(n - |k|)!}{(n
-+ |k|)!} \, \iint_{\sigma} f(\varphi, \lambda) \, Y_{nk}(\varphi, \lambda) \,
-\diff \sigma{.}
+f_{nk} = \frac{(2 - \delta_{k0}) \, (2n + 1)}{4\pi} \, \frac{(n - |k|)!}{(n 
++ |k|)!} \, \iint\limits_{\sigma} f(\varphi, \lambda) \, Y_{nk}(\varphi, 
+\lambda) \, \diff \sigma{.}
 \end{equation}
 %
 
@@ -2517,7 +2624,7 @@ rovnice~(\ref{eq:ynk_no_norm_orthogonality}) ukázať, že platí
 %
 \begin{equation}
 \label{eq:ynk_norm_orthogonality}
-\frac{1}{4\pi} \, \iint_{\sigma} \bar{Y}_{nk}(\varphi, \lambda) \,
+\frac{1}{4\pi} \, \iint\limits_{\sigma} \bar{Y}_{nk}(\varphi, \lambda) \,
 \bar{Y}_{rs}(\varphi, \lambda) \, \diff \sigma = \delta_{nr} \, \delta_{ks}{.}
 \end{equation}
 %
@@ -2539,7 +2646,7 @@ a
 %
 \begin{equation}
 \label{eq:f_sha}
-\bar{f}_{nk} = \frac{1}{4\pi} \, \iint_{\sigma} f(\varphi, \lambda) \,
+\bar{f}_{nk} = \frac{1}{4\pi} \, \iint\limits_{\sigma} f(\varphi, \lambda) \,
 \bar{Y}_{nk}(\varphi, \lambda) \, \diff \sigma{.}
 \end{equation}
 %
@@ -2673,7 +2780,7 @@ Dosaďme $P_{0,0}(\sin\varphi)$ z~rovnice~(\ref{eq:lf00_to_lf22})
 do rovnice~(\ref{eq:vg_shc_no_norm}) pre $n = 0$ a~$m = 0$,
 %
 \begin{equation}
-C_{0,0} = \iiint_{\tau} \rho(Q) \, \diff \tau(Q) = M{.}
+C_{0,0} = \iiint\limits_{\tau} \rho(Q) \, \diff \tau(Q) = M{.}
 \end{equation}
 %
 Nenormovaný koeficient $C_{0,0}$ má teda fyzikálny význam, je rovný hmotnosti 
@@ -2700,12 +2807,12 @@ stupeň $n = 1$ a~rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) získame
 %
 \begin{equation}
 \begin{split}
-\frac{C_{1,0}}{M} &= \frac{1}{M} \iiint_{\tau} \rho(Q) \, z_Q \, \diff \tau(Q)
-= z_\mathrm{c}{,}\\
-\frac{C_{1,1}}{M} &= \frac{1}{M} \iiint_{\tau} \rho(Q) \, x_Q \, \diff \tau(Q)
-= x_\mathrm{c}{,}\\
-\frac{S_{1,1}}{M} &= \frac{1}{M} \iiint_{\tau} \rho(Q) \, y_Q \, \diff \tau(Q)
-= y_\mathrm{c}{.}
+\frac{C_{1,0}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, z_Q \, \diff 
+\tau(Q) = z_\mathrm{c}{,}\\
+\frac{C_{1,1}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, x_Q \, \diff 
+\tau(Q) = x_\mathrm{c}{,}\\
+\frac{S_{1,1}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, y_Q \, \diff 
+\tau(Q) = y_\mathrm{c}{.}
 \end{split}
 \end{equation}
 %
@@ -2976,12 +3083,11 @@ nájsť medzi nimi vhodný kompromis.
 Jedno z najjednoduchších telies ponúkajúcich sa na definíciu normálneho 
 tiažového poľa Zeme je \emph{homogénna rotujúca guľa} definovaná nezávislými 
 parametrami $GM$, $R$ a $\omega$, teda geocentrickou gravitačnou konštantou, 
-polomerom gule a uhlovou rýchlosťou rotácie.  
-Z~Kapitoly~\ref{sec:homogeneous_ball_ext} vieme, že vonkajšie tiažové pole 
-homogénnej gule je jednoducho matematicky opísateľné, a tak spĺňa požiadavku 
-jednoduchosti.  Nevyhovuje však väčšine súčasných aplikácií z hľadiska 
-presnosti, hoci v~niektorých situáciach je táto voľba ešte stále opodstatnená 
-a vhodná.
+polomerom gule a uhlovou rýchlosťou rotácie.  Vonkajšie tiažové pole homogénnej 
+gule je síce jednoducho matematicky opísateľné, nevyhovuje však väčšine 
+súčasných aplikácií z hľadiska presnosti.  Vo fyzikálnej geodézii sa zvykne 
+preto využívať prevažne len v~niektorých špecifických situáciách, napríklad ak 
+postačuje i~nižšia presnosť.
 
 V dôsledku sploštenia Zeme je dvojosový rotačný elipsoid presnejšou 
 geometrickou aproximáciou geoidu ako sféra.  Okrem svojho geometrického tvaru 
