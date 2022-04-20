@@ -3044,6 +3044,7 @@ nerovnosť je splnená pre \emph{všetky} diferenciálne elementy $\diff \tau(r_
 \varphi, \lambda)$ platí
 %
 \begin{equation}
+\label{eq:spherical_harmonic_convergence}
 r > \max(r_Q) = R{,}
 \end{equation}
 %
@@ -3054,10 +3055,10 @@ konvergencie \parencite{Hotine}
 sféry konvergencie rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne 
 a~absolútne.  Na tejto sfére ani v~jej vnútri konvergencia zaručená nie je.
 
-Nanešťastie, povrch Zeme sa nachádza v~oblasti, v~ktorej sférický harmonický 
-rozvoj gravitačného potenciálu nemusí konvergovať.  Našťastie, zdá sa, že 
-otázka konvergencie, resp. divergencie radu~(\ref{eq:vg_sh_no_norm}) nie je 
-v~súčasnosti z~praktického hľadiska relevantná pre nízke až stredné stupne 
+Nanešťastie, celý povrch Zeme sa nachádza v~oblasti, v~ktorej sférický 
+harmonický rozvoj gravitačného potenciálu nemusí konvergovať.  Našťastie, zdá 
+sa, že otázka konvergencie, resp. divergencie radu~(\ref{eq:vg_sh_no_norm}) nie 
+je v~súčasnosti z~praktického hľadiska relevantná pre nízke až stredné stupne 
 a~svoju závažnosť nadobúda až približne od stupňa $10{,}800$ 
 \parencite{Hirt2016,Rexer2017}.
 
@@ -3068,10 +3069,10 @@ diskutovanou témou geodetickej literatúry
 \begin{figure}
 \centering
 \input{./fig-spherical-harmonics-convergence.pdf_tex}
-\caption{Rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne a~absolútne vo
-vonkajšom priestore sféry konvergencie.  Svetlosivá farba označuje oblasť,
-v~ktorej nie je zaručená konvergencia.  Tmavosivá farba predstavuje hmoty
-telesa, ktoré generuje gravitačné pole.  V~tejto oblasti
+\caption{Sférický harmonický rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne 
+a~absolútne vo vonkajšom priestore sféry konvergencie.  Svetlosivá farba 
+označuje oblasť, v~ktorej nie je zaručená konvergencia.  Tmavosivá farba 
+predstavuje hmoty telesa, ktoré generuje gravitačné pole.  V~tejto oblasti 
 rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
 \label{fig:spherical_harmonics_convergence}
 \end{figure}
@@ -3083,9 +3084,33 @@ rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
 
 % -----------------------------------------------------------------------------
 
-\section{Elipsoidické harmonické funkcie}
+\section{Sféroidické harmonické funkcie}
 
-Možno\dots
+Niektoré telesá sú výrazne sploštené.  Oblasť, v~ktorej nie je zaručená 
+konvergencia radu~(\ref{eq:vg_sh_no_norm}) môže byť preto pomerne rozsiahla 
+(Obrázok~\ref{fig:spheroidal_harmonics_convergence}).  Príkladom splošteného 
+telesa je samotná Zem či mnohé asteroidy Slnečnej sústavy (napríklad Eros, 
+Castalia či Bennu; pozri napríklad \cite{Garmier2001}, \cite{Hu2015}, 
+\cite{Sebera2016} či \cite{Reimond2016}).
+
+\begin{figure}
+\centering
+\input{./fig-spheroidal-harmonics-convergence.pdf_tex}
+\caption{Sféra a elipsoid konvergencie harmonických 
+radov~(\ref{eq:vg_sh_no_norm}) a~XX.  Vyšrafovaná časť znázorňuje oblasť, 
+v~ktorej sféroidický harmonický rad~XX konverguje, no sférický harmonický 
+rad~(\ref{eq:vg_sh_no_norm}) konvergovať nemusí.  Oblasť konvergencie 
+sféroidického harmonického radu je teda väčšia.}
+\label{fig:spheroidal_harmonics_convergence}
+\end{figure}
+
+
+\subsection{Elipsoidické redukované súradnice}
+
+
+
+\subsection{Rozvoj gravitačného potenciálu do radu sféroidických harmonických 
+funkcií}
 
 
 

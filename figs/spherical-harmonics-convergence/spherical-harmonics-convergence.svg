@@ -35,9 +35,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.9509821"
-     inkscape:cx="138.56476"
-     inkscape:cy="132.10226"
+     inkscape:zoom="3.4754911"
+     inkscape:cx="124.03942"
+     inkscape:cy="198.78491"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -69,20 +69,20 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="display:inline;fill:#000000;fill-opacity:0.1;fill-rule:nonzero;stroke:#000000;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="display:inline;fill:#e1e1e1;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="path6617"
        cx="37.12999"
        cy="36.370071"
        r="32.363277" />
     <g
        id="g4575"
-       style="display:inline;fill:#000000;fill-opacity:0.30000001;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none"
+       style="display:inline;fill:#8c8c8c;fill-opacity:1;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none"
        transform="translate(-2.0852033,-213.85665)">
       <g
          id="g4578"
-         style="fill:#000000;fill-opacity:0.30000001;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none">
+         style="fill:#8c8c8c;fill-opacity:1;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none">
         <path
-           style="fill:#000000;fill-opacity:0.30000001;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           style="fill:#8c8c8c;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            d="m 14.576094,239.06916 c 1.246369,-3.33504 1.751033,-6.89378 3.482179,-9.7695 1.731146,-2.87571 4.687701,-5.06601 7.83503,-5.7887 3.147329,-0.7227 6.485359,0.0223 9.635353,0.54961 3.149995,0.52735 6.111761,0.83711 9.289931,0.98508 3.178171,0.14797 6.572612,0.13417 8.995571,0.23726 2.422958,0.1031 3.791429,0.31044 5.204459,0.66629 1.413031,0.35586 2.829586,0.85408 3.875078,3.46707 1.045491,2.61299 1.716962,7.31856 2.562,10.54349 0.845039,3.22493 1.848707,4.91299 2.450179,7.18932 0.601472,2.27634 0.795846,5.1306 0.676087,7.86449 -0.119758,2.73389 -0.553635,5.34559 -1.993685,7.4295 -1.44005,2.0839 -3.883738,3.63697 -5.727443,4.90773 -1.843705,1.27076 -3.085052,2.25759 -5.49978,4.54012 -2.414727,2.28252 -5.999035,5.85716 -10.88266,7.4957 -4.883626,1.63853 -11.062021,1.33898 -14.769444,-0.31702 -3.707424,-1.65601 -4.940221,-4.66735 -8.039411,-7.39848 -3.09919,-2.73114 -5.832244,-4.07959 -9.258161,-9.57944 -3.4259173,-5.49985 -3.2951331,-8.32192 -2.180702,-12.45219 1.114432,-4.13028 3.09905,-7.23529 4.345419,-10.57033 z"
            id="path4554"
            inkscape:connector-curvature="0"
@@ -110,19 +110,6 @@
          y="2.6759515"
          style="text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan1837">Sf\'{e}ra konvergencie</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="14.328234"
-       y="26.441833"
-       id="text6818-6-1-4-53"
-       inkscape:transform-center-x="-0.7511878"
-       inkscape:transform-center-y="-3.8782755e-06"><tspan
-         sodipodi:role="line"
-         x="14.328235"
-         y="26.441833"
-         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan1933">Povrch telesa</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
