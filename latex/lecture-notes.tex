@@ -2316,7 +2316,7 @@ P_{nm}(t) = \frac{2n - 1}{n - m} \, t \, P_{n - 1, m}(t) + \frac{n + m - 1}{n
 - m} \, P_{n - 2, m}(t){.}
 \end{equation}
 %
-Niekoľko prvých Legendreových funkcií ma nasledovný tvar
+Niekoľko prvých Legendreových funkcií má nasledovný tvar
 (Obrázok~\ref{fig:lf}),
 %
 \begin{equation}
@@ -2353,7 +2353,28 @@ Pre dve Legendreove funkcie rovnakého stupňa a~rádu platí
 + m)!}{(n - m)!}{.}
 \end{equation}
 
-Spomeňme ešte aspoň dve ďalšie vlastnosti Legendreových funkcií,
+Legendreove funkcie vyhovujú diferenciálnej rovnici druhého rádu 
+\parencite{SansoGeoidDetermination}
+%
+\begin{equation}
+\label{eq:legfunc_differential_equation}
+(1 - t^2) \, \frac{\diff^2 P_{nm}(t)}{\diff t^2} - 2 \, t \, \frac{\diff 
+P_{nm}(t)}{\diff t} + \left[ n \, (n + 1) - \frac{m^2}{1 - t^2} \right] \, 
+P_{nm}(t) = 0{.}
+\end{equation}
+%
+Rovnica~(\ref{eq:legfunc_differential_equation}) sa nazýva \emph{Legendreova 
+diferenciálna rovnica}.  Dosadením $m = 0$ 
+do~(\ref{eq:legfunc_differential_equation}) získame diferenciálnu rovnicu 
+druhého rádu pre Legendreove polynómy,
+%
+\begin{equation}
+\label{eq:legpol_differential_equation}
+(1 - t^2) \, \frac{\diff^2 P_n(t)}{\diff t^2} - 2 \, t \, \frac{\diff 
+P_n(t)}{\diff t} + n \, (n + 1) \, P_n(t) = 0{.}
+\end{equation}
+
+Na záver spomeňme ešte aspoň dve ďalšie vlastnosti Legendreových funkcií,
 %
 \begin{equation}
 \label{eq:pnm_symmetry}
@@ -2365,7 +2386,7 @@ a
 \begin{equation}
 P_{nm}(\pm1) = 0{,} \quad \text{pre} \quad m \neq 0{.}
 \end{equation}
-%
+
 Numerický výpočet Legendreových funkcií je zvyčajne realizovaný rekurentnými 
 vzťahmi.  Ide však o~netriviálnu úlohu, obzvlášť v~prípade vysokých stupňov 
 a~rádov \parencite{Holmes2002a,Fukushima2012a}.  
@@ -2373,6 +2394,34 @@ Vlastnosť~(\ref{eq:pnm_symmetry}) je preto obzvlášť výhodná.  Ak potrebuje
 vypočítať $P_{nm}(\sin\varphi)$ a~$P_{nm}(\sin(-\varphi))$, rekurentnými 
 vzťahmi môžeme vypočítať iba jeden z~týchto členov, pričom druhý dopočítame 
 jednoduchým vzťahom~(\ref{eq:pnm_symmetry}).
+
+\subsubsection{Poznámka k definícii Legendreových funkcií}
+
+V geodézii a geomagnetizme sú Legendreove funkcie definované takmer výhradne 
+vzťahom~(\ref{eq:pnm_ferrer}).  V~iných vedných odboroch, napríklad fyzike či 
+seizmológii, sa však používa definícia, ktorá obsahuje člen $(-1)^m$ 
+\parencite[napríklad][]{Wieczorek2015},
+%
+\begin{equation}
+\begin{split}
+P_n^m(t) &= (-1)^m \, (1 - t^2)^{m \slash 2} \, \frac{\diff^m P_n(t)}{\diff 
+t^m}\\
+%
+&= \frac{(-1)^m}{2^n \, n!} (1 - t^2)^{ m \slash 2} \, \frac{\diff^{n + m}
+(t^2 - 1)^n}{\diff t^{n + m}}{.}
+\end{split}
+\end{equation}
+%
+V~takom prípade sa rád Legendreovej funkcie $m$ zvykne zapisovať do horného 
+indexu.  Člen $(-1)^{m}$ sa nazýva Condonov--Shortleyho fázový faktor.  Medzi 
+$P_{nm}(t)$ a $P_n^m(t)$ teda platí vzťah
+%
+\begin{equation}
+P_{nm}(t) = (-1)^m \, P_n^m(t){.}
+\end{equation}
+%
+V ďalších častiach práce budeme používať iba Legendreove funkcie $P_{nm}(t)$ 
+definované vzťahom~(\ref{eq:pnm_ferrer}).
 
 
 
