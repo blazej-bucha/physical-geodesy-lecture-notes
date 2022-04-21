@@ -31,7 +31,7 @@
 \usepackage{graphicx}
 \usepackage{accsupp}
 \usepackage{csquotes}
-\usepackage[width=0.95\textwidth]{caption}
+\usepackage[width=0.95\textwidth,font=small]{caption}
 \usepackage[unicode,
             pdfborder={0 0 0},
             colorlinks=true,
@@ -1935,8 +1935,19 @@ Funkcie $P_n(t)$ dostali názov podľa ich objaviteľa, francúzskeho matematika
 A.--M.~Legendrea (1752~-- 1833), a~nazývajú sa \emph{Legendreove polynómy
 stupňa $n$}.  Funkcia $H(\alpha, t)$ sa nazýva \emph{generická funkcia pre
 Legendreove polynómy}.  Dosadením~(\ref{eq:pn}),
-(\ref{eq:maclaurin_series_of_generic_function}),
-(\ref{eq:generic_function_for_lps}) a~(\ref{eq:1l}) do~(\ref{eq:vg_body})
+(\ref{eq:maclaurin_series_of_generic_function}) 
+a~(\ref{eq:generic_function_for_lps}) do~(\ref{eq:1l}) získame rozvoj funkcie 
+$1 \slash l$ do radu Legendreových polynómov,
+%
+\begin{equation}
+\label{eq:1l_legpol}
+\frac{1}{l} = \frac{1}{r} \, \sum_{n = 0}^\infty \left( \frac{r_Q}{r} 
+\right)^{n} \, P_n(\cos\psi) = \frac{1}{r_Q} \, \sum_{n = 0}^\infty \left( 
+\frac{r_Q}{r} \right)^{n + 1} \, P_n(\cos\psi){.}
+\end{equation}
+%
+Dosadením prostredného výrazu z~rovnice~(\ref{eq:1l_legpol}) 
+do~(\ref{eq:vg_body})
 dostaneme vzťah
 %
 \begin{equation}
@@ -2214,21 +2225,11 @@ Rovnicu~(\ref{eq:lp_orthogonality}) možno zovšeobecniť doplnením prípadu $n
 
 Rovnice~(\ref{eq:f_synthesis}) a~(\ref{eq:f_analysis}) sú vo fyzikálnej
 geodézii veľmi často využívané a~v~istej miere sme sa s~nimi stretli už
-v~predchádzajúcej kapitole.  Zo vzťahov~(\ref{eq:1l}),
-(\ref{eq:generic_function_for_lps}),
-(\ref{eq:maclaurin_series_of_generic_function}) a~(\ref{eq:pn}) vyplýva
-nasledovné,
-%
-\begin{equation}
-\label{eq:1l_lp}
-\frac{1}{l} = \frac{1}{r_Q} \, \sum_{n = 0}^\infty \left( \frac{r_Q}{r}
-\right)^{(n + 1)} \, P_n(\cos\psi){.}
-\end{equation}
-%
-Nech $r$ a~$r_Q$ sú konštanty, pre ktoré platí $r > r_Q$ (pozri podmienku
+v~predchádzajúcej kapitole.  Nech $r$ a~$r_Q$ z~rovnice~(\ref{eq:1l_legpol}) sú 
+konštanty, pre ktoré platí $r > r_Q$ (pozri podmienku
 $\alpha < 1$ v~rovnici~\ref{eq:generic_function_for_lps}).  Keď označíme $f(t)
 = 1 \slash l(t)$, $t = \cos\psi$, pomocou rovníc~(\ref{eq:lp_orthogonality_2})
-a~(\ref{eq:1l_lp}) sa môžeme presvedčiť, že koeficienty $f_n$
+a~(\ref{eq:1l_legpol}) sa môžeme presvedčiť, že koeficienty $f_n$
 z~rovnice~(\ref{eq:f_analysis}) sú dané vzťahom
 %
 \begin{equation}
@@ -2237,10 +2238,10 @@ f_n = \frac{1}{r_Q} \, \frac{2}{2n + 1} \, \left( \frac{r_Q}{r} \right)^{n
 \end{equation}
 %
 Dosadením týchto koeficientov do vzťahu~(\ref{eq:f_synthesis}) získame pôvodný 
-vzťah~(\ref{eq:1l_lp}).  Hoci ide o~triviálny príklad, demonštruje rozvinutie 
-funkcie do radu Legendreových polynómov.  Takéto rozvinutie funkcie $f(t)$ 
-pomocou Legendreových polynónom $P_n(t)$ je v~istom zmysle obdobné vyjadreniu 
-vektora $\vec r$ pomocou jednotkových vektorov $\vec e_i$ 
+vzťah~(\ref{eq:1l_legpol}).  Hoci ide o~triviálny príklad, demonštruje 
+rozvinutie funkcie do radu Legendreových polynómov.  Takéto rozvinutie funkcie 
+$f(t)$ pomocou Legendreových polynónom $P_n(t)$ je v~istom zmysle obdobné 
+vyjadreniu vektora $\vec r$ pomocou jednotkových vektorov $\vec e_i$ 
 z~Kapitoly~\ref{sec:unit_vectors}.  Tento rozvoj je v~mnohých situáciách 
 výhodný, pretože môže napríklad zjednodušiť odvodenie.  Napokon, najlepšie to 
 demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme 
@@ -2705,8 +2706,18 @@ teorém~(\ref{eq:pn_decomposition_formula}) v~tvare
 %
 \begin{equation}
 P_n(\cos\psi) = \frac{1}{2n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
+\lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q)
+\end{equation}
+%
+a~prevrátenú hodnotu vzdialenosti $1 \slash l$ z~rovnice~(\ref{eq:1l}) v~tvare
+%
+\begin{equation}
+\label{eq:1l_sh}
+\frac{1}{l} = \frac{1}{r_Q} \, \sum_{n = 0}^{\infty} \frac{1}{2n + 1} \, \left( 
+\frac{r_Q}{r} \right)^{n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
 \lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q){.}
 \end{equation}
+%
 
 Z~numerického hľadiska je výpočet nenormovaných Legendreových funkcií 
 problematický, a~to už i~pre stupne a~rády presahujúce niekoľko stoviek.  
@@ -3086,31 +3097,93 @@ rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
 
 \section{Sféroidické harmonické funkcie}
 
-Niektoré telesá sú výrazne sploštené.  Oblasť, v~ktorej nie je zaručená 
-konvergencia radu~(\ref{eq:vg_sh_no_norm}) môže byť preto pomerne rozsiahla 
-(Obrázok~\ref{fig:spheroidal_harmonics_convergence}).  Príkladom splošteného 
-telesa je samotná Zem či mnohé asteroidy Slnečnej sústavy (napríklad Eros, 
-Castalia či Bennu; pozri napríklad \cite{Garmier2001}, \cite{Hu2015}, 
-\cite{Sebera2016} či \cite{Reimond2016}).
+V~niektorých situáciách je potrebné skúmať gravitačné pole telies, ktoré sú 
+sploštené.  Príkladom splošteného telesa je samotná Zem či mnohé asteroidy 
+Slnečnej sústavy (napríklad Eros, Castalia či Bennu; pozri \cite{Garmier2001}, 
+\cite{Hu2015}, \cite{Sebera2016} či \cite{Reimond2016}).  Ak by sme rozvinuli 
+gravitačný potenciál týchto telies do radu sférických harmonických 
+funkcií~(\ref{eq:vg_sh_no_norm}), potom oblasť blízko telesa, kde rad nemusí 
+konvergovať môže byť pomerne rozsiahla (porovnaj 
+Obrázky~\ref{fig:spherical_harmonics_convergence} 
+a~\ref{fig:spheroidal_harmonics_convergence}).  V~takýchto prípadoch môže byť 
+výhodnejšie nerozvíjať gravitačný potenciál do radu harmonických funkcií vo 
+sférických súradniciach, ale v~súradniciach, ktoré sú akýmsi spôsobom 
+prirodzenejšie pre sploštené telesá.  Príkladom takých súradníc sú 
+\emph{elipsoidické redukované súradnice}, ktoré vedú ku \emph{sféroidickému 
+harmonickému rozvoju} gravitačného potenciálu.  Výhodou sféroidického 
+harmonického rozvoja je skutočnosť, že oblasť, v~ktorej je príslušný harmonický 
+rad konvergentný môže byť väčšia v~porovnaní so sférickým rozvojom (pozri 
+Obrázok~\ref{fig:spheroidal_harmonics_convergence}).
+
+V~tejto kapitole stručne popíšeme elipsoidické redukované súradnice 
+(Kapitola~\ref{sec:ellipsoidal_reduced_coordinates}) a~sféroidický harmonický 
+rozvoj (Kapitola~\ref{sec:spheroidal_harmonic_expansion}).
 
 \begin{figure}
 \centering
 \input{./fig-spheroidal-harmonics-convergence.pdf_tex}
 \caption{Sféra a elipsoid konvergencie harmonických 
-radov~(\ref{eq:vg_sh_no_norm}) a~XX.  Vyšrafovaná časť znázorňuje oblasť, 
-v~ktorej sféroidický harmonický rad~XX konverguje, no sférický harmonický 
-rad~(\ref{eq:vg_sh_no_norm}) konvergovať nemusí.  Oblasť konvergencie 
-sféroidického harmonického radu je teda väčšia.}
+radov~(\ref{eq:vg_sh_no_norm}) a~XX.  Oba rady konvergujú vo vonkajšom 
+priestore svojej plochy konvergencie, no v~jej vnútri ich konvergencia zaručená 
+nie je.  Oblasť konvergencie sféroidického harmonického radu je teda väčšia 
+o~vyšrafovanú oblasť.}
 \label{fig:spheroidal_harmonics_convergence}
 \end{figure}
 
 
 \subsection{Elipsoidické redukované súradnice}
+\label{sec:ellipsoidal_reduced_coordinates}
 
+Nech je daný dvojosový referenčný elipsoid s~dĺžkou hlavnej polosi $a$ 
+a~s~dĺžkou vedľajšej polosi $b$.  Parametre~$a$ a~$b$ sú volené tak, aby vhodne 
+aproximovali tvar telesa, napríklad v zmysle metódy najmenších štvorcov, ktorá 
+môže byť aplikovaná na rozdiely medzi povrchom telesa a referenčným elipsoidom.  
+Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
+vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
+a jedným z ohnísk elipsy,
+%
+\begin{equation}
+E = \sqrt{a^2 - b^2}{.}
+\end{equation}
+
+Polohu ľubovoľného bodu~$P$, ktorý sa nachádza na referenčnom elipsoide alebo 
+nad ním, možno vyjadriť pomocou elipsoidických redukovaných súradníc $u$, 
+$\beta$ a $\lambda$ (Obrázok~\ref{fig:ell_reduced_coords}).  Symbol $u$ 
+označuje malú polos konfokálneho elipsoidu, ktorý prechádza bodom~$P$.  
+\emph{Konfokálny elipsoid} je taký elipsoid, ktorý má rovnaký stred~$O$ 
+a lineárnu excentricitu~$E$ ako referenčný elipsoid.  Ak sa bod~$P$ nachádza na 
+referenčnom elipsoide, potom~$u = b$.  Symbol $\beta$ predstavuje redukovanú 
+elipsoidickú šírku.  Redukovaná elipsoidická dĺžka $\lambda$ je definovaná 
+rovnako ako v~prípade sférických súradníc (Obrázok~\ref{fig:cart_sph}).
+
+\begin{figure}
+\centering
+\input{./fig-ell-reduced-coords.pdf_tex}
+\caption{Elipsoidické redukované súradnice $u$ a $\beta$ bodu $P$}
+\label{fig:ell_reduced_coords}
+\end{figure}
+
+Jednoduchým spôsobom možno overiť, že medzi elipsoidickými redukovanými 
+súradnicami a pravouhlými súradnicami platia nasledovné vzťahy,
+%
+\begin{equation}
+\label{eq:ellred2cart}
+\begin{split}
+x &= \sqrt{u^2 + E^2} \, \cos\beta \, \cos\lambda{,}\\
+y &= \sqrt{u^2 + E^2} \, \cos\beta \, \sin\lambda{,}\\
+z &= u \, \sin\beta{,}
+\end{split}
+\end{equation}
+%
+kde $\sqrt{u^2 + E^2}$ je dĺžka hlavnej polosi konfokálneho elipsoidu.  
+Všimnime si, že ak $E = 0$, teda referenčný elipsoid nie je sploštený, potom 
+vzťah~(\ref{eq:ellred2cart}) má rovnaký tvar ako transformácia sférických 
+súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
 
 \subsection{Rozvoj gravitačného potenciálu do radu sféroidických harmonických 
 funkcií}
+\label{sec:spheroidal_harmonic_expansion}
 
 
 
