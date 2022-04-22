@@ -226,9 +226,10 @@ ním ovplyvnené, od použitia olovnice až po merania založené na globálnych
 navigačných družicových systémoch.  Táto práca sa zaoberá tiažovým poľom 
 s~dôrazom na geodetický kontext.  Určená je predovšetkým ako doplňujúci učebný 
 text k~predmetom \emph{Fyzikálna geodézia~1} a~\emph{Fyzikálna geodézia~2} pre 
-študentov odboru Geodézia a~kartografia Stavebnej fakulty STU.  Niektoré časti 
-by azda mohli byť užitočné aj pre~študentov príbuzných vedných odborov alebo 
-jednoducho pre záujemcov o~problematiku gravitačného a~tiažového poľa.
+študentov odboru Geodézia a~kartografia Stavebnej fakulty Slovenskej technickej 
+univerzity v~Bratislave.  Niektoré časti by azda mohli byť užitočné aj 
+pre~študentov príbuzných vedných odborov alebo jednoducho pre záujemcov 
+o~problematiku gravitačného a~tiažového poľa.
 
 Popísané sú základné princípy gravitačného a~tiažového poľa vychádzajúce
 z~Newtonovho gravitačného zákona
@@ -376,12 +377,8 @@ spojnicou hmotných bodov \parencite{Kellogg1967}.  \emph{Hmotný bod} je
 idealizovaný pojem predstavujúci časticu s~nulovým rozmerom a~konečnou 
 nenulovou hmotnosťou bez akýchkoľvek ďalších vlastností či štruktúry.  Hodnota 
 gravitačnej konštanty odporúčaná od roku 2018 \emph{Komisiou pre dáta vo vede 
-a~technológiách} (CODATA) je
-%
-\begin{equation}
-G = (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1}
-\ \mathrm{s}^{-2}{.}
-\end{equation}
+a~technológiách} (CODATA) je $G = (6.67430 \pm 0.00015) \times 10^{-11} 
+\ \mathrm{m}^3 \ \mathrm{kg}^{-1} \ \mathrm{s}^{-2}$.
 
 Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme 
 polohu planéty v~čase $t_0$ symbolom $P(t_0)$ a~vektor jej okamžitej rýchlosti 
@@ -850,7 +847,7 @@ zaoberá sa rozličnými zdrojmi poľa (hmotný bod, hmotná priamka, nekonečne
 vrstva, všeobecné teleso a~pod.) s~rôznym priestorovým rozložením hustôt 
 (konštantná, premenlivá, kladná, dokonca i~záporná a~pod.) a~neobmedzuje sa iba 
 na gravitačné pole.  Táto úloha je nesmierne náročná.  Čo sa napríklad stane 
-v~prípade, ak v~rovnici~(\ref{eq:vg_body}) sa nachádza výpočtový bod $P$ vo 
+v~prípade, ak sa nachádza výpočtový bod $P$ v~rovnici~(\ref{eq:vg_body}) vo 
 vnútri telesa?  Za takýchto okolností musí nevyhnutne dôjsť k~situácii, 
 v~ktorej súradnice bodu $P$ sú identické so súradnicami jedného diferenciálneho 
 hmotného elementu $\diff m$.  Vzájomná vzdialenosť medzi bodom $P$ a~elementom 
@@ -1376,8 +1373,9 @@ Z~dôvodu sférického tvaru Zeme a~zvlnenia ekvipotenciálnych plôch nemožno 
 všeobecnosti predpokladať rovnobežnosť horizontálnych rovín na dvoch rôznych
 stanoviskách.  V~prípade teodolitu sú v~tejto rovine merané vodorovné smery.
 Preto ak je vyžadovaná presnosť vysoká alebo záujmová lokalita je rozsiahla
-a~má zložitú topografiu, potrebné je korigovať merania o~vplyv nerovnobežnosti
-horizontálnych rovín medzi stanoviskami.
+a~má zložitú topografiu,  merania je potrebné korigovať o~vplyv nerovnobežnosti
+horizontálnych rovín medzi stanoviskami \parencite[pozri 
+napríklad][]{VanicekGeodesy}.
 
 \subsubsection{Tiažnica}
 
@@ -1717,9 +1715,9 @@ Problematická je obzvlášť hustota.  Hoci existujú hustotné modely Zeme
 \parencite[napríklad][]{Dziewonski1981}, ich použitie vo 
 vzťahu~(\ref{eq:vg_body}) ešte stále neposkytuje vyžadovanú geodetickú 
 presnosť.  V~tejto situácii nie sú postačujúce ani regionálne hustotné modely.  
-Hoci tie poskytujú vyššiu presnosť a~priestorové rozlíšenie, v~geodézii sa 
-používajú prevažne ako cenná doplnková informácia o~zdroji gravitačného poľa, 
-nie však ako hlavné dáta na výpočet tiažového poľa Zeme.  V~tejto kapitole sa 
+Tie síce poskytujú vyššiu presnosť aj~lepšie priestorové rozlíšenie, v~geodézii 
+sa však používajú najmä ako cenná doplnková informácia o~zdroji gravitačného 
+poľa, nie ako hlavné dáta na výpočet tiažového poľa Zeme.  V~tejto kapitole sa 
 zameriame na praktický spôsob modelovania gravitačného poľa Zeme \emph{bez 
 potreby priamej znalosti hustoty}.  Pred samotným predstavením metódy však 
 skúsme ilustrovať jej základnú myšlienku a~širší kontext.
@@ -2358,15 +2356,15 @@ Legendreove funkcie vyhovujú diferenciálnej rovnici druhého rádu
 \parencite{SansoGeoidDetermination}
 %
 \begin{equation}
-\label{eq:legfunc_differential_equation}
+\label{eq:legfunc1_differential_equation}
 (1 - t^2) \, \frac{\diff^2 P_{nm}(t)}{\diff t^2} - 2 \, t \, \frac{\diff 
 P_{nm}(t)}{\diff t} + \left[ n \, (n + 1) - \frac{m^2}{1 - t^2} \right] \, 
 P_{nm}(t) = 0{.}
 \end{equation}
 %
-Rovnica~(\ref{eq:legfunc_differential_equation}) sa nazýva \emph{Legendreova 
+Rovnica~(\ref{eq:legfunc1_differential_equation}) sa nazýva \emph{Legendreova 
 diferenciálna rovnica}.  Dosadením $m = 0$ 
-do~(\ref{eq:legfunc_differential_equation}) získame diferenciálnu rovnicu 
+do~(\ref{eq:legfunc1_differential_equation}) získame diferenciálnu rovnicu 
 druhého rádu pre Legendreove polynómy,
 %
 \begin{equation}
@@ -2625,10 +2623,11 @@ V~praktických aplikáciách sa sférické harmonické funkcie zvyknú definova�
 Tento člen sa nazýva \emph{norma} a~jeho použitím dostaneme \emph{normované} 
 sférické harmonické funkcie.  Normovaním získame niektoré vlastnosti, ktoré sú 
 výhodne z~teoretického aj z~praktického hľadiska.  Tieto vlastnosti budú 
-diskutované v~Kapitolách~\ref{sec:leg_sh_norm} a~\ref{sec:shc_norm}.  Existuje 
-niekoľko typov noriem, napríklad Schmidtova polovičná norma, ortogonálna norma 
-či úplná norma \parencite{SHTOOLS}.  V~geodézii sa používa takmer výhradne 
-posledná menovaná norma, preto sa ostatným normám nebudeme venovať.
+podrobnejšie diskutované v~Kapitolách~\ref{sec:leg_sh_norm} 
+a~\ref{sec:shc_norm}.  Existuje niekoľko typov noriem, napríklad Schmidtova 
+polovičná norma, ortogonálna norma či úplná norma \parencite{SHTOOLS}.  
+V~geodézii sa používa takmer výhradne posledná menovaná norma, preto sa 
+ostatným normám nebudeme v~tejto práci venovať.
 
 \subsection{Legendreove funkcie a~sférické harmonické funkcie}
 \label{sec:leg_sh_norm}
@@ -2984,11 +2983,23 @@ zrýchlenie až po zvislicové odchýlky či geoid.
 
 Sférické harmonické koeficienty gravitačného poľa Zeme sú v~súčasnosti dostupné
 približne do stupňa $2190$.  Získavané sú väčšinou kombináciou družicových
-meraní (približne do stupňa $250$~-- $300$) a~detailných pozemných
-gravimetrických meraní (približne do stupňa $2190$).  Existujú tiež modely,
-ktoré popisujú gravitačné pole do vyšších stupňov ako $2190$, hoci tie nie sú
-založené na meraniach gravitačného poľa, ale na výpočte Newtonovho integrálu
-pomocou sférických harmonických funkcií.
+meraní (približne do stupňa $250$ až $300$) a~detailných pozemných
+gravimetrických meraní (približne do stupňa $720$ až $2190$).  Existujú tiež 
+modely, ktoré popisujú zemské gravitačné pole do vyšších stupňov ako $2190$.  
+Tieto vysoké harmonické stupne však nie sú založené na meraniach zemského 
+gravitačného poľa, ale na modelovaní gravitačného účinku topografických hmôt, 
+ktoré sa nachádzajú nad geoidom \parencite{Ince2020}.
+
+\begin{figure}
+\centering
+\includegraphics{./fig-h-shs-nmax30.pdf}
+\includegraphics{./fig-h-shs-nmax90.pdf}
+\includegraphics{./fig-h-shs-nmax360.pdf}
+\caption{Sférický harmonický rozvoj zemskej topografie do stupňov~$N = 30$
+(vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  Výpočet bol
+uskutočnený Zdrojovým kódom~\ref{src:h_shs}.}
+\label{fig:shs_h}
+\end{figure}
 
 V~Kapitole~\ref{sec:spherical_harmonics} sme uviedli, že do radu sférických
 harmonických funkcií je možné rozvinúť nielen gravitačný potenciál, ale každú
@@ -3017,17 +3028,6 @@ kde $l_{\min}$ je sférická vzdialenosť v~dĺžkových jednotkách na sfére
 s~polomerom $R$.  Zvyšovaním
 maximálneho stupňa $N$ teda zvyšujeme podrobnosť funkcie $H(\varphi, \lambda)$.
 
-\begin{figure}
-\centering
-\includegraphics{./fig-h-shs-nmax30.pdf}
-\includegraphics{./fig-h-shs-nmax90.pdf}
-\includegraphics{./fig-h-shs-nmax360.pdf}
-\caption{Sférický harmonický rozvoj zemskej topografie do stupňov~$N = 30$
-(vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  Výpočet bol
-uskutočnený Zdrojovým kódom~\ref{src:h_shs}.}
-\label{fig:shs_h}
-\end{figure}
-
 
 
 
@@ -3048,6 +3048,17 @@ z~Kapitoly~\ref{sec:vg_sh_expansion}.  Ak totiž
 rad~(\ref{eq:maclaurin_series_of_generic_function}) diverguje, zámena poradia 
 integrácie a~sumácie nie je možná.  Na získanie vzťahu~(\ref{eq:vg_sh_no_norm}) 
 sme preto museli predpokladať, že podmienka $\frac{r_Q}{r} < 1$ je splnená.
+
+\begin{figure}
+\centering
+\input{./fig-spherical-harmonics-convergence.pdf_tex}
+\caption{Sférický harmonický rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne 
+a~absolútne vo vonkajšom priestore sféry konvergencie.  Svetlosivá farba 
+označuje oblasť, v~ktorej nie je zaručená konvergencia.  Tmavosivá farba 
+predstavuje hmoty telesa, ktoré generuje gravitačné pole.  V~tejto oblasti 
+rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
+\label{fig:spherical_harmonics_convergence}
+\end{figure}
 
 Nerovnosť $\frac{r_Q}{r} < 1$ môžeme prepísať do tvaru $r > r_Q$.  Táto
 nerovnosť je splnená pre \emph{všetky} diferenciálne elementy $\diff \tau(r_Q,
@@ -3077,17 +3088,6 @@ Konvergencia radu sférických harmonických funkcií na povrchu Zeme je často
 diskutovanou témou geodetickej literatúry 
 \parencite{Hotine,Krarup1969,MoritzAdvancedGeodesy,Sjoberg1980,Jekeli1983,SansoGeoidDetermination}.
 
-\begin{figure}
-\centering
-\input{./fig-spherical-harmonics-convergence.pdf_tex}
-\caption{Sférický harmonický rad~(\ref{eq:vg_sh_no_norm}) konverguje rovnomerne 
-a~absolútne vo vonkajšom priestore sféry konvergencie.  Svetlosivá farba 
-označuje oblasť, v~ktorej nie je zaručená konvergencia.  Tmavosivá farba 
-predstavuje hmoty telesa, ktoré generuje gravitačné pole.  V~tejto oblasti 
-rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
-\label{fig:spherical_harmonics_convergence}
-\end{figure}
-
 
 
 
@@ -3095,29 +3095,35 @@ rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
 
 % -----------------------------------------------------------------------------
 
-\section{Sféroidické harmonické funkcie}
+\chapter{Sféroidický harmonický rozvoj}
 
 V~niektorých situáciách je potrebné skúmať gravitačné pole telies, ktoré sú 
 sploštené.  Príkladom splošteného telesa je samotná Zem či mnohé asteroidy 
 Slnečnej sústavy (napríklad Eros, Castalia či Bennu; pozri \cite{Garmier2001}, 
 \cite{Hu2015}, \cite{Sebera2016} či \cite{Reimond2016}).  Ak by sme rozvinuli 
 gravitačný potenciál týchto telies do radu sférických harmonických 
-funkcií~(\ref{eq:vg_sh_no_norm}), potom oblasť blízko telesa, kde rad nemusí 
-konvergovať môže byť pomerne rozsiahla (porovnaj 
+funkcií~(\ref{eq:vg_sh_no_norm}), potom oblasť potenciálnej divergencie radu 
+môže byť pomerne rozsiahla (porovnaj 
 Obrázky~\ref{fig:spherical_harmonics_convergence} 
 a~\ref{fig:spheroidal_harmonics_convergence}).  V~takýchto prípadoch môže byť 
 výhodnejšie nerozvíjať gravitačný potenciál do radu harmonických funkcií vo 
 sférických súradniciach, ale v~súradniciach, ktoré sú akýmsi spôsobom 
 prirodzenejšie pre sploštené telesá.  Príkladom takých súradníc sú 
-\emph{elipsoidické redukované súradnice}, ktoré vedú ku \emph{sféroidickému 
+\emph{redukované elipsoidické súradnice}, ktoré vedú ku \emph{sféroidickému 
 harmonickému rozvoju} gravitačného potenciálu.  Výhodou sféroidického 
-harmonického rozvoja je skutočnosť, že oblasť, v~ktorej je príslušný harmonický 
-rad konvergentný môže byť väčšia v~porovnaní so sférickým rozvojom (pozri 
+harmonického rozvoja je skutočnosť, že oblasť dokázanej konvergencie 
+harmonického radu je spravidla väčšia v~porovnaní so sférickým rozvojom (pozri 
 Obrázok~\ref{fig:spheroidal_harmonics_convergence}).
 
-V~tejto kapitole stručne popíšeme elipsoidické redukované súradnice 
-(Kapitola~\ref{sec:ellipsoidal_reduced_coordinates}) a~sféroidický harmonický 
-rozvoj (Kapitola~\ref{sec:spheroidal_harmonic_expansion}).
+V~tejto kapitole popíšeme redukované elipsoidické súradnice 
+(Kapitola~\ref{sec:reduced_ell_coords}), sféroidické harmonické funkcie 
+(Kapitola~\ref{sec:spheroidal_harmonic_functions}) a~rozvoj gravitačné 
+potenciálu do sféroidického harmonického radu 
+(Kapitola~\ref{sec:spheroidal_harmonic_expansion}).  Kvôli náročnosti nebudeme 
+odvádzať sféroidické harmonické funkcie rovnako podrobne ako sme odvodili 
+sférické harmonické funkcie v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  
+Namiesto toho sa budeme snažiť prirovnávať diskutované témy k~už známej 
+problematike z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.
 
 \begin{figure}
 \centering
@@ -3131,24 +3137,24 @@ o~vyšrafovanú oblasť.}
 \end{figure}
 
 
-\subsection{Elipsoidické redukované súradnice}
-\label{sec:ellipsoidal_reduced_coordinates}
+\section{Redukované elipsoidické súradnice}
+\label{sec:reduced_ell_coords}
 
 Nech je daný dvojosový referenčný elipsoid s~dĺžkou hlavnej polosi $a$ 
 a~s~dĺžkou vedľajšej polosi $b$.  Parametre~$a$ a~$b$ sú volené tak, aby vhodne 
-aproximovali tvar telesa, napríklad v zmysle metódy najmenších štvorcov, ktorá 
+aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov, ktorá 
 môže byť aplikovaná na rozdiely medzi povrchom telesa a referenčným elipsoidom.  
 Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
 vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
-a jedným z ohnísk elipsy,
+a jedným z ohnísk elipsy (Obrázok~\ref{fig:reduced_ell_coords}),
 %
 \begin{equation}
 E = \sqrt{a^2 - b^2}{.}
 \end{equation}
 
 Polohu ľubovoľného bodu~$P$, ktorý sa nachádza na referenčnom elipsoide alebo 
-nad ním, možno vyjadriť pomocou elipsoidických redukovaných súradníc $u$, 
-$\beta$ a $\lambda$ (Obrázok~\ref{fig:ell_reduced_coords}).  Symbol $u$ 
+nad ním, možno vyjadriť pomocou redukovaných elipsoidických súradníc $u$, 
+$\beta$ a $\lambda$ (Obrázok~\ref{fig:reduced_ell_coords}).  Symbol $u$ 
 označuje malú polos konfokálneho elipsoidu, ktorý prechádza bodom~$P$.  
 \emph{Konfokálny elipsoid} je taký elipsoid, ktorý má rovnaký stred~$O$ 
 a lineárnu excentricitu~$E$ ako referenčný elipsoid.  Ak sa bod~$P$ nachádza na 
@@ -3158,12 +3164,13 @@ rovnako ako v~prípade sférických súradníc (Obrázok~\ref{fig:cart_sph}).
 
 \begin{figure}
 \centering
-\input{./fig-ell-reduced-coords.pdf_tex}
-\caption{Elipsoidické redukované súradnice $u$ a $\beta$ bodu $P$}
-\label{fig:ell_reduced_coords}
+\input{./fig-reduced-ell-coords.pdf_tex}
+\caption{Redukované elipsoidické súradnice $u$ a $\beta$ bodu $P$ vyjadrené 
+pomocou referenčného elipsoidu s~hlavnou polosou~$a$ a~vedľajšou polosou~$b$.}
+\label{fig:reduced_ell_coords}
 \end{figure}
 
-Jednoduchým spôsobom možno overiť, že medzi elipsoidickými redukovanými 
+Jednoduchým spôsobom možno overiť, že medzi redukovanými elipsoidickými 
 súradnicami a pravouhlými súradnicami platia nasledovné vzťahy,
 %
 \begin{equation}
@@ -3181,20 +3188,138 @@ vzťah~(\ref{eq:ellred2cart}) má rovnaký tvar ako transformácia sférických
 súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
 
-\subsection{Rozvoj gravitačného potenciálu do radu sféroidických harmonických 
+\section{Sféroidické harmonické funkcie}
+\label{sec:spheroidal_harmonic_functions}
+
+V~Kapitole~\ref{sec:vg_sh_expansion} sme uviedli, že k~rozvoju gravitačného 
+potenciálu do radu sférických harmonických funkcií~(rovnica 
+\ref{eq:vg_sh_no_norm}) je možné dopracovať sa aj riešením Laplaceovej 
+diferenciálnej rovnice vo sférických 
+súradniciach~(rovnica~\ref{eq:vg_laplace_sph}).  Cieľom takéhoto prístupu je 
+nájsť tri funkcie, $f(r)$, $g(\varphi)$ a $h(\lambda)$, z~ktorých každá je 
+funkciou práve jednej sférickej súradnice.  Hľadané funkcie majú tvar (porovnaj 
+s rovnicou~\ref{eq:vg_sh_no_norm})
+%
+\begin{equation}
+\label{eq:fr}
+f_{\mathrm{s}}(r) =
+\dfrac{1}{r^{n + 1}}{,}
+\end{equation}
+%
+\begin{equation}
+g_{\mathrm{s}}(\varphi) = P_{nm}(\sin\varphi)
+\end{equation}
+%
+a
+%
+\begin{equation}
+h_{\mathrm{s}}(\lambda) =
+%
+\begin{cases}
+\cos(m\,\lambda){,}\\
+\sin(m\,\lambda){,}
+\end{cases}
+\end{equation}
+%
+kde $n = 0, 1, 2, \dots$ a $m = 0, 1, \dots, n$.  Pre úplnosť dodajme, že 
+funkcia $f_{\mathrm{s}}(r)$ môže mať aj tvar $f_{\mathrm{s}}(r) = r^n$.  Toto 
+riešenie využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry 
+\parencite{MoritzPhysicalGeodesy}.  Takáto situácia však nie je predmetom tejto 
+práce.
+
+Ak chceme získať sféroidické harmonické súradnice, jeden z~možných prístupov je 
+práve riešenie Laplaceovej diferenciálnej rovnice, tentokrát však 
+v~redukovaných elipsoidických súradniciach.  Bez podrobnejšieho odvodenia 
+uvedieme tvar Laplaceovej diferenciálnej rovnice pre gravitačný potenciál 
+v~redukovaných elipsoidických súradniciach \parencite{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\label{eq:vg_laplace_ellred} (u^2 + E^2) \, \frac{\partial^2 V_\gidx}{\partial u^2} + 2u \, \frac{\partial 
+V_\gidx}{\partial u} + \frac{1}{\cos\beta} \, \frac{\partial}{\partial\beta} 
+\left( \cos\beta \, \frac{\partial V_\gidx}{\partial\beta} \right) + \frac{u^2 
++ E^2 \, \sin^2\beta}{(u^2 + E^2) \, \cos^2\beta} \, \frac{\partial^2 
+V_\gidx}{\partial \lambda^2} = 0{.}
+\end{equation}
+%
+Riešením tejto diferenciálnej rovnice metódou separácie premenných získame 
+nasledovné funkcie \parencite{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\label{eq:fu}
+f_{\mathrm{r}}(u) =
+Q_{nm}\left( i \dfrac{u}{E} \right){,}
+\end{equation}
+%
+\begin{equation}
+g_{\mathrm{r}}(\beta) = P_{nm}(\sin\beta)
+\end{equation}
+%
+a
+%
+\begin{equation}
+h_{\mathrm{r}}(\lambda) =
+%
+\begin{cases}
+\cos(m\,\lambda){,}\\
+\sin(m\,\lambda){,}
+\end{cases}
+\end{equation}
+%
+pričom $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~prípade 
+rovnice~(\ref{eq:fr}), aj funkcia $f_{\mathrm{r}}(u)$ môže mať ešte jeden tvar, 
+$f_{\mathrm{r}}(u) = P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na 
+rozvoj \emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.
+
+Člen $Q_{nm}\left( i \frac{u}{E} \right)$ v~rovnici~(\ref{eq:fu}) sa nazýva 
+\emph{pridružená Legendreova funkcia druhého druhu}.  Pre komplexný argument $z 
+= i \frac{u}{E}$ je definovaná vzťahom \parencite{MoritzPhysicalGeodesy}
+%
+\begin{equation}
+\label{eq:qnm_imag_def}
+Q_{nm}(z) = (z^2 - 1)^{m \slash 2} \, \frac{\diff^m Q_n(z)}{\diff z^m}{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+Q_{n}(z) = \frac{1}{2} \, P_n(z) \, \ln\frac{z + 1}{z - 1} - \sum_{s = 1}^n 
+\frac{1}{s} \, P_{s - 1}(z) \, P_{n - s}(z){.}
+\end{equation}
+%
+Pre reálny argument $t \in [-1, 1]$ je definovaná vzťahom
+\parencite{MoritzPhysicalGeodesy}
+%
+\begin{equation}
+\label{eq:qnm_real_def}
+Q_{nm}(t) = (1 - t^2)^{m \slash 2} \, \frac{\diff^m Q_n(t)}{\diff t^m}{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+Q_{n}(t) = \frac{1}{2} \, P_n(t) \, \ln\frac{1 + t}{1 - t} - \sum_{s = 1}^n 
+\frac{1}{s} \, P_{s - 1}(t) \, P_{n - s}(t){.}
+\end{equation}
+
+Rovnica~(\ref{eq:qnm_real_def}) je formálne podobná rovnici~(\ref{eq:pnm_def}).  
+Napriek tomu, v~dôsledku rozdielnej definície derivovaných členov~$Q_n(t)$ ide 
+o~funkcie s~odlišným správaním v porovnaní s~$P_{nm}(t)$.  Obrázky~XX a~YY  
+znázorňujú funkcie $Q_{nm}(t)$ pre niekoľko prvých stupňov~$n$ a~rádov~$m$ 
+(porovnaj s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).  Rovnaké rekurentné 
+vzťahy~(\ref{eq:pn_bonnet}) ako pre~$P_n(t)$ platia aj pre~$Q_n(t)$ 
+\parencite{MoritzPhysicalGeodesy}.  Podobne ako funkcie $P_{nm}(t)$, i~funkcie 
+$Q_{nm}(t)$ vyhovujú Laplaceovej diferenciálnej rovnici druhého rádu 
+\parencite[pozri rovnicu
+\ref{eq:legfunc1_differential_equation};][]{MoritzPhysicalGeodesy}.
+
+
+\subsection{Numerický výpočet Legendreových funkcií drúheho druhu}
+
+
+
+\section{Rozvoj gravitačného potenciálu do radu sféroidických harmonických 
 funkcií}
 \label{sec:spheroidal_harmonic_expansion}
-
-
-
-
-
-
-% -----------------------------------------------------------------------------
-
-\section{Ďalšie prístupy k~modelovaniu tiažového poľa Zeme}
-
-Možno\dots
 
 
 
@@ -3391,7 +3516,7 @@ Jednotka  & $\mathrm{m}$ & Bezrozmerné & $\mathrm{m}^3 \ \mathrm{s}^{-2}$
 \end{table*}
 
 Základné parametre ekvipotenciálnych elipsoidov sú v súčasnosti určované 
-spravidla pomocou družicových techník a astronomických meraní.  Historický 
+spravidla družicovými technikami a astronomickými meraniami.  Historický 
 prehľad geodetických referenčných systémov a spôsoby ich určenia je možné nájsť 
 napríklad v~prácach \textcite{TorgeGeodesy} a~\textcite{MoritzPhysicalGeodesy}.
 
