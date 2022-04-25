@@ -2388,18 +2388,19 @@ P_{nm}(\pm1) = 0{,} \quad \text{pre} \quad m \neq 0{.}
 
 Numerický výpočet Legendreových funkcií je zvyčajne realizovaný rekurentnými 
 vzťahmi.  Ide však o~netriviálnu úlohu, obzvlášť v~prípade vysokých stupňov 
-a~rádov \parencite{Holmes2002a,Fukushima2012a}.  
+a~rádov \parencite{Holmes2002a,Fukushima2012a,Ishioka2018}.  
 Vlastnosť~(\ref{eq:pnm_symmetry}) je preto obzvlášť výhodná.  Ak potrebujeme 
 vypočítať $P_{nm}(\sin\varphi)$ a~$P_{nm}(\sin(-\varphi))$, rekurentnými 
 vzťahmi môžeme vypočítať iba jeden z~týchto členov, pričom druhý dopočítame 
 jednoduchým vzťahom~(\ref{eq:pnm_symmetry}).
 
-\subsubsection{Poznámka k definícii Legendreových funkcií}
+\subsection{Condonov--Shortleyho fázový faktor}
+\label{sec:legendre_functions_cs_factor}
 
 V geodézii a geomagnetizme sú Legendreove funkcie definované takmer výhradne 
 vzťahom~(\ref{eq:pnm_ferrer}).  V~iných vedných odboroch, napríklad fyzike či 
 seizmológii, sa však používa definícia, ktorá obsahuje člen $(-1)^m$ 
-\parencite[napríklad][]{Wieczorek2015},
+\parencite[pozri][]{Wieczorek2015,Olver2010},
 %
 \begin{equation}
 \begin{split}
@@ -3097,11 +3098,11 @@ diskutovanou témou geodetickej literatúry
 
 \chapter{Sféroidický harmonický rozvoj}
 
-V~niektorých situáciách je potrebné skúmať gravitačné pole telies, ktoré sú 
-sploštené.  Príkladom splošteného telesa je samotná Zem či mnohé asteroidy 
-Slnečnej sústavy (napríklad Eros, Castalia či Bennu; pozri \cite{Garmier2001}, 
-\cite{Hu2015}, \cite{Sebera2016} či \cite{Reimond2016}).  Ak by sme rozvinuli 
-gravitačný potenciál týchto telies do radu sférických harmonických 
+V~niektorých situáciách je potrebné skúmať gravitačné pole sploštených telies.  
+Príkladom splošteného telesa je samotná Zem či mnohé asteroidy Slnečnej sústavy 
+(napríklad Eros, Castalia či Bennu; pozri \cite{Garmier2001}, \cite{Hu2015}, 
+\cite{Sebera2016} či \cite{Reimond2016}).  Ak by sme rozvinuli gravitačný 
+potenciál týchto telies do radu sférických harmonických 
 funkcií~(\ref{eq:vg_sh_no_norm}), potom oblasť potenciálnej divergencie radu 
 môže byť pomerne rozsiahla (porovnaj 
 Obrázky~\ref{fig:spherical_harmonics_convergence} 
@@ -3123,16 +3124,19 @@ potenciálu do sféroidického harmonického radu
 odvádzať sféroidické harmonické funkcie rovnako podrobne ako sme odvodili 
 sférické harmonické funkcie v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  
 Namiesto toho sa budeme snažiť prirovnávať diskutované témy k~už známej 
-problematike z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.
+problematike z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.  Poznatky 
+z~tejto kapitoly využijeme v~Kapitole~\ref{sec:normal_gravity_field}, v~ktorej 
+je študované gravitačné a~tiažové pole s~konštantným tiažovým potenciálom na 
+povrchu elipsoidu.
 
 \begin{figure}
 \centering
 \input{./fig-spheroidal-harmonics-convergence.pdf_tex}
 \caption{Sféra a elipsoid konvergencie harmonických 
-radov~(\ref{eq:vg_sh_no_norm}) a~XX.  Oba rady konvergujú vo vonkajšom 
-priestore svojej plochy konvergencie, no v~jej vnútri ich konvergencia zaručená 
-nie je.  Oblasť konvergencie sféroidického harmonického radu je teda väčšia 
-o~vyšrafovanú oblasť.}
+radov~(\ref{eq:vg_sh_no_norm}) a~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}).  Oba 
+rady konvergujú vo vonkajšom priestore svojej plochy konvergencie, no v~jej 
+vnútri ich konvergencia zaručená nie je.  Oblasť konvergencie sféroidického 
+harmonického radu je teda väčšia o~vyšrafovanú oblasť.}
 \label{fig:spheroidal_harmonics_convergence}
 \end{figure}
 
@@ -3146,11 +3150,20 @@ aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov, kt
 môže byť aplikovaná na rozdiely medzi povrchom telesa a referenčným elipsoidom.  
 Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
 vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
-a jedným z ohnísk elipsy (Obrázok~\ref{fig:reduced_ell_coords}),
+a jedným z ohnísk elipsy (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície 
+elipsy vyplýva, že lineárna excentricita je daná vzťahom
 %
 \begin{equation}
-E = \sqrt{a^2 - b^2}{.}
+E = \sqrt{a^2 - b^2} = a \, e{,}
 \end{equation}
+%
+kde
+%
+\begin{equation}
+e = \frac{\sqrt{a^2 - b^2}}{a} = \frac{E}{a}
+\end{equation}
+%
+je \emph{prvá numerická excentricita}.
 
 Polohu ľubovoľného bodu~$P$, ktorý sa nachádza na referenčnom elipsoide alebo 
 nad ním, možno vyjadriť pomocou redukovaných elipsoidických súradníc $u$, 
@@ -3194,11 +3207,11 @@ súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 V~Kapitole~\ref{sec:vg_sh_expansion} sme uviedli, že k~rozvoju gravitačného 
 potenciálu do radu sférických harmonických funkcií~(rovnica 
 \ref{eq:vg_sh_no_norm}) je možné dopracovať sa aj riešením Laplaceovej 
-diferenciálnej rovnice vo sférických 
+diferenciálnej rovnice metódou separácie premenných vo sférických 
 súradniciach~(rovnica~\ref{eq:vg_laplace_sph}).  Cieľom takéhoto prístupu je 
-nájsť tri funkcie, $f(r)$, $g(\varphi)$ a $h(\lambda)$, z~ktorých každá je 
-funkciou práve jednej sférickej súradnice.  Hľadané funkcie majú tvar (porovnaj 
-s rovnicou~\ref{eq:vg_sh_no_norm})
+nájsť tri funkcie, $f_{\mathrm{s}}(r)$, $g_{\mathrm{s}}(\varphi)$ 
+a $h_{\mathrm{s}}(\lambda)$.  Riešením sú funkcie nasledovného tvaru (porovnaj 
+s rovnicou~\ref{eq:vg_sh_no_norm}),
 %
 \begin{equation}
 \label{eq:fr}
@@ -3207,6 +3220,7 @@ f_{\mathrm{s}}(r) =
 \end{equation}
 %
 \begin{equation}
+\label{eq:gs}
 g_{\mathrm{s}}(\varphi) = P_{nm}(\sin\varphi)
 \end{equation}
 %
@@ -3223,15 +3237,16 @@ h_{\mathrm{s}}(\lambda) =
 %
 kde $n = 0, 1, 2, \dots$ a $m = 0, 1, \dots, n$.  Pre úplnosť dodajme, že 
 funkcia $f_{\mathrm{s}}(r)$ môže mať aj tvar $f_{\mathrm{s}}(r) = r^n$.  Toto 
-riešenie využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry 
+riešenie sa využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry 
 \parencite{MoritzPhysicalGeodesy}.  Takáto situácia však nie je predmetom tejto 
 práce.
 
-Ak chceme získať sféroidické harmonické súradnice, jeden z~možných prístupov je 
-práve riešenie Laplaceovej diferenciálnej rovnice, tentokrát však 
-v~redukovaných elipsoidických súradniciach.  Bez podrobnejšieho odvodenia 
-uvedieme tvar Laplaceovej diferenciálnej rovnice pre gravitačný potenciál 
-v~redukovaných elipsoidických súradniciach \parencite{MoritzPhysicalGeodesy},
+Jeden z~možných prístupov získania sféroidických harmonických funkcíi je práve 
+riešením Laplaceovej diferenciálnej rovnice metódou separácie premenných, 
+tentokrát však v~redukovaných elipsoidických súradniciach.  Bez podrobnejšieho 
+odvodenia uvedieme tvar Laplaceovej diferenciálnej rovnice pre gravitačný 
+potenciál v~redukovaných elipsoidických súradniciach 
+\parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:vg_laplace_ellred} (u^2 + E^2) \, \frac{\partial^2 V_\gidx}{\partial u^2} + 2u \, \frac{\partial 
@@ -3251,6 +3266,7 @@ Q_{nm}\left( i \dfrac{u}{E} \right){,}
 \end{equation}
 %
 \begin{equation}
+\label{eq:gr}
 g_{\mathrm{r}}(\beta) = P_{nm}(\sin\beta)
 \end{equation}
 %
@@ -3282,11 +3298,15 @@ Q_{nm}(z) = (z^2 - 1)^{m \slash 2} \, \frac{\diff^m Q_n(z)}{\diff z^m}{,}
 kde
 %
 \begin{equation}
+\label{eq:qn0_imag_def}
 Q_{n}(z) = \frac{1}{2} \, P_n(z) \, \ln\frac{z + 1}{z - 1} - \sum_{s = 1}^n 
 \frac{1}{s} \, P_{s - 1}(z) \, P_{n - s}(z){.}
 \end{equation}
 %
-Pre reálny argument $t \in [-1, 1]$ je definovaná vzťahom
+Pre reálny argument $t$ je definovaná vzťahom\footnote{V~niektorej literatúre 
+sú Legendreove funkcie druhého druhu reálneho argumentu definované aj 
+s~použitím Condonovho--Shortleyho fázového faktora $(-1)^m$ (pozri 
+Kapitolu~\ref{sec:legendre_functions_cs_factor} a napríklad \cite{Olver2010}).}
 \parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
@@ -3297,29 +3317,117 @@ Q_{nm}(t) = (1 - t^2)^{m \slash 2} \, \frac{\diff^m Q_n(t)}{\diff t^m}{,}
 kde
 %
 \begin{equation}
+\label{eq:qn0_real_def}
 Q_{n}(t) = \frac{1}{2} \, P_n(t) \, \ln\frac{1 + t}{1 - t} - \sum_{s = 1}^n 
 \frac{1}{s} \, P_{s - 1}(t) \, P_{n - s}(t){.}
 \end{equation}
 
+\begin{figure}
+\centering
+\includegraphics{./fig-legendre-polynomials-qn.pdf}
+\caption{Legendreove polynómy druhého druhu reálneho argumentu $t$.}
+\label{fig:lp_2nd}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{./fig-legendre-functions-qnm.pdf}
+\caption{Legendreove funkcie druhého druhu reálneho argumentu $t$.}
+\label{fig:lf_2nd}
+\end{figure}
+
 Rovnica~(\ref{eq:qnm_real_def}) je formálne podobná rovnici~(\ref{eq:pnm_def}).  
 Napriek tomu, v~dôsledku rozdielnej definície derivovaných členov~$Q_n(t)$ ide 
-o~funkcie s~odlišným správaním v porovnaní s~$P_{nm}(t)$.  Obrázky~XX a~YY  
-znázorňujú funkcie $Q_{nm}(t)$ pre niekoľko prvých stupňov~$n$ a~rádov~$m$ 
-(porovnaj s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).  Rovnaké rekurentné 
-vzťahy~(\ref{eq:pn_bonnet}) ako pre~$P_n(t)$ platia aj pre~$Q_n(t)$ 
-\parencite{MoritzPhysicalGeodesy}.  Podobne ako funkcie $P_{nm}(t)$, i~funkcie 
-$Q_{nm}(t)$ vyhovujú Laplaceovej diferenciálnej rovnici druhého rádu 
-\parencite[pozri rovnicu
-\ref{eq:legfunc1_differential_equation};][]{MoritzPhysicalGeodesy}.
+o~funkcie s~odlišným priebehom v~porovnaní s~$P_{nm}(t)$.  
+Obrázky~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd}  znázorňujú funkcie $Q_{nm}(t)$ pre 
+niekoľko prvých stupňov~$n$ a~rádov~$m$ (porovnaj s Obrázkami~\ref{fig:lp} 
+a~\ref{fig:lf}).  Pre~$Q_n(t)$ platia rovnaké rekurentné vzťahy ako 
+pre~$P_n(t)$ \parencite{MoritzPhysicalGeodesy}.  Podobne ako funkcie 
+$P_{nm}(t)$, i~funkcie $Q_{nm}(t)$ vyhovujú Legendreovej diferenciálnej rovnici 
+druhého rádu \parencite[pozri rovnicu
+\ref{eq:legfunc1_differential_equation};][]{MoritzPhysicalGeodesy}.  Všimnime 
+si tiež, že Legendreove funkcie druhého druhu nadobúdajú hodnotu $\pm \infty$ 
+pre $t \rightarrow \pm 1$, teda pre $\beta \rightarrow \pm \frac{\pi}{2}$ 
+(pozri rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def} 
+a Obrázky~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd}).  Túto vlastnosť budeme nazývať 
+\emph{singularita}.  Práve kvôli singularite sa Legendreove funkcie druhého 
+druhu nepoužívajú ako riešenie pre funkcie $g_\mathrm{s}(\varphi)$ 
+a $g_\mathrm{r}(\beta)$ (pozri rovnice~\ref{eq:gs} a~\ref{eq:gr}), a to napriek 
+tomu, že taktiež vyhovujú Legendreovej diferenciálnej rovnici 
+\parencite{MoritzPhysicalGeodesy}.
 
 
-\subsection{Numerický výpočet Legendreových funkcií drúheho druhu}
+\subsection{Numerický výpočet Legendreových funkcií druhého druhu}
+
+Presný a~efektívny numerický výpočet funkcií $Q_{nm}\left( i \frac{u}{E} 
+\right)$, obzvlášť pre vysoké stupne a rády, je netriviálna úloha, podobne ako 
+v~prípade funkcií $P_{nm}(t)$.  Z~dôvodov, ktoré budú ozrejmené 
+v~Kapitole~\ref{sec:spheroidal_harmonic_expansion} sa v~praktických 
+geodetických aplikáciách nezvyknú počítať členy $Q_{nm}\left( i \frac{u}{E} 
+\right)$, ale podiely Legendreových funkcií $Q_{nm}\left( i \frac{u}{E} \right) 
+\slash Q_{nm}\left( i \frac{b}{E} \right)$.  Samotný výpočet, či už funkcií 
+$Q_{nm}\left( i \frac{u}{E} \right)$ alebo $Q_{nm}\left( i \frac{u}{E} \right) 
+\slash Q_{nm}\left( i \frac{b}{E} \right)$, je zvyčajne uskutočňovaný 
+rekurentnými vzťahmi alebo rozvojmi do nekonečných radov \parencite[pozri 
+napríklad][]{Sebera2012,Fukushima2013,Wang2013,Sprlak2020}.
 
 
 
 \section{Rozvoj gravitačného potenciálu do radu sféroidických harmonických 
 funkcií}
 \label{sec:spheroidal_harmonic_expansion}
+
+Gravitačný potenciál mimo hmôt telesa môže byť rozvinutý do radu sféroidických 
+harmonických funkcií vzťahom
+%
+\begin{equation}
+\label{eq:vg_spheroidalh_2nd_norm_ynk}
+V_\gidx(u, \beta, \lambda) = \frac{G \, M}{R} \, \sum_{n = 0}^\infty \sum_{k 
+= -n}^n \frac{Q_{n|k|}\left( i \dfrac{u}{E} \right)}{Q_{n|k|}\left( 
+i \dfrac{b}{E} \right)} \, \bar{v}^{\mathrm{r}}_{nk} \, \bar{Y}_{nm}(\beta, 
+\lambda){,}
+\end{equation}
+%
+kde $\bar{v}_{nk}^\mathrm{r}$ sú \emph{sféroidické harmonické koeficienty} 
+gravitačného potenciálu.  Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je 
+formálne podobná vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež 
+jednoducho prepísaná do tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ 
+(porovnaj rovnice~\ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}) či do 
+radu nenormovaných sféroidických harmonických funkcií, podobne ako je tomu 
+v~rovnici~(\ref{eq:vg_sh_no_norm}).  Funkcia $Q_{n|k|}\left( i \frac{u}{E} 
+\right)$ zo vzťahu~(\ref{eq:gr}) je komplexná funkcia.  Vo sféroidickom 
+harmonickom rozvoji~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je preto vydelená 
+funkciou $Q_{n|k|}\left( i \frac{b}{E} \right)$ tak, aby výsledný podiel bol 
+reálne číslo.  Tým je zabezpečené, že i~sféroidické harmonické 
+koeficienty~$\bar{v}_{nk}^\mathrm{r}$ sú reálne čísla.
+
+Člen $Q_{n|k|}\left( i \frac{u}{E} \right) \slash Q_{n|k|}\left( i \frac{b}{E} 
+\right)$ má v~rovnici~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) podobnú úlohu, akú 
+má člen $\left( \frac{R}{r} \right)^{n + 1}$ 
+vo~vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  V~súvislosti 
+s~rovnicou~(\ref{eq:ellred2cart}) sme uviedli, že pre~$E = 0$ sú redukované 
+elipsoidické súradnice $u$, $\beta$ a $\lambda$ totožné so sférickými 
+súradnicami $r$, $\varphi$ a $\lambda$.  Pre $E \rightarrow 0$ tiež platí vzťah 
+\parencite{MoritzPhysicalGeodesy}
+
+\begin{equation}
+\lim_{E \rightarrow 0} \frac{Q_{n|k|}\left( i \dfrac{u}{E} 
+\right)}{Q_{n|k|}\left( i \dfrac{b}{E} \right)} = \left( \frac{R}{r} \right)^{n 
++ 1}{.}
+\end{equation}
+%
+Sférický harmonický rozvoj~(\ref{eq:vg_sh_2nd_norm_ynk}) teda možno považovať 
+za špeciálny prípad zovšeobecneného sféroidické harmonického 
+rozvoja~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}).
+
+Na záver dodajme, že Laplaceovu rovnicu možno riešiť aj v~súradnicovom systéme, 
+ktorý je vztiahnutý k~trojosovému elipsoidu s~polosami $a$, $b$ a $c$.  Získame 
+tým rozvoj gravitačného potenciálu do radu elipsoidických harmonických funkcií 
+\parencite[napríklad][]{Garmier2001,Hu2015,Reimond2016}.  Tento prístup je 
+zložitejší ako sférické a~sféroidické harmonické rozvoje a vo fyzikálnej 
+geodézii sa používa zriedka.  Využite má najmä v~súvislosti s~modelovaním 
+gravitačného poľa asteroidov komplikovaných tvarov, pre ktoré nie je dostatočne 
+presné používať sféru ani dvojosový rotačný elipsoid ako referenčné plochy.
 
 
 
@@ -3645,7 +3753,7 @@ harmonickú funkciu stupňa $n$ a~rádu $k = -n, \dots, n$
 (rovnica~\ref{eq:ynk_no_norm}).  Legendreove funkcie sú pre jednoduchosť
 počítané funkciou \texttt{lpmv} z~Python modulu \texttt{scipy}.  Táto funkcia
 počíta Legendreove funkcie $\tilde{P}_{n|k|}(\sin\varphi)$, v~ktorých je
-použitý Condon--Shortlyho fázový faktor,
+použitý Condonov--Shortlyho fázový faktor,
 %
 \begin{equation}
 \tilde{P}_{n|k|}(\sin\varphi) = (-1)^{|k|} \, P_{n|k|}(\sin\varphi){.}
