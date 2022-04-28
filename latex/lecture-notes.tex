@@ -1149,7 +1149,7 @@ Newtonov gravitačný zákon~(\ref{eq:newton_law}) platí v~súradnicovom systé
 ktorý je v~pokoji alebo je v~stave rovnomerného priamočiareho pohybu.  Takýto
 súradnicový systém sa nazýva \emph{inerciálny súradnicový systém}.
 
-Uvažujme pravouhlý trojrozmerný súradnicový systém so začiatkom v~ťažisku Zeme 
+Uvažujme trojrozmerný pravouhlý súradnicový systém so začiatkom v~ťažisku Zeme 
 a~s~osou $z$, ktorá je totožná s~rotačnou osou Zeme.  Nech tento súradnicový 
 systém rotuje spolu so Zemou uhlovou rýchlosťou $\omega$.  Takýto súradnicový 
 systém nie je inerciálny, pretože vzhľadom na inerciálny súradnicový systém 
@@ -2383,7 +2383,7 @@ P_{nm}(-t) = (-1)^{n + m} \, P_{nm}(t)
 a
 %
 \begin{equation}
-P_{nm}(\pm1) = 0{,} \quad \text{pre} \quad m \neq 0{.}
+P_{nm}(\pm1) = 0{,} \quad m \neq 0{.}
 \end{equation}
 
 Numerický výpočet Legendreových funkcií je zvyčajne realizovaný rekurentnými 
@@ -2437,8 +2437,8 @@ iba od uhlovej časti sférických súradníc,
 Y_{nk}(\varphi, \lambda) = P_{n|k|}(\sin\varphi)
 %
 \begin{cases}
-\cos(k\lambda)    &\text{pre} \quad k \geq 0{,}\\
-\sin(|k|\lambda)  &\text{pre} \quad k < 0{,}\\
+\cos(k\lambda){,}    &\text{ak} \quad k \geq 0{,}\\
+\sin(|k|\lambda){,}  &\text{ak} \quad k < 0{,}\\
 \end{cases}
 \end{equation}
 %
@@ -2659,8 +2659,8 @@ a~\emph{úplne normované sférické harmonické funkcie}
 = \bar{P}_{n|k|}(\sin\varphi)
 %
 \begin{cases}
-\cos(k\lambda)    &\text{pre} \quad k \geq 0{,}\\
-\sin(|k|\lambda)  &\text{pre} \quad k < 0{,}
+\cos(k\lambda){,}    &\text{ak} \quad k \geq 0{,}\\
+\sin(|k|\lambda){,}  &\text{ak} \quad k < 0{,}
 \end{cases}
 &
 %
@@ -2812,8 +2812,8 @@ kde
 \bar{v}_{nk} =
 %
 \begin{cases}
-\bar{C}_{nk}  &\text{pre} \quad k \geq 0{,}\\
-\bar{S}_{n|k|}  &\text{pre} \quad k < 0{.}\\
+\bar{C}_{nk}{,}    &\text{ak} \quad k \geq 0{,}\\
+\bar{S}_{n|k|}{,}  &\text{ak} \quad k < 0{.}\\
 \end{cases}
 \end{equation}
 %
@@ -3150,7 +3150,7 @@ aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov, kt
 môže byť aplikovaná na rozdiely medzi povrchom telesa a referenčným elipsoidom.  
 Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
 vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
-a jedným z ohnísk elipsy (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície 
+a jedným z jej ohnísk (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície 
 elipsy vyplýva, že lineárna excentricita je daná vzťahom
 %
 \begin{equation}
@@ -3338,23 +3338,62 @@ Q_{n}(t) = \frac{1}{2} \, P_n(t) \, \ln\frac{1 + t}{1 - t} - \sum_{s = 1}^n
 
 Rovnica~(\ref{eq:qnm_real_def}) je formálne podobná rovnici~(\ref{eq:pnm_def}).  
 Napriek tomu, v~dôsledku rozdielnej definície derivovaných členov~$Q_n(t)$ ide 
-o~funkcie s~odlišným priebehom v~porovnaní s~$P_{nm}(t)$.  
-Obrázky~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd}  znázorňujú funkcie $Q_{nm}(t)$ pre 
-niekoľko prvých stupňov~$n$ a~rádov~$m$ (porovnaj s Obrázkami~\ref{fig:lp} 
-a~\ref{fig:lf}).  Pre~$Q_n(t)$ platia rovnaké rekurentné vzťahy ako 
-pre~$P_n(t)$ \parencite{MoritzPhysicalGeodesy}.  Podobne ako funkcie 
-$P_{nm}(t)$, i~funkcie $Q_{nm}(t)$ vyhovujú Legendreovej diferenciálnej rovnici 
-druhého rádu \parencite[pozri rovnicu
+o~funkcie s~odlišným priebehom v~porovnaní s~$P_{nm}(t)$.  Uveďme pre názornosť 
+explicitný vzťah na výpočet~$Q_0\left( t \right)$, $Q_1\left( t \right)$ 
+a~$Q_2\left( t \right)$ pre reálny argument~$t$ a porovnajme tieto vzťahy 
+s~rovnicami~(\ref{eq:p0_to_p5})
+\parencite{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\label{eq:q0t}
+Q_0(t) = \frac{1}{2} \, \ln\frac{1 + t}{1 - t} = \tanh^{-1}t{,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:q1t}
+Q_1(t) = \frac{t}{2} \, \ln\frac{1 + t}{1 - t} - 1 = t \, \tanh^{-1}t - 1{,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:q2t}
+Q_2(t) = \left( \frac{3}{4} t^2 - \frac{1}{4} \right) \, \ln\frac{1 + t}{1 - t} 
+- \frac{3}{2}t = \left( \frac{3}{2} t^2 - \frac{1}{2} \right) \, \tanh^{-1}t 
+- \frac{3}{2}t{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\label{eq:tanh}
+\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \tanh^{-1}t{,}
+\end{equation}
+%
+pričom $\tanh$ označuje hyperbolický tangens.  Funkcie $Q_{nm}(t)$ pre niekoľko 
+prvých stupňov~$n$ a~rádov~$m$ sú znázornené na Obrázkoch~\ref{fig:lp_2nd} 
+a~\ref{fig:lf_2nd} (porovnaj s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).  Funkcie 
+$Q_0\left( z \right)$, $Q_1\left( z \right)$ a~$Q_2\left( z \right)$ 
+komplexného argumentu~$z$ získame nahradením~výrazov~(\ref{eq:tanh}) vo 
+vzťahoch~(\ref{eq:q0t}) až (\ref{eq:q2t}) výrazmi (porovnaj 
+rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def})
+%
+\begin{equation}
+\frac{1}{2} \, \ln \frac{z + 1}{z - 1} = \coth^{-1}z{.}
+\end{equation}
+
+Pre~$Q_n(t)$ platia rovnaké rekurentné vzťahy ako pre~$P_n(t)$ 
+\parencite{MoritzPhysicalGeodesy}.  Podobne ako funkcie $P_{nm}(t)$, i~funkcie 
+$Q_{nm}(t)$ vyhovujú Legendreovej diferenciálnej rovnici druhého rádu 
+\parencite[pozri rovnicu
 \ref{eq:legfunc1_differential_equation};][]{MoritzPhysicalGeodesy}.  Všimnime 
 si tiež, že Legendreove funkcie druhého druhu nadobúdajú hodnotu $\pm \infty$ 
 pre $t \rightarrow \pm 1$, teda pre $\beta \rightarrow \pm \frac{\pi}{2}$ 
 (pozri rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def} 
 a Obrázky~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd}).  Túto vlastnosť budeme nazývať 
 \emph{singularita}.  Práve kvôli singularite sa Legendreove funkcie druhého 
-druhu nepoužívajú ako riešenie pre funkcie $g_\mathrm{s}(\varphi)$ 
-a $g_\mathrm{r}(\beta)$ (pozri rovnice~\ref{eq:gs} a~\ref{eq:gr}), a to napriek 
-tomu, že taktiež vyhovujú Legendreovej diferenciálnej rovnici 
-\parencite{MoritzPhysicalGeodesy}.
+druhu nepoužívajú v~praktických aplikáciách ako riešenie pre funkcie 
+$g_\mathrm{s}(\varphi)$ a $g_\mathrm{r}(\beta)$ (pozri rovnice~\ref{eq:gs} 
+a~\ref{eq:gr}), a to napriek tomu, že sú taktiež riešením Legendreovej 
+diferenciálnej rovnice \parencite{MoritzPhysicalGeodesy}.
 
 
 \subsection{Numerický výpočet Legendreových funkcií druhého druhu}
@@ -3388,28 +3427,46 @@ i \dfrac{b}{E} \right)} \, \bar{v}^{\mathrm{r}}_{nk} \, \bar{Y}_{nm}(\beta,
 \lambda){,}
 \end{equation}
 %
-kde $\bar{v}_{nk}^\mathrm{r}$ sú \emph{sféroidické harmonické koeficienty} 
-gravitačného potenciálu.  Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je 
-formálne podobná vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež 
-jednoducho prepísaná do tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ 
-(porovnaj rovnice~\ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}) či do 
-radu nenormovaných sféroidických harmonických funkcií, podobne ako je tomu 
-v~rovnici~(\ref{eq:vg_sh_no_norm}).  Funkcia $Q_{n|k|}\left( i \frac{u}{E} 
-\right)$ zo vzťahu~(\ref{eq:gr}) je komplexná funkcia.  Vo sféroidickom 
-harmonickom rozvoji~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je preto vydelená 
-funkciou $Q_{n|k|}\left( i \frac{b}{E} \right)$ tak, aby výsledný podiel bol 
-reálne číslo.  Tým je zabezpečené, že i~sféroidické harmonické 
-koeficienty~$\bar{v}_{nk}^\mathrm{r}$ sú reálne čísla.
+kde $\bar{v}_{nk}^\mathrm{r}$ sú \emph{úplne normované sféroidické harmonické 
+koeficienty} gravitačného potenciálu.  
+Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je formálne podobná 
+vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež jednoducho prepísaná do 
+tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ (porovnaj 
+rovnice~\ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}) či do radu 
+nenormovaných sféroidických harmonických funkcií, podobne ako je tomu 
+v~rovniciach~(\ref{eq:vg_sh_no_norm}) a~(\ref{eq:vg_sh_1st_norm}),
+%
+\begin{equation}
+\label{eq:vg_spheroidalh_no_norm}
+V_\gidx(u, \beta, \lambda) = \sum_{n = 0}^\infty \sum_{m = 0}^n 
+\frac{Q_{nm}\left( i \dfrac{u}{E} \right)}{Q_{nm}\left( i \dfrac{b}{E} \right)} 
+\, \left( C^{\mathrm{r}}_{nm} \, \cos(m\lambda) + S^{\mathrm{r}}_{nm} \, 
+\sin(m\lambda) \right) \, P_{nm}(\sin\beta){.}
+\end{equation}
+%
+Funkcia $Q_{n|k|}\left( i \frac{u}{E} \right)$ zo vzťahu~(\ref{eq:gr}) je 
+komplexná funkcia.  Vo sféroidických harmonických 
+rozvojoch~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
+a~(\ref{eq:vg_spheroidalh_no_norm}) je preto vydelená funkciou $Q_{n|k|}\left( 
+i \frac{b}{E} \right)$ tak, aby výsledný podiel bol reálne číslo.  Tým je 
+zabezpečené, že i~sféroidické harmonické koeficienty sú reálne čísla.  Všimnime 
+si tiež, že pred prvou sumáciou vo vzťahu~(\ref{eq:vg_spheroidalh_no_norm}) sa 
+nenachádza Newtonova gravitačná konštanta~$G$ tak, ako je tomu vo 
+vzťahu~(\ref{eq:vg_sh_no_norm}).  Ide len konvenciu, konštanta $G$ je tým pádom 
+obsiahnutá vo sféroidických harmonických koeficientoch $C_{nm}^\mathrm{r}$ 
+a~$S_{nm}^\mathrm{r}$.
 
 Člen $Q_{n|k|}\left( i \frac{u}{E} \right) \slash Q_{n|k|}\left( i \frac{b}{E} 
-\right)$ má v~rovnici~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) podobnú úlohu, akú 
+\right)$ v~rovnici~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) má podobnú úlohu, akú 
 má člen $\left( \frac{R}{r} \right)^{n + 1}$ 
-vo~vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  V~súvislosti 
+vo~vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}), teda umožniť výpočet gravitačného 
+potenciálu aj nad referenčným elipsoidom (v~prípade sférického harmonického 
+rozvoja nad referenčnou sférou s~polomerom~$R$).  V~súvislosti 
 s~rovnicou~(\ref{eq:ellred2cart}) sme uviedli, že pre~$E = 0$ sú redukované 
 elipsoidické súradnice $u$, $\beta$ a $\lambda$ totožné so sférickými 
 súradnicami $r$, $\varphi$ a $\lambda$.  Pre $E \rightarrow 0$ tiež platí vzťah 
 \parencite{MoritzPhysicalGeodesy}
-
+%
 \begin{equation}
 \lim_{E \rightarrow 0} \frac{Q_{n|k|}\left( i \dfrac{u}{E} 
 \right)}{Q_{n|k|}\left( i \dfrac{b}{E} \right)} = \left( \frac{R}{r} \right)^{n 
@@ -3522,6 +3579,7 @@ nájsť napríklad v~prácach \textcite{MoritzTheFigureOfTheEarth},
 
 
 \section{Ekvipotenciálny elipsoid}
+\label{sec:equipotential_ellipsoid}
 
 Nech teleso s~hmotnosťou~$M$ rotuje konštantnou uhlovou rýchlosťou~$\omega$ 
 okolo pevnej osi.  Nech $S$ je ekvipotenciálna plocha jeho tiažového poľa 
@@ -3628,8 +3686,124 @@ spravidla družicovými technikami a astronomickými meraniami.  Historický
 prehľad geodetických referenčných systémov a spôsoby ich určenia je možné nájsť 
 napríklad v~prácach \textcite{TorgeGeodesy} a~\textcite{MoritzPhysicalGeodesy}.
 
-V ďalších častiach tejto kapitoly sa budeme venovať gravitačnému a tiažovému 
-poľu ekvipotenciálneho eliposoidu.
+Teóriu normálneho tiažového poľa ekvipotenciálneho elipsoidu rozpracovali 
+taliansky geodet, astronóm, geofyzik a matematik P.~Pizzetti (1860--1918) 
+a~taliansky matematik a matematický fyzik C.~Somigliana (1860--1955) v~prácach 
+\textcite{Pizzetti1984} a \textcite{Somigliana1929}.
+
+Na tomto mieste ešte zdôrazníme, že hoci budeme často hovoriť o~normálnom 
+tiažovom poli \emph{Zeme}, je dobré mať na pamäti, že ide 
+o~matematicko-fyzikálny model definovaný štyrmi základnými parametrami.  Všetky 
+ostatné parametre, či už geometrické (napríklad lineárna excentricita) alebo 
+fyzikálne (napríklad normálne tiažové zrýchlenie), sú odvoditeľné z~týchto 
+parametrov.  S~výnimkou štyroch základných parametrov sa teda všetky veličiny 
+normálneho tiažového poľa získavajú výpočtom, nie meraním ako je tomu v prípade 
+\emph{skutočného} tiažového poľa Zeme.
+
+V ďalších častiach tejto kapitoly sa budeme venovať tiažovému poľu 
+ekvipotenciálneho eliposoidu.  Najprv podrobne odvodíme vzťahy na výpočet 
+normálneho tiažového potenciálu pomocou rozvoja do radu sféroidických 
+a sférických harmonických funkcií~(Kapitola~\ref{sec:normal_gravity_potential}) 
+a následne, tentokrát už bez podrobného odvodenia, uvedieme vzťahy na výpočet 
+normálneho tiažového zrýchlenia (Kapitola~\ref{sec:normal_gravity}).  Tieto 
+poznatky budú dôležité neskôr v~Kapitole~\ref{sec:geoid_determination}, ktorá 
+sa zaoberá určovaním geoidu.
+
+
+
+
+
+
+\section{Normálny tiažový potenciál}
+\label{sec:normal_gravity_potential}
+
+V~mnohých situáciách, hoci rozhodne nie v~každej situácii, sú 
+preferované~uzavreté matematické vzťahy pred nekonečnými rozvojmi.  Uzavretý 
+vzťah je taký vzťah, ktorý má konečný počet členov.  Jeho výhodou je to, že 
+často umožňuje jednoduchší a rýchlejší číselný výpočet so zadanou numerickou 
+presnosťou v~porovnaní s~výpočtom nekonečného radu obmedzeného na vhodne 
+zvolený konečný počet členov.  V~tejto kapitole sa preto budeme snažiť nájsť 
+uzavretý vzťah na výpočet normálneho tiažového potenciálu v~bodoch na povrchu 
+ekvipotenciálneho elipsoidu a~nad ním.  Táto kapitola je spracovaná 
+podľa~\textcite{MoritzTheFigureOfTheEarth}.
+
+Vzťah~(\ref{eq:vg_spheroidalh_no_norm}) popisuje vonkajší gravitačný potenciál 
+všeobecného telesa.  Ak k nemu pripočítame odstredivý potenciál vyjadrený 
+v~redukovaných elipsoidických súradniciach (pozri rovnice~\ref{eq:vc} 
+a~\ref{eq:ellred2cart}),
+%
+\begin{equation}
+V_\cidx = \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta{,}
+\end{equation}
+%
+získame vzťah pre tiažový potenciál $W$ všeobecného telesa (pozri 
+rovnicu~\ref{eq:w}).  Normálny tiažový potenciál~$U$ ekvipotenciálneho 
+elipsoidu je však opísateľný jednoduchším spôsobom ako tiažový potenciál 
+\emph{všeobecného} telesa.  Dôvodom je skutočnosť, že normálny tiažový 
+potenciál na elipsoide má dve symetrie, jednu voči rovine rovníka a druhú voči 
+osi rotácie.  Prvá symetria spôsobuje, že nenulové môžu byť iba párne zonálne 
+sféroidické harmonické koeficienty (pozri vlastnosti sférických harmonických 
+funkcií Kapitolu~\ref{sec:spherical_harmonics}), druhá spôsobuje, že všetky 
+nezonálne koeficienty musia byť nulové, pretože závisia od dĺžky~$\lambda$ 
+(pozri rovnicu~\ref{eq:vg_spheroidalh_no_norm}).  Normálny tiažový potenciál 
+môžeme teda zapísať v~tvare
+%
+\begin{equation}
+\label{eq:u_sph}
+\begin{split}
+U(u, \beta) &= U_\gidx(u, \beta) + U_\cidx(u, \beta)\\
+%
+&=\sum_{n = 0}^\infty \frac{Q_n\left( i \dfrac{u}{E} \right)}{Q_n\left( 
+i \dfrac{b}{E} \right)} \,  C^{\mathrm{r}}_n \, P_n(\sin\beta) + \frac{1}{2} \, 
+\omega^2 \, (u^2 + E^2) \, \cos^2\beta{,}
+\end{split}
+\end{equation}
+%
+kde $U_\gidx$ je normálny gravitačný potenciál a $U_\cidx$ je normálny 
+odstredivý potenciál.  Pre jednoduchosť sme do vzťahu zahrnuli aj nepárne 
+zonálne koeficienty~$C^{\mathrm{r}}_n$ hoci vieme, že sú nulové.
+
+Z Kapitoly~\ref{sec:spherical_harmonic_expansion} vieme, že ak chceme poznať 
+$U(u,\beta)$ z~rovnice~(\ref{eq:u_sph}), potom potrebujeme poznať 
+koeficienty~$C_n^\mathrm{r}$.  Zatiaľ čo v~prípade skutočného poľa Zeme je 
+potrebné koeficienty~$C_{nm}$ a~$S_{nm}$ (pozri rovnicu~\ref{eq:vg_sh_no_norm}) 
+vypočítať z~meraní skutočného poľa 
+(Kapitola~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}), 
+koeficienty normálneho poľa $C_n^\mathrm{r}$ je možné vypočítať zo štyroch 
+základných parametrov ekvipotenciálneho elipsoidu (pozri 
+Kapitolu~\ref{sec:equipotential_ellipsoid}).  Skúsme preto zistiť, čomu sú 
+rovné koeficienty $C_n^\mathrm{r}$.
+
+Nech sa výpočtový bod nachádza na povrchu ekvipotenciálneho elipsoidu, teda $u 
+= b$.  Potom
+%
+\begin{equation}
+\frac{Q_n\left( i \dfrac{b}{E} \right)}{Q_n\left( i \dfrac{b}{E} \right)} 
+= 1{,}
+\end{equation}
+%
+a rovnica~(\ref{eq:u_sph}) prejde do tvaru
+%
+\begin{equation}
+\label{eq:u_sph_on_ell}
+U(b, \beta) = \sum_{n = 0}^\infty C^{\mathrm{r}}_n \, P_n(\sin\beta) 
++ \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta = U_0{.}
+\end{equation}
+%
+Symbol $U_0$ označuje normálny tiažový potenciál na ekvipotenciálnom elipsoide.  
+Hodnota~$U_0$ je z definície konštantná (pozri 
+Kapitolu~\ref{sec:equipotential_ellipsoid}).
+
+
+
+
+
+
+\section{Normálne tiažové zrýchlenie}
+\label{sec:normal_gravity}
+
+
+
 
 
 
