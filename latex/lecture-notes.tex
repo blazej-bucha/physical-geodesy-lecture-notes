@@ -1002,6 +1002,7 @@ napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination}.
 
 
 \subsubsection{Praktický význam Laplaceovej rovnice}
+\label{sec:meaning_of_laplace_equation_in_practice}
 
 Jedným z~cieľov fyzikálnej geodézie je určiť vonkajšie gravitačné pole Zeme 
 z odmeraných veličín gravitačného poľa.  Z~praktických dôvodov je však možné 
@@ -3118,8 +3119,8 @@ Obrázok~\ref{fig:spheroidal_harmonics_convergence}).
 
 V~tejto kapitole popíšeme redukované elipsoidické súradnice 
 (Kapitola~\ref{sec:reduced_ell_coords}), sféroidické harmonické funkcie 
-(Kapitola~\ref{sec:spheroidal_harmonic_functions}) a~rozvoj gravitačné 
-potenciálu do sféroidického harmonického radu 
+(Kapitola~\ref{sec:spheroidal_harmonics}) a~rozvoj gravitačné potenciálu do 
+sféroidického harmonického radu 
 (Kapitola~\ref{sec:spheroidal_harmonic_expansion}).  Kvôli náročnosti nebudeme 
 odvádzať sféroidické harmonické funkcie rovnako podrobne ako sme odvodili 
 sférické harmonické funkcie v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  
@@ -3154,6 +3155,7 @@ a jedným z jej ohnísk (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície
 elipsy vyplýva, že lineárna excentricita je daná vzťahom
 %
 \begin{equation}
+\label{eq:linear_eccentricity}
 E = \sqrt{a^2 - b^2} = a \, e{,}
 \end{equation}
 %
@@ -3202,7 +3204,7 @@ súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
 
 \section{Sféroidické harmonické funkcie}
-\label{sec:spheroidal_harmonic_functions}
+\label{sec:spheroidal_harmonics}
 
 V~Kapitole~\ref{sec:vg_sh_expansion} sme uviedli, že k~rozvoju gravitačného 
 potenciálu do radu sférických harmonických funkcií~(rovnica 
@@ -3721,10 +3723,10 @@ V~mnohých situáciách, hoci rozhodne nie v~každej situácii, sú
 preferované~uzavreté matematické vzťahy pred nekonečnými rozvojmi.  Uzavretý 
 vzťah je taký vzťah, ktorý má konečný počet členov.  Jeho výhodou je to, že 
 často umožňuje jednoduchší a rýchlejší číselný výpočet so zadanou numerickou 
-presnosťou v~porovnaní s~výpočtom nekonečného radu obmedzeného na vhodne 
-zvolený konečný počet členov.  V~tejto kapitole sa preto budeme snažiť nájsť 
-uzavretý vzťah na výpočet normálneho tiažového potenciálu v~bodoch na povrchu 
-ekvipotenciálneho elipsoidu a~nad ním.  Táto kapitola je spracovaná 
+presnosťou v~porovnaní s~výpočtom nekonečného radu, ktorý je obmedzený na 
+vhodne zvolený konečný počet členov.  V~tejto kapitole sa preto budeme snažiť 
+nájsť uzavretý vzťah na výpočet normálneho tiažového potenciálu v~bodoch na 
+povrchu ekvipotenciálneho elipsoidu a~nad ním.  Táto kapitola je spracovaná 
 podľa~\textcite{MoritzTheFigureOfTheEarth}.
 
 Vzťah~(\ref{eq:vg_spheroidalh_no_norm}) popisuje vonkajší gravitačný potenciál 
@@ -3740,13 +3742,13 @@ získame vzťah pre tiažový potenciál $W$ všeobecného telesa (pozri
 rovnicu~\ref{eq:w}).  Normálny tiažový potenciál~$U$ ekvipotenciálneho 
 elipsoidu je však opísateľný jednoduchším spôsobom ako tiažový potenciál 
 \emph{všeobecného} telesa.  Dôvodom je skutočnosť, že normálny tiažový 
-potenciál na elipsoide má dve symetrie, jednu voči rovine rovníka a druhú voči 
-osi rotácie.  Prvá symetria spôsobuje, že nenulové môžu byť iba párne zonálne 
-sféroidické harmonické koeficienty (pozri vlastnosti sférických harmonických 
-funkcií Kapitolu~\ref{sec:spherical_harmonics}), druhá spôsobuje, že všetky 
-nezonálne koeficienty musia byť nulové, pretože závisia od dĺžky~$\lambda$ 
-(pozri rovnicu~\ref{eq:vg_spheroidalh_no_norm}).  Normálny tiažový potenciál 
-môžeme teda zapísať v~tvare
+potenciál na elipsoide má dve symetrie, jednu voči osi rotácie a druhú voči 
+rovine rovníka.  Prvá symetria spôsobuje, že všetky nezonálne sféroidické 
+harmonické koeficienty musia byť nulové, pretože tie závisia od dĺžky~$\lambda$ 
+(pozri rovnicu~\ref{eq:vg_spheroidalh_no_norm}).  Druhá symetria spôsobuje, že 
+nenulové môžu byť iba párne zonálne koeficienty (pozri vlastnosti sférických 
+harmonických funkcií Kapitolu~\ref{sec:spherical_harmonics}).  Normálny tiažový 
+potenciál môžeme teda zapísať v~tvare
 %
 \begin{equation}
 \label{eq:u_sph}
@@ -3760,26 +3762,25 @@ i \dfrac{b}{E} \right)} \,  C^{\mathrm{r}}_n \, P_n(\sin\beta) + \frac{1}{2} \,
 \end{equation}
 %
 kde $U_\gidx$ je normálny gravitačný potenciál a $U_\cidx$ je normálny 
-odstredivý potenciál.  Pre jednoduchosť sme do vzťahu zahrnuli aj nepárne 
-zonálne koeficienty~$C^{\mathrm{r}}_n$ hoci vieme, že sú nulové.
+odstredivý potenciál.  Pre lepšiu názornosť nasledujúcich krokov sme do vzťahu 
+zahrnuli aj nepárne zonálne koeficienty~$C^{\mathrm{r}}_n$ hoci sú nulové.
 
 Z Kapitoly~\ref{sec:spherical_harmonic_expansion} vieme, že ak chceme poznať 
 $U(u,\beta)$ z~rovnice~(\ref{eq:u_sph}), potom potrebujeme poznať 
 koeficienty~$C_n^\mathrm{r}$.  Zatiaľ čo v~prípade skutočného poľa Zeme je 
 potrebné koeficienty~$C_{nm}$ a~$S_{nm}$ (pozri rovnicu~\ref{eq:vg_sh_no_norm}) 
 vypočítať z~meraní skutočného poľa 
-(Kapitola~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}), 
-koeficienty normálneho poľa $C_n^\mathrm{r}$ je možné vypočítať zo štyroch 
-základných parametrov ekvipotenciálneho elipsoidu (pozri 
-Kapitolu~\ref{sec:equipotential_ellipsoid}).  Skúsme preto zistiť, čomu sú 
-rovné koeficienty $C_n^\mathrm{r}$.
+(Kapitola~\ref{sec:spherical_harmonics_applications}), koeficienty normálneho 
+poľa $C_n^\mathrm{r}$ je možné vypočítať zo štyroch základných parametrov 
+ekvipotenciálneho elipsoidu (pozri Kapitolu~\ref{sec:equipotential_ellipsoid}).  
+Skúsme preto zistiť, čomu sú rovné sféroidické harmonické koeficienty 
+$C_n^\mathrm{r}$.
 
 Nech sa výpočtový bod nachádza na povrchu ekvipotenciálneho elipsoidu, teda $u 
 = b$.  Potom
 %
 \begin{equation}
-\frac{Q_n\left( i \dfrac{b}{E} \right)}{Q_n\left( i \dfrac{b}{E} \right)} 
-= 1{,}
+\frac{Q_n\left( i \dfrac{b}{E} \right)}{Q_n\left( i \dfrac{b}{E} \right)} = 1
 \end{equation}
 %
 a rovnica~(\ref{eq:u_sph}) prejde do tvaru
@@ -3794,9 +3795,134 @@ Symbol $U_0$ označuje normálny tiažový potenciál na ekvipotenciálnom elips
 Hodnota~$U_0$ je z definície konštantná (pozri 
 Kapitolu~\ref{sec:equipotential_ellipsoid}).
 
+Prostredná časť rovnice~(\ref{eq:u_sph_on_ell}) je formálne podobná 
+vzťahu~(\ref{eq:f_synthesis}) s~dvoma rozdielmi.  Po prvé, je rovná konštante 
+$U_0$ a nie funkcii $f(t)$, ktorá by závisela od $t = \sin\beta$.  Po druhé, 
+druhý člen prostrednej časti rovnice obsahuje člen, ktorý, podobne ako 
+Legendreove polynómy vo vnútri sumácie, závisí od $\sin\beta$, pretože 
+$\cos^2\beta = \sqrt{1 - \sin^2\beta}$.  Prepíšme preto 
+rovnicu~(\ref{eq:u_sph_on_ell}) do tvaru
+%
+\begin{equation}
+\label{eq:cnr}
+\sum_{n = 0}^\infty C^{\mathrm{r}}_n \, P_n(\sin\beta) + \frac{1}{3} \, 
+\omega^2 \, a^2  - \frac{1}{3} \, \omega^2 \, a^2 \, P_2(\sin\beta) - U_0 
+= 0{.}
+\end{equation}
+%
+Na získanie tejto rovnice sme použili vzťah (pozri 
+rovnicu~\ref{eq:linear_eccentricity})
+%
+\begin{equation}
+a^2 = E^2 + b^2{,}
+\end{equation}
+%
+ďalej vzťah pre Legendreov polynóm stupňa $n = 2$ (rovnica~\ref{eq:p0_to_p5})
+%
+\begin{equation}
+P_2(\sin\beta) = \frac{3}{2} \, \sin^2\beta - \frac{1}{2}
+\end{equation}
+%
+a rovnicu známu z trigonometrie
+%
+\begin{equation}
+\sin^2 x + \cos^2 x = 1{.}
+\end{equation}
 
+Keďže $P_0(\sin\beta) = 1$ (pozri rovnicu~\ref{eq:p0_to_p5}), 
+vzťah~(\ref{eq:cnr}) môžeme prepísať do tvaru
+%
+\begin{equation}
+\label{eq:cnr2}
+\begin{split}
+&\left( C_0^\mathrm{r} + \frac{1}{3} \, \omega^2 \, a^2 - U_0 \right) \, 
+P_0(\sin\beta) + C_1^\mathrm{r} \, P_1(\sin\beta) + \left(C_2^\mathrm{r} 
+- \frac{1}{3} \, \omega^2 \, a^2 \right) \, P_2(\sin\beta)\\
+%
+&+ \sum_{n = 3}^\infty C^{\mathrm{r}}_n \, P_n(\sin\beta) = 0{.}
+\end{split}
+\end{equation}
+%
+Tento vzťah predstavuje rozvoj~(\ref{eq:f_synthesis}), pričom členy pred 
+jednotlivými Legendreovými polynómami sú súradnice konštantnej funkcie~0 (pozri 
+diskusiu o~súradniciach ku vzťahom~\ref{eq:r_synthesis}, \ref{eq:f_synthesis} 
+a \ref{eq:f_sha_no_norm}).  Podobne ako rovnosť
+%
+\begin{equation}
+\sum_{i = 1}^3 r_i \, \mathbf{e}_i = \mathbf{0}
+\end{equation}
+%
+platí vtedy a iba vtedy, ak $r_i = 0$ pre všetky $i$, podobne aj 
+vzťah~(\ref{eq:cnr2}) platí vtedy a iba vtedy, ak
+%
+\begin{equation}
+\begin{split}
+C_0^\mathrm{r} + \frac{1}{3} \, \omega^2 \, a^2 - U_0 &= 0{,}\\
+C_1^\mathrm{r}                                        &= 0{,}\\
+C_2^\mathrm{r} - \frac{1}{3} \, \omega^2 \, a^2       &= 0{,}\\
+C_n^\mathrm{r}                                        &= 0 \quad \textrm{pre} 
+\quad n \geq 3{.}
+\end{split}
+\end{equation}
+%
+Z toho ale vyplýva, že
+%
+\begin{equation}
+\begin{split}
+C_0^\mathrm{r} &= U_0 - \frac{1}{3} \, \omega^2 \, a^2{,}\\
+C_1^\mathrm{r} &= 0{,}\\
+C_2^\mathrm{r} &= \frac{1}{3} \, \omega^2 \, a^2{,}\\
+C_n^\mathrm{r} &= 0 \quad \textrm{pre} \quad n \geq 3{.}
+\end{split}
+\end{equation}
+%
+Normálny gravitačný potenciál $U_\gidx(u, \beta)$ je teda daný vzťahom
+%
+\begin{equation}
+\label{eq:ug_spheroidal}
+U_\gidx(u, \beta) = \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
+\frac{Q_0\left( i \dfrac{u}{E} \right)}{Q_0\left( i \dfrac{b}{E} \right)} 
++ \frac{1}{3} \, \omega^2 \, a^2  \, \frac{Q_2\left( i \dfrac{u}{E} 
+\right)}{Q_2\left( i \dfrac{b}{E} \right)} \, C^{\mathrm{r}}_0 \, 
+P_2(\sin\beta){,}
+\end{equation}
+%
+ktorý môže byť dosadený do vzťahu~(\ref{eq:u_sph}) pre hľadaný normálny tiažový 
+potenciál $U(u, \beta)$.
 
+Všimnime si niektoré dôležité vlastnosti rovnice~(\ref{eq:ug_spheroidal}).  
+Vzťahy pre~$Q_0(z)$ a $Q_2(z)$ komplexného argumentu $z$ sú konečné (pozri 
+Kapitolu~\ref{sec:spheroidal_harmonics}), a tak vzťah pre normálny tiažový 
+potenciál má konečný počet členov, čo bol cieľ vytýčený na začiatku tejto 
+kapitoly.  Ďalšia dôležitá vlatnosť je tá, že vzťah~(\ref{eq:ug_spheroidal}) 
+platí nielen na elipsoide pre $u = b$, ale aj pre $u \geq b$, teda kdekoľvek na 
+povrchu ekvipotenciálneho elipsoidu a~v~jeho vonkajšom priestore.
 
+\subsection{Okrajová úloha}
+
+Na problematiku tejto kapitoly sa môžeme pozrieť aj zo širšieho uhla pohľadu.  
+Zadefinovali sme trojrozmernú uzavretú plochu, ktorú tvorí dvojosový rotačný 
+elipsoid.  Tento elipsoid sme prehlásili za ekvipotenciálny, čím sme každému 
+bodu na jeho povrchu priradili hodnotu normálneho tiažového potenciálu~$U_0$.  
+V súlade so Stokesovým teorémom~(Kapitola~\ref{sec:equipotential_ellipsoid}) 
+sme následne na základe známej geometrie ekvipotenciálnej plochy a hodnoty 
+normálneho tiažového potenciálu na nej dokázali zistiť, čomu je rovný normálny 
+tiažový potenciál v~celom vonkajšom priestore tejto plochy.  Toto by, 
+samozrejme, nebolo možné bez znalosti \emph{princípu}, akým sa mení gravitačný 
+potenciál v~priestore.  Tento princíp je zachytený v~Laplaceovej rovnici (pozri 
+Kapitolu~\ref{sec:meaning_of_laplace_equation_in_practice}).  O~sféroidických 
+harmonických funkciách vieme, že sú riešením práve Laplaceovej rovnice 
+v~redukovaných elipsoidických súradniciach.  Preto 
+riešenie~(\ref{eq:ug_spheroidal}), ktoré je ich lineárna kombinácia s~rôznymi 
+váhami (súradnicami $C_n^\mathrm{r}$), je taktiež harmonická funkcia, keďže 
+Laplaceov operátor je lineárny (pozri rovnice~\ref{eq:laplace_additivity} 
+a \ref{eq:laplace_homogenity}).
+
+Povedané inými slovami, našli sme riešenie Laplaceovej diferenciálnej rovnice 
+vo vonkajšom priestore ekvipotenciálneho elipsoidu so zadanou podmienkou na 
+jeho povrchu.  Hľadanie takého riešenia diferenciálnej rovnice, ktoré vyhovuje 
+zadanej podmienke (v~našom prípade $U_0$ na povrchu ekvipotenciálneho 
+elipsoidu) sa nazýva \emph{okrajová úloha}.
 
 
 \section{Normálne tiažové zrýchlenie}
