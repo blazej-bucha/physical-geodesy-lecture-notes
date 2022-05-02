@@ -2767,7 +2767,7 @@ potom prejde do tvaru
 %
 \begin{equation}
 \label{eq:vg_sh_1st_norm}
-V_\gidx(P) = \frac{G \, M}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
+V_\gidx(P) = \frac{GM}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
 + 1} \sum_{m = 0}^{n} \left( \tilde{C}_{nm} \, \cos(m\lambda) + \tilde{S}_{nm}
 \, \sin(m\lambda)\right) \, P_{nm}(\sin\varphi){.}
 \end{equation}
@@ -2794,7 +2794,7 @@ Sférický harmonický rozvoj~(\ref{eq:vg_sh_1st_norm}) následne prejde do tvar
 %
 \begin{equation}
 \label{eq:vg_sh_2nd_norm}
-V_\gidx(P) = \frac{G \, M}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
+V_\gidx(P) = \frac{GM}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
 + 1} \sum_{m = 0}^{n} \left( \bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \,
 \sin(m\lambda)\right) \, \bar{P}_{nm}(\sin\varphi){.}
 \end{equation}
@@ -2804,7 +2804,7 @@ $\bar{Y}_{nk}(\varphi, \lambda)$,
 %
 \begin{equation}
 \label{eq:vg_sh_2nd_norm_ynk}
-V_\gidx(P) = \frac{G \, M}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
+V_\gidx(P) = \frac{GM}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
 + 1} \sum_{k = -n}^{n} \bar{v}_{nk} \, \bar{Y}_{nk}(\varphi, \lambda){,}
 \end{equation}
 kde
@@ -2851,7 +2851,7 @@ telesa~$M$.  Ak obmedzíme nekonečné rady~(\ref{eq:vg_sh_no_norm}),
 %
 \begin{equation}
 \label{eq:vg_sh_0degree}
-V_\gidx(P) = \frac{G \, M}{r}{.}
+V_\gidx(P) = \frac{GM}{r}{.}
 \end{equation}
 %
 Rovnica~(\ref{eq:vg_sh_0degree}) predstavuje gravitačný potenciál hmotného bodu
@@ -2956,7 +2956,7 @@ vzťahu~(\ref{eq:vg_sh_2nd_norm}),
 %
 \begin{equation}
 \label{eq:vgr_sh_2nd_norm}
-\frac{\partial V_\gidx(P)}{\partial r} = - \frac{G \, M}{R^2} \sum_{n
+\frac{\partial V_\gidx(P)}{\partial r} = - \frac{GM}{R^2} \sum_{n
 = 0}^\infty (n + 1) \, \left( \frac{R}{r} \right)^{n + 2} \sum_{m = 0}^{n}
 \left( \bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right)
 \, \bar{P}_{nm}(\sin\varphi){.}
@@ -2964,7 +2964,7 @@ vzťahu~(\ref{eq:vg_sh_2nd_norm}),
 %
 \begin{equation}
 \label{eq:vglat_sh_2nd_norm}
-\frac{\partial V_\gidx(P)}{\partial \varphi} = \frac{G \, M}{R} \sum_{n
+\frac{\partial V_\gidx(P)}{\partial \varphi} = \frac{GM}{R} \sum_{n
 = 0}^\infty \left( \frac{R}{r} \right)^{n + 1} \sum_{m = 0}^{n} \left(
 \bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right) \,
 \frac{\diff \bar{P}_{nm}(\sin\varphi)}{\diff \varphi}{.}
@@ -2972,7 +2972,7 @@ vzťahu~(\ref{eq:vg_sh_2nd_norm}),
 %
 \begin{equation}
 \label{eq:vglon_sh_2nd_norm}
-\frac{\partial V_\gidx(P)}{\partial \lambda} = \frac{G \, M}{R} \sum_{n
+\frac{\partial V_\gidx(P)}{\partial \lambda} = \frac{GM}{R} \sum_{n
 = 0}^\infty \left( \frac{R}{r} \right)^{n + 1} \sum_{m = 0}^{n}\left(
 \bar{S}_{nm} \, \cos(m\lambda) - \bar{C}_{nm} \, \sin(m\lambda)\right) \, m \,
 \bar{P}_{nm}(\sin\varphi){.}
@@ -3156,16 +3156,8 @@ elipsy vyplýva, že lineárna excentricita je daná vzťahom
 %
 \begin{equation}
 \label{eq:linear_eccentricity}
-E = \sqrt{a^2 - b^2} = a \, e{,}
+E = \sqrt{a^2 - b^2}{.}
 \end{equation}
-%
-kde
-%
-\begin{equation}
-e = \frac{\sqrt{a^2 - b^2}}{a} = \frac{E}{a}
-\end{equation}
-%
-je \emph{prvá numerická excentricita}.
 
 Polohu ľubovoľného bodu~$P$, ktorý sa nachádza na referenčnom elipsoide alebo 
 nad ním, možno vyjadriť pomocou redukovaných elipsoidických súradníc $u$, 
@@ -3423,7 +3415,7 @@ harmonických funkcií vzťahom
 %
 \begin{equation}
 \label{eq:vg_spheroidalh_2nd_norm_ynk}
-V_\gidx(u, \beta, \lambda) = \frac{G \, M}{R} \, \sum_{n = 0}^\infty \sum_{k 
+V_\gidx(u, \beta, \lambda) = \frac{GM}{R} \, \sum_{n = 0}^\infty \sum_{k 
 = -n}^n \frac{Q_{n|k|}\left( i \dfrac{u}{E} \right)}{Q_{n|k|}\left( 
 i \dfrac{b}{E} \right)} \, \bar{v}^{\mathrm{r}}_{nk} \, \bar{Y}_{nm}(\beta, 
 \lambda){,}
@@ -3597,12 +3589,53 @@ fyzikálne (hmotnosť a uhlová rýchlosť rotácie).  Všetky ostatné veličin
 normálneho tiažového poľa je možné vypočítať z~týchto základných parametrov, či 
 už ide o geometrické parametre (napríklad vedľajšia polos či lineárna 
 excentricita elipsoidu) alebo fyzikálne parametre (normálny tiažový potenciál 
-a pod.).
+a pod.).  Parametre, ktoré sú vypočítané zo základných parametrov budeme 
+nazývať \emph{odvodené parametre}.  Teóriu ekvipotenciálneho elipsoidu 
+rozpracovali taliansky geodet, astronóm, geofyzik a matematik P.~Pizzetti 
+(1860--1918) a~taliansky matematik a matematický fyzik C.~Somigliana 
+(1860--1955) v~prácach \textcite{Pizzetti1984} a \textcite{Somigliana1929}.
 
-Jednu z možných štvoríc základných parametrov tvorí hlavná polos~$a$, dynamický 
-koeficient~$J_{2,0}$, geocentrická gravitačná konštanta~$GM$ a uhlová rýchlosť 
-rotácie $\omega$.  Týmto základnými parametrami je definovaný ekvipotenciálny 
-elipsoid \emph{GRS80}.  Základné parametre GRS80 (Tabuľka~\ref{tab:1}) boli 
+Základné parametre ekvipotenciálnych elipsoidov sú v súčasnosti určované 
+spravidla družicovými technikami a astronomickými meraniami.  Historický 
+prehľad geodetických referenčných systémov a spôsoby ich určenia je možné nájsť 
+napríklad v~prácach \textcite{TorgeGeodesy} a~\textcite{MoritzPhysicalGeodesy}.  
+V ďalších častiach práce popíšeme dva najpoužívanejšie ekvipotenciálne 
+elipsoidy (Kapitoly~\ref{sec:grs80} a \ref{sec:wgs84}).  Následne odvodíme 
+vzťahy na výpočet normálneho tiažového potenciálu pomocou rozvoja do radu 
+sféroidických a sférických harmonických 
+funkcií~(Kapitola~\ref{sec:normal_gravity_potential}).  Na záver opíšeme spôsob 
+výpočtu normálneho tiažového zrýchlenia (Kapitola~\ref{sec:normal_gravity}).  
+Tieto poznatky budú dôležité neskôr v~Kapitole~\ref{sec:geoid_determination}, 
+ktorá sa zaoberá určovaním geoidu.  Dodajme, že hoci budeme často hovoriť 
+o~normálnom tiažovom poli \emph{Zeme}, je dobré mať na pamäti, že ide 
+o~matematicko-fyzikálny model definovaný štyrmi základnými parametrami.  Všetky 
+ostatné parametre, či už geometrické alebo fyzikálne, sú odvoditeľné z~týchto 
+parametrov.  S~výnimkou štyroch základných parametrov sa teda všetky veličiny 
+normálneho tiažového poľa získavajú výpočtom, nie meraním ako je tomu v prípade 
+\emph{skutočného} tiažového poľa Zeme.
+
+
+
+
+
+\subsection{Ekvipotenciálny elipsoid GRS80}
+\label{sec:grs80}
+
+Jednu z možných štvoríc základných parametrov tvorí
+%
+\begin{itemize}
+\item hlavná polos~$a$,
+%
+\item dynamický koeficient~$J_{2,0}$,
+%
+\item geocentrická gravitačná konštanta~$GM$ a
+%
+\item uhlová rýchlosť rotácie $\omega$.
+\end{itemize}
+%
+Týmto základnými parametrami je definovaný ekvipotenciálny elipsoid 
+\emph{GRS80} \parencite[angl. \textit{Geodetic Reference 
+System~1980};][]{GRS80}.  Základné parametre GRS80 (Tabuľka~\ref{tab:1}) boli 
 prijaté Medzinárodnou úniou geodézie a geofyziky (angl. \textit{International 
 Union of Geodesy and Geophysics}, IUGG) a Medzinárodnou asociáciou geodézie IAG 
 na 17.~generálnom zasadnutí IUGG v Canberra v decembri 1979.  Dôležité je 
@@ -3621,95 +3654,150 @@ C_{2,0} = -J_{2,0}{,}
 \bar{C}_{2,0} = \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
 \end{equation}
 %
-Elipsoid GRS80 je oficiálny referenčný systém Medzinárodnej asociácie geodézie.
+Niektoré odvodené parametre sú uvedené v~Tabuľke~\ref{tab:2}.  Elipsoid GRS80 
+je oficiálny referenčný systém Medzinárodnej asociácie geodézie.
 
 \begin{table*}
 \begin{center}
-\caption{Základné parametre ekvipotenciálneho elipsoidu GRS80 
-\parencite{GRS80}}
+\caption{Základné parametre ekvipotenciálneho elipsoidu GRS80}
 \label{tab:1}
-\begin{tabular}{l l l l l}
+\small
+\begin{tabular}{l l l l}
 \hline
-Názov     & Hlavná polos & Dynamický faktor & Geocentrická & Uhlová rýchlosť \\
-          &              &                  & gravitačná  &  rotácie\\
-          &              &                  & konštanta               & \\
+Označenie & Symbol & Jednotka & Popis\\
 \hline
-Označenie & $a$ & $J_{2,0}$ & $GM$ & $\omega$\\
-Hodnota   & $6\,378\,137$ & $108\,263 \times 10^{-8}$ & $3\,986\,005 \times 
-10^8$ & $7\,292\,115 \times 10^{-11}$\\
-Jednotka  & $\mathrm{m}$ & Bezrozmerné & $\mathrm{m}^3 \ \mathrm{s}^{-2}$ 
-& $\mathrm{rad} \ \mathrm{s}^{-1}$\\
+$a$       & $6\,378\,137$ & m & Hlavná polos\\
+$J_{2,0}$ & $108\,263 \times 10^{-8}$ & Bezrozmerné & Dynamický faktor\\
+$GM$ & $3\,986\,005 \times 10^8$ & $\mathrm{m}^3 \ \mathrm{s}^{-2}$ 
+& Geocentrická gravitačná konštanta\\
+$\omega$ & $7\,292\,115 \times 10^{-11}$ & $\mathrm{rad} \ \mathrm{s}^{-1}$ 
+& Uhlová rýchlosť rotácie\\
 \hline
 \end{tabular}
 \end{center}
 \end{table*}
 
-Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť sploštenie~$f 
-= \frac{a - b}{b}$ namiesto koeficientu~$J_{2,0}$.  Týmto spôsobom je 
-definovaný ekvipotenciálny elipsoid \emph{WGS4} (Tabuľka~\ref{tab:2}), ktorý 
-vychádza z~GRS80.  Z hľadiska tvaru sú oba elipsoidy podobné; dĺžka ich hlavnej 
-polosi je $6\, 378\, 137\ \mathrm{m}$ a dĺžka vedľajšej polosi, vypočítaná zo 
-základných parametrov, sa odlišuje iba o~desatinu milimetra, 
-$b^{\mathrm{GRS80}} = 6\, 356\, 752.3141\ \mathrm{m}$ voči $b^{\mathrm{WGS84}} 
-= 6\, 356\, 752.3142\ \mathrm{m}$ \parencite{MoritzPhysicalGeodesy}.  
+\begin{table*}
+\begin{center}
+\caption{Niektoré odvodené parametre ekvipotenciálneho elipsoidu GRS80 
+\parencite{MoritzPhysicalGeodesy}}
+\label{tab:2}
+\small
+\begin{tabular}{l l l l l}
+\hline
+Typ parametra & Symbol & Hodnota & Jednotka & Popis\\
+\hline
+Geometrický & $b$       & $6 \, 356 \, 752.3141$ & m & Vedľajšia polos\\
+            & $E$       & $521 \, 854.0097$ & m & Lineárna excentricita\\
+            & $e^2$     & $0.00669438002290$ & Bezrozmerné & Druhá mocnina 
+            prvej\\
+            &           &     &             & numerickej excentricity\\
+            & $(e')^2$  & $0.00673949677548$ & Bezrozmerné & Druhá mocnina 
+            druhej\\
+            &           &     &             & numerickej excentricity\\
+            & $f$       & $0.00335281068118$ & Bezrozmerné & Sploštenie\\
+\hline
+Fyzikálny & $U_0$       & $ 62 \, 636 \, 860.850$ & $\mathrm{m}^2 \, 
+          \mathrm{s}^{-2}$ & Normálny tiažový\\
+          &            &     &   & potenciál na elipsoide\\
+          & $\gamma_a$ & $9.7803267715$ & $\mathrm{m} \, \mathrm{s}^{-2}$ 
+& Normálne tiažové\\
+          &            &     &   & zrýchlenie na rovníku\\
+          & $\gamma_b$ & $9.8321863685$ & $\mathrm{m} \, \mathrm{s}^{-2}$ 
+& Normálne tiažové\\
+          &            &     &   & zrýchlenie na póle\\
+          & $m$ & $0.00344978600308$ & Bezrozmerné & $m = \omega^2 \, a^2 \, 
+b \slash (GM)$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+
+
+
+
+
+
+\subsection{Ekvipotenciálny elipsoid WGS84}
+\label{sec:wgs84}
+
+Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť namiesto 
+koeficientu~$J_{2,0}$ sploštenie~$f$,
+%
+\begin{equation}
+f = \frac{a - b}{b}{.}
+\end{equation}
+%
+Týmto spôsobom je definovaný ekvipotenciálny elipsoid \emph{WGS4} 
+\parencite[angl. \textit{World Geodetic System~1984};][]{WGS84}, ktorý vychádza 
+z~elipsoidu GRS80 (Tabuľka~\ref{tab:3}).  Vybraté odvodené parametre elipsoidu 
+WGS84 sú uvedené v~Tabuľke~\ref{tab:4}.  Z hľadiska tvaru sú oba elipsoidy 
+podobné; dĺžka ich hlavnej polosi je $6\, 378\, 137\ \mathrm{m}$ a dĺžka 
+vedľajšej polosi, vypočítaná zo základných parametrov, sa odlišuje iba 
+o~desatinu milimetra (porovnaj Tabuľky~\ref{tab:2} a~\ref{tab:4}).  
 Z fyzikálneho hľadiska je už medzi elipsoidmi rozdiel väčší.  Uhlová rýchlosť 
 rotácie oboch elipsoidov je síce rovnaká, no odlišné hodnoty geocentrických 
 gravitačných konštánt spôsobujú rozdiel v~normálnom tiažovom potenciáli na 
-elipsoide, $U_{0}^{\mathrm{GRS80}} = 62\, 636\, 860.850\ \mathrm{m}^2 \, 
-\mathrm{s}^{-2}$ a $U_{0}^{\mathrm{WGS84}} = 62\, 636\, 851.715\ \mathrm{m}^2 
-\, \mathrm{s}^{-2}$ \parencite{MoritzPhysicalGeodesy}.  Rozdiel 
-$|U_0^{\mathrm{GRS80}} - U_0^{\mathrm{WGS84}}|$ je teda približne o~5 rádov 
-väčší ako presnosť určenia rozdielu skutočného tiažového potenciálu medzi dvoma 
-bodmi (pozri Kapitolu~\ref{sec:centrifugal_and_gravity_potential}).
+elipsoide.  Rozdiel medzi oboma hodnotami je približne o~5 rádov väčší ako 
+presnosť určenia rozdielu skutočného tiažového potenciálu medzi dvoma bodmi 
+(pozri Kapitolu~\ref{sec:centrifugal_and_gravity_potential}).
 
 \begin{table*}
 \begin{center}
-\caption{Základné parametre ekvipotenciálneho elipsoidu WGS84 
-\parencite{WGS84}}
-\label{tab:2}
-\begin{tabular}{l l l l l}
+\caption{Základné parametre ekvipotenciálneho elipsoidu WGS84}
+\label{tab:3}
+\small
+\begin{tabular}{l l l l}
 \hline
-Názov     & Hlavná polos & Prevrátená & Geocentrická & Uhlová rýchlosť \\
-          &              & hodnota    & gravitačná  &  rotácie\\
-          &              & sploštenia & konštanta               & \\
+Označenie & Symbol & Jednotka & Popis\\
 \hline
-Označenie & $a$ & $1 \slash f$ & $GM$ & $\omega$\\
-Hodnota   & $6\,378\,137$ & $298.257223563$ & $3\,986\,004.418 \times 10^8$ 
-& $7\,292\,115 \times 10^{-11}$\\
-Jednotka  & $\mathrm{m}$ & Bezrozmerné & $\mathrm{m}^3 \ \mathrm{s}^{-2}$ 
-& $\mathrm{rad} \ \mathrm{s}^{-1}$\\
+$a$       & $6\,378\,137$ & m & Hlavná polos\\
+$1 \slash f$ & $298.257223563$ & Bezrozmerné & Prevrátená hodnota sploštenia\\
+$GM$ & $3\,986\,004.418 \times 10^8$ & $\mathrm{m}^3 \ \mathrm{s}^{-2}$ 
+& Geocentrická gravitačná konštanta\\
+$\omega$ & $7\,292\,115 \times 10^{-11}$ & $\mathrm{rad} \ \mathrm{s}^{-1}$ 
+& Uhlová rýchlosť rotácie\\
 \hline
 \end{tabular}
 \end{center}
 \end{table*}
 
-Základné parametre ekvipotenciálnych elipsoidov sú v súčasnosti určované 
-spravidla družicovými technikami a astronomickými meraniami.  Historický 
-prehľad geodetických referenčných systémov a spôsoby ich určenia je možné nájsť 
-napríklad v~prácach \textcite{TorgeGeodesy} a~\textcite{MoritzPhysicalGeodesy}.
-
-Teóriu normálneho tiažového poľa ekvipotenciálneho elipsoidu rozpracovali 
-taliansky geodet, astronóm, geofyzik a matematik P.~Pizzetti (1860--1918) 
-a~taliansky matematik a matematický fyzik C.~Somigliana (1860--1955) v~prácach 
-\textcite{Pizzetti1984} a \textcite{Somigliana1929}.
-
-Na tomto mieste ešte zdôrazníme, že hoci budeme často hovoriť o~normálnom 
-tiažovom poli \emph{Zeme}, je dobré mať na pamäti, že ide 
-o~matematicko-fyzikálny model definovaný štyrmi základnými parametrami.  Všetky 
-ostatné parametre, či už geometrické (napríklad lineárna excentricita) alebo 
-fyzikálne (napríklad normálne tiažové zrýchlenie), sú odvoditeľné z~týchto 
-parametrov.  S~výnimkou štyroch základných parametrov sa teda všetky veličiny 
-normálneho tiažového poľa získavajú výpočtom, nie meraním ako je tomu v prípade 
-\emph{skutočného} tiažového poľa Zeme.
-
-V ďalších častiach tejto kapitoly sa budeme venovať tiažovému poľu 
-ekvipotenciálneho eliposoidu.  Najprv podrobne odvodíme vzťahy na výpočet 
-normálneho tiažového potenciálu pomocou rozvoja do radu sféroidických 
-a sférických harmonických funkcií~(Kapitola~\ref{sec:normal_gravity_potential}) 
-a následne, tentokrát už bez podrobného odvodenia, uvedieme vzťahy na výpočet 
-normálneho tiažového zrýchlenia (Kapitola~\ref{sec:normal_gravity}).  Tieto 
-poznatky budú dôležité neskôr v~Kapitole~\ref{sec:geoid_determination}, ktorá 
-sa zaoberá určovaním geoidu.
+\begin{table*}
+\begin{center}
+\caption{Niektoré odvodené parametre ekvipotenciálneho elipsoidu WGS84 
+\parencite{MoritzPhysicalGeodesy}}
+\label{tab:4}
+\small
+\begin{tabular}{l l l l l}
+\hline
+Typ parametra & Symbol & Hodnota & Jednotka & Popis\\
+\hline
+Geometrický & $b$       & $6 \, 356 \, 752.3142$ & m & Vedľajšia polos\\
+            & $E$       & $521 \, 854.0084$ & m & Lineárna excentricita\\
+            & $e^2$     & $0.00669437999014$ & Bezrozmerné & Druhá mocnina 
+            prvej\\
+            &           &     &             & numerickej excentricity\\
+            & $(e')^2$  & $0.00673949674228$ & Bezrozmerné & Druhá mocnina 
+            druhej\\
+            &           &     &             & numerickej excentricity\\
+            & $J_{2,0}$       & $108262.982131 \times 10^{-8}$ & Bezrozmerné 
+& Dynamický faktor\\
+\hline
+Fyzikálny & $U_0$       & $ 62 \, 636 \, 851.715$ & $\mathrm{m}^2 \, 
+          \mathrm{s}^{-2}$ & Normálny tiažový\\
+          &            &     &   & potenciál na elipsoide\\
+          & $\gamma_a$ & $9.7803253359$ & $\mathrm{m} \, \mathrm{s}^{-2}$ 
+& Normálne tiažové\\
+          &            &     &   & zrýchlenie na rovníku\\
+          & $\gamma_b$ & $9.8321849378$ & $\mathrm{m} \, \mathrm{s}^{-2}$ 
+& Normálne tiažové\\
+          &            &     &   & zrýchlenie na póle\\
+          & $m$ & $0.00344978650684$ & Bezrozmerné & $m = \omega^2 \, a^2 \, 
+b \slash (GM)$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
 
 
 
@@ -3721,13 +3809,22 @@ sa zaoberá určovaním geoidu.
 
 V~mnohých situáciách, hoci rozhodne nie v~každej situácii, sú 
 preferované~uzavreté matematické vzťahy pred nekonečnými rozvojmi.  Uzavretý 
-vzťah je taký vzťah, ktorý má konečný počet členov.  Jeho výhodou je to, že 
-často umožňuje jednoduchší a rýchlejší číselný výpočet so zadanou numerickou 
-presnosťou v~porovnaní s~výpočtom nekonečného radu, ktorý je obmedzený na 
-vhodne zvolený konečný počet členov.  V~tejto kapitole sa preto budeme snažiť 
-nájsť uzavretý vzťah na výpočet normálneho tiažového potenciálu v~bodoch na 
-povrchu ekvipotenciálneho elipsoidu a~nad ním.  Táto kapitola je spracovaná 
+vzťah je taký vzťah, ktorý má konečný počet členov.  Výhodou je, že často 
+umožňuje presnejší a rýchlejší číselný výpočet v~porovnaní s~výpočtom 
+nekonečného radu, ktorý je obmedzený na vhodne zvolený konečný počet členov.  
+V~Kapitole~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} sa preto 
+budeme snažiť nájsť uzavretý vzťah na výpočet normálneho tiažového 
+potenciálu~$U$ v~bodoch na povrchu ekvipotenciálneho elipsoidu a~nad ním.  Za 
+týmto účelom budeme pracovať v~redukovaných elipsoidických súradniciach, ktoré 
+sa prirodzene ponúkajú v~súvislosti so splošteným rotačným elipsoidom.  
+Následne v~Kapitole~\ref{sec:normal_gravity_potential_in_spherical_coords} 
+vyjadríme normálny tiažový potenciál vo sférických súradniciach, tentokrát však 
+už pomocou nekonečného rozvoja.  Táto kapitola je spracovaná 
 podľa~\textcite{MoritzTheFigureOfTheEarth}.
+
+\subsection{Normálny tiažový potenciál vyjadrený v~elipsoidických redukovaných 
+súradniciach}
+\label{sec:normal_gravity_potential_in_reduced_ell_coords}
 
 Vzťah~(\ref{eq:vg_spheroidalh_no_norm}) popisuje vonkajší gravitačný potenciál 
 všeobecného telesa.  Ak k nemu pripočítame odstredivý potenciál vyjadrený 
@@ -3735,20 +3832,21 @@ v~redukovaných elipsoidických súradniciach (pozri rovnice~\ref{eq:vc}
 a~\ref{eq:ellred2cart}),
 %
 \begin{equation}
+\label{eq:vc_spheroidal}
 V_\cidx = \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta{,}
 \end{equation}
 %
 získame vzťah pre tiažový potenciál $W$ všeobecného telesa (pozri 
 rovnicu~\ref{eq:w}).  Normálny tiažový potenciál~$U$ ekvipotenciálneho 
 elipsoidu je však opísateľný jednoduchším spôsobom ako tiažový potenciál 
-\emph{všeobecného} telesa.  Dôvodom je skutočnosť, že normálny tiažový 
-potenciál na elipsoide má dve symetrie, jednu voči osi rotácie a druhú voči 
-rovine rovníka.  Prvá symetria spôsobuje, že všetky nezonálne sféroidické 
-harmonické koeficienty musia byť nulové, pretože tie závisia od dĺžky~$\lambda$ 
-(pozri rovnicu~\ref{eq:vg_spheroidalh_no_norm}).  Druhá symetria spôsobuje, že 
-nenulové môžu byť iba párne zonálne koeficienty (pozri vlastnosti sférických 
-harmonických funkcií Kapitolu~\ref{sec:spherical_harmonics}).  Normálny tiažový 
-potenciál môžeme teda zapísať v~tvare
+\emph{všeobecného} telesa, pretože má dve symetrie, jednu voči osi rotácie 
+a druhú voči rovine rovníka.  Prvá symetria spôsobuje, že všetky nezonálne 
+sféroidické harmonické koeficienty musia byť nulové, pretože tie závisia od 
+dĺžky~$\lambda$ (pozri rovnicu~\ref{eq:vg_spheroidalh_no_norm}).  Druhá 
+symetria spôsobuje, že nenulové môžu byť iba párne zonálne koeficienty (pozri 
+vlastnosti sférických harmonických funkcií 
+Kapitolu~\ref{sec:spherical_harmonics}).  Normálny tiažový potenciál môžeme 
+teda zapísať v~tvare
 %
 \begin{equation}
 \label{eq:u_sph}
@@ -3761,9 +3859,11 @@ i \dfrac{b}{E} \right)} \,  C^{\mathrm{r}}_n \, P_n(\sin\beta) + \frac{1}{2} \,
 \end{split}
 \end{equation}
 %
-kde $U_\gidx$ je normálny gravitačný potenciál a $U_\cidx$ je normálny 
-odstredivý potenciál.  Pre lepšiu názornosť nasledujúcich krokov sme do vzťahu 
-zahrnuli aj nepárne zonálne koeficienty~$C^{\mathrm{r}}_n$ hoci sú nulové.
+kde $U_\gidx$ je normálny gravitačný potenciál 
+(rovnica~\ref{eq:vg_spheroidalh_no_norm}) a $U_\cidx$ je normálny odstredivý 
+potenciál (rovnica~\ref{eq:vc_spheroidal}).  Pre lepšiu názornosť nasledujúcich 
+krokov sme do vzťahu~(\ref{eq:u_sph}) zahrnuli aj nepárne zonálne 
+koeficienty~$C^{\mathrm{r}}_n$ hoci sú nulové.
 
 Z Kapitoly~\ref{sec:spherical_harmonic_expansion} vieme, že ak chceme poznať 
 $U(u,\beta)$ z~rovnice~(\ref{eq:u_sph}), potom potrebujeme poznať 
@@ -3780,7 +3880,8 @@ Nech sa výpočtový bod nachádza na povrchu ekvipotenciálneho elipsoidu, teda
 = b$.  Potom
 %
 \begin{equation}
-\frac{Q_n\left( i \dfrac{b}{E} \right)}{Q_n\left( i \dfrac{b}{E} \right)} = 1
+\frac{Q_n\left( i \dfrac{u}{E} \right)}{Q_n\left( i \dfrac{b}{E} \right)} 
+= 1{,} \quad u = b{,}
 \end{equation}
 %
 a rovnica~(\ref{eq:u_sph}) prejde do tvaru
@@ -3788,20 +3889,18 @@ a rovnica~(\ref{eq:u_sph}) prejde do tvaru
 \begin{equation}
 \label{eq:u_sph_on_ell}
 U(b, \beta) = \sum_{n = 0}^\infty C^{\mathrm{r}}_n \, P_n(\sin\beta) 
-+ \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta = U_0{.}
++ \frac{1}{2} \, \omega^2 \, (b^2 + E^2) \, \cos^2\beta = U_0{.}
 \end{equation}
 %
-Symbol $U_0$ označuje normálny tiažový potenciál na ekvipotenciálnom elipsoide.  
-Hodnota~$U_0$ je z definície konštantná (pozri 
-Kapitolu~\ref{sec:equipotential_ellipsoid}).
+Hodnota~normálneho tiažového potenciálu na ekvipotenciálnom elipsoide $U_0$ je 
+z definície konštantná (pozri Kapitolu~\ref{sec:equipotential_ellipsoid}).
 
 Prostredná časť rovnice~(\ref{eq:u_sph_on_ell}) je formálne podobná 
-vzťahu~(\ref{eq:f_synthesis}) s~dvoma rozdielmi.  Po prvé, je rovná konštante 
-$U_0$ a nie funkcii $f(t)$, ktorá by závisela od $t = \sin\beta$.  Po druhé, 
-druhý člen prostrednej časti rovnice obsahuje člen, ktorý, podobne ako 
-Legendreove polynómy vo vnútri sumácie, závisí od $\sin\beta$, pretože 
-$\cos^2\beta = \sqrt{1 - \sin^2\beta}$.  Prepíšme preto 
-rovnicu~(\ref{eq:u_sph_on_ell}) do tvaru
+vzťahu~(\ref{eq:f_synthesis}) avšak s~dvoma rozdielmi.  Po prvé, je rovná 
+konštante $U_0$ a nie funkcii $f(t)$, ktorá by závisela od $t = \sin\beta$.  Po 
+druhé, druhý člen v~prostrednej časti rovnice obsahuje člen, ktorý, podobne ako 
+Legendreove polynómy, závisí od $\sin\beta$, pretože $\cos^2\beta 
+= 1 - \sin^2\beta$.  Prepíšme preto rovnicu~(\ref{eq:u_sph_on_ell}) do tvaru
 %
 \begin{equation}
 \label{eq:cnr}
@@ -3814,23 +3913,17 @@ Na získanie tejto rovnice sme použili vzťah (pozri
 rovnicu~\ref{eq:linear_eccentricity})
 %
 \begin{equation}
-a^2 = E^2 + b^2{,}
+a^2 = b^2 + E^2{,}
 \end{equation}
 %
-ďalej vzťah pre Legendreov polynóm stupňa $n = 2$ (rovnica~\ref{eq:p0_to_p5})
+a vzťah pre Legendreov polynóm stupňa $n = 2$ (rovnica~\ref{eq:p0_to_p5})
 %
 \begin{equation}
-P_2(\sin\beta) = \frac{3}{2} \, \sin^2\beta - \frac{1}{2}
-\end{equation}
-%
-a rovnicu známu z trigonometrie
-%
-\begin{equation}
-\sin^2 x + \cos^2 x = 1{.}
+P_2(\sin\beta) = \frac{3}{2} \, \sin^2\beta - \frac{1}{2}{.}
 \end{equation}
 
 Keďže $P_0(\sin\beta) = 1$ (pozri rovnicu~\ref{eq:p0_to_p5}), 
-vzťah~(\ref{eq:cnr}) môžeme prepísať do tvaru
+vzťah~(\ref{eq:cnr}) môžeme ďalej prepísať do tvaru
 %
 \begin{equation}
 \label{eq:cnr2}
@@ -3843,10 +3936,10 @@ P_0(\sin\beta) + C_1^\mathrm{r} \, P_1(\sin\beta) + \left(C_2^\mathrm{r}
 \end{split}
 \end{equation}
 %
-Tento vzťah predstavuje rozvoj~(\ref{eq:f_synthesis}), pričom členy pred 
-jednotlivými Legendreovými polynómami sú súradnice konštantnej funkcie~0 (pozri 
-diskusiu o~súradniciach ku vzťahom~\ref{eq:r_synthesis}, \ref{eq:f_synthesis} 
-a \ref{eq:f_sha_no_norm}).  Podobne ako rovnosť
+Tento vzťah predstavuje rozvoj obdobný vzťahu~(\ref{eq:f_synthesis}), pričom 
+členy pred jednotlivými Legendreovými polynómami sú súradnice konštantnej 
+funkcie~0 (pozri diskusiu o~súradniciach ku vzťahom~\ref{eq:r_synthesis}, 
+\ref{eq:f_synthesis} a \ref{eq:f_sha_no_norm}).  Podobne ako rovnosť
 %
 \begin{equation}
 \sum_{i = 1}^3 r_i \, \mathbf{e}_i = \mathbf{0}
@@ -3876,20 +3969,20 @@ C_n^\mathrm{r} &= 0 \quad \textrm{pre} \quad n \geq 3{.}
 \end{split}
 \end{equation}
 %
-Normálny gravitačný potenciál $U_\gidx(u, \beta)$ je teda daný vzťahom
+Normálny tiažový potenciál z~rovnice~(\ref{eq:u_sph}) je teda daný vzťahom
 %
 \begin{equation}
 \label{eq:ug_spheroidal}
-U_\gidx(u, \beta) = \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
+\begin{split}
+U(u, \beta) &= \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
 \frac{Q_0\left( i \dfrac{u}{E} \right)}{Q_0\left( i \dfrac{b}{E} \right)} 
 + \frac{1}{3} \, \omega^2 \, a^2  \, \frac{Q_2\left( i \dfrac{u}{E} 
-\right)}{Q_2\left( i \dfrac{b}{E} \right)} \, C^{\mathrm{r}}_0 \, 
-P_2(\sin\beta){,}
+\right)}{Q_2\left( i \dfrac{b}{E} \right)} \, P_2(\sin\beta)\\
+%
+&\phantom{={}}+\frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta{.}
+\end{split}
 \end{equation}
 %
-ktorý môže byť dosadený do vzťahu~(\ref{eq:u_sph}) pre hľadaný normálny tiažový 
-potenciál $U(u, \beta)$.
-
 Všimnime si niektoré dôležité vlastnosti rovnice~(\ref{eq:ug_spheroidal}).  
 Vzťahy pre~$Q_0(z)$ a $Q_2(z)$ komplexného argumentu $z$ sú konečné (pozri 
 Kapitolu~\ref{sec:spheroidal_harmonics}), a tak vzťah pre normálny tiažový 
@@ -3898,7 +3991,32 @@ kapitoly.  Ďalšia dôležitá vlatnosť je tá, že vzťah~(\ref{eq:ug_spheroi
 platí nielen na elipsoide pre $u = b$, ale aj pre $u \geq b$, teda kdekoľvek na 
 povrchu ekvipotenciálneho elipsoidu a~v~jeho vonkajšom priestore.
 
-\subsection{Okrajová úloha}
+Rovnicu~(\ref{eq:ug_spheroidal}) možno ďalej upraviť tak, aby v~nej jedinými 
+konštantami boli základné parametre ekvipotenciálneho elipsoidu $a$, $E$ 
+(alebo~$b$), $G\, M$ a $\omega$.  Toto odvodenie vynecháme a uvedieme iba 
+výsledný vzťah \parencite{MoritzTheFigureOfTheEarth},
+%
+\begin{equation}
+U(u, \beta) = \frac{GM}{E} \arctan\frac{E}{u} + \frac{1}{2} \, \omega^2 \, a^2 
+\, \frac{q}{q_0} \, \left( \sin^2\beta - \frac{1}{3} \right) + \frac{1}{2} \, 
+\omega^2 (u^2 + E^2) \, \cos^2\beta{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+q = \frac{1}{2} \left[ \left( 1 + 3 \, \frac{u^2}{E^2}\right) \, 
+\arctan\frac{E}{u} - 3 \, \frac{u}{E}\right]{,}
+\end{equation}
+%
+\begin{equation}
+q = \frac{1}{2} \left[ \left( 1 + 3 \, \frac{b^2}{E^2}\right) \, 
+\arctan\frac{E}{b} - 3 \, \frac{b}{E}\right]{.}
+\end{equation}
+
+
+
+\subsubsection{Okrajová úloha}
 
 Na problematiku tejto kapitoly sa môžeme pozrieť aj zo širšieho uhla pohľadu.  
 Zadefinovali sme trojrozmernú uzavretú plochu, ktorú tvorí dvojosový rotačný 
@@ -3910,19 +4028,29 @@ normálneho tiažového potenciálu na nej dokázali zistiť, čomu je rovný no
 tiažový potenciál v~celom vonkajšom priestore tejto plochy.  Toto by, 
 samozrejme, nebolo možné bez znalosti \emph{princípu}, akým sa mení gravitačný 
 potenciál v~priestore.  Tento princíp je zachytený v~Laplaceovej rovnici (pozri 
-Kapitolu~\ref{sec:meaning_of_laplace_equation_in_practice}).  O~sféroidických 
-harmonických funkciách vieme, že sú riešením práve Laplaceovej rovnice 
-v~redukovaných elipsoidických súradniciach.  Preto 
-riešenie~(\ref{eq:ug_spheroidal}), ktoré je ich lineárna kombinácia s~rôznymi 
-váhami (súradnicami $C_n^\mathrm{r}$), je taktiež harmonická funkcia, keďže 
-Laplaceov operátor je lineárny (pozri rovnice~\ref{eq:laplace_additivity} 
-a \ref{eq:laplace_homogenity}).
+Kapitolu~\ref{sec:meaning_of_laplace_equation_in_practice}), ktorej riešením 
+v~redukovaných elipsoidických súradniciach sú pravé sféroidické harmonické 
+funkcie nachádzajúce sa v~rovnici~(\ref{eq:ug_spheroidal}).  Preto 
+riešenie~(\ref{eq:ug_spheroidal}), ktoré je lineárna kombinácia sféroidických 
+harmonických funkcií s~rôznymi váhami (súradnicami) $C_n^\mathrm{r}$, je 
+taktiež harmonická funkcia, keďže Laplaceov operátor je lineárny (pozri 
+rovnice~\ref{eq:laplace_additivity} a \ref{eq:laplace_homogenity}).
 
 Povedané inými slovami, našli sme riešenie Laplaceovej diferenciálnej rovnice 
 vo vonkajšom priestore ekvipotenciálneho elipsoidu so zadanou podmienkou na 
 jeho povrchu.  Hľadanie takého riešenia diferenciálnej rovnice, ktoré vyhovuje 
 zadanej podmienke (v~našom prípade $U_0$ na povrchu ekvipotenciálneho 
 elipsoidu) sa nazýva \emph{okrajová úloha}.
+
+
+
+
+
+\subsection{Normálny tiažový potenciál vyjadrený vo sférických súradniciach}
+\label{sec:normal_gravity_potential_in_spherical_coords}
+
+
+
 
 
 \section{Normálne tiažové zrýchlenie}
@@ -3966,7 +4094,7 @@ elipsoidu) sa nazýva \emph{okrajová úloha}.
 
 % -----------------------------------------------------------------------------
 
-\chapter*{Záver}
+\chapter*{Doslov}
 
 
 
@@ -4086,7 +4214,6 @@ v~programe GrafLab je možné nájsť na adrese
 \lstinputlisting[caption=Sférický harmonický rozvoj zemskej topografie
 v~programovacom jazyku MATLAB, label=src:h_shs, language=matlab,
 captionpos=t]{../matlab/shs_h.m}
-
 
 
 
