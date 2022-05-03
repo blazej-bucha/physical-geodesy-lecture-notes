@@ -3371,6 +3371,7 @@ vzťahoch~(\ref{eq:q0t}) až (\ref{eq:q2t}) výrazmi (porovnaj
 rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def})
 %
 \begin{equation}
+\label{eq:coth}
 \frac{1}{2} \, \ln \frac{z + 1}{z - 1} = \coth^{-1}z{.}
 \end{equation}
 
@@ -3721,8 +3722,8 @@ b \slash (GM)$\\
 \subsection{Ekvipotenciálny elipsoid WGS84}
 \label{sec:wgs84}
 
-Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť namiesto 
-koeficientu~$J_{2,0}$ sploštenie~$f$,
+Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť sploštenie~$f$ 
+namiesto koeficientu~$J_{2,0}$,
 %
 \begin{equation}
 f = \frac{a - b}{b}{.}
@@ -3969,50 +3970,188 @@ C_n^\mathrm{r} &= 0 \quad \textrm{pre} \quad n \geq 3{.}
 \end{split}
 \end{equation}
 %
-Normálny tiažový potenciál z~rovnice~(\ref{eq:u_sph}) je teda daný vzťahom
+Normálny gravitačný potenciál z~rovnice~(\ref{eq:u_sph}) je teda daný vzťahom
 %
 \begin{equation}
 \label{eq:ug_spheroidal}
-\begin{split}
-U(u, \beta) &= \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
+U_\gidx(u, \beta) = \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
 \frac{Q_0\left( i \dfrac{u}{E} \right)}{Q_0\left( i \dfrac{b}{E} \right)} 
 + \frac{1}{3} \, \omega^2 \, a^2  \, \frac{Q_2\left( i \dfrac{u}{E} 
-\right)}{Q_2\left( i \dfrac{b}{E} \right)} \, P_2(\sin\beta)\\
-%
-&\phantom{={}}+\frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta{.}
-\end{split}
+\right)}{Q_2\left( i \dfrac{b}{E} \right)} \, P_2(\sin\beta){.}
 \end{equation}
 %
 Všimnime si niektoré dôležité vlastnosti rovnice~(\ref{eq:ug_spheroidal}).  
 Vzťahy pre~$Q_0(z)$ a $Q_2(z)$ komplexného argumentu $z$ sú konečné (pozri 
-Kapitolu~\ref{sec:spheroidal_harmonics}), a tak vzťah pre normálny tiažový 
-potenciál má konečný počet členov, čo bol cieľ vytýčený na začiatku tejto 
-kapitoly.  Ďalšia dôležitá vlatnosť je tá, že vzťah~(\ref{eq:ug_spheroidal}) 
-platí nielen na elipsoide pre $u = b$, ale aj pre $u \geq b$, teda kdekoľvek na 
-povrchu ekvipotenciálneho elipsoidu a~v~jeho vonkajšom priestore.
+Kapitolu~\ref{sec:spheroidal_harmonics}).  Po dosadení~(\ref{eq:ug_spheroidal}) 
+do~(\ref{eq:u_sph}) preto získame vzťah pre normálny tiažový potenciál, ktorý 
+má konečný počet členov, čo bol cieľ vytýčený na začiatku tejto kapitoly.  
+Ďalšia dôležitá vlatnosť je tá, že vzťah~(\ref{eq:ug_spheroidal}) platí nielen 
+na elipsoide pre $u = b$, ale aj pre $u \geq b$, teda kdekoľvek na povrchu 
+ekvipotenciálneho elipsoidu a~v~jeho vonkajšom priestore.
 
-Rovnicu~(\ref{eq:ug_spheroidal}) možno ďalej upraviť tak, aby v~nej jedinými 
-konštantami boli základné parametre ekvipotenciálneho elipsoidu $a$, $E$ 
-(alebo~$b$), $G\, M$ a $\omega$.  Toto odvodenie vynecháme a uvedieme iba 
-výsledný vzťah \parencite{MoritzTheFigureOfTheEarth},
+Pokúsme sa ďalej upraviť vzťah~(\ref{eq:ug_spheroidal}) tak, aby normálny 
+tiažový potenciál na elipsoide~$U_0$ bol vyjadrený pomocou základných 
+parametrov ekvipotenciálneho elipsoidu.  Parameter $U_0$ totižto zvyčajne 
+nepatrí medzi základne parametre ekvipotenciálneho elipsoidu (hoci aj takýto 
+prístup existuje, pozri napríklad \cite{TorgeGeodesy}), a tak musí byť 
+odvoditeľný zo základných parametrov.
+
+Z~Kapitoly~\ref{sec:spheroidal_harmonic_expansion} vieme, že podiely 
+Legendreových funkcií druhého druhu sú reálne čísla.  Vyjadrime preto 
+vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime, že
 %
 \begin{equation}
-U(u, \beta) = \frac{GM}{E} \arctan\frac{E}{u} + \frac{1}{2} \, \omega^2 \, a^2 
-\, \frac{q}{q_0} \, \left( \sin^2\beta - \frac{1}{3} \right) + \frac{1}{2} \, 
-\omega^2 (u^2 + E^2) \, \cos^2\beta{,}
+\coth^{-1} (i \, x) = -i \, \arctan\frac{1}{x}{,}
+\end{equation}
+%
+potom $Q_0$ a $Q_2$ komplexného argumentu $i \frac{u}{E}$ 
+z rovnice~(\ref{eq:ug_spheroidal}) môžeme prepísať do tvaru (pozri 
+rovnice~\ref{eq:q0t}, \ref{eq:q2t} a \ref{eq:coth})
+%
+\begin{equation}
+Q_0\left( i \, \frac{u}{E} \right) = -i \, \arctan\frac{E}{u}
+\end{equation}
+%
+a
+%
+\begin{equation}
+Q_2\left( i \, \frac{u}{E} \right) = \frac{i}{2} \left[ \left( 
+1 + 3 \frac{u^2}{E^2} \right) \, \arctan\frac{E}{u} - 3 \, \frac{u}{E} 
+\right]{.}
+\end{equation}
+%
+Rovnica~(\ref{eq:ug_spheroidal}) môže byť teda zapísaná v~obore reálnych čísel 
+nasledovne,
+%
+\begin{equation}
+\label{eq:ug_spheroidal_2}
+U_\gidx(u, \beta) = \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
+\frac{\arctan\dfrac{E}{u}}{\arctan\dfrac{E}{b}} + \frac{1}{3} \, \omega^2 \, 
+a^2 \, \frac{q}{q_0} \, P_2(\sin\beta){,}
 \end{equation}
 %
 kde
 %
 \begin{equation}
-q = \frac{1}{2} \left[ \left( 1 + 3 \, \frac{u^2}{E^2}\right) \, 
-\arctan\frac{E}{u} - 3 \, \frac{u}{E}\right]{,}
+\label{eq:u_q}
+q = \frac{1}{2} \left[ \left( 1 + 3 \frac{u^2}{E^2} \right) \, 
+\arctan\frac{E}{u} - 3 \, \frac{u}{E} \right]
 \end{equation}
 %
+a
+%
 \begin{equation}
-q = \frac{1}{2} \left[ \left( 1 + 3 \, \frac{b^2}{E^2}\right) \, 
-\arctan\frac{E}{b} - 3 \, \frac{b}{E}\right]{.}
+q_0 = \frac{1}{2} \left[ \left( 1 + 3 \frac{b^2}{E^2} \right) \, 
+\arctan\frac{E}{b} - 3 \, \frac{b}{E} \right]{.}
 \end{equation}
+
+Pokúsme sa teraz vyjadriť člen~$U_0$ pomocou základných parametrov 
+ekvipotenciálneho elipsoidu.  Za týmto účelom budeme uvažovať, že výpočtový bod 
+so súradnicami $(u, \beta)$ sa nachádza vo veľkej vzdialenosti od 
+ekvipotenciálneho elipsoidu.  Rozviňme funkciu $\arctan$ do mocninového radu 
+\parencite{Gradshteyn2007}
+%
+\begin{equation}
+\label{eq:arctan_series}
+\arctan x = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots{,} \quad 
+x^2 \leq 1{.}
+\end{equation}
+%
+Keďže hodnota $u$ je podľa nášho predpokladu veľmi veľká, potom po dosadení $x 
+= \frac{E}{u}$ do tohto rozvoja dostaneme vzťah
+%
+\begin{equation}
+\arctan\frac{E}{u} = \frac{E}{u} + O\left( \frac{1}{u^3} \right){.}
+\end{equation}
+%
+Zápis $O\left( \frac{1}{u^3} \right)$ predstavuje členy tretieho a~vyšších 
+rádov rozvoja~(\ref{eq:arctan_series}).  Pre zjednodušenie ďalšieho odvodenia 
+je dobré uvedomiť si, že ak $u$ nadobúda veľké hodnoty, potom jeho hodnota 
+približne rovná sprievodiču $r$.  Túto skutočnosť ukážeme nasledovne.  
+Z~rovníc~(\ref{eq:ellred2cart}) vieme, že
+%
+\begin{equation}
+r^2 = x^2 + y^2 + z^2 = u^2 + E^2 \, \cos^2\beta{,}
+\end{equation}
+%
+preto pre veľké hodnoty $u$ a $r$ môžeme písať
+%
+\begin{equation}
+\frac{1}{u} = \frac{1}{r} + O\left( \frac{1}{r^3} \right){,}
+\end{equation}
+%
+a teda
+%
+\begin{equation}
+\arctan\frac{E}{u} = \frac{E}{r} + O\left( \frac{1}{r^3} \right){.}
+\end{equation}
+%
+Ak $r$ je veľmi veľké, potom v~rovnici~(\ref{eq:ug_spheroidal_2}) dominuje prvý 
+člen, preto ju môžeme prepísať do tvaru
+%
+\begin{equation}
+\label{eq:ug_spheroidal_3}
+U_\gidx(r) = \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \, 
+\frac{E}{\arctan\dfrac{E}{b}} \, \frac{1}{r} + O\left( \frac{1}{r^3} \right){.}
+\end{equation}
+%
+Ak je ale $r$ veľmi veľké, potom platí aj vzťah
+%
+\begin{equation}
+\label{eq:ug_far_far_away}
+U_g(r) = \frac{GM}{r} + O\left( \frac{1}{r^3}\right){.}
+\end{equation}
+%
+Rovnica~(\ref{eq:ug_far_far_away}) by nemala byť prekvapivá.  Už 
+v~Kapitole~(\ref{sec:gg}) sme spomenuli, že ak sa výpočtový bod nachádza veľmi 
+ďaleko od zdroja gravitačného poľa, nedopustíme sa veľkej chyby, ak jeho 
+hmotnosť koncentrujeme do jeho ťažiska a zanedbáme jeho tvar.  V~takom prípade 
+môžeme gravitačný potenciál modelovať vzťahom~(\ref{eq:vg_point_mass}), ktorý 
+platí pre hmotný bod.  Práve táto skutočnosť je vyjadrená 
+rovnicou~(\ref{eq:ug_far_far_away}).  Možno jej tiež porozumieť pomocou 
+rovnice~(\ref{eq:vg_sh_no_norm}).  Ak je začiatok súradnicového systému 
+v~ťažisku telesa, potom koeficienty $C_{1,0}$, $C_{1,1}$ a $S_{1,1}$ sú nulové 
+(Kapitola~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}) 
+a v~rozvoji~(\ref{eq:vg_sh_no_norm}) potom dominuje vplyv koeficientu $C_{0,0} 
+= M$.  Členy tretieho a vyšších rádov (teda harmonické stupne $2$, $3$, \dots) 
+nadobúdajú pre veľké $r$ zanedbateľné hodnoty, čím sa opäť dostávame 
+k~rovnici~(\ref{eq:ug_far_far_away}).  Zanedbajme teda 
+v~rovniciach~(\ref{eq:ug_spheroidal_3}) a~(\ref{eq:ug_far_far_away}) členy 
+tretieho a vyšších rádov.  Obe rovnice ďalej vynásobme sprievodičom $r$.  
+Kombináciou oboch rovníc a výpočtom limity pre $r \rightarrow \infty$ získame 
+vzťah
+%
+\begin{equation}
+GM = \lim_{r \rightarrow \infty} (r \, U_g(r)) = \left( U_0 - \frac{1}{3} \, 
+\omega^2 \, a^2 \right) \, \frac{E}{\arctan\frac{E}{b}}{,}
+\end{equation}
+%
+z ktorého môžeme vyjadriť~$U_0$ nasledovne,
+%
+\begin{equation}
+\label{eq:u0_four_parameters}
+U_0 = \frac{GM}{E} \, \arctan\frac{E}{b} + \frac{1}{3} \, \omega^2 a^2{.}
+\end{equation}
+%
+Rovnica~(\ref{eq:u0_four_parameters}) predstavuje hľadaný vzťah pre normálny 
+tiažový potenciál na povrchu ekvipotenciálneho elipsoidu vyjadrený pomocou 
+štyroch základných parametrov ekvipotenciálneho elipsoidu $a$, $E$ (resp.~$b$, 
+pretože $b = \sqrt{a^2 - E^2}$), $GM$ a $\omega$.
+
+Dosadením~(\ref{eq:u0_four_parameters}) spolu zo vzťahom pre $P_2(\sin\beta)$ 
+(pozri rovnicu~\ref{eq:p0_to_p5}) do~(\ref{eq:ug_spheroidal_2}) získame 
+výslednú rovnicu
+%
+\begin{equation}
+\label{eq:u_sph_final}
+U(u, \beta) = \frac{GM}{E} \arctan\frac{E}{u} + \frac{1}{2} \, \omega^2 \, a^2 
+\, \frac{q}{q_0} \, \left( \sin^2\beta - \frac{1}{3} \right) + \frac{1}{2} \, 
+\omega^2 (u^2 + E^2) \, \cos^2\beta{.}
+\end{equation}
+%
+Rovnica~(\ref{eq:u_sph_final}) predstavuje hľadaný uzavretý vzťah na výpočet 
+normálneho tiažového potenciálu v~bodoch na povrchu elipsoidu a~nad ním pomocou 
+štyroch základných parametrov ekvipotenciálneho elipsoidu.
 
 
 
@@ -4020,27 +4159,33 @@ q = \frac{1}{2} \left[ \left( 1 + 3 \, \frac{b^2}{E^2}\right) \,
 
 Na problematiku tejto kapitoly sa môžeme pozrieť aj zo širšieho uhla pohľadu.  
 Zadefinovali sme trojrozmernú uzavretú plochu, ktorú tvorí dvojosový rotačný 
-elipsoid.  Tento elipsoid sme prehlásili za ekvipotenciálny, čím sme každému 
-bodu na jeho povrchu priradili hodnotu normálneho tiažového potenciálu~$U_0$.  
-V súlade so Stokesovým teorémom~(Kapitola~\ref{sec:equipotential_ellipsoid}) 
-sme následne na základe známej geometrie ekvipotenciálnej plochy a hodnoty 
-normálneho tiažového potenciálu na nej dokázali zistiť, čomu je rovný normálny 
-tiažový potenciál v~celom vonkajšom priestore tejto plochy.  Toto by, 
-samozrejme, nebolo možné bez znalosti \emph{princípu}, akým sa mení gravitačný 
-potenciál v~priestore.  Tento princíp je zachytený v~Laplaceovej rovnici (pozri 
+elipsoid.  Tento elipsoid sme v~Kapitole~\ref{sec:equipotential_ellipsoid} 
+prehlásili za ekvipotenciálny, čím sme každému bodu na jeho povrchu priradili 
+hodnotu normálneho tiažového potenciálu~$U_0$.  V súlade so Stokesovým 
+teorémom~(Kapitola~\ref{sec:equipotential_ellipsoid}) sme následne na základe 
+známej geometrie ekvipotenciálnej plochy a hodnoty normálneho tiažového 
+potenciálu na nej dokázali zistiť, čomu je rovný normálny tiažový potenciál 
+v~celom vonkajšom priestore tejto plochy (vzťahy~\ref{eq:ug_spheroidal} 
+a~\ref{eq:u_sph}).  Toto by, samozrejme, nebolo možné bez znalosti 
+\emph{princípu}, akým sa mení gravitačný potenciál v~priestore.  Tento princíp 
+je zachytený v~Laplaceovej rovnici (pozri 
 Kapitolu~\ref{sec:meaning_of_laplace_equation_in_practice}), ktorej riešením 
 v~redukovaných elipsoidických súradniciach sú pravé sféroidické harmonické 
 funkcie nachádzajúce sa v~rovnici~(\ref{eq:ug_spheroidal}).  Preto 
 riešenie~(\ref{eq:ug_spheroidal}), ktoré je lineárna kombinácia sféroidických 
-harmonických funkcií s~rôznymi váhami (súradnicami) $C_n^\mathrm{r}$, je 
-taktiež harmonická funkcia, keďže Laplaceov operátor je lineárny (pozri 
+harmonických funkcií s~rôznymi váhami (súradnicami), je taktiež harmonická 
+funkcia, keďže Laplaceov operátor je lineárny (pozri 
 rovnice~\ref{eq:laplace_additivity} a \ref{eq:laplace_homogenity}).
 
 Povedané inými slovami, našli sme riešenie Laplaceovej diferenciálnej rovnice 
 vo vonkajšom priestore ekvipotenciálneho elipsoidu so zadanou podmienkou na 
 jeho povrchu.  Hľadanie takého riešenia diferenciálnej rovnice, ktoré vyhovuje 
 zadanej podmienke (v~našom prípade $U_0$ na povrchu ekvipotenciálneho 
-elipsoidu) sa nazýva \emph{okrajová úloha}.
+elipsoidu) sa nazýva \emph{okrajová úloha}.  Okrajová úloha bola vyriešená už 
+vzťahom~(\ref{eq:ug_spheroidal}).  Úpravy, ktoré po nej nasledovali už boli 
+hnané iba túžbou vyjadriť normálny tiažový potenciál uzavretým vzťahom pomocou 
+štyroch základných parametrov ekvipotenciálneho elipsoidu.  Intelektuálne 
+potešenie z~týchto úprav je už len pozitívny vedľajší efekt.
 
 
 
@@ -4049,7 +4194,63 @@ elipsoidu) sa nazýva \emph{okrajová úloha}.
 \subsection{Normálny tiažový potenciál vyjadrený vo sférických súradniciach}
 \label{sec:normal_gravity_potential_in_spherical_coords}
 
+V~praktických aplikáciach je dôležité dokázať vyjadriť normálny gravitačný 
+a tiažový potenciál,~$U_\gidx$ a $U$, aj vo sférických súradniciach.  Jeden 
+z~dôvodov je ten, že normálny gravitačný potenciál~$U_\gidx$ budeme potrebovať 
+odčítať od skutočného gravitačného potenciálu~$V_\gidx$, ktorý býva často 
+aproximovaný sférickým harmonickým rozvojom~(\ref{eq:vg_sh_2nd_norm_ynk}) 
+(pozri Kapitolu~\ref{sec:spherical_harmonics_applications}).  Rozvoj~$U_\gidx$ 
+do radu sférických harmonických funkcií by teda umožnil odčítavať a porovnávať 
+oba rady člen po člene, nielen ich výsledné súčty.
 
+Podobne ako v~prípade sféroidických harmonických funkcií, i~tentokrát budú 
+nenulové iba párne zonálne sférické harmonické koeficienty.  Rozdiel voči 
+sféroidickému harmonickému rozvoju je však ten, že sférický rozvoj bude 
+nekonečný.  Aj táto situácia teda demonštruje ako veľmi môže voľba 
+súradnicového systému ovplyvniť tvar výslednej rovnice.  Rozvoj normálneho 
+gravitačného potenciálu do radu sférických harmonických funkcií má tvar 
+\parencite{Moritz1967}
+%
+\begin{equation}
+\label{eq:ug_spherical}
+U_\gidx(r, \varphi) = \frac{GM}{r} \left[ 1 - \sum_{n = 1}^{\infty} J_{2n,0} \, 
+\left( \frac{a}{r} \right)^{2n} \, P_{2n}(\sin\varphi) \right]{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+J_{2n,0} = (-1)^{n + 1} \, \frac{3e^{2n}}{(2n + 1) \, (2n + 3)} \left( 
+1 - n + 5n \, \frac{J_{2,0}}{e^2} \right){.}
+\end{equation}
+%
+Vzťah~(\ref{eq:ug_spherical}) môže byť získaný rozvojom 
+člena~$\arctan\frac{u}{E}$ v~rovniciach~(\ref{eq:u_sph_final}) a~(\ref{eq:u_q}) 
+do mocninového radu \parencite{Moritz1967}
+%
+\begin{equation}
+\arctan\frac{E}{u} = \frac{E}{u} + \sum_{n = 1}^{\infty}(-1)^n \, \frac{1}{2n 
++ 1} \, \left( \frac{E}{u} \right)^{2n + 1}
+\end{equation}
+%
+a ďalšími úpravami.  Podrobné odvodenie je možné nájsť 
+v~práci~\textcite{Moritz1967}.
+
+Vzťah pre normálny odstredivý potenciál vyplýva z~rovníc~(\ref{eq:vc}) 
+a~(\ref{eq:sph2cart}),
+%
+\begin{equation}
+\label{eq:uc_spherical}
+U_\cidx(r, \varphi) = \frac{1}{2} \, \omega^2 \, r^2 \, \cos^2\varphi{.}
+\end{equation}
+%
+Dosadením vzťahov~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) do 
+prostrednej časti rovnice~(\ref{eq:u_sph}) získame výsledný vzťah pre normálny 
+tiažový potenciál vo sférických súradniciach.  Všimnime si, že 
+v~rovniciach~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) vystupujú ako 
+konštantny iba štyri základné parametre ekvipotenciálneho elipsoidu, $a$ 
+$J_{2,0}$, $GM$ a $\omega$.  Ide teda o~ďalší výpočet odvodeného fyzikálneho 
+parametra ekvipotenciálneho elipsoidu z~jeho základných parametrov.
 
 
 
