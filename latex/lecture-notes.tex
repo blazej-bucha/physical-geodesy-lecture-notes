@@ -683,11 +683,12 @@ nárastu} funkcie $f(x, y, z)$ v~bode so súradnicami $x$, $y$ a~$z$.
 
 Operátor gradient hrá v~teórii fyzikálnych polí dôležitú úlohu, pretože 
 umožňuje získať informácie o~lokálnych charakteristikách poľa.  Medzi tieto 
-informácie patrí smer a~veľkosť najväčšieho nárastu funkcie, ale aj popis jej 
-zmeny v~smere súradnicových osí.  Vhodnou aplikáciou rotačných matíc je možné 
-následne získať informáciu o~zmene funkcie v~ľubovoľnom smere, čo je v~mnohých 
-situáciách veľmi nápomocné.  Numerická ukážka aplikácie operátora gradient je 
-uvedená v~Prílohe~\ref{app:numerical_application_of_gradient}.
+informácie patrí smer a~veľkosť najväčšieho nárastu funkcie v~bode, ale aj 
+popis jej zmeny v~danom bode v~smere súradnicových osí.  Vhodnou aplikáciou 
+rotačných matíc je možné následne získať informáciu o~zmene funkcie 
+v~ľubovoľnom smere, čo je v~mnohých situáciách veľmi nápomocné.  Numerická 
+ukážka aplikácie operátora gradient je uvedená 
+v~Prílohe~\ref{app:numerical_application_of_gradient}.
 
 Po tejto príprave môžeme definovať gravitačný potenciál nasledovne.  Gravitačný
 potenciál je skalárna funkcia, ktorá vyhovuje rovnici
@@ -859,7 +860,7 @@ povrchu.  Je preto prirodzené, že teória potenciálu pritiahla záujem
 brilantných matematikov akými boli, okrem iných, J.~L.~Lagrange, P.~S.~Laplace, 
 britský samouk G.~Green (1793--1841), či C.~F.~Gauss.
 
-V~nasledujúcich troch kapitolách (\ref{sec:laplace_equation}~--
+V~nasledujúcich piatich kapitolách (\ref{sec:laplace_equation_cart}~--
 \ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými
 vlastnosťami gravitačného potenciálu, ktoré vyplývajú z~teórie potenciálu.
 Vlastnosti budú popísané pre gravitačný potenciál mimo telesa a~vo vnútri
@@ -869,8 +870,8 @@ telesa.
 
 
 
-\subsection{Laplaceova rovnica}
-\label{sec:laplace_equation}
+\subsection{Laplaceova rovnica v~pravouhlých súradniciach}
+\label{sec:laplace_equation_cart}
 
 Pierre-Simon Laplace zistil, že gravitačný potenciál každého všeobecného telesa
 spĺňa v~bode $P(x, y, z)$ \emph{mimo} tohto telesa rovnicu
@@ -953,32 +954,27 @@ y^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial
 z^2}\left(\frac{1}{l}\right) \right] \diff\tau = 0{.}
 \end{equation}
 
-Podľa \textcite{MacMillan1930} Laplace predstavil 
-rovnicu~(\ref{eq:vg_laplace_cart}) po prvýkrát vo sférických súradniciach,
-%
-\begin{equation}
-\label{eq:vg_laplace_sph}
-\nabla^2 V_\gidx = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
-\frac{\partial V_\gidx}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
-\frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial
-V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \,
-\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{,}
-\end{equation}
-%
-kde $r$ je sprievodič, $\varphi$ je sférická šírka a~$\lambda$ je sférická
-dĺžka bodu $P$ (Obrázok~\ref{fig:cart_sph}).  Sférické súradnice je možné
-transformovať na pravouhlé súradnice vzťahmi (pozri Obrázok~\ref{fig:cart_sph})
+
+\subsection{Laplaceova rovnica vo sférických súradniciach}
+\label{sec:laplace_equation_sph}
+
+Laplace publikoval rovnicu~(\ref{eq:vg_laplace_cart}) po prvýkrát v~skutočnosti 
+vo sférických súradniciach \parencite{MacMillan1930}.  Tieto súradnice budeme 
+označovať $r$, $\varphi$ a $\lambda$, pričom $r$ predstavuje sprievodič, 
+$\varphi$ je sférická šírka a~$\lambda$ je sférická dĺžka 
+(Obrázok~\ref{fig:cart_sph}).  Medzi sférickými a pravouhlými súradnicami 
+platia nasledovné vzťahy (pozri Obrázok~\ref{fig:cart_sph})
 %
 \begin{equation}
 \label{eq:sph2cart}
 \begin{split}
 x &= r \, \cos\varphi \, \cos\lambda{,}\\
 y &= r \, \cos\varphi \, \sin\lambda{,}\\
-z &= r \, \sin\varphi{.}\\
+z &= r \, \sin\varphi\\
 \end{split}
 \end{equation}
 %
-Inverzná transformácia má tvar
+a
 %
 \begin{equation}
 \label{eq:cart2sph}
@@ -988,10 +984,6 @@ r &= \sqrt{x^2 + y^2 + z^2}{,}\\
 \lambda &= \arctan \frac{y}{x}{.}\\
 \end{split}
 \end{equation}
-%
-Existuje tiež všeobecný zápis Laplaceovej rovnice v~ľubovoľných pravouhlých
-súradniciach \parencite[pozri 
-napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination}.
 
 \begin{figure}
 \centering
@@ -1000,8 +992,21 @@ napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination}.
 \label{fig:cart_sph}
 \end{figure}
 
+\begin{equation}
+\label{eq:vg_laplace_sph}
+\nabla^2 V_\gidx = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
+\frac{\partial V_\gidx}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
+\frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial
+V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \,
+\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{,}
+\end{equation}
 
-\subsubsection{Praktický význam Laplaceovej rovnice}
+Existuje tiež všeobecný zápis Laplaceovej rovnice v~ľubovoľných krivočiarych 
+súradniciach \parencite[pozri 
+napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination}.
+
+
+\subsection{Praktický význam Laplaceovej rovnice}
 \label{sec:meaning_of_laplace_equation_in_practice}
 
 Jedným z~cieľov fyzikálnej geodézie je určiť vonkajšie gravitačné pole Zeme 
@@ -1112,7 +1117,7 @@ spôsobuje veľké chyby vo výsledkoch.
 \subsection{Poissonova rovnica}
 \label{sec:poisson_equation}
 
-Z~Kapitoly~\ref{sec:laplace_equation} vieme, že Laplaceova rovnica pre
+Z~Kapitoly~\ref{sec:laplace_equation_cart} vieme, že Laplaceova rovnica pre
 gravitačný potenciál platí v~každom bode mimo telesa.  \emph{Vo vnútri} telesa
 platí \emph{Poissonova rovnica},
 %
@@ -1853,7 +1858,7 @@ Nech je dané všeobecné teleso s~objemom $\tau$ a~hustotou $\rho$
 no budeme predpokladať, že v~každom diferenciálnom elemente $\diff \tau(Q)$ je
 konečná.  Nech je ďalej daný bod $P$, ktorý sa nachádza \emph{mimo} všeobecného
 telesa, teda v~tej časti priestoru, v~ktorom je gravitačný potenciál harmonický
-(Kapitola~\ref{sec:laplace_equation}).  Trojicu sférických súradníc (pozri
+(Kapitola~\ref{sec:laplace_equation_cart}).  Trojicu sférických súradníc (pozri
 Obrázok~\ref{fig:cart_sph}) bodov $P$ a~$Q$ označme symbolmi $(r, \varphi,
 \lambda)$ a~$(r_Q, \varphi_Q, \lambda_Q)$.
 
@@ -3340,39 +3345,53 @@ s~rovnicami~(\ref{eq:p0_to_p5})
 %
 \begin{equation}
 \label{eq:q0t}
-Q_0(t) = \frac{1}{2} \, \ln\frac{1 + t}{1 - t} = \tanh^{-1}t{,}
+Q_0(t) = \frac{1}{2} \, \ln\frac{1 + t}{1 - t} = \mathrm{arctanh}(t){,}
 \end{equation}
 %
 \begin{equation}
 \label{eq:q1t}
-Q_1(t) = \frac{t}{2} \, \ln\frac{1 + t}{1 - t} - 1 = t \, \tanh^{-1}t - 1{,}
+Q_1(t) = \frac{t}{2} \, \ln\frac{1 + t}{1 - t} - 1 = t \, \mathrm{arctanh}(t)- 
+ 1{,}
 \end{equation}
 %
 \begin{equation}
 \label{eq:q2t}
 Q_2(t) = \left( \frac{3}{4} t^2 - \frac{1}{4} \right) \, \ln\frac{1 + t}{1 - t} 
-- \frac{3}{2}t = \left( \frac{3}{2} t^2 - \frac{1}{2} \right) \, \tanh^{-1}t 
-- \frac{3}{2}t{,}
+- \frac{3}{2}t = \left( \frac{3}{2} t^2 - \frac{1}{2} \right) \, 
+\mathrm{arctanh}(t) - \frac{3}{2}t{,}
 \end{equation}
 %
 kde
 %
 \begin{equation}
 \label{eq:tanh}
-\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \tanh^{-1}t{,}
+\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \mathrm{arctanh} \, t{,}
 \end{equation}
 %
-pričom $\tanh$ označuje hyperbolický tangens.  Funkcie $Q_{nm}(t)$ pre niekoľko 
-prvých stupňov~$n$ a~rádov~$m$ sú znázornené na Obrázkoch~\ref{fig:lp_2nd} 
-a~\ref{fig:lf_2nd} (porovnaj s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).  Funkcie 
-$Q_0\left( z \right)$, $Q_1\left( z \right)$ a~$Q_2\left( z \right)$ 
-komplexného argumentu~$z$ získame nahradením~výrazov~(\ref{eq:tanh}) vo 
-vzťahoch~(\ref{eq:q0t}) až (\ref{eq:q2t}) výrazmi (porovnaj 
-rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def})
+pričom $\mathrm{arctanh}$ označuje inverznú funkciu k~hyperbolickému tangensu, 
+ktorý je daný vzťahom \parencite{Gradshteyn2007}
 %
 \begin{equation}
-\label{eq:coth}
-\frac{1}{2} \, \ln \frac{z + 1}{z - 1} = \coth^{-1}z{.}
+\tanh t = \frac{e^t - e^{-t}}{e^t + e^{-t}}{.}
+\end{equation}
+%
+Funkcie $Q_{nm}(t)$ pre niekoľko prvých stupňov~$n$ a~rádov~$m$ sú znázornené 
+na Obrázkoch~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd} (porovnaj 
+s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).  Funkcie $Q_0\left( z \right)$, 
+$Q_1\left( z \right)$ a~$Q_2\left( z \right)$ komplexného argumentu~$z$ získame 
+nahradením~výrazu~(\ref{eq:tanh}) vo vzťahoch~(\ref{eq:q0t}) až (\ref{eq:q2t}) 
+výrazom (porovnaj rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def})
+%
+\begin{equation}
+\label{eq:arccoth}
+\frac{1}{2} \, \ln \frac{z + 1}{z - 1} = \mathrm{arccoth} \, z{,}
+\end{equation}
+%
+kde $\mathrm{arccoth}$ je inverzná funkcia k hyperbolickému kotangensu, ktorý 
+je daný vzťahom \parencite{Gradshteyn2007}
+%
+\begin{equation}
+\coth z = \frac{1}{\tanh z} =  \frac{e^z + e^{-z}}{e^z - e^{-z}}{.}
 \end{equation}
 
 Pre~$Q_n(t)$ platia rovnaké rekurentné vzťahy ako pre~$P_n(t)$ 
@@ -3810,9 +3829,10 @@ b \slash (GM)$\\
 
 V~mnohých situáciách, hoci rozhodne nie v~každej situácii, sú 
 preferované~uzavreté matematické vzťahy pred nekonečnými rozvojmi.  Uzavretý 
-vzťah je taký vzťah, ktorý má konečný počet členov.  Výhodou je, že často 
+vzťah je taký vzťah, ktorý má konečný počet členov.  Jeho výhodou je, že často 
 umožňuje presnejší a rýchlejší číselný výpočet v~porovnaní s~výpočtom 
-nekonečného radu, ktorý je obmedzený na vhodne zvolený konečný počet členov.  
+nekonečného radu.  V praktických výpočtoch musí byť nekonečný rad vždy 
+obmedzený na vhodne zvolený konečný počet členov.  
 V~Kapitole~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} sa preto 
 budeme snažiť nájsť uzavretý vzťah na výpočet normálneho tiažového 
 potenciálu~$U$ v~bodoch na povrchu ekvipotenciálneho elipsoidu a~nad ním.  Za 
@@ -3820,7 +3840,8 @@ týmto účelom budeme pracovať v~redukovaných elipsoidických súradniciach, 
 sa prirodzene ponúkajú v~súvislosti so splošteným rotačným elipsoidom.  
 Následne v~Kapitole~\ref{sec:normal_gravity_potential_in_spherical_coords} 
 vyjadríme normálny tiažový potenciál vo sférických súradniciach, tentokrát však 
-už pomocou nekonečného rozvoja.  Táto kapitola je spracovaná 
+už pomocou nekonečného rozvoja.  
+Kapitola~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} je spracovaná 
 podľa~\textcite{MoritzTheFigureOfTheEarth}.
 
 \subsection{Normálny tiažový potenciál vyjadrený v~elipsoidických redukovaných 
@@ -3990,7 +4011,7 @@ Vzťahy pre~$Q_0(z)$ a $Q_2(z)$ komplexného argumentu $z$ sú konečné (pozri
 Kapitolu~\ref{sec:spheroidal_harmonics}).  Po dosadení~(\ref{eq:ug_spheroidal}) 
 do~(\ref{eq:u_sph}) preto získame vzťah pre normálny tiažový potenciál, ktorý 
 má konečný počet členov, čo bol cieľ vytýčený na začiatku tejto kapitoly.  
-Ďalšia dôležitá vlatnosť je tá, že vzťah~(\ref{eq:ug_spheroidal}) platí nielen 
+Ďalšia dôležitá vlastnosť je tá, že vzťah~(\ref{eq:ug_spheroidal}) platí nielen 
 na elipsoide pre $u = b$, ale aj pre $u \geq b$, teda kdekoľvek na povrchu 
 ekvipotenciálneho elipsoidu a~v~jeho vonkajšom priestore.
 
@@ -4012,7 +4033,7 @@ vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime, že
 %
 potom $Q_0$ a $Q_2$ komplexného argumentu $i \frac{u}{E}$ 
 z rovnice~(\ref{eq:ug_spheroidal}) môžeme prepísať do tvaru (pozri 
-rovnice~\ref{eq:q0t}, \ref{eq:q2t} a \ref{eq:coth})
+rovnice~\ref{eq:q0t}, \ref{eq:q2t} a \ref{eq:arccoth})
 %
 \begin{equation}
 Q_0\left( i \, \frac{u}{E} \right) = -i \, \arctan\frac{E}{u}
@@ -4164,7 +4185,7 @@ Kapitolu~\ref{sec:gg}.}
 \end{equation}
 %
 pretože $r \, O \left( \frac{1}{r^3} \right) = O\left( \frac{1}{r^2} \right)$ 
-sa limitne blíži k~nule.
+sa limitne blíži k~nule pre $r \rightarrow \infty$.
 
 Vynásobme ďalej rovnice~(\ref{eq:ug_spheroidal_3}) a~(\ref{eq:ug_far_far_away}) 
 sprievodičom $r$.  Kombináciou oboch rovníc a výpočtom limity pre $r 
@@ -4244,13 +4265,13 @@ pomocou štyroch základných parametrov ekvipotenciálneho elipsoidu.
 \subsection{Normálny tiažový potenciál vyjadrený vo sférických súradniciach}
 \label{sec:normal_gravity_potential_in_spherical_coords}
 
-V~praktických aplikáciach je dôležité dokázať vyjadriť normálny gravitačný 
+V~praktických aplikáciách je dôležité dokázať vyjadriť normálny gravitačný 
 a tiažový potenciál,~$U_\gidx$ a $U$, aj vo sférických súradniciach.  Jeden 
 z~dôvodov je ten, že normálny gravitačný potenciál~$U_\gidx$ budeme potrebovať 
 odčítať od skutočného gravitačného potenciálu~$V_\gidx$, ktorý býva často 
 aproximovaný sférickým harmonickým rozvojom~(\ref{eq:vg_sh_2nd_norm_ynk}) 
-(pozri Kapitolu~\ref{sec:spherical_harmonics_applications}).  Rozvoj~$U_\gidx$ 
-do radu sférických harmonických funkcií by teda umožnil odčítavať a porovnávať 
+(pozri Kapitolu~\ref{sec:spherical_harmonics_applications}).  Sférický 
+harmonický rozvoj potenciálu~$U_\gidx$ by teda umožnil odčítavať a porovnávať 
 oba rady člen po člene, nielen ich výsledné súčty.
 
 Podobne ako v~prípade sféroidických harmonických funkcií, i~tentokrát budú 
@@ -4276,15 +4297,8 @@ J_{2n,0} = (-1)^{n + 1} \, \frac{3e^{2n}}{(2n + 1) \, (2n + 3)} \left(
 %
 Vzťah~(\ref{eq:ug_spherical}) môže byť získaný rozvojom 
 člena~$\arctan\frac{u}{E}$ v~rovniciach~(\ref{eq:u_sph_final}) a~(\ref{eq:u_q}) 
-do mocninového radu \parencite{Moritz1967}
-%
-\begin{equation}
-\arctan\frac{E}{u} = \frac{E}{u} + \sum_{n = 1}^{\infty}(-1)^n \, \frac{1}{2n 
-+ 1} \, \left( \frac{E}{u} \right)^{2n + 1}
-\end{equation}
-%
-a ďalšími úpravami.  Podrobné odvodenie je možné nájsť 
-v~práci~\textcite{Moritz1967}.
+do mocninového radu~(\ref{eq:arctan_series}) a ďalšími úpravami.  Podrobné 
+odvodenie je možné nájsť v~práci~\textcite{Moritz1967}.
 
 Vzťah pre normálny odstredivý potenciál vyplýva z~rovníc~(\ref{eq:vc}) 
 a~(\ref{eq:sph2cart}),
@@ -4298,7 +4312,7 @@ Dosadením vzťahov~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) do
 prostrednej časti rovnice~(\ref{eq:u_sph}) získame výsledný vzťah pre normálny 
 tiažový potenciál vo sférických súradniciach.  Všimnime si, že 
 v~rovniciach~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) vystupujú ako 
-konštantny iba štyri základné parametre ekvipotenciálneho elipsoidu, $a$ 
+konštantny opäť iba štyri základné parametre ekvipotenciálneho elipsoidu, $a$ 
 $J_{2,0}$, $GM$ a $\omega$.  Ide teda o~ďalší výpočet odvodeného fyzikálneho 
 parametra ekvipotenciálneho elipsoidu z~jeho základných parametrov.
 
