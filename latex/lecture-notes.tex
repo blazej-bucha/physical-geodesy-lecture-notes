@@ -31,6 +31,7 @@
 \usepackage{graphicx}
 \usepackage{accsupp}
 \usepackage{csquotes}
+\usepackage{cancel}
 \usepackage[width=0.95\textwidth,font=small]{caption}
 \usepackage[unicode,
             pdfborder={0 0 0},
@@ -630,7 +631,7 @@ gradient definovaný nasledovne,
 \end{equation}
 %
 kde $\vec e_1$, $\vec e_2$ a~$\vec e_3$ predstavujú jednotkové vektory
-rovnobežné so smerom súradnicových osí,
+rovnobežné so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system}),
 %
 \begin{equation}
 \label{eq:unit_vectors}
@@ -679,19 +680,38 @@ f(x, y, z)}{\partial y} + \vec e_3 \frac{\partial f(x, y, z)}{\partial z} =
 \end{equation}
 %
 Vektorová funkcia $\vec f(x, y, z)$ \emph{udáva smer a~veľkosť najväčšieho
-nárastu} funkcie $f(x, y, z)$ v~bode so súradnicami $x$, $y$ a~$z$.
-
-Operátor gradient hrá v~teórii fyzikálnych polí dôležitú úlohu, pretože 
-umožňuje získať informácie o~lokálnych charakteristikách poľa.  Medzi tieto 
-informácie patrí smer a~veľkosť najväčšieho nárastu funkcie v~bode, ale aj 
-popis jej zmeny v~danom bode v~smere súradnicových osí.  Vhodnou aplikáciou 
-rotačných matíc je možné následne získať informáciu o~zmene funkcie 
-v~ľubovoľnom smere, čo je v~mnohých situáciách veľmi nápomocné.  Numerická 
-ukážka aplikácie operátora gradient je uvedená 
+nárastu} funkcie $f(x, y, z)$ v~bode so súradnicami $x$, $y$ a~$z$.  Jednotlivé 
+zložky vektorovej funkcie $\vec f(x, y, z)$, teda parciálne derivácie $\partial 
+f \slash \partial x$, $\partial f \slash \partial y$ a $\partial f \slash 
+\partial z$, udávajú zmenu skalárnej funkcie $f(x, y, z)$ v~smere jednotkových 
+vektorov $\vec e_1$, $\vec e_2$ a $\vec e_3$ v~bode, v~ktorom sú derivácie 
+vypočítané.  Operátor gradient  je \emph{lineárny}, teda pre diferencovateľné 
+funkcie $f$ a~$g$ a~konštantu $c$ platí
+%
+\begin{equation}
+\label{eq:gradient_additivity}
+\nabla \left(f + g \right) = \nabla f + \nabla g
+\end{equation}
+%
+a
+%
+\begin{equation}
+\label{eq:gradient_homogenity}
+\nabla (c \, f) = c \, \nabla f{.}
+\end{equation}
+%
+Numerická ukážka aplikácie operátora gradient je uvedená 
 v~Prílohe~\ref{app:numerical_application_of_gradient}.
 
-Po tejto príprave môžeme definovať gravitačný potenciál nasledovne.  Gravitačný
-potenciál je skalárna funkcia, ktorá vyhovuje rovnici
+\begin{figure}
+\centering
+\input{./fig-3d-coord-system.pdf_tex}
+\caption{Trojrozmerný pravouhlý súradnicový systém a jednotkové vektory}
+\label{fig:3d_coord_system}
+\end{figure}
+
+Gravitačný potenciál môžeme definovať pomocou operátora gradient nasledovne.  
+Gravitačný potenciál je skalárna funkcia, ktorá vyhovuje rovnici 
 \parencite{SansoGeoidDetermination}
 %
 \begin{equation}
@@ -874,7 +894,7 @@ telesa.
 \label{sec:laplace_equation_cart}
 
 Pierre-Simon Laplace zistil, že gravitačný potenciál každého všeobecného telesa
-spĺňa v~bode $P(x, y, z)$ \emph{mimo} tohto telesa rovnicu
+spĺňa \emph{mimo} tohto telesa rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
@@ -883,9 +903,37 @@ spĺňa v~bode $P(x, y, z)$ \emph{mimo} tohto telesa rovnicu
 z^2} = 0{.}
 \end{equation}
 %
-Operátor $\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor}
-a~rovnica~(\ref{eq:vg_laplace_cart}) na nazýva \emph{Laplaceova rovnica} pre
-gravitačný potenciál.  Laplaceov operátor je \emph{lineárny}, teda pre funkcie
+Operátor $\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor} 
+a rovnica~(\ref{eq:vg_laplace_cart}) sa nazýva \emph{Laplaceova rovnica} pre
+gravitačný potenciál.
+
+Laplaceov operátor je definovaný ako skalárny súčin operátorov gradient,
+%
+\begin{equation}
+\label{eq:laplace}
+\begin{split}
+\nabla^2 = \nabla \cdot \nabla &= \left( \vec e_1 \, \frac{\partial}{\partial 
+x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec e_3 \, 
+\frac{\partial}{\partial 3} \right) \cdot \left( \vec e_1 \, 
+\frac{\partial}{\partial x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec 
+e_3 \, \frac{\partial}{\partial z} \right)\\
+%
+&= \frac{\partial^2}{\partial^2 x} + \frac{\partial^2}{\partial^2 y} 
++ \frac{\partial^2}{\partial^2 z}{,}
+\end{split}
+\end{equation}
+%
+kde symbol~$\cdot$ označuje skalárny súčin. Na získanie poslednej rovnosti~vo 
+vzťahu~(\ref{eq:laplace}) sme využili skutočnosť, že jednotkové vektory $\vec 
+e_1$, $\vec e_2$ a $\vec e_3$ sú ortogonálne, teda skalárny súčin dvoch rôznych 
+jednotkových vektorov je nulový,
+%
+\begin{equation}
+\label{eq:ei_orthogonality}
+\vec e_i \cdot \vec e_j = 0{,} \quad i \neq j{.}
+\end{equation}
+%
+Laplaceov operátor je \emph{lineárny}, teda pre funkcie
 $f$ a~$g$ vyhovujúce rovnici~(\ref{eq:vg_laplace_cart}) a~konštantu $c$ platí
 %
 \begin{equation}
@@ -958,12 +1006,12 @@ z^2}\left(\frac{1}{l}\right) \right] \diff\tau = 0{.}
 \subsection{Laplaceova rovnica vo sférických súradniciach}
 \label{sec:laplace_equation_sph}
 
-Laplace publikoval rovnicu~(\ref{eq:vg_laplace_cart}) po prvýkrát v~skutočnosti 
-vo sférických súradniciach \parencite{MacMillan1930}.  Tieto súradnice budeme 
-označovať $r$, $\varphi$ a $\lambda$, pričom $r$ predstavuje sprievodič, 
-$\varphi$ je sférická šírka a~$\lambda$ je sférická dĺžka 
-(Obrázok~\ref{fig:cart_sph}).  Medzi sférickými a pravouhlými súradnicami 
-platia nasledovné vzťahy (pozri Obrázok~\ref{fig:cart_sph})
+V~skutočnosti to bolo tak, že Laplace publikoval 
+rovnicu~(\ref{eq:vg_laplace_cart}) po prvýkrát vo sférických súradniciach 
+\parencite{MacMillan1930}.  Tieto súradnice budeme označovať $r$, $\varphi$ 
+a $\lambda$, pričom $r$ predstavuje sprievodič, $\varphi$ je sférická šírka 
+a~$\lambda$ je sférická dĺžka (Obrázok~\ref{fig:cart_sph}).  Medzi sférickými 
+a pravouhlými súradnicami platia vzťahy (pozri Obrázok~\ref{fig:cart_sph})
 %
 \begin{equation}
 \label{eq:sph2cart}
@@ -988,9 +1036,53 @@ r &= \sqrt{x^2 + y^2 + z^2}{,}\\
 \begin{figure}
 \centering
 \input{./fig-cart-sph.pdf_tex}
-\caption{Pravouhlé a~sférické súradnice bodu $P$}
+\caption{Pravouhlé súradnice~$x$, $y$, $z$ a~sférické súradnice~$r$, $\varphi$, 
+$\lambda$ bodu~$P$.  Symboly~$\vec{e}_1^\mathrm{s}$, $\vec{e}_2^\mathrm{s}$ 
+a~$\vec{e}_3^\mathrm{s}$ označujú jednotkové vektory lokálneho pravouhlého 
+súradnicového systému $x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ 
+s~pohyblivým začiatkom v~bode~$P$.}
 \label{fig:cart_sph}
 \end{figure}
+
+V~niektorých situáciách budeme pracovať s~veličinami, ktoré budú vyjadrené ako 
+funkcie sférických súradníc, napríklad $V_\gidx(r, \varphi, \lambda)$.  Z~tohto 
+dôvodu je často potrebné poznať tvar operátora gradient a Laplaceovho operátora 
+nielen v~pravouhlých súradniciach~(rovnice~\ref{eq:gradient} 
+a~\ref{eq:vg_laplace_cart}), ale aj vo sférických súradniciach.  Operátor 
+gradient má vo sférických súradniciach tvar (pozri 
+Prílohu~\ref{app:gradient_in_spherical_coordinates})
+%
+\begin{equation}
+\label{eq:gradient_sph}
+\nabla = \grad = \vec e_1^\mathrm{s} \, \frac{1}{r} \, \frac{\partial}{\partial 
+\varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r \, \cos\varphi} \, 
+\frac{\partial}{\partial \lambda} + \vec e_3^\mathrm{s} 
+\frac{\partial}{\partial r}\\
+%
+=
+%
+\begin{bmatrix}
+\dfrac{1}{r} \, \dfrac{\partial}{\partial \varphi} \\[2ex]
+\dfrac{1}{r \, \cos\varphi} \, \dfrac{\partial}{\partial \lambda}\\[2ex]
+\dfrac{\partial}{\partial r}
+\end{bmatrix}
+{.}
+\end{equation}
+%
+Symboly $\vec{e}_1^\mathrm{s}$, $\vec{e}_2^{\mathrm{s}}$ 
+a $\vec{e}_3^\mathrm{s}$ označujú jednotkové vektory lokálneho pravouhlého 
+súradnicového systému orientovaného na sever s~pohyblivým začiatkom v~bode~$P$ 
+(Obrázok~\ref{fig:cart_sph}).  Tento súradnicový systém je ľavotočivý.  Podobne 
+ako v~prípade operátora gradient vyjadreného v~pravouhlých 
+súradniciach~(\ref{eq:gradient}), aplikovaním gradientu vo sférických 
+súradniciach~(\ref{eq:gradient_sph}) na gravitačný potenciál $V_\gidx(r, 
+\varphi, \lambda)$ získame vektor gravitačného zrýchlenia~$\vec g_\gidx(r, 
+\varphi, \lambda)$.  Tentokrát však budú zložky vektora vyjadrené v~lokálnom 
+pravouhlom súradnicovom systéme s~jednotkovými vektormi~$\vec e_1^\mathrm{s}$, 
+$\vec e_2^{\mathrm{s}}$ a $\vec e_3^\mathrm{s}$, teda budú udávať zmenu 
+gravitačného potenciálu v~iných smeroch ako je tomu v~prípade 
+operátora~(\ref{eq:gradient}).  Veľkosť a smer vektora gravitačného zrýchlenia 
+sú však po aplikovaní~(\ref{eq:gradient}) a~(\ref{eq:gradient_sph}) rovnaké.
 
 \begin{equation}
 \label{eq:vg_laplace_sph}
@@ -1458,12 +1550,11 @@ kde
 \end{bmatrix}
 \end{equation}
 %
-a $\alpha$ je uhol medzi vektormi~$\vec g$ a~$\diff \vec x$.  Symbol~$\cdot$ 
-označuje skalárny súčin dvoch vektorov.  Skracovaním vzdialenosti~$\diff \vec 
-x$ v~rovnici~(\ref{eq:w_totdiff_scalar}) je možné zmenšiť aproximačnú chybu 
-totálneho diferenciálu~$\diff W(\vec x, \diff \vec x)$ voči skutočnej zmene 
-tiažového potenciálu $\delta W(\vec x, \diff \vec x)$ na ľubovoľne malú 
-hodnotu.
+a $\alpha$ je uhol medzi vektormi~$\vec g$ a~$\diff \vec x$.  Skracovaním 
+vzdialenosti~$\diff \vec x$ v~rovnici~(\ref{eq:w_totdiff_scalar}) je možné 
+zmenšiť aproximačnú chybu totálneho diferenciálu~$\diff W(\vec x, \diff \vec 
+x)$ voči skutočnej zmene tiažového potenciálu $\delta W(\vec x, \diff \vec x)$ 
+na ľubovoľne malú hodnotu.
 
 Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ pozdĺž 
 ekvipotenciálnej plochy s~konštantným tiažovým potenciálom, potom totálny 
@@ -1741,11 +1832,12 @@ a~so súradnicovými osami $x$, $y$ a~$z$.  Označme symbolmi $\vec e_1$, $\vec
 e_2$ a~$\vec e_3$ jednotkové vektory v~smere týchto súradnicových osí (pozri 
 rovnicu~\ref{eq:unit_vectors}).  Nech symbol $\vec r$ predstavuje ľubovoľný 
 vektor v~tomto priestore (Obrázok~\ref{fig:unit_vectors}),
+%
 \begin{figure}
 \centering
-\input{./fig-unit-vectors.pdf_tex}
-\caption{Jednotkové vektory $\vec e_1$, $\vec e_2$, $\vec e_3$ trojrozmerného
-pravouhlého súradnicového systému a~polohový vektor $\vec r$ bodu~$P$}
+\input{./fig-vector-in-3d.pdf_tex}
+\caption{Polohový vektor $\vec r$ bodu~$P$ v~trojrozmernom súradnicovom 
+systéme}
 \label{fig:unit_vectors}
 \end{figure}
 
@@ -2201,15 +2293,8 @@ nájsť napríklad vo \textcite{Freeden2009} či
 v~\textcite{SansoGeoidDetermination}.
 
 Podobne ako skalárny súčin dvoch rôznych jednotkových vektorov $\vec e_i$ 
-a $ \vec e_j$ je nulový,
-%
-\begin{equation}
-\label{eq:ei_orthogonality}
-\vec e_i \cdot \vec e_j = 0{,} \quad i \neq j{,}
-\end{equation}
-%
-nulový je i~skalárny súčin dvoch rôznych Legendreovych polynómov $P_n(t)$ 
-a $P_l(t)$,
+a $ \vec e_j$ je nulový (rovnica~\ref{eq:ei_orthogonality}), nulový je 
+i~skalárny súčin dvoch rôznych Legendreovych polynómov $P_n(t)$ a $P_l(t)$,
 %
 \begin{equation}
 \label{eq:lp_orthogonality}
@@ -3967,7 +4052,7 @@ a \ref{eq:f_sha_no_norm}).  Podobne ako rovnosť (pozri
 vzťah~\ref{eq:r_synthesis})
 %
 \begin{equation}
-\sum_{i = 1}^3 r_i \, \mathbf{e}_i = \mathbf{0}
+\sum_{i = 1}^3 r_i \, \vec{e}_i = \vec{0}
 \end{equation}
 %
 platí vtedy a iba vtedy, ak $r_i = 0$ pre všetky $i$, podobne aj 
@@ -4141,11 +4226,43 @@ $u$ a $r$ platí spomenutý vzťah
 a teda (pozri rovnice~\ref{eq:eu_atan} a \ref{eq:1u})
 %
 \begin{equation}
+\label{eq:arctan_eu_r}
 \arctan\frac{E}{u} = \frac{E}{r} + O\left( \frac{1}{r^3} \right){.}
 \end{equation}
 
-Ak $r$ je veľmi veľké, potom v~rovnici~(\ref{eq:ug_spheroidal_2}) dominuje prvý 
-člen, preto ju môžeme prepísať do tvaru
+Skúsme teraz zistiť, či niektorý z~dvoch sčítancov 
+v~rovnici~(\ref{eq:ug_spheroidal_2}) dominuje pre veľké hodnoty~$u$, resp.~$r$,  
+a ak áno, tak ktorý člen je ten dominantný.  Dosadením~rozvoja 
+(\ref{eq:arctan_series}) pre $x = \frac{E}{u}$ do prvého sčítanca 
+rovnice~(\ref{eq:ug_spheroidal_2}) ihneď vidíme v~kombinácii so 
+vzťahom~(\ref{eq:1u}), že prvý člen je rádu $O\left( \frac{1}{r} \right)$.  
+V~druhom sčítanci rovnice~(\ref{eq:ug_spheroidal_2}) vystupuje premenná~$u$ iba 
+vo funkcii~$q$, preto postačuje vyšetriť funkciu~$q$.  Pomocou 
+rozvoja~(\ref{eq:arctan_series}) a~rovníc~(\ref{eq:u_q}) a~(\ref{eq:1u}) sa 
+môžeme jednoducho presvedčiť, že druhý člen 
+v~rovnici~(\ref{eq:ug_spheroidal_2}) je rádu $O\left( \frac{1}{r^3} \right)$,
+%
+\begin{equation}
+\begin{split}
+q &= \frac{1}{2} \left[ \arctan\frac{E}{u} + 3\frac{u^2}{E^2} \left( 
+\frac{E}{u} - \frac{1}{3} \, \frac{E^3}{u^3} + \frac{1}{5} \, \frac{E^5}{u^5} 
+- \dots
+\right) - 3\frac{u}{E} \right]\\
+%
+&= \frac{1}{2} \left[ \arctan\frac{E}{u} + \left( - \frac{E}{u} + \frac{3}{5} 
+\, \frac{E^3}{u^3} - \dots \right) \right]\\
+%
+&= \frac{1}{2} \left[ \left(\cancel{\frac{E}{u}} - \frac{1}{3} \, 
+\frac{E^3}{u^3} + \frac{1}{5} \, \frac{E^5}{u^5} + \dots \right) + \left( 
+\cancel{- \frac{E}{u}} + \frac{3}{5} \, \frac{E^3}{u^3} - \dots \right) 
+\right]\\
+%
+&=O\left( \frac{1}{u^3} \right) = O\left( \frac{1}{r^3} \right){.}
+\end{split}
+\end{equation}
+
+V~rovnici~(\ref{eq:ug_spheroidal_2}) teda dominuje prvý člen, preto ju môžeme 
+prepísať do tvaru
 %
 \begin{equation}
 \label{eq:ug_spheroidal_3}
@@ -4153,7 +4270,7 @@ U_\gidx(r) = \left( U_0 - \frac{1}{3} \, \omega^2 \, a^2 \right) \,
 \frac{E}{\arctan\dfrac{E}{b}} \, \frac{1}{r} + O\left( \frac{1}{r^3} \right){.}
 \end{equation}
 %
-Ak je ale $r$ veľmi veľké, potom platí aj vzťah
+Pre veľkú hodnotu~$r$ platí aj vzťah
 %
 \begin{equation}
 \label{eq:ug_far_far_away}
@@ -4421,6 +4538,339 @@ znázornená hypsometricky.  Gradient je zobrazený orientovanými šípkami, pr
 
 
 
+
+
+\chapter{Operátor gradient vo sférických súradniciach}
+\label{app:gradient_in_spherical_coordinates}
+
+V~tejto kapitole je odvodený tvar operátora gradient vo sférických 
+súradniciach~(\ref{eq:gradient_sph}).
+
+Nech je daná skalárna diferencovateľná funkcia $f$.  V~lokálnom pravouhlom 
+súradnicovom systéme $x^{\mathrm{s}}$, $y^{\mathrm{s}}$, $z^{\mathrm{s}}$ 
+s~jednotkovými vektormi $\vec e^\mathrm{s}_1$, $\vec e^\mathrm{s}_2$ a $\vec 
+e^\mathrm{s}_3$ (Obrázok~\ref{fig:cart_sph}) je gradient funkcie~$f$ daný 
+vzťahom~(\ref{eq:gradient})
+%
+\begin{equation}
+\nabla f = \vec e^\mathrm{s}_1 \, \frac{\partial f}{\partial x^{\mathrm{s}}} 
++ \vec e^\mathrm{s}_2 \, \frac{\partial f}{\partial y^{\mathrm{s}}} + \vec 
+e^\mathrm{s}_3 \, \frac{\partial f}{\partial z^{\mathrm{s}}}{.}
+\end{equation}
+%
+Cieľom tejto kapitoly je vyjadriť parciálne derivácie $\partial f \slash 
+\partial x^{\mathrm{s}}$, $\partial f \slash \partial y^{\mathrm{s}}$ 
+a~$\partial f \slash \partial z^{\mathrm{s}}$ v~lokálnom \emph{pravouhlom} 
+súradnicovom systéme $x^{\mathrm{s}}$, $y^{\mathrm{s}}$, $z^{\mathrm{s}}$ 
+s~pohyblivým začiatkom pomocou globálnych \emph{krivočiarých} súradníc 
+$\varphi$, $\lambda$, $r$ (pozri Obrázok~\ref{fig:cart_sph}).
+
+V prvom rade potrebujeme zistiť, čomu sú rovné parciálne derivácie $\partial 
+f \slash \partial \varphi$, $\partial f \slash \partial \lambda$ a $\partial 
+f \slash \partial r$.  Nájdenie týchto parciálnych derivácií však komplikuje 
+závislosť pravouhlých súradníc $x$, $y$, $z$ od sférických súradníc $\varphi$, 
+$\lambda$, $r$ (pozri rovnice~\ref{eq:sph2cart}).  Derivujeme preto zloženú 
+funkciu troch premenných,
+%
+\begin{equation}
+\label{eq:f_partials_rlatlon}
+\begin{split}
+\frac{\partial f}{\partial \varphi} &= \frac{\partial f}{\partial x} \, 
+\frac{\partial x}{\partial \varphi} + \frac{\partial f}{\partial y} \, 
+\frac{\partial y}{\partial \varphi} + \frac{\partial f}{\partial z} \, 
+\frac{\partial z}{\partial \varphi}{,}\\[2ex]
+%
+\frac{\partial f}{\partial \lambda} &= \frac{\partial f}{\partial x} \, 
+\frac{\partial x}{\partial \lambda} + \frac{\partial f}{\partial y} \, 
+\frac{\partial y}{\partial \lambda} + \frac{\partial f}{\partial z} \, 
+\frac{\partial z}{\partial \lambda}{,}\\[2ex]
+%
+\frac{\partial f}{\partial r} &= \frac{\partial f}{\partial x} \, 
+\frac{\partial x}{\partial r} + \frac{\partial f}{\partial y} \, \frac{\partial 
+y}{\partial r} + \frac{\partial f}{\partial z} \, \frac{\partial z}{\partial 
+r}{.}
+\end{split}
+\end{equation}
+%
+Rovnicu~(\ref{eq:f_partials_rlatlon}) môžeme zapísať v~maticovom tvare
+%
+\begin{equation}
+\label{eq:f_partials_rlatlon_2}
+\begin{bmatrix}
+\dfrac{\partial f}{\partial \varphi}\\[2ex]
+\dfrac{\partial f}{\partial \lambda}\\[2ex]
+\dfrac{\partial f}{\partial r}
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+\dfrac{\partial x}{\partial \varphi} & \dfrac{\partial y}{\partial \varphi} 
+& \dfrac{\partial z}{\partial \varphi}\\[2ex]
+\dfrac{\partial x}{\partial \lambda} & \dfrac{\partial y}{\partial \lambda
+} & \dfrac{\partial z}{\partial \lambda}\\[2ex]
+\dfrac{\partial x}{\partial r} & \dfrac{\partial y}{\partial r} 
+& \dfrac{\partial z}{\partial r}
+\end{bmatrix}
+%
+\,
+%
+\begin{bmatrix}
+\dfrac{\partial f}{\partial x}\\[2ex]
+\dfrac{\partial f}{\partial y}\\[2ex]
+\dfrac{\partial f}{\partial z}{.}
+\end{bmatrix}
+%
+{.}
+\end{equation}
+
+Zaveďme vektorovú funkciu~$\vec r$, ktorá bude popisovať polohový vektor 
+bodu~$P(\varphi, \lambda, r) = P(x, y, z)$, teda začiatok lokálneho 
+súradnicového systému $x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$, 
+v~globálnom súradnicovom systéme $x$, $y$, $z$,
+%
+\begin{equation}
+\vec r =
+%
+\begin{bmatrix}
+x(\varphi, \lambda, r)\\
+y(\varphi, \lambda, r)\\
+z(\varphi, \lambda, r)
+\end{bmatrix}
+%
+{.}
+\end{equation}
+%
+Vzťah~(\ref{eq:f_partials_rlatlon_2}) potom môžeme prepísať do tvaru
+%
+\begin{equation}
+\label{eq:grad_cart2sph}
+\begin{bmatrix}
+\dfrac{\partial f}{\partial \varphi}\\[2ex]
+\dfrac{\partial f}{\partial \lambda}\\[2ex]
+\dfrac{\partial f}{\partial r}
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+\left( \hat{\vec e}_1^\mathrm{s} \right)^\top\\
+\left( \hat{\vec e}_2^\mathrm{s} \right)^\top\\
+\left( \hat{\vec e}_3^\mathrm{s} \right)^\top
+\end{bmatrix}
+%
+\,
+%
+\begin{bmatrix}
+\dfrac{\partial f}{\partial x}\\[2ex]
+\dfrac{\partial f}{\partial y}\\[2ex]
+\dfrac{\partial f}{\partial z}
+\end{bmatrix}
+%
+{,}
+\end{equation}
+%
+kde symboly
+%
+\begin{equation}
+\label{eq:er_elat_elon}
+\begin{split}
+\hat{\vec e}_1^\mathrm{s} &= \frac{\partial \vec r}{\partial \varphi} = 
+%
+\begin{bmatrix}
+-r \, \sin\varphi \, \cos\lambda\\
+-r \, \sin\varphi \, \sin\lambda\\
+r \, \cos\varphi
+\end{bmatrix}
+%
+{,}\\
+%
+\hat{\vec e}_2^\mathrm{s} &= \frac{\partial \vec r}{\partial \lambda} = 
+%
+\begin{bmatrix}
+-r \, \cos\varphi \, \sin\lambda\\
+r \, \cos\varphi \, \cos\lambda\\
+0
+\end{bmatrix}
+%
+{,}\\
+%
+\hat{\vec e}_3^\mathrm{s} &= \frac{\partial \vec r}{\partial r} = 
+%
+\begin{bmatrix}
+\cos\varphi \, \cos\lambda\\
+\cos\varphi \, \sin\lambda\\
+\sin\varphi
+\end{bmatrix}
+%
+{,}
+%
+\end{split}
+\end{equation}
+%
+predstavujú vektory v~smere osí $x^{\mathrm{s}}$, $y^{\mathrm{s}}$ 
+a $z^{\mathrm{s}}$ lokálneho pravouhlého súradnicového systému.  Hľadaný tvar 
+gradientov $\partial f \slash \partial x^{\mathrm{s}}$, $\partial f \slash 
+\partial y^{\mathrm{s}}$ a $\partial f \slash \partial z^{\mathrm{s}}$ 
+vyjadrený pomocou parciálnych derivácií $\partial f \slash \partial \varphi$, 
+$\partial f \slash \partial \lambda$ a $\partial f \slash \partial r$ získame 
+vyriešením systému lineárnych rovníc~(\ref{eq:grad_cart2sph}) použitím 
+niektorej z~metód lineárnej algebry.
+
+Obzvlášť jednoduchá metóda na vyriešenie systému 
+rovníc~(\ref{eq:grad_cart2sph}) je nasledovná.  Normovaním 
+vektorov~(\ref{eq:er_elat_elon}) získame jednotkové vektory v~smere 
+súradnicových osí~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$,
+%
+\begin{equation}
+\label{eq:er_elat_elon_unit}
+\begin{aligned}
+%
+\vec e^\mathrm{s}_1 &= \frac{\hat{\vec e}_1^\mathrm{s}}{\| \hat{\vec 
+e}_1^\mathrm{s} \|} = 
+%
+\begin{bmatrix}
+-\sin\varphi \, \cos\lambda\\
+-\sin\varphi \, \sin\lambda\\
+\cos\varphi
+\end{bmatrix}
+%
+{,} \quad &\| \hat{\vec e}_1^\mathrm{s} \| &= r{,}\\
+%
+\vec e^\mathrm{s}_2 &= \frac{\hat{\vec e}_2^\mathrm{s}}{\| \hat{\vec 
+e}_2^\mathrm{s} \|} = 
+%
+\begin{bmatrix}
+-\sin\lambda\\
+\cos\lambda\\
+0
+\end{bmatrix}
+%
+{,}  \quad &\| \hat{\vec e}_2^\mathrm{s} \| &= r \, \cos\varphi{,}\\
+%
+\vec e^\mathrm{s}_3 &= \frac{\hat{\vec e}_3^\mathrm{s}}{\| \hat{\vec 
+e}_3^\mathrm{s} \|} = 
+%
+\begin{bmatrix}
+\cos\varphi \, \cos\lambda\\
+\cos\varphi \, \sin\lambda\\
+\sin\varphi
+\end{bmatrix}
+%
+{,} \quad &\| \hat{\vec e}_3^\mathrm{s} \| &= 1{.}
+%
+\end{aligned}
+\end{equation}
+%
+Lineárny systém~(\ref{eq:grad_cart2sph}) potom môžeme prepísať do tvaru
+%
+\begin{equation}
+\label{eq:grad_cart2sph_2}
+\begin{bmatrix}
+\dfrac{\partial f}{\partial \varphi}\\[2ex]
+\dfrac{\partial f}{\partial \lambda}\\[2ex]
+\dfrac{\partial f}{\partial r}
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+r \, \left( \vec e^\mathrm{s}_1\right)^\top\\
+r \, \cos\varphi \, \left(\vec e^\mathrm{s}_2\right)^\top\\
+\left(\vec e^\mathrm{s}_3\right)^\top
+\end{bmatrix}
+%
+\,
+%
+\begin{bmatrix}
+\dfrac{\partial f}{\partial x}\\[2ex]
+\dfrac{\partial f}{\partial y}\\[2ex]
+\dfrac{\partial f}{\partial z}
+\end{bmatrix}
+%
+{.}
+\end{equation}
+%
+Keďže vektory $\vec e^\mathrm{s}_1$, $\vec e^\mathrm{s}_2$, $\vec 
+e^\mathrm{s}_3$ sú ortogononálne (pozri rovnicu~\ref{eq:ei_orthogonality}) 
+a~ich veľkosť je rovná $1$, čo možno overiť pomocou 
+vzťahov~(\ref{eq:er_elat_elon_unit}), potom pre inverziu matice systému 
+lineárnych rovníc~(\ref{eq:grad_cart2sph_2}) platí vzťah 
+\parencite{MichelLectures}
+%
+\begin{equation}
+\begin{bmatrix}
+r \, \left( \vec e^\mathrm{s}_1 \right)^\top\\[2ex]
+r \, \cos\varphi \, \left( \vec e^\mathrm{s}_2 \right)^\top\\[2ex]
+\left( \vec e^\mathrm{s}_3 \right)^\top
+\end{bmatrix}^{-1}
+%
+=
+%
+\begin{bmatrix}
+\dfrac{1}{r} \, \vec e^\mathrm{s}_1\\[2ex]
+\dfrac{1}{r \, \cos\varphi} \, \vec e^\mathrm{s}_2\\[2ex]
+\vec e^\mathrm{s}_3
+\end{bmatrix}
+{.}
+\end{equation}
+%
+Riešenie rovnice~(\ref{eq:grad_cart2sph_2}) má teda tvar
+%
+\begin{equation}
+\label{eq:grad_cart2sph_3}
+\begin{bmatrix}
+\dfrac{\partial f}{\partial x}\\[2ex]
+\dfrac{\partial f}{\partial y}\\[2ex]
+\dfrac{\partial f}{\partial z}
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+\dfrac{1}{r} \, \vec e^\mathrm{s}_1\\[2ex]
+\dfrac{1}{r \, \cos\varphi} \, \vec e^\mathrm{s}_2\\[2ex]
+\vec e^\mathrm{s}_3
+\end{bmatrix}
+%
+\,
+%
+\begin{bmatrix}
+\dfrac{\partial f}{\partial \varphi}\\[2ex]
+\dfrac{\partial f}{\partial \lambda}\\[2ex]
+\dfrac{\partial f}{\partial r}
+\end{bmatrix}
+%
+{,}
+\end{equation}
+%
+pričom hľadané parciálne derivácie v~súradnicovom systéme~$x^\mathrm{s}$, 
+$y^\mathrm{s}$, $z^\mathrm{s}$ majú tvar
+%
+\begin{equation}
+\label{eq:lnof_diff_oeprators}
+\begin{split}
+\frac{\partial f}{\partial x^\mathrm{s}} &= \frac{1}{r} \, \frac{\partial 
+f}{\partial \varphi}{,}\\
+%
+\frac{\partial f}{\partial y^\mathrm{s}} &= \frac{1}{r \, \cos\varphi} \, 
+\frac{\partial f}{\partial \lambda}{,}\\
+%
+\frac{\partial f}{\partial z^\mathrm{s}} &= \frac{\partial f}{\partial r}{.}
+\end{split}
+\end{equation}
+%
+Keďže funkcia~$f$ je ľubovoľná skalárna diferencovateľná funkcia (pozri 
+začiatok tejto kapitoly), potom vzťah~(\ref{eq:grad_cart2sph_3}) dokazuje 
+rovnicu~(\ref{eq:gradient_sph}).
+
+
+
+
+
+
+
+
 \chapter{Výpočet a~zobrazenie Legendreových polynómov}
 \label{app:lp}
 
@@ -4433,6 +4883,7 @@ numerickú implementáciu.
 \lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov
 v~programovacom jazyku Python, language=mypython, label=src:lp,
 captionpos=t]{../python/legendre-polynomials.py}
+
 
 
 
@@ -4459,6 +4910,7 @@ odstránený.
 \lstinputlisting[caption=Výpočet a~zobrazenie nenormovaných sférických
 harmonických funkcií v~programovacom jazyku Python, label=src:ynk,
 language=mypython, captionpos=t]{../python/spherical-harmonics.py}
+
 
 
 
