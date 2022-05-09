@@ -911,12 +911,18 @@ Laplaceov operátor je definovaný ako skalárny súčin operátorov gradient,
 %
 \begin{equation}
 \label{eq:laplace}
+\nabla^2 = \nabla \cdot \nabla{.}
+\end{equation}
+%
+V~pravouhlom súradnicovom systéme $x$, $y$, $z$ má tvar
+%
+\begin{equation}
+\label{eq:laplace_xyz}
 \begin{split}
-\nabla^2 = \nabla \cdot \nabla &= \left( \vec e_1 \, \frac{\partial}{\partial 
-x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec e_3 \, 
-\frac{\partial}{\partial 3} \right) \cdot \left( \vec e_1 \, 
-\frac{\partial}{\partial x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec 
-e_3 \, \frac{\partial}{\partial z} \right)\\
+\nabla^2 = &= \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
+\frac{\partial}{\partial y} + \vec e_3 \, \frac{\partial}{\partial 3} \right) 
+\cdot \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
+\frac{\partial}{\partial y} + \vec e_3 \, \frac{\partial}{\partial z} \right)\\
 %
 &= \frac{\partial^2}{\partial^2 x} + \frac{\partial^2}{\partial^2 y} 
 + \frac{\partial^2}{\partial^2 z}{,}
@@ -924,9 +930,9 @@ e_3 \, \frac{\partial}{\partial z} \right)\\
 \end{equation}
 %
 kde symbol~$\cdot$ označuje skalárny súčin. Na získanie poslednej rovnosti~vo 
-vzťahu~(\ref{eq:laplace}) sme využili skutočnosť, že jednotkové vektory $\vec 
-e_1$, $\vec e_2$ a $\vec e_3$ sú ortogonálne, teda skalárny súčin dvoch rôznych 
-jednotkových vektorov je nulový,
+vzťahu~(\ref{eq:laplace_xyz}) sme využili skutočnosť, že jednotkové vektory 
+$\vec e_1$, $\vec e_2$ a $\vec e_3$ sú ortogonálne, teda skalárny súčin dvoch 
+rôznych jednotkových vektorov je nulový,
 %
 \begin{equation}
 \label{eq:ei_orthogonality}
@@ -1045,12 +1051,12 @@ s~pohyblivým začiatkom v~bode~$P$.}
 \end{figure}
 
 V~niektorých situáciách budeme pracovať s~veličinami, ktoré budú vyjadrené ako 
-funkcie sférických súradníc, napríklad $V_\gidx(r, \varphi, \lambda)$.  Z~tohto 
-dôvodu je často potrebné poznať tvar operátora gradient a Laplaceovho operátora 
-nielen v~pravouhlých súradniciach~(rovnice~\ref{eq:gradient} 
+funkcie sférických súradníc, napríklad $V_\gidx(r, \varphi, \lambda)$.  Často 
+je preto potrebné poznať tvar operátora gradient a Laplaceovho operátora nielen 
+v~pravouhlých súradniciach~(rovnice~\ref{eq:gradient} 
 a~\ref{eq:vg_laplace_cart}), ale aj vo sférických súradniciach.  Operátor 
 gradient má vo sférických súradniciach tvar (pozri 
-Prílohu~\ref{app:gradient_in_spherical_coordinates})
+Prílohu~\ref{app:gradient_in_orthogonal_systems})
 %
 \begin{equation}
 \label{eq:gradient_sph}
@@ -1084,18 +1090,17 @@ gravitačného potenciálu v~iných smeroch ako je tomu v~prípade
 operátora~(\ref{eq:gradient}).  Veľkosť a smer vektora gravitačného zrýchlenia 
 sú však po aplikovaní~(\ref{eq:gradient}) a~(\ref{eq:gradient_sph}) rovnaké.
 
+Laplaceova rovnica pre gravitačný potenciál má vo sférických súradniciach tvar 
+(Príloha~\ref{app:laplace_in_spherical_coordinates})
+%
 \begin{equation}
 \label{eq:vg_laplace_sph}
 \nabla^2 V_\gidx = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
 \frac{\partial V_\gidx}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
 \frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial
 V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \,
-\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{,}
+\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
-
-Existuje tiež všeobecný zápis Laplaceovej rovnice v~ľubovoľných krivočiarych 
-súradniciach \parencite[pozri 
-napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination}.
 
 
 \subsection{Praktický význam Laplaceovej rovnice}
@@ -4540,17 +4545,31 @@ znázornená hypsometricky.  Gradient je zobrazený orientovanými šípkami, pr
 
 
 
-\chapter{Operátor gradient vo sférických súradniciach}
-\label{app:gradient_in_spherical_coordinates}
+\chapter{Operátor gradient v~ortogonálnych súradnicových systémoch}
+\label{app:gradient_in_orthogonal_systems}
 
-V~tejto kapitole je odvodený tvar operátora gradient vo sférických 
-súradniciach~(\ref{eq:gradient_sph}).
+Táto kapitola sa zaoberá vyjadrením operátora gradient v~ortogonálnych 
+súradnicových systémoch.  \emph{Ortogonálny súradnicový systém} je taký 
+súradnicový systém, ktorého súradnicové plochy sa pretínajú pod pravým uhlom.  
+Príkladom ortogonálneho súradnicového systému sú dva pravouhlé súradnicové 
+systémy a~jeden sférický súradnicový systém, ktoré sú zobrazené na 
+Obrázku~\ref{fig:cart_sph}.
+
+V~Kapitole~\ref{app:gradient_in_spherical_coordinates} je podrobne odvodený 
+tvar operátora gradient~(\ref{eq:gradient_sph}) vo sférickom súradnicovom 
+systéme.  V~Kapitole~\ref{app:gradient_in_orthogonal_coordinates} je následne 
+uvedené všeobecné riešenie pre všetky ortogonálne súradnicové systémy.
+
+
+
+\section{Operátor gradient vo sférickom súradnicovom systéme}
+\label{app:gradient_in_spherical_coordinates}
 
 Nech je daná skalárna diferencovateľná funkcia $f$.  V~lokálnom pravouhlom 
 súradnicovom systéme $x^{\mathrm{s}}$, $y^{\mathrm{s}}$, $z^{\mathrm{s}}$ 
 s~jednotkovými vektormi $\vec e^\mathrm{s}_1$, $\vec e^\mathrm{s}_2$ a $\vec 
 e^\mathrm{s}_3$ (Obrázok~\ref{fig:cart_sph}) je gradient funkcie~$f$ daný 
-vzťahom~(\ref{eq:gradient})
+vzťahom~(\ref{eq:gradient}),
 %
 \begin{equation}
 \nabla f = \vec e^\mathrm{s}_1 \, \frac{\partial f}{\partial x^{\mathrm{s}}} 
@@ -4562,15 +4581,14 @@ Cieľom tejto kapitoly je vyjadriť parciálne derivácie $\partial f \slash
 \partial x^{\mathrm{s}}$, $\partial f \slash \partial y^{\mathrm{s}}$ 
 a~$\partial f \slash \partial z^{\mathrm{s}}$ v~lokálnom \emph{pravouhlom} 
 súradnicovom systéme $x^{\mathrm{s}}$, $y^{\mathrm{s}}$, $z^{\mathrm{s}}$ 
-s~pohyblivým začiatkom pomocou globálnych \emph{krivočiarých} súradníc 
-$\varphi$, $\lambda$, $r$ (pozri Obrázok~\ref{fig:cart_sph}).
+pomocou globálnych \emph{krivočiarých} súradníc $\varphi$, $\lambda$, $r$ 
+(pozri Obrázok~\ref{fig:cart_sph}).
 
-V prvom rade potrebujeme zistiť, čomu sú rovné parciálne derivácie $\partial 
-f \slash \partial \varphi$, $\partial f \slash \partial \lambda$ a $\partial 
-f \slash \partial r$.  Nájdenie týchto parciálnych derivácií však komplikuje 
-závislosť pravouhlých súradníc $x$, $y$, $z$ od sférických súradníc $\varphi$, 
-$\lambda$, $r$ (pozri rovnice~\ref{eq:sph2cart}).  Derivujeme preto zloženú 
-funkciu troch premenných,
+V prvom rade potrebujeme vyjadriť parciálne derivácie $\partial f \slash 
+\partial \varphi$, $\partial f \slash \partial \lambda$ a $\partial f \slash 
+\partial r$.  Túto úlohu však komplikuje závislosť pravouhlých súradníc $x$, 
+$y$, $z$ od sférických súradníc $\varphi$, $\lambda$, $r$ (pozri 
+rovnice~\ref{eq:sph2cart}).  Derivujeme preto zloženú funkciu troch premenných,
 %
 \begin{equation}
 \label{eq:f_partials_rlatlon}
@@ -4624,10 +4642,10 @@ Rovnicu~(\ref{eq:f_partials_rlatlon}) môžeme zapísať v~maticovom tvare
 {.}
 \end{equation}
 
-Zaveďme vektorovú funkciu~$\vec r$, ktorá bude popisovať polohový vektor 
-bodu~$P(\varphi, \lambda, r) = P(x, y, z)$, teda začiatok lokálneho 
-súradnicového systému $x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$, 
-v~globálnom súradnicovom systéme $x$, $y$, $z$,
+Zaveďme vektorovú funkciu~$\vec r$, ktorá bude popisovať začiatok lokálneho 
+súradnicového systému $x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$, teda 
+polohový vektor bodu~$P(\varphi, \lambda, r) = P(x, y, z)$, v~globálnom 
+súradnicovom systéme $x$, $y$, $z$,
 %
 \begin{equation}
 \vec r =
@@ -4703,19 +4721,16 @@ r \, \cos\varphi \, \cos\lambda\\
 \sin\varphi
 \end{bmatrix}
 %
-{,}
-%
 \end{split}
 \end{equation}
 %
 predstavujú vektory v~smere osí $x^{\mathrm{s}}$, $y^{\mathrm{s}}$ 
-a $z^{\mathrm{s}}$ lokálneho pravouhlého súradnicového systému.  Hľadaný tvar 
-gradientov $\partial f \slash \partial x^{\mathrm{s}}$, $\partial f \slash 
-\partial y^{\mathrm{s}}$ a $\partial f \slash \partial z^{\mathrm{s}}$ 
-vyjadrený pomocou parciálnych derivácií $\partial f \slash \partial \varphi$, 
-$\partial f \slash \partial \lambda$ a $\partial f \slash \partial r$ získame 
-vyriešením systému lineárnych rovníc~(\ref{eq:grad_cart2sph}) použitím 
-niektorej z~metód lineárnej algebry.
+a $z^{\mathrm{s}}$ lokálneho pravouhlého súradnicového systému.  Gradienty 
+$\partial f \slash \partial x$, $\partial f \slash \partial y$ a $\partial 
+f \slash \partial z$ vyjadríme pomocou parciálnych derivácií $\partial f \slash 
+\partial \varphi$, $\partial f \slash \partial \lambda$ a $\partial f \slash 
+\partial r$ vyriešením systému lineárnych rovníc~(\ref{eq:grad_cart2sph}) 
+použitím niektorej z~metód lineárnej algebry.
 
 Obzvlášť jednoduchá metóda na vyriešenie systému 
 rovníc~(\ref{eq:grad_cart2sph}) je nasledovná.  Normovaním 
@@ -4762,7 +4777,7 @@ e}_3^\mathrm{s} \|} =
 \end{aligned}
 \end{equation}
 %
-Lineárny systém~(\ref{eq:grad_cart2sph}) potom môžeme prepísať do tvaru
+Lineárny systém rovníc~(\ref{eq:grad_cart2sph}) potom môžeme prepísať do tvaru
 %
 \begin{equation}
 \label{eq:grad_cart2sph_2}
@@ -4794,9 +4809,8 @@ r \, \cos\varphi \, \left(\vec e^\mathrm{s}_2\right)^\top\\
 Keďže vektory $\vec e^\mathrm{s}_1$, $\vec e^\mathrm{s}_2$, $\vec 
 e^\mathrm{s}_3$ sú ortogononálne (pozri rovnicu~\ref{eq:ei_orthogonality}) 
 a~ich veľkosť je rovná $1$, čo možno overiť pomocou 
-vzťahov~(\ref{eq:er_elat_elon_unit}), potom pre inverziu matice systému 
-lineárnych rovníc~(\ref{eq:grad_cart2sph_2}) platí vzťah 
-\parencite{MichelLectures}
+vzťahov~(\ref{eq:er_elat_elon_unit}), potom inverzia matice systému lineárnych 
+rovníc~(\ref{eq:grad_cart2sph_2}) je daná vzťahom \parencite{MichelLectures}
 %
 \begin{equation}
 \begin{bmatrix}
@@ -4845,7 +4859,7 @@ Riešenie rovnice~(\ref{eq:grad_cart2sph_2}) má teda tvar
 \end{equation}
 %
 pričom hľadané parciálne derivácie v~súradnicovom systéme~$x^\mathrm{s}$, 
-$y^\mathrm{s}$, $z^\mathrm{s}$ majú tvar
+$y^\mathrm{s}$, $z^\mathrm{s}$ sú dané vzťahmi
 %
 \begin{equation}
 \label{eq:lnof_diff_oeprators}
@@ -4865,6 +4879,280 @@ začiatok tejto kapitoly), potom vzťah~(\ref{eq:grad_cart2sph_3}) dokazuje
 rovnicu~(\ref{eq:gradient_sph}).
 
 
+
+
+\section{Operátor gradient v~ortogonálnom súradnicovom systéme}
+\label{app:gradient_in_orthogonal_coordinates}
+
+Odvodenie z~predošlej kapitoly možno zovšeobecniť na ľubovoľný ortogonálny 
+súradnicový systém.  Nech je daný ortogonálny súradnicový systém $\xi_1$, 
+$\xi_2$, $\xi_3$ a~diferencovateľná funkcia~$f$.  Gradient funkcie~$f$ je 
+v~tomto súradnicovom systéme daný vzťahom 
+\parencite{Arfken2005,SansoGeoidDetermination}
+%
+\begin{equation}
+\label{eq:grad_orthogonal_system}
+\nabla f = \sum_{i = 1}^3 \frac{\hat{\vec e}_i}{\| \hat{\vec e}_i \|^2} \, 
+\frac{\partial f}{\partial \xi_i} = \sum_{i = 1}^3 \frac{1}{\| \hat{\vec e}_i 
+\|} \, \vec e_i \, \frac{\partial f}{\partial \xi_i}{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\hat{\vec e}_i = \frac{\partial \vec r(\boldsymbol \xi)}{\partial \xi_i}{,}
+\end{equation}
+%
+\begin{equation}
+\vec e_i = \frac{\hat{\vec e}_i}{\| \hat{\vec e}_i \|}
+\end{equation}
+%
+a
+%
+\begin{equation}
+\boldsymbol \xi =
+%
+\begin{bmatrix}
+\xi_1\\
+\xi_2\\
+\xi_3
+\end{bmatrix}
+%
+{.}
+%
+\end{equation}
+
+
+
+
+
+
+\chapter{Laplaceov operátor v~ortogonálnych súradnicových systémoch}
+\label{app:laplace_in_spherical_coordinates}
+
+V~Kapitole~\ref{app:laplace_in_spherical_system} je odvodený Laplaceov operátor 
+vo sférickom súradnicovom systéme (rovnica~\ref{eq:vg_laplace_sph}).  
+V~Kapitole~\ref{app:laplace_in_orthogonal_coordinates} je odvodený všeobecný 
+tvar Laplaceovho operátora v~ortogonálnom súradnicovom systéme.
+
+
+
+\section{Laplaceov operátor vo sférickom súradnicovom systéme}
+\label{app:laplace_in_spherical_system}
+
+Laplaceov operátor je daný skalárnym súčinom operátorov gradient 
+(rovnica~\ref{eq:laplace}).  Na jeho vyjadrenie vo sférickom súradnicovom 
+systéme preto použijeme operátor gradient vyjadrený vo sférických 
+súradniciach~(\ref{eq:gradient_sph}),
+%
+%\begin{equation}
+\begin{align}
+\label{eq:grad_grad_sph}
+\nabla^2 &= \nabla \cdot \nabla\nonumber\\
+%
+&= \left( \vec e_1^\mathrm{s} \, \frac{1}{r} \, \frac{\partial}{\partial 
+\varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r \, \cos\varphi} \, 
+\frac{\partial}{\partial \lambda} + \vec e_3^\mathrm{s} 
+\frac{\partial}{\partial r} \right) \cdot \left( \vec e_1^\mathrm{s} \, 
+\frac{1}{r} \, \frac{\partial}{\partial \varphi} + \vec e_2^\mathrm{s} \, 
+\frac{1}{r \, \cos\varphi} \, \frac{\partial}{\partial \lambda} + \vec 
+e_3^\mathrm{s} \frac{\partial}{\partial r} \right)\nonumber\displaybreak[2]\\
+%
+&= \frac{1}{r^2} \, \underbrace{\vec e^\mathrm{s}_1 \cdot \frac{\partial \vec 
+e^\mathrm{s}_1}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot (- \vec 
+e_3^\mathrm{s}) = 0} \, \frac{\partial}{\partial \varphi} + \frac{1}{r^2} \, 
+\underbrace{\vec e^\mathrm{s}_1 \cdot \vec e^\mathrm{s}_1}_{1} \, 
+\frac{\partial^2}{\partial \varphi^2} + \frac{1}{r^2 \, \cos\varphi} \, 
+\underbrace{\vec e_1^\mathrm{s} \cdot \frac{\partial \vec 
+e_2^\mathrm{s}}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot \vec 0 = 0} \, 
+\frac{1}{\partial \lambda}\nonumber\displaybreak[2]\\
+%
+&\phantom{={}}+ \frac{1}{r} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec 
+e_2^\mathrm{s}}_{0} \, \frac{1}{\partial \varphi} \left( \frac{1}{r \, 
+\cos\varphi} \right) \, \frac{\partial}{\partial \lambda} + \frac{1}{r^2 \, 
+\cos\varphi} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} 
+\, \frac{\partial^2}{\partial \varphi \, \partial \lambda} + \frac{1}{r} \, 
+\underbrace{\vec e_1^\mathrm{s} \cdot \frac{\partial \vec 
+e_3^\mathrm{s}}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot \vec 
+e_1^\mathrm{s} = 1} \, \frac{\partial}{\partial r}\nonumber\displaybreak[2]\\
+%
+&\phantom{={}}+ \frac{1}{r} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec 
+e_3^\mathrm{s}}_{0} \, \frac{\partial^2}{\partial \varphi \, \partial r} 
++ \frac{1}{r^2 \, \cos\varphi} \, \underbrace{\vec e_2^\mathrm{s} \cdot 
+\frac{\partial \vec e_1^\mathrm{s}}{\partial \lambda}}_{\vec e_2^\mathrm{s} 
+\cdot (-\sin\varphi \, \vec e_2^\mathrm{s}) = -\sin\varphi} \, 
+\frac{\partial}{\partial \varphi} + \frac{1}{r^2 \, \cos\varphi} \, 
+\underbrace{\vec e_2^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, 
+\frac{\partial^2}{\partial \varphi \, \partial \lambda}\displaybreak[2]\\
+%
+&\phantom{={}}+ \frac{1}{r^2 \, \cos^2\varphi} \, \underbrace{\vec 
+e_2^\mathrm{s} \cdot \frac{\partial \vec e_2^\mathrm{s}}{\partial \lambda}}_{0} 
+\, \frac{\partial}{\partial\lambda} + \frac{1}{r^2 \, \cos^2\varphi} \, 
+\underbrace{\vec e_2^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{1} \, 
+\frac{\partial^2}{\partial\lambda^2} + \frac{1}{r \, \cos\varphi} \, 
+\underbrace{\vec e_2^\mathrm{s} \cdot \frac{\partial \vec 
+e_3^\mathrm{s}}{\partial \lambda}}_{\vec e_2^\mathrm{s} \cdot (\cos\varphi \, 
+\vec e_2^\mathrm{s}) = \cos\varphi} \, \frac{\partial}{\partial 
+r}\nonumber\displaybreak[2]\\
+%
+&\phantom{={}}+ \frac{1}{r \, \cos\varphi} \, \underbrace{\vec e_2^\mathrm{s} 
+\cdot \vec e_3^\mathrm{s}}_{0} \, \frac{\partial^2}{\partial \lambda \, 
+\partial r} + \frac{1}{r} \, \underbrace{\vec e_3^\mathrm{s} \cdot 
+\frac{\partial \vec e_1^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} \cdot 
+\vec 0 = 0} \, \frac{\partial}{\partial \varphi} + \underbrace{\vec 
+e_3^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, \frac{\partial}{\partial r} 
+\left( \frac{1}{r} \right) \, \frac{\partial}{\partial \varphi} 
++ \underbrace{\vec e_3^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, \frac{1}{r} 
+\, \frac{\partial^2}{\partial r \, \partial \varphi}\nonumber\displaybreak[2]\\
+%
+&\phantom{={}}+\frac{1}{r \, \cos\varphi} \, \underbrace{\vec e_3^\mathrm{s} 
+\cdot \frac{\partial \vec e_2^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} 
+\cdot \vec 0 = 0} \, \frac{\partial}{\partial \lambda} + \underbrace{\vec 
+e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, \frac{\partial}{\partial r} \, 
+\left( \frac{1}{r \, \cos\varphi} \right) \, \frac{\partial^2}{\partial r \, 
+\partial \lambda} + \underbrace{\vec e_3^\mathrm{s} \cdot \frac{\partial \vec 
+e_3^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} \cdot \vec 0 = 0} \, 
+\frac{\partial}{\partial r} + \underbrace{\vec e_3^\mathrm{s} \cdot \vec 
+e_3^\mathrm{s}}_{1} \, \frac{\partial^2}{\partial r^2}{.}\nonumber
+\end{align}
+%\end{equation}
+%
+Jednotkové vektory $\vec e_1^\mathrm{s}$, $\vec e_2^\mathrm{s}$ a $\vec 
+e_3^\mathrm{s}$ vystupujúce v~predošlej rovnici sú dané 
+vzťahmi~(\ref{eq:er_elat_elon_unit}).  Ich derivácie podľa sférických súradníc 
+majú nasledovný tvar,
+%
+\begin{equation}
+\label{eq:er_elat_elon_unit_derivatives}
+\begin{split}
+\frac{\partial \vec e_1^\mathrm{s}}{\partial \varphi} &=
+%
+\begin{bmatrix}
+-\cos\varphi \, \cos\lambda\\
+-\cos\varphi \, \sin\lambda\\
+-\sin\varphi\\
+\end{bmatrix}
+%
+= -\vec e_3^\mathrm{s}
+%
+{,}\\
+%
+\frac{\partial \vec e_1^\mathrm{s}}{\partial \lambda} &=
+%
+\begin{bmatrix}
+ \sin\varphi \, \sin\lambda\\
+-\sin\varphi \, \cos\lambda\\
+0\\
+\end{bmatrix}
+%
+= -\sin\varphi \, \vec e_2^\mathrm{s}
+%
+{,}\\
+%
+\frac{\partial \vec e_1^\mathrm{s}}{\partial r} &= \vec 0{,}\\
+%
+\frac{\partial \vec e_2^\mathrm{s}}{\partial \varphi} &= \vec 0{,}\\
+%
+\frac{\partial \vec e_2^\mathrm{s}}{\partial \lambda} &=
+%
+\begin{bmatrix}
+-\cos\lambda\\
+-\sin\lambda\\
+0\\
+\end{bmatrix}
+%
+{,}\\
+%
+\frac{\partial \vec e_2^\mathrm{s}}{\partial r} &= \vec 0{,}\\
+%
+\frac{\partial \vec e_3^\mathrm{s}}{\partial \varphi} &=
+%
+\begin{bmatrix}
+-\sin\varphi \, \cos\lambda\\
+-\sin\varphi \, \sin\lambda\\
+\cos\varphi\\
+\end{bmatrix}
+%
+= \vec e_1^\mathrm{s}
+%
+{,}\\
+%
+\frac{\partial \vec e_3^\mathrm{s}}{\partial \lambda} &=
+%
+\begin{bmatrix}
+-\cos\varphi \, \sin\lambda\\
+ \cos\varphi \, \cos\lambda\\
+0\\
+\end{bmatrix}
+%
+= \cos\varphi \, \vec e_2^\mathrm{s}
+%
+{,}\\
+%
+\frac{\partial \vec e_3^\mathrm{s}}{\partial r} &= \vec 0{.}
+\end{split}
+\end{equation}
+%
+Kombináciou rovníc~(\ref{eq:grad_grad_sph}) 
+a~(\ref{eq:er_elat_elon_unit_derivatives}) získame Laplaceov operátor vo 
+sférických súradniciach,
+%
+\begin{equation}
+\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
+\frac{\partial}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
+\frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial}{\partial 
+\varphi} \right) + \frac{1}{r^2 \,
+\cos^2\varphi}\frac{\partial^2}{\partial \lambda^2} = 0{.}
+\end{equation}
+
+
+
+\section{Laplaceov operátor v~ortogonálnom súradnicovom systéme}
+\label{app:laplace_in_orthogonal_coordinates}
+
+Odvodenie z~predchádzajúcej kapitoly možno zovšeobecniť na ľubovoľný 
+ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.  Všeobecný tvar 
+Laplaceovho operátora získame pomocou rovníc~(\ref{eq:laplace}) 
+a~(\ref{eq:grad_orthogonal_system}),
+%
+\begin{equation}
+\begin{split}
+\nabla^2 &= \nabla \cdot \nabla = \left( \sum_{i = 1}^3 \frac{\hat{\vec 
+e}_i}{\| \hat{\vec e}_i \|^2} \, \frac{\partial}{\partial \xi_i}\right) \cdot 
+\left( \sum_{j = 1}^3 \frac{\hat{\vec e}_j}{\| \hat{\vec e}_j \|^2} \, 
+\frac{\partial}{\partial \xi_j}
+\right)\\
+%
+&= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 \, \| 
+\hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
+e}_j}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}
+- 2\, \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{\hat{\vec e}_i \cdot \hat{\vec 
+e}_j}{\|\hat{\vec e}_j \|^3} \, \frac{\partial \| \hat{\vec e}_j \|}{\partial 
+\xi_i} \, \frac{\partial}{\partial \xi_j}\\
+%
+&\phantom{={}}+ \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{\hat{\vec e}_i \cdot 
+\hat{\vec e}_j}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_j \|^2} \, 
+\frac{\partial^2}{\partial \xi_i \, \partial \xi_j}{.}
+\end{split}
+%
+\end{equation}
+%
+S uvážením ortogonality vektorov $\hat{\vec e}_i$ a~$\hat{\vec e}_j$, $i \neq 
+j$, získame vzťah
+%
+\begin{equation}
+\begin{split}
+\nabla^2 &= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 \, 
+\| \hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
+e}_j}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}
+- 2\, \sum_{j = 1}^{3} \frac{1}{\|\hat{\vec e}_j \|^3} \, \frac{\partial \| 
+\hat{\vec e}_j \|}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}\\
+%
+&\phantom{={}}+ \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|^2} \, 
+\frac{\partial^2}{\partial \xi_j^2}{.}
+\end{split}
+%
+\end{equation}
 
 
 
