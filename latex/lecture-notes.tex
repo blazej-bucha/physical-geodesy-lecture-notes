@@ -658,7 +658,14 @@ rovnobežné so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system})
 0\\
 1
 \end{bmatrix}
-{.}
+{,}
+\end{equation}
+%
+pričom
+%
+\begin{equation}
+\label{eq:unit_vectors_unit_length}
+\| \vec e_i \| = 1{,} \quad i = 1, 2,3{.}
 \end{equation}
 %
 Aplikáciou operátora gradient na \emph{skalárnu} funkciu $f(x, y, z)$ získame 
@@ -911,34 +918,42 @@ Laplaceov operátor je definovaný ako skalárny súčin operátorov gradient,
 %
 \begin{equation}
 \label{eq:laplace}
-\nabla^2 = \nabla \cdot \nabla{.}
+\nabla^2 = \nabla \cdot \nabla{,}
 \end{equation}
 %
-V~pravouhlom súradnicovom systéme $x$, $y$, $z$ má tvar
+kde symbol~$\cdot$ označuje skalárny súčin.  V~pravouhlom súradnicovom systéme 
+$x$, $y$, $z$ má Laplaceov operátor tvar
 %
 \begin{equation}
 \label{eq:laplace_xyz}
 \begin{split}
-\nabla^2 = &= \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
+\nabla^2 &= \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
 \frac{\partial}{\partial y} + \vec e_3 \, \frac{\partial}{\partial 3} \right) 
 \cdot \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
 \frac{\partial}{\partial y} + \vec e_3 \, \frac{\partial}{\partial z} \right)\\
 %
 &= \frac{\partial^2}{\partial^2 x} + \frac{\partial^2}{\partial^2 y} 
-+ \frac{\partial^2}{\partial^2 z}{,}
++ \frac{\partial^2}{\partial^2 z}{.}
 \end{split}
 \end{equation}
 %
-kde symbol~$\cdot$ označuje skalárny súčin. Na získanie poslednej rovnosti~vo 
-vzťahu~(\ref{eq:laplace_xyz}) sme využili skutočnosť, že jednotkové vektory 
-$\vec e_1$, $\vec e_2$ a $\vec e_3$ sú ortogonálne, teda skalárny súčin dvoch 
-rôznych jednotkových vektorov je nulový,
+Na získanie poslednej rovnosti~vo vzťahu~(\ref{eq:laplace_xyz}) sme využili 
+nasledovné vlastnosti jednotkových vektorov,
 %
-\begin{equation}
+\begin{align}
 \label{eq:ei_orthogonality}
-\vec e_i \cdot \vec e_j = 0{,} \quad i \neq j{.}
-\end{equation}
+%\begin{split}
+\vec e_i \cdot \vec e_j &= 0{,} \quad i \neq j{,}\\
 %
+\label{eq:ei_unit_length}
+\vec e_i \cdot \vec e_i &= 1{.}
+%\end{split}
+\end{align}
+%
+Prvá rovnica vyplýva zo skutočnosti, že dva rôzne jednotkové vektory sú 
+\emph{ortogonálne}.  Druhá rovnica vyplýva 
+z~vlastnosti~(\ref{eq:unit_vectors_unit_length}).
+
 Laplaceov operátor je \emph{lineárny}, teda pre funkcie
 $f$ a~$g$ vyhovujúce rovnici~(\ref{eq:vg_laplace_cart}) a~konštantu $c$ platí
 %
@@ -2729,17 +2744,13 @@ ostatným normám nebudeme v~tejto práci venovať.
 \subsection{Legendreove funkcie a~sférické harmonické funkcie}
 \label{sec:leg_sh_norm}
 
-Pre skalárny súčin dvoch rovnakých jednotkových vektorov $\vec e_i$ platí vzťah
-%
-\begin{equation}
-\vec e_i \cdot \vec e_i = 1{.}
-\end{equation}
-%
-Z~teoretického aj z~praktického hľadiska by bolo výhodné, aby aj skalárny súčin
-dvoch rovnakých sférických harmonických funkcií bol rovný $1$.  Túto vlastnosť
-možno zabezpečiť vynásobením Legendreových funkcií $P_{nm}(\sin\varphi)$ členom
-$N_{n|k|}$ (rovnica~\ref{eq:sh_norm}), ktorý nazývame \emph{úplná norma}.  
-Získame tým \emph{úplne normované Legendreove funkcie},
+Pre skalárny súčin dvoch rovnakých jednotkových vektorov $\vec e_i$ platí 
+vzťah~(\ref{eq:ei_unit_length}).  Z~teoretického aj z~praktického hľadiska by 
+bolo výhodné, aby aj skalárny súčin dvoch rovnakých sférických harmonických 
+funkcií bol rovný~$1$.  Túto vlastnosť možno zabezpečiť vynásobením 
+Legendreových funkcií $P_{nm}(\sin\varphi)$ členom $N_{n|k|}$ 
+(rovnica~\ref{eq:sh_norm}), ktorý nazývame \emph{úplná norma}.  Získame tým 
+\emph{úplne normované Legendreove funkcie},
 %
 \begin{equation}
 \bar{P}_{nm}(\varphi) = N_{nm} \, P_{nm}(\varphi){,} \quad  n = 0, 1, \dots,
@@ -3044,39 +3055,50 @@ vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely gravitačného poľa nebeských tel
 V~Kapitolách~\ref{sec:vg} a~\ref{sec:potential_theory} sme uviedli, že
 v~gravitačnom potenciáli $V_\gidx$ je obsiahnutá informácia o~celom gravitačnom
 poli.  Zo vzťahu~(\ref{eq:vg_sh_2nd_norm}) je preto možné vyťažiť oveľa viac
-ako len informáciu o~gravitačnom potenciáli.  Napríklad prvé a~druhé parciálne 
-derivácie gravitačného potenciálu vystupujúce 
-v~rovnici~(\ref{eq:vg_laplace_sph}) môžeme získať deriváciou 
-vzťahu~(\ref{eq:vg_sh_2nd_norm}),
+ako len informáciu o~gravitačnom potenciáli.  Napríklad aplikovaním operátora 
+gradient~(\ref{eq:gradient_sph}) na gravitačný 
+potenciál~(\ref{eq:vg_sh_2nd_norm}) možno získať prvky vektora gravitačného 
+zrýchlenia v~lokálnom pravouhlom súradnicovom systéme s~pohyblivým začiatkom 
+(Obrázok~\ref{fig:cart_sph}),
 %
-\begin{equation}
-\label{eq:vgr_sh_2nd_norm}
-\frac{\partial V_\gidx(P)}{\partial r} = - \frac{GM}{R^2} \sum_{n
-= 0}^\infty (n + 1) \, \left( \frac{R}{r} \right)^{n + 2} \sum_{m = 0}^{n}
+\begin{align}
+\label{eq:vgx_sh}
+\frac{\partial V_\gidx(P)}{\partial x^\mathrm{s}} &= \frac{1}{r} \, 
+\frac{\partial V_\gidx(P)}{\partial \varphi}\nonumber\\
+%
+&= \frac{GM}{R^2} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n + 2} 
+\sum_{m = 0}^{n} \left(
+\bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right) \,
+\frac{\diff \bar{P}_{nm}(\sin\varphi)}{\diff \varphi}{,}\\
+%
+\label{eq:vgy_sh}
+\frac{\partial V_\gidx(P)}{\partial y^\mathrm{s}} &= \frac{1}{r \, \cos\varphi} 
+\, \frac{\partial V_\gidx(P)}{\partial \lambda}\nonumber\\
+%
+&= \frac{GM}{R^2 \, \cos\varphi} \sum_{n = 0}^\infty \left( \frac{R}{r} 
+\right)^{n + 2} \sum_{m = 0}^{n}\left(
+\bar{S}_{nm} \, \cos(m\lambda) - \bar{C}_{nm} \, \sin(m\lambda)\right) \, m \,
+\bar{P}_{nm}(\sin\varphi){,}\\
+%
+\label{eq:vgz_sh}
+\frac{\partial V_\gidx(P)}{\partial z^\mathrm{s}} &= \frac{\partial 
+V_\gidx(P)}{\partial r}\nonumber\\
+%
+&= - \frac{GM}{R^2} \sum_{n = 0}^\infty (n + 1) \, \left( \frac{R}{r} 
+\right)^{n + 2} \sum_{m = 0}^{n}
 \left( \bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right)
 \, \bar{P}_{nm}(\sin\varphi){.}
-\end{equation}
+\end{align}
 %
-\begin{equation}
-\label{eq:vglat_sh_2nd_norm}
-\frac{\partial V_\gidx(P)}{\partial \varphi} = \frac{GM}{R} \sum_{n
-= 0}^\infty \left( \frac{R}{r} \right)^{n + 1} \sum_{m = 0}^{n} \left(
-\bar{C}_{nm} \, \cos(m\lambda) + \bar{S}_{nm} \, \sin(m\lambda)\right) \,
-\frac{\diff \bar{P}_{nm}(\sin\varphi)}{\diff \varphi}{.}
-\end{equation}
-%
-\begin{equation}
-\label{eq:vglon_sh_2nd_norm}
-\frac{\partial V_\gidx(P)}{\partial \lambda} = \frac{GM}{R} \sum_{n
-= 0}^\infty \left( \frac{R}{r} \right)^{n + 1} \sum_{m = 0}^{n}\left(
-\bar{S}_{nm} \, \cos(m\lambda) - \bar{C}_{nm} \, \sin(m\lambda)\right) \, m \,
-\bar{P}_{nm}(\sin\varphi){.}
-\end{equation}
-%
-Obdobne by sme postupovali v~prípade druhých derivácií.  Pomocou sférických
-harmonických rozvojov preto môžeme vypočítať prakticky akúkoľvek veličinu
-gravitačného či tiažového poľa, od gravitačného potenciálu, cez gravitačné
-zrýchlenie až po zvislicové odchýlky či geoid.
+Sférickými harmonickými rozvojmi teda môžeme vypočítať prakticky akúkoľvek 
+veličinu gravitačného či tiažového poľa, od gravitačného potenciálu, cez 
+gravitačné zrýchlenie až po zvislicové odchýlky či geoid.  
+Rovnice~(\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) tiež prakticky demonštrujú, aké 
+výhodné je poznať tvar operátora gradient vo sférických súradniciach 
+(rovnica~\ref{eq:gradient_sph}).  Priamy výpočet derivácií $\partial V_\gidx 
+\slash \partial x^\mathrm{s}$, $\partial V_\gidx \slash \partial y^\mathrm{s}$ 
+a $\partial V_\gidx \slash \partial z^\mathrm{s}$ 
+vzťahu~(\ref{eq:vg_sh_2nd_norm}) by bol totižto náročný.
 
 Sférické harmonické koeficienty gravitačného poľa Zeme sú v~súčasnosti dostupné
 približne do stupňa $2190$.  Získavané sú väčšinou kombináciou družicových
@@ -4579,12 +4601,10 @@ e^\mathrm{s}_3 \, \frac{\partial f}{\partial z^{\mathrm{s}}}{.}
 %
 Cieľom tejto kapitoly je vyjadriť parciálne derivácie $\partial f \slash 
 \partial x^{\mathrm{s}}$, $\partial f \slash \partial y^{\mathrm{s}}$ 
-a~$\partial f \slash \partial z^{\mathrm{s}}$ v~lokálnom \emph{pravouhlom} 
-súradnicovom systéme $x^{\mathrm{s}}$, $y^{\mathrm{s}}$, $z^{\mathrm{s}}$ 
-pomocou globálnych \emph{krivočiarých} súradníc $\varphi$, $\lambda$, $r$ 
-(pozri Obrázok~\ref{fig:cart_sph}).
+a~$\partial f \slash \partial z^{\mathrm{s}}$ pomocou \emph{krivočiarých} 
+súradníc $\varphi$, $\lambda$, $r$ (pozri Obrázok~\ref{fig:cart_sph}).
 
-V prvom rade potrebujeme vyjadriť parciálne derivácie $\partial f \slash 
+Je teda zrejmé, že potrebujeme nájsť parciálne derivácie $\partial f \slash 
 \partial \varphi$, $\partial f \slash \partial \lambda$ a $\partial f \slash 
 \partial r$.  Túto úlohu však komplikuje závislosť pravouhlých súradníc $x$, 
 $y$, $z$ od sférických súradníc $\varphi$, $\lambda$, $r$ (pozri 
@@ -4732,10 +4752,10 @@ f \slash \partial z$ vyjadríme pomocou parciálnych derivácií $\partial f \sl
 \partial r$ vyriešením systému lineárnych rovníc~(\ref{eq:grad_cart2sph}) 
 použitím niektorej z~metód lineárnej algebry.
 
-Obzvlášť jednoduchá metóda na vyriešenie systému 
-rovníc~(\ref{eq:grad_cart2sph}) je nasledovná.  Normovaním 
-vektorov~(\ref{eq:er_elat_elon}) získame jednotkové vektory v~smere 
-súradnicových osí~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$,
+Obzvlášť jednoduchá metóda riešenia systému rovníc~(\ref{eq:grad_cart2sph}) je 
+nasledovná.  Normovaním vektorov~(\ref{eq:er_elat_elon}) získame jednotkové 
+vektory v~smere súradnicových osí~$x^\mathrm{s}$, $y^\mathrm{s}$, 
+$z^\mathrm{s}$,
 %
 \begin{equation}
 \label{eq:er_elat_elon_unit}
@@ -4808,7 +4828,7 @@ r \, \cos\varphi \, \left(\vec e^\mathrm{s}_2\right)^\top\\
 %
 Keďže vektory $\vec e^\mathrm{s}_1$, $\vec e^\mathrm{s}_2$, $\vec 
 e^\mathrm{s}_3$ sú ortogononálne (pozri rovnicu~\ref{eq:ei_orthogonality}) 
-a~ich veľkosť je rovná $1$, čo možno overiť pomocou 
+a~ich veľkosť je rovná~$1$, čo možno overiť pomocou 
 vzťahov~(\ref{eq:er_elat_elon_unit}), potom inverzia matice systému lineárnych 
 rovníc~(\ref{eq:grad_cart2sph_2}) je daná vzťahom \parencite{MichelLectures}
 %
@@ -4900,14 +4920,18 @@ v~tomto súradnicovom systéme daný vzťahom
 kde
 %
 \begin{equation}
-\hat{\vec e}_i = \frac{\partial \vec r(\boldsymbol \xi)}{\partial \xi_i}{,}
+\label{eq:xi1xi2xi3_vectors}
+\hat{\vec e}_i = \frac{\partial \vec r(\boldsymbol \xi)}{\partial \xi_i}
 \end{equation}
 %
+je vektor v~smere súradnicovej osi~$\xi_i$,
+%
 \begin{equation}
+\label{eq:xi1xi2xi3_unit_vectors}
 \vec e_i = \frac{\hat{\vec e}_i}{\| \hat{\vec e}_i \|}
 \end{equation}
 %
-a
+je jednotkový vektor v~smere súradnicovej osi~$\xi_i$ a
 %
 \begin{equation}
 \boldsymbol \xi =
@@ -5111,11 +5135,14 @@ sférických súradniciach,
 \label{app:laplace_in_orthogonal_coordinates}
 
 Odvodenie z~predchádzajúcej kapitoly možno zovšeobecniť na ľubovoľný 
-ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.  Všeobecný tvar 
-Laplaceovho operátora získame pomocou rovníc~(\ref{eq:laplace}) 
+ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.  Táto kapitola je 
+spracovaná podľa~\textcite{SansoGeoidDetermination}.
+
+Všeobecný tvar Laplaceovho operátora získame pomocou rovníc~(\ref{eq:laplace}) 
 a~(\ref{eq:grad_orthogonal_system}),
 %
 \begin{equation}
+\label{eq:laplace_orthogonal_system_1}
 \begin{split}
 \nabla^2 &= \nabla \cdot \nabla = \left( \sum_{i = 1}^3 \frac{\hat{\vec 
 e}_i}{\| \hat{\vec e}_i \|^2} \, \frac{\partial}{\partial \xi_i}\right) \cdot 
@@ -5127,8 +5154,8 @@ e}_i}{\| \hat{\vec e}_i \|^2} \, \frac{\partial}{\partial \xi_i}\right) \cdot
 \hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
 e}_j}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}
 - 2\, \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{\hat{\vec e}_i \cdot \hat{\vec 
-e}_j}{\|\hat{\vec e}_j \|^3} \, \frac{\partial \| \hat{\vec e}_j \|}{\partial 
-\xi_i} \, \frac{\partial}{\partial \xi_j}\\
+e}_j}{\| \hat{\vec e}_i \|^2 \, \|\hat{\vec e}_j \|^3} \, \frac{\partial \| 
+\hat{\vec e}_j \|}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}\\
 %
 &\phantom{={}}+ \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{\hat{\vec e}_i \cdot 
 \hat{\vec e}_j}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_j \|^2} \, 
@@ -5136,17 +5163,45 @@ e}_j}{\|\hat{\vec e}_j \|^3} \, \frac{\partial \| \hat{\vec e}_j \|}{\partial
 \end{split}
 %
 \end{equation}
-%
-S uvážením ortogonality vektorov $\hat{\vec e}_i$ a~$\hat{\vec e}_j$, $i \neq 
-j$, získame vzťah
+
+Keďže súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$ je podľa predpokladu 
+ortogonálny, potom vektory~$\hat{\vec e}_i$, $i = 1, 2, 3$, sú ortogonálne 
+(pozri vzťahy~\ref{eq:ei_orthogonality}, \ref{eq:ei_unit_length}, 
+\ref{eq:xi1xi2xi3_vectors} a~\ref{eq:xi1xi2xi3_unit_vectors}),
 %
 \begin{equation}
+\label{eq:hat_e_ij_orthogonality}
+\hat{\vec e}_i \cdot \hat{\vec e}_j =
+%
+\begin{cases}
+\left( \| \hat{\vec e}_i \| \, \vec e_i \right) \cdot \left( \| \hat{\vec e}_i 
+\| \, \vec e_i \right) = \| \hat{\vec e}_i \|^2{,} \quad &\textrm{ak} \quad 
+i = j{,}\\
+0{,} \quad &\textrm{ak} \quad i \neq j{.}
+\end{cases}
+\end{equation}
+%
+Použitím vzťahov
+%
+\begin{equation}
+\label{eq:partials_hat_e}
+\frac{\partial \hat{\vec e}_i}{\partial \xi_j} = \frac{\partial}{\partial 
+\xi_j} \, \frac{\partial \vec r(\boldsymbol \xi)}{\partial \xi_i} 
+= \frac{\partial}{\partial \xi_i} \, \frac{\partial \vec r(\boldsymbol 
+\xi)}{\partial \xi_j} = \frac{\partial \hat{\vec e}_j}{\partial \xi_i}
+\end{equation}
+%
+a~(\ref{eq:hat_e_ij_orthogonality}) prejde 
+rovnica~(\ref{eq:laplace_orthogonal_system_1}) do tvaru
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_2}
 \begin{split}
 \nabla^2 &= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 \, 
 \| \hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
-e}_j}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}
+e}_i}{\partial \xi_j} \, \frac{\partial}{\partial \xi_j}
 - 2\, \sum_{j = 1}^{3} \frac{1}{\|\hat{\vec e}_j \|^3} \, \frac{\partial \| 
-\hat{\vec e}_j \|}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}\\
+\hat{\vec e}_j \|}{\partial \xi_j} \, \frac{\partial}{\partial \xi_j}\\
 %
 &\phantom{={}}+ \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|^2} \, 
 \frac{\partial^2}{\partial \xi_j^2}{.}
@@ -5154,7 +5209,125 @@ e}_j}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}
 %
 \end{equation}
 
+Ďalej samostatne upravíme najprv prvé dva členy 
+rovnice~(\ref{eq:laplace_orthogonal_system_2}) a následne jej tretí člen.  Na 
+záver použijeme výsledky oboch úprav, čím získame výsledný tvar Laplaceovho 
+operátora v ľubovoľnom ortogonálnom súradnicovom systéme~$\xi_1$, $\xi_2$, 
+$\xi_3$.
 
+Nech $j = 1$.  Prvé dva členy rovnice~(\ref{eq:laplace_orthogonal_system_2}) 
+potom môžeme upraviť nasledovne,
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_two_terms}
+\begin{split}
+&\sum_{i = 1}^{3} \frac{1}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_1 \|^2} \, 
+\hat{\vec e}_i \cdot \frac{\partial \hat{\vec e}_i}{\partial \xi_1} \, 
+\frac{\partial}{\partial \xi_1}
+- 2\, \frac{1}{\|\hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
+\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1}\\
+%
+&= \sum_{i = 1}^{3} \frac{1}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_1 \|^2} 
+\, \| \hat{\vec e}_i \| \, \frac{\partial \| \hat{\vec e}_i \|}{\partial \xi_1} 
+\, \frac{\partial}{\partial \xi_1}
+- 2\, \frac{1}{\|\hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
+\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1}\\
+%
+&= -\frac{1}{\| \hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
+\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1} + \frac{1}{\| \hat{\vec 
+e}_1 \|^2 \, \| \hat{\vec e}_2 \|} \, \frac{\partial \| \hat{\vec e}_2 
+\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1} + \frac{1}{\| \hat{\vec 
+e}_1 \|^2 \, \| \hat{\vec e}_3 \|} \, \frac{\partial \| \hat{\vec e}_3 
+\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1}\\
+%
+&= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| \hat{\vec e}_3 
+\|} \, \frac{\partial}{\partial \xi_1} \, \left( \frac{\| \hat{\vec e}_2 \| \, 
+\| \hat{\vec e}_3 \|}{\| \hat{\vec e}_1 \|} \right) \, \frac{\partial}{\partial 
+\xi_1}{.}
+\end{split}
+\end{equation}
+%
+V rovnici~(\ref{eq:laplace_orthogonal_system_two_terms}) sme využili vzťah
+%
+\begin{equation}
+\hat{\vec e}_i \cdot \frac{\partial \hat{\vec e}_i}{\partial \xi_j} 
+= \frac{1}{2} \, \frac{\partial}{\partial \xi_j} \, \left( \hat{\vec e}_i \cdot 
+\hat{\vec e}_i \right) = \frac{1}{2} \, \frac{\partial \| \hat{\vec e}_i 
+\|^2}{\partial \xi_j} = \| \hat{\vec e}_i \| \, \frac{\partial \| \hat{\vec 
+e}_i \|}{\partial \xi_j}{.}
+\end{equation}
+%
+Použitím substitúcie
+%
+\begin{equation}
+\label{eq:e_laplace}
+E = \| \hat{\vec e}_1  \| \, \| \hat{\vec e}_2  \| \, \| \hat{\vec e}_3  \|
+\end{equation}
+%
+a spôsobom obdobným odvodeniu 
+vzťahu~(\ref{eq:laplace_orthogonal_system_two_terms}) možno upraviť prvé dva 
+členy rovnice~(\ref{eq:laplace_orthogonal_system_2}) pre všetky $j = 1, 2, 3$ 
+do konečného tvaru
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_two_terms_final}
+\frac{1}{E} \, \sum_{j = 1}^3 \left( \frac{\partial}{\partial \xi_j} \, 
+\frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial}{\partial \xi_j}{.}
+\end{equation}
+
+Tretí člen rovnice~(\ref{eq:laplace_orthogonal_system_2}) upravíme s~použitím 
+vzťahu~(\ref{eq:e_laplace}) nasledovne,
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_third_term}
+\sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|} \, \frac{\partial^2}{\partial 
+\xi_j^2} = \frac{1}{E} \, \sum_{j = 1}^3 \frac{E}{\| \hat{\vec e}_j \|^2} \, 
+\frac{\partial^2}{\partial \xi_j^2}{.}
+\end{equation}
+
+Kombináciou~(\ref{eq:laplace_orthogonal_system_two_terms_final}) 
+a~(\ref{eq:laplace_orthogonal_system_third_term}) získame výsledný tvar 
+Laplaceovho operátora v~ortogonálnom súradnicovom systéme,
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_final}
+\begin{split}
+\nabla^2 &= \frac{1}{E} \, \sum_{j = 1}^3 \left( \frac{\partial}{\partial 
+\xi_j} \, \frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial}{\partial 
+\xi_j} + \frac{1}{E} \, \sum_{j = 1}^3 \, \frac{E}{\| \hat{\vec e}_j \|^2} \, 
+\frac{\partial^2}{\partial \xi_j^2}\\
+%
+&= \frac{1}{E} \, \sum_{j = 1}^3 \frac{\partial}{\partial \xi_j} \left( 
+\frac{E}{\| \hat{\vec e}_j  \|^2} \, \frac{\partial}{\partial \xi_j} \right){.}
+\end{split}
+\end{equation}
+%
+Dosadením substitúcie~(\ref{eq:e_laplace}) 
+do~(\ref{eq:laplace_orthogonal_system_final}) dostaneme tvar Laplaceovho 
+operátora, s~ktorým sa možno bežne stretnúť v~literatúre 
+\parencite[napríklad][]{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_final_2}
+\begin{split}
+\nabla^2 &= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| 
+\hat{\vec e}_3 \|} \, \left[ \frac{\partial}{\partial \xi_1} \left( \frac{\| 
+\hat{\vec e}_2 \| \, \| \hat{\vec e}_3 \|}{\| \hat{\vec e}_1 \|} \, 
+\frac{\partial}{\partial \xi_1} \right) + \frac{\partial}{\partial \xi_2} 
+\left( \frac{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_3 \|}{\| \hat{\vec e}_2 
+\|} \, \frac{\partial}{\partial \xi_2} \right) \right.\\
+%
+&\phantom{={}}\left. + \frac{\partial}{\partial \xi_3} \left( \frac{\| 
+\hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \|}{\| \hat{\vec e}_3 \|} \, 
+\frac{\partial}{\partial \xi_3} \right)\right]{.}
+\end{split}
+\end{equation}
+
+Ak teda chceme získať tvar Laplaceovho operátora v~ortogonálnom súradnicovom 
+systéme, postačuje vypočítať veľkosti vektorov $\hat{\vec e}_i$ a~dosadiť ich 
+do vzťahu~(\ref{eq:laplace_orthogonal_system_final_2}).  Pripomeňme, že vo 
+sférickom súradnicovom systéme sú vektory~$\hat{\vec e}_i$ dané 
+rovnicou~(\ref{eq:er_elat_elon}).
 
 
 
