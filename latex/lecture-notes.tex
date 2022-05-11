@@ -3059,7 +3059,7 @@ ako len informáciu o~gravitačnom potenciáli.  Napríklad aplikovaním operát
 gradient~(\ref{eq:gradient_sph}) na gravitačný 
 potenciál~(\ref{eq:vg_sh_2nd_norm}) možno získať prvky vektora gravitačného 
 zrýchlenia v~lokálnom pravouhlom súradnicovom systéme s~pohyblivým začiatkom 
-(Obrázok~\ref{fig:cart_sph}),
+$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ (Obrázok~\ref{fig:cart_sph}),
 %
 \begin{align}
 \label{eq:vgx_sh}
@@ -3098,7 +3098,7 @@ výhodné je poznať tvar operátora gradient vo sférických súradniciach
 (rovnica~\ref{eq:gradient_sph}).  Priamy výpočet derivácií $\partial V_\gidx 
 \slash \partial x^\mathrm{s}$, $\partial V_\gidx \slash \partial y^\mathrm{s}$ 
 a $\partial V_\gidx \slash \partial z^\mathrm{s}$ 
-vzťahu~(\ref{eq:vg_sh_2nd_norm}) by bol totižto náročný.
+vzťahu~(\ref{eq:vg_sh_2nd_norm}) by bol náročný.
 
 Sférické harmonické koeficienty gravitačného poľa Zeme sú v~súčasnosti dostupné
 približne do stupňa $2190$.  Získavané sú väčšinou kombináciou družicových
@@ -3311,6 +3311,54 @@ Všimnime si, že ak $E = 0$, teda referenčný elipsoid nie je sploštený, pot
 vzťah~(\ref{eq:ellred2cart}) má rovnaký tvar ako transformácia sférických 
 súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
+Operátor gradient v~lokálnom súradnicovom systéme s~pohyblivým 
+začiatkom~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ vyjadrený 
+v~redukovaných elipsoidických súradniciach získame podobne ako v~prípade 
+sférického súradnicového systému.  Postupom uvedeným 
+v~Kapitole~\ref{app:gradient_in_orthogonal_coordinates} možno jednoducho 
+ukázať, že veľkosti vektorov $\hat{\vec e}_i^\mathrm{r}$, $i = 1, 2, 3$, ktoré 
+prislúchajú súradnicovým osiam $\beta$, $\lambda$, $u$, sú dané vzťahmi
+%
+\begin{equation}
+\label{eq:ei_reduced_ell_magnitudes}
+\begin{split}
+\| \hat{\vec e}_1^\mathrm{r} \| &= \sqrt{u^2 + E^2 \, \sin^2\beta}{,}\\
+%
+\| \hat{\vec e}_2^\mathrm{r} \| &= \sqrt{\left( u^2 + E^2 \right)} \, 
+\cos\beta{,}\\
+%
+\| \hat{\vec e}_3^\mathrm{r} \| &= \sqrt{\frac{u^2 + E^2 \, \sin^2\beta}{u^2 
++ E^2}}{.}
+\end{split}
+\end{equation}
+%
+Operátor gradient má teda v~redukovaných elipsoidických súradniciach tvar 
+(rovnica~\ref{eq:grad_orthogonal_system})
+%
+\begin{equation}
+\label{eq:gradient_red_ell}
+\begin{split}
+\nabla = \grad &= \vec e_1^\mathrm{r} \, \frac{1}{\sqrt{u^2 + E^2 \, 
+\sin^2\beta}} \, \frac{\partial}{\partial \beta} + \vec e_2^\mathrm{r} \, 
+\frac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \frac{\partial}{\partial \lambda} 
++ \vec e_3^\mathrm{r} \, \sqrt{\frac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, 
+\frac{\partial}{\partial u}\\
+%
+&=
+%
+\begin{bmatrix}
+\dfrac{1}{\sqrt{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial}{\partial 
+\beta}\\[2ex]
+\dfrac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \dfrac{\partial}{\partial 
+\lambda}\\[2ex]
+\sqrt{\dfrac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial}{\partial 
+u}
+\end{bmatrix}
+{.}
+\end{split}
+\end{equation}
+
+
 
 \section{Sféroidické harmonické funkcie}
 \label{sec:spheroidal_harmonics}
@@ -3354,9 +3402,10 @@ práce.
 
 Jeden z~možných prístupov získania sféroidických harmonických funkcíi je práve 
 riešením Laplaceovej diferenciálnej rovnice metódou separácie premenných, 
-tentokrát však v~redukovaných elipsoidických súradniciach.  Bez podrobnejšieho 
-odvodenia uvedieme tvar Laplaceovej diferenciálnej rovnice pre gravitačný 
-potenciál v~redukovaných elipsoidických súradniciach 
+tentokrát však v~redukovaných elipsoidických súradniciach.  Laplaceovu rovnicu 
+pre gravitačný potenciál v~elipsoidických redukovaných súradniciach dostaneme 
+pomocou vzťahov~(\ref{eq:ei_reduced_ell_magnitudes}) 
+a~(\ref{eq:laplace_orthogonal_system_final_2})
 \parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
@@ -4673,7 +4722,7 @@ súradnicovom systéme $x$, $y$, $z$,
 \begin{bmatrix}
 x(\varphi, \lambda, r)\\
 y(\varphi, \lambda, r)\\
-z(\varphi, \lambda, r)
+z(\varphi, r)
 \end{bmatrix}
 %
 {.}
@@ -5275,8 +5324,8 @@ do konečného tvaru
 \frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial}{\partial \xi_j}{.}
 \end{equation}
 
-Tretí člen rovnice~(\ref{eq:laplace_orthogonal_system_2}) upravíme s~použitím 
-vzťahu~(\ref{eq:e_laplace}) nasledovne,
+Tretí člen rovnice~(\ref{eq:laplace_orthogonal_system_2}) upravíme pomocou 
+vzťahu~(\ref{eq:e_laplace}),
 %
 \begin{equation}
 \label{eq:laplace_orthogonal_system_third_term}
@@ -5325,9 +5374,7 @@ operátora, s~ktorým sa možno bežne stretnúť v~literatúre
 
 Ak teda chceme získať tvar Laplaceovho operátora v~ortogonálnom súradnicovom 
 systéme, postačuje vypočítať veľkosti vektorov $\hat{\vec e}_i$ a~dosadiť ich 
-do vzťahu~(\ref{eq:laplace_orthogonal_system_final_2}).  Pripomeňme, že vo 
-sférickom súradnicovom systéme sú vektory~$\hat{\vec e}_i$ dané 
-rovnicou~(\ref{eq:er_elat_elon}).
+do vzťahu~(\ref{eq:laplace_orthogonal_system_final_2}).
 
 
 
