@@ -921,8 +921,9 @@ Laplaceov operátor je definovaný ako skalárny súčin operátorov gradient,
 \nabla^2 = \nabla \cdot \nabla{,}
 \end{equation}
 %
-kde symbol~$\cdot$ označuje skalárny súčin.  V~pravouhlom súradnicovom systéme 
-$x$, $y$, $z$ má Laplaceov operátor tvar
+kde symbol~$\cdot$ označuje skalárny súčin.  Dosadením 
+rovnice~(\ref{eq:gradient}) do~(\ref{eq:laplace}) vyjadríme Laplaceov operátor 
+v~pravouhlom súradnicovom systéme $x$, $y$, $z$,
 %
 \begin{equation}
 \label{eq:laplace_xyz}
@@ -938,19 +939,21 @@ $x$, $y$, $z$ má Laplaceov operátor tvar
 \end{equation}
 %
 Na získanie poslednej rovnosti~vo vzťahu~(\ref{eq:laplace_xyz}) sme využili 
-nasledovné vlastnosti jednotkových vektorov,
+vlastnosti jednotkových vektorov a~skalárneho súčinu dvoch vektorov,
 %
 \begin{align}
 \label{eq:ei_orthogonality}
-\vec e_i \cdot \vec e_j &= 0{,} \quad i \neq j{,}\\
+\vec e_i \cdot \vec e_j &= \| \vec e_i \| \, \| \vec e_j \| \, \cos(90^\circ) 
+= 0{,} \quad i \neq j{,}\\
 %
 \label{eq:ei_unit_length}
-\vec e_i \cdot \vec e_i &= 1{.}
+\vec e_i \cdot \vec e_i &= \| \vec e_i \| \, \| \vec e_j \| \, \cos(0^\circ) 
+= 1{.}
 \end{align}
 %
 Rovnica~(\ref{eq:ei_orthogonality}) vyplýva zo skutočnosti, že dva rôzne 
-jednotkové vektory sú \emph{ortogonálne}.  Rovnica~(\ref{eq:ei_unit_length}) 
-vyplýva z~vlastnosti~(\ref{eq:unit_vectors_unit_length}).
+jednotkové vektory sú \emph{ortogonálne}.  Rovnica~(\ref{eq:ei_unit_length}) je 
+dôsledkom vzťahu~(\ref{eq:unit_vectors_unit_length}).
 
 Laplaceov operátor je \emph{lineárny}, teda pre funkcie
 $f$ a~$g$ vyhovujúce rovnici~(\ref{eq:vg_laplace_cart}) a~konštantu $c$ platí
@@ -1126,9 +1129,9 @@ v~bezprostrednej blízkosti zemského povrchu či na dráhe umelej družice.  Ak
 teda chceme určiť gravitačné pole v~celom priestore mimo Zeme, bolo by vhodné 
 porozumieť tomu, ako sa gravitačný potenciál v~priestore mení.  Ak by nejaký 
 princíp existoval a bol by objavený, znamenalo by to, že hoci naše merania sú 
-dostupné iba v~malej časti vonkajšieho priestoru Zeme, bolo by možné predikovať 
-gravitačný potenciál kdekoľvek mimo Zeme, teda aj v~oblastiach bez dostupných 
-meraní.
+dostupné iba v~malej časti vonkajšieho priestoru Zeme, umožnili by predikciu 
+gravitačného potenciálu kdekoľvek mimo Zeme, teda aj v~oblastiach bez 
+dostupných meraní.
 
 Tento princíp bol objavený a je ním práve Laplaceova rovnica.  
 V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
@@ -1137,7 +1140,7 @@ planéty okolo Slnka.  Ak teda poznáme niekoľko vstupných údajov v čase $t_
 (polohy planéty a Slnka, ich rýchlosti a pôsobiace gravitačné sily), 
 aplikovaním Newtonovho gravitačného zákona môžeme vypočítať polohu planéty 
 v~ľubovoľnom čase v~budúcnosti či v~minulosti.  Úloha je síce výrazne 
-komplikovanejšia, ak uvážime prítomnosť ďalšich nebeských telies, pretože aj 
+komplikovanejšia, ak uvážime prítomnosť ďalších nebeských telies, pretože aj 
 tie ovplyvňujú svojou gravitačnou silou našu planétu a naša planéta ovplyvňuje 
 svojou gravitačnou silou ostatné planéty, no úloha je riešiteľná rovnakým 
 spôsobom.  Situácia je veľmi podobná v~súvislosti s~Laplaceovou rovnicou.  Ak 
@@ -1292,6 +1295,7 @@ medzi objektmi.
 
 
 \subsection{Odstredivé a~tiažové zrýchlenie}
+\label{sec:centrifugal_and_gravity_acceleration}
 
 Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je \emph{odstredivá sila}
 $\vec F_\cidx$.  Uvažujme neinerciálny súradnicový systém v~zmysle predošlého
@@ -1514,6 +1518,7 @@ rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné
 merania si môžu vyžadovať zavedenie korekcií.
 
 \subsubsection{Určenie rozdielu tiažového potenciálu}
+\label{sec:potential_differences}
 
 Hoci tiažový potenciál nedokážeme priamo odmerať, \emph{rozdiel} tiažového 
 potenciálu dokážeme určiť nepriamo.  Pred vysvetlením metódy určovania rozdielu 
@@ -3990,10 +3995,9 @@ V~mnohých situáciách, hoci rozhodne nie v~každej situácii, sú
 preferované~uzavreté matematické vzťahy pred nekonečnými rozvojmi.  Uzavretý 
 vzťah je taký vzťah, ktorý má konečný počet členov.  Jeho výhodou je, že často 
 umožňuje presnejší a rýchlejší číselný výpočet v~porovnaní s~výpočtom 
-nekonečného radu.  V praktických výpočtoch musí byť nekonečný rad vždy 
-obmedzený na vhodne zvolený konečný počet členov.  
-V~Kapitole~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} sa preto 
-budeme snažiť nájsť uzavretý vzťah na výpočet normálneho tiažového 
+nekonečného radu, ktorý musí byť vždy obmedzený na vhodne zvolený konečný počet 
+členov.  V~Kapitole~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} sa 
+preto budeme snažiť nájsť uzavretý vzťah na výpočet normálneho tiažového 
 potenciálu~$U$ v~bodoch na povrchu ekvipotenciálneho elipsoidu a~nad ním.  Za 
 týmto účelom budeme pracovať v~redukovaných elipsoidických súradniciach, ktoré 
 sa prirodzene ponúkajú v~súvislosti so splošteným rotačným elipsoidom.  
@@ -4003,7 +4007,9 @@ už pomocou nekonečného rozvoja.
 Kapitola~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} je spracovaná 
 podľa~\textcite{MoritzTheFigureOfTheEarth}.
 
-\subsection{Normálny tiažový potenciál vyjadrený v~elipsoidických redukovaných 
+
+
+\subsection{Normálny tiažový potenciál v~elipsoidických redukovaných 
 súradniciach}
 \label{sec:normal_gravity_potential_in_reduced_ell_coords}
 
@@ -4453,7 +4459,7 @@ pomocou štyroch základných parametrov ekvipotenciálneho elipsoidu.
 
 
 
-\subsection{Normálny tiažový potenciál vyjadrený vo sférických súradniciach}
+\subsection{Normálny tiažový potenciál vo sférických súradniciach}
 \label{sec:normal_gravity_potential_in_spherical_coords}
 
 V~praktických aplikáciách je dôležité dokázať vyjadriť normálny gravitačný 
@@ -4503,7 +4509,7 @@ Dosadením vzťahov~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) do
 prostrednej časti rovnice~(\ref{eq:u_sph}) získame výsledný vzťah pre normálny 
 tiažový potenciál vo sférických súradniciach.  Všimnime si, že 
 v~rovniciach~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) vystupujú ako 
-konštantny opäť iba štyri základné parametre ekvipotenciálneho elipsoidu, $a$ 
+konštanty opäť iba štyri základné parametre ekvipotenciálneho elipsoidu, $a$ 
 $J_{2,0}$, $GM$ a $\omega$.  Ide teda o~ďalší výpočet odvodeného fyzikálneho 
 parametra ekvipotenciálneho elipsoidu z~jeho základných parametrov.
 
@@ -4512,15 +4518,161 @@ parametra ekvipotenciálneho elipsoidu z~jeho základných parametrov.
 \section{Normálne tiažové zrýchlenie}
 \label{sec:normal_gravity}
 
+Tiažové zrýchlenie je jedna z~veličín fyzikálnej geodézie, ktorú je možné 
+odmerať (Kapitola~\ref{sec:centrifugal_and_gravity_acceleration}).  V~mnohých 
+úlohách je preto výhodné či dokonca potrebné modelovať ho jednoduchým a~súčasne 
+dostatočne presným spôsobom, napríklad kvôli výpočtu geoidu.  Na tento účel 
+slúži normálne tiažové zrýchlenie $\gamma$ (pozri 
+Kapitolu~\ref{sec:normal_gravity_field}).
+
+Normálne tiažové zrýchlenie patrí vo fyzikálnej geodézii medzi najčastejšie 
+používané odvodené fyzikálne parametre ekvipotenciálneho elipsoidu.  V~tejto 
+kapitole mu preto venujeme náležitú pozornosť.  Najprv ukážeme exaktný spôsob 
+výpočtu normálneho tiažového zrýchlenia v~redukovaných elipsoidických 
+súradniciach 
+(Kapitola~\ref{sec:normal_gravity_potential_in_reduced_ell_coords}).  Táto 
+metóda je v~praktických aplikáciách zvyčajne menej preferovaná.  Azda je tomu 
+tak preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie 
+nezvykneme v~praxi určovať v~redukovaných elipsoidických súradniciach.  Tento 
+prístup je však dôležitý obzvlášť z~teoretického hľadiska a z~pohľadu 
+numerických simulácií, lebo využíva uzavreté vzťahy.  
+V~Kapitole~\ref{sec:normal_gravity_taylor} preto pokračujeme najčastejším 
+spôsobom výpočtu normálneho tiažového zrýchlenia, a to v~elipsoidických 
+súradniciach.  Jeho nevýhoda však spočíva v~tom, že na výpočet normálneho 
+tiažového zrýchlenia nad ekvipotenciálnym elipsoidom využíva nekonečný Taylorov 
+rozvoj.  Ten musí byť v~číselných výpočtoch obmedzený na konečný počet členov, 
+preto je táto metóda iba približná.  Našťastie však Taylorov rozvoj normálneho 
+tiažového zrýchlenia konverguje rýchlo, a tak je možné dosiahnuť vyžadovanú 
+presnosť pomerne jednoducho.  Na záver uvedieme 
+v~Kapitole~(\ref{sec:normal_gravity_in_sph_coords}) výpočet normálneho 
+tiažového zrýchlenia pomocou rozvoja do radu sférických harmonických funkcií.  
+Podobne ako sférický harmonický rozvoj normálneho tiažového 
+potenciálu~(Kapitola~\ref{sec:normal_gravity_potential_in_spherical_coords}), 
+i~tejto rozvoj je nekonečný.  Po obmedzení na konečný počet členov preto nie je 
+ani tento prístup exaktný.  Numerické chyby však možno opäť jednoduchým 
+spôsobom eliminovať na spoľahlivo zanedbateľné hodnoty.  Výhody tohto prístupu 
+sú rovnaké ako v~prípade normálneho tiažového potenciálu 
+(Kapitola~\ref{sec:normal_gravity_potential_in_spherical_coords}), teda 
+obzvlášť v~možnosti kombinovať danú rovnicu so sférickými harmonickými rozvojmi 
+skutočného gravitačného potenciálu 
+(Kapitola~\ref{sec:spherical_harmonics_applications}).
+
+
+
+\subsection{Normálne tiažové zrýchlenie v~elipsoidických redukovaných 
+súradniciach}
+\label{sec:normal_gravity_in_reduced_ell_coords}
+
+Z~Kapitoly~(\ref{sec:centrifugal_and_gravity_potential}) vieme, že vektor 
+tiažového zrýchlenia je gradientom tiažového potenciálu.  Aplikujme preto 
+operátor gradient na normálny tiažový potenciál~(\ref{eq:u_sph_final}).  Keďže 
+chceme určiť vektor normálneho tiažového zrýchlenia v~redukovaných 
+elipsoidických súradniciach, použijeme tvar operátora gradient 
+z~rovnice~(\ref{eq:gradient_red_ell}),
+%
+\begin{equation}
+\label{eq:gamma_vec_general}
+\boldsymbol \gamma(u, \beta) = \nabla U(u, \beta) =
+%
+\begin{bmatrix}
+\dfrac{1}{\sqrt{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial U(u, 
+\beta)}{\partial \beta}\\[2ex]
+\dfrac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \dfrac{\partial U(u, 
+\beta)}{\partial \lambda}\\[2ex]
+\sqrt{\dfrac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial U(u, 
+\beta)}{\partial u}
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+\gamma_\beta\\
+\gamma_\lambda\\
+\gamma_u
+\end{bmatrix}
+%
+{.}
+\end{equation}
+
+Z~Kapitily~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} vieme, že 
+normálne pole ekvipotenciálneho elipsoidu je v~dôsledku symetrie voči osi 
+rotácie nezávislé od dĺžky~$\lambda$ (pozri vzťah~\ref{eq:u_sph_final}), teda
+%
+\begin{equation}
+\label{eq:gamma_lambda}
+\gamma_\lambda = 0{.}
+\end{equation}
+%
+Člen $\gamma_\beta$ získame predpisom z~rovnice~(\ref{eq:gamma_vec_general}),
+%
+\begin{equation}
+\label{eq:gamma_beta}
+\gamma_\beta = \frac{1}{\sqrt{u^2 + E^2 \, \sin^2\beta}} \, \left( \omega^2 \, 
+a^2 \, \frac{q}{q_0} - \omega^2 \, (u^2 + E^2) \right) \, \cos\beta \, 
+\sin\beta{.}
+\end{equation}
+%
+Podobným spôsob dostaneme člen~$\gamma_u$,
+%
+\begin{equation}
+\label{eq:gamma_u}
+\gamma_u = \sqrt{\dfrac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, \left[ 
+-\frac{GM}{u^2 + E^2} - \frac{\omega^2 \, a^2 \, E}{u^2 + E^2} \, 
+\frac{q'}{q_0} \, \left( \frac{1}{2} \, \sin^2\beta - \frac{1}{6} \right) 
++ \omega^2 \, u \, \cos^2\beta \right]{,}
+\end{equation}
+%
+kde \parencite{MoritzPhysicalGeodesy}
+%
+\begin{equation}
+\label{eq:qprime}
+q' = -\frac{u^2 + E^2}{E} \, \frac{\diff q}{\diff u} = 3 \, \left( 
+1 + \frac{u^2}{E^2} \right) \, \left(  1 - \frac{u}{E} \, \arctan\frac{E}{u} 
+\right) - 1{.}
+\end{equation}
+%
+V~rovnici~(\ref{eq:u_sph_final}) postačuje vypočítať deriváciu $\diff q \slash 
+\diff u$ a následne je použiť vo vzťahu~(\ref{eq:gamma_u}).  
+V~rovnici~(\ref{eq:qprime}) sme však túto deriváciu vynásobili členom 
+$-\frac{u^2 + E^2}{E}$, preto tým istým členom musí byť prostredný člen 
+rovnice~(\ref{eq:gamma_u}) vydelený.  Novozavedený člen $q'$ bude využitý 
+neskôr.  Rovnice~(\ref{eq:gamma_lambda}), (\ref{eq:gamma_beta}) 
+a~(\ref{eq:gamma_u}) predstavujú uzavreté vzťahy pre hľadané prvky vektora 
+normálneho tiažového zrýchlenia v~redukovanom elipsoidickom súradnicovom 
+systéme.
+
+Všimnime si, že ak sa výpočtový bod nachádza na ekvipotenciálnom elipsoide, $u 
+= b$, potom $q \slash q_0 = 1$ a $u^2 + E^2 = b^2 + E^2 = a^2$, a teda 
+člen~$\gamma_\beta$ v~rovnici~(\ref{eq:gamma_beta}) je nulový.  Túto vlastnosť 
+možno vysvetliť tým, že pre $u = b$ sú smer vektora normálneho tiažového 
+zrýchlenia~$\boldsymbol \gamma$ a smer derivácie~$\partial U \slash \partial u$ 
+v~člene~$\gamma_u$ rovnice~(\ref{eq:gamma_vec_general}) kolmé na 
+ekvipotenciálnu plochu, ktorou je ekvipotenciálny elipsoid.  Keďže systém 
+súradníc $\beta, \lambda, u$ je ortogonálny, potom vieme, že smery vektorov 
+$\gamma_\beta$ a $\gamma_\lambda$ musia ležať v~dotykovej rovine 
+k~ekvipotenciálnemu elipsoidu.  V~dotykovej rovine k~ekvipotenciálnej ploche je 
+však diferenciálna zmena tiažového potenciálu nulová (pozri 
+Kapitolu~\ref{sec:potential_differences}), čo vysvetľuje nulové hodnoty 
+prvkov~$\gamma_\beta$ a~$\gamma_\lambda$.  Pre $u > b$ je už člen 
+$\gamma_\beta$ nenulový.
+
+
+
+\subsection{Taylorov rozvoj normálneho tiažového zrýchlenia}
+\label{sec:normal_gravity_taylor}
+
+
+\subsubsection{Somiglianov vzťah}
+
+\subsubsection{Taylorov rozvoj}
+
+
+\subsection{Normálne tiažové zrýchlenie vo sférických súradniciach}
+\label{sec:normal_gravity_in_sph_coords}
 
 
 
 
-
-% čo to je, prečo sa zavádza, ekvipotenciálny elipsoid, základné a~odvodené
-% parametre elipsoidu, geometrické a~fyzikálne parametre, základné veličiny,
-% stručne opísať normálne pole pomocou elipsoidických harmonických funkcií
-% a~vysvetliť výhody takéhoto opisu (uzavreté vzťahy), somiglianov vzťah
 
 
 
