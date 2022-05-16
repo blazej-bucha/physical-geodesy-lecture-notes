@@ -2013,16 +2013,18 @@ v~bode~$x_0$.  Taylorov rozvoj funkcie~$f(x)$ v~bode $x_0$ má tvar
 %
 \begin{equation}
 \label{eq:f_taylor}
-f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\diff^n f(x_0)}{\diff x^n} (x 
-- x_0)^n{,}
+f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\diff^n f(x)}{\diff x^n} 
+\bigg\lvert_{x = x_0} \, (x - x_0)^n{,}
 \end{equation}
 %
-Ak funkcia $f(x)$ je rozvinutá do Taylorovho radu~(\ref{eq:f_taylor}) v~bode 
-$x_0 = 0$, takýto rad sa nazýva \emph{Maclaurinov rad},
+kde symbol $\frac{\diff^n f(x)}{\diff x^n} \Big\lvert_{x = x_0}$ označuje 
+deriváciu funkcie $f(x)$ v~bode $x_0$.  Ak je funkcia $f(x)$ rozvinutá do 
+Taylorovho radu~(\ref{eq:f_taylor}) v~bode $x_0 = 0$, takýto rad sa nazýva 
+\emph{Maclaurinov rad},
 %
 \begin{equation}
-f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\diff^n f(0)}{\diff x^n}
-x^n{.}
+f(x) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\diff^n f(x)}{\diff x^n} 
+\bigg\lvert_{x = 0} \, x^n{.}
 \end{equation}
 
 Kvôli zjednodušeniu zápisu zaveďme substitúciu pre hranatú zátvorku
@@ -2039,15 +2041,17 @@ radu pre $\alpha_0 = 0$,
 %
 \begin{equation}
 \label{eq:maclaurin_series_of_generic_function}
-H(\alpha, t) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n H(0,
-t)}{\partial \alpha^n} \, \alpha^n = \sum_{n = 0}^\infty P_n(t) \, \alpha^n{,}
+H(\alpha, t) = \sum_{n = 0}^\infty \frac{1}{n!} \, \frac{\partial^n H(\alpha,
+t)}{\partial \alpha^n} \bigg\lvert_{\alpha = 0} \, \alpha^n = \sum_{n 
+= 0}^\infty P_n(t) \, \alpha^n{,}
 \end{equation}
 %
 kde
 %
 \begin{equation}
 \label{eq:pn}
-P_n(t) = \frac{1}{n!} \, \frac{\partial^n H(0, t)}{\partial \alpha^n}{.}
+P_n(t) = \frac{1}{n!} \, \frac{\partial^n H(\alpha, t)}{\partial \alpha^n} 
+\bigg\lvert_{\alpha = 0}{.}
 \end{equation}
 %
 Funkcie $P_n(t)$ dostali názov podľa ich objaviteľa, francúzskeho matematika
@@ -4662,11 +4666,185 @@ $\gamma_\beta$ nenulový.
 \subsection{Taylorov rozvoj normálneho tiažového zrýchlenia}
 \label{sec:normal_gravity_taylor}
 
+Poloha bodov gravimetrických meraní je v~súčasnosti určovaná spravidla 
+globálnymi navigačnými družicovými systémami a~často býva vyjadrená 
+v~elipsoidických súradniciach.  V~tejto kapitole sú najprv predstavené 
+elipsoidické súradnice a~následne sú odvodené vzťahy na výpočet normálneho 
+tiažového zrýchlenia na povrchu ekvipotenciálneho elipsoidu a nad ním 
+v~elipsoidických súradniciach.
+
+\subsubsection{Elipsoidické súradnice}
+
+\emph{Elipsoické súradnice} budeme označovať $\phi$, $\lambda$ a $h$, 
+kde~$\phi$ je elipsoidická šírka, $\lambda$~je elipsoidická dĺžka~a~$h$ je 
+elipsoidická výška (Obrázok~\ref{fig:ell_coords}).  Transformácia 
+elipsoidických súradníc na pravouhlé súradnice má tvar 
+\parencite{MoritzPhysicalGeodesy}
+%
+\begin{equation}
+\begin{split}
+x &= (N + h) \, \cos\phi \, \cos\lambda{,}\\
+y &= (N + h) \, \cos\phi \, \sin\lambda{,}\\
+z &= \left[ N \, (1 - e^2) + h \right] \, \sin\phi{,}\\
+\end{split}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+N = \frac{a}{\sqrt{1 - e^2 \, \sin^2\phi}}
+\end{equation}
+%
+je priečny polomer krivosti.  Presná a efektívna inverzná transformácia je 
+predmetom geodetického záujmu niekoľko dekád.  Prehľad metód a~príslušné vzťahy 
+je možné nájsť napríklad v~publikáciách~\textcite{Fukushima2006,Claessens2019}.
+
+\begin{figure}[bt]
+\centering
+\input{./fig-ell-coords.pdf_tex}
+\caption{Elipsoidická šírka~$\phi$ a~elipsoidická výška~$h$ bodu~$P$.  
+Elipsoidická dĺžka~$\lambda$ je totožná so sférickou a~redukovanou 
+elipsoidickou dĺžkou, pretože referenčný elipsoid je dvojosový (pozri 
+Obrázok~\ref{fig:cart_sph}).}
+\label{fig:ell_coords}
+\end{figure}
 
 \subsubsection{Somiglianov vzťah}
+\label{sec:somigliana}
+
+V~tejto kapitole upravíme rovnicu~(\ref{eq:gamma_u}) pre body na povrchu 
+ekvipotenciálneho elipsoidu, $u = b$, a~získaný vzťah následne vyjadríme 
+v~elipsoidických súradniciach $\phi$ a $h = 0$.  Táto kapitola je spracovaná 
+podľa \textcite{MoritzPhysicalGeodesy}.
+
+Z~Kapitoly~\ref{sec:normal_gravity_in_reduced_ell_coords} vieme, že na povrchu 
+ekvipotenciálneho elipsoidu je v~redukovaných elipsoidických súradniciach 
+nenulová iba zložka $\gamma_u$.  Použitím rovnice~(\ref{eq:gamma_u}) pre $u 
+= b$ a~pomocou vzťahu~(pozri rovnicu~\ref{eq:linear_eccentricity})
+%
+\begin{equation}
+\begin{split}
+b^2 + E^2 \, \sin^2\beta &= b^2 + (a^2 - b^2) \, \sin^2\beta = a^2 \, 
+\sin^2\beta + b^2 \, (1 - \sin^2\beta)\\
+%
+&= a^2 \, \sin^2\beta + b^2 \, \cos^2\beta
+\end{split}
+\end{equation}
+%
+dostaneme
+%
+\begin{equation}
+\label{eq:gamma_ell_1}
+\begin{split}
+\gamma(b, \beta) &= \| \boldsymbol \gamma(b, \beta) \| = | \gamma_u(b, \beta) 
+|\\
+%
+&= \frac{GM}{a \, \sqrt{a^2 \, \sin^2\beta + b^2 \, \cos^2\beta}} \, \left[ 
+1 + \frac{\omega^2 \, a^2 \, E}{GM} \, \frac{q'_0}{q_0} \left( \frac{1}{2} \, 
+\sin^2\beta - \frac{1}{6} \right) - \frac{\omega^2 \, a^2 \, b}{GM} \, 
+\cos^2\beta \right]
+{,}
+\end{split}
+\end{equation}
+%
+kde člen $q'_0$ je daný vzťahom~(\ref{eq:qprime}) pre $u = b$.  Zaveďme ďalej 
+substitúciu
+%
+\begin{equation}
+\frac{\omega^2 \, a^2 \, b}{GM}
+\end{equation}
+%
+a
+%
+definujme druhú numerickú excentricitu vzťahom
+%
+\begin{equation}
+e' = \frac{E}{b} = \frac{\sqrt{a^2 - b^2}}{b}{.}
+\end{equation}
+%
+Vzťah~(\ref{eq:gamma_ell_1}) potom možno prepísať do tvaru
+%
+\begin{equation}
+\label{eq:gamma_ell_2}
+\gamma(b, \beta) = \frac{GM}{a \, \sqrt{a^2 \, \sin^2\beta + b^2 \, 
+\cos^2\beta}} \, \left[ \left( 1 + \frac{m}{3} \, \frac{e' \, q'_0}{q_0} 
+\right) \, \sin^2\beta + \left( 1 - m - \frac{m}{6} \, \frac{e' \, q'_0}{q_0} 
+\right) \, \cos^2\beta
+\right]{.}
+\end{equation}
+
+Z rovnice~(\ref{eq:gamma_ell_2}) možno získať vzťahy na výpočet normálneho 
+tiažového zrýchlenia na rovníku ($\beta = 0$)
+%
+\begin{equation}
+\label{eq:gamma_a}
+\gamma_a = \frac{GM}{ab} \, \left( 1 - m - \frac{m}{6} \, \frac{e' \, 
+q'_0}{q_0} \right)
+\end{equation}
+%
+a na póloch ($\beta = \pm 90^\circ$)
+%
+\begin{equation}
+\label{eq:gamma_b}
+\gamma_b = \frac{GM}{a^2} \, \left( 1 + \frac{m}{3} \, \frac{e' \, q'_0}{q_0} 
+\right){.}
+\end{equation}
+%
+Použitím substitúcií~(\ref{eq:gamma_a}) a~(\ref{eq:gamma_b}) môžeme prepísať 
+vzťah~(\ref{eq:gamma_ell_2}) nasledovne,
+%
+\begin{equation}
+\label{eq:gamma_ell_3}
+\gamma(b, \beta) = \frac{a \, \gamma_b \, \sin^2\beta + b \, \gamma_a \, 
+\cos^2\beta}{\sqrt{a^2 \, \sin^2\beta + b^2 \, \cos^2\beta}}{.}
+\end{equation}
+%
+S~využitím \parencite[napríklad][]{MoritzPhysicalGeodesy}
+
+%
+\begin{equation}
+\tan \beta = \frac{b}{a} \, \tan\phi
+\end{equation}
+%
+vyjadríme vzťah~(\ref{eq:gamma_ell_3}) v~elipsoidických súradniciach $\phi$ 
+a~$h$,
+%
+\begin{equation}
+\label{eq:somigliana}
+\gamma(\phi, h = 0) = \gamma_0(\phi) = \frac{a \, \gamma_a \, \cos^2\phi + b \, 
+\gamma_b \, \sin^2\phi}{\sqrt{a^2 \, \cos^2\phi + b^2 \, \sin^2\phi}}{.}
+\end{equation}
+%
+Rovnica~(\ref{eq:somigliana}) sa nazýva \emph{Somiglianov vzťah} a~umožňuje 
+výpočítať normálne tiažové zrýchlenie na povrchu ekvipotenciálneho elipsoidu zo 
+základných parametrov ekvipotenciálneho elipsoidu ako funkciu elipsoidickej 
+šírky~$\phi$.  V~číselných výpočtoch je výhodnejšie použiť nasledovný tvar 
+Somiglianovho vzťahu \parencite{GRS80},
+%
+\begin{equation}
+\label{eq:somigliana_k}
+\gamma_0(\phi) = \gamma_a \, \frac{1 + k \, \sin^2\phi}{\sqrt{1 - e^2 \, 
+\sin^2\phi}}{,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+k = \frac{b \, \gamma_b}{a \, \gamma_a} - 1{.}
+\end{equation}
+%
+Hoci rovnice~(\ref{eq:somigliana}) a~(\ref{eq:somigliana_k}) sú ekvivalentné, 
+v~číselných výpočtoch je presnejší/výhodnejší vzťah~(\ref{eq:somigliana_k}).
+
 
 \subsubsection{Taylorov rozvoj}
 
+\begin{equation}
+\| \boldsymbol \gamma(\phi, h) \| = \gamma(\phi, h) = \sum_{n = 0}^{\infty} 
+\frac{1}{n!} \, \frac{\partial^n \gamma(\phi, h)}{\partial h^n} \bigg\lvert_{h 
+= 0} \, h^n
+\end{equation}
+%
 
 \subsection{Normálne tiažové zrýchlenie vo sférických súradniciach}
 \label{sec:normal_gravity_in_sph_coords}
