@@ -4523,37 +4523,33 @@ odmerať (Kapitola~\ref{sec:centrifugal_and_gravity_acceleration}).  V~mnohých
 úlohách je preto výhodné či dokonca potrebné modelovať ho jednoduchým a~súčasne 
 dostatočne presným spôsobom, napríklad kvôli výpočtu geoidu.  Na tento účel 
 slúži normálne tiažové zrýchlenie $\gamma$ (pozri 
-Kapitolu~\ref{sec:normal_gravity_field}).
+Kapitolu~\ref{sec:normal_gravity_field}).  Normálne tiažové zrýchlenie patrí vo 
+fyzikálnej geodézii medzi najčastejšie používané odvodené fyzikálne parametre 
+ekvipotenciálneho elipsoidu.
 
-Normálne tiažové zrýchlenie patrí vo fyzikálnej geodézii medzi najčastejšie 
-používané odvodené fyzikálne parametre ekvipotenciálneho elipsoidu.  V~tejto 
-kapitole mu preto venujeme náležitú pozornosť.  Najprv ukážeme exaktný spôsob 
-výpočtu normálneho tiažového zrýchlenia v~redukovaných elipsoidických 
-súradniciach 
+V tejto kapitole najprv ukážeme exaktný spôsob výpočtu normálneho tiažového 
+zrýchlenia v~redukovaných elipsoidických súradniciach 
 (Kapitola~\ref{sec:normal_gravity_potential_in_reduced_ell_coords}).  Táto 
-metóda je v~praktických aplikáciách zvyčajne menej preferovaná.  Azda je tomu 
-tak preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie 
-nezvykneme v~praxi určovať v~redukovaných elipsoidických súradniciach.  Tento 
-prístup je však dôležitý obzvlášť z~teoretického hľadiska a z~pohľadu 
-numerických simulácií, lebo využíva uzavreté vzťahy.  
-V~Kapitole~\ref{sec:normal_gravity_taylor} preto pokračujeme najčastejším 
-spôsobom výpočtu normálneho tiažového zrýchlenia, a to v~elipsoidických 
-súradniciach.  Jeho nevýhoda však spočíva v~tom, že na výpočet normálneho 
-tiažového zrýchlenia nad ekvipotenciálnym elipsoidom využíva nekonečný Taylorov 
-rozvoj.  Ten musí byť v~číselných výpočtoch obmedzený na konečný počet členov, 
-preto je táto metóda iba približná.  Našťastie však Taylorov rozvoj normálneho 
-tiažového zrýchlenia konverguje rýchlo, a tak je možné dosiahnuť vyžadovanú 
-presnosť pomerne jednoducho.  Na záver uvedieme 
-v~Kapitole~(\ref{sec:normal_gravity_in_sph_coords}) výpočet normálneho 
-tiažového zrýchlenia pomocou rozvoja do radu sférických harmonických funkcií.  
-Podobne ako sférický harmonický rozvoj normálneho tiažového 
+metóda je v~praktických aplikáciách využívaná zriedkavejšie.  Azda je tomu tak 
+preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie nezvykneme 
+v~praxi určovať v~redukovaných elipsoidických súradniciach.  Tento prístup je 
+však dôležitý obzvlášť z~teoretického hľadiska a z~pohľadu numerických 
+simulácií, lebo využíva uzavreté vzťahy.  
+V~Kapitole~\ref{sec:normal_gravity_taylor} je následne uvedenený najčastejší 
+spôsob výpočtu pomocou Taylorovho rozvoja v~elipsoidických súradniciach.  Hoci 
+táto metóda je iba približná, pretože nekonečný Taylorov rozvoj musí byť 
+v~číselných výpočtoch obmedzený na konečný počet členov, rýchla konvergencia 
+radu umožňuje dosiahnuť vyžadovanú presnosť pomerne jednoducho.  Na záver 
+uvedieme v~Kapitole~(\ref{sec:normal_gravity_in_sph_coords}) výpočet pomocou 
+rozvoja do radu sférických harmonických funkcií.  Podobne ako sférický 
+harmonický rozvoj normálneho tiažového 
 potenciálu~(Kapitola~\ref{sec:normal_gravity_potential_in_spherical_coords}), 
-i~tejto rozvoj je nekonečný.  Po obmedzení na konečný počet členov preto nie je 
-ani tento prístup exaktný.  Numerické chyby však možno opäť jednoduchým 
-spôsobom eliminovať na spoľahlivo zanedbateľné hodnoty.  Výhody tohto prístupu 
-sú rovnaké ako v~prípade normálneho tiažového potenciálu 
-(Kapitola~\ref{sec:normal_gravity_potential_in_spherical_coords}), teda 
-obzvlášť v~možnosti kombinovať danú rovnicu so sférickými harmonickými rozvojmi 
+i~tejto rozvoj je nekonečný.  Po obmedzení na konečný počet členov je preto aj
+tento prístup iba približný.  Numerické chyby však možno opäť jednoduchým 
+spôsobom eliminovať na spoľahlivo zanedbateľné hodnoty.  Podobne ako v~prípade 
+normálneho tiažového potenciálu 
+(Kapitola~\ref{sec:normal_gravity_potential_in_spherical_coords}), výhodou 
+tohto prístupu je obzvlášť možnosť kombinácie so sférickým harmonickým rozvojom 
 skutočného gravitačného potenciálu 
 (Kapitola~\ref{sec:spherical_harmonics_applications}).
 
@@ -4594,7 +4590,7 @@ z~rovnice~(\ref{eq:gradient_red_ell}),
 {.}
 \end{equation}
 
-Z~Kapitily~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} vieme, že 
+Z~Kapitoly~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} vieme, že 
 normálne pole ekvipotenciálneho elipsoidu je v~dôsledku symetrie voči osi 
 rotácie nezávislé od dĺžky~$\lambda$ (pozri vzťah~\ref{eq:u_sph_final}), teda
 %
@@ -4612,7 +4608,7 @@ a^2 \, \frac{q}{q_0} - \omega^2 \, (u^2 + E^2) \right) \, \cos\beta \,
 \sin\beta{.}
 \end{equation}
 %
-Podobným spôsob dostaneme člen~$\gamma_u$,
+Podobným spôsob dostaneme tretí člen vektora normálneho tiažového zrýchlenia,
 %
 \begin{equation}
 \label{eq:gamma_u}
@@ -4632,27 +4628,32 @@ q' = -\frac{u^2 + E^2}{E} \, \frac{\diff q}{\diff u} = 3 \, \left(
 \end{equation}
 %
 V~rovnici~(\ref{eq:u_sph_final}) postačuje vypočítať deriváciu $\diff q \slash 
-\diff u$ a následne je použiť vo vzťahu~(\ref{eq:gamma_u}).  
-V~rovnici~(\ref{eq:qprime}) sme však túto deriváciu vynásobili členom 
-$-\frac{u^2 + E^2}{E}$, preto tým istým členom musí byť prostredný člen 
-rovnice~(\ref{eq:gamma_u}) vydelený.  Novozavedený člen $q'$ bude využitý 
-neskôr.  Rovnice~(\ref{eq:gamma_lambda}), (\ref{eq:gamma_beta}) 
-a~(\ref{eq:gamma_u}) predstavujú uzavreté vzťahy pre hľadané prvky vektora 
-normálneho tiažového zrýchlenia v~redukovanom elipsoidickom súradnicovom 
-systéme.
+\diff u$ a následne ju použiť vo vzťahu~(\ref{eq:gamma_u}).  Vo 
+vzťahu~(\ref{eq:qprime}) sme však túto deriváciu vynásobili členom $-\frac{u^2 
++ E^2}{E}$, preto prostredný člen rovnice~(\ref{eq:gamma_u}) obsahujúci 
+deriváciu $\diff q \slash \diff u$ musí byť tým istým členom vydelený.  
+Novozavedený člen $q'$ bude využitý neskôr.  Rovnice~(\ref{eq:gamma_lambda}), 
+(\ref{eq:gamma_beta}) a~(\ref{eq:gamma_u}) predstavujú uzavreté vzťahy pre 
+hľadané prvky vektora normálneho tiažového zrýchlenia v~redukovanom 
+elipsoidickom súradnicovom systéme.  Podobne ako v~prípade normálneho tiažového 
+potenciálu~(\ref{eq:u_sph}), ide o tri~sféroidické harmonické rozvoje.
 
 Všimnime si, že ak sa výpočtový bod nachádza na ekvipotenciálnom elipsoide, $u 
-= b$, potom $q \slash q_0 = 1$ a $u^2 + E^2 = b^2 + E^2 = a^2$, a teda 
-člen~$\gamma_\beta$ v~rovnici~(\ref{eq:gamma_beta}) je nulový.  Túto vlastnosť 
-možno vysvetliť tým, že pre $u = b$ sú smer vektora normálneho tiažového 
-zrýchlenia~$\boldsymbol \gamma$ a smer derivácie~$\partial U \slash \partial u$ 
-v~člene~$\gamma_u$ rovnice~(\ref{eq:gamma_vec_general}) kolmé na 
-ekvipotenciálnu plochu, ktorou je ekvipotenciálny elipsoid.  Keďže systém 
-súradníc $\beta, \lambda, u$ je ortogonálny, potom vieme, že smery vektorov 
-$\gamma_\beta$ a $\gamma_\lambda$ musia ležať v~dotykovej rovine 
-k~ekvipotenciálnemu elipsoidu.  V~dotykovej rovine k~ekvipotenciálnej ploche je 
-však diferenciálna zmena tiažového potenciálu nulová (pozri 
-Kapitolu~\ref{sec:potential_differences}), čo vysvetľuje nulové hodnoty 
+= b$, potom v~rovnici~(\ref{eq:gamma_beta}) platí $q \slash q_0 = 1$ a $u^2 
++ E^2 = b^2 + E^2 = a^2$. V~takom prípade je nulový nielen 
+prvok~$\gamma_\lambda$ (rovnica~\ref{eq:gamma_lambda}), ale aj 
+prvok~$\gamma_\beta$.  Túto vlastnosť možno vysvetliť nasledovne.  Pre $u = b$ 
+je smer derivácie~$\partial U \slash \partial u$ 
+v rovnici~(\ref{eq:gamma_vec_general}) kolmý na referenčný elipsoid.  Keďže 
+referenčný elipsoid je súčasne ekvipotenciálnou plochou 
+(Kapitola~\ref{sec:equipotential_ellipsoid}), potom aj vektor normálneho 
+tiažového zrýchlenia~$\boldsymbol \gamma$ musí byť kolmý na ekvipotenciálny 
+elipsoid pre $u = b$ (Kapitola~\ref{sec:centrifugal_and_gravity_potential}).  
+Ďalej vieme, že systém súradníc $\beta, \lambda, u$ je ortogonálny, preto je 
+zrejmé, že vektory $\gamma_\beta$ a $\gamma_\lambda$ musia ležať v~dotykovej 
+rovine k~ekvipotenciálnemu elipsoidu.  V~dotykovej rovine k~ekvipotenciálnej 
+ploche je však diferenciálna zmena tiažového potenciálu nulová 
+(Kapitola~\ref{sec:potential_differences}), čo vysvetľuje nulové hodnoty 
 prvkov~$\gamma_\beta$ a~$\gamma_\lambda$.  Pre $u > b$ je už člen 
 $\gamma_\beta$ nenulový.
 
