@@ -314,16 +314,16 @@ konštantná.  Táto vlastnosť by teda mohla umožniť akúsi predikciu morskej
 hladiny i popod, resp. ponad kontinenty.  Získali by sme tak geometricky
 jednoduchšiu a~hladkejšiu plochu ako v~predošlom prístupe, navyše aj
 s~istými relatívne jednoducho uchopiteľnými fyzikálnymi vlastnosťami.  Takáto
-definícia tvaru Zeme bola navrhnutá C.~F.~Gaussom (1777--1855) a~podľa návrhu
-J.~B.~Listinga (1808--1882) nazývame túto plochu \emph{geoid}.  Veličina, ktorá
+definícia tvaru Zeme bola navrhnutá C.~F.~Gaussom~(1777--1855) a~podľa návrhu
+J.~B.~Listinga~(1808--1882) nazývame túto plochu \emph{geoid}.  Veličina, ktorá
 je konštantná na povrchu geoidu sa nazýva \emph{tiažový potenciál}.
 
 \emph{Fyzikálna geodézia} je vedná disciplína zaoberajúca sa určovaním tvaru
 Zeme, jej tiažovým poľom a~ich zmenami v~čase.  Študované sú oba vyššie opísané
 prístupy k~tvaru Zeme, pričom historicky bol predmetom záujmu ako prvý geoid.
 Hoci prirodzená, no matematicky odvážna myšlienka určovať priamo fyzický povrch
-Zeme pochádza už od E.~H.~Brunsa (1848--1919), do popredia záujmu ju dostal až
-v~polovici 20. storočia M.~S.~Molodenskij (1909--1991).  Aj~v~tomto prípade je
+Zeme pochádza už od E.~H.~Brunsa~(1848--1919), do popredia záujmu ju dostal až
+v~polovici 20. storočia M.~S.~Molodenskij~(1909--1991).  Aj~v~tomto prípade je
 však tvar Zeme určovaný z~informácie o~tiažovom poli.  Napĺňať jednu zo 
 základných úloh geodéziu, štúdium tvaru Zeme, teda znamená študovať aj tiažové
 pole Zeme.
@@ -598,13 +598,13 @@ elipsoidickej výšky (jednotky~m).  Dáta sú prevzaté z~modelu
 
 Gravitačné zrýchlenie $\vec g_\gidx$ je vektorová veličina, ktorá má v~každom 
 bode definovanú trojicu reálnych čísel.  V~niektorých situáciách je výhodnejšie 
-pracovať so skalárnou veličinou, teda takou, ktorá má v~bode~$P$ definované 
+pracovať so skalárnou veličinou, teda takou, ktorá má v~každom bode definované 
 práve jedno reálne číslo.  Tento prístup je mladší ako Newtonov gravitačný 
 zákon zhruba o~jedno storočie \parencite{MacMillan1930,Jekeli2015}.  Fenomén 
 gravitácie chápe ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi 
-vzájomne súvisiacimi veličinami, pričom však ide stále o~to isté pole.  
-S~konceptom potenciálu poľa prišiel podľa \textcite{MacMillan1930} taliansky 
-matematik a~astronóm J.~L.~Lagrange (1736--1813).  Ak by sme teda našli 
+vzájomne súvisiacimi veličinami, pričom však ide stále o~to isté pole.  Podľa 
+\textcite{MacMillan1930} prišiel s~konceptom potenciálu poľa taliansky 
+matematik a~astronóm J.~L.~Lagrange~(1736--1813).  Ak by sme teda našli 
 skalárnu veličinu gravitačného poľa, informáciu poskytnutú troma číslami 
 v~podobe gravitačného vektora by sme dokázali zredukovať na jedno jediné číslo 
 bez straty informácie o~poli samotnom.  Skalárna veličina gravitačného poľa sa 
@@ -630,7 +630,7 @@ gradient definovaný nasledovne,
 {,}
 \end{equation}
 %
-kde $\vec e_1$, $\vec e_2$ a~$\vec e_3$ predstavujú jednotkové vektory
+kde $\vec e_1$, $\vec e_2$ a~$\vec e_3$ sú jednotkové vektory
 rovnobežné so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system}),
 %
 \begin{equation}
@@ -690,9 +690,9 @@ Vektorová funkcia $\vec f(x, y, z)$ \emph{udáva smer a~veľkosť najväčšieh
 nárastu} funkcie $f(x, y, z)$ v~bode so súradnicami $x$, $y$ a~$z$.  Jednotlivé 
 zložky vektorovej funkcie $\vec f(x, y, z)$, teda parciálne derivácie $\partial 
 f \slash \partial x$, $\partial f \slash \partial y$ a $\partial f \slash 
-\partial z$, udávajú zmenu skalárnej funkcie $f(x, y, z)$ v~smere jednotkových 
-vektorov $\vec e_1$, $\vec e_2$ a $\vec e_3$ v~bode, v~ktorom sú derivácie 
-vypočítané.  Operátor gradient  je \emph{lineárny}, teda pre diferencovateľné 
+\partial z$, popisujú zmenu skalárnej funkcie $f(x, y, z)$ v~bode so 
+súradnicami~$x$, $y$, $z$ v~smere jednotkových vektorov $\vec e_1$, $\vec e_2$ 
+a $\vec e_3$.  Operátor gradient  je \emph{lineárny}, teda pre diferencovateľné 
 funkcie $f$ a~$g$ a~konštantu $c$ platí
 %
 \begin{equation}
@@ -855,7 +855,7 @@ z~modelu \texttt{grav-sr-2arcsec} \parencite{GravSR2arcsec}.}
 
 Rovnica~(\ref{eq:vg_body}) sa v~literatúre nazýva \emph{Newtonov
 integrál}.  Hovorí, že ak poznáme tvar a~priestorové rozloženie hustoty telesa,
-gravitačný potenciál tohto telesa môže byť vypočítaný.  Newtonov
+gravitačný potenciál telesa môže byť vypočítaný.  Newtonov
 integrál má vo fyzikálnej geodézii kľúčový význam, nakoľko v~gravitačnom
 potenciáli je obsiahnutá informácia o~celom gravitačnom poli (pozri
 Kapitolu~\ref{sec:newton_law}).
@@ -901,7 +901,7 @@ telesa.
 \label{sec:laplace_equation_cart}
 
 Pierre-Simon Laplace zistil, že gravitačný potenciál každého všeobecného telesa
-spĺňa \emph{mimo} tohto telesa rovnicu
+spĺňa \emph{mimo} telesa rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
@@ -1071,8 +1071,8 @@ funkcie sférických súradníc, napríklad $V_\gidx(r, \varphi, \lambda)$.  Ča
 je preto potrebné poznať tvar operátora gradient a Laplaceovho operátora nielen 
 v~pravouhlých súradniciach~(rovnice~\ref{eq:gradient} 
 a~\ref{eq:vg_laplace_cart}), ale aj vo sférických súradniciach.  Operátor 
-gradient má vo sférických súradniciach tvar (pozri 
-Prílohu~\ref{app:gradient_in_orthogonal_systems})
+gradient má vo sférických súradniciach tvar 
+(Príloha~\ref{app:gradient_in_orthogonal_systems})
 %
 \begin{equation}
 \label{eq:gradient_sph}
@@ -1522,9 +1522,10 @@ merania si môžu vyžadovať zavedenie korekcií.
 \subsubsection{Určenie rozdielu tiažového potenciálu}
 \label{sec:potential_differences}
 
-Hoci tiažový potenciál nedokážeme priamo odmerať, \emph{rozdiel} tiažového 
-potenciálu dokážeme určiť nepriamo.  Pred vysvetlením metódy určovania rozdielu 
-tiažového potenciálu sa však pristavme pri pojme totálny diferenciál.
+Hoci tiažový potenciál priamo odmerať nedokážeme, \emph{rozdiel} tiažového 
+potenciálu dokážeme určiť nepriamo.  Pred popísaním metódy určovania rozdielu 
+tiažového potenciálu je ale potrebné pristaviť sa pri pojme totálny 
+diferenciál.
 
 Ak sa poloha bodu $\vec x$,
 %
@@ -1593,10 +1594,10 @@ ekvipotenciálnu plochu.  V~takom prípade $\alpha = 0$, a teda $\diff W = \|
 \vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| \, \| \diff \vec 
 x \|$.
 
-Ak dochádza k~diferenciálnej zmene polohy $\diff \vec x$ v~smere vektora $-\vec 
-g$, teda pozdĺž tiažnice smerom od geocentra, potom medzi vektormi $\vec g$ 
-a $\diff \vec x$ je uhol $180^{\circ}$ a totálny diferenciál tiažového 
-potenciálu je daný vzťahom
+Vráťme sa teraz k~určovaniu rozdielu tiažového potenciálu.  Ak dochádza 
+k~diferenciálnej zmene polohy~$\diff \vec x$ pozdĺž tiažnice v~smere vektora 
+$-\vec g$, potom medzi vektormi $\vec g$ a $\diff \vec x$ je uhol $180^{\circ}$ 
+a totálny diferenciál tiažového potenciálu je daný vzťahom
 %
 \begin{equation}
 \label{eq:w_totdiff_plumb}
@@ -1606,8 +1607,8 @@ potenciálu je daný vzťahom
 %
 kde~$g = \| \vec g \|$ je veľkosť vektora tiažového zrýchlenia a~$\diff H = \| 
 \diff \vec x \|$ je diferenciálna dĺžka tiažnice.  Integráciou 
-rovnice~(\ref{eq:w_totdiff_plumb}) je možné určiť rozdiel tiažového potenciálu 
-medzi bodmi~$A$ a~$B$,
+rovnice~(\ref{eq:w_totdiff_plumb}) od bodu~$A$ po bod~$B$ získame rozdiel 
+tiažového potenciálu,
 %
 \begin{equation}
 \label{eq:w_ab}
@@ -1624,9 +1625,9 @@ a~je daná vzťahom
 C = W_0 - W = \int\limits_0^H g \, \diff H{.}
 \end{equation}
 
-Geopotenciálnu kótu, teda rozdiel tiažového potenciálu, je možné určiť pomocou 
-nivelácie~($\diff H$) a gravimetrie~($g$).  Namiesto jednotky $\mathrm{m}^2\ 
-\mathrm{s}^{-2}$ sa niekedy zvykne udávať v~geopotenciálnych jednotkách,
+Geopotenciálnu kótu je možné určiť pomocou nivelácie~($\diff H$) 
+a gravimetrie~($g$).  Namiesto jednotky $\mathrm{m}^2\ \mathrm{s}^{-2}$ sa 
+niekedy zvykne udávať v~geopotenciálnych jednotkách,
 %
 \begin{equation}
 \label{eq:gpu_unit}
@@ -3273,8 +3274,7 @@ harmonického radu je teda väčšia o~vyšrafovanú oblasť.}
 
 Nech je daný dvojosový referenčný elipsoid s~dĺžkou hlavnej polosi $a$ 
 a~s~dĺžkou vedľajšej polosi $b$.  Parametre~$a$ a~$b$ sú volené tak, aby vhodne 
-aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov, ktorá 
-môže byť aplikovaná na rozdiely medzi povrchom telesa a referenčným elipsoidom.  
+aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov.  
 Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
 vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
 a jedným z jej ohnísk (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície 
@@ -3378,8 +3378,8 @@ potenciálu do radu sférických harmonických funkcií~(rovnica
 diferenciálnej rovnice metódou separácie premenných vo sférických 
 súradniciach~(rovnica~\ref{eq:vg_laplace_sph}).  Cieľom takéhoto prístupu je 
 nájsť tri funkcie, $f_{\mathrm{s}}(r)$, $g_{\mathrm{s}}(\varphi)$ 
-a $h_{\mathrm{s}}(\lambda)$.  Riešením sú funkcie nasledovného tvaru (porovnaj 
-s rovnicou~\ref{eq:vg_sh_no_norm}),
+a $h_{\mathrm{s}}(\lambda)$.  Je možne ukázať, že riešením tejto úlohy sú 
+funkcie nasledovného tvaru (porovnaj s rovnicou~\ref{eq:vg_sh_no_norm}),
 %
 \begin{equation}
 \label{eq:fr}
@@ -3425,8 +3425,8 @@ V_\gidx}{\partial u} + \frac{1}{\cos\beta} \, \frac{\partial}{\partial\beta}
 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
 %
-Riešením tejto diferenciálnej rovnice metódou separácie premenných získame 
-nasledovné funkcie \parencite{MoritzPhysicalGeodesy},
+Riešením diferenciálnej rovnice~(\ref{eq:vg_laplace_ellred}) metódou separácie 
+premenných získame funkcie \parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:fu}
@@ -3450,10 +3450,10 @@ h_{\mathrm{r}}(\lambda) =
 \end{cases}
 \end{equation}
 %
-pričom $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~prípade 
-rovnice~(\ref{eq:fr}), aj funkcia $f_{\mathrm{r}}(u)$ môže mať ešte jeden tvar, 
-$f_{\mathrm{r}}(u) = P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na 
-rozvoj \emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.
+pričom $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fr}), 
+funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar $f_{\mathrm{r}}(u) 
+= P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na rozvoj 
+\emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.
 
 Člen $Q_{nm}\left( i \frac{u}{E} \right)$ v~rovnici~(\ref{eq:fu}) sa nazýva 
 \emph{pridružená Legendreova funkcia druhého druhu}.  Pre komplexný argument $z 
@@ -3507,9 +3507,9 @@ Q_{n}(t) = \frac{1}{2} \, P_n(t) \, \ln\frac{1 + t}{1 - t} - \sum_{s = 1}^n
 
 Rovnica~(\ref{eq:qnm_real_def}) je formálne podobná rovnici~(\ref{eq:pnm_def}).  
 Napriek tomu, v~dôsledku rozdielnej definície derivovaných členov~$Q_n(t)$ ide 
-o~funkcie s~odlišným priebehom v~porovnaní s~$P_{nm}(t)$.  Uveďme pre názornosť 
-explicitný vzťah na výpočet~$Q_0\left( t \right)$, $Q_1\left( t \right)$ 
-a~$Q_2\left( t \right)$ pre reálny argument~$t$ a porovnajme tieto vzťahy 
+o~funkcie s~odlišným priebehom ako~$P_{nm}(t)$.  Uveďme pre názornosť 
+explicitné vzťahy na výpočet funkcií~$Q_0\left( t \right)$, $Q_1\left( 
+t \right)$ a~$Q_2\left( t \right)$ a porovnajme ich 
 s~rovnicami~(\ref{eq:p0_to_p5})
 \parencite{MoritzPhysicalGeodesy},
 %
@@ -3583,16 +3583,15 @@ diferenciálnej rovnice \parencite{MoritzPhysicalGeodesy}.
 \subsection{Numerický výpočet Legendreových funkcií druhého druhu}
 
 Presný a~efektívny numerický výpočet funkcií $Q_{nm}\left( i \frac{u}{E} 
-\right)$, obzvlášť pre vysoké stupne a rády, je netriviálna úloha, podobne ako 
-v~prípade funkcií $P_{nm}(t)$.  Z~dôvodov, ktoré budú ozrejmené 
-v~Kapitole~\ref{sec:spheroidal_harmonic_expansion} sa v~praktických 
+\right)$ je náročný, obzvlášť pre vysoké stupne a rády.  Z~dôvodov, ktoré budú 
+ozrejmené v~Kapitole~\ref{sec:spheroidal_harmonic_expansion} sa v~praktických 
 geodetických aplikáciách nezvyknú počítať členy $Q_{nm}\left( i \frac{u}{E} 
-\right)$, ale podiely Legendreových funkcií $Q_{nm}\left( i \frac{u}{E} \right) 
-\slash Q_{nm}\left( i \frac{b}{E} \right)$.  Samotný výpočet, či už funkcií 
-$Q_{nm}\left( i \frac{u}{E} \right)$ alebo $Q_{nm}\left( i \frac{u}{E} \right) 
-\slash Q_{nm}\left( i \frac{b}{E} \right)$, je zvyčajne uskutočňovaný 
-rekurentnými vzťahmi alebo rozvojmi do nekonečných radov \parencite[pozri 
-napríklad][]{Sebera2012,Fukushima2013,Wang2013,Sprlak2020}.
+\right)$, ale iba podiely Legendreových funkcií $Q_{nm}\left( i \frac{u}{E} 
+\right) \slash Q_{nm}\left( i \frac{b}{E} \right)$.  Samotný výpočet, či už 
+funkcií $Q_{nm}\left( i \frac{u}{E} \right)$ alebo podielov $Q_{nm}\left( 
+i \frac{u}{E} \right) \slash Q_{nm}\left( i \frac{b}{E} \right)$, je zvyčajne 
+uskutočňovaný rekurentnými vzťahmi alebo rozvojmi do nekonečných radov 
+\parencite[pozri napríklad][]{Sebera2012,Fukushima2013,Wang2013,Sprlak2020}.
 
 
 
@@ -3628,7 +3627,7 @@ V_\gidx(u, \beta, \lambda) = \sum_{n = 0}^\infty \sum_{m = 0}^n
 \sin(m\lambda) \right) \, P_{nm}(\sin\beta){.}
 \end{equation}
 %
-Funkcia $Q_{n|k|}\left( i \frac{u}{E} \right)$ zo vzťahu~(\ref{eq:gr}) je 
+Funkcia $Q_{n|k|}\left( i \frac{u}{E} \right)$ zo vzťahu~(\ref{eq:fu}) je 
 komplexná funkcia.  Vo sféroidických harmonických 
 rozvojoch~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
 a~(\ref{eq:vg_spheroidalh_no_norm}) je preto vydelená funkciou $Q_{n|k|}\left( 
@@ -3666,9 +3665,8 @@ ktorý je vztiahnutý k~trojosovému elipsoidu s~polosami $a$, $b$ a $c$.  Získ
 tým rozvoj gravitačného potenciálu do radu elipsoidických harmonických funkcií 
 \parencite[napríklad][]{Garmier2001,Hu2015,Reimond2016}.  Tento prístup je 
 zložitejší ako sférické a~sféroidické harmonické rozvoje a vo fyzikálnej 
-geodézii sa používa zriedka.  Využite má najmä v~súvislosti s~modelovaním 
-gravitačného poľa asteroidov komplikovaných tvarov, pre ktoré nie je dostatočne 
-presné používať sféru ani dvojosový rotačný elipsoid ako referenčné plochy.
+geodézii sa využíva zriedka.  Uplatnenie má najmä v~súvislosti s~modelovaním 
+gravitačného poľa v~blízkosti asteroidov, ktoré majú komplikovaný tvar.
 
 
 
