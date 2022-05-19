@@ -203,6 +203,7 @@
 \hyphenation{New-ton}
 \hyphenation{New-to-nov}
 \hyphenation{New-to-nom}
+\hyphenation{New-to-no-va}
 \hyphenation{New-to-nov-ho}
 \hyphenation{New-to-no-vým}
 
@@ -364,7 +365,7 @@ $P$ a~smeruje do bodu $Q$ (Obrázok~\ref{fig:newton_law}).
 \input{./fig-newton-law.pdf_tex}
 %\captionsetup{width=0.8\textwidth}
 \caption{Gravitačná sila $\vec F_\gidx$, ktorou pôsobí hmotný bod $Q$ na hmotný 
-bod $P$.  Vektor $\vec F_\gidx$ je z~dôvodov vizualizácie mierne odsadený od 
+bod $P$.  Vektor $\vec F_\gidx$ je z~vizualizačných dôvodov mierne odsadený od 
 spojnice bodov $P$ a~$Q$.}
 \label{fig:newton_law}
 \end{figure}
@@ -1063,12 +1064,14 @@ s~pohyblivým začiatkom v~bode~$P$.}
 \label{fig:cart_sph}
 \end{figure}
 
-V~niektorých situáciách budeme pracovať s~veličinami, ktoré budú vyjadrené ako 
-funkcie sférických súradníc, napríklad $V_\gidx(r, \varphi, \lambda)$.  Často 
-je preto potrebné poznať tvar operátora gradient a Laplaceovho operátora nielen 
-v~pravouhlých súradniciach~(rovnice~\ref{eq:gradient} 
-a~\ref{eq:vg_laplace_cart}), ale aj vo sférických súradniciach.  Operátor 
-gradient má vo sférických súradniciach tvar 
+V~dôsledku približne sférického tvaru Zeme je často jednoduchšie popisovať 
+zemské gravitačné pole vo sférických súradniciach než v~pravouhlých 
+súradniciach.  Z~tohto dôvodu je potrebné poznať tvar operátora gradient 
+a Laplaceovho operátora nielen v~pravouhlých 
+súradniciach~(rovnice~\ref{eq:gradient} a~\ref{eq:vg_laplace_cart}), ale aj vo 
+sférických súradniciach.
+
+Operátor gradient má vo sférických súradniciach tvar 
 (Príloha~\ref{app:gradient_in_orthogonal_systems})
 %
 \begin{equation}
@@ -1088,20 +1091,19 @@ gradient má vo sférických súradniciach tvar
 {.}
 \end{equation}
 %
-Symboly $\vec{e}_1^\mathrm{s}$, $\vec{e}_2^{\mathrm{s}}$ 
-a $\vec{e}_3^\mathrm{s}$ označujú jednotkové vektory lokálneho pravouhlého 
-súradnicového systému orientovaného na sever s~pohyblivým začiatkom v~bode~$P$ 
-(Obrázok~\ref{fig:cart_sph}).  Tento súradnicový systém je ľavotočivý.  Podobne 
-ako v~prípade operátora gradient vyjadreného v~pravouhlých 
-súradniciach~(\ref{eq:gradient}), aplikovaním gradientu vo sférických 
-súradniciach~(\ref{eq:gradient_sph}) na gravitačný potenciál $V_\gidx(r, 
-\varphi, \lambda)$ získame vektor gravitačného zrýchlenia~$\vec g_\gidx(r, 
-\varphi, \lambda)$.  Tentokrát budú ale zložky vektora vyjadrené v~lokálnom 
-pravouhlom súradnicovom systéme s~jednotkovými vektormi~$\vec e_1^\mathrm{s}$, 
-$\vec e_2^{\mathrm{s}}$ a $\vec e_3^\mathrm{s}$, a tak budú udávať zmenu 
-gravitačného potenciálu v~iných smeroch ako je tomu v~prípade 
-operátora~(\ref{eq:gradient}).  Veľkosť a smer vektora gravitačného zrýchlenia 
-sú však po aplikovaní~(\ref{eq:gradient}) a~(\ref{eq:gradient_sph}) rovnaké.
+Symboly $\vec{e}_1^\mathrm{s}$, $\vec{e}_2^{\mathrm{s}}$, 
+$\vec{e}_3^\mathrm{s}$ označujú jednotkové vektory súradnicových 
+osí~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ lokálneho pravouhlého 
+súradnicového systému orientovaného na sever s~pohyblivým začiatkom 
+v~bode~$P$~(Obrázok~\ref{fig:cart_sph}).  Os~$z^\mathrm{s}$ je daná smerom 
+sprievodiča prechádzajúceho bodom~$P$ a~je orientovaná kladne vo vonkajšom 
+smere.  Os~$x^\mathrm{s}$ leží v~rovine meridiánu a je orientovaná kladne na 
+sever.  Os~$y^\mathrm{s}$ dotvára pravouhlý \emph{ľavotočivý} súradnicový 
+systém.  Aplikovaním operátora gradient~(\ref{eq:gradient_sph}) na gravitačný 
+potenciál $V_\gidx(r, \varphi, \lambda)$ získame vektor gravitačného 
+zrýchlenia~$\vec g_\gidx(r, \varphi, \lambda)$, ktorého prvky popisujú zmenu 
+gravitačného potenciálu v~bode~$P$ v~smere súradnicových osí~$x^\mathrm{s}$, 
+$y^\mathrm{s}$ a $z^\mathrm{s}$.
 
 Laplaceova rovnica pre gravitačný potenciál má vo sférických súradniciach tvar 
 (Príloha~\ref{app:laplace_in_spherical_coordinates})
@@ -1324,7 +1326,7 @@ rotačnej osi (Obrázok~\ref{fig:gravity_vector}),
 %
 Čím je vzdialenosť $p$ väčšia, tým je väčšie i~odstredivé zrýchlenie a~naopak.
 Zo vzťahu~(\ref{eq:gc}) je zrejmé, že odstredivé zrýchlenie je kolmé na os
-rotácie a~má smer vzdiaľujúci sa od rotačnej osi
+rotácie a~má smer vzďaľujúci sa od rotačnej osi
 (Obrázok~\ref{fig:gravity_vector}).  Uhlová rýchlosť rotácie Zeme je približne
 rovná \parencite{GRS80}
 %
@@ -1461,7 +1463,7 @@ plochu prechádzajúcu týmto bodom \parencite{MoritzPhysicalGeodesy}.  Toto
 tvrdenie vyplýva priamo z~rovnice~(\ref{eq:g_gradW}).
 \end{itemize}
 
-Matematický popis tvaru ekvipotenciálnych plôch realných telies je náročný.  
+Matematický popis tvaru ekvipotenciálnych plôch reálnych telies je náročný.  
 Z~Newtonovho integrálu~(\ref{eq:vg_body}) vieme (pozri tiež 
 Kapitolu~\ref{sec:potential_theory}), že gravitačné pole je dané tvarom 
 a hustotou telesa.  Zložité nepravidelné tvary či rozloženia hustoty spôsobujú 
@@ -1628,7 +1630,7 @@ niekedy zvykne udávať v~geopotenciálnych jednotkách,
 \mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
 \end{equation}
 %
-Rozdiel tiažového potenciálu je v~súčanosti možné určiť približne s presnosťou 
+Rozdiel tiažového potenciálu je v~súčasnosti možné určiť približne s presnosťou 
 $0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
 \parencite{MoritzPhysicalGeodesy}.
 
@@ -3043,7 +3045,7 @@ a~\textcite{MoritzPhysicalGeodesy}.
 \end{figure}
 
 ICGEM (angl. \emph{International Centre for Global Earth Models}) je služba 
-zriadená Medzinárodnou geodetickou asociáciou (angl. \emph{International 
+zriadená Medzinárodnou geodetickou asociáciou (angl.~\emph{International 
 Association of Geodesy}, IAG).  Okrem iného je jej cieľom zbierať, archivovať 
 a~poskytovať globálne modely gravitačného poľa Zeme, najčastejšie práve vo 
 forme sférických harmonických koeficientov $\bar{C}_{nm}$ a~$\bar{S}_{nm}$.  Na 
@@ -3285,7 +3287,7 @@ označuje malú polos konfokálneho elipsoidu, ktorý prechádza bodom~$P$.
 a lineárnu excentricitu~$E$ ako referenčný elipsoid.  Ak sa bod~$P$ nachádza na 
 referenčnom elipsoide, potom~$u = b$.  Symbol $\beta$ predstavuje redukovanú 
 elipsoidickú šírku.  Redukovaná elipsoidická dĺžka $\lambda$ je definovaná 
-rovnako ako v~prípade sférických súradníc (Obrázok~\ref{fig:cart_sph}).
+rovnako ako v~prípade sférických súradníc (pozri Obrázok~\ref{fig:cart_sph}).
 
 \begin{figure}
 \centering
@@ -3312,13 +3314,12 @@ Všimnime si, že ak $E = 0$, teda referenčný elipsoid nie je sploštený, pot
 vzťah~(\ref{eq:ellred2cart}) má rovnaký tvar ako transformácia sférických 
 súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
-Operátor gradient v~lokálnom súradnicovom systéme s~pohyblivým 
-začiatkom~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ vyjadrený 
-v~redukovaných elipsoidických súradniciach získame podobne ako v~prípade 
-sférického súradnicového systému.  Postupom uvedeným 
-v~Kapitole~\ref{app:gradient_in_orthogonal_coordinates} možno jednoducho 
-ukázať, že veľkosti vektorov $\hat{\vec e}_i^\mathrm{r}$, $i = 1, 2, 3$, ktoré 
-prislúchajú súradnicovým osiam $\beta$, $\lambda$, $u$, sú dané vzťahmi
+Podobne ako vo sférickom súradnicovom systéme, vyjadrime operátor gradient aj 
+v~redukovaných elipsoidických súradniciach.  Pomocou všeobecnej 
+rovnice~(\ref{eq:xi1xi2xi3_vectors}) možno jednoducho ukázať, že veľkosti 
+vektorov $\| \hat{\vec e}_i^\mathrm{r} \|$ 
+z~rovnice~(\ref{eq:grad_orthogonal_system}) sú dané v~systéme redukovaných 
+elipsoidických súradníc vzťahmi
 %
 \begin{equation}
 \label{eq:ei_reduced_ell_magnitudes}
@@ -3333,17 +3334,26 @@ prislúchajú súradnicovým osiam $\beta$, $\lambda$, $u$, sú dané vzťahmi
 \end{split}
 \end{equation}
 %
-Operátor gradient má teda v~redukovaných elipsoidických súradniciach tvar 
-(rovnica~\ref{eq:grad_orthogonal_system})
+Vektory $\hat{\vec e}_i^\mathrm{r}$ definujú smery súradnicových osí lokálneho 
+pravouhlého súradnicového systému~$x^\mathrm{r}$, $y^\mathrm{r}$, 
+$z^\mathrm{r}$ s~pohyblivým začiatkom~v~bode~$P$.  Os~$z^\mathrm{r}$ je daná 
+smerom vonkajšej normály ku konfokálnemu elipsoidu, ktorý prechádza bodom~$P$.  
+Os~$x^\mathrm{r}$ leží v~dotykovej rovine ku konfokálnemu elipsoidu a~smeruje 
+na sever.  Os~$y^\mathrm{r}$ dotvára pravouhlý \emph{ľavotočivý} súradnicový 
+systém.
+
+Kombináciou rovníc~(\ref{eq:grad_orthogonal_system}) 
+a~(\ref{eq:ei_reduced_ell_magnitudes}) získame získame tvar operátora gradient 
+v~redukovaných elipsoidických súradniciach 
+(rovnica~\ref{eq:grad_orthogonal_system}),
 %
-\begin{equation}
+\begin{align}
 \label{eq:gradient_red_ell}
-\begin{split}
 \nabla = \grad &= \vec e_1^\mathrm{r} \, \frac{1}{\sqrt{u^2 + E^2 \, 
 \sin^2\beta}} \, \frac{\partial}{\partial \beta} + \vec e_2^\mathrm{r} \, 
 \frac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \frac{\partial}{\partial \lambda} 
 + \vec e_3^\mathrm{r} \, \sqrt{\frac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, 
-\frac{\partial}{\partial u}\\
+\frac{\partial}{\partial u}\nonumber\displaybreak[2]\\
 %
 &=
 %
@@ -3356,8 +3366,7 @@ Operátor gradient má teda v~redukovaných elipsoidických súradniciach tvar
 u}
 \end{bmatrix}
 {.}
-\end{split}
-\end{equation}
+\end{align}
 
 
 
@@ -3401,7 +3410,7 @@ riešenie sa využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry
 \parencite{MoritzPhysicalGeodesy}.  Takáto situácia ale nie je predmetom tejto 
 práce.
 
-Jeden z~možných prístupov získania sféroidických harmonických funkcíi je práve 
+Jeden z~možných prístupov získania sféroidických harmonických funkcií je práve 
 riešením Laplaceovej diferenciálnej rovnice metódou separácie premenných, 
 tentokrát však v~redukovaných elipsoidických súradniciach.  Laplaceovu rovnicu 
 pre gravitačný potenciál v~elipsoidických redukovaných súradniciach dostaneme 
@@ -3417,8 +3426,8 @@ V_\gidx}{\partial u} + \frac{1}{\cos\beta} \, \frac{\partial}{\partial\beta}
 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
 %
-Riešením diferenciálnej rovnice~(\ref{eq:vg_laplace_ellred}) metódou separácie 
-premenných získame funkcie \parencite{MoritzPhysicalGeodesy},
+Riešením tento rovnice metódou separácie premenných získame funkcie 
+\parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:fu}
@@ -3442,7 +3451,7 @@ h_{\mathrm{r}}(\lambda) =
 \end{cases}
 \end{equation}
 %
-pričom $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fr}), 
+kde $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fr}), 
 funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar $f_{\mathrm{r}}(u) 
 = P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na rozvoj 
 \emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.
@@ -3741,7 +3750,7 @@ linearizácie.  Zdá sa byť preto kľúčové najmä to, aby normálna ekvipote
 plocha s~normálnym tiažovým potenciálom~$U_0$ bola geometricky blízka geoidu, 
 ďalej aby normálny tiažový potenciál~$U_0$ bol blízky skutočnému tiažovému 
 potenciálu~$W_0$ na geoide, a nakoniec aby geometrická aj fyzikálna časť 
-normálneho poľa boli jednoducho matematicky popísateľné.  Pre niektoré príbuzné 
+normálneho poľa boli jednoducho matematicky opísateľné.  Pre niektoré príbuzné 
 vedné odbory, napríklad geofyziku, je však znalosť hustoty v~normálnom telese 
 potrebná \parencite{Karcol2017}.  Zdá sa, že v~takýchto situáciách nie je voľba 
 ekvipotenciálneho elipsoidu najvýhodnejšia.  Diskusiu k~možnostiam 
@@ -3758,7 +3767,8 @@ Nech teleso s~hmotnosťou~$M$ rotuje konštantnou uhlovou rýchlosťou~$\omega$
 okolo pevnej osi.  Nech $S$ je ekvipotenciálna plocha jeho tiažového poľa 
 obklopujúca celé teleso.  \emph{Stokesov--Poincarého} teorém hovorí, že tiažový 
 potenciál vo vonkajšom priestore plochy~$S$ je jednoznačne určený konštantami 
-$M$ a $\omega$ a parametrami definujúcimi plochu~$S$ \parencite{TorgeGeodesy}.
+$M$ a $\omega$ a parametrami, ktoré definujú plochu~$S$ 
+\parencite{TorgeGeodesy}.
 
 Na jednoznačné zadefinovanie ekvipotenciálneho elipsoidu a jeho vonkajšieho 
 tiažového poľa preto postačuje určiť štyri nezávislé \emph{základné parametre}.  
@@ -3815,7 +3825,7 @@ Jednu z možných štvoríc základných parametrov tvorí
 Týmto základnými parametrami je definovaný ekvipotenciálny elipsoid 
 \emph{GRS80} \parencite[angl. \textit{Geodetic Reference 
 System~1980};][]{GRS80}.  Základné parametre GRS80 (Tabuľka~\ref{tab:1}) boli 
-prijaté Medzinárodnou úniou geodézie a geofyziky (angl. \textit{International 
+prijaté Medzinárodnou úniou geodézie a geofyziky (angl.~\textit{International 
 Union of Geodesy and Geophysics}, IUGG) a Medzinárodnou asociáciou geodézie IAG 
 na 17.~generálnom zasadnutí IUGG v Canberra v decembri 1979.  Dôležité je 
 spomenúť, že použitá hodnota konštanty $GM$ zahŕňa hmotnosť Zeme \emph{a} 
@@ -4282,7 +4292,7 @@ Keďže hodnota $u$ je podľa nášho predpokladu veľmi veľká, potom po dosad
 Zápis $O\left( \frac{1}{u^3} \right)$ predstavuje členy tretieho a~vyšších 
 rádov rozvoja~(\ref{eq:arctan_series}).
 
-Pre zjednodušenie ďalšieho odvodenia je dobré uvedomiť si, že ak $u$ 
+Pre zjednodušenie ďalšieho odvodenia je dobré uvedomiť si, že ak~$u$ 
 v~rovnici~(\ref{eq:eu_atan}) nadobúda veľké hodnoty, potom jeho hodnota je 
 približne rovná sprievodiču $r$.  Túto skutočnosť ukážeme nasledovne.  
 Z~rovníc~(\ref{eq:ellred2cart}) vieme, že
@@ -4449,10 +4459,11 @@ a~nad ním pomocou štyroch základných parametrov ekvipotenciálneho elipsoidu
 \subsubsection{Okrajová úloha}
 
 Na problematiku tejto kapitoly sa môžeme pozrieť aj zo širšieho uhla pohľadu.  
-Zadefinovali sme trojrozmernú uzavretú plochu, ktorú tvorí dvojosový rotačný 
-elipsoid.  Tento elipsoid sme v~Kapitole~\ref{sec:equipotential_ellipsoid} 
-prehlásili za ekvipotenciálny, čím sme každému bodu na jeho povrchu priradili 
-hodnotu normálneho tiažového potenciálu~$U_0$.  V súlade so Stokesovým 
+Najprv sme definovali trojrozmernú uzavretú plochu, ktorú tvorí dvojosový 
+rotačný elipsoid.  Tento elipsoid sme 
+v~Kapitole~\ref{sec:equipotential_ellipsoid} prehlásili za ekvipotenciálny, čím 
+sme každému bodu na jeho povrchu priradili hodnotu normálneho tiažového 
+potenciálu~$U_0$.  V súlade so Stokesovým 
 teorémom~(Kapitola~\ref{sec:equipotential_ellipsoid}) sme následne na základe 
 známej geometrie ekvipotenciálnej plochy a hodnoty normálneho tiažového 
 potenciálu na nej dokázali zistiť, čomu je rovný normálny tiažový potenciál 
@@ -4473,8 +4484,8 @@ jeho povrchu.  Hľadanie takého riešenia diferenciálnej rovnice, ktoré vyhov
 zadanej podmienke (v~našom prípade $U_0$ na povrchu ekvipotenciálneho 
 elipsoidu) sa nazýva \emph{okrajová úloha}.  Okrajová úloha bola vyriešená už 
 vzťahom~(\ref{eq:ug_spheroidal}).  Úpravy, ktoré po nej nasledovali už boli 
-vykonané iba kvôli zámeru vyjadriť normálny tiažový potenciál uzavretým vzťahom 
-pomocou štyroch základných parametrov ekvipotenciálneho elipsoidu.
+vykonané iba kvôli zámeru vyjadriť normálny tiažový potenciál pomocou štyroch 
+základných parametrov ekvipotenciálneho elipsoidu.
 
 
 
@@ -4573,14 +4584,14 @@ preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie nezvyk
 v~praxi určovať v~redukovaných elipsoidických súradniciach.  Tento prístup je 
 ale dôležitý obzvlášť z~teoretického hľadiska a z~pohľadu numerických 
 simulácií, lebo využíva uzavreté vzťahy.  
-V~Kapitole~\ref{sec:normal_gravity_taylor} je následne uvedenený najčastejší 
-spôsob výpočtu pomocou Taylorovho rozvoja v~elipsoidických súradniciach.  Hoci 
-táto metóda je iba približná, pretože nekonečný Taylorov rozvoj musí byť 
-v~číselných výpočtoch obmedzený na konečný počet členov, rýchla konvergencia 
-radu umožňuje dosiahnuť vyžadovanú presnosť pomerne jednoducho.  Na záver 
-uvedieme v~Kapitole~(\ref{sec:normal_gravity_in_sph_coords}) výpočet pomocou 
-rozvoja do radu sférických harmonických funkcií.  Podobne ako sférický 
-harmonický rozvoj normálneho tiažového 
+V~Kapitole~\ref{sec:normal_gravity_taylor} je uvedený najčastejší spôsob 
+výpočtu pomocou Taylorovho rozvoja v~elipsoidických súradniciach.  Hoci táto 
+metóda je iba približná, pretože nekonečný Taylorov rozvoj musí byť v~číselných 
+výpočtoch obmedzený na konečný počet členov, rýchla konvergencia radu umožňuje 
+dosiahnuť vyžadovanú presnosť pomerne jednoducho.  Na záver uvedieme 
+v~Kapitole~(\ref{sec:normal_gravity_in_sph_coords}) výpočet pomocou rozvoja do 
+radu sférických harmonických funkcií.  Podobne ako sférický harmonický rozvoj 
+normálneho tiažového 
 potenciálu~(Kapitola~\ref{sec:normal_gravity_potential_in_spherical_coords}), 
 i~tejto rozvoj je nekonečný.  Po obmedzení na konečný počet členov je preto aj
 tento prístup iba približný.  Numerické chyby však možno opäť jednoduchým 
@@ -4845,7 +4856,7 @@ S~využitím~(\ref{eq:beta2phi}) prejde~(\ref{eq:gamma_ell_3}) do konečného tv
 \end{equation}
 %
 Rovnica~(\ref{eq:somigliana}) sa nazýva \emph{Somiglianov vzťah} a~umožňuje 
-výpočítať normálne tiažové zrýchlenie na povrchu ekvipotenciálneho elipsoidu zo 
+vypočítať normálne tiažové zrýchlenie na povrchu ekvipotenciálneho elipsoidu zo 
 základných parametrov ekvipotenciálneho elipsoidu.  Jedinou premennou vo 
 vzťahu~(\ref{eq:somigliana}) je elipsoidická šírka~$\phi$.
 
@@ -4880,8 +4891,9 @@ preto je potrebné určiť plochu, z~ktorej bude normálne tiažové zrýchlenie
 pokračované nahor.  Vhodnou plochou je ekvipotenciálny elipsoid, pretože na 
 tejto ploche je možné relatívne jednoducho odvodiť a~následne vypočítať 
 derivácie normálneho tiažového zrýchlenia, ktoré vystupujú v~Taylorovom 
-rozvoji.  Normálne tiažové zrýchlenie vo výške~$h \geq 0$ tak získame 
-Taylorovým rozvojom (porovnaj s~rovnicou~\ref{eq:gg_analytical_continuation})
+rozvoji.  Normálne tiažové zrýchlenie vo výške~$h \geq 0$ (bod~$P$ na 
+Obrázku~\ref{fig:ell_coords}) tak získame Taylorovým rozvojom (porovnaj 
+s~rovnicou~\ref{eq:gg_analytical_continuation})
 %
 \begin{equation}
 \label{eq:gamma_taylor}
@@ -4898,8 +4910,9 @@ Taylorovým rozvojom (porovnaj s~rovnicou~\ref{eq:gg_analytical_continuation})
 \end{equation}
 %
 kde jednotlivé derivácie normálneho tiažového zrýchlenia sú dané v~bodoch na 
-ekvipotenciálnom elipsoide pre príslušnú elipsoidickú šírku~$\phi$.  Nultý člen 
-Taylorovho rozvoja~$\gamma_0(\phi)$ je možné vypočítať Somiglianovým 
+ekvipotenciálnom elipsoide pre príslušnú elipsoidickú šírku~$\phi$ (bod~$Q_0$ 
+na Obrázku~\ref{fig:ell_coords}).  Nultý člen Taylorovho 
+rozvoja~$\gamma_0(\phi)$ je možné vypočítať Somiglianovým 
 vzťahom~(\ref{eq:somigliana}).  Člen~$\delta\gamma_h(\phi)$ sa nazýva 
 \emph{redukcia normálneho tiažového zrýchlenia z~výšky} a v~číselných výpočtoch 
 je vypočítaný približne, zväčša uvážením členov sumácie po~$i = 1$, prípadne aj 
