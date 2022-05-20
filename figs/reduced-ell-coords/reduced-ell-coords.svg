@@ -887,11 +887,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9999996"
-     inkscape:cx="214.11019"
-     inkscape:cy="128.17371"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="60.995897"
+     inkscape:cy="164.36114"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -912,7 +912,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1057,23 +1057,23 @@
      inkscape:label="line, dashed, black"
      style="display:inline">
     <circle
-       style="display:inline;fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:4;stroke-dasharray:0.25, 0.75;stroke-dashoffset:0;stroke-opacity:1"
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.25000001;stroke-miterlimit:4;stroke-dasharray:0.25000001,1.00000003;stroke-dashoffset:0;stroke-opacity:1;stroke-linecap:round"
        id="path1515"
        cx="49.718647"
        cy="49.921127"
        r="32.413055" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.265, 0.795;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.26499999,1.05999995;stroke-dashoffset:0;stroke-opacity:1"
        d="m 76.880274,23.47477 -8.421394,0"
        id="path1848"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.264583, 0.793749;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.26458299;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.26458299,1.05833194;stroke-dashoffset:0;stroke-opacity:1"
        d="m 77.307678,23.047365 0,-12.083576"
        id="path1850"
        sodipodi:nodetypes="cc" />
     <circle
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:0.26499999,0.79499996;stroke-opacity:1;paint-order:stroke fill markers;stroke-dashoffset:0"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:0.26499999,1.05999995;stroke-opacity:1;paint-order:stroke fill markers;stroke-dashoffset:0"
        id="path1607"
        cy="49.921131"
        cx="49.718647"
