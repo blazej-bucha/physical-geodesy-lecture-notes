@@ -815,6 +815,30 @@ Dôkaz, že rovnica~(\ref{eq:vg_body}) vyhovuje prijatej definícii gravitačné
 potenciálu (\ref{eq:gg_grad_vg} a~\ref{eq:vg_at_infty}) vynecháme, no je
 dostupný napríklad v~\textcite{MacMillan1930}.
 
+Funkcia~$U$, ktorej súčiny
+%
+\begin{equation}
+\label{eq:regular_function}
+l \, U{,} \quad l^2 \, \frac{\partial U}{\partial x}{,} \quad l^2 \, 
+\frac{\partial U}{\partial y}{,} \quad l^2 \, \frac{\partial U}{\partial z}
+\end{equation}
+%
+nadobúdajú konečné hodnoty pre~$l \rightarrow \infty$, kde~$l$ je vzdialenosť 
+od ľubovoľného ale fixného bodu, sa nazýva \emph{regulárna funkcia v~nekonečne} 
+\parencite{Kellogg1967,Pick1973}.  Gravitačný potenciál~(\ref{eq:vg_body}) 
+všeobecného telesa je regulárna funkcia v~nekonečne, pretože všetky štyri 
+súčiny~(\ref{eq:regular_function}) nadobúdajú konečné hodnoty pre $l 
+\rightarrow \infty$.  V~tejto práci uvedieme iba limitu prvého súčinu,
+%
+\begin{equation}
+\label{eq:vg_regular}
+\lim_{l \rightarrow \infty} l \, V_\gidx = G \iiint_{\tau} \rho \, \diff\tau 
+= GM{,}
+\end{equation}
+%
+kde $M$ je hmotnosť všeobecného telesa.  Pre limity zvyšných troch súčinov 
+pozri napríklad prácu~\textcite{Pick1973}.
+
 K~interpretácii gravitačného potenciálu je možné pristúpiť aj z~fyzikálneho 
 hľadiska.  Bez podrobného odvodenia sa obmedzíme na tvrdenie, že hodnota 
 gravitačného potenciálu v~bode $P$ predstavuje prácu, ktorú musí vykonať 
@@ -829,7 +853,7 @@ je nulová.  Bez tejto vlastnosti by nebolo možné nájsť skalárnu funkciu
 $V_\gidx$, ktorá by vyhovovala rovnici~(\ref{eq:gg_grad_vg}).
 
 Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedokážeme
-priamo merať.  Vo fyzikálnej geodézii vystupuje často ako neznáma funkcia,
+priamo merať.  Vo fyzikálnej geodézii často vystupuje ako neznáma funkcia,
 ktorú sa snažíme určiť, napríklad z~vektora gravitačného zrýchlenia.  V~sústave
 SI má gravitačný potenciál fyzikálnu jednotku $\mathrm{m}^2\ \mathrm{s}^{-2}$.
 Ukážka priebehu gravitačného potenciálu v~oblasti Vysokých a~Nízkych Tatier je
@@ -3118,10 +3142,9 @@ ktoré sa nachádzajú nad geoidom \parencite{Ince2020}.
 \includegraphics{./fig-h-shs-nmax30.pdf}
 \includegraphics{./fig-h-shs-nmax90.pdf}
 \includegraphics{./fig-h-shs-nmax360.pdf}
-\caption{Sférický harmonický rozvoj zemskej topografie do stupňov~$N = 30$
-(vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  Výpočet bol
-uskutočnený Zdrojovým kódom~\ref{src:h_shs}.}
-\label{fig:shs_h}
+\caption{Sférický harmonický rozvoj zemskej topografie (jednotky~m) do 
+stupňov~$N = 30$ (vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  
+Výpočet bol uskutočnený Zdrojovým kódom~\ref{src:h_shs}.} \label{fig:shs_h}
 \end{figure}
 
 V~Kapitole~\ref{sec:spherical_harmonics} sme uviedli, že do radu sférických
@@ -3703,13 +3726,14 @@ nájsť medzi nimi vhodný kompromis.
 \label{sec:choice_of_normal_gravity_field}
 
 Jedno z najjednoduchších telies ponúkajúcich sa na definíciu normálneho 
-tiažového poľa Zeme je \emph{homogénna rotujúca guľa} definovaná nezávislými 
-parametrami $GM$, $R$ a $\omega$, teda geocentrickou gravitačnou konštantou, 
-polomerom gule a uhlovou rýchlosťou rotácie.  Vonkajšie tiažové pole homogénnej 
-gule je síce jednoducho matematicky opísateľné, nevyhovuje ale väčšine 
-súčasných aplikácií z hľadiska presnosti.  Vo fyzikálnej geodézii sa zvykne 
-preto využívať prevažne len v~niektorých špecifických situáciách, napríklad ak 
-postačuje i~nižšia presnosť.
+tiažového poľa Zeme je \emph{homogénna rotujúca guľa} definovaná troma 
+nezávislými parametrami.  Obvyklou trojicou nezávislých parametrov sú 
+geocentrická gravitačná konštanta~$GM$, teda súčin Newtonovej gravitačnej 
+konštanty~$G$ a~hmotnosti Zeme~$M$, ďalej polomer gule~$R$ a~uhlová rýchlosť 
+rotácie~$\omega$.  Vonkajšie tiažové pole homogénnej gule je síce jednoducho 
+matematicky opísateľné, nevyhovuje ale väčšine súčasných aplikácií z hľadiska 
+presnosti.  Vo fyzikálnej geodézii sa zvykne preto využívať prevažne len 
+v~niektorých špecifických situáciách, napríklad ak postačuje i~nižšia presnosť.
 
 V dôsledku sploštenia Zeme je dvojosový rotačný elipsoid presnejšou 
 geometrickou aproximáciou geoidu ako sféra.  Okrem svojho geometrického tvaru 
@@ -3827,14 +3851,24 @@ Jednu z možných štvoríc základných parametrov tvorí
 %
 Týmto základnými parametrami je definovaný ekvipotenciálny elipsoid 
 \emph{GRS80} \parencite[angl. \textit{Geodetic Reference 
-System~1980};][]{GRS80}.  Základné parametre GRS80 (Tabuľka~\ref{tab:1}) boli 
-prijaté Medzinárodnou úniou geodézie a geofyziky (angl.~\textit{International 
-Union of Geodesy and Geophysics}, IUGG) a Medzinárodnou asociáciou geodézie IAG 
-na 17.~generálnom zasadnutí IUGG v Canberra v decembri 1979.  Dôležité je 
-spomenúť, že použitá hodnota konštanty $GM$ zahŕňa hmotnosť Zeme \emph{a} 
+System~1980};][]{GRS80}.  Základné parametre GRS80 
+(Tabuľka~\ref{tab:grs80_fundamental}) boli prijaté Medzinárodnou úniou geodézie 
+a geofyziky (angl.~\textit{International Union of Geodesy and Geophysics}, 
+IUGG) a Medzinárodnou asociáciou geodézie IAG na 17.~generálnom zasadnutí IUGG 
+v Canberra v decembri 1979.
+
+Všimnime si, že medzi základnými parametrami sa nachádza geocentrická 
+gravitačná konštanta $GM$ a nie hmotnosť Zeme~$M$, ktorá je podľa 
+Stokesovho--Poincarého teorému postačujúca na jednoznačné definovanie tiažového 
+potenciálu vo vonkajšom priestore ekvipotenciálnej plochy 
+(Kapitola~\ref{sec:equipotential_ellipsoid}).  Dôvod je ten, že 
+súčin~konštánt~$G$ a~$M$ je možné určiť presnejšie ako samostatný parameter~$M$ 
+\parencite[pozri napríklad][]{Pick2000}.  Spomeňme tiež, že hodnota konštanty 
+$GM$ z~Tabuľky~\ref{tab:grs80_fundamental} zahŕňa hmotnosť Zeme \emph{a} 
 hmotnosť zemskej atmosféry a koeficient $J_{2,0}$ nezahŕňa účinok permanentnej 
-slapovej deformácie Zeme.  Medzi koeficientmi $J_{2,0}$ (Tabuľka~\ref{tab:1}), 
-$C_{2,0}$ (rovnica~\ref{eq:vg_sh_no_norm}) a $\bar{C}_{2,0}$ 
+slapovej deformácie Zeme.  Medzi koeficientmi $J_{2,0}$ 
+(Tabuľka~\ref{tab:grs80_fundamental}), $C_{2,0}$ 
+(rovnica~\ref{eq:vg_sh_no_norm}) a $\bar{C}_{2,0}$ 
 (rovnica~\ref{eq:vg_sh_2nd_norm}) platia nasledovné vzťahy 
 \parencite{Moritz1967,MoritzPhysicalGeodesy},
 %
@@ -3845,8 +3879,8 @@ C_{2,0} = -J_{2,0}{,}
 \begin{equation}
 \bar{C}_{2,0} = \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
 \end{equation}
-%
-Tabuľka~\ref{tab:2} uvádza číselné hodnoty niektorých odvodených geometrických 
+
+Tabuľka~\ref{tab:grs80_derived} uvádza číselné hodnoty niektorých odvodených geometrických 
 a fyzikálnych parametrov ekvipotenciálneho elipsoidu~GRS80.  Medzi geometrické 
 parametre sme zahrnuli, okrem iných, \emph{prvú numerickú excentricitu}
 %
@@ -3869,13 +3903,13 @@ a \emph{sploštenie}
 f = \frac{a - b}{b}{.}
 \end{equation}
 %
-Vzťahy na výpočet odvodených fyzikálnych parametrov z~Tabuľky~\ref{tab:2} budú 
+Vzťahy na výpočet odvodených fyzikálnych parametrov z~Tabuľky~\ref{tab:grs80_derived} budú 
 odvodené v~nasledujúcich častiach tejto kapitoly.
 
 \begin{table*}
 \begin{center}
 \caption{Základné parametre ekvipotenciálneho elipsoidu GRS80}
-\label{tab:1}
+\label{tab:grs80_fundamental}
 \small
 \begin{tabular}{l l l l}
 \hline
@@ -3896,7 +3930,7 @@ $\omega$ & $7\,292\,115 \times 10^{-11}$ & $\mathrm{rad} \ \mathrm{s}^{-1}$
 \begin{center}
 \caption{Niektoré odvodené parametre ekvipotenciálneho elipsoidu GRS80 
 \parencite{MoritzPhysicalGeodesy}}
-\label{tab:2}
+\label{tab:grs80_derived}
 \small
 \begin{tabular}{l l l l l}
 \hline
@@ -3942,22 +3976,23 @@ Elipsoid GRS80 je oficiálny referenčný systém Medzinárodnej asociácie geod
 (rovnica~\ref{eq:flattening}) namiesto koeficientu~$J_{2,0}$.  Týmto spôsobom 
 je definovaný ekvipotenciálny elipsoid \emph{WGS4} 
 \parencite[angl. \textit{World Geodetic System~1984};][]{WGS84}, ktorý vychádza 
-z~elipsoidu GRS80 (Tabuľka~\ref{tab:3}).  Vybraté odvodené parametre elipsoidu 
-WGS84 sú uvedené v~Tabuľke~\ref{tab:4}.  Z hľadiska tvaru sú oba elipsoidy 
-podobné; dĺžka ich hlavnej polosi je $6\, 378\, 137\ \mathrm{m}$ a dĺžka 
-vedľajšej polosi, vypočítaná zo základných parametrov, sa odlišuje iba 
-o~desatinu milimetra (porovnaj Tabuľky~\ref{tab:2} a~\ref{tab:4}).  
-Z fyzikálneho hľadiska je už medzi elipsoidmi rozdiel väčší.  Uhlová rýchlosť 
-rotácie oboch elipsoidov je síce rovnaká, no odlišné hodnoty geocentrických 
-gravitačných konštánt spôsobujú rozdiel v~normálnom tiažovom potenciáli na 
-elipsoide.  Rozdiel medzi oboma hodnotami je približne o~5 rádov väčší ako 
-presnosť určenia rozdielu skutočného tiažového potenciálu medzi dvoma bodmi 
-(pozri Kapitolu~\ref{sec:centrifugal_and_gravity_potential}).
+z~elipsoidu GRS80 (Tabuľka~\ref{tab:wgs84_fundamental}).  Vybraté odvodené 
+parametre elipsoidu WGS84 sú uvedené v~Tabuľke~\ref{tab:wgs84_derived}.  
+Z hľadiska tvaru sú oba elipsoidy podobné; dĺžka ich hlavnej polosi je $6\, 
+378\, 137\ \mathrm{m}$ a dĺžka vedľajšej polosi, vypočítaná zo základných 
+parametrov, sa odlišuje iba o~desatinu milimetra (porovnaj 
+Tabuľky~\ref{tab:grs80_derived} a~\ref{tab:wgs84_derived}).  Z fyzikálneho 
+hľadiska je už medzi elipsoidmi rozdiel väčší.  Uhlová rýchlosť rotácie oboch 
+elipsoidov je síce rovnaká, no odlišné hodnoty geocentrických gravitačných 
+konštánt spôsobujú rozdiel v~normálnom tiažovom potenciáli na elipsoide.  
+Rozdiel medzi oboma hodnotami je približne o~5 rádov väčší ako presnosť určenia 
+rozdielu skutočného tiažového potenciálu medzi dvoma bodmi (pozri 
+Kapitolu~\ref{sec:centrifugal_and_gravity_potential}).
 
 \begin{table*}
 \begin{center}
 \caption{Základné parametre ekvipotenciálneho elipsoidu WGS84}
-\label{tab:3}
+\label{tab:wgs84_fundamental}
 \small
 \begin{tabular}{l l l l}
 \hline
@@ -3978,7 +4013,7 @@ $\omega$ & $7\,292\,115 \times 10^{-11}$ & $\mathrm{rad} \ \mathrm{s}^{-1}$
 \begin{center}
 \caption{Niektoré odvodené parametre ekvipotenciálneho elipsoidu WGS84 
 \parencite{MoritzPhysicalGeodesy}}
-\label{tab:4}
+\label{tab:wgs84_derived}
 \small
 \begin{tabular}{l l l l l}
 \hline
@@ -4406,11 +4441,8 @@ a v~rozvoji~(\ref{eq:vg_sh_no_norm}) dominuje vplyv koeficientu $C_{0,0} = M$.
 Členy tretieho a vyšších rádov (teda harmonické stupne $2$, $3$, \dots) 
 nadobúdajú pre veľké $r$ zanedbateľné hodnoty v~porovnaní s~členom prvého rádu, 
 čím sa opäť dostávame k~rovnici~(\ref{eq:ug_far_far_away}).  
-Z rovnice~(\ref{eq:ug_far_far_away}) tiež vyplýva dôležitý vzťah\footnote{Tento 
-vzťah platí nielen pre gravitačný potenciál ekvipotenciálneho elipsoidu, ale aj 
-pre gravitačný potenciál Newtonovho typu každého všeobecného telesa 
-\parencite{Jekeli2015}.  Pre definíciu všeobecného telesa pozri 
-Kapitolu~\ref{sec:gg}.}
+Z rovnice~(\ref{eq:ug_far_far_away}) tiež vyplýva vzťah (pozri 
+rovnicu~\ref{eq:vg_regular})
 %
 \begin{equation}
 \lim_{r \rightarrow \infty} (r \, U_\gidx) = GM{,}
@@ -5051,28 +5083,30 @@ zrýchlenia a~tiažového potenciálu na povrchu Zeme, je nesmierne náročný
 Úlohy podobného typu môžu byť našťastie často vyriešené približne, napríklad 
 iteráciami či linearizáciou rozvojom do Taylorovho radu.  Aby bolo možné týmito 
 metódami dosiahnuť vyžadovanú presnosť, zvyčajne je potrebné poznať presné 
-približné hodnoty, ktoré sú získané použitím normálneho tiažového poľa.  
+približné hodnoty, ktoré sa získavajú použitím normálneho tiažového poľa.  
 Hľadané odchýlky od skutočného poľa potom predstavujú práve veličiny 
 poruchového poľa.
 
-Príkladom linearizácie je určenie geoidu v~podobe výšky nad ekvipotenciálnym 
-elipsoidom (Obrázok~\ref{fig:geoid}).  Ekvipotenciálny elipsoid tu slúži ako 
-verná aproximácia geoidu z~geometrického hľadiska (elipsoidický tvar) aj 
+Príkladom linearizácie je určenie výšky geoidu nad ekvipotenciálnym elipsoidom 
+(Obrázok~\ref{fig:geoid}).  Ekvipotenciálny elipsoid tu slúži ako verná 
+aproximácia geoidu z~geometrického hľadiska (elipsoidický tvar) aj 
 z~fyzikálneho hľadiska ($U_0 = W_0$) (pozri 
 Kapitolu~\ref{sec:choice_of_normal_gravity_field}).  Keďže geometrickú aj 
-fyzikálnu zložku ekvipotenciálneho elipsoidu dokážeme matematicky 
-opísať~(Kapitola~\ref{sec:normal_gravity_field}), ostáva určiť už len malé 
-geometrické prírastky~$N$ k~ekvipotenciálnemu elipsoidu, čím získame priebeh 
-geoidu.  Prírastky~$N$ sa určujú práve z~veličín poruchového poľa a~nadobúdajú 
-hodnoty približne od $-100\ \mathrm{m}$ do $100\ \mathrm{m}$.  Sú tak zhruba 
-o~4~rády menšie ako stredný polomer Zeme~$6\, 371\ \mathrm{km}$, čo demonštruje 
-efektívnosť linearizácie pomocou súčasných ekvipotenciálnych elipsoidov 
+fyzikálnu zložku ekvipotenciálneho elipsoidu 
+poznáme~(Kapitola~\ref{sec:normal_gravity_field}), ostáva už len určiť malé 
+geometrické prírastky~$N$ k~ekvipotenciálnemu elipsoidu.  Prírastok~$N$ sa 
+nazýva \emph{výška geoidu nad ekvipotenciálnym elipsoidom} a určuje sa 
+spravidla práve z~veličín poruchového poľa.  Pohybuje sa v~rozsahu približne od 
+$-100\ \mathrm{m}$ do $100\ \mathrm{m}$, teda nadobúda zhruba o~4~rády menšie 
+hodnoty ako stredný polomer Zeme~$6\, 371\ \mathrm{km}$, čo demonštruje 
+efektívnosť linearizácie súčasnými ekvipotenciálnymi elipsoidmi 
 (Kapitola~\ref{sec:equipotential_ellipsoid}).
 
 \begin{figure}[bt]
 \centering
 \input{./fig-geoid.pdf_tex}
-\caption{Výška geoidu~$N$ nad ekvipotenciálnym elipsoidom}
+\caption{Výška geoidu~$N$ nad ekvipotenciálnym elipsoidom meraná od bodu~$Q_0$ 
+po bod~$P_0$ po normálne k elipsoidu, ktorá prechádza bodom~$P$}
 \label{fig:geoid}
 \end{figure}
 
@@ -5091,7 +5125,7 @@ a~ukážeme spôsoby, ktorými z~nich možno vypočítať geoid
 \label{sec:disturbing_potential}
 
 Poruchový potenciál budeme označovať symbolom~$T$.  V~zmysle definície 
-poruchového poľa je definovaný vzťahom
+poruchového poľa je daný vzťahom
 %
 \begin{equation}
 \label{eq:disturbing_potential}
@@ -5107,11 +5141,15 @@ využili predpoklad
 %
 \begin{equation}
 \label{eq:vg_eq_uc}
-V_\cidx(P) = U_\cidx(P){,}
+V_\cidx(P) = U_\cidx(P){.}
 \end{equation}
 %
-ktorý vzhľadom na súčasnú dosiahnuteľnú presnosť možno spoľahlivo považovať za 
-platný.
+Vzhľadom na súčasnú dosiahnuteľnú presnosť určenia poruchového potenciálu 
+(podľa \cite{SansoGeoidDetermination} približne $0.1\ \mathrm{m}^2 
+\ \mathrm{s}^{-2}$) môžeme rovnosť~(\ref{eq:vg_eq_uc}) spoľahlivo považovať za 
+splnenú.  Malé rozdiely medzi $V_\cidx(P)$ a~$U_\cidx(P)$ sú dôsledkom 
+faktorov, ktoré nie sú zahrnuté v~normálnom poli, napríklad premenlivá rýchlosť 
+rotácie Zeme či pohyb zemského pólu.
 
 Aplikáciou Laplaceovho operátora~(\ref{eq:laplace_xyz}) na 
 vzťah~(\ref{eq:disturbing_potential}) je možné jednoducho ukázať (pozri 
@@ -5123,6 +5161,87 @@ funkcia v~priestore mimo hmôt,
 y^2} + \frac{\partial^2 T}{\partial z^2} = 0{.}
 \end{equation}
 %
+Poruchový potenciál je regulárna funkcia v~nekonečne~(pozri 
+rovnicu~\ref{eq:regular_function}), pretože
+%
+\begin{equation}
+\label{eq:t_infty}
+\lim_{P \rightarrow \infty} T(P) = \lim_{P \rightarrow \infty} (V_\gidx(P) 
+- U_\gidx(P)) = \lim_{P \rightarrow \infty} V_\gidx(P) - \lim_{P \rightarrow 
+\infty} U_\gidx(P) = 0{,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:t_regular}
+\lim_{r \rightarrow \infty} r \, T = \lim_{r \rightarrow \infty} r \, (V_\gidx 
+ - U_\cidx) = \lim_{r \rightarrow \infty} r \, V_\gidx - \lim_{r \rightarrow 
+ \infty} r \, U_\gidx = GM - GM_{\mathrm{e}} = G \, \delta M{,}
+\end{equation}
+%
+kde $\delta M = M - M_\mathrm{e}$ je rozdiel hmotnosti Zeme~$M$ 
+a~hmotnosti~$M_\mathrm{e}$, ktorá je pripísaná ekvipotenciálnemu elipsoidu.  Ak 
+$M = M_\mathrm{e}$, potom
+%
+\begin{equation}
+\lim_{r \rightarrow \infty} r \, T = 0{.}
+\end{equation}
+%
+Ak okrem rovnosti~$M_1 = M_2$ platí aj to, že súradnicový systém je 
+geocentrický, potom \parencite{Pick1973}
+%
+\begin{equation}
+\lim_{r \rightarrow \infty} r^2 \, T = 0{.}
+\end{equation}
+
+*** Doplniť SH rozvoj T ***
+
+Poruchový potenciál sa udáva vo fyzikálnych jednotkách~$\mathrm{m}^2 
+\ \mathrm{s}^{-2}$ a~nadobúda hodnoty približne od $-1000\ \mathrm{m}^2 
+\ \mathrm{s}^{-2}$ do $1000 \ \mathrm{m}^2 \ \mathrm{s}^{-2}$ (porovnaj 
+s~hodnotami~${\sim}6 \times 10^7 \mathrm{m}^2 \ \mathrm{s}^{-2}$ gravitačného 
+potenciálu na Obrázku~\ref{fig:vg_grav_sr_2arcsec}).  
+Obrázok~\ref{fig:disturbing_potential_on_grs80} znázorňuje poruchový potenciál 
+na povrchu ekvipotenciálneho elipsoidu.  Na obrázku je možné pozorovať jednak 
+dlhovlnný trend, napríklad v~okolí minima v~Indickom oceáne a~maxima 
+v~Indonézii, ale tiež krátkovlnné prvky, napríklad tektonické zlomy v~Tichom 
+oceáne na rozhraní Pacifickej platne a okolitých platní, najmä Severoamerickej 
+platne, Filipínskej platne a Austrálskej platne, či Himaláje a Andy.  Obrázok 
+tiež demonštruje, že odčítaním normálneho gravitačného potenciálu od skutočného 
+gravitačného potenciálu sa do veľkej miery eliminuje globálny trend 
+gravitačného poľa.  Medzi tieto trendy patrí obzvlášť vplyv nultého člena~$GM 
+\slash r$ rozvoja~(XXX) či šírkový trend, ktorý je dôsledkom sploštenia Zeme.  
+Odčítaním týchto vplyvov tak vystúpia do popredia jemné nepravidelnosti 
+zemského gravitačného poľa.
+
+\begin{figure}
+\centering
+\includegraphics{./fig-disturbing-potential-on-grs80.pdf}
+\caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
+zemského gravitačného poľa vypočítaný zo sférického harmonického modelu 
+gravitačného poľa EIGEN-6C4 \parencite{EIGEN-6C4} do stupňa~720 na povrchu 
+elipsoidu~GRS80.  Normálny gravitačný potenciál je generovaný ekvipotenciálnym 
+elipsoidom~GRS80.}
+\label{fig:disturbing_potential_on_grs80}
+\end{figure}
+
+Na Obrázku~\ref{fig:disturbing_potential_at_450km} je pre porovnanie zobrazený 
+poruchový potenciál vo výške 450~km nad elipsoidom~GRS80.  Hodnota~$450$~km 
+zodpovedá približne výške obežnej dráhy nad zemským povrchom niektorých nízko 
+letiacich družíc, ktoré merajú zemské gravitačné pole.  Z~porovnania 
+Obrázkov~\ref{fig:disturbing_potential_on_grs80} 
+a~\ref{fig:disturbing_potential_at_450km} je zrejmé, že poruchový potenciál 
+klesá s~narastajúcou vzdialenosťou od Zeme (pozri rovnicu~\ref{eq:t_infty}) 
+a súčasne sa~jeho priebeh sa vyhladzuje.
+
+\begin{figure}
+\centering
+\includegraphics{./fig-disturbing-potential-at-450km.pdf}
+\caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
+získaný rovnakým spôsobom ako v~Obrázku~\ref{fig:disturbing_potential_on_grs80} 
+avšak vo výške~$450\ \mathrm{km}$ nad elipsoidom~GRS80.  Na oboch obrázkoch je 
+použitá rovnaká farebná stupnica.}
+\label{fig:disturbing_potential_at_450km}
+\end{figure}
 
 
 
