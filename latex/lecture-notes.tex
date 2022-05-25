@@ -1174,11 +1174,6 @@ rovnice umožňuje vypočítať gravitačný potenciál v~ľubovoľnom bode tejt
 oblasti.  Laplaceova rovnica má preto kľúčový význam v~procese určovania 
 vonkajšieho gravitačného poľa Zeme.
 
-Na záver dodajme, že v~prípade výpočtu pohybu nebeských telies i~vonkajšieho 
-gravitačného poľa ide o~riešenie diferenciálnych rovníc, v~prvom prípade so 
-zadanou začiatočnou podmienkou v~čase $t_0$ a~v~druhom prípade so zadanou 
-okrajovou podmienkou na zemskom povrchu.
-
 
 
 
@@ -1650,7 +1645,7 @@ niekedy zvykne udávať v~geopotenciálnych jednotkách,
 %
 \begin{equation}
 \label{eq:gpu_unit}
-1\ \mathrm{g.p.u.} = 1\ \mathrm{kgal} \ \mathrm{m} = 1000\ \mathrm{gal}\ 
+1\ \mathrm{g.p.u.} = 1\ \mathrm{kGal} \ \mathrm{m} = 1000\ \mathrm{Gal}\ 
 \mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
 \end{equation}
 %
@@ -2883,6 +2878,7 @@ od stupňa~$n$.  Je preto výhodne koeficienty normovať tak, aby boli
 bezrozmerné.  Norma zaužívaná v~geodézii má tvar
 %
 \begin{equation}
+\label{eq:cnm_snm_1st_norm}
 \begin{rcases}
 \tilde{C}_{nm}\\
 \tilde{S}_{nm}
@@ -2913,6 +2909,7 @@ a~(\ref{eq:vg_sh_1st_norm}).  Druhá norma sférických harmonických koeficient
 je preto daná nasledovne,
 %
 \begin{equation}
+\label{eq:cnm_snm_2nd_norm}
 \begin{rcases}
 \bar{C}_{nm}\\
 \bar{S}_{nm}
@@ -2975,6 +2972,7 @@ Dosaďme $P_{0,0}(\sin\varphi)$ z~rovnice~(\ref{eq:lf00_to_lf22})
 do rovnice~(\ref{eq:vg_shc_no_norm}) pre $n = 0$ a~$m = 0$,
 %
 \begin{equation}
+\label{eq:c00_mass}
 C_{0,0} = \iiint\limits_{\tau} \rho(Q) \, \diff \tau(Q) = M{.}
 \end{equation}
 %
@@ -3031,6 +3029,15 @@ už, zdá sa, nemajú priamočiaru fyzikálnu interpretáciu.
 \section{Aplikácie sférického harmonického rozvoja}
 \label{sec:spherical_harmonics_applications}
 
+V~tejto kapitole ukážeme dve typické aplikácie sférických harmonických rozvojov 
+vo fyzikálnej geodézii, modelovanie vonkajšieho gravitačného 
+poľa~(Kapitola~\ref{sec:sh_applications_gravity_field})
+a~topografie~(\ref{sec:sh_applicatoins_topography}) približne sférických 
+telies.
+
+\subsection{Gravitačné pole}
+\label{sec:sh_applications_gravity_field}
+
 Z~predchádzajúcich kapitol vieme, že gravitačný potenciál skutočnej Zeme je
 možné vypočítať vzťahom~(\ref{eq:vg_sh_2nd_norm}).  Na takýto výpočet je
 potrebné poznať sférické harmonické koeficienty $\bar{C}_{nm}$
@@ -3067,18 +3074,6 @@ a~\textcite{MoritzPhysicalGeodesy}.
 \caption{Pohyb umelej družice Zeme}
 \label{fig:orbital_motion_real}
 \end{figure}
-
-ICGEM (angl. \emph{International Centre for Global Earth Models}) je služba 
-zriadená Medzinárodnou geodetickou asociáciou (angl.~\emph{International 
-Association of Geodesy}, IAG).  Okrem iného je jej cieľom zbierať, archivovať 
-a~poskytovať globálne modely gravitačného poľa Zeme, najčastejšie práve vo 
-forme sférických harmonických koeficientov $\bar{C}_{nm}$ a~$\bar{S}_{nm}$.  Na 
-domovskej stránke služby možné nájsť desiatky sád sférických harmonických 
-koeficientov, získané z~rôznych dát a~rozličnými metódami 
-výpočtu.\footnote{\url{http://icgem.gfz-potsdam.de/home}} je  Dostupné sú aj 
-časovo premenlivé modely gravitačného poľa, služba na výpočet 
-vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely gravitačného poľa nebeských telies 
-(napríklad Mars, Venuša, Mesiac či asteroidy Slnečnej sústavy).
 
 V~Kapitolách~\ref{sec:vg} a~\ref{sec:potential_theory} sme uviedli, že
 v~gravitačnom potenciáli $V_\gidx$ je obsiahnutá informácia o~celom gravitačnom
@@ -3128,6 +3123,37 @@ výhodné je poznať tvar operátora gradient vo sférických súradniciach
 a $\partial V_\gidx \slash \partial z^\mathrm{s}$ 
 vzťahu~(\ref{eq:vg_sh_2nd_norm}) by bol náročný.
 
+ICGEM (angl. \emph{International Centre for Global Earth Models}) je služba 
+zriadená Medzinárodnou geodetickou asociáciou (angl.~\emph{International 
+Association of Geodesy}, IAG).  Okrem iného je jej cieľom zbierať, archivovať 
+a~poskytovať globálne modely gravitačného poľa Zeme, najčastejšie práve vo 
+forme sférických harmonických koeficientov $\bar{C}_{nm}$ a~$\bar{S}_{nm}$.  Na 
+jej domovskej stránke\footnote{\url{http://icgem.gfz-potsdam.de/home}} je možné 
+nájsť desiatky sád sférických harmonických koeficientov, získané z~rôznych dát 
+a~rozličnými metódami výpočtu.  Dostupné sú aj časovo premenlivé modely 
+gravitačného poľa, služba na výpočet vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely 
+gravitačného poľa nebeských telies (napríklad Mars, Venuša, Mesiac či asteroidy 
+Slnečnej sústavy).
+
+Služba ICGEM poskytuje modely v~štandardizovanom tvare v~textových súboroch 
+s~príponou~\texttt{gfc}.  V~Prílohe~\ref{app:gfc_file} je uvedená ukážka~modelu 
+s~názvom EIGEN-6C4 \parencite{EIGEN-6C4}.  Na začiatku \texttt{gfc} súborov sú 
+spravidla uvedené stručné informácie o~poskytovanom modeli, najmä mená autorov 
+modelu, dáta a metódy použité na jeho výpočet a~odkazy na relevantnú odbornú 
+literatúru.  V~hlavičke súboru sú dôležité riadky s~kľúčovými slovami 
+\texttt{earth\_gravity\_constant} a \texttt{radius}.  Tie udávajú hodnoty 
+geocentrickej gravitačnej konštanty~$GM$ a referenčného polomeru~$R$, ktoré sú 
+spojené s~daným modelom.  V~rovnici~(\ref{eq:vg_sh_2nd_norm_ynk}) a~jej rôznych 
+podobách musia byť použité práve tieto hodnoty.  Všimnime si, že koeficient 
+$\bar{C}_{0,0}$ modelu EIGEN-6C4 má hodnotu~$1$.  Je to spôsobené tým, že 
+nenormovaný koeficient~$C_{0,0}$ je rovný hmotnosti Zeme 
+(rovnica~\ref{eq:c00_mass}), avšak po aplikovaní prvej a druhej 
+normy~(rovnice~\ref{eq:cnm_snm_1st_norm} a~\ref{eq:cnm_snm_2nd_norm}) nadobudne 
+hodnotu~$1$.  Môžeme si tiež všimnúť, že všetky koeficienty stupňa~$n = 1$ sú 
+nulové, teda začiatok súradnicového systému modelu EIGEN-6C4 je vložený do 
+ťažiska Zeme (pozri 
+Kapitolu~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}).
+
 Sférické harmonické koeficienty gravitačného poľa Zeme sú v~súčasnosti dostupné
 približne do stupňa $2190$.  Získavané sú väčšinou kombináciou družicových
 meraní (približne do stupňa $250$ až $300$) a~detailných pozemných
@@ -3135,17 +3161,12 @@ gravimetrických meraní (približne do stupňa $720$ až $2190$).  Existujú ti
 modely, ktoré popisujú zemské gravitačné pole do vyšších stupňov ako $2190$.  
 Tieto vysoké harmonické stupne však nie sú založené na meraniach zemského 
 gravitačného poľa, ale na modelovaní gravitačného účinku topografických hmôt, 
-ktoré sa nachádzajú nad geoidom \parencite{Ince2020}.
+ktoré sa nachádzajú nad geoidom \parencite[napríklad][]{Ince2020}.
 
-\begin{figure}
-\centering
-\includegraphics{./fig-h-shs-nmax30.pdf}
-\includegraphics{./fig-h-shs-nmax90.pdf}
-\includegraphics{./fig-h-shs-nmax360.pdf}
-\caption{Sférický harmonický rozvoj zemskej topografie (jednotky~m) do 
-stupňov~$N = 30$ (vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  
-Výpočet bol uskutočnený Zdrojovým kódom~\ref{src:h_shs}.} \label{fig:shs_h}
-\end{figure}
+
+
+\subsection{Topografia}
+\label{sec:sh_applicatoins_topography}
 
 V~Kapitole~\ref{sec:spherical_harmonics} sme uviedli, že do radu sférických
 harmonických funkcií je možné rozvinúť nielen gravitačný potenciál, ale každú
@@ -3158,13 +3179,15 @@ H(\varphi, \lambda) = \sum_{n = 0}^{N} \sum_{k = -n}^n \bar{h}_{nk} \,
 \bar{Y}_{nk}(\varphi, \lambda){.}
 \end{equation}
 %
-Obrázok~\ref{fig:shs_h} znázorňuje vplyv parametra~$N$ na priestorové
-rozlíšenie funkcie $H(\varphi, \lambda)$.  Hoci všetky tri mapy sú vypočítané
-s~rovnakým vzorkovaním $0.25^{\circ}$ vo sférickej šírke a~dĺžke, spodná mapa
-poskytuje vyššiu mieru detailu ako dve mapy nad ňou.  Je to spôsobené tým, že
-maximálny stupeň $N$ udáva maximálne priestorové rozlíšenie funkcie
-$H(\varphi,\lambda)$.  Polovica najkratšej vlnovej dĺžky funkcie sférického
-harmonického rozvoja do stupňa $N$ je daná vzťahom
+Obrázok~\ref{fig:shs_h} znázorňuje vplyv parametra~$N$ na priestorové 
+rozlíšenie funkcie $H(\varphi, \lambda)$.  Koeficienty~$\bar{h}_{nk}$ boli 
+prevzaté z~modelu~DTM2006.0 \parencite{DTM2006}.  Hoci všetky tri mapy sú 
+vypočítané s~rovnakým vzorkovaním $0.25^{\circ}$ vo sférickej šírke a~dĺžke, 
+miera detailu stúpa od vrchnej mapy smerom nadol.  Je to spôsobené tým, že 
+maximálny stupeň $N$, ktorý udáva maximálne priestorové rozlíšenie funkcie 
+$H(\varphi,\lambda)$, narastá postupne od~$N = 30$ cez~$N = 90$ až do~$N 
+= 360$.  Polovica najkratšej vlnovej dĺžky funkcie rozvinutej do sférického 
+harmonického stupňa $N$ je daná vzťahom
 %
 \begin{equation}
 l_{\min}(N) = \frac{\pi \, R}{N}{,}
@@ -3174,7 +3197,26 @@ kde $l_{\min}$ je sférická vzdialenosť v~dĺžkových jednotkách na sfére
 s~polomerom $R$.  Zvyšovaním
 maximálneho stupňa $N$ teda zvyšujeme podrobnosť funkcie $H(\varphi, \lambda)$.
 
+\begin{figure}
+\centering
+\includegraphics{./fig-h-shs-nmax30.pdf}
+\includegraphics{./fig-h-shs-nmax90.pdf}
+\includegraphics{./fig-h-shs-nmax360.pdf}
+\caption{Sférický harmonický rozvoj zemskej topografie (jednotky~m) do 
+stupňov~$N = 30$ (vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  
+Výpočet bol uskutočnený Zdrojovým kódom~\ref{src:h_shs}.} \label{fig:shs_h}
+\end{figure}
 
+Okrem modelu~DTM2006.0 je voľne prístupný aj model Earth2014 
+\parencite{Hirt2015}.  Earth2014 je kolekcia modelov zemskej topografie 
+v~rozličných variantoch, napríklad so zohľadnením výšky ľadovcov či s~uvážením 
+alebo bez uváženia batymetrie.  Model DTM2006.0 je dostupný do stupňa~$2190$.  
+Maximálny stupeň modelu Earth2014 je~$10\, 800$.
+
+Zo sférických harmonických modelov topografie nebeských telies spomeňme aspoň 
+model topografie zemského Mesiaca do stupňa~2600, MoonTopo2600pa.shape 
+\parencite{Wieczorek2015}, a model tvaru asteroidu~Eros do stupňa~24 
+\parencite{Zuber2000}.
 
 
 
@@ -3873,10 +3915,12 @@ slapovej deformácie Zeme.  Medzi koeficientmi $J_{2,0}$
 \parencite{Moritz1967,MoritzPhysicalGeodesy},
 %
 \begin{equation}
+\label{eq:c20_j20}
 C_{2,0} = -J_{2,0}{,}
 \end{equation}
 %
 \begin{equation}
+\label{eq:c20_j20_2}
 \bar{C}_{2,0} = \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
 \end{equation}
 
@@ -4554,6 +4598,7 @@ U_\gidx(r, \varphi) = \frac{GM}{r} \left[ 1 - \sum_{n = 1}^{\infty} J_{2n,0} \,
 kde
 %
 \begin{equation}
+\label{eq:j2n0}
 J_{2n,0} = (-1)^{n + 1} \, \frac{3e^{2n}}{(2n + 1) \, (2n + 3)} \left( 
 1 - n + 5n \, \frac{J_{2,0}}{e^2} \right){.}
 \end{equation}
@@ -5151,8 +5196,9 @@ splnenú.  Malé rozdiely medzi $V_\cidx(P)$ a~$U_\cidx(P)$ sú dôsledkom
 faktorov, ktoré nie sú zahrnuté v~normálnom poli, napríklad premenlivá rýchlosť 
 rotácie Zeme či pohyb zemského pólu.
 
-Aplikáciou Laplaceovho operátora~(\ref{eq:laplace_xyz}) na 
-vzťah~(\ref{eq:disturbing_potential}) je možné jednoducho ukázať (pozri 
+Aplikáciou Laplaceovho operátora~(\ref{eq:laplace_xyz}) na poruchový 
+potenciál~(\ref{eq:disturbing_potential}) je možné 
+s~využitím~(\ref{eq:vg_laplace_cart}) jednoducho ukázať (pozri 
 rovnicu~\ref{eq:laplace_additivity}), že poruchový potenciál je harmonická 
 funkcia v~priestore mimo hmôt,
 %
@@ -5161,8 +5207,9 @@ funkcia v~priestore mimo hmôt,
 y^2} + \frac{\partial^2 T}{\partial z^2} = 0{.}
 \end{equation}
 %
-Poruchový potenciál je regulárna funkcia v~nekonečne~(pozri 
-rovnicu~\ref{eq:regular_function}), pretože
+Poruchový potenciál je regulárna funkcia 
+v~nekonečne~(rovnica~\ref{eq:regular_function}), preto platia nasledovné 
+rovnosti (pozri vzťahy~\ref{eq:vg_at_infty} a~\ref{eq:vg_regular}),
 %
 \begin{equation}
 \label{eq:t_infty}
@@ -5193,7 +5240,71 @@ geocentrický, potom \parencite{Pick1973}
 \lim_{r \rightarrow \infty} r^2 \, T = 0{.}
 \end{equation}
 
-*** Doplniť SH rozvoj T ***
+V~praktických aplikáciách sa veľmi často stretneme so sférickým harmonickým 
+rozvojom poruchového potenciálu.  Tento rozvoj získame použitím 
+rovnice~(\ref{eq:disturbing_potential}) a~radov~(\ref{eq:ug_spherical}) 
+a~(\ref{eq:vg_sh_2nd_norm_ynk}).  Na to, aby sme mohli výhodne skombinovať 
+rovnice~(\ref{eq:ug_spherical}) a~(\ref{eq:vg_sh_2nd_norm_ynk}) je potrebné 
+upraviť vzťah~(\ref{eq:ug_spherical}).  Musíme vziať do úvahy dva aspekty.  
+i)~Rozvoj~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je založený na úplne 
+normovaných sférických harmonických funkciách, zatiaľ čo 
+rovnica~(\ref{eq:ug_spherical}) predstavuje rad nenormovaných sférických 
+harmonických funkcií.  ii)~Konštanty ekvipotenciálneho elipsoidu~$GM$ a~$a$ 
+z~rovnice~(\ref{eq:ug_spherical}), ktoré budeme ďalej označovať 
+symbolmi~$GM^\mathrm{e}$ a~$a^\mathrm{e}$, sa môžu líšiť od konštánt~$GM$ a~$R$ 
+z~rovnice~(\ref{eq:vg_sh_2nd_norm_ynk}).  Nekonzistenciu spôsobenú rozličnými 
+normami odstránime normovaním sférických harmonických funkcií a~koeficientov 
+v~rovnici~(\ref{eq:ug_spherical}).  Druhú nekonzistenciu odstránime 
+preškálovaním sférických harmonických koeficientov normálneho tiažového poľa 
+z~pôvodných konštánt~$GM^\mathrm{e}$ a~$a^\mathrm{e}$ na konštanty~$GM$ a~$R$.  
+Nie je zložité presvedčiť sa, že po týchto úpravách možno zapísať rozvoj 
+poruchového potenciálu v~tvare \parencite[pre podrobnosti pozri 
+napríklad][]{Barthelmes2013}
+%
+\begin{equation}
+\label{eq:t_sh}
+T_\gidx(P) = \frac{GM}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
++ 1} \sum_{k = -n}^{n} \bar{t}_{nk} \, \bar{Y}_{nk}(\varphi, \lambda){,}
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\bar{t}_{nk} =
+%
+\begin{cases}
+\Delta \bar{C}_{nk}{,}   \quad &\textrm{ak} \quad k \geq 0{,}\\
+\Delta \bar{S}_{n|k|}{,} \quad &\textrm{ak} \quad k < 0{,}\\
+\end{cases}
+\end{equation}
+%
+a
+%
+\begin{equation}
+\begin{split}
+\Delta \bar{C}_{nk} &= \bar{C}_{nk} - \bar{C}_{nk}^\mathrm{e} \, 
+\frac{GM^\mathrm{e}}{GM} \, \left( \frac{a^\mathrm{e}}{R} \right)^n{,}\\
+\Delta \bar{S}_{nk} &= \bar{S}_{nk} - \bar{S}_{nk}^\mathrm{e} \, 
+\frac{GM^\mathrm{e}}{GM} \, \left( \frac{a^\mathrm{e}}{R} \right)^n 
+= \bar{S}_{nk}{,}
+\end{split}
+\end{equation}
+%
+pričom (pozri rovnice~\ref{eq:c20_j20}, \ref{eq:c20_j20_2} a~\ref{eq:j2n0})
+%
+\begin{equation}
+\bar{C}^\mathrm{e}_{2n',0} = (-1)^{n'} \, \frac{3e^{2n'}}{(2n' + 1) \, (2n' 
++ 3) \, \sqrt{4n' + 1}} \left( 1 - n' - 5^{3 \slash 2} \, n' \, 
+\frac{\bar{C}^\mathrm{e}_{2,0}}{e^2} \right){,} \quad n' = 0, 1, 2,\dots
+\end{equation}
+%
+a (pozri Kapitoly~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} 
+a~\ref{sec:normal_gravity_potential_in_spherical_coords})
+%
+\begin{equation}
+\bar{S}^\mathrm{e}_{n,k} = 0 \quad \textrm{pre} \quad n = 0, 1, 2,\dots, 
+\ k = -n, \dots, n{.}
+\end{equation}
 
 Poruchový potenciál sa udáva vo fyzikálnych jednotkách~$\mathrm{m}^2 
 \ \mathrm{s}^{-2}$ a~nadobúda hodnoty približne od $-1000\ \mathrm{m}^2 
@@ -5203,24 +5314,23 @@ potenciálu na Obrázku~\ref{fig:vg_grav_sr_2arcsec}).
 Obrázok~\ref{fig:disturbing_potential_on_grs80} znázorňuje poruchový potenciál 
 na povrchu ekvipotenciálneho elipsoidu.  Na obrázku je možné pozorovať jednak 
 dlhovlnný trend, napríklad v~okolí minima v~Indickom oceáne a~maxima 
-v~Indonézii, ale tiež krátkovlnné prvky, napríklad tektonické zlomy v~Tichom 
-oceáne na rozhraní Pacifickej platne a okolitých platní, najmä Severoamerickej 
-platne, Filipínskej platne a Austrálskej platne, či Himaláje a Andy.  Obrázok 
-tiež demonštruje, že odčítaním normálneho gravitačného potenciálu od skutočného 
-gravitačného potenciálu sa do veľkej miery eliminuje globálny trend 
-gravitačného poľa.  Medzi tieto trendy patrí obzvlášť vplyv nultého člena~$GM 
-\slash r$ rozvoja~(XXX) či šírkový trend, ktorý je dôsledkom sploštenia Zeme.  
-Odčítaním týchto vplyvov tak vystúpia do popredia jemné nepravidelnosti 
-zemského gravitačného poľa.
+v~Indonézii, ale tiež krátkovlnné prvky, napríklad premenlivé pole v~oblasti 
+tektonických zlomov v~Tichom oceáne na rozhraní Pacifickej platne a okolitých 
+platní, najmä Severoamerickej platne, Filipínskej platne a Austrálskej platne, 
+či v~oblastí Himalájí a Ánd.  Obrázok tiež demonštruje, že odčítaním normálneho 
+gravitačného potenciálu od skutočného gravitačného potenciálu sa do veľkej 
+miery eliminuje globálny trend gravitačného poľa.  Medzi tieto trendy patrí 
+obzvlášť vplyv nultého člena~$GM \slash r$ rozvoja~(\ref{eq:t_sh}) či šírkový 
+trend, ktorý je dôsledkom sploštenia Zeme.  Odčítaním týchto vplyvov tak 
+vystúpia do popredia jemné nepravidelnosti zemského gravitačného poľa.
 
 \begin{figure}
 \centering
 \includegraphics{./fig-disturbing-potential-on-grs80.pdf}
 \caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
 zemského gravitačného poľa vypočítaný zo sférického harmonického modelu 
-gravitačného poľa EIGEN-6C4 \parencite{EIGEN-6C4} do stupňa~720 na povrchu 
-elipsoidu~GRS80.  Normálny gravitačný potenciál je generovaný ekvipotenciálnym 
-elipsoidom~GRS80.}
+gravitačného poľa EIGEN-6C4 do stupňa~720 na povrchu elipsoidu~GRS80.  Normálny 
+gravitačný potenciál je generovaný ekvipotenciálnym elipsoidom~GRS80.}
 \label{fig:disturbing_potential_on_grs80}
 \end{figure}
 
@@ -6169,6 +6279,110 @@ odstránený.
 \lstinputlisting[caption=Výpočet a~zobrazenie nenormovaných sférických
 harmonických funkcií v~programovacom jazyku Python, label=src:ynk,
 language=mypython, captionpos=t]{../python/spherical-harmonics.py}
+
+
+
+
+
+
+\chapter{Ukážka modelu gravitačného poľa Zeme}
+\label{app:gfc_file}
+
+Táto príloha obsahuje ukážku modelu EIGEN-6C4 vo forme \texttt{gfc} súboru.  
+Niektoré odkazy na literatúru zo state \texttt{References} a mnohé sférické 
+harmonické koeficienty sú pre stručnosť vynechané.  Preskočené časti sú 
+označené značkou \texttt{[...]}.  Pôvodný súbor je dostupný zo stránky služby 
+ICGEM (pozri odkaz na stránku v~hlavnej časti práce 
+v~Kapitole~\ref{sec:sh_applications_gravity_field}).  Sférický harmonický 
+stupeň~$n$ a~rád~$m$ sú v~modeli označené písmenami~\texttt{L} a \texttt{M}.  
+Stĺpce s~označením~\texttt{sigma C} a~\texttt{sigma S} obsahujú formálne 
+stredné chyby príslušných sférických harmonických koeficientov.
+
+\vspace{16ex}
+
+\noindent\texttt{The Gravity Field Model EIGEN-6C4\\
+\noindent -----------------------------------------------------------------\\
+\\
+\noindent EIGEN-6C4 is a static global combined gravity field model up to 
+degree and order 2190.  It has been elaborated jointly  by GFZ Potsdam and GRGS 
+Toulouse and contains the following  satellite and ground data:
+\\
+\\
+\noindent - LAGEOS (deg. 2 - 30): 1985 - 2010
+\\
+\\
+\noindent - GRACE RL03 GRGS (deg. 2 - 130): ten years 2003 - 2012
+\\
+\\
+\noindent - GOCE-SGG data, processed by the direct approach (Pail et 
+al. 2011,\\
+\phantom{- }Bruinsma et al. 2014, to deg. 235) incl. the gravity gradient\\
+\phantom{- }components Txx, Tyy, Tzz and Txz out of the following time spans:\\
+\phantom{- }837 days out of the nominal mission time span 20091101 - 20120801\\
+\phantom{- }422 days out of the lower orbit phase between 20120901 - 20130524\\
+\phantom{- }The GOCE polar gaps were stabilized by the Spherical Cap 
+Regularization\\
+\phantom{- }(Metzler and Pail 2005) using the combined gravity field model\\
+\phantom{- }EIGEN-6C3stat\\
+\\
+\noindent - Terrestrial data (max degree 370):\\
+\phantom{- }DTU12 ocean geoid data (Anderson et al. 2009) and an EGM2008 geoid 
+\phantom{- }height grid for the continents
+\\
+\\
+\noindent The combination of these different satellite and surface data sets 
+has been done by a band-limited combination of normal equations (to max degree 
+370), which are generated from observation equations for the spherical harmonic 
+coefficients. A brief description of the applied techniques for the generation 
+of such a combined gravity field model is given in Shako et al. 2014. The 
+resulted solution to degree/order 370 has been extended to degree/order 2190 by 
+a block diagonal solution using the DTU10 global gravity anomaly data grid.
+\\
+\\
+\noindent References:\\
+\noindent ----------------------
+\\
+\\
+\noindent Andersen O. B. P. Knudsen and P. Berry. (2009): DNSC08 mean sea 
+surface and mean dynamic topography models, Journal of Geophys Research, 
+Vol. 114, c11001 12 pp., 2009, doi:10.1029/2008JC005179
+\\
+\\
+\noindent [...]
+\\
+\\
+\noindent begin\_of\_head =====================================\\
+\noindent product\_type\phantom{***************}gravity\_field\\
+\noindent modelname\phantom{******************}EIGEN-6C4\\
+\noindent earth\_gravity\_constant\phantom{*****}0.3986004415E+15\\
+\noindent radius\phantom{*********************}0.6378136460E+07\\
+\noindent max\_degree\phantom{*****************}2190\\
+\noindent errors\phantom{*********************}formal\\
+\noindent norm\phantom{***********************}fully\_normalized\\
+\noindent tide\_system\phantom{****************}tide\_free\\
+\\
+\noindent key    L    M \phantom{-}C \phantom{-------------------------------}S 
+\phantom{----------------------------------}sigma C   \phantom{------}sigma S\\
+\noindent end\_of\_head 
+=======================================================\\
+\noindent gfc    0    0  \phantom{-}1.00000000000e+00 0.000000000000e+00 0.0000e+00 0.0000e+00\\
+\noindent gfc    1    0  \phantom{-}0.00000000000e+00 0.000000000000e+00 0.0000e+00 0.0000e+00\\
+\noindent gfc    2    0 -4.84165217061e-04 0.000000000000e+00 1.1081e-13 0.0000e+00\\
+\noindent gfc    3    0  \phantom{-}9.57173592933e-07 0.000000000000e+00 6.5264e-14 0.0000e+00\\
+\\
+\noindent [...]
+\\
+\\
+\noindent gfc    1    1 \phantom{-}0.00000000000e+00 0.00000000000e+00 0.0000e+00 0.0000e+00\\
+\noindent gfc    2    1 -3.38846075704e-10  1.46306108906e-09 3.2499e-13 3.2870e-13\\
+\noindent gfc    3    1 \phantom{-}2.03045608898e-06  2.48236210655e-07 
+8.5500e-14 8.5499e-14\\
+\\
+\noindent [...]
+\\
+\\
+\noindent \mbox{gfc 2190 2190 -0.488605221310D-13 -0.515141038060D-13 0.1601D-12 0.1601D-12}
+}
 
 
 
