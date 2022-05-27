@@ -3032,8 +3032,8 @@ už, zdá sa, nemajú priamočiaru fyzikálnu interpretáciu.
 V~tejto kapitole ukážeme dve typické aplikácie sférických harmonických rozvojov 
 vo fyzikálnej geodézii, modelovanie vonkajšieho gravitačného 
 poľa~(Kapitola~\ref{sec:sh_applications_gravity_field})
-a~topografie~(\ref{sec:sh_applicatoins_topography}) približne sférických 
-telies.
+a~modelovanie topografie~(Kapitola~\ref{sec:sh_applicatoins_topography}) 
+približne sférických telies.
 
 \subsection{Gravitačné pole}
 \label{sec:sh_applications_gravity_field}
@@ -3140,18 +3140,17 @@ s~príponou~\texttt{gfc}.  V~Prílohe~\ref{app:gfc_file} je uvedená ukážka~mo
 s~názvom EIGEN-6C4 \parencite{EIGEN-6C4}.  Na začiatku \texttt{gfc} súborov sú 
 spravidla uvedené stručné informácie o~poskytovanom modeli, najmä mená autorov 
 modelu, dáta a metódy použité na jeho výpočet a~odkazy na relevantnú odbornú 
-literatúru.  V~hlavičke súboru sú dôležité riadky s~kľúčovými slovami 
-\texttt{earth\_gravity\_constant} a \texttt{radius}.  Tie udávajú hodnoty 
-geocentrickej gravitačnej konštanty~$GM$ a referenčného polomeru~$R$, ktoré sú 
-spojené s~daným modelom.  V~rovnici~(\ref{eq:vg_sh_2nd_norm_ynk}) a~jej rôznych 
-podobách musia byť použité práve tieto hodnoty.  Všimnime si, že koeficient 
-$\bar{C}_{0,0}$ modelu EIGEN-6C4 má hodnotu~$1$.  Je to spôsobené tým, že 
-nenormovaný koeficient~$C_{0,0}$ je rovný hmotnosti Zeme 
-(rovnica~\ref{eq:c00_mass}), avšak po aplikovaní prvej a druhej 
-normy~(rovnice~\ref{eq:cnm_snm_1st_norm} a~\ref{eq:cnm_snm_2nd_norm}) nadobudne 
-hodnotu~$1$.  Môžeme si tiež všimnúť, že všetky koeficienty stupňa~$n = 1$ sú 
-nulové, teda začiatok súradnicového systému modelu EIGEN-6C4 je vložený do 
-ťažiska Zeme (pozri 
+literatúru.  Riadky s~kľúčovými slovami \texttt{earth\_gravity\_constant} 
+a~\texttt{radius} v~hlavičke súboru udávajú hodnoty geocentrickej gravitačnej 
+konštanty~$GM$ a referenčného polomeru~$R$, ktoré sú spojené s~daným modelom.  
+V~rovnici~(\ref{eq:vg_sh_2nd_norm_ynk}) a~jej rôznych podobách musia byť 
+použité práve tieto hodnoty.  Všimnime si, že koeficient $\bar{C}_{0,0}$ modelu 
+EIGEN-6C4 má hodnotu~$1$.  Je to spôsobené tým, že nenormovaný 
+koeficient~$C_{0,0}$ je rovný hmotnosti Zeme (rovnica~\ref{eq:c00_mass}), avšak 
+po aplikovaní prvej a druhej normy~(rovnice~\ref{eq:cnm_snm_1st_norm} 
+a~\ref{eq:cnm_snm_2nd_norm}) nadobudne hodnotu~$1$.  Môžeme si tiež všimnúť, že 
+všetky koeficienty stupňa~$n = 1$ sú nulové, teda začiatok súradnicového 
+systému modelu EIGEN-6C4 je vložený do ťažiska Zeme (pozri 
 Kapitolu~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}).
 
 Sférické harmonické koeficienty gravitačného poľa Zeme sú v~súčasnosti dostupné
@@ -5156,10 +5155,9 @@ po bod~$P_0$ po normálne k elipsoidu, ktorá prechádza bodom~$P$}
 \end{figure}
 
 V~tejto kapitole popíšeme najdôležitejšie veličiny poruchového poľa 
-(Kapitoly~\ref{sec:disturbing_potential} až~\ref{sec:bouguer_anomaly}) 
-a~ukážeme spôsoby, ktorými z~nich možno vypočítať geoid 
-(Kapitola~\ref{sec:geoid}) a~zvislicové odchýlky 
-(Kapitola~\ref{sec:deflections}).
+(Kapitoly~\ref{sec:disturbing_potential} a~\ref{sec:gravity_anomaly}) a~ukážeme 
+spôsoby, ktorými z~nich možno vypočítať geoid (Kapitola~\ref{sec:geoid}) 
+a~zvislicové odchýlky (Kapitola~\ref{sec:deflections}).
 
 
 
@@ -5243,23 +5241,22 @@ geocentrický, potom \parencite{Pick1973}
 V~praktických aplikáciách sa veľmi často stretneme so sférickým harmonickým 
 rozvojom poruchového potenciálu.  Tento rozvoj získame použitím 
 rovnice~(\ref{eq:disturbing_potential}) a~radov~(\ref{eq:ug_spherical}) 
-a~(\ref{eq:vg_sh_2nd_norm_ynk}).  Na to, aby sme mohli výhodne skombinovať 
-rovnice~(\ref{eq:ug_spherical}) a~(\ref{eq:vg_sh_2nd_norm_ynk}) je potrebné 
-upraviť vzťah~(\ref{eq:ug_spherical}).  Musíme vziať do úvahy dva aspekty.  
-i)~Rozvoj~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je založený na úplne 
-normovaných sférických harmonických funkciách, zatiaľ čo 
-rovnica~(\ref{eq:ug_spherical}) predstavuje rad nenormovaných sférických 
-harmonických funkcií.  ii)~Konštanty ekvipotenciálneho elipsoidu~$GM$ a~$a$ 
-z~rovnice~(\ref{eq:ug_spherical}), ktoré budeme ďalej označovať 
-symbolmi~$GM^\mathrm{e}$ a~$a^\mathrm{e}$, sa môžu líšiť od konštánt~$GM$ a~$R$ 
-z~rovnice~(\ref{eq:vg_sh_2nd_norm_ynk}).  Nekonzistenciu spôsobenú rozličnými 
-normami odstránime normovaním sférických harmonických funkcií a~koeficientov 
-v~rovnici~(\ref{eq:ug_spherical}).  Druhú nekonzistenciu odstránime 
-preškálovaním sférických harmonických koeficientov normálneho tiažového poľa 
-z~pôvodných konštánt~$GM^\mathrm{e}$ a~$a^\mathrm{e}$ na konštanty~$GM$ a~$R$.  
-Nie je zložité presvedčiť sa, že po týchto úpravách možno zapísať rozvoj 
-poruchového potenciálu v~tvare \parencite[pre podrobnosti pozri 
-napríklad][]{Barthelmes2013}
+a~(\ref{eq:vg_sh_2nd_norm_ynk}).  Aby sme mohli výhodne skombinovať 
+rovnice~(\ref{eq:ug_spherical}) a~(\ref{eq:vg_sh_2nd_norm_ynk}) do 
+\emph{jedného} rozvoja, musíme vziať do úvahy dva aspekty.  
+i)~Rozvoj~(\ref{eq:vg_sh_2nd_norm_ynk}) je založený na úplne normovaných 
+sférických harmonických funkciách, zatiaľ čo rovnica~(\ref{eq:ug_spherical}) 
+predstavuje rad nenormovaných sférických harmonických funkcií.  ii)~Konštanty 
+ekvipotenciálneho elipsoidu~$GM$ a~$a$ z~rovnice~(\ref{eq:ug_spherical}), ktoré 
+budeme ďalej označovať symbolmi~$GM^\mathrm{e}$ a~$a^\mathrm{e}$, sa môžu líšiť 
+od konštánt~$GM$ a~$R$ z~rovnice~(\ref{eq:vg_sh_2nd_norm_ynk}).  Nekonzistenciu 
+spôsobenú rozličnými normami odstránime normovaním sférických harmonických 
+funkcií a~koeficientov v~rovnici~(\ref{eq:ug_spherical}).  Druhú nekonzistenciu 
+odstránime preškálovaním sférických harmonických koeficientov normálneho 
+tiažového poľa z~pôvodných konštánt~$GM^\mathrm{e}$ a~$a^\mathrm{e}$ na 
+konštanty~$GM$ a~$R$.  Nie je zložité presvedčiť sa, že po týchto úpravách 
+možno zapísať rozvoj poruchového potenciálu v~tvare \parencite[pre podrobnosti 
+pozri napríklad][]{Barthelmes2013}
 %
 \begin{equation}
 \label{eq:t_sh}
@@ -5316,12 +5313,12 @@ na povrchu ekvipotenciálneho elipsoidu.  Na obrázku je možné pozorovať jedn
 dlhovlnný trend, napríklad v~okolí minima v~Indickom oceáne a~maxima 
 v~Indonézii, ale tiež krátkovlnné prvky, napríklad premenlivé pole v~oblasti 
 tektonických zlomov v~Tichom oceáne na rozhraní Pacifickej platne a okolitých 
-platní, najmä Severoamerickej platne, Filipínskej platne a Austrálskej platne, 
+platní, najmä Severoamerickej platne, Filipínskej platne a Austrálskej platne 
 či v~oblastí Himalájí a Ánd.  Obrázok tiež demonštruje, že odčítaním normálneho 
 gravitačného potenciálu od skutočného gravitačného potenciálu sa do veľkej 
 miery eliminuje globálny trend gravitačného poľa.  Medzi tieto trendy patrí 
 obzvlášť vplyv nultého člena~$GM \slash r$ rozvoja~(\ref{eq:t_sh}) či šírkový 
-trend, ktorý je dôsledkom sploštenia Zeme.  Odčítaním týchto vplyvov tak 
+trend, ktorý je spôsobený sploštením Zeme.  Odčítaním týchto vplyvov tak 
 vystúpia do popredia jemné nepravidelnosti zemského gravitačného poľa.
 
 \begin{figure}
@@ -5353,6 +5350,17 @@ použitá rovnaká farebná stupnica.}
 \label{fig:disturbing_potential_at_450km}
 \end{figure}
 
+Poruchový potenciál vystupuje vo fyzikálnej geodézii väčšinou ako neznáma 
+funkcia, ktorú sa snažíme určiť.  Neznámou funkciou je preto, lebo gravitačný 
+ani tiažový potenciál, a~teda v~širšom zmysle ani poruchový potenciál, 
+nedokážeme jednoducho odmerať 
+(Kapitola~\ref{sec:centrifugal_and_gravity_potential}).  Snažíme sa ho ale 
+určiť, pretože poruchový potenciál priamo súvisí s~výpočtom geoidu.  
+V~Kapitole~\ref{sec:geoid} ukážeme, že akonáhle poznáme priebeh poruchového 
+potenciálu na geoide, výpočet geoidu je veľmi jednoduchý.  V~nasledujúcich 
+Kapitolách~\ref{sec:gravity_disturbance} a~\ref{sec:gravity_anomaly} 
+predstavíme veličiny poruchového poľa, ktoré dokážeme odmerať 
+a~v~Kapitole~\ref{sec:geoid} ukážeme, ako z~týchto veličín vypočítame geoid.
 
 
 
@@ -5361,7 +5369,19 @@ použitá rovnaká farebná stupnica.}
 \section{Porucha tiažového zrýchlenia}
 \label{sec:gravity_disturbance}
 
-
+Porucha tiažového zrýchlenia je vektorová veličina definovaná ako rozdiel 
+vektorov skutočného tiažového zrýchlenia a~normálneho tiažového zrýchlenia,
+%
+\begin{equation}
+\delta \vec g(P) = \vec g(P) - \boldsymbol \gamma(P) = \nabla W(P) - \nabla 
+U(P) = \nabla T(P){.}
+\end{equation}
+%
+Keďže vektor skutočného tiažového zrýchlenia~$\vec g$ je merateľná veličina 
+(Kapitola~\ref{sec:centrifugal_and_gravity_acceleration}) a~vektor normálneho 
+tiažového zrýchlenia~$\boldsymbol\gamma$ je možné jednoducho vypočítať 
+(Kapitola~\ref{sec:normal_gravity}), poruchu tiažového zrýchlenia~$\delta \vec 
+g$ možno v~širšom zmysle považovať za merateľnú veličinu.
 
 
 
@@ -5374,7 +5394,7 @@ použitá rovnaká farebná stupnica.}
 
 
 
-\section{Bouguerova anomália}
+\subsection{Bouguerova anomália}
 \label{sec:bouguer_anomaly}
 
 
