@@ -3289,14 +3289,13 @@ V~niektorých situáciách je potrebné skúmať gravitačné pole sploštených
 Príkladom splošteného telesa je samotná Zem či mnohé asteroidy Slnečnej sústavy 
 (napríklad Eros, Castalia či Bennu; pozri \cite{Garmier2001}, \cite{Hu2015}, 
 \cite{Sebera2016} či \cite{Reimond2016}).  Ak by sme rozvinuli gravitačný 
-potenciál týchto telies do radu sférických harmonických 
-funkcií~(\ref{eq:vg_sh_no_norm}), potom oblasť potenciálnej divergencie radu 
-môže byť pomerne rozsiahla (porovnaj 
-Obrázky~\ref{fig:spherical_harmonics_convergence} 
+potenciál takýchto telies do radu sférických harmonických 
+funkcií~(\ref{eq:vg_sh_no_norm}), oblasť potenciálnej divergencie môže byť 
+pomerne rozsiahla (porovnaj Obrázky~\ref{fig:spherical_harmonics_convergence} 
 a~\ref{fig:spheroidal_harmonics_convergence}).  V~takýchto prípadoch môže byť 
 výhodnejšie nerozvíjať gravitačný potenciál do radu harmonických funkcií vo 
 sférických súradniciach, ale v~súradniciach, ktoré sú akýmsi spôsobom 
-prirodzenejšie pre sploštené telesá.  Príkladom takých súradníc sú 
+prirodzenejšie pre sploštené telesá.  Príkladom takýchto súradníc sú 
 \emph{redukované elipsoidické súradnice}, ktoré vedú ku \emph{sféroidickému 
 harmonickému rozvoju} gravitačného potenciálu.  Výhodou sféroidického 
 harmonického rozvoja je skutočnosť, že oblasť dokázanej konvergencie 
@@ -3310,11 +3309,11 @@ sféroidického harmonického radu
 (Kapitola~\ref{sec:spheroidal_harmonic_expansion}).  Kvôli náročnosti nebudeme 
 odvádzať sféroidické harmonické funkcie rovnako podrobne ako sme odvodili 
 sférické harmonické funkcie v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  
-Namiesto toho sa budeme snažiť prirovnávať diskutované témy k~už známej 
-problematike z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.  Poznatky 
-z~tejto kapitoly využijeme v~Kapitole~\ref{sec:normal_gravity_field}, v~ktorej 
-je študované gravitačné a~tiažové pole s~konštantným tiažovým potenciálom na 
-povrchu elipsoidu.
+Namiesto toho sa budeme snažiť prirovnávať diskutované témy k~problematike 
+známej už z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.  Získané poznatky 
+potom využijeme v~Kapitole~\ref{sec:normal_gravity_field}, v~ktorej je 
+študované gravitačné a~tiažové pole s~konštantným tiažovým potenciálom na 
+povrchu dvojosového elipsoidu.
 
 \begin{figure}
 \centering
@@ -3335,7 +3334,7 @@ Nech je daný dvojosový referenčný elipsoid s~dĺžkou hlavnej polosi $a$
 a~s~dĺžkou vedľajšej polosi $b$.  Parametre~$a$ a~$b$ sú volené tak, aby vhodne 
 aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov.  
 Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
-vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
+vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu 
 a jedným z jej ohnísk (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície 
 elipsy vyplýva, že lineárna excentricita je daná vzťahom
 %
@@ -3374,17 +3373,69 @@ z &= u \, \sin\beta{,}
 \end{split}
 \end{equation}
 %
-kde $\sqrt{u^2 + E^2}$ je dĺžka hlavnej polosi konfokálneho elipsoidu.  
-Všimnime si, že ak $E = 0$, teda referenčný elipsoid nie je sploštený, potom 
+kde $\sqrt{u^2 + E^2}$ je dĺžka hlavnej polosi konfokálneho elipsoidu.  Ak $E 
+= 0$, teda ak referenčný elipsoid nie je sploštený, potom 
 vzťah~(\ref{eq:ellred2cart}) má rovnaký tvar ako transformácia sférických 
 súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
-Podobne ako vo sférickom súradnicovom systéme, vyjadrime operátor gradient aj 
-v~redukovaných elipsoidických súradniciach.  Pomocou všeobecnej 
-rovnice~(\ref{eq:xi1xi2xi3_vectors}) možno jednoducho ukázať, že veľkosti 
-vektorov $\| \hat{\vec e}_i^\mathrm{r} \|$ 
-z~rovnice~(\ref{eq:grad_orthogonal_system}) sú dané v~systéme redukovaných 
-elipsoidických súradníc vzťahmi
+
+
+\subsection{Operátor gradient a Laplaceova rovnica v~redukovaných 
+elipsoidických súradniciach}
+
+Z~rovnakých dôvodov ako v~Kapitole~\ref{sec:laplace_equation_sph} potrebujeme 
+poznať tvar operátora gradient a Laplaceovho operátora aj v~systéme 
+redukovaných elipsoidických súradníc.  Postupovať budeme podľa 
+Príloh~\ref{app:gradient_in_orthogonal_coordinates} 
+a~\ref{app:laplace_in_orthogonal_coordinates}, v~ktorých je odvodený tvar 
+týchto operátorov pre~ľubovoľný ortogonálny súradnicový systém.
+
+V~súlade s~Kapitolou~\ref{app:gradient_in_orthogonal_coordinates} definujme 
+vektory (pozri vzťah~\ref{eq:xi1xi2xi3_vectors})
+%
+\begin{equation}
+\label{eq:eu_ebeta_elon}
+\hat{\vec e}_1^\mathrm{r} = \frac{\partial \vec r(\beta, \lambda, u)}{\partial 
+\beta}{,}
+%
+\quad
+%
+\hat{\vec e}_2^\mathrm{r} = \frac{\partial \vec r(\beta, \lambda, u)}{\partial 
+\lambda}{,}
+%
+\quad
+%
+\hat{\vec e}_3^\mathrm{r} = \frac{\partial \vec r(\beta, \lambda, u)}{\partial 
+u}{,}
+%
+\end{equation}
+%
+kde
+%
+\begin{equation}
+\vec r =
+%
+\begin{bmatrix}
+x(\beta, \lambda, u)\\
+y(\beta, \lambda, u)\\
+z(\beta, u)
+\end{bmatrix}
+{,}
+%
+\end{equation}
+%
+pričom funkcie $x(\beta, \lambda, u)$, $y(\beta, \lambda, u)$ a~$z(\beta, u)$ 
+sú dané vzťahmi~(\ref{eq:ellred2cart}).  Začiatok a smery vektorov~$\hat{\vec 
+e}_i^\mathrm{r}$, $i = 1, 2, 3$, definujú lokálny pravouhlý súradnicový 
+systém~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ s~pohyblivým 
+začiatkom~v~bode~$P$.  Os~$z^\mathrm{r}$ je daná smerom vonkajšej normály ku 
+konfokálnemu elipsoidu v~bode~$P$.  Os~$x^\mathrm{r}$ leží v~dotykovej rovine 
+ku konfokálnemu elipsoidu a~smeruje na sever.  Os~$y^\mathrm{r}$ dotvára 
+pravouhlý \emph{ľavotočivý} súradnicový systém.
+%
+Pomocou rovníc~(\ref{eq:ellred2cart}) a~(\ref{eq:eu_ebeta_elon}) možno 
+jednoducho ukázať, že pre $\| \hat{\vec e}_i^\mathrm{r} \|$, $i = 1, 2, 3$, 
+platí
 %
 \begin{equation}
 \label{eq:ei_reduced_ell_magnitudes}
@@ -3398,19 +3449,10 @@ elipsoidických súradníc vzťahmi
 + E^2}}{.}
 \end{split}
 \end{equation}
-%
-Vektory $\hat{\vec e}_i^\mathrm{r}$ definujú smery súradnicových osí lokálneho 
-pravouhlého súradnicového systému~$x^\mathrm{r}$, $y^\mathrm{r}$, 
-$z^\mathrm{r}$ s~pohyblivým začiatkom~v~bode~$P$.  Os~$z^\mathrm{r}$ je daná 
-smerom vonkajšej normály ku konfokálnemu elipsoidu, ktorý prechádza bodom~$P$.  
-Os~$x^\mathrm{r}$ leží v~dotykovej rovine ku konfokálnemu elipsoidu a~smeruje 
-na sever.  Os~$y^\mathrm{r}$ dotvára pravouhlý \emph{ľavotočivý} súradnicový 
-systém.
 
 Kombináciou rovníc~(\ref{eq:grad_orthogonal_system}) 
-a~(\ref{eq:ei_reduced_ell_magnitudes}) získame získame tvar operátora gradient 
-v~redukovaných elipsoidických súradniciach 
-(rovnica~\ref{eq:grad_orthogonal_system}),
+a~(\ref{eq:ei_reduced_ell_magnitudes}) získame získame operátor gradient 
+v~redukovaných elipsoidických súradniciach,
 %
 \begin{align}
 \label{eq:gradient_red_ell}
@@ -3430,8 +3472,32 @@ v~redukovaných elipsoidických súradniciach
 \sqrt{\dfrac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial}{\partial 
 u}
 \end{bmatrix}
-{.}
+{,}
 \end{align}
+%
+kde
+%
+\begin{equation}
+\vec e_i^\mathrm{r} = \frac{\hat{\vec e}_i^\mathrm{r}}{\| \hat{\vec 
+e}_i^\mathrm{r} \|}{,} \quad i = 1, 2, 3{,}
+\end{equation}
+%
+sú jednotkové vektory v~smere osí~$x^\mathrm{r}$, $y^\mathrm{r}$ 
+a~$z^\mathrm{r}$.
+
+Laplaceovu rovnicu pre gravitačný potenciál dostaneme pomocou 
+vzťahov~(\ref{eq:ei_reduced_ell_magnitudes}) 
+a~(\ref{eq:laplace_orthogonal_system_final_2})
+\parencite{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\label{eq:vg_laplace_ellred}
+(u^2 + E^2) \, \frac{\partial^2 V_\gidx}{\partial u^2} + 2u \, \frac{\partial 
+V_\gidx}{\partial u} + \frac{1}{\cos\beta} \, \frac{\partial}{\partial\beta} 
+\left( \cos\beta \, \frac{\partial V_\gidx}{\partial\beta} \right) + \frac{u^2 
++ E^2 \, \sin^2\beta}{(u^2 + E^2) \, \cos^2\beta} \, \frac{\partial^2 
+V_\gidx}{\partial \lambda^2} = 0{.}
+\end{equation}
 
 
 
@@ -3448,7 +3514,7 @@ a $h_{\mathrm{s}}(\lambda)$.  Je možne ukázať, že riešením tejto úlohy s�
 funkcie nasledovného tvaru (porovnaj s rovnicou~\ref{eq:vg_sh_no_norm}),
 %
 \begin{equation}
-\label{eq:fr}
+\label{eq:fs}
 f_{\mathrm{s}}(r) =
 \dfrac{1}{r^{n + 1}}{,}
 \end{equation}
@@ -3461,6 +3527,7 @@ g_{\mathrm{s}}(\varphi) = P_{nm}(\sin\varphi)
 a
 %
 \begin{equation}
+\label{eq:hs}
 h_{\mathrm{s}}(\lambda) =
 %
 \begin{cases}
@@ -3476,26 +3543,12 @@ riešenie sa využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry
 práce.
 
 Jeden z~možných prístupov získania sféroidických harmonických funkcií je práve 
-riešením Laplaceovej diferenciálnej rovnice metódou separácie premenných, 
-tentokrát však v~redukovaných elipsoidických súradniciach.  Laplaceovu rovnicu 
-pre gravitačný potenciál v~elipsoidických redukovaných súradniciach dostaneme 
-pomocou vzťahov~(\ref{eq:ei_reduced_ell_magnitudes}) 
-a~(\ref{eq:laplace_orthogonal_system_final_2})
-\parencite{MoritzPhysicalGeodesy},
+riešením Laplaceovej diferenciálnej rovnice v~redukovaných elipsoidických 
+súradniciach~(\ref{eq:vg_laplace_ellred}) metódou separácie premenných.  Týmto 
+spôsobom získame funkcie \parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
-\label{eq:vg_laplace_ellred} (u^2 + E^2) \, \frac{\partial^2 V_\gidx}{\partial u^2} + 2u \, \frac{\partial 
-V_\gidx}{\partial u} + \frac{1}{\cos\beta} \, \frac{\partial}{\partial\beta} 
-\left( \cos\beta \, \frac{\partial V_\gidx}{\partial\beta} \right) + \frac{u^2 
-+ E^2 \, \sin^2\beta}{(u^2 + E^2) \, \cos^2\beta} \, \frac{\partial^2 
-V_\gidx}{\partial \lambda^2} = 0{.}
-\end{equation}
-%
-Riešením tento rovnice metódou separácie premenných získame funkcie 
-\parencite{MoritzPhysicalGeodesy},
-%
-\begin{equation}
-\label{eq:fu}
+\label{eq:fr}
 f_{\mathrm{r}}(u) =
 Q_{nm}\left( i \dfrac{u}{E} \right){,}
 \end{equation}
@@ -3508,6 +3561,7 @@ g_{\mathrm{r}}(\beta) = P_{nm}(\sin\beta)
 a
 %
 \begin{equation}
+\label{eq:hr}
 h_{\mathrm{r}}(\lambda) =
 %
 \begin{cases}
@@ -3516,12 +3570,12 @@ h_{\mathrm{r}}(\lambda) =
 \end{cases}
 \end{equation}
 %
-kde $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fr}), 
+kde $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fs}), 
 funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar $f_{\mathrm{r}}(u) 
 = P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na rozvoj 
 \emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.
 
-Člen $Q_{nm}\left( i \frac{u}{E} \right)$ v~rovnici~(\ref{eq:fu}) sa nazýva 
+Člen $Q_{nm}\left( i \frac{u}{E} \right)$ v~rovnici~(\ref{eq:fr}) sa nazýva 
 \emph{pridružená Legendreova funkcia druhého druhu}.  Pre komplexný argument $z 
 = i \frac{u}{E}$ je definovaná vzťahom \parencite{MoritzPhysicalGeodesy}
 %
@@ -3666,18 +3720,24 @@ funkcií}
 \label{sec:spheroidal_harmonic_expansion}
 
 Gravitačný potenciál mimo hmôt telesa môže byť rozvinutý do radu sféroidických 
-harmonických funkcií vzťahom
+harmonických funkcií vzťahom \parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
 \label{eq:vg_spheroidalh_2nd_norm_ynk}
 V_\gidx(u, \beta, \lambda) = \frac{GM}{R} \, \sum_{n = 0}^\infty \sum_{k 
 = -n}^n \frac{Q_{n|k|}\left( i \dfrac{u}{E} \right)}{Q_{n|k|}\left( 
-i \dfrac{b}{E} \right)} \, \bar{v}^{\mathrm{r}}_{nk} \, \bar{Y}_{nm}(\beta, 
+i \dfrac{b}{E} \right)} \, \bar{v}^{\mathrm{r}}_{nk} \, \bar{Y}_{nk}(\beta, 
 \lambda){,}
 \end{equation}
 %
 kde $\bar{v}_{nk}^\mathrm{r}$ sú \emph{úplne normované sféroidické harmonické 
 koeficienty} gravitačného potenciálu.  
+Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je lineárnou kombináciou funkcií 
+(\ref{eq:fr}), (\ref{eq:gr}) a~(\ref{eq:hr}) (pozri tiež 
+vzťah~\ref{eq:ynk_norm}), ktoré boli získané riešením Laplaceovej 
+diferenciálnej rovnice metódou separácie premenných v~redukovaných 
+elipsoidických súradniciach.
+
 Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je formálne podobná 
 vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež jednoducho prepísaná do 
 tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ (porovnaj 
@@ -3693,7 +3753,7 @@ V_\gidx(u, \beta, \lambda) = \sum_{n = 0}^\infty \sum_{m = 0}^n
 \sin(m\lambda) \right) \, P_{nm}(\sin\beta){.}
 \end{equation}
 %
-Funkcia $Q_{n|k|}\left( i \frac{u}{E} \right)$ zo vzťahu~(\ref{eq:fu}) je 
+Funkcia $Q_{n|k|}\left( i \frac{u}{E} \right)$ zo vzťahu~(\ref{eq:fr}) je 
 komplexná funkcia.  Vo sféroidických harmonických 
 rozvojoch~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
 a~(\ref{eq:vg_spheroidalh_no_norm}) je preto vydelená funkciou $Q_{n|k|}\left( 
@@ -3703,7 +3763,11 @@ si tiež, že pred prvou sumáciou vo vzťahu~(\ref{eq:vg_spheroidalh_no_norm}) 
 nenachádza Newtonova gravitačná konštanta~$G$ tak, ako je tomu vo 
 vzťahu~(\ref{eq:vg_sh_no_norm}).  Ide len konvenciu, konštanta $G$ je tým pádom 
 obsiahnutá vo sféroidických harmonických koeficientoch $C_{nm}^\mathrm{r}$ 
-a~$S_{nm}^\mathrm{r}$.
+a~$S_{nm}^\mathrm{r}$.  Rovnice~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
+a~(\ref{eq:vg_spheroidalh_no_norm}) konvergujú vo vonkajšom priestore elipsoidu 
+konvergencie (pozri Obrázok~\ref{fig:spheroidal_harmonics_convergence}).  Na 
+povrchu elipsoidu konvergencie a/alebo v~neho vnútri konvergencia zaručená nie 
+je.
 
 Člen $Q_{n|k|}\left( i \frac{u}{E} \right) \slash Q_{n|k|}\left( i \frac{b}{E} 
 \right)$ v~rovnici~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) má podobnú úlohu, akú 
@@ -5369,7 +5433,7 @@ a~v~Kapitole~\ref{sec:geoid} ukážeme, ako z~týchto veličín vypočítame geo
 \section{Porucha tiažového zrýchlenia}
 \label{sec:gravity_disturbance}
 
-Porucha tiažového zrýchlenia je vektorová veličina definovaná ako rozdiel 
+Porucha tiažového zrýchlenia je vektorová veličina definovaná rozdielom 
 vektorov skutočného tiažového zrýchlenia a~normálneho tiažového zrýchlenia,
 %
 \begin{equation}
@@ -5756,8 +5820,8 @@ r \, \cos\varphi \, \left(\vec e^\mathrm{s}_2\right)^\top\\
 \end{equation}
 %
 Keďže vektory $\vec e^\mathrm{s}_1$, $\vec e^\mathrm{s}_2$, $\vec 
-e^\mathrm{s}_3$ sú ortogononálne (pozri rovnicu~\ref{eq:ei_orthogonality}) 
-a~ich veľkosť je rovná~$1$, čo možno overiť pomocou 
+e^\mathrm{s}_3$ sú ortogonálne (pozri rovnicu~\ref{eq:ei_orthogonality}) a~ich 
+veľkosť je rovná~$1$, čo možno overiť pomocou 
 vzťahov~(\ref{eq:er_elat_elon_unit}), potom inverzia matice systému lineárnych 
 rovníc~(\ref{eq:grad_cart2sph_2}) je daná vzťahom \parencite{MichelLectures}
 %
