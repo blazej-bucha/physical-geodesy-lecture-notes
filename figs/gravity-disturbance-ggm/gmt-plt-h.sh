@@ -7,7 +7,17 @@ set -e
 
 
 # INPUTS
-# ==================================================================== Output
+# ====================================================================
+
+# -----------------------------------------------------------------------------
+#
+# NOTE: Due to their size, the input data files to plot the gravity
+# disturbances are not a part of the repository.  They can be, however, easily
+# computed, say, as an exercise.
+#
+# -----------------------------------------------------------------------------
+
+
 # Prefix of the output file names include the path.  Create will be a "pdf"
 # files.
 outfile_prefix="../../latex/fig-"
@@ -30,15 +40,15 @@ colorscale="haxby"
 
 
 # min/max/step values to create a color pallet
-colorscale_lims="-1000/1000/10"
+colorscale_lims="-100/100/10"
 
 
 # min/max values of the colorbar
-colorbar_minmax="-1000/1000"
+colorbar_minmax="-100/100"
 
 
 # Step of colorbar values to be shown
-colorbar_step="200"
+colorbar_step="50"
 
 
 # Colorbar label
@@ -73,7 +83,7 @@ gmt gmtset TICK_LENGTH 0.075c
 
 # GMT plotting
 # ====================================================================
-for file in `ls disturbing-potential-*.txt`
+for file in `ls gravity-disturbance-*.txt`
 do
     # Prepare the input and output file names (no suffices)
     infile=$(basename $file ".txt")
@@ -113,7 +123,6 @@ do
                  -E200 \
                  -Q \
                  -P > $outfile.ps
-
 
     # Add the colorbar
     gmt psscale -C$cptfile \

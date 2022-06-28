@@ -3387,6 +3387,7 @@ súradníc na pravouhlé súradnice~(\ref{eq:sph2cart}).
 
 \subsection{Operátor gradient a Laplaceova rovnica v~redukovaných 
 elipsoidických súradniciach}
+\label{sec:gradient_and_laplace_in_reduced_ell_coords}
 
 Z~podobných dôvodov ako v~Kapitole~\ref{sec:laplace_equation_sph} potrebujeme 
 vyjadriť operátor gradient a Laplaceov operátor aj v~systéme redukovaných 
@@ -5378,6 +5379,10 @@ a~\ref{sec:normal_gravity_potential_in_spherical_coords})
 \ k = -n, \dots, n{.}
 \end{equation}
 
+Kombináciou rovníc~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
+a~(\ref{eq:ug_spheroidal}) je možné podobným spôsobom získať i~sféroidický 
+harmonický rozvoj poruchového potenciálu.
+
 Poruchový potenciál sa udáva vo fyzikálnych jednotkách~$\mathrm{m}^2 
 \ \mathrm{s}^{-2}$ a~nadobúda hodnoty približne od $-1000\ \mathrm{m}^2 
 \ \mathrm{s}^{-2}$ do $1000 \ \mathrm{m}^2 \ \mathrm{s}^{-2}$ (porovnaj 
@@ -5401,8 +5406,8 @@ vystúpia do popredia jemné nepravidelnosti zemského gravitačného poľa.
 \includegraphics{./fig-disturbing-potential-on-grs80.pdf}
 \caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
 zemského gravitačného poľa vypočítaný zo sférického harmonického modelu 
-gravitačného poľa EIGEN-6C4 do stupňa~720 na povrchu elipsoidu~GRS80.  Normálny 
-gravitačný potenciál je generovaný ekvipotenciálnym elipsoidom~GRS80.}
+EIGEN-6C4 do stupňa~720 na povrchu elipsoidu~GRS80.  Normálny gravitačný 
+potenciál je generovaný ekvipotenciálnym elipsoidom~GRS80.}
 \label{fig:disturbing_potential_on_grs80}
 \end{figure}
 
@@ -5420,9 +5425,10 @@ a súčasne sa~jeho priebeh sa vyhladzuje (pozri člen $\left( \frac{R}{r}
 \centering
 \includegraphics{./fig-disturbing-potential-at-450km.pdf}
 \caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
-získaný rovnakým spôsobom ako v~Obrázku~\ref{fig:disturbing_potential_on_grs80} 
-avšak vo výške~$450\ \mathrm{km}$ nad elipsoidom~GRS80.  Na oboch obrázkoch je 
-použitá rovnaká farebná škála.}
+získaný rovnakým spôsobom ako 
+na~Obrázku~\ref{fig:disturbing_potential_on_grs80} avšak vo výške~$450\ 
+\mathrm{km}$ nad elipsoidom~GRS80.  Na oboch obrázkoch je použitá rovnaká 
+farebná škála.}
 \label{fig:disturbing_potential_at_450km}
 \end{figure}
 
@@ -5464,14 +5470,16 @@ jednoducho vypočítať (Kapitola~\ref{sec:normal_gravity}).
 \begin{figure}[bt]
 \centering
 \input{./fig-gravity-disturbance.pdf_tex}
-\caption{Vektor poruchy tiažového zrýchlenia~$\delta \vec g(P)$}
+\caption{Vektor poruchy tiažového zrýchlenia~$\delta \vec g(P)$ a~zvislicová 
+odchýlka~$\Theta$ medzi vektormi skutočného tiažového zrýchlenia~$\vec g(P)$ 
+a~normálneho tiažového zrýchlenia~$\boldsymbol\gamma(P)$}
 \label{fig:gravity_disturbance}
 \end{figure}
 
 Z Kapitoly~\ref{sec:centrifugal_and_gravity_acceleration} vieme, že veľkosť 
 vektora~$\vec g(P)$ je možné získať gravimetrickými meraniami a~jeho smer 
 astronomickým určením zemepisných súradníc bodu~$P$.  Astronomické merania sú 
-ale spravidla náročné.  Aj z~tohto dôvodu sa preto vo fyzikálnej geodézii často 
+ale spravidla náročné.  Aj z~tohto dôvodu sa vo fyzikálnej geodézii často 
 stretneme so skalárnou definíciou poruchy tiažového zrýchlenia,
 %
 \begin{equation}
@@ -5485,8 +5493,8 @@ ktorá zanedbáva rozdielnosť smerov vektorov $\| \vec g(P) \|$ a~$\| \boldsymb
 vektory~$\vec g(P)$ a~$\boldsymbol \gamma(P)$), veľkosť vektora, ktorý vznikne 
 ich rozdielom ($\| \delta \vec g(P) \|$) nie je možné získať rozdielom veľkostí 
 týchto vektorov ($\| \vec g(P) \| - \| \boldsymbol \gamma(P) \|$).}  Ak 
-odhliadneme od ojedinelej situácie, v~ktorej sú smery vektorov $\vec g(P)$ 
-a~$\boldsymbol{\gamma}(P)$ totožné, potom \emph{v~zmysle 
+odhliadneme od ojedinelej situácie, v~ktorej majú vektory $\vec g(P)$ 
+a~$\boldsymbol{\gamma}(P)$ totožný smer, potom \emph{v~zmysle 
 vzťahov~(\ref{eq:dg_vector}) a~(\ref{eq:dg_scalar})} platí
 %
 \begin{equation}
@@ -5506,12 +5514,12 @@ Pre názornosť pozri Obrázok~\ref{fig:gg_grav_sr_2arcsec}, ktorý zobrazuje
 veľkosť gravitačného vektora~$\vec g_\gidx(P)$.}, avšak vektor normálneho 
 tiažového zrýchlenia túto zmenu v~dôsledku jednoduchosti definície normálneho 
 tiažového poľa (pozri Kapitolu~\ref{sec:normal_gravity_field}) nezachytáva.  
-Uhlový rozdiel medzi smermi vektorov~$\vec g(P)$ a~$\boldsymbol \gamma(P)$ sa 
-označuje~$\Theta$ a~nazýva sa \emph{zvislicová odchýlka}.  Najväčšie hodnoty 
-dosahuje na úrovni približne 2~uhlových minút \parencite{GGMplus}.  Aj vďaka 
-malej veľkosti uhla~$\Theta$ preto platí, že rozdiel $\| \delta \vec g(P) \| 
-- \delta g(P)$ je dostatočne malý na to, aby mohol byť v~mnohých úlohách 
-fyzikálnej geodézie zanedbaný.
+Uhol medzi vektormi~$\vec g(P)$ a~$\boldsymbol \gamma(P)$ sa označuje~$\Theta$ 
+a~nazýva sa \emph{zvislicová odchýlka}.  Najväčšie hodnoty dosahuje na úrovni 
+približne 2~uhlových minút \parencite{GGMplus}.  Aj vďaka malej hodnote 
+uhla~$\Theta$ preto platí, že rozdiel $\| \delta \vec g(P) \| - \delta g(P)$ je 
+dostatočne malý na to, aby mohol byť v~mnohých úlohách fyzikálnej geodézie 
+zanedbaný.
 
 Označme smery vektorov vonkajších normál v~bode~$P$ k~ekvipotenciálnym 
 plochám~$W(P) = \textrm{konšt.}$ a~$U(P) = \textrm{konšt.}$ symbolmi~$n_W$ 
@@ -5553,19 +5561,160 @@ Prvá aproximácia v~druhom riadku vzťahu~(\ref{eq:dg_normals}) je spôsobená
 nahradením derivácie~$-\partial U \slash \partial n_U$ deriváciou~$-\partial 
 U \slash \partial n_W$, čo je prípustné, keďže vektory~$\vec n_W$ a~$\vec n_U$ 
 majú takmer totožný smer.  V~ďalšom kroku sme nahradili deriváciu poruchového 
-potenciálu v~smere~$n_W$ deriváciou v~smere elipsoidickej normály~$h$ 
-prechádzajúcej bodom~$P$.  Táto veličina sa zvykne nazývať \emph{elipsoidická 
+potenciálu v~smere~$n_W$ deriváciou v~smere elipsoidickej normály~$h$, ktorá 
+prechádzajúca bodom~$P$.  Táto veličina sa zvykne nazývať \emph{elipsoidická 
 aproximácia poruchy tiažového zrýchlenia}.  Posledná \emph{sférická aproximácia 
 poruchy tiažového zrýchlenia} bola získaná derivovaním poruchového potenciálu 
-v~smere sférického sprievodiča~$r$, ktorý prechádza bodom~$P$.  Spomeňme ešte, 
-že veličiny $-\left(\partial T \slash \partial n_W\right)|_P$, $-\left(\partial 
-T \slash \partial h\right)|_P$ a~$-\left(\partial T \slash \partial 
-r\right)|_P$ nemusia byť vždy chápané len ako aproximácie 
+v~smere sférického sprievodiča~$r$, ktorý prechádza bodom~$P$.  Na záver 
+spomeňme, že veličiny $-\left(\partial T \slash \partial n_W\right)|_P$, 
+$-\left(\partial T \slash \partial h\right)|_P$ a~$-\left(\partial T \slash 
+\partial r\right)|_P$ nemusia byť vždy chápané len ako aproximácie 
 rovnice~(\ref{eq:dg_scalar}).  Niektorých situáciách môže byť napríklad 
 potrebné definovať skalárnu poruchu tiažového zrýchlenia práve vzťahom~$\delta 
 g(P) = -\left(\partial T \slash \partial n_W\right)|_P$ a pod.  Pri čítaní 
 literatúry preto treba pozorne vnímať kontext, v~ktorom sa porucha tiažového 
 zrýchlenia vyskytuje.
+
+Dosadením~(\ref{eq:t_sh}) do poslednej rovnosti vzťahu~(\ref{eq:dg_vector}) 
+a~s~využitím~(\ref{eq:gradient_sph}) získame sférický harmonický rozvoj vektora 
+poruchy tiažového zrýchlenia v~lokálnom pravouhlom súradnicovom 
+systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom 
+v~bode~$P$ (pozri Obrázok~\ref{fig:cart_sph}),
+%
+\begin{equation}
+\label{eq:dg_vec_sph}
+\delta \vec g(P) =
+%
+\begin{bmatrix}
+\delta g_{x^\mathrm{s}}(P)\\
+\delta g_{y^\mathrm{s}}(P)\\
+\delta g_{z^\mathrm{s}}(P)
+\end{bmatrix}
+%
+{,}
+\end{equation}
+%
+kde
+%
+\begin{align}
+\label{eq:dgx_sh}
+\delta g_{x^\mathrm{s}}(P) = \frac{\partial T(P)}{\partial x^\mathrm{s}} &= 
+\frac{1}{r} \, \frac{\partial T(P)}{\partial \varphi} = \frac{GM}{R^2} \sum_{n 
+= 0}^\infty \left( \frac{R}{r} \right)^{n + 2} \sum_{k = -n}^{n} \bar{t}_{nk} 
+\, \frac{\partial \bar{Y}_{nk}(\varphi, \lambda)}{\partial \varphi}{,}\\
+%
+\label{eq:dgy_sh}
+\delta g_{y^\mathrm{s}}(P) = \frac{\partial T(P)}{\partial y^\mathrm{s}} &= 
+\frac{1}{r \, \cos\varphi} \, \frac{\partial T(P)}{\partial \lambda} 
+= \frac{GM}{R^2 \, \cos\varphi} \sum_{n = 0}^\infty \left( \frac{R}{r} 
+\right)^{n + 2} \sum_{k = -n}^{n}\bar{t}_{nk} \, \frac{\partial 
+\bar{Y}_{nk}(\varphi, \lambda)}{\partial \lambda}{,}\\
+%
+\label{eq:dgz_sh}
+\delta g_{z^\mathrm{s}}(P) = \frac{\partial T(P)}{\partial z^\mathrm{s}} &= 
+\frac{\partial T(P)}{\partial r} = - \frac{GM}{R^2} \sum_{n = 0}^\infty (n + 1) 
+\, \left( \frac{R}{r} \right)^{n + 2} \sum_{k = -n}^{n} \bar{t}_{nk} \, 
+\bar{Y}_{nk}(\varphi, \lambda){.}
+\end{align}
+%
+Derivácie $\partial \bar{Y}_{nk}(\varphi, \lambda) \slash \partial \varphi$ 
+a~$\partial \bar{Y}_{nk}(\varphi, \lambda) \slash \partial \lambda$ 
+z~rovníc~(\ref{eq:dgx_sh}) a~(\ref{eq:dgy_sh}) sú vyjadrené vo 
+vzťahoch~(\ref{eq:vgx_sh}) a~(\ref{eq:vgy_sh}).  Rovnice~(\ref{eq:dgx_sh}) 
+a~(\ref{eq:dgy_sh}) sú singulárne (pozri 
+Kapitolu~\ref{sec:spheroidal_harmonics}) na póloch.  Rovnica~(\ref{eq:dgx_sh}) 
+je singulárna kvôli členu~$\diff P_{nk}(\sin\varphi) \slash \diff \varphi$ 
+(pozri~\ref{eq:vgx_sh}); singularitu v~rovnici~(\ref{eq:dgy_sh}) spôsobuje člen 
+$1 \slash \cos\varphi$.  Výpočtu rovníc~(\ref{eq:dgx_sh}) a~(\ref{eq:dgy_sh}) 
+v~oblastiach pólov je preto potrebné venovať osobitnú pozornosť.  Použiť je 
+možné napríklad nesingulárne metódy výpočtu z~prác \textcite{Petrovskaya2012} 
+či \textcite{Sebera2013} \parencite[pozri tiež][]{Ivanov2018}.
+
+Vektor poruchy tiažového zrýchlenia~(\ref{eq:dg_vec_sph}) môže byť 
+transformovaný do iného súradnicového systému použitím príslušných rotačných 
+matíc \parencite[pozri napríklad][]{WGS84}.  Takýmto spôsobom je možné 
+vypočítať napríklad sférický harmonický rozvoj elipsoidickej aproximácie 
+poruchy tiažového zrýchlenia~$-\partial T \slash \partial h$ či vektor~$\delta 
+\vec g(P)$ v~súradnicovom systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, 
+$z^\mathrm{r}$ (pozri 
+Kapitolu~\ref{sec:gradient_and_laplace_in_reduced_ell_coords}).  V~súradnicovom 
+systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ je možné 
+vypočítať~$\delta \vec g(P)$ i~priamo pomocou sféroidického harmonického 
+rozvoja.  Z~porovnania rovníc~(\ref{eq:dg_normals}) a~(\ref{eq:dgz_sh}) je tiež 
+zrejmé, že sférický harmonický rozvoj sférickej aproximácie poruchy tiažového 
+zrýchlenia~$\delta g_\mathrm{sa}(P)$ je daný vzťahom
+%
+\begin{equation}
+\delta g_\mathrm{sa}(P) = -\delta g_{z^\mathrm{s}}(P){.}
+\end{equation}
+
+Na~Obrázku~\ref{fig:dg_ggm_grs80} je znázornený priebeh prvkov vektora poruchy 
+tiažového zrýchlenia v~súradnicovom systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, 
+$z^\mathrm{s}$ (rovnice~\ref{eq:dgx_sh} až~\ref{eq:dgz_sh}).  Na mape 
+elementu~$\delta g_{x^\mathrm{s}}$ si môžeme všimnúť vizuálne vystupujúce prvky 
+gravitačného poľa prevažne v~smere sférickej dĺžky~$\lambda$, teda v~smere 
+kolmom na smer derivovania (pozri rovnicu~\ref{eq:dgx_sh}).  Podobne na 
+mape~$\delta g_{y^\mathrm{s}}$ vystupujú do popredia prvky najmä v~smere 
+sférickej šírky vďaka derivácii v~smere sférickej dĺžky~(pozri 
+rovnicu~\ref{eq:dgy_sh}).  Na základe porovnania s~obrázkom poruchového 
+potenciálu~\ref{fig:disturbing_potential_on_grs80} tiež možno konštatovať, že 
+krátkovlnné prvky poruchy tiažového zrýchlenia sú výrazne silnejšie ako 
+krátkovlnné prvky samotného poruchového potenciálu.  Toto pozorovanie je možné 
+vysvetliť rovnicami~(\ref{eq:dgx_sh}) až~(\ref{eq:dgz_sh}).  Ako príklad si 
+vezmime prvok~$\delta g_{z^\mathrm{s}}$ a~rovnicu~(\ref{eq:dgz_sh}).  V~tejto 
+rovnici sa nachádza člen~$(n + 1)$, ktorý s~narastajúcim stupňom~$n$ zosilňuje 
+sférické harmonické koeficienty~$\bar{t}_{nk}$ (porovnaj 
+s~rovnicou~\ref{eq:t_sh}).  Tým sa v~porovnaní s~poruchovým potenciálom 
+zosilňuje vplyv (váha) sférických harmonických funkcií vyšších stupňov a~rádov.  
+Z~Kapitoly~\ref{sec:spherical_harmonics} vieme, že s~narastajúcim stupňom 
+narastá aj oscilácia sférických harmonických funkcií, čo vysvetľuje silnejšiu 
+prítomnosť krátkovlnných prvkov vo~vektore poruchy tiažového zrýchlenia 
+v~porovnaní s~poruchovým potenciálom.
+
+\begin{figure}
+\centering
+\includegraphics{./fig-gravity-disturbance-on-grs80-x.pdf}
+\includegraphics{./fig-gravity-disturbance-on-grs80-y.pdf}
+\includegraphics{./fig-gravity-disturbance-on-grs80-z.pdf}
+\caption{Prvky vektora poruchy tiažového zrýchlenia $\delta g_{x^\mathrm{s}}$ 
+(vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) a~$\delta 
+g_{z^\mathrm{s}}$ (spodná mapa)~(jednotky~$\mathrm{mGal}$) zemského 
+gravitačného poľa vypočítaného zo sférického harmonického modelu EIGEN-6C4 do 
+stupňa~720 na povrchu elipsoidu~GRS80.  Normálny gravitačný potenciál je 
+generovaný ekvipotenciálnym elipsoidom~GRS80.}
+\label{fig:dg_ggm_grs80}
+\end{figure}
+
+Obrázok~\ref{fig:dg_ggm_450km} znázorňuje prvky vektora poruchy tiažového 
+zrýchlenia vo výške~$450$~km nad elipsoidom GRS80.  Z~obrázku je zrejmé, že 
+porucha tiažového zrýchlenia sa citeľne vyhlaďuje s~narastajúcou vzdialenosťou 
+od Zeme.  Toto vyhladzovanie je dokonca rýchlejšie ako v~prípade poruchového 
+potenciálu (porovnaj s~Obrázkami~\ref{fig:disturbing_potential_on_grs80} 
+a~\ref{fig:disturbing_potential_at_450km}), pretože gravitačné zrýchlenie klesá 
+s~druhou mocninou vzdialenosti (pozri rovnicu~\ref{eq:gg_body}), zatiaľ čo 
+gravitačný potenciál klesá s~prvou mocninou vzdialenosti výpočtového bodu od 
+diferenciálneho hmotného elementu (rovnica~\ref{eq:vg_body}).
+
+\begin{figure}
+\centering
+\includegraphics{./fig-gravity-disturbance-at-450km-x.pdf}
+\includegraphics{./fig-gravity-disturbance-at-450km-y.pdf}
+\includegraphics{./fig-gravity-disturbance-at-450km-z.pdf}
+\caption{Prvky vektora poruchy tiažového zrýchlenia $\delta g_{x^\mathrm{s}}$ 
+(vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) a~$\delta 
+g_{z^\mathrm{s}}$ (spodná mapa)~(jednotky~$\mathrm{mGal}$) získané rovnakým 
+spôsobom ako na~Obrázku~\ref{fig:dg_ggm_grs80} avšak vo výške~$450\ 
+\mathrm{km}$ nad elipsoidom~GRS80.  Na oboch obrázkoch je použitá rovnaká 
+farebná škála.}
+\label{fig:dg_ggm_450km}
+\end{figure}
+
+Porucha tiažového zrýchlenia sa spravidla udáva v~jednotkách mGal, jej 
+maximálne hodnoty dosahujú niekoľko stoviek miliGalov.  Vo fyzikálnej geodézii 
+vystupuje zväčša ako meraná veličina, z~ktorej sa snažíme určiť priebeh 
+poruchového potenciálu a~následne geoidu.  Jedným z~cieľov je preto vyjadriť 
+poruchový potenciál~$T$ z~rovníc~(\ref{eq:dg_vector}) či~(\ref{eq:dg_normals}).
+
 
 
 
@@ -5573,6 +5722,65 @@ zrýchlenia vyskytuje.
 \section{Anomália tiažového zrýchlenia}
 \label{sec:gravity_anomaly}
 
+Prevažne z~historických dôvodov sú s~tiažovým zrýchlením~$\vec g(P)$ spojené až 
+dve veličiny poruchového poľa: porucha tiažového zrýchlenia~$\delta \vec g(P)$ 
+(Kapitola~\ref{sec:gravity_disturbance}) a~\emph{anomália tiažového 
+zrýchlenia}~$\Delta \vec g(P)$.  Vektor anomálie tiažového zrýchlenia je 
+definovaný ako rozdiel medzi vektorom skutočného tiažového zrýchlenia~$\vec 
+g(P)$ v~bode~$P$ a~vektorom normálneho tiažového 
+zrýchlenia~$\boldsymbol\gamma(Q)$ \emph{v~bode~$Q$} 
+(Obrázok~\ref{fig:gravity_anomaly}),
+%
+\begin{equation}
+\label{eq:Dg_vector}
+\Delta \vec g(P) = \vec g(P) - \boldsymbol\gamma (Q).
+\end{equation}
+
+Bod~$Q$ získame nasledovne.  Nech bodom~$P$ prechádza normála 
+k~ekvipotenciálnemu elipsoidu~$n_e$.  Bod~$Q$ je taký bod na normále~$n_e$, pre 
+ktorý platí~$U(Q) = W(P)$.  Vzdialenosť medzi bodmi $Q$ a~$P$ meraná po 
+normále~$n_e$ sa nazýva \emph{výšková anomália} a~budeme ju označovať 
+symbolom~$\zeta$.  Keď zostrojíme výškovú anomáliu pre každý bod na zemskom 
+povrchu, získame plochu, ktorú budeme nazývať \emph{teluroid}.  Teluroid 
+predstavuje aproximáciu povrchu Zeme.  Výšková anomália~$\zeta$ nadobúda 
+celosvetovo hodnoty približne od~$-100$~m do~$100$~m, podobne ako výška geoidu 
+nad referenčným elipsoidom (pozri 
+Kapitolu~\ref{sec:disturbing_field_geoid_deflections}).
+
+Dôvod, pre ktorý sa okrem jednoducho definovanej poruchy tiažového zrýchlenia 
+používa aj anomália tiažového zrýchlenia je najmä historický.  Ak chceme určiť 
+poruchu tiažového zrýchlenia v~bode~$P$, potrebné je odmerať tiažové zrýchlenie 
+v~bode~$P$ a~určiť jeho polohu voči ekvipotenciálnemu elipsoidu.  Znalosť 
+polohy bodu~$P$ je potrebná kvôli výpočtu normálneho tiažového zrýchlenia 
+(Kapitola~\ref{sec:normal_gravity_field}).  Zo súradníc definujúcich~polohu 
+potrebujeme poznať spravidla elipsoidickú šírku~$\phi$ a~elipsoidickú výšku~$h$ 
+(Kapitola~\ref{sec:normal_gravity_taylor}), prípadne sférickú šírku~$\varphi$ 
+a~sprievodič~$r$ (Kapitola~\ref{sec:normal_gravity_in_sph_coords}).  
+V~súčasnosti je možné jednoducho určiť tieto súradnice pomocou globálnych 
+navigačných družicových systémov.  V~preddružicovej ére však bola na určenie 
+výšky k~dispozícií iba nivelácia, ktorou sa neurčí elipsoidická výška, ale iný 
+typ výšky, v~tomto prípade \emph{normálna výška podľa Molodenského}~$H_n$ 
+\parencite[pozri Obrázok~\ref{fig:gravity_anomaly};][]{MoritzPhysicalGeodesy}.  
+Z~tohto dôvodu bola zavedená anomália tiažového zrýchlenia, ktorá využíva vo 
+svojej definícií dva body, $P$ a~$Q$.  S~ohľadom na súčasnú dostupnosť 
+globálnych navigačných družicových systémov je možné očakávať, že v~budúcnosti 
+bude vo fyzikálnej geodézii dominovať porucha tiažového zrýchlenia 
+\parencite{MoritzPhysicalGeodesy}.  V~súčasnosti sa bežne stretávame aj 
+s~poruchou aj s~anomáliou tiažového zrýchlenia.
+
+Hoci vektory~$\vec g$ a~$\boldsymbol\gamma$ sú v~rovnici~(\ref{eq:Dg_vector}) 
+počítané v~dvoch rôznych bodoch, vektor anomálie tiažového zrýchlenia~$\Delta 
+\vec g$ budeme formálne pripisovať bodu~$P$, čomu zodpovedá zápis~$\Delta \vec 
+g(P)$, ktorý používame.
+
+\begin{figure}[bt]
+\centering
+\input{./fig-gravity-anomaly.pdf_tex}
+\caption{Vektor anomálie tiažového zrýchlenia~$\Delta \vec g(P)$}
+\label{fig:gravity_anomaly}
+\end{figure}
+
+*** Add gravity anomaly on the geoid. ***
 
 
 
