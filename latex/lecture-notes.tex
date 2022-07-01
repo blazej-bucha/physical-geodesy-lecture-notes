@@ -239,8 +239,8 @@ z~Newtonovho gravitačného zákona
 (Kapitola~\ref{sec:gravitational_and_gravity_field}), sférické a~sféroidické 
 harmonické funkcie (Kapitoly~\ref{sec:spherical_harmonic_expansion} 
 a~\ref{sec:spheroidal_harmonics_chapter}), normálne tiažové pole Zeme 
-(Kapitola~\ref{sec:normal_gravity_field}) a na záver poruchové pole, geoid 
-a zvislicové odchýlky (Kapitola~\ref{sec:disturbing_field_geoid_deflections}).  
+(Kapitola~\ref{sec:normal_gravity_field}) a na záver poruchové pole, zvislicové 
+odchýlky a~geoid (Kapitola~\ref{sec:disturbing_field_geoid_deflections}).  
 Zvolili sme formu, ktorú na základe desaťročných skúseností s~výučbou 
 fyzikálnej geodézie považujeme za najvhodnejšiu pre očakávaných čitateľov, 
 študentov geodézie a~kartografie.  Znamená to, že hoci intelektuálne potešenie 
@@ -1522,13 +1522,13 @@ napríklad][]{VanicekGeodesy}.
 
 \subsubsection{Tiažnica}
 
-Siločiara tiažového poľa sa nazýva \emph{tiažnica}.  Tiažnica je priestorová
-krivka kolmá na všetky ekvipotenciálne plochy
-(Obrázok~\ref{fig:equipotential_surfaces}).  Dotyčnica k~tiažnici sa nazýva
-\emph{zvislica}.  Smer zvislice je daný smerom vektora tiažového zrýchlenia.
-V~geodézii sa tiažnice využívajú napríklad na definovanie fyzikálnych
-(nadmorských) výšok.  Jedna taká výška má názov \emph{ortometrická výška} a~je
-meraná pozdĺž tiažnice od geoidu po bod $P$ (pozri
+Siločiara tiažového poľa sa nazýva \emph{tiažnica}.  Tiažnica je priestorová 
+krivka, ktorá je kolmá na všetky ekvipotenciálne plochy 
+(Obrázok~\ref{fig:equipotential_surfaces}).  Dotyčnica k~tiažnici sa nazýva 
+\emph{zvislica}.  Smer zvislice je totožný so smerom vektora tiažového 
+zrýchlenia.  V~geodézii sa tiažnice využívajú napríklad na definovanie 
+fyzikálnych (nadmorských) výšok.  Jedna taká výška má názov \emph{ortometrická 
+výška} a~je meraná pozdĺž tiažnice od geoidu po bod $P$ (pozri 
 Obrázok~\ref{fig:equipotential_surfaces}).
 
 Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad
@@ -3279,7 +3279,7 @@ a~svoju závažnosť nadobúda až približne od stupňa $10{,}800$
 
 Konvergencia radu sférických harmonických funkcií na povrchu Zeme je často 
 diskutovanou témou geodetickej literatúry 
-\parencite{Hotine,Krarup1969,MoritzAdvancedGeodesy,Sjoberg1980,Jekeli1983,SansoGeoidDetermination}.
+\parencite{Hotine,Borre_chapter4,MoritzAdvancedGeodesy,Sjoberg1980,Jekeli1983,SansoGeoidDetermination}.
 
 
 
@@ -5192,7 +5192,7 @@ rozvoje~(\ref{eq:gamma_rlatlon}) do $n = 5$, prípadne $n = 10$.
 
 % -----------------------------------------------------------------------------
 
-\chapter{Poruchové pole, geoid a zvislicové odchýlky}
+\chapter{Poruchové pole, zvislicové odchýlky a~geoid}
 \label{sec:disturbing_field_geoid_deflections}
 
 \emph{Poruchové (anomálne) pole} je definované ako rozdiel medzi skutočným 
@@ -5649,10 +5649,11 @@ systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ je možné
 vypočítať~$\delta \vec g(P)$ i~priamo pomocou sféroidického harmonického 
 rozvoja.  Z~porovnania rovníc~(\ref{eq:dg_normals}) a~(\ref{eq:dgz_sh}) je tiež 
 zrejmé, že sférický harmonický rozvoj sférickej aproximácie poruchy tiažového 
-zrýchlenia~$\delta g_\mathrm{sa}(P)$ je daný vzťahom
+zrýchlenia~$\delta g(P)$ je daný vzťahom
 %
 \begin{equation}
-\delta g_\mathrm{sa}(P) = -\delta g_{z^\mathrm{s}}(P){.}
+\label{eq:dg_sh_sa}
+\delta g(P) = -\delta g_{z^\mathrm{s}}(P){.}
 \end{equation}
 
 Na~Obrázku~\ref{fig:dg_ggm_grs80} je znázornený priebeh prvkov vektora poruchy 
@@ -5748,21 +5749,24 @@ v~bode~$P$ a~vektora normálneho tiažového zrýchlenia~$\boldsymbol\gamma(Q)$
 \input{./fig-gravity-anomaly.pdf_tex}
 \caption{Vektory definujúce anomálie tiažového zrýchlenia na povrchu 
 Zeme,~$\Delta \vec g(P) = \vec g(P) - \boldsymbol \gamma(Q)$, a~na geoide, 
-$\Delta \vec g(P_0) = \vec g(P_0) - \boldsymbol\gamma(Q_0)$}
+$\Delta \vec g(P_0) = \vec g(P_0) - \boldsymbol\gamma(Q_0)$.  Skutočná 
+tiažnica~$t_W$ a~normálna tiažnica~$t_U$ sú z~vizualizačných dôvodov výrazne 
+zakrivené voči normálne k~elipsoidu~$n_e$.  V~skutočnosti majú~všetky tri línie 
+blízky priebeh.}
 \label{fig:gravity_anomaly}
 \end{figure}
 
-Bod~$Q$ získame nasledovne.  Nech bodom~$P$ prechádza normála 
-k~ekvipotenciálnemu elipsoidu~$n_e$.  Bod~$Q$ je taký bod na normále~$n_e$, pre 
-ktorý platí~$U(Q) = W(P)$.  Vzdialenosť medzi bodmi $Q$ a~$P$ meraná po 
-normále~$n_e$ sa nazýva \emph{výšková anomália} a~budeme ju označovať 
-symbolom~$\zeta$ (Obrázok~\ref{fig:heights}).  Keď zostrojíme výškovú anomáliu 
-pre každý bod na zemskom povrchu, získame plochu, ktorú budeme nazývať 
-\emph{teluroid}.  Teluroid predstavuje aproximáciu povrchu Zeme.  Výšková 
-anomália~$\zeta$ nadobúda celosvetovo hodnoty približne od~$-100$~m do~$100$~m, 
-podobne ako výška geoidu nad referenčným elipsoidom (pozri 
-Kapitolu~\ref{sec:disturbing_field_geoid_deflections}).  Teluroid ale na 
-rozdiel od geoidu nie je ekvipotenciálnou plochou.
+Bod~$Q$ získame nasledovne.  Nech bodom~$P$ prechádza normálna tiažnica~$t_U$.  
+Bod~$Q$ je taký bod na tiažnici~$t_U$, pre ktorý platí~$U(Q) = W(P)$.  
+Vzdialenosť medzi bodmi $Q$ a~$P$, meraná v~aproximácii po normále~$n_e$, sa 
+nazýva \emph{výšková anomália} a~budeme ju označovať symbolom~$\zeta$ 
+(Obrázok~\ref{fig:heights}).  Keď zostrojíme výškovú anomáliu pre každý bod na 
+zemskom povrchu, získame plochu, ktorú budeme nazývať \emph{teluroid}.  
+Teluroid predstavuje aproximáciu zemského povrchu.  Výšková anomália~$\zeta$ 
+nadobúda celosvetovo hodnoty približne od~$-100$~m do~$100$~m, podobne ako 
+výška geoidu nad referenčným elipsoidom (pozri 
+Kapitolu~\ref{sec:disturbing_field_geoid_deflections}).  \emph{Teluroid ale na 
+rozdiel od geoidu nie je ekvipotenciálnou plochou}.
 
 Dôvod, pre ktorý sa okrem jednoducho definovanej poruchy tiažového zrýchlenia 
 používa aj anomália tiažového zrýchlenia je najmä historický.  Ak chceme určiť 
@@ -5774,24 +5778,30 @@ potrebujeme poznať spravidla elipsoidickú šírku~$\phi$ a~elipsoidickú výš
 (Kapitola~\ref{sec:normal_gravity_taylor}), prípadne sférickú šírku~$\varphi$ 
 a~sprievodič~$r$ (Kapitola~\ref{sec:normal_gravity_in_sph_coords}).  
 V~súčasnosti je možné jednoducho určiť tieto súradnice pomocou globálnych 
-navigačných družicových systémov.  V~preddružicovej ére však bola na určenie 
-výšky k~dispozícií iba nivelácia, ktorou sa neurčí elipsoidická výška, ale 
-fyzikálna výška (pozri Kapitolu~\ref{sec:centrifugal_and_gravity_potential}), 
-v~tomto prípade \emph{normálna výška podľa Molodenského}~$H_n$ \parencite[pozri 
-Obrázok~\ref{fig:heights};][]{MoritzPhysicalGeodesy}.\footnote{Niveláciou je 
-možné určiť aj iné typy fyzikálnych výšok \parencite[pozri 
-napríklad][]{MoritzPhysicalGeodesy}.}  Z~tohto dôvodu bola zavedená anomália 
-tiažového zrýchlenia, ktorá predpokladá výpočet normálneho tiažového zrýchlenia 
-v~bode~$Q$ na teluroide, keďže $H_n$ je merateľná vzdialenosť.  S~ohľadom na 
-súčasnú dostupnosť globálnych navigačných družicových systémov je možné 
-očakávať, že v~budúcnosti bude vo fyzikálnej geodézii dominovať porucha 
-tiažového zrýchlenia \parencite{MoritzPhysicalGeodesy}.  V~súčasnosti sa bežne 
-stretávame s~poruchou tiažového zrýchlenia aj s~anomáliou tiažového zrýchlenia.
+navigačných družicových systémov.  V~preddružicovej ére však bolo možné odmerať 
+iba fyzikálne výšky pomocou nivelácie (pozri 
+Kapitolu~\ref{sec:centrifugal_and_gravity_potential}), v~tomto prípade dĺžku 
+normálnej tiažnice~$t_U$ medzi bodmi~$Q_0$ a~$Q$ 
+(Obrázok~\ref{fig:gravity_anomaly}).  Táto vzdialenosť sa nazýva \emph{normálna 
+výška podľa Molodenského}~$H_n$ 
+\parencite{MoritzPhysicalGeodesy}.\footnote{Niveláciou je možné určiť aj iné 
+typy fyzikálnych výšok \parencite[pozri napríklad][]{MoritzPhysicalGeodesy}.}  
+Normálne tiažové zrýchlenie v~bode~$Q$ tak bolo možné vypočítať z~výšky~$H_n$ 
+určenej niveláciou.  S~ohľadom na súčasnú dostupnosť globálnych navigačných 
+družicových systémov je možné očakávať, že v~budúcnosti bude vo fyzikálnej 
+geodézii dominovať porucha tiažového zrýchlenia 
+\parencite{MoritzPhysicalGeodesy}.  V~súčasnosti sa bežne stretávame s~poruchou 
+tiažového zrýchlenia aj s~anomáliou tiažového zrýchlenia.
 
 \begin{figure}[bt]
 \centering
 \input{./fig-heights.pdf_tex}
-\caption{Ortometrická výška~$H_o$ a~normálna výška~$H_n$}
+\caption{Ortometrická výška~$H_o$ a~normálna výška podľa Molodenského~$H_n$ 
+merané v~elipsoidickej aproximácii po normále k~elipsoidu prechádzajúcej 
+bodom~$P$.  Ortometrická výška~$H_o$ je v~skutočnosti dĺžka skutočnej 
+tiažnice~$t_W$ medzi bodmi~$P_0$ a~$P$ a normálna výška podľa Molodenského je 
+dĺžka normálnej tiažnice~$t_U$ medzi bodmi~$Q_0$ a~$Q$ (pozri 
+Obrázok~\ref{fig:gravity_anomaly}).}
 \label{fig:heights}
 \end{figure}
 
@@ -5817,7 +5827,9 @@ Zeme~(\ref{eq:Dg_vector_earth}).  Anomálie~$\Delta \vec g(P)$ sa vo fyzikálnej
 geodézii využívajú prevažne na určenie výškovej anomálie~$\zeta$, ktorá je 
 spätá s~normálnou výškou podľa Molodenského~$H_n$.  Anomálie~$\Delta \vec 
 g(P_0)$ sa využívajú najmä na určovanie geoidu, ktorý je referenčnou plochou 
-pre \emph{ortometrickú výšku}~$H_o$.
+pre \emph{ortometrickú výšku}~$H_o$.  Ortometrická výška je dĺžka skutočnej 
+tiažnice~$t_W$ medzi bodmi~$P_0$ a~$P$ (pozri Obrázok~\ref{fig:gravity_anomaly} 
+a~tiež Kapitolu~\ref{sec:centrifugal_and_gravity_potential}).
 
 Okrem vektorovej anomálie tiažového zrýchlenia sa často stretávame aj so 
 skalárnou definíciou anomálie tiažového zrýchlenia (pozri tiež 
@@ -5848,13 +5860,30 @@ Podobne ako v~súvislosti s~poruchou tiažového zrýchlenia
 \| \Delta \vec g(P_0) \| \neq \Delta g(P_0){.}
 \end{equation}
 
-Pokúsme sa teraz nájsť vzťah medzi anomáliou tiažového zrýchlenia na 
-geoide~$\Delta g(P_0)$ a~poruchovým potenciálom na geoide~$T(P_0)$, podobne ako 
-sme našli obdobný vzťah medzi poruchou tiažového zrýchlenia a poruchovým 
-potenciálom (rovnica~\ref{eq:dg_normals}).  Situáciu ale tentokrát komplikuje 
-rozdielna poloha bodov~$P$ a~$Q$, preto si úlohu výrazne zjednodušíme 
-linearizáciou problému.  Rozviňme $\gamma$ do Taylorovho radu v~bode~$Q_0$ 
-a~následne zanedbajme členy druhého a vyšších rádov, ktorých vplyv je malý,
+Anomália tiažového zrýchlenia sa väčšinou udáva v~jednotkách~mGal.  Anomália 
+a~porucha tiažového zrýchlenia sú základné merateľné veličiny fyzikálnej 
+geodézie, z~ktorých sa určuje tvar Zeme.
+
+\subsection{Vzťah medzi anomáliou tiažového zrýchlenia a~poruchovým 
+potenciálom}
+
+Pokúsme sa teraz nájsť vzťah medzi anomáliou tiažového zrýchlenia a~poruchovým 
+potenciálom, podobne ako sme našli vzťah medzi poruchou tiažového zrýchlenia 
+a poruchovým potenciálom (rovnica~\ref{eq:dg_normals}).  Tentokrát situáciu 
+komplikuje rozdielna poloha bodov~$P$ a~$Q$ 
+v~rovnici~(\ref{eq:Dg_scalar_earth}) a~zakrivenie normálnej tiažnice.  Úlohu si 
+výrazne zjednodušíme linearizáciou problému a~využitím elipsoidickej 
+aproximácie z~Obrázku~\ref{fig:heights}.  Obe aproximácie sú postačujúce pre 
+praktické aplikácie \parencite{MoritzAdvancedGeodesy}.  Následne odvodíme vzťah 
+medzi oboma veličinami aj vo sférickej aproximácii.  Exaktné riešenie bolo 
+nájdené v~prácach~\textcite{Meissl1971b} a~\textcite{Borre_chapter8} 
+\parencite[pozri tiež napríklad][]{MoritzAdvancedGeodesy,Janak2006}.
+
+\subsubsection{Elipsoidická aproximácia}
+
+Hľadať budeme najprv vzťah medzi~$\Delta g(P_0)$ a~$T(P_0)$ v~bode~$P_0$ na 
+geoide.  Rozviňme~$\gamma$ do Taylorovho radu v~bode~$Q_0$ a~následne 
+zanedbajme členy druhého a vyšších rádov, ktorých vplyv je malý,
 %
 \begin{equation}
 \label{eq:gamma_P0}
@@ -5869,17 +5898,19 @@ v~kombinácii s~(\ref{eq:dg_normals}) vzťah
 \begin{equation}
 \label{eq:Dg_T_tmp}
 \begin{split}
-\Delta g(P_0) &= g(P_0) - \gamma(P_0) - \left.\frac{\partial \gamma}{\partial 
-h}\right|_{Q_0} \, N = \delta g(P_0) - \left.\frac{\partial \gamma}{\partial 
+\Delta g(P_0) &= g(P_0) - \gamma(P_0) + \left.\frac{\partial \gamma}{\partial 
+h}\right|_{Q_0} \, N = \delta g(P_0) + \left.\frac{\partial \gamma}{\partial 
 h}\right|_{Q_0} \, N\\
 %
-&=-\left.\frac{\partial T}{\partial h}\right|_{P_0} - \left.\frac{\partial 
+&=-\left.\frac{\partial T}{\partial h}\right|_{P_0} + \left.\frac{\partial 
 \gamma}{\partial h}\right|_{Q_0} \, N{.}
 \end{split}
 \end{equation}
 %
-Výšku geoidu nad referenčným elipsoidom~$N$ získame rozvojom normálneho 
-tiažového potenciálu do Taylorovho radu v~bode~$Q_0$,
+Rovnica~(\ref{eq:Dg_T_tmp}) popisuje, okrem iného, vzťah medzi poruchou 
+a anomáliou tiažového zrýchlenia.  Výšku geoidu nad referenčným elipsoidom~$N$ 
+ďalej získame rozvojom normálneho tiažového potenciálu do Taylorovho radu 
+v~bode~$Q_0$,
 %
 \begin{equation}
 \label{eq:U_P0}
@@ -5899,11 +5930,15 @@ N = \frac{T(P_0)}{\gamma(Q_0)}.
 %
 Vzťah~(\ref{eq:N}) sa nazýva \emph{Brunsov vzorec} a~umožňuje vypočítať 
 geometrický parameter, výšku geoidu nad referenčným elipsoidom~$N$, 
-z~fyzikálneho parametra, poruchového potenciálu~$T(P_0)$ na geoide.  Brunsov 
-vzorec je základom určovania geoidu.  Zanedbanie členov druhého a~vyšších rádov 
-v~rovnici~(\ref{eq:U_P0}) spôsobuje chyby v~určení~$N$ na úrovni niekoľko málo 
-milimetrov \parencite{Jekeli2015,Sjoberg2017}.  Táto hodnota je zhruba o~rád 
-menšia ako súčasná (približne centimetrová) presnosť určenia geoidu.
+z~fyzikálneho parametra, ktorým je poruchový potenciál~$T(P_0)$ na geoide.  
+Brunsov vzorec je základom určovania geoidu.  Dodajme, že zanedbanie členov 
+druhého a~vyšších rádov v~rovnici~(\ref{eq:U_P0}) spôsobuje chyby v~určení~$N$ 
+na úrovni niekoľko málo milimetrov \parencite{Jekeli2015,Sjoberg2017}, teda 
+zhruba o~rád menšie ako je súčasná (približne centimetrová) presnosť určenia 
+geoidu.  Je potrebné tiež zdôrazniť, že vzťah~(\ref{eq:N}) bol získaný za 
+predpokladu~$U_0 = W_0$.  Ak $U_0 \neq W_0$, túto nerovnosť je potrebné 
+zohľadniť v~procese odvodenia vzťahu pre~$N$ \parencite[pozri 
+napríklad][]{VanicekGeodesy}.
 
 Dosadením~(\ref{eq:N}) do~(\ref{eq:Dg_T_tmp}) získame hľadaný vzťah medzi 
 anomáliou tiažového zrýchlenia a~poruchovým potenciálom,
@@ -5911,7 +5946,7 @@ anomáliou tiažového zrýchlenia a~poruchovým potenciálom,
 \begin{equation}
 \label{eq:Dg_fundamental_equation_geoid}
 \Delta g(P_0) = -\left.\frac{\partial T}{\partial h}\right|_{P_0} 
-- \frac{1}{\gamma(Q_0)} \, \left.\frac{\partial \gamma}{\partial 
++ \frac{1}{\gamma(Q_0)} \, \left.\frac{\partial \gamma}{\partial 
 h}\right|_{Q_0} \, T(P_0){.}
 \end{equation}
 %
@@ -5924,7 +5959,7 @@ anomáliu tiažového zrýchlenia na povrchu Zeme,
 \begin{equation}
 \label{eq:Dg_fundamental_equation_earth}
 \Delta g(P) = -\left.\frac{\partial T}{\partial h}\right|_{P} 
-- \frac{1}{\gamma(Q)} \, \left.\frac{\partial \gamma}{\partial h}\right|_{Q} \, 
++ \frac{1}{\gamma(Q)} \, \left.\frac{\partial \gamma}{\partial h}\right|_{Q} \, 
 T(P){.}
 \end{equation}
 %
@@ -5936,39 +5971,120 @@ Na získanie vzťahu~(\ref{eq:Dg_fundamental_equation_earth}) sme využili
 \zeta = \frac{T(P)}{\gamma(Q)}{,}
 \end{equation}
 %
-ktorý je možné získať podobne ako Brunsov vzorec~(\ref{eq:N}).
+ktorý je možné získať podobne ako vzťah~(\ref{eq:N}).
 
-Platnosť rovnice~(\ref{eq:Dg_fundamental_equation_earth}) možno chápať v~širšom 
-zmysle nielen pre body na povrchu Zeme, ale aj pre body mimo Zeme.  V~takom 
-prípade symbol~$P$ označuje bod, v~ktorom je dané tiažové zrýchlenie~$g(P)$ 
+Anomáliu tiažového zrýchlenia možno definovať v~širšom zmysle nielen pre body 
+na povrchu Zeme alebo na geoide, ale aj pre body mimo Zeme.  Symbol~$P$ potom 
+označuje bod, v~ktorom je dané tiažové zrýchlenie~$g(P)$ 
 v~rovnici~(\ref{eq:Dg_scalar_earth}) a~bod~$Q$ je daný priesečníkom normálnej 
 tiažnice prechádzajúcej bodom~$P$ a~normálnej ekvipotenciálnej plochy 
 s~normálnym tiažovým potenciálom~$U(Q) = W(P)$ 
-\parencite{MoritzPhysicalGeodesy}.
+\parencite{MoritzPhysicalGeodesy}.  Odvodením získame aj v~tomto prípade 
+vzťah~(\ref{eq:Dg_fundamental_equation_earth}), ktorý využíva elipsoidickú 
+aproximáciu.  Teda body $P$ a~$Q$ ležia na normále k~ekvipotenciálnemu 
+elipsoidu, ktorá prechádza bodom~$P$, pričom pre polohu bodu~$Q$ platí $U(Q) 
+= W(P)$.
 
-*** Add spherical approximation ***
+\subsubsection{Sférická aproximácia}
 
-*** Add spherical harmonic expansion ***
+Aproximujme deriváciu v~smere elipsoidickej normály~$\partial \slash \partial 
+h$ v~rovnici~(\ref{eq:Dg_fundamental_equation_earth}) deriváciou v~smere 
+sprievodiča~$\partial \slash \partial r$,
+%
+\begin{equation}
+\Delta g(P) = -\left.\frac{\partial T}{\partial r}\right|_{P} 
++ \frac{1}{\gamma(Q)} \, \left.\frac{\partial \gamma}{\partial r}\right|_{Q} \, 
+T(P){.}
+\end{equation}
+%
+Keďže člen
+%
+\begin{equation}
+\label{eq:Dg_fundamental_equation_earth_term}
+\left.\frac{1}{\gamma(Q)} \, \frac{\partial \gamma}{\partial r}\right|_Q
+\end{equation}
+%
+nadobúda malé hodnoty, môžeme pre jednoduchosť uvažovať normálne tiažové 
+zrýchlenie~$\gamma$ generované nerotujúcou homogénnou guľou.  Zo~vzťahu pre 
+potenciál nerotujúcej homogénnej gule~(\ref{eq:vg_sh_0degree}) potom vyplýva
+%
+\begin{align}
+U &= \frac{GM}{r}{,}\\
+%
+\gamma &= -\frac{\partial U}{\partial r} = \frac{GM}{r^2}{,}\\
+%
+\frac{\partial \gamma}{\partial r} &= -2 \, \frac{GM}{r^3}{,}
+\end{align}
+%
+a tak môžeme prepísať~(\ref{eq:Dg_fundamental_equation_earth_term}) do tvaru
+%
+\begin{equation}
+\left.\frac{1}{\gamma(Q)} \, \frac{\partial \gamma}{\partial r}\right|_Q 
+\approx \left.\frac{r^2}{GM} \, \left( -2\frac{GM}{r^3} \right)\right|_Q 
+= -\left.\frac{2}{r}\right|_Q {.}
+\end{equation}
+%
+Sférická aproximácia anomálie tiažového zrýchlenia je potom daná vzťahom
+%
+\begin{equation}
+\label{eq:Dg_fundamental_equation_earth_sph}
+\Delta g(P) = -\left.\frac{\partial T}{\partial r}\right|_{P} 
+- \left.\frac{2}{r}\right|_{P} \, T(P){,}
+\end{equation}
+%
+pričom sme pre zjednodušenie využili približnú rovnosť
+%
+\begin{equation}
+\left.\frac{2}{r}\right|_Q \, T(P) \approx \left.\frac{2}{r}\right|_P \, 
+T(P){.}
+\end{equation}
 
-*** Mention that $r \, \Delta g$ is a harmonic function ***
-
-Anomália tiažového zrýchlenia sa väčšinou udáva v~jednotkách mGal.  Kvôli 
-podobnosti definície s~poruchou tiažového zrýchlenia nadobúdajú obe veličiny 
-podobné hodnoty (pre rozsah porúch tiažového zrýchlenia pozri 
-Kapitolu~\ref{sec:gravity_disturbance}).  Z~tohto dôvodu sme vynechali 
-vyobrazenie anomálií tiažového zrýchlenia.  Anomália a~porucha tiažového 
-zrýchlenia sú základné merateľné veličiny fyzikálnej geodézie, z~ktorých sa 
-určuje tvar Zeme.
+Sférická aproximácia anomálie a~poruchy tiažového zrýchlenia spôsobuje chybu 
+v~určení výšky geoidu nad referenčným elipsoidom~$N$ zhruba na úrovni $0.003 \, 
+N$ \parencite{MoritzPhysicalGeodesy}.  Pri dosahovaných hodnotách $N$ zhruba od 
+$-100$ do $100$~m tak ide o~chybu menšiu ako 1~m v~určení geoidu.  Pre presný 
+výpočet geoidu tak už v~súčasnosti nie je sférická aproximácia anomálie 
+a~poruchy tiažového zrýchlenia postačujúca.
 
 
-\vspace{2ex}
-\noindent \textbf{Tri poznámky}
+\subsection{Sférický harmonický rozvoj anomálie tiažového zrýchlenia}
 
-\noindent V~súvislosti s~odvodením Brunsovho vzorca a~základnej rovnice 
-fyzikálnej geodézie sa zdá byť vhodné opäť zdôrazniť dôležitosť voľby 
-normálneho poľa.  Ak by bolo normálne pole zvolené nevhodne, teda rozdiely 
-medzi skutočným a~normálnym poľom by s~ohľadom na súčasnú presnosť nemohli byť 
-považované za lineárne, nebolo by možné obmedziť rozvoje~(\ref{eq:gamma_P0}) 
+Presný rozvoj anomálie tiažového zrýchlenia do radu sférických harmonických 
+funkcií je kvôli zložitosti~jej definície náročný \parencite[pozri 
+napríklad][]{Barthelmes2013}.  Uvedieme preto iba rozvoj vo sférickej 
+aproximácii.  Dosadením~(\ref{eq:t_sh}) 
+do~(\ref{eq:Dg_fundamental_equation_earth_sph}) získame
+%
+\begin{equation}
+\label{eq:Dg_sh_sa}
+\Delta g(P) = \frac{GM}{R^2} \sum_{n = 0}^\infty (n - 1) \, \left( \frac{R}{r} 
+\right)^{n + 2} \sum_{k = -n}^{n} \bar{t}_{nk} \, \bar{Y}_{nk}(\varphi, 
+\lambda){.}
+\end{equation}
+%
+Vo sférickej aproximácii sa tak anomália tiažového 
+zrýchlenia~(\ref{eq:Dg_sh_sa}) odlišuje od poruchy tiažového 
+zrýchlenia~(\ref{eq:dg_sh_sa} a \ref{eq:dgz_sh}) iba v~člene $(n - 1)$, ktorý 
+nahradil člen~$(n + 1)$.  Všimnime si, že  koeficienty~$\bar{t}_{nk}$ stupňa~$n 
+= 1$ neovplyvňujú anomáliu tiažového zrýchlenia v~dôsledku nulového výrazu $(n 
+- 1)$.
+
+
+Kvôli podobnosti definície s~poruchou tiažového zrýchlenia nadobúdajú obe 
+veličiny podobné hodnoty ako tie, ktoré boli ukázané na 
+Obrázkoch~\ref{fig:dg_ggm_grs80} a~\ref{fig:dg_ggm_450km} v~súvislosti 
+s poruchou tiažového zrýchlenia.  Z~tohto dôvodu sme vyobrazenie anomálií 
+tiažového zrýchlenia vynechali.
+
+
+
+\subsection*{Tri poznámky}
+
+V~súvislosti s~odvodením Brunsovho vzorca a~základnej rovnice fyzikálnej 
+geodézie sa zdá byť vhodné opäť zdôrazniť dôležitosť voľby normálneho poľa.  Ak 
+by bolo normálne pole zvolené nevhodne, teda rozdiely medzi skutočným 
+a~normálnym poľom by s~ohľadom na súčasnú presnosť nemohli byť považované za 
+lineárne, nebolo by možné obmedziť rozvoje~(\ref{eq:gamma_P0}) 
 a~(\ref{eq:U_P0}) iba na prvé dva členy.  Pridanie už i~len kvadratického člena 
 výrazne komplikuje úlohu.
 
@@ -5988,16 +6104,18 @@ hľadaného riešenia, je potrebné zvyšovať presnosť a~rozlíšenie vstupný
 získavania meraných dát.  Redukcia anomálií tiažového zrýchlenia zo zemského 
 povrchu na geoid tak patrí medzi najnáročnejšie časti určovania geoidu.
 
-V~tretej poznámke uvedieme, že ortometrické výšky~$H_o$ a~normálne výšky~$H_n$ 
-nie sú v~skutočnosti merané po normále k~elipsoidu ako je uvedené na 
-Obrázku~\ref{fig:heights}.  Ortometrická výška je meraná po skutočnej tiažnici 
-(priestorová krivka) a~normálna výška je meraná po normálnej tiažnici (rovinná 
-krivka).  Hoci ide o~malé rozdiely, je potrebné mať na pamäti tento rozdiel.
+*** Mention that $r \, \Delta g$ is a harmonic function ***
 
 
 
 \subsection{Bouguerova anomália}
 \label{sec:bouguer_anomaly}
+
+
+
+
+\section{Zvislicové odchýlky}
+\label{sec:deflections}
 
 
 
@@ -6020,12 +6138,6 @@ krivka).  Hoci ide o~malé rozdiely, je potrebné mať na pamäti tento rozdiel.
 
 \subsection{Kvázigeoid}
 \label{sec:quasigeoid}
-
-
-
-
-\section{Zvislicové odchýlky}
-\label{sec:deflections}
 
 
 
