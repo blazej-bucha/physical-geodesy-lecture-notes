@@ -1847,9 +1847,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9999999"
-     inkscape:cx="130.48527"
-     inkscape:cy="182.10949"
+     inkscape:zoom="4"
+     inkscape:cx="222.37529"
+     inkscape:cy="220.31553"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -1886,11 +1886,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline;mix-blend-mode:normal">
-    <path
-       id="path1792"
-       style="fill:#000000;fill-opacity:0.1;stroke:none;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 35.748781,12.294335 c -1.893848,0.0048 -3.805851,0.462902 -5.410523,1.442807 -3.20934,1.959806 -5.188913,6.005552 -7.838797,9.249563 -2.649883,3.244012 -5.969645,5.686277 -9.233028,7.026445 -0.971947,0.399148 -2.521849,0.903883 -4.8332959,1.309997 -1.9577414,0.343971 -4.8870191,0.533379 -4.8870403,0.533302 -8.6e-5,-2.65e-4 0.029579,28.59306 0.1542402,35.506937 11.161039,-3.051257 24.270713,-4.478676 38.705403,-4.478858 14.874017,1.11e-4 29.605787,1.86935 40.911113,5.091255 0.33833,-6.183283 0.347226,-36.851187 0.199556,-36.840221 -2.002835,-0.04687 -4.005783,-0.09361 -7.850685,-1.896525 -3.844901,-1.802916 -9.531463,-5.362384 -14.53348,-6.917923 -5.002016,-1.555541 -9.318868,-1.10717 -12.322762,-2.488221 -1.671685,-0.768564 -2.93679,-2.103352 -4.258138,-3.42408 l -0.312642,-0.308508 -0.291971,-0.287838 c -0.871042,-0.84138 -1.794748,-1.640011 -2.895946,-2.239656 -1.532292,-0.834392 -3.408156,-1.283239 -5.302004,-1.278476 z"
-       sodipodi:nodetypes="ssssscccccssscccss" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Karumbi;-inkscape-font-specification:Karumbi;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

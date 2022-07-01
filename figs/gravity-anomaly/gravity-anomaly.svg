@@ -1592,10 +1592,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4"
-     inkscape:cx="219.74417"
-     inkscape:cy="279.98367"
+     inkscape:cx="101.36275"
+     inkscape:cy="250.8032"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -1616,7 +1616,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1625,11 +1625,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline;mix-blend-mode:normal">
-    <path
-       id="path1792"
-       style="fill:#000000;fill-opacity:0.1;stroke:none;stroke-width:0.727729;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 43.51193,23.949734 c -2.756421,0.007 -5.539267,0.673735 -7.874804,2.099949 -4.671068,2.85242 -7.552259,8.740845 -11.409061,13.462375 -3.8568,4.721532 -8.688584,8.276153 -13.438309,10.226715 -1.4146305,0.580944 -3.6704514,1.315566 -7.0346724,1.906649 -2.84941552,0.500636 -1.682847,0.007 -1.682878,0.0068 -1.25e-4,-3.86e-4 0.06929,40.56819 0.25073,50.631078 16.3932884,-3.728476 29.8688124,-4.701306 50.8779364,-4.70157 21.648547,1.61e-4 31.68901,1.821075 48.548258,4.11766 -0.5535,-8.980376 -0.28987,-55.898764 -0.84295,-56.162707 C 100.42502,45.307061 87.736802,40.807343 80.456563,38.543317 73.176325,36.279288 66.893316,36.931874 62.521267,34.921809 60.088195,33.803194 58.246884,31.860463 56.323714,29.938195 L 55.868676,29.489173 55.443724,29.070236 C 54.175956,27.845641 52.831539,26.683265 51.228788,25.810505 48.998598,24.59608 46.268351,23.942801 43.51193,23.949734 Z"
-       sodipodi:nodetypes="sssssccccssscccss" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Karumbi;-inkscape-font-specification:Karumbi;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

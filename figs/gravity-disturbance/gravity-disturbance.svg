@@ -1362,11 +1362,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="133.4714"
-     inkscape:cy="155.71188"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="229.56814"
+     inkscape:cy="187.9384"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -1386,7 +1386,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1395,11 +1395,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline;mix-blend-mode:normal">
-    <path
-       style="fill:#000000;fill-opacity:0.1;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 85.17382,41.035205 c 0.163324,-0.01213 -0.103855,15.111376 -0.467433,15.525801 -0.468816,0.534399 -11.215656,0.261833 -17.790712,0.323604 -6.695906,0.06291 -14.760093,-0.256457 -22.567896,-0.231313 -11.372231,0.03662 -21.594194,1.206058 -29.918513,0.62423 C 8.9187519,56.89237 5.769462,57.168963 5.5972381,56.733119 5.1690515,55.649516 5.2031202,41.755577 5.2032162,41.755932 c 2.12e-5,7.8e-5 2.9292635,-0.1891 4.8870048,-0.533071 2.311447,-0.406115 3.861222,-0.911053 4.83317,-1.310201 3.263383,-1.340169 6.583398,-3.782212 9.233281,-7.026224 2.649883,-3.244012 4.629417,-7.289748 7.838758,-9.249555 3.20934,-1.959808 7.64777,-1.833351 10.71235,-0.164569 1.1012,0.599645 2.024974,1.398368 2.896016,2.239748 l 0.291982,0.287756 0.312981,0.308452 c 1.321346,1.320728 2.586263,2.655903 4.25795,3.424468 3.003892,1.381051 7.32079,0.932734 12.322808,2.488274 5.002017,1.55554 10.688603,5.114609 14.533504,6.917525 3.844901,1.802917 5.847964,1.849796 7.850799,1.89667"
-       id="path1792"
-       sodipodi:nodetypes="csssssssccccccccccc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Karumbi;-inkscape-font-specification:Karumbi;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
