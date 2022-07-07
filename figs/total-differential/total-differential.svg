@@ -9,8 +9,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="110mm"
-   height="60mm"
-   viewBox="0 0 110 60"
+   height="75mm"
+   viewBox="0 0 110 75"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
@@ -1667,9 +1667,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9999999"
-     inkscape:cx="141.34529"
-     inkscape:cy="122.08752"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="230.6032"
+     inkscape:cy="165.71313"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
@@ -1691,7 +1691,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1746,11 +1746,11 @@
        sodipodi:nodetypes="cssccsssc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 55.31041,2.0112113 c -1.627532,3.6075414 -3.085814,6.8399276 -4.652742,10.8912087 -1.566928,4.051282 -2.583631,7.183898 -3.487337,10.106422 -0.903706,2.922525 -1.374657,4.620101 -1.915845,6.823261 -0.541187,2.203161 -1.124318,4.80987 -1.587975,7.09955 -0.463657,2.28968 -0.807803,4.262092 -1.104481,5.987442 -0.296678,1.72535 -0.545853,3.20343 -0.804902,4.864859 -0.259049,1.66143 -0.527944,3.506002 -0.742596,5.08813 -0.214652,1.582127 -0.375041,2.901637 -0.535406,4.220945"
+       d="m 55.31041,2.0112113 c -1.627532,3.6075414 -3.085814,6.8399276 -4.652742,10.8912087 -1.566928,4.051282 -2.583631,7.183898 -3.487337,10.106422 -0.903706,2.922525 -1.374657,4.620101 -1.915845,6.823261 -0.541187,2.203161 -1.124318,4.80987 -1.587975,7.09955 -0.463657,2.28968 -0.807803,4.262092 -1.104481,5.987442 -0.296678,1.72535 -0.545853,3.20343 -0.804902,4.864859 -0.259049,1.66143 -0.527975,3.506209 -0.800951,5.37939 -0.272976,1.873182 -0.550071,3.775237 -0.796686,5.85285 -0.246615,2.077613 -0.462682,4.330056 -0.678767,6.582686"
        id="path1666"
        inkscape:path-effect="#path-effect1668"
-       inkscape:original-d="m 55.31041,2.0112113 c -1.627213,3.6076854 -3.085495,6.8400716 -4.882434,10.8222637 -1.336919,4.12033 -2.353622,7.252946 -3.633776,11.196213 -0.527261,1.901766 -0.998212,3.599342 -1.497715,5.398617 -0.582878,2.607028 -1.166009,5.213737 -1.749427,7.820287 -0.343902,1.972794 -0.688049,3.945206 -1.03248,5.917471 -0.248925,1.478433 -0.4981,2.956513 -0.747555,4.434417 -0.268647,1.844947 -0.537542,3.689519 -0.806719,5.533939 -0.160131,1.319828 -0.320521,2.639338 -0.481178,3.95861"
-       sodipodi:nodetypes="ccccccccc" />
+       inkscape:original-d="m 55.31041,2.0112113 c -1.627213,3.6076854 -3.085495,6.8400716 -4.882434,10.8222637 -1.336919,4.12033 -2.353622,7.252946 -3.633776,11.196213 -0.527261,1.901766 -0.998212,3.599342 -1.497715,5.398617 -0.582878,2.607028 -1.166009,5.213737 -1.749427,7.820287 -0.343902,1.972794 -0.688049,3.945206 -1.03248,5.917471 -0.248925,1.478433 -0.4981,2.956513 -0.747555,4.434417 -0.268647,1.844947 -0.537573,3.689726 -0.806719,5.533939 -0.276806,1.90215 -0.553901,3.804205 -0.831288,5.706179 -0.215853,2.253237 -0.43192,4.50568 -0.648292,6.758282"
+       sodipodi:nodetypes="cccccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.465;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2288)"
        d="m 45.296485,29.428305 c 0,0 -8.598711,-2.108602 -8.598711,-2.108602"
@@ -1828,6 +1828,28 @@
        cx="45.296486"
        cy="29.428307"
        r="0.3304936" />
+    <path
+       style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 4.6148544,58.944376 c 3.16196,-0.445298 6.3844856,-0.841052 11.8337606,-2.08756 9.521052,-1.783925 24.844572,0.556248 28.277602,1.432985 l 0.811323,0.18662 c 0.447449,0.0873 3.225306,1.011639 6.819996,1.460448 3.632129,0.45348 8.753249,1.306066 10.828689,1.581336 4.228978,0.560898 7.70538,1.19572 9.901709,1.562781 4.538692,0.758529 8.945696,1.0541 10.710946,1.193069"
+       id="path1444-4-4-9-1"
+       sodipodi:nodetypes="ccccsssc" />
+    <path
+       style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 4.9766642,63.481875 c 3.16196,-0.445298 6.3844858,-0.841052 11.8337608,-2.08756 9.521052,-1.783925 24.844572,0.556248 28.277602,1.432985 l 0.811323,0.18662 c 0.447449,0.0873 3.225306,1.011639 6.819996,1.460448 3.632129,0.45348 8.753249,1.306066 10.828689,1.581336 4.228978,0.560898 7.705383,1.19572 9.901713,1.562781 4.53869,0.758529 8.94569,1.0541 10.71094,1.193069"
+       id="path1444-4-4-9-1-3"
+       sodipodi:nodetypes="ccccsssc" />
+    <circle
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.45;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-4-6"
+       cx="53.488705"
+       cy="6.0822148"
+       r="0.3304936" />
+    <circle
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.45;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-4-6-8"
+       cx="40.352215"
+       cy="57.468693"
+       r="0.3304936" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1863,24 +1885,24 @@
          id="tspan1508-6">$P$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:2.82222px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
+       style="font-size:1.05833px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
        x="84.667351"
        y="42.483849"
        id="text3665-0-8-3"><tspan
          sodipodi:role="line"
          x="84.667351"
          y="42.483849"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
-         id="tspan1508-8-3">Povrch Zeme</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.05833px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
+         id="tspan1508-8-3">Povrch Zeme ($W \neq \textrm{kon\v{s}t.}$)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
-       x="28.572878"
-       y="55.480499"
+       x="31.008219"
+       y="50.037418"
        id="text3665-0-1-5"><tspan
          sodipodi:role="line"
-         x="28.572878"
-         y="55.480499"
+         x="31.008219"
+         y="50.037418"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
          id="tspan1508-6-4">$\mathbf{g}(P)$</tspan></text>
     <text
@@ -1964,11 +1986,11 @@
        xml:space="preserve"
        style="font-size:1.76389px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
        x="84.789833"
-       y="26.04903"
+       y="26.218586"
        id="text3665-0-8-5"><tspan
          sodipodi:role="line"
          x="84.789833"
-         y="26.04903"
+         y="26.218586"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76389px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
          id="tspan1508-8-32">$W(P) - \delta W$</tspan></text>
     <text
@@ -1993,5 +2015,60 @@
          y="29.637651"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
          id="tspan1508-6-4-9-8-6">$\mathrm{d}\mathbf{x}_4$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
+       x="52.501564"
+       y="10.766514"
+       id="text3665-0-1-9"><tspan
+         sodipodi:role="line"
+         x="52.501564"
+         y="10.766514"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
+         id="tspan1508-6-9">$B$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
+       x="40.199421"
+       y="61.386921"
+       id="text3665-0-1-9-0"><tspan
+         sodipodi:role="line"
+         x="40.199421"
+         y="61.386921"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
+         id="tspan1508-6-9-8">$A$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.41111px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
+       x="84.780106"
+       y="70.156319"
+       id="text3665-0-8-3-0"><tspan
+         sodipodi:role="line"
+         x="84.780106"
+         y="70.156319"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.41111px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
+         id="tspan1508-8-3-9">Geoid ($W_0 = \textrm{kon\v{s}t.}$)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.76389px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
+       x="85.58091"
+       y="16.201406"
+       id="text3665-0-8-5-1-8"><tspan
+         sodipodi:role="line"
+         x="85.58091"
+         y="16.201406"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76389px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
+         id="tspan1508-8-32-9-8">$W(B)$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:1.76389px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
+       x="84.562637"
+       y="65.33242"
+       id="text3665-0-8-5-1-8-8"><tspan
+         sodipodi:role="line"
+         x="84.562637"
+         y="65.33242"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76389px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
+         id="tspan1508-8-32-9-8-7">$W(A)$</tspan></text>
   </g>
 </svg>

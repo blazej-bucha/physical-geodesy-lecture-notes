@@ -27,9 +27,8 @@ ax.grid(visible=True)
 ax.set_xlabel("$t$")
 labels = [""] * (nmax + 1)
 for n in range(nmax + 1):
-    labels[n] = "$P_%d$" % n
+    labels[n] = "$P_{%d}$" % n
 ax.legend(labels, loc="center", bbox_to_anchor=(0.5, -0.35), ncol=nmax + 1)
 fig.subplots_adjust(bottom=0.3, top=0.98)
 plt.show()
-
-fig.savefig("../figs/fig-legendre-polynomials.pdf")
+fig.savefig("./fig-legendre-polynomials.pdf")

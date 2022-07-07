@@ -6,7 +6,7 @@ from scipy.special import lpmv
 
 # Sférický harmonický stupeň "n" a rád "k"
 n = 3
-k = 0
+k = 1
 
 # "False" pre zobrazenie na jednotkovej sfére, "True" pre zobrazenie pomocou
 # odhľahlostí od jednotkovej sféry
@@ -50,7 +50,7 @@ plt.tight_layout(pad=-2.0)
 plt.show()
 
 # Nazov výstupného súboru
-fileout = "../latex/fig-spherical-harmonic-n%d-k%d" % (n, k)
+fileout = "./fig-spherical-harmonic-n%d-k%d" % (n, k)
 if zobrazenie_3d:
     fileout += "-3d.pdf"
 else:

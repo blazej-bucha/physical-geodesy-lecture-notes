@@ -23,6 +23,7 @@
 \usepackage[main=slovak]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{upgreek}
@@ -183,6 +184,7 @@
 
 \newcommand{\diff}{\mathrm d}
 \newcommand{\grad}{\mathrm{grad}}
+\newcommand{\divergence}{\mathrm{div}}
 \newcommand{\gidx}{\mathrm g}
 \newcommand{\cidx}{\mathrm c}
 \let\vec\mathbf
@@ -469,7 +471,7 @@ gravitačných zrýchlení, ktoré sú udeľované jednotlivými hmotnými bodmi
 \centering
 \input{./fig-gg-n-point-masses.pdf_tex}
 \caption{Vektory gravitačného zrýchlenia v~bode~$P$ generované sústavou piatich
-hmotných bodov}
+hmotných bodov~$Q_1$~až~$Q_5$}
 \label{fig:gg_n_point_masses}
 \end{figure}
 
@@ -622,7 +624,7 @@ k~samotnej definícii gravitačného potenciálu.
 \subsubsection{Operátor gradient v~karteziánskom súradnicovom systéme}
 
 Operátor gradient je v~trojrozmernom karteziánskom súradnicovom systéme~$x$, 
-$y$, $z$ definovaný nasledovne,
+$y$, $z$ definovaný vzťahom
 %
 \begin{equation}
 \label{eq:gradient}
@@ -674,44 +676,39 @@ pričom
 \| \vec e_i \| = 1{,} \quad i = 1, 2,3{.}
 \end{equation}
 
-Po aplikovaní operátora gradient na \emph{skalárnu} funkciu~$f(x, y, z)$ 
-získame \emph{vektorovú} funkciu,
+Po aplikovaní operátora gradient na \emph{skalárnu} diferencovateľnú 
+funkciu~$f$ získame \emph{vektorovú} funkciu,
 %
 \begin{equation}
-\begin{split}
-\vec f(x, y, z) &= \nabla f(x, y, z) = \grad \ f(x, y, z)\\
-%
-&= \vec e_1 \frac{\partial f(x, y, z)}{\partial x} + \vec e_2 \frac{\partial
-f(x, y, z)}{\partial y} + \vec e_3 \frac{\partial f(x, y, z)}{\partial z} =
+\nabla f = \grad \ f = \vec e_1 \frac{\partial f}{\partial x} + \vec e_2 
+\frac{\partial
+f}{\partial y} + \vec e_3 \frac{\partial f}{\partial z} =
 \begin{bmatrix}
-\dfrac{\partial f(x, y, z)}{\partial x} \\[2ex]
-\dfrac{\partial f(x, y, z)}{\partial y} \\[2ex]
-\dfrac{\partial f(x, y, z)}{\partial z}
+\dfrac{\partial f}{\partial x} \\[2ex]
+\dfrac{\partial f}{\partial y} \\[2ex]
+\dfrac{\partial f}{\partial z}
 \end{bmatrix}
 {.}
-\end{split}
 \end{equation}
 %
-Vektorová funkcia~$\vec f(x, y, z)$ \emph{udáva smer a~veľkosť najväčšieho
-nárastu} funkcie~$f(x, y, z)$ v~bode so súradnicami~$x$, $y$ a~$z$.  Jej zložky 
+Vektorová funkcia~$\nabla f(x, y, z)$ \emph{udáva smer a~veľkosť najväčšieho
+nárastu} funkcie~$f$ v~bode so súradnicami~$x$, $y$ a~$z$.  Jej zložky 
 $\partial f \slash \partial x$, $\partial f \slash \partial y$ a~$\partial 
-f \slash \partial z$ popisujú zmenu skalárnej funkcie~$f(x, y, z)$ v~bode so 
+f \slash \partial z$ popisujú zmenu skalárnej funkcie~$f$ v~bode so 
 súradnicami~$x$, $y$, $z$ v~smere jednotkových vektorov~$\vec e_1$, $\vec e_2$ 
-a~$\vec e_3$.  Operátor gradient  je \emph{lineárny}, teda pre diferencovateľné 
-funkcie~$f$ a~$g$ a~konštantu~$c$ platí
+a~$\vec e_3$.
+
+Operátor gradient je \emph{lineárny}, teda pre diferencovateľné funkcie~$f$ 
+a~$g$ a~konštantu~$c$ platí
 %
-\begin{equation}
+\begin{align}
 \label{eq:gradient_additivity}
-\nabla \left(f + g \right) = \nabla f + \nabla g
-\end{equation}
+\nabla \left(f + g \right) &= \nabla f + \nabla g{,}\\
 %
-a
-%
-\begin{equation}
 \label{eq:gradient_homogenity}
-\nabla (c \, f) = c \, \nabla f{.}
-\end{equation}
-%
+\nabla (c \, f) &= c \, \nabla f{.}
+\end{align}
+
 Numerická ukážka aplikácie operátora gradient je uvedená 
 v~Prílohe~\ref{app:numerical_application_of_gradient}.
 
@@ -757,11 +754,13 @@ V_\gidx(P) = \frac{G \, m}{l}{.}
 %
 Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg})
 a~(\ref{eq:vg_at_infty}).  Aplikujme operátor gradient~(\ref{eq:gradient})
-na gravitačný potenciál~(\ref{eq:vg_point_mass}) s~využitím~(\ref{eq:l}),
+na gravitačný potenciál~(\ref{eq:vg_point_mass}).  S~využitím 
+rovnice~(\ref{eq:l}) dostaneme vzťah
 %
 \begin{equation}
 \label{eq:gg_from_vg_point_mass}
-\nabla V_\gidx(P) = G \, m \, \nabla \left( \frac{1}{l} \right) =
+\nabla V_\gidx(P) = \nabla \left( \frac{G \, m}{l} \right) = G \, m \, \nabla 
+\left( \frac{1}{l} \right) =
 %
 G \, m
 \begin{bmatrix}
@@ -782,6 +781,9 @@ G \, m
 {.}
 \end{equation}
 %
+V~rovnici~(\ref{eq:gg_from_vg_point_mass}) sme využili 
+vlastnosť~(\ref{eq:gradient_homogenity}) operátora gradient, pretože $G \, 
+m = c$ v~rovnici~(\ref{eq:vg_point_mass}) je konštanta.  
 Vzťah~(\ref{eq:gg_from_vg_point_mass}) predstavuje gravitačné zrýchlenie~$\vec 
 g_\gidx(P)$ z~rovnice~(\ref{eq:gg_point_mass}), čím bola dokázaná 
 rovnosť~(\ref{eq:gg_grad_vg}).  Platnosť vzťahu~(\ref{eq:vg_at_infty}) pre 
@@ -865,16 +867,17 @@ od ľubovoľného ale fixného bodu, sa nazýva \emph{regulárna funkcia v~nekon
 \parencite{Kellogg1967,Pick1973}.  Gravitačný potenciál~(\ref{eq:vg_body}) 
 všeobecného telesa je regulárna funkcia v~nekonečne, pretože všetky štyri 
 súčiny~(\ref{eq:regular_function}) nadobúdajú konečné hodnoty pre~$l 
-\rightarrow \infty$.  V~tejto práci uvedieme iba limitu prvého súčinu,
+\rightarrow \infty$.  V~tejto práci dokážeme toto tvrdenie iba pre limitu 
+prvého súčinu,
 %
 \begin{equation}
 \label{eq:vg_regular}
-\lim_{l \rightarrow \infty} l \, V_\gidx = G \iiint_{\tau} \rho \, \diff\tau 
-= GM{,}
+\lim_{l \rightarrow \infty} l \, V_\gidx = G \iiint\limits_{\tau} \rho \, 
+\diff\tau = GM{,}
 \end{equation}
 %
 kde~$M$ je hmotnosť všeobecného telesa.  Pre limity zvyšných troch súčinov 
-pozri napríklad prácu~\textcite{Pick1973}.
+pozri napríklad~\textcite{Pick1973}.
 
 
 
@@ -945,32 +948,41 @@ Operátor~$\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor}
 a rovnica~(\ref{eq:vg_laplace_cart}) sa nazýva \emph{Laplaceova rovnica} pre
 gravitačný potenciál.
 
-Laplaceov operátor je definovaný ako skalárny súčin operátorov gradient,
+Laplaceov operátor definujeme pomocou operátora gradient nasledovne
+\parencite{SansoGeoidDetermination}
 %
 \begin{equation}
-\label{eq:laplace}
+\label{eq:laplace_grad_grad_notation}
 \nabla^2 = \nabla \cdot \nabla{,}
 \end{equation}
 %
-kde symbol~$\cdot$ označuje skalárny súčin.  Dosadením 
-rovnice~(\ref{eq:gradient}) do~(\ref{eq:laplace}) vyjadríme Laplaceov operátor 
-v~trojrozmernom karteziánskom súradnicovom systéme~$x$, $y$, $z$,
+kde symbol $\cdot$ označuje \emph{skalárny súčin dvoch vektorov}.  
+Operátor~$\nabla^2$ v~trojrozmernom karteziánskom súradnicovom systéme získame 
+pomocou vzťahov~(\ref{eq:laplace_grad_grad_notation}) a~(\ref{eq:gradient}),
 %
 \begin{equation}
 \label{eq:laplace_xyz}
 \begin{split}
-\nabla^2 &= \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
-\frac{\partial}{\partial y} + \vec e_3 \, \frac{\partial}{\partial 3} \right) 
-\cdot \left( \vec e_1 \, \frac{\partial}{\partial x} + \vec e_2 \, 
-\frac{\partial}{\partial y} + \vec e_3 \, \frac{\partial}{\partial z} \right)\\
+\nabla^2 &= \nabla \cdot \nabla = \left( \vec e_1 \, \frac{\partial}{\partial 
+x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec e_3 \, 
+\frac{\partial}{\partial z} \right) \cdot \left( \vec e_1 \, 
+\frac{\partial}{\partial x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec 
+e_3 \, \frac{\partial}{\partial z} \right)\\
 %
-&= \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} 
-+ \frac{\partial^2}{\partial z^2}{.}
+&=\vec e_1 \cdot \frac{\partial \vec e_1}{\partial x} \, 
+\frac{\partial}{\partial x} + \vec e_1 \cdot \vec e_1 
+\frac{\partial^2}{\partial x^2} + \vec e_1 \cdot \frac{\partial \vec 
+e_2}{\partial x} \, \frac{\partial}{\partial y} + \vec e_1 \cdot \vec e_2 
+\frac{\partial^2}{\partial x \, \partial y} + \dots + \vec e_3 \cdot \vec e_3 
+\frac{\partial^2}{\partial z^2}\\
+%
+&=\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} 
++ \frac{\partial^2 f}{\partial z^2}{.}
 \end{split}
 \end{equation}
 %
-Na získanie poslednej rovnosti~vo vzťahu~(\ref{eq:laplace_xyz}) sme využili 
-vlastnosti jednotkových vektorov a~skalárneho súčinu dvoch vektorov,
+V~rovnici~(\ref{eq:laplace_xyz}) sme využili nasledovné vlastnosti 
+jednotkových vektorov a~skalárneho súčinu dvoch vektorov,
 %
 \begin{align}
 \label{eq:ei_orthogonality}
@@ -978,33 +990,57 @@ vlastnosti jednotkových vektorov a~skalárneho súčinu dvoch vektorov,
 = 0{,} \quad i \neq j{,}\\
 %
 \label{eq:ei_unit_length}
-\vec e_i \cdot \vec e_i &= \| \vec e_i \| \, \| \vec e_j \| \, \cos(0^\circ) 
-= 1{.}
+\vec e_i \cdot \vec e_i &= \| \vec e_i \| \, \| \vec e_i \| \, \cos(0^\circ) 
+= 1{,}\\
+%
+\label{eq:ei_derivatives}
+\frac{\partial \vec e_i}{\partial x} &= \frac{\partial \vec e_i}{\partial y} 
+= \frac{\partial \vec e_i}{\partial z} = \vec 0{.}
 \end{align}
 %
 Rovnica~(\ref{eq:ei_orthogonality}) vyplýva zo skutočnosti, že dva rôzne 
 jednotkové vektory sú \emph{ortogonálne}.  Rovnica~(\ref{eq:ei_unit_length}) je 
-dôsledkom vzťahu~(\ref{eq:unit_vectors_unit_length}).
+dôsledkom vzťahu~(\ref{eq:unit_vectors_unit_length}).  
+Vzťahy~(\ref{eq:ei_derivatives}) vyplývajú z~definície jednotkových 
+vektorov~(\ref{eq:unit_vectors}).
 
-Laplaceov operátor je \emph{lineárny}, teda pre funkcie
-$f$ a~$g$ vyhovujúce rovnici~(\ref{eq:vg_laplace_cart}) a~konštantu~$c$ platí
+Laplaceov operátor je \emph{lineárny}, teda pre dvakrát diferencovateľné 
+funkcie $f$ a~$g$ a~konštantu~$c$ platí
 %
-\begin{equation}
+\begin{align}
 \label{eq:laplace_additivity}
-\nabla^2 \left(f + g \right) = \nabla^2 f + \nabla^2 g
-\end{equation}
+\nabla^2 \left(f + g \right) &= \nabla^2 f + \nabla^2 g{,}\\
 %
-a
-%
-\begin{equation}
 \label{eq:laplace_homogenity}
-\nabla^2 (c \, f) = c \, \nabla^2 f{.}
-\end{equation}
+\nabla^2 (c \, f) &= c \, \nabla^2 f{.}
+\end{align}
+
+Je dôležité upozorniť, že zápis $\nabla^2 = \nabla \cdot \nabla$ kombinovaný 
+s~posledným výrazom rovnice~(\ref{eq:gradient}) môže poľahky viesť 
+k~nesprávnemu vyjadreniu Laplaceovho operátora.  V~tomto nesprávnom prístupe sú 
+vynásobené zodpovedajúce si prvky operátora gradient (pozri posledný výraz 
+v~rovnici~\ref{eq:gradient}) a~následne sú získané súčiny sčítané (v~súlade 
+s~definíciou skalárneho súčinu dvoch vektorov).  Hoci 
+v~prípade~(\ref{eq:gradient}) získame správny tvar Laplaceovho operátora aj 
+takýmto spôsobom, neskôr v~Prílohe~\ref{app:laplace_in_spherical_system} sa 
+presvedčíme, že tento postup nie je vo všeobecnosti správny.  Dôvod je ten, že 
+jednotkové vektory súradnicového systému môžu závisieť od premenných, podľa 
+ktorých sa derivuje.  V~poslednom výraze rovnice~(\ref{eq:gradient}) však táto 
+závislosť nie je explicitne uvedená.  Tejto chybe sa vyhneme, ak vyjadríme 
+operátor gradient pomocou jednotkových vektorov (pozri predposledný výraz 
+v~rovnici~\ref{eq:gradient}) a~tento tvar následne dosadíme 
+do~(\ref{eq:laplace_grad_grad_notation}) (pozri rovnicu~\ref{eq:laplace_xyz}).  
+Posledný výraz rovnice~(\ref{eq:gradient}) je preto potrebné vnímať 
+predovšetkým formálne, pričom je vždy nutné mať na pamäti súradnicový systém, 
+v~ktorom je operátor gradient vyjadrený.  V~mnohých situáciách je ale táto 
+forma názorná a~zjednodušuje zápis, preto na miestach, kde by nemalo dôjsť 
+k~nesprávnej interpretácii ju budeme používať.
 
 Skúsme overiť, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}) 
-vyhovuje Laplaceovej rovnici.  Budeme uvažovať vzdialenosť~$l > 0$ nakoľko 
-gravitačný potenciál hmotného bodu nie je definovaný pre~$l = 0$.  
-S~uvážením~(\ref{eq:laplace_homogenity}) postačuje dokázať rovnosť
+vyhovuje Laplaceovej rovnici~(\ref{eq:vg_laplace_cart}).  Budeme uvažovať 
+vzdialenosť~$l > 0$ nakoľko gravitačný potenciál hmotného bodu nie je 
+definovaný pre~$l = 0$.  S~uvážením~(\ref{eq:laplace_homogenity}) postačuje 
+dokázať rovnosť
 %
 \begin{equation}
 \label{eq:nabla_l}
@@ -1060,7 +1096,7 @@ z^2}\left(\frac{1}{l}\right) \right] \diff\tau = 0{.}
 \label{sec:laplace_equation_sph}
 
 V~skutočnosti to bolo tak, že Laplace po prvýkrát publikoval 
-rovnicu~(\ref{eq:vg_laplace_cart}) vo sférických súradniciach 
+rovnicu~(\ref{eq:vg_laplace_cart}) v~krivočiarych sférických súradniciach 
 \parencite{MacMillan1930}.  Tieto súradnice budeme označovať~$r$, $\varphi$ 
 a $\lambda$, pričom~$r$ predstavuje sprievodič, $\varphi$ je sférická šírka 
 a~$\lambda$ je sférická dĺžka (Obrázok~\ref{fig:cart_sph}).  Medzi sférickými~a 
@@ -1376,9 +1412,9 @@ Zeme sférického tvaru a~konštantnej hustoty}
 Výsledné zrýchlenie pôsobiace na hmotný bod s~hmotnosťou~$1 \ \mathrm{kg}$ je
 v~neinerciálnom systéme dané súčtom gravitačného zrýchlenia~$\vec g_\gidx(P)$
 a~odstredivého zrýchlenia~$\vec g_\cidx(P)$.\footnote{Ostatné zrýchlenia (pozri
-Kapitolu~\ref{sec:centrifugal_gravity_field}) sme s~rozumnou
-mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva \emph{tiažové
-zrýchlenie} a budeme ho označovať symbolom~$\vec g(P)$
+Kapitolu~\ref{sec:centrifugal_gravity_field}) sme pre účely tejto práce 
+s~rozumnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva 
+\emph{tiažové zrýchlenie} a budeme ho označovať symbolom~$\vec g(P)$ 
 (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
@@ -1467,8 +1503,8 @@ sa na niektoré ich vlastnosti.
 \begin{figure}
 \centering
 \input{./fig-equipotential-surfaces.pdf_tex}
-\caption{Ekvipotenciálne plochy s~konštantným krokom tiažového potenciálu
-$\delta W$}
+\caption{Ekvipotenciálne plochy s~konštantným krokom tiažového 
+potenciálu~$\delta W$}
 \label{fig:equipotential_surfaces}
 \end{figure}
 
@@ -1555,19 +1591,7 @@ potenciálu dokážeme určiť nepriamo.  Pred popísaním metódy určovania ro
 tiažového potenciálu je ale potrebné pristaviť sa pri pojme totálny 
 diferenciál.
 
-Ak sa poloha bodu~$\vec x$,
-%
-\begin{equation}
-\vec x =
-\begin{bmatrix}
-x\\
-y\\
-z
-\end{bmatrix}
-{,}
-\end{equation}
-%
-zmení o~vektor~$\Delta \vec x$,
+Ak sa poloha bodu~$P$ zmení o~vektor~$\Delta \vec x$,
 %
 \begin{equation}
 \label{eq:deltax}
@@ -1580,16 +1604,21 @@ zmení o~vektor~$\Delta \vec x$,
 {,}
 \end{equation}
 %
-potom tiažový potenciál~$W(\vec x)$ sa zmení o~hodnotu~$\delta W(\vec x, \Delta 
-\vec x)$.  \emph{Totálny diferenciál} aproximuje skutočnú zmenu tiažového 
-potenciálu~$\delta W(\vec x, \Delta \vec x)$ vzťahom
+potom tiažový potenciál~$W(P)$ sa zmení o~hodnotu~$\delta W(P, \Delta \vec x)$.  
+\emph{Totálny diferenciál}~$\diff W(P, \diff \vec x)$ aproximuje skutočnú zmenu 
+tiažového potenciálu~$\delta W(P, \Delta \vec x)$ vzťahom
 %
 \begin{equation}
 \label{eq:w_totdiff_scalar}
-\diff W = \frac{\partial W}{\partial x} \, \diff x + \, \frac{\partial 
-W}{\partial y} \, \diff y + \frac{\partial W}{\partial z} \, \diff z = \nabla 
-W \cdot \diff \vec x = \vec g \cdot \diff \vec x = \| \vec g \| \, \| \diff 
-\vec x \| \, \cos\alpha{,}
+\begin{split}
+\delta W(P, \Delta \vec x) \approx \diff W(P, \diff \vec x) &= 
+\left.\frac{\partial W}{\partial x}\right|_P \, \diff x + \, 
+\left.\frac{\partial W}{\partial y}\right|_P \, \diff y + \left.\frac{\partial 
+W}{\partial z}\right|_P \, \diff z\\
+%
+&= \nabla W(P) \cdot \diff \vec x = \vec g(P) \cdot \diff \vec x = \| \vec g(P) 
+\| \, \| \diff \vec x \| \, \cos\alpha{,}
+\end{split}
 \end{equation}
 %
 kde
@@ -1604,31 +1633,33 @@ kde
 \end{bmatrix}
 \end{equation}
 %
-a~$\alpha$ je uhol medzi vektormi~$\vec g$ a~$\diff \vec x$.  Skracovaním 
+a~$\alpha$ je uhol medzi vektormi~$\vec g(P)$ a~$\diff \vec x$.  Skracovaním 
 vzdialenosti~$\diff \vec x$ v~rovnici~(\ref{eq:w_totdiff_scalar}) je možné 
-zmenšiť aproximačnú chybu totálneho diferenciálu~$\diff W(\vec x, \diff \vec 
-x)$ voči skutočnej zmene tiažového potenciálu~$\delta W(\vec x, \Delta \vec x)$ 
-na ľubovoľne malú hodnotu.
+zmenšiť aproximačnú chybu totálneho diferenciálu~$\diff W(P, \diff \vec x)$ 
+voči skutočnej zmene tiažového potenciálu~$\delta W(P, \Delta \vec x)$ na 
+ľubovoľne malú hodnotu.  Vo všeobecnosti môžeme povedať, že totálny diferenciál 
+(diferencovateľnej) funkcie~$f$ v~bode~$P$ je najlepšia lineárna aproximácia 
+funkcie~$f$ v~okolí bodu~$P$.
 
-K~najväčšej zmene tiažového potenciálu dochádza vtedy, keď vektory~$\vec g$ 
-a~$\diff \vec x$ majú rovnaký smer, to znamená keď vektor~$\diff \vec x$ je 
-kolmý ekvipotenciálnu plochu (prípad~$\diff \vec x_1$ na 
-Obrázku~\ref{fig:total_differential}).  V~takom prípade~$\alpha = 0$, preto 
-$\diff W = \| \vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| \, \| 
-\diff \vec x \|$.  Ak k~diferenciálnej zmene polohy~$\diff \vec x$ dochádza 
-pozdĺž ekvipotenciálnej plochy, potom totálny diferenciál~$\diff W$ je nulový 
-($\diff \vec x_2$ a~$\diff \vec x_4$).  Toto tvrdenie môžeme vysvetliť tým, že 
+Ak k~diferenciálnej zmene polohy~$\diff \vec x$ dochádza pozdĺž 
+ekvipotenciálnej plochy, potom totálny diferenciál~$\diff W$ je nulový ($\diff 
+\vec x_2$ a~$\diff \vec x_4$).  Toto tvrdenie môžeme vysvetliť tým, že 
 vektor~$\vec g$ je kolmý na ekvipotenciálnu plochu (a~tým aj na vektor~$\diff 
 \vec x$), preto $\diff W = \| \vec g \| \, \| \diff \vec x \| \, 
-\cos(90^{\circ}) = 0$.
+\cos(90^{\circ}) = 0$.  Naopak, k~najväčšej zmene tiažového potenciálu dochádza 
+vtedy, keď vektory~$\vec g$ a~$\diff \vec x$ majú rovnaký smer, to znamená keď 
+vektor~$\diff \vec x$ je kolmý ekvipotenciálnu plochu (prípad~$\diff \vec x_1$ 
+na Obrázku~\ref{fig:total_differential}).  V~takom prípade~$\alpha = 0$, preto 
+$\diff W = \| \vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| \, \| 
+\diff \vec x \|$.
 
 \begin{figure}
 \centering
 \input{./fig-total-differential.pdf_tex}
-\caption{Totálny diferenciál~$\delta W(\vec x, \Delta \vec x)$ v~bode~$P$ so 
-súradnicami~$\vec x$.  Zobrazených je päť smerov~$\diff \vec x_1$ až~$\diff 
-\vec x_5$, v~ktorých je skúmaná zmena tiažového potenciálu po zmene súradníc 
-$\vec x$ o~hodnotu $\diff \vec x$.}
+\caption{Totálny diferenciál~$\delta W(P, \Delta \vec x)$ v~bode~$P$.  
+Zobrazených je päť smerov~$\diff \vec x_1$ až~$\diff \vec x_5$, v~ktorých je 
+skúmaná zmena tiažového potenciálu~$W$ po tom ako sú zmenené súradnice bodu~$P$ 
+o~hodnotu $\diff \vec x$.}
 \label{fig:total_differential}
 \end{figure}
 
@@ -1641,24 +1672,26 @@ daný vzťahom
 %
 \begin{equation}
 \label{eq:w_totdiff_plumb}
-\diff W = \vec g \cdot \diff \vec x = g \, \diff H \, \cos(180^{\circ}) = -g \, 
-\diff H{,}
+\diff W(P, \diff \vec x) = \vec g(P) \cdot \diff \vec x = g(P) \, \diff H \, 
+\cos(180^{\circ}) = -g(P) \, \diff H{,}
 \end{equation}
 %
-kde~$g = \| \vec g \|$ je veľkosť vektora tiažového zrýchlenia a~$\diff H = \| 
-\diff \vec x \|$ je diferenciálna dĺžka tiažnice.  Integráciou 
-rovnice~(\ref{eq:w_totdiff_plumb}) od bodu~$A$ po bod~$B$ získame rozdiel 
-tiažového potenciálu,
+kde~$g(P) = \| \vec g(P) \|$ je veľkosť vektora tiažového zrýchlenia v~bode~$P$ 
+a~$\diff H = \| \diff \vec x \|$ je diferenciálna dĺžka tiažnice.  Integráciou 
+rovnice~(\ref{eq:w_totdiff_plumb}) od bodu~$A$ po bod~$B$ (pozri 
+Obrázok~\ref{fig:total_differential}) získame rozdiel tiažového potenciálu,
 %
 \begin{equation}
 \label{eq:w_ab}
-\delta W_{AB} = W_B - W_A = -\int\limits_{A}^{B} g \, \diff H{,}
+\delta W_{AB} = W(B) - W(A) = -\int\limits_{P = A}^{B} g(P) \, \diff 
+H = -\int\limits_{A}^{B} g \, \diff H{,}
 \end{equation}
 %
-kde symboly~$W_A$ a~$W_B$ označujú tiažový potenciál v~bodoch~$A$ a~$B$.  
+kde symboly~$W(A)$ a~$W(B)$ označujú tiažový potenciál v~bodoch~$A$ a~$B$.  
 Osobitný význam pre fyzikálnu geodéziu má rozdiel tiažového potenciálu na 
-geoide~$W_0$ a~tiažového potenciálu~$W$ vo~zvolenom bode.  Táto veličina sa 
-nazýva \emph{geopotenciálna kóta} a~je daná vzťahom
+geoide~$W_0$ a~tiažového potenciálu~$W = W(P)$ v~bode~$P$ 
+(Obrázok~\ref{fig:total_differential}).  Táto veličina sa nazýva 
+\emph{geopotenciálna kóta} a~je daná vzťahom
 %
 \begin{equation}
 \label{eq:geopotential_number}
@@ -1671,7 +1704,7 @@ niekedy zvykne udávať v~geopotenciálnych jednotkách,
 %
 \begin{equation}
 \label{eq:gpu_unit}
-1\ \mathrm{g.p.u.} = 1\ \mathrm{kGal} \ \mathrm{m} = 1000\ \mathrm{Gal}\ 
+1\ \mathrm{gpu} = 1\ \mathrm{kGal} \ \mathrm{m} = 1000\ \mathrm{Gal}\ 
 \mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
 \end{equation}
 %
@@ -2408,25 +2441,19 @@ Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
 Z~vlastností Legendreových polynómov spomeňme ešte aspoň nasledovné
 \parencite{Freeden2009},
 %
-\begin{equation}
+\begin{align}
 \label{eq:pn_property1}
-P_n(1) = 1{,}
-\end{equation}
+P_n(1) &= 1{,}\\
 %
-\begin{equation}
 \label{eq:pn_property2}
-P_n(-t) = (-1)^n \, P_n(t){,}
-\end{equation}
+P_n(-t) &= (-1)^n \, P_n(t){,}\\
 %
-\begin{equation}
 \label{eq:pn_property3}
-|P_n(t)| \leq P_n(1) = 1{,} \quad t \in [-1, 1]{,}
-\end{equation}
+|P_n(t)| \leq P_n(1) &= 1{,} \quad t \in [-1, 1]{,}\\
 %
-\begin{equation}
 \label{eq:pn_property4}
-P_n'(1) = \frac{n \, (n + 1)}{2}{,}
-\end{equation}
+P_n'(1) &= \frac{n \, (n + 1)}{2}{,}
+\end{align}
 %
 kde $P_n'(t) = \diff P_n(t) \slash \diff t$.  Vzťahy~(\ref{eq:pn_property1}) až
 (\ref{eq:pn_property4}) platia pre~$n \geq 0$.   Širokú škálu ďalších
@@ -2534,16 +2561,12 @@ P_n(t)}{\diff t} + n \, (n + 1) \, P_n(t) = 0{.}
 
 Na záver spomeňme ešte aspoň dve ďalšie vlastnosti Legendreových funkcií,
 %
-\begin{equation}
+\begin{align}
 \label{eq:pnm_symmetry}
-P_{nm}(-t) = (-1)^{n + m} \, P_{nm}(t)
-\end{equation}
+P_{nm}(-t) &= (-1)^{n + m} \, P_{nm}(t){,}\\
 %
-a
-%
-\begin{equation}
-P_{nm}(\pm1) = 0{,} \quad m \neq 0{.}
-\end{equation}
+P_{nm}(\pm1) &= 0{,} \quad m \neq 0{.}
+\end{align}
 
 Numerický výpočet Legendreových funkcií je zvyčajne uskutočňovaný rekurentnými 
 vzťahmi.  Ide však o~netriviálnu úlohu, obzvlášť pre vysoké stupne a~rády 
@@ -2840,19 +2863,15 @@ rovný $1$.
 Vzťahy~(\ref{eq:f_shs_no_norm}) a~(\ref{eq:f_sha_no_norm}) potom prejdu do
 tvaru
 %
-\begin{equation}
+\begin{align}
 \label{eq:f_shs}
-f(\varphi, \lambda) = \sum_{n = 0}^\infty \sum_{k = -n}^n \bar{f}_{nk} \,
-\bar{Y}_{nk}(\varphi, \lambda)
-\end{equation}
+f(\varphi, \lambda) &= \sum_{n = 0}^\infty \sum_{k = -n}^n \bar{f}_{nk} \,
+\bar{Y}_{nk}(\varphi, \lambda){,}\\
 %
-a
-%
-\begin{equation}
 \label{eq:f_sha}
-\bar{f}_{nk} = \frac{1}{4\pi} \, \iint\limits_{\sigma} f(\varphi, \lambda) \,
+\bar{f}_{nk} &= \frac{1}{4\pi} \, \iint\limits_{\sigma} f(\varphi, \lambda) \,
 \bar{Y}_{nk}(\varphi, \lambda) \, \diff \sigma{.}
-\end{equation}
+\end{align}
 %
 Úplne normované sférické harmonické funkcie tiež umožňujú zapísať dekompozičný
 teorém~(\ref{eq:pn_decomposition_formula}) v~tvare
@@ -3532,28 +3551,21 @@ nájsť tri funkcie, $f_{\mathrm{s}}(r)$, $g_{\mathrm{s}}(\varphi)$
 a $h_{\mathrm{s}}(\lambda)$.  Je možne ukázať, že riešením tejto úlohy sú 
 funkcie nasledovného tvaru (porovnaj s rovnicou~\ref{eq:vg_sh_no_norm}),
 %
-\begin{equation}
+\begin{align}
 \label{eq:fs}
-f_{\mathrm{s}}(r) =
-\dfrac{1}{r^{n + 1}}{,}
-\end{equation}
+f_{\mathrm{s}}(r) &= \dfrac{1}{r^{n + 1}}{,}\\
 %
-\begin{equation}
 \label{eq:gs}
-g_{\mathrm{s}}(\varphi) = P_{nm}(\sin\varphi)
-\end{equation}
+g_{\mathrm{s}}(\varphi) &= P_{nm}(\sin\varphi){,}\\
 %
-a
-%
-\begin{equation}
 \label{eq:hs}
-h_{\mathrm{s}}(\lambda) =
+h_{\mathrm{s}}(\lambda) &=
 %
 \begin{cases}
 \cos(m\,\lambda){,}\\
 \sin(m\,\lambda){,}
 \end{cases}
-\end{equation}
+\end{align}
 %
 kde $n = 0, 1, 2, \dots$ a $m = 0, 1, \dots, n$.  Pre úplnosť dodajme, že 
 funkcia $f_{\mathrm{s}}(r)$ môže mať aj tvar $f_{\mathrm{s}}(r) = r^n$.  Toto 
@@ -3566,28 +3578,22 @@ riešením Laplaceovej diferenciálnej rovnice v~redukovaných elipsoidických
 súradniciach~(\ref{eq:vg_laplace_ellred}) metódou separácie premenných.  Týmto 
 spôsobom získame funkcie \parencite{MoritzPhysicalGeodesy}
 %
-\begin{equation}
+\begin{align}
 \label{eq:fr}
-f_{\mathrm{r}}(u) =
-Q_{nm}\left( i \dfrac{u}{E} \right){,}
-\end{equation}
+f_{\mathrm{r}}(u) &=
+Q_{nm}\left( i \dfrac{u}{E} \right){,}\\
 %
-\begin{equation}
 \label{eq:gr}
-g_{\mathrm{r}}(\beta) = P_{nm}(\sin\beta)
-\end{equation}
+g_{\mathrm{r}}(\beta) &= P_{nm}(\sin\beta){,}\\
 %
-a
-%
-\begin{equation}
 \label{eq:hr}
-h_{\mathrm{r}}(\lambda) =
+h_{\mathrm{r}}(\lambda) &=
 %
 \begin{cases}
 \cos(m\,\lambda){,}\\
 \sin(m\,\lambda){,}
 \end{cases}
-\end{equation}
+\end{align}
 %
 kde $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fs}), 
 funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar $f_{\mathrm{r}}(u) 
@@ -3652,23 +3658,19 @@ t \right)$ a~$Q_2\left( t \right)$ a porovnajme ich
 s~rovnicami~(\ref{eq:p0_to_p5})
 \parencite{MoritzPhysicalGeodesy},
 %
-\begin{equation}
+\begin{align}
 \label{eq:q0t}
-Q_0(t) = \frac{1}{2} \, \ln\frac{1 + t}{1 - t} = \mathrm{arctanh}(t){,}
-\end{equation}
+Q_0(t) &= \frac{1}{2} \, \ln\frac{1 + t}{1 - t} = \mathrm{arctanh}(t){,}\\
 %
-\begin{equation}
 \label{eq:q1t}
-Q_1(t) = \frac{t}{2} \, \ln\frac{1 + t}{1 - t} - 1 = t \, \mathrm{arctanh}(t)- 
- 1{,}
-\end{equation}
+Q_1(t) &= \frac{t}{2} \, \ln\frac{1 + t}{1 - t} - 1 = t \, \mathrm{arctanh}(t)- 
+ 1{,}\\
 %
-\begin{equation}
 \label{eq:q2t}
-Q_2(t) = \left( \frac{3}{4} t^2 - \frac{1}{4} \right) \, \ln\frac{1 + t}{1 - t} 
-- \frac{3}{2}t = \left( \frac{3}{2} t^2 - \frac{1}{2} \right) \, 
+Q_2(t) &= \left( \frac{3}{4} t^2 - \frac{1}{4} \right) \, \ln\frac{1 + t}{1 
+- t} - \frac{3}{2}t = \left( \frac{3}{2} t^2 - \frac{1}{2} \right) \, 
 \mathrm{arctanh}(t) - \frac{3}{2}t{,}
-\end{equation}
+\end{align}
 %
 kde
 %
@@ -3833,18 +3835,18 @@ gravitačného poľa v~blízkosti asteroidov, ktoré majú komplikovaný tvar.
 Fyzikálna geodézia určuje tvar Zeme z~informácie o~jej tiažovom poli, napríklad 
 z~tiažového potenciálu a z~vektora tiažového zrýchlenia na povrchu Zeme.  Táto 
 úloha je neľahká, pretože vzťah medzi tiažovým poľom a hľadaným zemským 
-povrchom je nelineárny.  Spravidla sa preto pristupuje k~linearizácii rozvojom 
-do Taylorovho radu, pričom členy druhého a vyšších rádov sa zanedbajú.  
-\emph{Normálne tiažové pole Zeme} je jednoduchý a súčasne dostatočne presný 
-model skutočného tiažového poľa Zeme, využívaný práve na výpočet približných 
-hodnôt v linearizovaných úlohách fyzikálnej geodézie.  Požiadavka jednoduchosti 
-je odôvodnená potrebou prijateľne náročných výpočtov v normálnom poli, 
-napríklad pomocou uzavretých vzťahov pre \emph{normálne tiažové zrýchlenie} 
-$\boldsymbol{\gamma}$ či \emph{normálny tiažový potenciál} $U$.  Dostatočná 
-presnosť je potrebná nato, aby bolo možné s rozumnou mierou aproximácie 
-zanedbať nelineárne členy Taylorovho rozvoja.  Požiadavky jednoduchosti 
-a presnosti normálneho tiažového poľa si vzájomne odporujú, preto je potrebné 
-nájsť medzi nimi vhodný kompromis.
+povrchom je nelineárny.  Spravidla sa preto pristupuje k~linearizácii pomocou 
+rozvoja do Taylorovho radu, v~ktorom sa zanedbajú členy druhého a vyšších 
+rádov.  \emph{Normálne tiažové pole Zeme} je jednoduchý a súčasne dostatočne 
+presný model skutočného tiažového poľa Zeme, využívaný práve na výpočet 
+približných hodnôt v linearizovaných úlohách fyzikálnej geodézie.  Požiadavka 
+jednoduchosti je odôvodnená potrebou prijateľne náročných výpočtov v normálnom 
+poli, napríklad pomocou uzavretých vzťahov pre \emph{normálne tiažové 
+zrýchlenie} $\boldsymbol{\gamma}$ či \emph{normálny tiažový potenciál} $U$.  
+Dostatočná presnosť je potrebná nato, aby bolo možné s rozumnou mierou 
+aproximácie zanedbať nelineárne členy Taylorovho rozvoja.  Požiadavky 
+jednoduchosti a presnosti normálneho tiažového poľa si vzájomne odporujú, preto 
+je potrebné nájsť medzi nimi vhodný kompromis.
 
 \section{Voľba normálneho tiažového poľa}
 \label{sec:choice_of_normal_gravity_field}
@@ -3902,8 +3904,8 @@ plocha s~normálnym tiažovým potenciálom~$U_0$ bola geometricky blízka geoid
 potenciálu~$W_0$ na geoide, a nakoniec aby geometrická aj fyzikálna časť 
 normálneho poľa boli jednoducho matematicky opísateľné.  Pre niektoré príbuzné 
 vedné odbory, napríklad geofyziku, je však znalosť hustoty v~normálnom telese 
-potrebná \parencite{Karcol2017}.  Zdá sa, že v~takýchto situáciách nie je voľba 
-ekvipotenciálneho elipsoidu najvýhodnejšia.  Diskusiu k~možnostiam 
+potrebná \parencite{Karcol2017}.  V~takýchto situáciách nemusí byť voľba 
+ekvipotenciálneho elipsoidu tá najvýhodnejšia.  Diskusiu k~možnostiam 
 priestorového rozloženia hustoty vo vnútri ekvipotenciálneho elipsoidu je možné 
 nájsť napríklad v~prácach \textcite{MoritzTheFigureOfTheEarth}, 
 \textcite{TorgeGeodesy}, \textcite{Conway2000} či \textcite{Karcol2017}.
@@ -3996,15 +3998,13 @@ slapovej deformácie Zeme.  Medzi koeficientmi $J_{2,0}$
 (rovnica~\ref{eq:vg_sh_2nd_norm}) platia nasledovné vzťahy 
 \parencite{Moritz1967,MoritzPhysicalGeodesy},
 %
-\begin{equation}
+\begin{align}
 \label{eq:c20_j20}
-C_{2,0} = -J_{2,0}{,}
-\end{equation}
+C_{2,0} &= -J_{2,0}{,}\\
 %
-\begin{equation}
 \label{eq:c20_j20_2}
-\bar{C}_{2,0} = \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
-\end{equation}
+\bar{C}_{2,0} &= \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
+\end{align}
 
 Tabuľka~\ref{tab:grs80_derived} uvádza číselné hodnoty niektorých odvodených geometrických 
 a fyzikálnych parametrov ekvipotenciálneho elipsoidu~GRS80.  Medzi geometrické 
@@ -4393,27 +4393,24 @@ vyjadriť $U_0$ pomocou $a$, $b$, $GM$ a $\omega$.
 
 Z~Kapitoly~\ref{sec:spheroidal_harmonic_expansion} vieme, že podiely 
 Legendreových funkcií druhého druhu sú reálne čísla.  Vyjadrime preto 
-vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime, že
+vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime, že 
+\parencite{MoritzTheFigureOfTheEarth}
 %
 \begin{equation}
-\coth^{-1} (i \, x) = -i \, \arctan\frac{1}{x}{,}
+\mathrm{arccoth} (i \, x) = -i \, \arctan\frac{1}{x}{,}
 \end{equation}
 %
 potom $Q_0$ a $Q_2$ komplexného argumentu $i \frac{u}{E}$ 
 z rovnice~(\ref{eq:ug_spheroidal}) môžeme prepísať do tvaru (pozri 
 rovnice~\ref{eq:q0t}, \ref{eq:q2t} a \ref{eq:arccoth})
 %
-\begin{equation}
-Q_0\left( i \, \frac{u}{E} \right) = -i \, \arctan\frac{E}{u}
-\end{equation}
+\begin{align}
+Q_0\left( i \, \frac{u}{E} \right) &= -i \, \arctan\frac{E}{u}{,}\\
 %
-a
-%
-\begin{equation}
-Q_2\left( i \, \frac{u}{E} \right) = \frac{i}{2} \left[ \left( 
+Q_2\left( i \, \frac{u}{E} \right) &= \frac{i}{2} \left[ \left( 
 1 + 3 \frac{u^2}{E^2} \right) \, \arctan\frac{E}{u} - 3 \, \frac{u}{E} 
 \right]{.}
-\end{equation}
+\end{align}
 %
 Rovnicu~(\ref{eq:ug_spheroidal}) môžeme preto zapísať v~obore reálnych čísel 
 nasledovne,
@@ -4427,18 +4424,14 @@ a^2 \, \frac{q}{q_0} \, P_2(\sin\beta){,}
 %
 kde
 %
-\begin{equation}
+\begin{align}
 \label{eq:u_q}
-q = \frac{1}{2} \left[ \left( 1 + 3 \frac{u^2}{E^2} \right) \, 
-\arctan\frac{E}{u} - 3 \, \frac{u}{E} \right]
-\end{equation}
+q &= \frac{1}{2} \left[ \left( 1 + 3 \frac{u^2}{E^2} \right) \, 
+\arctan\frac{E}{u} - 3 \, \frac{u}{E} \right]{,}\\
 %
-a
-%
-\begin{equation}
-q_0 = \frac{1}{2} \left[ \left( 1 + 3 \frac{b^2}{E^2} \right) \, 
+q_0 &= \frac{1}{2} \left[ \left( 1 + 3 \frac{b^2}{E^2} \right) \, 
 \arctan\frac{E}{b} - 3 \, \frac{b}{E} \right]{.}
-\end{equation}
+\end{align}
 
 Nech sa nachádza výpočtový bod so súradnicami $(u, \beta)$ vo veľkej 
 vzdialenosti od ekvipotenciálneho elipsoidu.  Vo 
@@ -4727,9 +4720,9 @@ Dosadením vzťahov~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical})
 do~(\ref{eq:u_sph}) získame výsledný vzťah pre normálny tiažový potenciál vo 
 sférických súradniciach.  Všimnime si, že v~rovniciach~(\ref{eq:ug_spherical}) 
 a~(\ref{eq:uc_spherical}) vystupujú ako konštanty opäť iba štyri základné 
-parametre ekvipotenciálneho elipsoidu, $a$ $J_{2,0}$, $GM$ a $\omega$.  Ide tak 
-o~ďalší výpočet odvodeného fyzikálneho parametra ekvipotenciálneho elipsoidu 
-z~jeho základných parametrov.
+parametre ekvipotenciálneho elipsoidu: $a$, $J_{2,0}$, $GM$ a $\omega$.  Ide 
+tak o~ďalší výpočet odvodeného fyzikálneho parametra ekvipotenciálneho 
+elipsoidu z~jeho základných parametrov.
 
 
 
@@ -4740,7 +4733,7 @@ Tiažové zrýchlenie je jedna z~veličín fyzikálnej geodézie, ktorú je mož
 odmerať (Kapitola~\ref{sec:centrifugal_and_gravity_acceleration}).  V~mnohých 
 úlohách je preto výhodné či dokonca potrebné modelovať ho jednoduchým a~súčasne 
 dostatočne presným spôsobom, napríklad kvôli výpočtu geoidu.  Na tento účel 
-slúži normálne tiažové zrýchlenie $\gamma$ (pozri 
+slúži vektor normálneho tiažového zrýchlenia $\boldsymbol\gamma$ (pozri 
 Kapitolu~\ref{sec:normal_gravity_field}).  Normálne tiažové zrýchlenie patrí vo 
 fyzikálnej geodézii medzi najčastejšie používané odvodené fyzikálne parametre 
 ekvipotenciálneho elipsoidu.
@@ -4950,8 +4943,9 @@ preto dostaneme
 \begin{equation}
 \label{eq:gamma_ell_1}
 \begin{split}
-\gamma(b, \beta) &= \| \boldsymbol \gamma(b, \beta) \| = | \gamma_u(b, \beta) 
-|\\
+\gamma(b, \beta) &= \| \boldsymbol \gamma(b, \beta) \| 
+= \sqrt{\gamma^2_\beta(b, \beta) + \gamma^2_\lambda(b, \beta) + \gamma^2_u(b, 
+\beta)} = | \gamma_u(b, \beta) |\\
 %
 &= \frac{GM}{a \, \sqrt{a^2 \, \sin^2\beta + b^2 \, \cos^2\beta}} \, \left[ 
 1 + \frac{\omega^2 \, a^2 \, E}{GM} \, \frac{q'_0}{q_0} \left( \frac{1}{2} \, 
@@ -5135,11 +5129,12 @@ tiažové zrýchlenie na povrchu Zeme s~narastajúcou výškou napríklad~$1
 \ \mathrm{cm}$ približne o~$3 \ \upmu\mathrm{Gal}$, čo je zhruba na úrovni 
 presnosti súčasných terénnych relatívnych gravimetrov (pozri 
 Kapitolu~\ref{sec:centrifugal_and_gravity_acceleration}).  Spomeňme tiež ale, 
-že veličina $\partial g \slash \partial h$, ktorá sa nazýva \emph{gradient 
-tiažového zrýchlenia}, môže v~teréne výrazne varírovať, obzvlášť v~oblastiach 
-s~komplexnou topografiou a/alebo rozložením hustôt blízko pod zemským povrchom.  
-V~takýchto podmienkach môže byť aproximácia $\partial g \slash \partial 
-h \approx -0.3086 \ \mathrm{mGal} \ \mathrm{m}^{-1}$ veľmi nepresná a~nevhodná.
+že veličina $\partial g \slash \partial h$, ktorá sa nazýva \emph{vertikálny 
+gradient tiažového zrýchlenia}, môže v~teréne výrazne varírovať, obzvlášť 
+v~oblastiach s~komplexnou topografiou a/alebo rozložením hustôt blízko pod 
+zemským povrchom.  V~takýchto podmienkach môže byť aproximácia $\partial 
+g \slash \partial h \approx -0.3086 \ \mathrm{mGal} \ \mathrm{m}^{-1}$ veľmi 
+nepresná a~nevhodná.
 
 Výhodou Taylorovho rozvoja~(\ref{eq:gamma_taylor}) je jeho jednoduchosť a~veľké 
 praktické vyžitie.  Za nevýhodu možno v niektorých situáciách považovať to, že 
@@ -5298,19 +5293,17 @@ Poruchový potenciál je regulárna funkcia
 v~nekonečne~(rovnica~\ref{eq:regular_function}), preto platia nasledovné 
 rovnosti (pozri vzťahy~\ref{eq:vg_at_infty} a~\ref{eq:vg_regular}),
 %
-\begin{equation}
+\begin{align}
 \label{eq:t_infty}
-\lim_{P \rightarrow \infty} T(P) = \lim_{P \rightarrow \infty} (V_\gidx(P) 
+&\lim_{P \rightarrow \infty} T(P) = \lim_{P \rightarrow \infty} (V_\gidx(P) 
 - U_\gidx(P)) = \lim_{P \rightarrow \infty} V_\gidx(P) - \lim_{P \rightarrow 
-\infty} U_\gidx(P) = 0{,}
-\end{equation}
+\infty} U_\gidx(P) = 0{,}\\
 %
-\begin{equation}
 \label{eq:t_regular}
-\lim_{r \rightarrow \infty} r \, T = \lim_{r \rightarrow \infty} r \, (V_\gidx 
+&\lim_{r \rightarrow \infty} r \, T = \lim_{r \rightarrow \infty} r \, (V_\gidx 
  - U_\cidx) = \lim_{r \rightarrow \infty} r \, V_\gidx - \lim_{r \rightarrow 
  \infty} r \, U_\gidx = GM - GM_{\mathrm{e}} = G \, \delta M{,}
-\end{equation}
+\end{align}
 %
 kde $\delta M = M - M_\mathrm{e}$ je rozdiel hmotnosti Zeme~$M$ 
 a~hmotnosti~$M_\mathrm{e}$, ktorá je pripísaná ekvipotenciálnemu elipsoidu.  Ak 
@@ -5332,17 +5325,23 @@ rozvojom poruchového potenciálu.  Tento rozvoj získame použitím
 rovnice~(\ref{eq:disturbing_potential}) a~radov~(\ref{eq:vg_sh_2nd_norm_ynk}) 
 a~(\ref{eq:ug_spherical}).  Aby sme mohli výhodne skombinovať oba rady do 
 \emph{jedného} rozvoja, musíme vziať do úvahy dva aspekty.  
-i)~Rozvoj~(\ref{eq:vg_sh_2nd_norm_ynk}) je založený na úplne normovaných 
+%
+\begin{enumerate}[label=\roman*)]
+\item Rozvoj~(\ref{eq:vg_sh_2nd_norm_ynk}) je založený na úplne normovaných 
 sférických harmonických funkciách, zatiaľ čo rovnica~(\ref{eq:ug_spherical}) 
-predstavuje rad nenormovaných sférických harmonických funkcií.  ii)~Konštanty 
-ekvipotenciálneho elipsoidu~$GM$ a~$a$ z~rovnice~(\ref{eq:ug_spherical}), ktoré 
-budeme ďalej označovať symbolmi~$GM^\mathrm{e}$ a~$a^\mathrm{e}$, sa môžu líšiť 
-od konštánt~$GM$ a~$R$ z~rovnice~(\ref{eq:vg_sh_2nd_norm_ynk}).  Nekonzistenciu 
-spôsobenú rozličnými normami odstránime normovaním sférických harmonických 
-funkcií a~koeficientov v~rovnici~(\ref{eq:ug_spherical}).  Druhú nekonzistenciu 
-odstránime preškálovaním sférických harmonických koeficientov normálneho 
-tiažového poľa z~pôvodných konštánt~$GM^\mathrm{e}$ a~$a^\mathrm{e}$ na 
-konštanty~$GM$ a~$R$.  Nie je zložité presvedčiť sa, že po týchto úpravách 
+predstavuje rad nenormovaných sférických harmonických funkcií.
+%
+\item Konštanty ekvipotenciálneho elipsoidu~$GM$ a~$a$ 
+z~rovnice~(\ref{eq:ug_spherical}), ktoré budeme ďalej označovať 
+symbolmi~$GM^\mathrm{e}$ a~$a^\mathrm{e}$, sa môžu líšiť od konštánt~$GM$ a~$R$ 
+z~rovnice~(\ref{eq:vg_sh_2nd_norm_ynk}).
+\end{enumerate}
+%
+Nekonzistenciu spôsobenú rozličnými normami odstránime normovaním sférických 
+harmonických funkcií a~koeficientov v~rovnici~(\ref{eq:ug_spherical}).  Druhú 
+nekonzistenciu odstránime preškálovaním sférických harmonických koeficientov 
+normálneho tiažového poľa z~pôvodných konštánt~$GM^\mathrm{e}$ a~$a^\mathrm{e}$ 
+na konštanty~$GM$ a~$R$.  Nie je zložité presvedčiť sa, že po týchto úpravách 
 možno zapísať rozvoj poruchového potenciálu v~tvare \parencite[pre podrobnosti 
 pozri napríklad][]{Barthelmes2013}
 %
@@ -6187,7 +6186,7 @@ rovnice~(\ref{eq:gradient}) vektorovú funkciu
 %
 \begin{equation}
 \label{eq:gradf}
-\vec f(x, y) =
+\nabla f(x, y) =
 \begin{bmatrix}
 \dfrac{\partial f(x, y)}{\partial x} \\[2ex]
 \dfrac{\partial f(x, y)}{\partial y}
@@ -6208,15 +6207,16 @@ dĺžku a~pokúsme sa danú situáciu interpretovať.
 
 \lstinputlisting[caption=Výpočet a~zobrazenie funkcie dvoch premenných a~jej
 gradientu v~programovacom jazyku Python, language=mypython, label=src:f_gradf,
-captionpos=t]{../python/f-gradf.py}
+captionpos=t]{../python/gradient.py}
 
 \begin{figure}[bt]
 \centering
-\includegraphics{./fig-f-gradf.pdf}
-\caption{Skalárna funkcia $f(x, y) = \sin(2x) + \cos(2y)$ a~jej gradient
-$\nabla f(x, y)$ na~intervale $x, y \in [-1, 1]$.  Skalárna funkcia je
-znázornená hypsometricky.  Gradient je zobrazený orientovanými šípkami, pričom
-šípka udáva smer a~veľkosť najväčšieho nárastu funkcie $f(x, y)$ v~danom bode.}
+\includegraphics{./fig-gradient.pdf}
+\caption{Skalárna funkcia $f(x, y) = \sin(2x) + \cos(2y)$ a~jej gradient 
+$\nabla f(x, y)$ na~intervale $x, y \in [-1, 1]$.  Skalárna funkcia je 
+znázornená hypsometricky a~izočiarami.  Gradient je zobrazený orientovanými 
+šípkami, pričom šípka udáva smer a~veľkosť najväčšieho nárastu funkcie $f(x, 
+y)$ v~danom bode.}
 \label{fig:f_gradf}
 \end{figure}
 
@@ -6316,7 +6316,7 @@ Rovnicu~(\ref{eq:f_partials_rlatlon}) môžeme zapísať v~maticovom tvare
 \begin{bmatrix}
 \dfrac{\partial f}{\partial x}\\[2ex]
 \dfrac{\partial f}{\partial y}\\[2ex]
-\dfrac{\partial f}{\partial z}{.}
+\dfrac{\partial f}{\partial z}
 \end{bmatrix}
 %
 {.}
@@ -6623,10 +6623,10 @@ tvar Laplaceovho operátora v~ortogonálnom súradnicovom systéme.
 \section{Laplaceov operátor vo sférickom súradnicovom systéme}
 \label{app:laplace_in_spherical_system}
 
-Laplaceov operátor je daný skalárnym súčinom operátorov gradient 
-(rovnica~\ref{eq:laplace}).  Na jeho vyjadrenie vo sférickom súradnicovom 
-systéme preto použijeme operátor gradient vyjadrený vo sférických 
-súradniciach~(\ref{eq:gradient_sph}),
+Laplaceov operátor vo sférickych súradniciach vyjadríme pomocou operátora 
+gradient~(\ref{eq:gradient_sph}), ktorý dosadíme do 
+rovnice~(\ref{eq:laplace_grad_grad_notation}) a~aplikujeme 
+v~zmysle~(\ref{eq:laplace_xyz}),
 %
 \begin{align}
 \label{eq:grad_grad_sph}
@@ -6779,12 +6779,34 @@ a~(\ref{eq:er_elat_elon_unit_derivatives}) získame Laplaceov operátor vo
 sférických súradniciach,
 %
 \begin{equation}
+\label{eq:laplace_sph}
 \nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
 \frac{\partial}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
 \frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial}{\partial 
 \varphi} \right) + \frac{1}{r^2 \,
-\cos^2\varphi}\frac{\partial^2}{\partial \lambda^2} = 0{.}
+\cos^2\varphi}\frac{\partial^2}{\partial \lambda^2}{.}
 \end{equation}
+
+\subsubsection{Poznámka o~nesprávnej interpretácii vektorového zápisu operátora 
+gradient}
+
+Vráťme sa k~diskusii o~Laplaceovom operátore 
+z~Kapitoly~\ref{sec:laplace_equation_cart}.  V~predchádzajúcej časti sme 
+ukázali, že správna aplikácia operátora gradient~(\ref{eq:gradient_sph}) 
+v~rovnici~(\ref{eq:laplace_grad_grad_notation}) vedie k~Laplaceovmu operátoru 
+vo sférických súradniciach~(\ref{eq:laplace_sph}).  Nesprávnym použitím 
+operátora~(\ref{eq:gradient_sph}), teda vynásobením zodpovedajúcich si prvkov 
+vektora na pravej strane rovnice~(\ref{eq:gradient_sph}) a~následným sčítaním 
+získaných súčinov, dostaneme operátor
+%
+\begin{equation}
+\frac{1}{r^2} \frac{\partial^2}{\partial \varphi^2} + \frac{1}{r^2 \, 
+\cos^2\varphi} \frac{\partial^2}{\partial \lambda^2} 
++ \frac{\partial^2}{\partial r^2}{,}
+\end{equation}
+%
+čo však nie je Laplaceov operátor vo sférických súradniciach.
+
 
 
 
@@ -6795,7 +6817,8 @@ Odvodenie z~predchádzajúcej kapitoly možno zovšeobecniť na ľubovoľný
 ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.  Táto kapitola je 
 spracovaná podľa~\textcite{SansoGeoidDetermination}.
 
-Všeobecný tvar Laplaceovho operátora získame pomocou rovníc~(\ref{eq:laplace}) 
+Všeobecný tvar Laplaceovho operátora získame pomocou 
+rovníc~(\ref{eq:laplace_grad_grad_notation}) 
 a~(\ref{eq:grad_orthogonal_system}),
 %
 \begin{equation}
