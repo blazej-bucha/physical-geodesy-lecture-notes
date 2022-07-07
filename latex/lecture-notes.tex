@@ -891,8 +891,7 @@ Rovnica~(\ref{eq:vg_body}) sa v~literatúre nazýva \emph{Newtonov
 integrál}.  Hovorí, že ak poznáme tvar a~priestorové rozloženie hustoty telesa,
 gravitačný potenciál telesa môže byť vypočítaný.  Newtonov
 integrál má vo fyzikálnej geodézii kľúčový význam, nakoľko gravitačný potenciál 
-obsahuje informáciu o~celom gravitačnom poli (pozri
-Kapitolu~\ref{sec:newton_law}).
+obsahuje informáciu o~všetkých veličinách gravitačného poľa.
 
 Newtonov integrál položil základy novej oblasti matematiky a~matematickej 
 fyziky s~názvom \emph{teória potenciálu}.  Podľa \textcite{MacMillan1930} 
@@ -1319,10 +1318,10 @@ generujúceho potenciál, potom~$\rho(P) = 0$, čím dostávame Laplaceovu
 rovnicu~(\ref{eq:vg_laplace_cart}).
 
 Posledná oblasť, v~ktorej sa môže nachádzať bod~$P$, no nie je pokrytá ani 
-Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Vo 
-všeobecnosti, druhé derivácie gravitačného potenciálu vystupujúce v~operátore 
-$\nabla^2$ (pozri rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph}) 
-nie sú v~takom prípade definované \parencite{Kellogg1967}.  Dôvodom je 
+Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Druhé 
+derivácie gravitačného potenciálu vystupujúce v~operátore $\nabla^2$ (pozri 
+rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph}) nie sú vo 
+všeobecnosti v~takom prípade definované \parencite{Kellogg1967}.  Dôvodom je 
 nespojitosť hustoty~$\rho$, ktorá sa na povrchu mení z~$\rho \neq 0$ na 0, 
 resp. naopak, v~závislosti od smeru prechodu.
 
@@ -1447,7 +1446,7 @@ napríklad \cite{Torge1989,Rozimant1994} či \cite{Janak2010}).
 \subsection{Odstredivý a~tiažový potenciál}
 \label{sec:centrifugal_and_gravity_potential}
 
-Podobne ako v~prípade gravitačného poľa, i~odstredivé a~tiažové zrýchlenie je
+Podobne ako gravitačné zrýchlenie, i~odstredivé a~tiažové zrýchlenie je
 možné definovať pomocou skalárnych veličín.  Tieto skalárne veličiny sa
 nazývajú \emph{odstredivý potenciál},
 %
@@ -3113,10 +3112,10 @@ a~\textcite{MoritzPhysicalGeodesy}.
 \label{fig:orbital_motion_real}
 \end{figure}
 
-V~Kapitolách~\ref{sec:vg} a~\ref{sec:potential_theory} sme uviedli, že
-v~gravitačnom potenciáli $V_\gidx$ je obsiahnutá informácia o~celom gravitačnom
-poli.  Zo vzťahu~(\ref{eq:vg_sh_2nd_norm}) je preto možné vyťažiť oveľa viac
-ako len informáciu o~gravitačnom potenciáli.  Napríklad aplikovaním operátora 
+V~Kapitole~\ref{sec:potential_theory} sme uviedli, že gravitačný potenciál 
+obsahuje informáciu o~všetkých veličinách gravitačného poľa.  Zo 
+vzťahu~(\ref{eq:vg_sh_2nd_norm}) je preto možné vyťažiť oveľa viac ako len 
+informáciu o~gravitačnom potenciáli.  Napríklad aplikovaním operátora 
 gradient~(\ref{eq:gradient_sph}) na gravitačný 
 potenciál~(\ref{eq:vg_sh_2nd_norm}) možno získať prvky vektora gravitačného 
 zrýchlenia v~lokálnom karteziánskom súradnicovom systéme s~pohyblivým začiatkom 
@@ -4215,13 +4214,13 @@ V_\cidx = \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta{,}
 získame vzťah pre tiažový potenciál $W$ všeobecného telesa (pozri 
 rovnicu~\ref{eq:w}).  Normálny tiažový potenciál~$U$ ekvipotenciálneho 
 elipsoidu je ale opísateľný jednoduchším spôsobom.  Dôvodom sú dve symetrie 
-normálneho poľa, prvá voči osi rotácie a~druhá voči rovine rovníka.  Prvá 
+normálneho poľa, jedna voči osi rotácie a~druhá voči rovine rovníka.  Prvá 
 symetria spôsobuje, že všetky nezonálne sféroidické harmonické 
 funkcie~v~rovnici~(\ref{eq:vg_spheroidalh_no_norm}) musia byť nulové, pretože 
-tieto členy závisia od dĺžky~$\lambda$.  Druhá symetria spôsobuje, že nenulové 
-môžu byť iba párne zonálne sférické harmonické funkcie (pozri vlastnosti 
-sférických harmonických funkcií Kapitolu~\ref{sec:spherical_harmonics}).  
-Normálny tiažový potenciál môžeme teda zapísať v~tvare
+závisia od dĺžky~$\lambda$.  Vďaka druhej symetrii sú nenulové iba párne 
+zonálne sféroidické harmonické funkcie (pozri vlastnosti sférických 
+harmonických funkcií v~Kapitole~\ref{sec:spherical_harmonics}).  Normálny 
+tiažový potenciál môžeme teda zapísať v~tvare
 %
 \begin{equation}
 \label{eq:u_sph}
