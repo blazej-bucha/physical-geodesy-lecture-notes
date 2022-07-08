@@ -13,15 +13,15 @@ k = 1
 zobrazenie_3d = True
 
 # Tvorba gridu na jednotkovej sfére
-lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 181)
-lon = np.linspace(0.0, 2.0 * np.pi, 361)
+lat      = np.linspace(-np.pi / 2.0, np.pi / 2.0, 181)
+lon      = np.linspace(0.0, 2.0 * np.pi, 361)
 lon, lat = np.meshgrid(lon, lat)
 
 # Výpočet sférickej harmonickej funkcie
 if k >= 0:
-    ynm  = lpmv(k, n, np.sin(lat)) * np.cos(k * lon)
+    ynm = lpmv(k, n, np.sin(lat)) * np.cos(k * lon)
 else:
-    ynm  = lpmv(np.abs(k), n, np.sin(lat)) * np.sin(np.abs(k) * lon)
+    ynm = lpmv(np.abs(k), n, np.sin(lat)) * np.sin(np.abs(k) * lon)
 
 # Odstránenie Condon--Shortley fázového faktora
 ynm *= (-1)**np.abs(k)

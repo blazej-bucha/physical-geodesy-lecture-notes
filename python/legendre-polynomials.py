@@ -12,13 +12,13 @@ lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 101)
 t   = np.sin(lat)
 
 # Výpočet Legendreových polynómov pomocou rekurentných vzťahov
-pn = np.zeros((nmax + 1, t.shape[0]), dtype=np.float64)
+pn       = np.zeros((nmax + 1, t.shape[0]), dtype=np.float64)
 pn[0, :] = 1.0
 if nmax > 0:
     pn[1, :] = t
     for n in range(2, nmax + 1):
         pn[n, :] = (2.0 * n - 1.0) / n * t * pn[n - 1, :] - \
-                  (n - 1.0) / n * pn[n - 2, :]
+                   (n - 1.0) / n * pn[n - 2, :]
 
 # Vykreslenie
 fig, ax = plt.subplots(figsize=(13.0 / 2.54, 9.0 / 2.54))
