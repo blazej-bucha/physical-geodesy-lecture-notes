@@ -1715,7 +1715,8 @@ $0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra
 
 Rovnice~(\ref{eq:w_totdiff_plumb}) a~(\ref{eq:w_ab}) a~ich rôzne obmeny sa 
 spolu so~vzťahom~(\ref{eq:geopotential_number}) využívajú na definíciu 
-rozličných typov fyzikálnych výšok.  Ak totiž 
+rozličných typov fyzikálnych výšok \parencite[pozri 
+napríklad][]{MoritzPhysicalGeodesy,SansoGeodeticHeights}.  Ak totiž 
 z~rovnice~(\ref{eq:w_totdiff_plumb}) vyjadríme diferenciál~$\diff H$ a~získanú 
 rovnicu zintegrujeme od~$W_0$ po~$W$,
 %
@@ -5078,7 +5079,7 @@ je vypočítaný približne, zväčša uvážením členov sumácie po~$i = 1$, 
 $i = 2$.
 
 Bez podrobnejšieho odvodenia uvedieme často používaný tvar 
-pre~$\delta\gamma_h(\phi)$ \parencite[pozri 
+člena~$\delta\gamma_h(\phi)$ \parencite[pozri 
 napríklad][]{MoritzPhysicalGeodesy},
 %
 \begin{equation}
@@ -5086,7 +5087,7 @@ napríklad][]{MoritzPhysicalGeodesy},
 \sin^2\phi) \, h + \frac{3\gamma_0(\phi)}{a^2} \, h^2{,}
 \end{equation}
 %
-pričom
+kde
 %
 \begin{equation}
 \frac{\partial \gamma_0(\phi)}{\partial h} = -\frac{2\gamma_0(\phi)}{a} \, (1 
@@ -5120,7 +5121,7 @@ ktoré nevyžadujú vysokú presnosť je niekedy možné aproximovať
 Tento vzťah je vhodné poznať, pretože normálne tiažové pole je volené tak, aby 
 $\partial g \slash \partial h \approx \partial \gamma \slash \partial h$.  
 Vzťah~(\ref{eq:ddgama_ddh_approx}) tak umožňuje vypočítať približnú zmenu 
-skutočného tiažového zrýchlenia~$g$ na povrchu Zeme s~výškou~$h$.  Pre 
+skutočného tiažového zrýchlenia~$g$ s~výškou~$h$ na povrchu Zeme.  Pre 
 názornosť uveďme, že podľa rovnice~(\ref{eq:ddgama_ddh_approx}) klesne skutočné 
 tiažové zrýchlenie na povrchu Zeme s~narastajúcou výškou napríklad~$1 
 \ \mathrm{cm}$ približne o~$3 \ \upmu\mathrm{Gal}$, čo je zhruba na úrovni 
@@ -5561,11 +5562,8 @@ Vzťah~(\ref{eq:dg_scalar}) môžeme teda prepísať do tvaru
 \begin{split}
 \delta g(P) &= \| \vec g(P) \| - \| \boldsymbol\gamma(P) \| 
 = -\left.\frac{\partial W}{\partial n_W}\right|_P - \left( 
-- \left.\frac{\partial U}{\partial n_U}\right|_P\right)\\
-%
-&= -\left.\frac{\partial W}{\partial n_W}\right|_P - \left( 
-- \left.\frac{\partial U}{\partial n_U}\right|_P\right) \, \cos\Theta \approx 
--\left( \left.\frac{\partial W}{\partial n_W}\right|_P - \left.\frac{\partial 
+- \left.\frac{\partial U}{\partial n_U}\right|_P\right) \approx -\left( 
+\left.\frac{\partial W}{\partial n_W}\right|_P - \left.\frac{\partial 
 U}{\partial n_W}\right|_P\right)\\
 %
 &= -\left.\frac{\partial (W - U)}{\partial n_W}\right|_P 
@@ -5575,23 +5573,23 @@ T}{\partial r}\right|_P{.}
 \end{split}
 \end{equation}
 %
-Aproximácia v~druhom riadku vzťahu~(\ref{eq:dg_normals}) je spôsobená 
-nahradením derivácie~$-\partial U \slash \partial n_U$ deriváciou~$-\partial 
-U \slash \partial n_W$, čo je prípustné, keďže $\cos\Theta \approx 1$ pre malé 
-hodnoty $\Theta$.  V~ďalšom kroku sme nahradili deriváciu poruchového 
-potenciálu v~smere~$n_W$ deriváciou v~smere elipsoidickej normály~$h$, ktorá 
-prechádzajúca bodom~$P$.  Táto veličina sa zvykne nazývať \emph{elipsoidická 
-aproximácia poruchy tiažového zrýchlenia}.  Posledná \emph{sférická aproximácia 
-poruchy tiažového zrýchlenia} bola získaná derivovaním poruchového potenciálu 
-v~smere sférického sprievodiča~$r$, ktorý prechádza bodom~$P$.  Na záver 
-spomeňme, že veličiny $-\left(\partial T \slash \partial n_W\right)|_P$, 
-$-\left(\partial T \slash \partial h\right)|_P$ a~$-\left(\partial T \slash 
-\partial r\right)|_P$ nemusia byť vždy chápané len ako aproximácie 
-rovnice~(\ref{eq:dg_scalar}).  V~niektorých situáciách môže byť napríklad 
-potrebné definovať skalárnu poruchu tiažového zrýchlenia práve vzťahom~$\delta 
-g(P) = -\left(\partial T \slash \partial n_W\right)|_P$ a~pod.  Pri čítaní 
-literatúry preto treba pozorne vnímať kontext, v~ktorom sa porucha tiažového 
-zrýchlenia vyskytuje.
+Aproximácia v~prvom riadku vzťahu~(\ref{eq:dg_normals}) je spôsobená nahradením 
+derivácie~$-\partial U \slash \partial n_U$ deriváciou~$-\partial U \slash 
+\partial n_W$, čo je prípustné, keďže $\cos\Theta \approx 1$ pre malé hodnoty 
+$\Theta$ (pozri Obrázok~\ref{fig:gravity_disturbance}).  V~ďalšom kroku sme 
+nahradili deriváciu poruchového potenciálu v~smere~$n_W$ deriváciou v~smere 
+elipsoidickej normály~$h$, ktorá prechádzajúca bodom~$P$.  Táto veličina sa 
+zvykne nazývať \emph{elipsoidická aproximácia poruchy tiažového zrýchlenia}.  
+Posledná \emph{sférická aproximácia poruchy tiažového zrýchlenia} bola získaná 
+derivovaním poruchového potenciálu v~smere sférického sprievodiča~$r$, ktorý 
+prechádza bodom~$P$.  Na záver spomeňme, že veličiny $-\left(\partial T \slash 
+\partial n_W\right)|_P$, $-\left(\partial T \slash \partial h\right)|_P$ 
+a~$-\left(\partial T \slash \partial r\right)|_P$ nemusia byť vždy chápané len 
+ako aproximácie rovnice~(\ref{eq:dg_scalar}).  V~niektorých situáciách môže byť 
+napríklad potrebné definovať skalárnu poruchu tiažového zrýchlenia práve 
+vzťahom~$\delta g(P) = -\left(\partial T \slash \partial n_W\right)|_P$ a~pod.  
+Pri čítaní literatúry preto treba pozorne vnímať kontext, v~ktorom sa porucha 
+tiažového zrýchlenia vyskytuje.
 
 Dosadením~(\ref{eq:t_sh}) do poslednej rovnosti vzťahu~(\ref{eq:dg_vector}) 
 a~s~využitím~(\ref{eq:gradient_sph}) získame sférický harmonický rozvoj vektora 
