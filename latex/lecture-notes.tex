@@ -15,7 +15,7 @@
 
 
 
-% LaTeX Packages and main settings
+% LaTeX packages and main settings
 % =============================================================================
 
 \documentclass[a4paper,12pt]{book}
@@ -1025,8 +1025,8 @@ takýmto spôsobom, neskôr v~Prílohe~\ref{app:laplace_in_spherical_system} sa
 presvedčíme, že tento postup nie je vo všeobecnosti správny.  Dôvod je ten, že 
 jednotkové vektory súradnicového systému môžu závisieť od premenných, podľa 
 ktorých sa derivuje.  V~poslednom výraze rovnice~(\ref{eq:gradient}) však táto 
-závislosť nie je explicitne uvedená.  Tejto chybe sa vyhneme, ak vyjadríme 
-operátor gradient pomocou jednotkových vektorov (pozri predposledný výraz 
+závislosť nie je explicitne uvedená.  Tejto chybe sa vyhneme, ak operátor 
+gradient vyjadríme pomocou jednotkových vektorov (pozri predposledný výraz 
 v~rovnici~\ref{eq:gradient}) a~tento tvar následne dosadíme 
 do~(\ref{eq:laplace_grad_grad_notation}) (pozri rovnicu~\ref{eq:laplace_xyz}).  
 Posledný výraz rovnice~(\ref{eq:gradient}) je preto potrebné vnímať 
@@ -2661,25 +2661,23 @@ z~Prílohy~\ref{app:sh}.}
 \label{fig:sh3d}
 \end{figure}
 
-Grafická reprezentácia sférických harmonických funkcií je uvedená na
-Obrázkoch~\ref{fig:sh} a~\ref{fig:sh3d}.  Možno si všimnúť, že sférické
-harmonické funkcie rádu $k = 0$ (ľavý stĺpec na obrázkoch) menia znamienko
-v~smere sférickej šírky a~nezávisia od sférickej dĺžky.  Obe vlastnosti možno
-overiť dosadením~$k = 0$ do rovnice~(\ref{eq:ynk_no_norm}),
+Grafická reprezentácia sférických harmonických funkcií je uvedená na 
+Obrázkoch~\ref{fig:sh} a~\ref{fig:sh3d}.  Možno si všimnúť, že sférické 
+harmonické funkcie stupňa~$n$ a~rádu $k = 0$ (ľavý stĺpec na obrázkoch) menia 
+$n$-krát znamienko v~smere sférickej šírky a~nezávisia od sférickej dĺžky.  Obe 
+vlastnosti možno overiť dosadením~$k = 0$ do rovnice~(\ref{eq:ynk_no_norm}) 
+(pozri tiež Kapitolu~\ref{sec:legendre_polynomials} a~Obrázok~\ref{fig:lp}),
 %
 \begin{equation}
 \label{eq:yn0}
 Y_{n0}(\varphi, \lambda) = P_n(\sin\varphi){.}
 \end{equation}
 %
-Sférická harmonická funkcia $Y_{n0}(\varphi, \lambda)$ mení $n$-krát znamienko
-v~smere sférickej šírky (porovnaj rovnicu~\ref{eq:yn0} a~Obrázok~\ref{fig:lp}).
-Možno si tiež všimnúť, že parita stupňa $n$ určuje symetriu funkcie
-$Y_{n0}(\varphi, \lambda)$ voči rovine rovníka; funkcia $Y_{n0}(\varphi,
-\lambda)$ je symetrická voči rovine rovníka pre $n = 0, 2, 4, \dots$
-a~nesymetrická pre $n = 1, 3, 5, \dots$ (pozri
-Kapitolu~\ref{sec:legendre_polynomials}). Funkcie~$Y_{n0}(\varphi, \lambda)$ sa
-nazývajú \emph{zonálne sférické harmonické funkcie}.
+Funkcia~$Y_{n0}(\varphi, \lambda)$ je symetrická voči rovine rovníka ak $n = 0, 
+2, 4, \dots$ a~nesymetrická ak $n = 1, 3, 5, \dots$ (pozri rovnicu~\ref{eq:yn0} 
+a~vlastnosti Legendreových polynómov 
+v~Kapitole~\ref{sec:legendre_polynomials}). Funkcie~$Y_{n0}(\varphi, \lambda)$ 
+sa nazývajú \emph{zonálne sférické harmonické funkcie}.
 
 Ak $0 < |k| < n$ (prostredný stĺpec na obrázkoch), sférická harmonická funkcia
 mení znamienko s~oboma súradnicami.  V~smere sférickej šírky dochádza k~$n
@@ -2687,7 +2685,7 @@ mení znamienko s~oboma súradnicami.  V~smere sférickej šírky dochádza k~$n
 Legendreovho polynómu $P_n(\sin\varphi)$ (pozri rovnice~\ref{eq:pnm_def}
 a~\ref{eq:pnm_ferrer}).  Deriváciou polynómu sa znižuje jeho stupeň, a~teda aj
 počet možností meniť znamienko.  V~smere sférickej dĺžky sa znamienko mení
-$2|k|$-krát.  Táto hodnota vyplýva z~vlastností trigonometrických funkcií
+$2|k|$-krát, čo vyplýva z~vlastností trigonometrických funkcií
 $\cos(k\lambda)$ a~$\sin(|k|\lambda)$.  Sférická harmonická funkcia rádu $0
 < |k| < n$ má prívlastok \emph{teserálna}.
 
@@ -4188,9 +4186,9 @@ a rýchlejší číselný výpočet v~porovnaní s~príslušným nekonečným ra
 ten musí byť vždy obmedzený na vhodne zvolený konečný počet členov.  
 V~Kapitole~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} budeme 
 preto hľadať uzavretý vzťah na výpočet normálneho tiažového potenciálu~$U$ 
-v~bodoch na povrchu ekvipotenciálneho elipsoidu a~nad ním.  Za týmto účelom 
-budeme pracovať v~redukovaných elipsoidických súradniciach, ktoré sa prirodzene 
-ponúkajú v~súvislosti so splošteným rotačným elipsoidom.  Následne 
+v~bodoch na povrchu ekvipotenciálneho elipsoidu a~nad ním.  Pracovať budeme 
+v~redukovaných elipsoidických súradniciach, ktoré sa prirodzene ponúkajú 
+v~súvislosti so splošteným rotačným elipsoidom.  Následne 
 v~Kapitole~\ref{sec:normal_gravity_potential_in_spherical_coords} vyjadríme 
 normálny tiažový potenciál vo sférických súradniciach, tentokrát už ale pomocou 
 nekonečného rozvoja.  
