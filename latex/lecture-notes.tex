@@ -321,8 +321,8 @@ i popod, resp. ponad kontinenty.  V~porovnaní s~predošlým prístupom by sme t
 získali geometricky jednoduchšiu a~hladšiu plochu, navyše aj s~istými relatívne 
 jednoducho uchopiteľnými fyzikálnymi vlastnosťami.  Takáto definícia tvaru Zeme 
 bola navrhnutá C.~F.~Gaussom~(1777--1855) a~podľa návrhu 
-J.~B.~Listinga~(1808--1882) nazývame túto plochu \emph{geoid}.  Veličina, ktorá 
-je konštantná na povrchu geoidu sa nazýva \emph{tiažový potenciál}.
+J.~B.~Listinga~(1808--1882) nazývame túto plochu \emph{geoid}.  Konštantnou 
+veličinou na povrchu geoidu je \emph{tiažový potenciál}.
 
 \emph{Fyzikálna geodézia} je vedná disciplína zaoberajúca sa určovaním tvaru
 Zeme, jej tiažovým poľom a~ich zmenami v~čase.  Študované sú oba vyššie opísané
@@ -1346,7 +1346,7 @@ Prvý vzniká v~dôsledku rotácie Zeme okolo vlastnej osi, druhý je spôsoben�
 obehom Zeme okolo Slnka.  Ak chceme študovať sily pôsobiace na Zemi v~takomto 
 neinerciálnom súradnicovom systéme, potrebné je uvážiť nielen gravitačnú silu, 
 ale aj~ďalšie sily v~zmysle Newtonovho pohybového zákona.  Na objekt, ktorý sa 
-nachádza na rotujúcej Zemi a~je vzhľadom k~nej v~pokoji pôsobí okrem 
+nachádza na rotujúcej Zemi a~je vzhľadom k~nej v~pokoji, pôsobí okrem 
 gravitačnej sily aj \emph{odstredivá sila}.  Ak je objekt v~pohybe, pôsobí naň 
 i~tretia sila, ktorá sa nazýva \emph{Coriolisova sila} 
 \parencite{Torge1989,SansoGeoidDetermination}.  Azda väčšina geodetických 
@@ -1492,7 +1492,7 @@ prislúcha obom veličinám jednotka~$\mathrm{m}^2 \ \mathrm{s}^{-2}$.
 \subsubsection{Ekvipotenciálna plocha}
 \label{sec:equipotential_surface}
 
-Plocha, na ktorej je hodnota tiažového potenciálu~$W$ konštantná sa nazýva
+Plocha, na ktorej je tiažový potenciál~$W$ konštantný, sa nazýva 
 \emph{ekvipotenciálna plocha} (Obrázok~\ref{fig:equipotential_surfaces}).
 V~úvodnej kapitole jeden z~prístupov definuje tvar Zeme ako geoid, teda tú
 ekvipotenciálnu plochu, ktorá koinciduje s~hladinou morí a~oceánov.  Pre
@@ -1514,10 +1514,10 @@ v~celom priestore \parencite{Janak2006}.
 
 \item Ekvipotenciálne plochy sú uzavreté \parencite{VanicekGeodesy}.
 
-\item Ekvipotenciálne plochy mimo telesa sú analytickými plochami.
-Ekvipotenciálne plochy, ktoré sa celé nachádzajú vo vnútri telesa alebo ho
-pretínajú nie sú analytické, pretože ich krivosť sa môže meniť nespojito
-v~závislosti od hustoty \parencite{MoritzPhysicalGeodesy}.
+\item Ak sa celá ekvipotenciálna plocha nachádza mimo telesa, potom je táto 
+plocha analytická.  Ekvipotenciálne plochy, ktoré sa celé nachádzajú vo vnútri 
+telesa alebo ho pretínajú, nie sú analytické, pretože ich krivosť sa môže 
+nespojito meniť v~závislosti od hustoty \parencite{MoritzPhysicalGeodesy}.
 
 \item Všetky ekvipotenciálne plochy sú hladké a~neobsahujú hrany
 \parencite{MoritzPhysicalGeodesy}.
@@ -1657,8 +1657,8 @@ $\diff W = \| \vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| \, \|
 \input{./fig-total-differential.pdf_tex}
 \caption{Totálny diferenciál~$\delta W(P, \Delta \vec x)$ v~bode~$P$.  
 Zobrazených je päť smerov~$\diff \vec x_1$ až~$\diff \vec x_5$, v~ktorých je 
-skúmaná zmena tiažového potenciálu~$W$ po tom ako sú zmenené súradnice bodu~$P$ 
-o~hodnotu $\diff \vec x$.}
+skúmaná zmena tiažového potenciálu~$W$ po tom, ako sú zmenené súradnice 
+bodu~$P$ o~hodnotu $\diff \vec x$.}
 \label{fig:total_differential}
 \end{figure}
 
@@ -2767,13 +2767,12 @@ f_{nk} = \frac{(2 - \delta_{k0}) \, (2n + 1)}{4\pi} \, \frac{(n - |k|)!}{(n
 + |k|)!} \, \iint\limits_{\sigma} f(\varphi, \lambda) \, Y_{nk}(\varphi, 
 \lambda) \, \diff \sigma{.}
 \end{equation}
-%
 
 Vidíme teda, že ak je splnená podmienka~(\ref{eq:f_l2}), potom možno 
 funkciu~$f(\varphi, \lambda)$ rozložiť pomocou sférických harmonických funkcií 
 na súradnice $f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) a~následne ju spätne 
 zrekonštruovať (vzťah~\ref{eq:f_shs_no_norm}).  V~priestore funkcií $f(\varphi, 
-\lambda)$, ktoré sú definované na sfére a~spĺňajú podmienku~($\ref{eq:f_l2}$) 
+\lambda)$, ktoré sú definované na sfére a~spĺňajú podmienku~($\ref{eq:f_l2}$), 
 plnia sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$ podobnú úlohu ako 
 plnia jednotkové vektory $\vec e_i$ v~priestore trojrozmerných vektorov $\vec 
 r$.  Funkcia $f(\varphi,\lambda)$ môže byť napríklad gravitačný či magnetický 
@@ -3879,7 +3878,7 @@ najčastejší spôsob voľby normálneho tiažového poľa Zeme.
 gravitačného potenciálu do konečného harmonického stupňa 
 (rovnice~\ref{eq:vg_sh_no_norm}, \ref{eq:vg_sh_1st_norm}, 
 \ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}).  Plocha, na ktorej je 
-takto definovaný normálny tiažový potenciál konštantný sa nazýva 
+takto definovaný normálny tiažový potenciál konštantný, sa nazýva 
 \emph{sféroid}.  Obmedzením rozvoja potenciálu na stupeň~2 získame 
 \emph{Brunsov sféroid} a~obmedzením na stupeň~4 získame \emph{Helmertov 
 sféroid} \parencite{Moritz1967}.  V~oboch prípadoch sú koeficienty stupňa~1 
@@ -3929,7 +3928,7 @@ fyzikálne (hmotnosť a~uhlová rýchlosť rotácie).  Všetky ostatné veličin
 normálneho tiažového poľa je možné vypočítať z~týchto základných parametrov, či 
 už ide o~geometrické parametre (napríklad vedľajšia polos či lineárna 
 excentricita elipsoidu) alebo fyzikálne parametre (normálny tiažový potenciál 
-a pod.).  Parametre, ktoré sú vypočítané zo základných parametrov budeme 
+a pod.).  Parametre, ktoré sú vypočítané zo základných parametrov, budeme 
 nazývať \emph{odvodené parametre}.  Teóriu ekvipotenciálneho elipsoidu 
 rozpracovali taliansky geodet, astronóm, geofyzik a~matematik P.~Pizzetti 
 (1860--1918) a~taliansky matematik a~matematický fyzik C.~Somigliana 
@@ -4435,7 +4434,7 @@ q_0 &= \frac{1}{2} \left[ \left( 1 + 3 \frac{b^2}{E^2} \right) \,
 Nech sa nachádza výpočtový bod so súradnicami $(u, \beta)$ vo veľkej 
 vzdialenosti od ekvipotenciálneho elipsoidu.  Vo 
 vzťahoch~(\ref{eq:ug_spheroidal_2}) a~(\ref{eq:u_q}) vystupuje funkcia 
-$\arctan$, ktorá môže byť rozvinutá  do mocninového radu 
+$\arctan$, ktorá môže byť rozvinutá do mocninového radu 
 \parencite{Gradshteyn2007}
 %
 \begin{equation}
@@ -4643,7 +4642,7 @@ vo vonkajšom priestore ekvipotenciálneho elipsoidu so zadanou podmienkou na
 jeho povrchu.  Hľadanie takého riešenia diferenciálnej rovnice, ktoré vyhovuje 
 zadanej podmienke (v~našom prípade $U_0$ na povrchu ekvipotenciálneho 
 elipsoidu) sa nazýva \emph{okrajová úloha}.  Okrajová úloha bola vyriešená už 
-vzťahom~(\ref{eq:ug_spheroidal}).  Úpravy, ktoré po nej nasledovali už boli 
+vzťahom~(\ref{eq:ug_spheroidal}).  Úpravy, ktoré po nej nasledovali, už boli 
 vykonané iba kvôli zámeru vyjadriť normálny tiažový potenciál pomocou štyroch 
 základných parametrov ekvipotenciálneho elipsoidu.
 
@@ -4741,7 +4740,7 @@ V tejto kapitole najprv ukážeme exaktný spôsob výpočtu normálneho tiažov
 zrýchlenia v~redukovaných elipsoidických súradniciach 
 (Kapitola~\ref{sec:normal_gravity_potential_in_reduced_ell_coords}).  Táto 
 metóda je v~praktických aplikáciách využívaná zriedkavejšie.  Azda je tomu tak 
-preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie nezvykneme 
+preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie, nezvykneme 
 v~praxi určovať v~redukovaných elipsoidických súradniciach.  Tento prístup je 
 ale dôležitý obzvlášť z~teoretického hľadiska a~z~pohľadu numerických 
 simulácií, lebo využíva uzavreté vzťahy.  
@@ -5106,7 +5105,7 @@ mnohé aplikácie postačuje.
 
 Ak je vyžadovaná vysoká presnosť, Taylorov rozvoj~(\ref{eq:gamma_taylor}) môže 
 byť vypočítaný až do~$i = 4$ podľa \textcite{Pick2000}.  Naopak, v~úlohách, 
-ktoré nevyžadujú vysokú presnosť je niekedy možné aproximovať 
+ktoré nevyžadujú vysokú presnosť, je niekedy možné aproximovať 
 člen~$\delta\gamma_h(\phi)$ aj pomocou približnej hodnoty derivácie $\partial 
 \gamma_0(\phi) \slash \partial h$,
 %
@@ -5503,9 +5502,9 @@ stretneme so skalárnou definíciou poruchy tiažového zrýchlenia,
 ktorá zanedbáva rozdielnosť smerov vektorov $\| \vec g(P) \|$ a~$\| \boldsymbol 
 \gamma(P) \|$.\footnote{Ak majú dva vektory rozdielny smer (v~tomto prípade 
 vektory~$\vec g(P)$ a~$\boldsymbol \gamma(P)$), veľkosť vektora, ktorý vznikne 
-ich rozdielom ($\| \delta \vec g(P) \|$) nie je možné získať rozdielom veľkostí 
-týchto vektorov ($\| \vec g(P) \| - \| \boldsymbol \gamma(P) \|$).}  Ak 
-odhliadneme od ojedinelej situácie, v~ktorej majú vektory $\vec g(P)$ 
+ich rozdielom ($\| \delta \vec g(P) \|$), nie je možné získať rozdielom 
+veľkostí týchto vektorov ($\| \vec g(P) \| - \| \boldsymbol \gamma(P) \|$).}  
+Ak odhliadneme od ojedinelej situácie, v~ktorej majú vektory $\vec g(P)$ 
 a~$\boldsymbol{\gamma}(P)$ totožný smer, potom \emph{v~zmysle 
 vzťahov~(\ref{eq:dg_vector}) a~(\ref{eq:dg_scalar})} platí
 %
@@ -5738,8 +5737,8 @@ z~rovníc~(\ref{eq:dg_vector}) či~(\ref{eq:dg_normals}).
 \section{Anomália tiažového zrýchlenia}
 \label{sec:gravity_anomaly}
 
-Prevažne z~historických dôvodov sú s~tiažovým zrýchlením~$\vec g(P)$ spojené až 
-dve veličiny poruchového poľa: porucha tiažového zrýchlenia~$\delta \vec g(P)$ 
+S~tiažovým zrýchlením~$\vec g(P)$ sú spojené až dve veličiny poruchového poľa: 
+porucha tiažového zrýchlenia~$\delta \vec g(P)$ 
 (Kapitola~\ref{sec:gravity_disturbance}) a~\emph{anomália tiažového 
 zrýchlenia}~$\Delta \vec g(P)$.  Vektor anomálie tiažového zrýchlenia je 
 definovaný ako rozdiel vektora skutočného tiažového zrýchlenia~$\vec g(P)$ 
@@ -5775,11 +5774,10 @@ výška geoidu nad referenčným elipsoidom (pozri
 Kapitolu~\ref{sec:disturbing_field_geoid_deflections}).  \emph{Teluroid ale na 
 rozdiel od geoidu nie je ekvipotenciálnou plochou}.
 
-Dôvod, pre ktorý sa okrem jednoducho definovanej poruchy tiažového zrýchlenia 
-používa aj anomália tiažového zrýchlenia je najmä historický.  Ak chceme určiť 
-poruchu tiažového zrýchlenia v~bode~$P$, potrebné je odmerať tiažové zrýchlenie 
-v~bode~$P$ a~polohu bodu~$P$ voči ekvipotenciálnemu elipsoidu.  Znalosť polohy 
-je potrebná kvôli výpočtu normálneho tiažového zrýchlenia 
+Dôvod zavedenia anomálie tiažového zrýchlenia je najmä historický.  Ak chceme 
+určiť poruchu tiažového zrýchlenia v~bode~$P$, potrebné je odmerať tiažové 
+zrýchlenie v~bode~$P$ a~polohu bodu~$P$ voči ekvipotenciálnemu elipsoidu.  
+Znalosť polohy je potrebná kvôli výpočtu normálneho tiažového zrýchlenia 
 (Kapitola~\ref{sec:normal_gravity_field}).  Zo súradníc definujúcich~polohu 
 potrebujeme poznať spravidla elipsoidickú šírku~$\phi$ a~elipsoidickú výšku~$h$ 
 (Kapitola~\ref{sec:normal_gravity_taylor}), prípadne sférickú šírku~$\varphi$ 
