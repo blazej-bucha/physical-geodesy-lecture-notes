@@ -1348,15 +1348,15 @@ neinerciálnom súradnicovom systéme, potrebné je uvážiť nielen gravitačn�
 ale aj~ďalšie sily v~zmysle Newtonovho pohybového zákona.  Na objekt, ktorý sa 
 nachádza na rotujúcej Zemi a~je vzhľadom k~nej v~pokoji, pôsobí okrem 
 gravitačnej sily aj \emph{odstredivá sila}.  Ak je objekt v~pohybe, pôsobí naň 
-i~tretia sila, ktorá sa nazýva \emph{Coriolisova sila} 
-\parencite{Torge1989,SansoGeoidDetermination}.  Azda väčšina geodetických 
-meracích zariadení je počas merania vzhľadom k~Zemi v~pokoji, preto Coriolisovu 
-silu nebudeme ďalej uvažovať.  Spomeňme tiež, že ak sa uhlová rýchlosť 
-rotácie~$\omega$ v~čase mení, potrebné je uvážiť aj~\emph{Eulerovu silu} 
-\parencite{Torge1989,SansoGeoidDetermination}.  Tieto tri sily, odstredivá, 
-Coriolisova a~Eulerova, sa zaraďujú medzi \emph{zotrvačné sily}, niekedy tiež 
-nazývané fiktívne sily.  Zotrvačné sily nevznikajú vzájomným silovým pôsobením 
-medzi objektmi.
+aj \emph{Coriolisova sila} \parencite{Torge1989,SansoGeoidDetermination}.  Azda 
+väčšina geodetických meracích zariadení je počas merania vzhľadom k~Zemi 
+v~pokoji, preto Coriolisovu silu nebudeme ďalej uvažovať.  Na záver 
+spomeňme~\emph{Eulerovu silu}, ktorá je spôsobená zmenou uhlovej rýchlosti 
+rotácie~$\omega$ v~čase \parencite{Torge1989,SansoGeoidDetermination}.  V~tejto 
+práci ale predpokladáme, že uhlová rýchlosť rotácie Zeme je konštantná, a~tak 
+Eulerova sila nevzniká.  Tieto tri sily, odstredivá, Coriolisova a~Eulerova, sa 
+zaraďujú medzi \emph{zotrvačné sily}, niekedy tiež nazývané fiktívne sily.  
+Zotrvačné sily nevznikajú vzájomným silovým pôsobením medzi objektmi.
 
 
 
@@ -1515,8 +1515,8 @@ v~celom priestore \parencite{Janak2006}.
 \item Ekvipotenciálne plochy sú uzavreté \parencite{VanicekGeodesy}.
 
 \item Ak sa celá ekvipotenciálna plocha nachádza mimo telesa, potom je táto 
-plocha analytická.  Ekvipotenciálne plochy, ktoré sa celé nachádzajú vo vnútri 
-telesa alebo ho pretínajú, nie sú analytické, pretože ich krivosť sa môže 
+plocha analytická.  Ekvipotenciálne plochy nachádzajúce sa vo vnútri telesa 
+alebo teleso pretínajúce nie sú analytické, pretože ich krivosť sa môže 
 nespojito meniť v~závislosti od hustoty \parencite{MoritzPhysicalGeodesy}.
 
 \item Všetky ekvipotenciálne plochy sú hladké a~neobsahujú hrany
@@ -1641,24 +1641,27 @@ voči skutočnej zmene tiažového potenciálu~$\delta W(P, \Delta \vec x)$ na
 funkcie~$f$ v~okolí bodu~$P$.
 
 Ak k~diferenciálnej zmene polohy~$\diff \vec x$ dochádza pozdĺž 
-ekvipotenciálnej plochy, potom totálny diferenciál~$\diff W$ je nulový ($\diff 
-\vec x_2$ a~$\diff \vec x_4$).  Toto tvrdenie môžeme vysvetliť tým, že 
+ekvipotenciálnej plochy, potom totálny diferenciál~$\diff W$ je nulový (pozri 
+vektory~$\diff \vec x_2$ a~$\diff \vec x_4$ na 
+Obrázku~\ref{fig:total_differential}).  Toto tvrdenie môžeme vysvetliť tým, že 
 vektor~$\vec g$ je kolmý na ekvipotenciálnu plochu (a~tým aj na vektor~$\diff 
 \vec x$), preto $\diff W = \| \vec g \| \, \| \diff \vec x \| \, 
 \cos(90^{\circ}) = 0$.  Naopak, k~najväčšej zmene tiažového potenciálu dochádza 
 vtedy, keď vektory~$\vec g$ a~$\diff \vec x$ majú rovnaký smer, to znamená keď 
-vektor~$\diff \vec x$ je kolmý ekvipotenciálnu plochu (prípad~$\diff \vec x_1$ 
-na Obrázku~\ref{fig:total_differential}).  V~takom prípade~$\alpha = 0$, preto 
-$\diff W = \| \vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| \, \| 
-\diff \vec x \|$.
+vektor~$\diff \vec x$ je kolmý ekvipotenciálnu plochu (pozri vektor~$\diff \vec 
+x_1$ na Obrázku~\ref{fig:total_differential}).  V~takom prípade~$\alpha = 0$, 
+preto $\diff W = \| \vec g \| \, \| \diff \vec x \| \, \cos(0) = \| \vec g \| 
+\, \| \diff \vec x \|$.
 
 \begin{figure}
 \centering
 \input{./fig-total-differential.pdf_tex}
-\caption{Totálny diferenciál~$\delta W(P, \Delta \vec x)$ v~bode~$P$.  
-Zobrazených je päť smerov~$\diff \vec x_1$ až~$\diff \vec x_5$, v~ktorých je 
-skúmaná zmena tiažového potenciálu~$W$ po tom, ako sú zmenené súradnice 
-bodu~$P$ o~hodnotu $\diff \vec x$.}
+\caption{Totálny diferenciál~$\delta W(P, \Delta \vec x)$ v~bode~$P$.  Skúmaná 
+je zmena tiažového potenciálu~$W(P)$ po zmene súradníc bodu~$P$ o~hodnotu 
+$\diff \vec x_1$ až~$\diff \vec x_5$.  Vektory~$\diff \vec x_1$ a~$\diff \vec 
+x_3$ sú kolmé na ekvipotenciálnu plochu~$W(P) = \textrm{kon\v{s}t.}$, 
+vektory~$\diff \vec x_2$ a~$\diff \vec x_4$ ležia v~jej dotykovej rovine 
+a~symbol~$\diff \vec x_5$ označuje vektor vo všeobecnom smere.}
 \label{fig:total_differential}
 \end{figure}
 
@@ -3152,8 +3155,8 @@ V_\gidx(P)}{\partial r}\nonumber\\
 Sférickými harmonickými rozvojmi teda môžeme vypočítať prakticky akúkoľvek 
 veličinu gravitačného či tiažového poľa, od gravitačného potenciálu, cez 
 gravitačné zrýchlenie až po zvislicové odchýlky či geoid.  
-Rovnice~(\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) tiež prakticky demonštrujú, aké 
-výhodné je poznať tvar operátora gradient vo sférických súradniciach 
+Rovnice~(\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) tiež prakticky demonštrujú 
+výhodnosť vyjadrenia operátora gradient vo sférických súradniciach 
 (rovnica~\ref{eq:gradient_sph}).  Priamy výpočet derivácií $\partial V_\gidx 
 \slash \partial x^\mathrm{s}$, $\partial V_\gidx \slash \partial y^\mathrm{s}$ 
 a $\partial V_\gidx \slash \partial z^\mathrm{s}$ 
@@ -5449,8 +5452,8 @@ nedokážeme jednoducho odmerať
 určiť, pretože poruchový potenciál priamo súvisí s~výpočtom geoidu.  
 V~Kapitolách~\ref{sec:gravity_disturbance} a~\ref{sec:gravity_anomaly} 
 predstavíme veličiny poruchového poľa, ktoré dokážeme odmerať.  Na záver 
-v~Kapitole~\ref{sec:geoid} ukážeme, ako z~týchto veličín vypočítame priebeh 
-geoidu.
+v~Kapitolách~\ref{sec:deflections} a~\ref{sec:geoid} ukážeme vypočet 
+zvislicových odchýlok a~geoidu z~týchto veličín.
 
 
 
@@ -5569,12 +5572,12 @@ T}{\partial r}\right|_P{.}
 %
 Aproximácia v~prvom riadku vzťahu~(\ref{eq:dg_normals}) je spôsobená nahradením 
 derivácie~$-\partial U \slash \partial n_U$ deriváciou~$-\partial U \slash 
-\partial n_W$, čo je prípustné, keďže $\cos\Theta \approx 1$ pre malé hodnoty 
-$\Theta$ (pozri Obrázok~\ref{fig:gravity_disturbance}).  V~ďalšom kroku sme 
-nahradili deriváciu poruchového potenciálu v~smere~$n_W$ deriváciou v~smere 
-elipsoidickej normály~$h$, ktorá prechádzajúca bodom~$P$.  Táto veličina sa 
-zvykne nazývať \emph{elipsoidická aproximácia poruchy tiažového zrýchlenia}.  
-Posledná \emph{sférická aproximácia poruchy tiažového zrýchlenia} bola získaná 
+\partial n_W$, čo je prípustné vzhľadom na malé hodnoty uhla~$\Theta$ (pozri 
+Obrázok~\ref{fig:gravity_disturbance}).  V~ďalšom kroku sme nahradili deriváciu 
+poruchového potenciálu v~smere~$n_W$ deriváciou v~smere elipsoidickej 
+normály~$h$, ktorá prechádzajúca bodom~$P$.  Táto veličina sa zvykne nazývať 
+\emph{elipsoidická aproximácia poruchy tiažového zrýchlenia}.  Posledná 
+\emph{sférická aproximácia poruchy tiažového zrýchlenia} bola získaná 
 derivovaním poruchového potenciálu v~smere sférického sprievodiča~$r$, ktorý 
 prechádza bodom~$P$.  Na záver spomeňme, že veličiny $-\left(\partial T \slash 
 \partial n_W\right)|_P$, $-\left(\partial T \slash \partial h\right)|_P$ 
@@ -5720,7 +5723,7 @@ farebná škála.}
 \label{fig:dg_ggm_450km}
 \end{figure}
 
-Porucha tiažového zrýchlenia sa spravidla udáva v~jednotkách mGal a~nadobúda 
+Porucha tiažového zrýchlenia sa spravidla udáva v~jednotke mGal a~nadobúda 
 hodnoty v~rozsahu od~$-400\ \mathrm{mGal}$ do $1000\ \mathrm{mGal}$ (hrubý 
 odhad na základe modelu~EIGEN-6C4).  Vo fyzikálnej geodézii vystupuje zväčša 
 ako meraná veličina, z~ktorej sa snažíme určiť poruchový potenciál a~následne 
@@ -5862,7 +5865,7 @@ Podobne ako v~súvislosti s~poruchou tiažového zrýchlenia
 \| \Delta \vec g(P_0) \| \neq \Delta g(P_0){.}
 \end{equation}
 
-Anomália tiažového zrýchlenia sa väčšinou udáva v~jednotkách~mGal.  Anomália 
+Anomália tiažového zrýchlenia sa väčšinou udáva v~jednotke~mGal.  Anomália 
 a~porucha tiažového zrýchlenia sú základné merateľné veličiny fyzikálnej 
 geodézie, z~ktorých sa určuje tvar Zeme.
 
