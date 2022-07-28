@@ -617,10 +617,10 @@ dokázali zredukovať na jedno jediné číslo bez straty informácie o~poli
 samotnom.  Skalárna veličina gravitačného poľa sa nazýva \emph{gravitačný 
 potenciál} a~označuje sa symbolom~$V_\gidx$.
 
-Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia.  Pre lepšie
-pochopenie vzťahu medzi gravitačným zrýchlením a~gravitačným potenciálom však
-najprv predstavíme diferenciálny operátor gradient a~až následne pristúpime
-k~samotnej definícii gravitačného potenciálu.
+Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia.  Pre lepšie 
+pochopenie vzťahu medzi oboma veličinami však najprv predstavíme diferenciálny 
+operátor gradient a~až následne pristúpime k~samotnej definícii gravitačného 
+potenciálu.
 
 \subsubsection{Operátor gradient v~karteziánskom súradnicovom systéme}
 
@@ -738,12 +738,11 @@ a~spĺňa podmienku
 %
 Vzťah~(\ref{eq:gg_grad_vg}) hovorí, že vektor gravitačného zrýchlenia udáva 
 smer a~veľkosť najväčšieho nárastu gravitačného potenciálu.  
-Rovnica~(\ref{eq:vg_at_infty}) znamená, že gravitačný potenciál nadobúda 
-v~nekonečnej vzdialenosti od telesa nulovú hodnotu.  Tento vzťah zabezpečuje, 
-že existuje práve jedna funkcia~$V_\gidx$ vyhovujúca 
-rovnici~(\ref{eq:gg_grad_vg}) \parencite{SansoGeoidDetermination}.  Keďže 
-podmienka (\ref{eq:vg_at_infty}) bola zvolená, \emph{gravitačný potenciál je 
-relatívna veličina}.
+Rovnica~(\ref{eq:vg_at_infty}) znamená, že v~nekonečnej vzdialenosti od telesa 
+nadobúda gravitačný potenciál nulovú hodnotu.  Tento vzťah zabezpečuje, že 
+existuje práve jedna funkcia~$V_\gidx$ vyhovujúca rovnici~(\ref{eq:gg_grad_vg}) 
+\parencite{SansoGeoidDetermination}.  Keďže podmienka (\ref{eq:vg_at_infty}) 
+bola zvolená, \emph{gravitačný potenciál je relatívna veličina}.
 
 Gravitačný potenciál hmotného bodu je daný vzťahom
 %
@@ -1208,8 +1207,8 @@ v~budúcnosti či v~minulosti.  Úloha je síce výrazne komplikovanejšia, ak
 uvážime prítomnosť ďalších nebeských telies, pretože aj tie ovplyvňujú svojou 
 gravitačnou silou našu planétu a~naša planéta ovplyvňuje svojou gravitačnou 
 silou ostatné planéty, no úloha je riešiteľná rovnakým spôsobom.  V~prípade 
-Laplaceovej rovnice je situácia je veľmi podobná.  Ak poznáme napríklad 
-gravitačný potenciál či gravitačné zrýchlenie na celom povrchu Zeme, znalosť 
+Laplaceovej rovnice je situácia veľmi podobná.  Ak poznáme napríklad gravitačný 
+potenciál či gravitačné zrýchlenie na celom povrchu Zeme, znalosť 
 \emph{princípu} zmeny gravitačného potenciálu\footnote{Presnejšie by azda bolo 
 povedať \textit{zmenu} zmeny gravitačného potenciálu, keďže Laplaceova 
 rovnica~(\ref{eq:vg_laplace_cart}) obsahuje druhé derivácie.} mimo Zeme 
@@ -2021,7 +2020,7 @@ potenciál z~jeho súradníc~$v_{nk}$.
 
 Je zrejmé, že v~prípade gravitačného potenciálu (rovnice \ref{eq:vg_analysis}
 a~\ref{eq:vg_synthesis}) je situácia komplikovanejšia ako v~prípade polohových
-vektorov (rovnice \ref{eq:r_analysis} a~\ref{eq:r_synthesis}).  Súradníc
+vektorov (rovnice \ref{eq:r_synthesis} a~\ref{eq:r_analysis}).  Súradníc
 $v_{nk}$ je nekonečne veľa (pozri limity prvej sumácie vo
 vzťahu~\ref{eq:vg_synthesis}), sumácia je dvojitá a~sférické harmonické funkcie
 $Y_{nk}(\varphi, \lambda)$ závisia od sférickej šírky~$\varphi$ a~sférickej
@@ -2209,13 +2208,14 @@ a~je daný vzťahom
 P_{nm}(t) = (1 - t^2)^{m \slash 2} \, \frac{\diff^m P_n(t)}{\diff t^m}{,}
 \end{equation}
 %
-kde symbol~$m$ sa nazýva \emph{rád} a~môže nadobúdať hodnoty $m = 0, 1, \dots,
+kde symbol~$m$ sa nazýva \emph{rád} a~môže nadobúdať hodnoty $m = 0, 1, \dots, 
 n$ (pozri druhú sumáciu vo vzťahu~\ref{eq:pn_decomposition_formula}).  Ak je 
-rád Legendreovej funkcie nulový, zvykne sa v~zápise vynechať, teda $P_n(t)
-= P_{n0}(t)$.  Zo vzťahu~(\ref{eq:pnm_def}) vidíme, že Legendreova funkcia
-stupňa~$n$ a~rádu~$m$ súvisí s~$m$-tou deriváciou Legendreoveho polynómu stupňa
-$n$.  Vo vzťahu~(\ref{eq:pnm_def}) pribudol ešte člen~$\delta_{m0}$, ktorý má
-názov Kroneckerovo delta.  Všeobecná definícia pre~$m$ a~$l$ má tvar
+rád Legendreovej funkcie nulový, zvykne sa v~zápise vynechať, teda $P_n(t) 
+= P_{n0}(t)$.  Zo vzťahu~(\ref{eq:pnm_def}) vidíme, že Legendreova funkcia 
+stupňa~$n$ a~rádu~$m$ súvisí s~$m$-tou deriváciou Legendreoveho polynómu stupňa 
+$n$.  Vo vzťahu~(\ref{eq:pn_decomposition_formula}) pribudol ešte 
+člen~$\delta_{m0}$, ktorý má názov Kroneckerovo delta.  Všeobecná definícia 
+pre~$m$ a~$l$ má tvar
 %
 \begin{equation}
 \delta_{ml} =
