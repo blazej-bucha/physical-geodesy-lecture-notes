@@ -3208,7 +3208,7 @@ ktoré sa nachádzajú nad geoidom \parencite[napríklad][]{Ince2020}.
 
 V~Kapitole~\ref{sec:spherical_harmonics} sme uviedli, že do radu sférických
 harmonických funkcií je možné rozvinúť nielen gravitačný potenciál, ale každú
-funkciu, ktorá spĺňa podmienku~\ref{eq:f_l2}.  Rozviňme preto do maximálneho 
+funkciu, ktorá spĺňa podmienku~(\ref{eq:f_l2}).  Rozviňme preto do maximálneho 
 stupňa~$N$ napríklad zemskú topografiu $H(\varphi, \lambda)$,
 %
 \begin{equation}
@@ -5378,15 +5378,19 @@ pričom (pozri rovnice~\ref{eq:c20_j20}, \ref{eq:c20_j20_2} a~\ref{eq:j2n0})
 \label{eq:cell_2n}
 \bar{C}^\mathrm{e}_{2n',0} = (-1)^{n'} \, \frac{3e^{2n'}}{(2n' + 1) \, (2n' 
 + 3) \, \sqrt{4n' + 1}} \left( 1 - n' - 5^{3 \slash 2} \, n' \, 
-\frac{\bar{C}^\mathrm{e}_{2,0}}{e^2} \right){,} \quad n' = 0, 1, 2,\dots
+\frac{\bar{C}^\mathrm{e}_{2,0}}{e^2} \right){,} \quad n' = 0, 1, 2,\dots{,}
+\end{equation}
+%
+\begin{equation}
+\bar{C}^\mathrm{e}_{nk} = 0{,} \quad \textrm{pre} \quad n \neq 0, 2, 4,\dots, 
+\quad k \neq 0{,}
 \end{equation}
 %
 a (pozri Kapitoly~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} 
 a~\ref{sec:normal_gravity_potential_in_spherical_coords})
 %
 \begin{equation}
-\bar{S}^\mathrm{e}_{n,k} = 0 \quad \textrm{pre} \quad n = 0, 1, 2,\dots, 
-\ k = -n, \dots, n{.}
+\bar{S}^\mathrm{e}_{nk} = 0{,} \quad n = 0, 1, 2,\dots, \ k = -n, \dots, n{.}
 \end{equation}
 %
 Symbol~$\bar{C}^\mathrm{e}_{2,0}$ v~rovnici~(\ref{eq:cell_2n}) je totožný 
@@ -5780,18 +5784,17 @@ zrýchlenie v~bode~$P$ a~polohu bodu~$P$ voči ekvipotenciálnemu elipsoidu.
 Znalosť polohy je potrebná kvôli výpočtu normálneho tiažového zrýchlenia 
 (Kapitola~\ref{sec:normal_gravity_field}).  Zo súradníc definujúcich~polohu 
 potrebujeme poznať spravidla elipsoidickú šírku~$\phi$ a~elipsoidickú výšku~$h$ 
-(Kapitola~\ref{sec:normal_gravity_taylor}), prípadne sférickú šírku~$\varphi$ 
-a~sprievodič~$r$ (Kapitola~\ref{sec:normal_gravity_in_sph_coords}).  
-V~súčasnosti je možné jednoducho určiť tieto súradnice pomocou globálnych 
-navigačných družicových systémov.  V~preddružicovej ére však bolo možné odmerať 
-iba fyzikálne výšky pomocou nivelácie (pozri 
+(Kapitola~\ref{sec:normal_gravity_taylor}).  V~súčasnosti už môže byť 
+elipsoidická výška odmeraná jednoducho pomocou globálnych navigačných 
+družicových systémov.  V~preddružicovej ére však bolo možné odmerať iba 
+fyzikálne výšky pomocou nivelácie (pozri 
 Kapitolu~\ref{sec:centrifugal_and_gravity_potential}), v~tomto prípade dĺžku 
 normálnej tiažnice~$t_U$ medzi bodmi~$Q_0$ a~$Q$ 
 (Obrázok~\ref{fig:gravity_anomaly}).  Táto vzdialenosť sa nazýva \emph{normálna 
 výška podľa Molodenského}~$H_n$ 
 \parencite{MoritzPhysicalGeodesy}.\footnote{Niveláciou je možné určiť aj iné 
 typy fyzikálnych výšok \parencite[pozri napríklad][]{MoritzPhysicalGeodesy}.}  
-Normálne tiažové zrýchlenie v~bode~$Q$ tak bolo možné vypočítať z~výšky~$H_n$ 
+Normálne tiažové zrýchlenie tak bolo možné vypočítať v~bode~$Q$ z~výšky~$H_n$ 
 určenej niveláciou.  S~ohľadom na súčasnú dostupnosť globálnych navigačných 
 družicových systémov je možné očakávať, že v~budúcnosti bude vo fyzikálnej 
 geodézii dominovať porucha tiažového zrýchlenia 
@@ -6069,17 +6072,15 @@ do~(\ref{eq:Dg_fundamental_equation_earth_sph}) získame
 %
 Vo sférickej aproximácii sa tak anomália tiažového 
 zrýchlenia~(\ref{eq:Dg_sh_sa}) odlišuje od poruchy tiažového 
-zrýchlenia~(\ref{eq:dg_sh_sa} a~\ref{eq:dgz_sh}) iba v~člene $(n - 1)$, ktorý 
+zrýchlenia~(\ref{eq:dg_sh_sa} a~\ref{eq:dgz_sh}) iba v~člene~$(n - 1)$, ktorý 
 nahradil člen~$(n + 1)$.  Všimnime si, že  koeficienty~$\bar{t}_{nk}$ stupňa~$n 
-= 1$ neovplyvňujú anomáliu tiažového zrýchlenia v~dôsledku nulového člena $(n 
+= 1$ neovplyvňujú anomáliu tiažového zrýchlenia v~dôsledku nulového člena~$(n 
 - 1)$.
 
-
-Kvôli podobnosti definície s~poruchou tiažového zrýchlenia nadobúdajú obe 
-veličiny podobné hodnoty ako tie, ktoré boli ukázané na 
-Obrázkoch~\ref{fig:dg_ggm_grs80} a~\ref{fig:dg_ggm_450km} v~súvislosti 
-s poruchou tiažového zrýchlenia.  Z~tohto dôvodu sme vyobrazenie anomálií 
-tiažového zrýchlenia vynechali.
+Anomália tiažového zrýchlenia a~porucha tiažového zrýchlenia nadobúdajú podobné 
+hodnoty, preto sme vyobrazenie anomálie tiažového zrýchelenia vynechali (pozri 
+priebeh poruchy tiažového zrýchlenia na Obrázkoch~\ref{fig:dg_ggm_grs80} 
+a~\ref{fig:dg_ggm_450km}).
 
 
 
