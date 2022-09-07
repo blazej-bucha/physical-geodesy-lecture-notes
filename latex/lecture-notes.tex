@@ -314,15 +314,15 @@ plošnú integráciu.  Takto chápaný zemský povrch budeme preto skúmať až 
 vyhladení.  Napriek vyhladeniu je to však stále veľmi zložitá plocha.
 
 K~definovaniu tvaru Zeme môžeme pristúpiť aj~iným spôsobom.  Približne dve 
-tretiny zemského povrchu tvorí voda v~podobe oceánov a~morí.  Voda má za istých 
-okolností tú vlastnosť, že existuje fyzikálna veličina, ktorá je na jej povrchu 
-konštantná.  Táto vlastnosť by mohla umožniť akúsi predikciu morskej hladiny 
-i popod, resp. ponad kontinenty.  V~porovnaní s~predošlým prístupom by sme tak 
-získali geometricky jednoduchšiu a~hladšiu plochu, navyše aj s~istými relatívne 
-jednoducho uchopiteľnými fyzikálnymi vlastnosťami.  Takáto definícia tvaru Zeme 
-bola navrhnutá C.~F.~Gaussom~(1777--1855) a~podľa návrhu 
-J.~B.~Listinga~(1808--1882) nazývame túto plochu \emph{geoid}.  Konštantnou 
-veličinou na povrchu geoidu je \emph{tiažový potenciál}.
+tretiny zemského povrchu tvorí voda v~podobe oceánov a~morí.  Za istých 
+okolností existuje fyzikálna veličina, ktorá má konštantnú hodnotou na povrchu 
+vodnej hladiny.  Táto vlastnosť by mohla umožniť akúsi predikciu morskej 
+hladiny i popod, resp. ponad kontinenty.  V~porovnaní s~predošlým prístupom by 
+sme tak získali geometricky jednoduchšiu a~hladšiu plochu, navyše aj s~istými 
+relatívne jednoducho uchopiteľnými fyzikálnymi vlastnosťami.  Takáto definícia 
+tvaru Zeme bola navrhnutá C.~F.~Gaussom~(1777--1855) a~podľa návrhu Gaussovho 
+doktoranda J.~B.~Listinga~(1808--1882) nazývame túto plochu \emph{geoid}.  
+Konštantnou veličinou na povrchu geoidu je \emph{tiažový potenciál}.
 
 \emph{Fyzikálna geodézia} je vedná disciplína zaoberajúca sa určovaním tvaru 
 Zeme, jej tiažovým poľom a~ich zmenami v~čase.  Študované sú oba vyššie opísané 
@@ -457,10 +457,14 @@ s~hmotným bodom~$P$ je preto možné vynechať pre jednoduchosť prívlastok
 Skutočnosť, že gravitačné zrýchlenie priťahovaného telesa nezávisí od jeho
 hmotnosti experimentálne potvrdil Gaileo Gailei (1564--1642).
 
-Z~predchádzajúcej kapitoly vyplýva, že v~sústave~$N$ hmotných bodov je celkové 
-gravitačné zrýchlenie v~bode~$P$ dané vektorovým súčtom čiastkových
-gravitačných zrýchlení, ktoré sú udeľované jednotlivými hmotnými bodmi
-(Obrázok~\ref{fig:gg_n_point_masses}),
+Z Newtonovho gravitačného zákona vyplýva, že v~sústave~$N$ hmotných bodov je 
+celkové gravitačné zrýchlenie v~bode~$P$ dané vektorovým súčtom čiastkových 
+gravitačných zrýchlení, ktoré udeľujú jednotlivé hmotné body 
+(Obrázok~\ref{fig:gg_n_point_masses}).\footnote{\uv{\textit{[\dots] každý 
+hmotný bod [\dots] priťahuje každý iný hmotný bod [\dots]}}, pozri 
+Kapitolu~\ref{sec:newton_law}.}  Tento princíp sa nazýva \emph{princíp 
+superpozície} \parencite[pozri napríklad][]{Hotine}.  Gravitačné zrýchlenie 
+generované~$N$ hmotnými bodmi tak získame vzťahom
 %
 \begin{equation}
 \label{eq:gg_N_point_masses}
@@ -468,50 +472,51 @@ gravitačných zrýchlení, ktoré sú udeľované jednotlivými hmotnými bodmi
 \frac{m_i}{l_i^2} \, \frac{\vec r_i}{l_i}{.}
 \end{equation}
 
-\begin{figure}[b]
+\begin{figure}
 \centering
 \input{./fig-gg-n-point-masses.pdf_tex}
-\caption{Vektory gravitačného zrýchlenia v~bode~$P$ generované sústavou piatich
-hmotných bodov~$Q_1$~až~$Q_5$}
+\caption{Gravitačné zrýchlenie~$\vec g_\gidx$ v~bode~$P$ generované sústavou 
+piatich hmotných bodov~$Q_1$ až~$Q_5$ s~rôznou hmotnosťou a~polohou voči 
+bodu~$P$.  Vektor~$\vec g_\gidx$ je daný vektorovým súčtom čiastkových 
+gravitačných zrýchlení~$\vec g_{\gidx,1}$ až~$\vec g_{\gidx,5}$, ktoré sú 
+generované jednotlivými hmotnými bodmi.}
 \label{fig:gg_n_point_masses}
 \end{figure}
 
 Newtonov gravitačný zákon~(\ref{eq:newton_law}) 
 a~rovnice~(\ref{eq:gg_point_mass}) a~(\ref{eq:gg_N_point_masses}) platia iba 
-pre hmotné body.  Tento tvar je možné aplikovať napríklad na popis pohybu 
-planét Slnečnej sústavy.  Rozmery planét sú totiž natoľko zanedbateľné 
+pre hmotné body.  V~tomto tvare je možné aplikovať ich napríklad na popis 
+pohybu planét Slnečnej sústavy.  Rozmery planét sú totiž natoľko zanedbateľné 
 v~porovnaní s~ich vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej 
-chyby, ak hmotnosti týchto telies sústredíme do ich ťažísk a~zanedbáme ich 
-tvar.  Menej priaznivá situácia nastáva vtedy, keď sa bod~$P$ nachádza 
-v~blízkosti priťahujúceho telesa, ktoré má komplikovaný tvar a~hustotu.  
-Príkladom je družica na nízkej obežnej dráhe Zeme.  V~súlade s~predchádzajúcim 
-odsekom by sme preto mohli nahradiť Zem množinou hmotných bodov, či už 
-s~konečným alebo nekonečným počtom, a~výsledné gravitačné zrýchlenie pôsobiace 
-na družicu získať vzťahom~(\ref{eq:gg_N_point_masses}).  Označenie takéhoto 
-riešenia za nesprávne nebude prekvapivé, keď si spomenieme, že hmotný bod bol 
-definovaný ako bezrozmerný (Kapitola~\ref{sec:newton_law}).  Bezrozmernými 
-hmotnými bodmi nemožno aproximovať objem telesa.
+chyby, ak hmotnosti planét sústredíme do ich ťažísk a~zanedbáme tvar planét.  
+Menej priaznivá situácia nastáva vtedy, keď sa bod~$P$ nachádza v~blízkosti 
+priťahujúceho telesa, ktoré má komplikovaný tvar a~hustotu.  Príkladom je 
+družica na nízkej obežnej dráhe Zeme.  Aby sme aj v takejto situácii dokázali 
+presne určiť gravitačné zrýchlenie, ktoré Zem udeľuje družici, je potrebné opäť 
+aplikovať princíp superpozície, teda individuálne získať gravitačný vplyv 
+spôsobený jednotlivými časťami Zeme a~následne tieto vplyvy sčítať.  Tentokrát 
+si už ale nevystačíme s~konceptom hmotných bodov 
+(rovnica~\ref{eq:gg_N_point_masses}), pretože tie sme definovali ako 
+bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi 
+nedokážeme aproximovať nenulový objem telesa.
 
-Zaveďme preto pojem \emph{všeobecné teleso}, ktoré má konečný objem~$\tau$ 
-a~jeho hustota~$\rho$ je ohraničenou funkciou polohy 
-(Obrázok~\ref{fig:gravitating_body}).  Rozdeľme toto teleso na nekonečne veľa 
-diferenciálnych hmotných elementov~$\diff m = \rho \, \diff \tau$.  Hustota 
-$\rho$ sa môže meniť medzi hmotnými elementmi~$\diff m$ v~závislosti od 
-štruktúry daného telesa, ale nesmie sa meniť v~rámci elementu samotného.  Aby 
-sme mohli aplikovať Newtonov gravitačný zákon, ktorý je formulovaný pre hmotné 
-body, budeme musieť predpokladať, že diferenciálne hmotné elementy~$\diff m$, 
-akokoľvek sú malé, nikdy nie sú identické s~hmotnými bodmi, a~hmota týchto 
-elementov je koncentrovaná do jedného bodu \parencite{Kellogg1967}.
-
-\begin{figure}
-\centering
-\input{./fig-gravitating-body.pdf_tex}
-\caption{Všeobecné teleso}
-\label{fig:gravitating_body}
-\end{figure}
-
-Po uvážení~$\diff m = \rho \, \diff \tau$ bude gravitačné zrýchlenie generované
-hmotným elementom~$\diff m$ dané vzťahom
+Zaveďme pojem \emph{všeobecné teleso}, ktoré má konečný objem~$\tau$ a~jeho 
+hustota~$\rho$ je ohraničenou funkciou polohy 
+(Obrázok~\ref{fig:gravitating_body}).  V~zmysle integrálneho počtu rozdeľme 
+toto teleso na diferenciálne hmotné elementy~$\diff m$, pričom
+%
+\begin{equation}
+\label{eq:dm}
+\diff m = \rho \, \diff \tau{.}
+\end{equation}
+%
+Hustota $\rho$ sa môže meniť medzi hmotnými elementmi~$\diff m$ v~závislosti od 
+štruktúry telesa, ale nesmie sa meniť v~rámci elementu samotného.  Ďalej budeme 
+predpokladať, že hmota diferenciálneho elementu~$\diff m$ je koncentrovaná 
+v~niektorom bode elementu \parencite{Kellogg1967}.  Po uvážení 
+rovnice~(\ref{eq:dm}) je diferenciál gravitačného zrýchlenia generovaného 
+hmotným elementom~$\diff m$ daný vzťahom (porovnaj so 
+vzťahmi~\ref{eq:gg_point_mass} a~\ref{eq:dm})
 %
 \begin{equation}
 \label{eq:gg_dm}
@@ -540,9 +545,25 @@ $P$ a~$Q$,
 \label{eq:l}
 l = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
 \end{equation}
-%
+
+\begin{figure}
+\centering
+\input{./fig-gravitating-body.pdf_tex}
+\caption{Všeobecné teleso}
+\label{fig:gravitating_body}
+\end{figure}
+
+Pri aplikovaní Newtonovho gravitačného zákona na diferenciálne elementy treba 
+mať na pamäti, že tento zákon bol formulovaný pre hmotné body, nie pre 
+diferenciálne elementy.  Diferenciálne elementy~$\diff m$, akokoľvek sú malé, 
+nikdy nie sú identické s~hmotnými bodmi.  Inými slovami, Newtonov gravitačný 
+zákon neposkytuje spôsob výpočtu gravitačného účinku diferenciálneho elementu 
+\parencite{Kellogg1967}.  Budeme preto musieť vysloviť ďalší predpoklad, a~síce 
+že tento zákon je možné aplikovať aj na diferenciálne elementy, čím získame 
+rovnosť~(\ref{eq:gg_dm}).
+
 Celkové gravitačné zrýchlenie generované všeobecným telesom získame
-integráciou vzťahu~(\ref{eq:gg_dm}),
+využitím princípu superpozície, teda integráciou vzťahu~(\ref{eq:gg_dm}),
 %
 \begin{equation}
 \label{eq:gg_body}
@@ -550,17 +571,26 @@ integráciou vzťahu~(\ref{eq:gg_dm}),
 \diff\tau{.}
 \end{equation}
 %
-Tento vzťah už môže byť korektne použitý na výpočet gravitačného zrýchlenia 
-všeobecného telesa (napríklad Zeme) v~ľubovoľnom bode~$P$ (napríklad v~ťažisku 
-družice).
+Rovnica~(\ref{eq:gg_body}) už môže byť korektne použitá na výpočet gravitačného 
+zrýchlenia všeobecného telesa (napríklad Zeme) v~ľubovoľnom bode~$P$ (napríklad 
+v~ťažisku družice).
 
 V~širšom zmysle je možné vektor gravitačného zrýchlenia odmerať, preto má táto 
-veličina kľúčový význam pre fyzikálnu geodéziu.  V~sústave jednotiek SI má 
+veličina pre fyzikálnu geodéziu kľúčový význam.  V~sústave jednotiek SI má 
 jednotku~$\mathrm{m}\ \mathrm{s}^{-2}$.  Veľmi často sa stretneme aj 
 s~jednotkou~$1\ \mathrm{Gal} = 10^{-2}\ \mathrm{m}\ \mathrm{s}^{-2}$, ktorá je 
 pomenovaná podľa Galilea Galileiho, prípadne s~jej násobkami~$1\ \mathrm{mGal} 
 = 10^{-5}\ \mathrm{m}\ \mathrm{s}^{-2}$ a~$1\ \upmu \mathrm{Gal} = 10^{-8}\ 
 \mathrm{m}\ \mathrm{s}^{-2}$.
+
+Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti vektora 
+gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Porovnaním 
+s~topografiou (Obrázok~\ref{fig:h_grav_sr_2arcsec}) je možné pozorovať, že 
+v~miestach s~veľkou nadmorskou výškou je veľkosť gravitačného zrýchlenia 
+spravidla menšia ako v~miestach s~malou nadmorskou výškou a~naopak.  
+Z~globálneho hľadiska je tiažové zrýchlenie ovplyvnené najmä tvarom Zeme, 
+predovšetkým jej veľkosťou a~sploštením, a~rozsiahlymi hustotnými celkami vo 
+vnútri Zeme.
 
 Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti vektora
 gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Z~porovnania
@@ -739,8 +769,16 @@ smer a~veľkosť najväčšieho nárastu gravitačného potenciálu.
 Rovnica~(\ref{eq:vg_at_infty}) znamená, že v~nekonečnej vzdialenosti od telesa 
 nadobúda gravitačný potenciál nulovú hodnotu.  Tento vzťah zabezpečuje, že 
 existuje práve jedna funkcia~$V_\gidx$ vyhovujúca rovnici~(\ref{eq:gg_grad_vg}) 
-\parencite{SansoGeoidDetermination}.  Keďže podmienka (\ref{eq:vg_at_infty}) 
-bola zvolená, \emph{gravitačný potenciál je relatívna veličina}.
+\parencite{SansoGeoidDetermination}.
+
+Poznamenajme, že bod s~nulovým gravitačným potenciálom je možné vybrať 
+ľubovoľne, čo však neznamená, že jeho voľba je nedôležitá.  Naopak, miesto 
+nulového gravitačného potenciálu ovplyvňuje hodnoty gravitačného potenciálu.  
+Hovoríme preto, že \emph{gravitačný potenciál je relatívna veličina}.  
+V~princípe to znamená, že skôr než poznať absolútnu hodnotu gravitačného 
+potenciálu v~niektorom bode je často dôležitejšie poznať relatívne vzťahy 
+gravitačného potenciálu v~priestore, napríklad rozdiel potenciálu medzi dvoma 
+bodmi.
 
 Gravitačný potenciál hmotného bodu je daný vzťahom
 %
@@ -837,8 +875,8 @@ Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedok�
 priamo merať.  Vo fyzikálnej geodézii často vystupuje ako neznáma funkcia,
 ktorú sa snažíme určiť, napríklad z~vektora gravitačného zrýchlenia.  V~sústave
 SI má gravitačný potenciál fyzikálnu jednotku~$\mathrm{m}^2\ \mathrm{s}^{-2}$.
-Ukážka priebehu gravitačného potenciálu v~oblasti Vysokých a~Nízkych Tatier je
-uvedená na Obrázku~\ref{fig:vg_grav_sr_2arcsec}.
+Priebeh gravitačného potenciálu v~oblasti Vysokých a~Nízkych Tatier je
+znázornený na Obrázku~\ref{fig:vg_grav_sr_2arcsec}.
 
 \begin{figure}
 \centering
@@ -860,7 +898,7 @@ l \, U{,} \quad l^2 \, \frac{\partial U}{\partial x}{,} \quad l^2 \,
 \end{equation}
 %
 nadobúdajú konečné hodnoty pre~$l \rightarrow \infty$, kde~$l$ je vzdialenosť 
-od ľubovoľného ale fixného bodu, sa nazýva \emph{regulárna funkcia v~nekonečne} 
+od ľubovoľného pevného bodu, sa nazýva \emph{regulárna funkcia v~nekonečne} 
 \parencite{Kellogg1967,Pick1973}.  Gravitačný potenciál~(\ref{eq:vg_body}) 
 všeobecného telesa je regulárna funkcia v~nekonečne, pretože všetky štyri 
 súčiny~(\ref{eq:regular_function}) nadobúdajú konečné hodnoty pre~$l 
@@ -884,7 +922,7 @@ pozri napríklad~\textcite{Pick1973}.
 \section{Teória potenciálu}
 \label{sec:potential_theory}
 
-Rovnica~(\ref{eq:vg_body}) sa v~literatúre nazýva \emph{Newtonov
+Rovnica~(\ref{eq:vg_body}) sa v~geovedách zvykne nazývať \emph{Newtonov
 integrál}.  Hovorí, že ak poznáme tvar a~priestorové rozloženie hustoty telesa,
 gravitačný potenciál telesa môže byť vypočítaný.  Newtonov
 integrál má vo fyzikálnej geodézii kľúčový význam, nakoľko gravitačný potenciál 
@@ -898,7 +936,7 @@ potenciál každého všeobecného telesa má spoločné určité vlastnosti, č
 zaujímavá množina funkcií hodná podrobnejšieho štúdia.  Významnosť teórie 
 potenciálu iba potvrdzuje skutočnosť známa približne od čias C.~F.~Gaussa, 
 a~síce že túto teóriu je možné aplikovať nielen na gravitačné pole, ale 
-napríklad aj na magnetické, či elektrostatické pole (spomeňme si na Coulombov 
+napríklad aj na magnetické či elektrostatické pole (spomeňme si na Coulombov 
 zákon a~porovnajme ho s~Newtonovým gravitačným zákonom~\ref{eq:newton_law}).  
 Teória potenciálu teda študuje vzťah~(\ref{eq:vg_body}) vo všeobecnom zmysle, 
 zaoberá sa rozličnými zdrojmi poľa (hmotný bod, hmotná priamka, nekonečne tenká 
@@ -912,10 +950,12 @@ hmotného elementu~$\diff m$.  Vzájomná vzdialenosť medzi bodom~$P$
 a~elementom~$\diff m$, ktorá vystupuje v~menovateli, bude preto~$l = 0$.  
 Konverguje alebo diverguje v~takejto situácii integrál~(\ref{eq:vg_body})?  
 Jednou z~mnohých ďalších výziev sú gravitačné polia generované objektmi 
-komplikovaných tvarov, napríklad Zem, ktorej povrch obsahuje množstvo náhlych 
+komplikovaných tvarov, napríklad Zemou, ktorej povrch obsahuje množstvo náhlych 
 ostrých zmien.  Je preto prirodzené, že teória potenciálu pritiahla záujem 
-brilantných matematikov akými boli, okrem iných, J.~L.~Lagrange, P.~S.~Laplace, 
-britský samouk G.~Green (1793--1841) či C.~F.~Gauss.
+brilantných matematikov akými boli, okrem iných, J.~L.~Lagrange, 
+A.--M.~Legendre (1752~-- 1833), P.~S.~Laplace, britský samouk G.~Green 
+(1793--1841) či C.~F.~Gauss (pre diskusiu o~Gaussovom prínose, pozri napríklad 
+\cite{Freeden2018}).
 
 V~nasledujúcich piatich kapitolách (\ref{sec:laplace_equation_cart}~--
 \ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými
@@ -931,7 +971,7 @@ telesa.
 \label{sec:laplace_equation_cart}
 
 Pierre-Simon Laplace zistil, že gravitačný potenciál každého všeobecného telesa
-spĺňa \emph{mimo} telesa rovnicu
+spĺňa \emph{v~priestore mimo hmôt} rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
@@ -994,10 +1034,12 @@ jednotkových vektorov a~skalárneho súčinu dvoch vektorov,
 = \frac{\partial \vec e_i}{\partial z} = \vec 0{.}
 \end{align}
 %
-Rovnica~(\ref{eq:ei_orthogonality}) vyplýva z~\emph{ortogonálnosti} dvoch 
-rôznych jednotkových vektorov.  Rovnica~(\ref{eq:ei_unit_length}) je dôsledkom 
-vzťahu~(\ref{eq:unit_vectors_unit_length}).  Vzťahy~(\ref{eq:ei_derivatives}) 
-vyplývajú z~definície jednotkových vektorov~(\ref{eq:unit_vectors}).
+Rovnica~(\ref{eq:ei_orthogonality}) vyplýva z~\emph{ortogonálnosti} 
+jednotkových vektorov~$\vec e_i$ a~$\vec e_j$ pre~$i \neq j$ (pozri 
+Obrázok~\ref{fig:3d_coord_system}).  Rovnica~(\ref{eq:ei_unit_length}) je 
+dôsledkom vzťahu~(\ref{eq:unit_vectors_unit_length}).  
+Vzťahy~(\ref{eq:ei_derivatives}) vyplývajú z~definície jednotkových 
+vektorov~(\ref{eq:unit_vectors}).
 
 Laplaceov operátor je \emph{lineárny}, teda pre dvakrát diferencovateľné 
 funkcie $f$ a~$g$ a~konštantu~$c$ platí
@@ -1209,11 +1251,11 @@ silou ostatné planéty, no úloha je riešiteľná rovnakým spôsobom.  V~prí
 Laplaceovej rovnice je situácia veľmi podobná.  Ak poznáme napríklad gravitačný 
 potenciál či gravitačné zrýchlenie na celom povrchu Zeme, znalosť 
 \emph{princípu} zmeny gravitačného potenciálu\footnote{Presnejšie by azda bolo 
-povedať \textit{zmenu} zmeny gravitačného potenciálu, keďže Laplaceova 
+povedať \textit{zmenu zmeny} gravitačného potenciálu, keďže Laplaceova 
 rovnica~(\ref{eq:vg_laplace_cart}) obsahuje druhé derivácie.} mimo Zeme 
-v~podobe Laplaceovej rovnice umožňuje vypočítať gravitačný potenciál 
-v~ľubovoľnom bode tejto oblasti.  Laplaceova rovnica má preto kľúčový význam 
-v~procese určovania vonkajšieho gravitačného poľa Zeme.
+v~podobe Laplaceovej rovnice umožňuje zistiť, akú hodnotu nadobúda gravitačný 
+potenciál v~ľubovoľnom bode tejto oblasti.  Laplaceova rovnica má preto kľúčový 
+význam v~procese určovania vonkajšieho gravitačného poľa Zeme.
 
 
 
@@ -1254,7 +1296,7 @@ V_\gidx}{\partial r^i}\right|_{P_1} \, \Delta r^i{.}
 \end{equation}
 %
 Symbol $\left.\frac{\partial^i V_\gidx}{\partial r^i} \right|_{P_1}$ označuje 
-deriváciu gravitačného potenciálu~$V_\gidx$ v~bode~$P_1$.
+$i$-tu deriváciu gravitačného potenciálu~$V_\gidx$ v~bode~$P_1$.
 
 \begin{figure}
 
@@ -1351,10 +1393,12 @@ väčšina geodetických meracích zariadení je počas merania vzhľadom k~Zemi
 v~pokoji, preto Coriolisovu silu nebudeme ďalej uvažovať.  Na záver 
 spomeňme~\emph{Eulerovu silu}, ktorá je spôsobená zmenou uhlovej rýchlosti 
 rotácie~$\omega$ v~čase \parencite{Torge1989,SansoGeoidDetermination}.  V~tejto 
-práci ale predpokladáme, že uhlová rýchlosť rotácie Zeme je konštantná, a~tak 
-je Eulerova sila nulová.  Tieto tri sily, odstredivá, Coriolisova a~Eulerova, 
-sa zaraďujú medzi \emph{zotrvačné sily}, niekedy tiež nazývané fiktívne sily.  
-Zotrvačné sily nevznikajú vzájomným silovým pôsobením medzi objektmi.
+práci predpokladáme, že uhlová rýchlosť rotácie Zeme je konštantná, preto 
+nebudeme ďalej uvažovať ani Eulerovu silu.  Tieto tri sily, odstredivá, 
+Coriolisova a~Eulerova, sa zaraďujú medzi \emph{zotrvačné sily}, niekedy tiež 
+nazývané fiktívne sily.  Zotrvačné sily sú zdanlivé sily, ktoré sú spôsobené 
+neinerciálnosťou vzťažnej sústavy pozorovateľa, a~teda nevznikajú vzájomným 
+silovým pôsobením medzi objektmi.
 
 
 
@@ -1410,7 +1454,7 @@ Výsledné zrýchlenie pôsobiace na hmotný bod s~hmotnosťou~$1 \ \mathrm{kg}$
 v~neinerciálnom systéme dané súčtom gravitačného zrýchlenia~$\vec g_\gidx(P)$
 a~odstredivého zrýchlenia~$\vec g_\cidx(P)$.\footnote{Ostatné zrýchlenia (pozri
 Kapitolu~\ref{sec:centrifugal_gravity_field}) sme pre účely tejto práce 
-s~rozumnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva 
+s~prijateľnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva 
 \emph{tiažové zrýchlenie} a~budeme ho označovať symbolom~$\vec g(P)$ 
 (Obrázok~\ref{fig:gravity_vector}),
 %
@@ -1491,11 +1535,11 @@ prislúcha obom veličinám jednotka~$\mathrm{m}^2 \ \mathrm{s}^{-2}$.
 \label{sec:equipotential_surface}
 
 Plocha, na ktorej je tiažový potenciál~$W$ konštantný, sa nazýva 
-\emph{ekvipotenciálna plocha} (Obrázok~\ref{fig:equipotential_surfaces}).
-V~úvodnej kapitole jeden z~prístupov definuje tvar Zeme ako geoid, teda tú
-ekvipotenciálnu plochu, ktorá koinciduje s~hladinou morí a~oceánov.  Pre
-fyzikálnu geodéziu majú preto ekvipotenciálne plochy veľký význam.  Zamerajme
-sa na niektoré ich vlastnosti.
+\emph{ekvipotenciálna plocha} (Obrázok~\ref{fig:equipotential_surfaces}).  
+V~úvodnej kapitole jeden z~prístupov definuje tvar Zeme ako geoid, teda tú 
+ekvipotenciálnu plochu, ktorá sa najlepšie približuje strednej hladine morí 
+a~oceánov.  Pre fyzikálnu geodéziu majú preto ekvipotenciálne plochy veľký 
+význam.  Zamerajme sa na niektoré ich vlastnosti.
 
 \begin{figure}
 \centering
@@ -1507,8 +1551,8 @@ potenciálu~$\delta W$}
 
 \begin{itemize}
 \item Ekvipotenciálne plochy sú spojité.  Táto vlastnosť vyplýva zo
-skutočnosti, že tiažový potenciál~(rovnica~\ref{eq:w}) je spojitá funkcia 
-v~celom priestore \parencite{Janak2006}.
+skutočnosti, že tiažový potenciál všeobecného telesa~(rovnica~\ref{eq:w}) je 
+spojitá funkcia v~celom priestore \parencite{MoritzPhysicalGeodesy}.
 
 \item Ekvipotenciálne plochy sú uzavreté \parencite{VanicekGeodesy}.
 
@@ -1520,9 +1564,9 @@ nespojito meniť v~závislosti od hustoty \parencite{MoritzPhysicalGeodesy}.
 \item Všetky ekvipotenciálne plochy sú hladké a~neobsahujú hrany
 \parencite{MoritzPhysicalGeodesy}.
 
-\item Ekvipotenciálne plochy sa nepretínajú.  Tiažový potenciál~$W$ má v~každom
-bode definované práve jedno číslo (skalárna veličina), preto sa ekvipotenciálne
-plochy nemôžu pretnúť \parencite{MacMillan1930}.
+\item Ekvipotenciálne plochy sa nepretínajú.  Tiažový potenciál~$W$ má v~každom 
+bode definované práve jednu hodnotu (skalárna veličina), preto sa 
+ekvipotenciálne plochy nemôžu pretnúť \parencite{MacMillan1930}.
 
 \item Vektor tiažového zrýchlenia v~ľubovoľnom bode je kolmý na ekvipotenciálnu
 plochu prechádzajúcu týmto bodom \parencite{MoritzPhysicalGeodesy}.  Toto 
@@ -1536,11 +1580,11 @@ a hustotou telesa.  Zložité nepravidelné tvary či rozloženia hustoty spôso
 zvlnenia ekvipotenciálnych plôch.  Na regionálnej úrovni je nepravidelný tvar 
 ekvipotenciálnych plôch do veľkej miery spôsobený lokálnymi hmotami, napríklad 
 pohoriami.  Z~globálneho pohľadu je tvar ekvipotenciálnych plôch daný skôr 
-celkovou geometriou telesa ako takého (napríklad sploštenie Zeme) či 
-rozsiahlymi hustotnými kontrastmi.  Práve tieto skutočnosti výrazne komplikujú 
+celkovou geometriou telesa (napríklad sploštenie Zeme) či rozsiahlymi 
+hustotnými zmenami v~jeho vnútri.  Práve tieto skutočnosti výrazne komplikujú 
 presný výpočet geoidu.  Podrobnejší popis niektorých dôležitých vlastností 
 ekvipotenciálnych plôch, napríklad ich krivostí, je možné nájsť napríklad 
-v~prácach \textcite{Janak2006} a~\textcite{MoritzPhysicalGeodesy}.
+v~prácach \textcite{MoritzPhysicalGeodesy} a~\textcite{Janak2006}.
 
 Obrázok~\ref{fig:equipotential_surfaces} schematicky znázorňuje ekvipotenciálne
 plochy tiažového poľa Zeme s~konštantným krokom tiažového potenciálu~$\delta
@@ -1550,14 +1594,14 @@ ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a~naopak.  Ve
 vektora tiažového zrýchlenia~$\| \vec g \|$ je tak väčšia v~oblasti pólov ako
 v~oblasti rovníka.
 
-Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna
-rovina je dotyková k~ekvipotenciálnej ploche, ktorá prechádza stredom libely.
-Z~dôvodu sférického tvaru Zeme a~zvlnenia ekvipotenciálnych plôch nemožno vo
-všeobecnosti predpokladať rovnobežnosť horizontálnych rovín na dvoch rôznych
-stanoviskách.  V~prípade teodolitu sú v~tejto rovine merané vodorovné smery.
-Preto ak je vyžadovaná presnosť vysoká alebo záujmová lokalita je rozsiahla
-a~má zložitú topografiu,  merania je potrebné korigovať o~vplyv nerovnobežnosti
-horizontálnych rovín medzi stanoviskami \parencite[pozri 
+Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna 
+rovina je dotyková k~ekvipotenciálnej ploche, ktorá prechádza stredom libely.  
+Z~dôvodu približne sférického tvaru Zeme a~zvlnenia ekvipotenciálnych plôch 
+nemožno vo všeobecnosti predpokladať rovnobežnosť horizontálnych rovín na dvoch 
+rôznych stanoviskách.  V~prípade teodolitu sú v~tejto rovine merané vodorovné 
+smery.  Preto ak je vyžadovaná presnosť vysoká alebo záujmová lokalita je 
+rozsiahla a~má zložitú topografiu,  merania je potrebné korigovať o~vplyv 
+nerovnobežnosti horizontálnych rovín medzi stanoviskami \parencite[pozri 
 napríklad][]{VanicekGeodesy}.
 
 \subsubsection{Tiažnica}
@@ -1571,21 +1615,21 @@ fyzikálnych (nadmorských) výšok.  Jedna taká výška má názov \emph{ortom
 výška} a~je meraná pozdĺž tiažnice od geoidu po bod~$P$ (pozri 
 Obrázok~\ref{fig:equipotential_surfaces}).
 
-Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad
-teodolitu) bola totožná s~lokálnou zvislicou.  Táto podmienka je splnená po
-zhorizontovaní prístroja za predpokladu, že horizontálna os prístroja je kolmá
-na vertikálnu os.  K~lokálnej zvislici sa vzťahujú napríklad merané
-vertikálne smery.  Sférický tvar Zeme a~zvlnenie ekvipotenciálnych plôch
-spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo všeobecnosti
-rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné
+Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad 
+teodolitu) bola totožná s~lokálnou zvislicou.  Táto podmienka je splnená po 
+zhorizontovaní prístroja za predpokladu, že horizontálna os prístroja je kolmá 
+na vertikálnu os.  K~lokálnej zvislici sa vzťahujú napríklad merané vertikálne 
+smery.  Približne sférický tvar Zeme a~zvlnenie ekvipotenciálnych plôch 
+spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo všeobecnosti 
+rovnobežné medzi stanoviskami.  Podobne ako pri vodorovných smeroch, presné 
 merania si môžu vyžadovať zavedenie korekcií.
 
 \subsubsection{Určenie rozdielu tiažového potenciálu}
 \label{sec:potential_differences}
 
 Hoci tiažový potenciál priamo odmerať nedokážeme, \emph{rozdiel} tiažového 
-potenciálu dokážeme určiť nepriamo.  Pred popísaním metódy určovania rozdielu 
-tiažového potenciálu je ale potrebné pristaviť sa pri pojme totálny 
+potenciálu dokážeme určiť nepriamo kombináciou nivelácie a~gravimetrie.  Pred 
+popísaním tejto metódy je ale potrebné pristaviť sa pri pojme totálny 
 diferenciál.
 
 Ak sa poloha bodu~$P$ zmení o~vektor~$\Delta \vec x$,
@@ -1700,7 +1744,7 @@ C = W_0 - W = \int\limits_0^H g \, \diff H{.}
 
 Geopotenciálnu kótu je možné určiť pomocou nivelácie~($\diff H$) 
 a gravimetrie~($g$).  Namiesto jednotky~$\mathrm{m}^2\ \mathrm{s}^{-2}$ sa 
-niekedy zvykne udávať v~geopotenciálnych jednotkách,
+niekedy zvykne udávať v~geopotenciálnych jednotkách~gpu,
 %
 \begin{equation}
 \label{eq:gpu_unit}
@@ -1709,7 +1753,7 @@ niekedy zvykne udávať v~geopotenciálnych jednotkách,
 \end{equation}
 %
 Rozdiel tiažového potenciálu je v~súčasnosti možné určiť približne s~presnosťou 
-$0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
+$\pm 0.1\ \mathrm{gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
 \parencite{MoritzPhysicalGeodesy}.
 
 \subsubsection{Fyzikálne výšky}
@@ -1754,149 +1798,6 @@ tiažnice od geoidu po daný bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces})
 
 
 
-%\section{Homogénna rotujúca guľa}
-%\label{sec:homogeneous_ball}
-%
-%\emph{Homogénna guľa} je teleso sférického tvaru s~konštantnou hustotou 
-%v~každom bode.  Tiažové pole vhodne definovanej homogénnej rotujúcej gule je 
-%jedna z~najjednoduchších rozumne presných aproximácií zemského tiažového poľa.  
-%Na tomto jednoduchom príklade preto ukážeme, ako vyzerá gravitačné a tiažové 
-%pole Zeme v~prvej aproximácii.  Neskôr 
-%v~Kapitole~\ref{sec:spherical_harmonic_expansion} ukážeme jeden z~možných 
-%prístupov k~popisu skutočného tiažového poľa Zeme.
-%
-%Gravitačný potenciál homogénnej gule, tak ako gravitačný potenciál každého 
-%telesa, je daný vzťahom~(\ref{eq:vg_body}).  Objem diferenciálneho elementu 
-%$\diff \tau$ vystupujúci v~tomto vzťahu je možné v~trojrozmernom pravouhlom 
-%súradnicovom systéme vyjadriť vzťahom
-%%
-%\begin{equation}
-%\label{eq:dtau_cart}
-%\diff \tau = \diff x \, \diff y \, \diff z{.}
-%\end{equation}
-%%
-%V~tejto kapitole však chceme skúmať gravitačné a tiažové pole telesa sférického 
-%tvaru.  Nezdá sa byť preto nerozumné očakávať, že takúto úlohu bude vhodnejšie 
-%riešiť vo sférických súradniciach, podobne ako gravitačné pole kocky je azda 
-%jednoduchšie skúmať v~pravouhlých súradniciach.  Našou prvou úlohou preto bude 
-%vyjadriť Newtonov integrál~(\ref{eq:vg_body}) v~krivočiarych sférických 
-%súradniciach.  Táto úloha nie je triviálna, pretože každá z integračných 
-%premenných, $x$, $y$ a $z$, závisí od viac ako jednej sférickej súradnice 
-%(pozri vzťah~\ref{eq:sph2cart}), teda $x(r, \varphi, \lambda)$, $y(r, \varphi, 
-%\lambda)$ a $z(r, \varphi)$.
-%
-%Zámenu troch integračných premenných $x_1$, $x_2$, $x_3$ za integračné premenné 
-%$u_1(x_1, x_2, x_3)$, $u_2(x_1, x_2, x_3)$ a $u_3(x_1, x_2, x_3)$ je možné 
-%vykonať vzťahom \parencite[pozri napríklad][]{Olver2010}
-%%
-%\begin{equation}
-%\label{eq:iiint_change_of_variable}
-%\begin{split}
-%\iiint\limits_{V} f(x_1, x_2, x_3) \, \diff x_1 \, \diff x_2 \, \diff x_3 &= 
-% \iiint\limits_{V'} f[x_1(u_1, u_2, u_3), x_2(u_1, u_2, u_3), x_3(u_1, u_2, 
-% u_3)] \\
-%&\phantom{={}} | \det(\mathbf{J}) | \, \diff u_1 \, \diff u_2 \, \diff u_3{,}
-%\end{split}
-%\end{equation}
-%%
-%kde $\det(\mathbf{J})$ je determinant Jacobiho matice
-%%
-%\begin{equation}
-%\mathbf{J} = 
-%\begin{bmatrix}
-%\dfrac{\partial x}{\partial{u}} & \dfrac{\partial x}{\partial{v}} 
-%& \dfrac{\partial x}{\partial{w}}\\[2ex]
-%%
-%\dfrac{\partial y}{\partial{u}} & \dfrac{\partial y}{\partial{v}} 
-%& \dfrac{\partial y}{\partial{w}}\\[2ex]
-%%
-%\dfrac{\partial z}{\partial{u}} & \dfrac{\partial z}{\partial{v}} 
-%& \dfrac{\partial z}{\partial{w}}
-%\end{bmatrix}
-%\end{equation}
-%%
-%a $V$ 
-%
-%Jacobiho maticu potrebnú na zámenu pravouhlých integračných premenných $x(r, 
-%\varphi, \lambda)$, $y(r, \varphi, \lambda)$, $z(r, \varphi)$ za krivočiare 
-%integračné premenné $r$, $\varphi$, $\lambda$ v~Newtonovom 
-%integrále~(\ref{eq:vg_body}) získame deriváciou vzťahov~(\ref{eq:sph2cart}) 
-%podľa sférických súradníc,
-%%
-%\begin{equation}
-%\label{eq:j_cart_sph}
-%\mathbf{J} =
-%\begin{bmatrix}
-%\dfrac{\partial x}{\partial{r}} & \dfrac{\partial x}{\partial \varphi} 
-%& \dfrac{\partial x}{\partial \lambda}\\[2ex]
-%%
-%\dfrac{\partial y}{\partial{r}} & \dfrac{\partial y}{\partial{\varphi}} 
-%& \dfrac{\partial y}{\partial{\lambda}}\\[2ex]
-%%
-%\dfrac{\partial z}{\partial{r}} & \dfrac{\partial z}{\partial{\varphi}} 
-%& \dfrac{\partial z}{\partial{\lambda}}
-%\end{bmatrix}
-%%
-%=
-%\begin{bmatrix}
-%\cos\varphi \, \cos\lambda & -r \, \sin\varphi \, \cos\lambda & -r \, 
-%\cos\varphi \, \sin\lambda\\[2ex]
-%\cos\varphi \, \sin\lambda & -r \, \sin\varphi \, \sin\lambda & r \, 
-%\cos\varphi \, \cos\lambda\\[2ex]
-%\sin\varphi                &  r \, \cos\varphi                & 0
-%\end{bmatrix}
-%%
-%{.}
-%\end{equation}
-%%
-%Determinant Jacobiho matice~(\ref{eq:j_cart_sph}) je daný vzťahom
-%%
-%\begin{equation}
-%\det (\mathbf{J}) = -r^2 \, \cos\varphi{,}
-%\end{equation}
-%%
-%teda
-%%
-%\begin{equation}
-%\diff \tau = \diff x \, \diff y \, \diff z = | \det (\mathbf{J}) | \, \diff 
-%r \, \diff \varphi \, \diff \lambda = r^2 \, \cos\varphi \, \diff r \, \diff 
-%\varphi \, \diff \lambda{.}
-%\end{equation}
-%%
-%
-%Pomocou vzťahu~(\ref{eq:iiint_change_of_variable}) môžeme po uvážení 
-%konštantnej hustoty homogénnej gule $\rho$ prepísať Newtonov 
-%integrál~(\ref{eq:vg_body}) do tvaru
-%%
-%\begin{equation}
-%V = G \, \rho \int\limits_{\lambda_Q = 0}^{2\pi} \int\limits_{\varphi_Q  
-%= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{r_Q = 0}^{R} \frac{r_Q^2 \, 
-%\cos\varphi_Q}{l} \, \diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q{,}
-%\end{equation}
-%%
-%kde $R$ je polomer gule a~vzdialenosť~$l$ je daná vzťahom
-%%
-%\begin{equation}
-%\label{eq:l_homogeneous_ball}
-%l = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos(90^{\circ} - \varphi_Q)} 
-%= \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \sin(\varphi_Q)}{,}
-%\end{equation}
-%%
-%pričom $(r, \varphi\, \lambda)$ je trojica sférických súradníc výpočtového bodu 
-%a $(r_Q, \varphi_Q, \lambda_Q)$ sú sférické súradnice integračného elementu.
-%
-%
-%\subsection{Bod mimo gule}
-%\label{sec:homogeneous_ball_int}
-%
-%\subsection{Bod na povrchu gule}
-%\label{sec:homogeneous_ball_sur}
-%
-%\subsection{Bod vo vnútri gule}
-%\label{sec:homogeneous_ball_ext}
-
-
-
 
 
 
@@ -1912,13 +1813,21 @@ Problematická je obzvlášť hustota.  Hoci existujú hustotné modely Zeme
 \parencite[napríklad][]{Dziewonski1981}, ich použitie vo 
 vzťahu~(\ref{eq:vg_body}) ešte stále neposkytuje vyžadovanú geodetickú 
 presnosť.  V~tejto situácii nie sú postačujúce ani regionálne hustotné modely.  
-Tie síce poskytujú vyššiu presnosť aj~lepšie priestorové rozlíšenie, no 
-v~geodézii sa používajú nanajvýš ako cenná doplnková informácia o~zdroji 
-gravitačného poľa, nie ako hlavné dáta na výpočet tiažového poľa Zeme.  V~tejto 
-kapitole sa zameriame na praktický spôsob modelovania gravitačného poľa Zeme 
-\emph{bez potreby priamej znalosti hustoty}.  Pred samotným predstavením metódy 
-však skúsme ilustrovať jej základnú myšlienku a~širší kontext.
+Tie síce majú vyššiu presnosť a~aj lepšie priestorové rozlíšenie, no v~geodézii 
+je možné použiť ich nanajvýš ako cennú doplnkovú informáciu o~zdroji 
+gravitačného poľa.
 
+\emph{Fyzikálna geodézia tak má tendenciu modelovať gravitačné pole bez 
+priameho použitia hustoty}.  Je ale prirodzené, potrebné a~pekné, že existuje 
+aj taký vedný odbor, pre ktorý je práve hustota jedným z~kľúčových určovaných 
+parametrov.  Takým odborom je napríklad geofyzika, ktorá je v~mnohých ohľadoch 
+veľmi blízka fyzikálnej geodézii.  Zatiaľ čo ale fyzikálny geodeti určujú 
+tiažové pole prevažne mimo Zeme, geofyzici sa zaujímajú skôr o~vnútro Zeme, 
+teda aj (no nielen) o~jej hustotu.  Z~informácií o~hustote následne geofyzici 
+a~geológia študujú napríklad stavbu Zeme či procesy, ktoré sa v~nej odohrávajú.
+
+V~tejto kapitole sa zameriame na praktický spôsob modelovania gravitačného poľa 
+Zeme bez potreby priamej znalosti hustoty.
 
 
 
@@ -2130,7 +2039,7 @@ P_n(t) = \frac{1}{n!} \, \frac{\partial^n H(\alpha, t)}{\partial \alpha^n}
 \end{equation}
 %
 Funkcie~$P_n(t)$ dostali názov podľa ich objaviteľa, francúzskeho matematika
-A.--M.~Legendrea (1752~-- 1833), a~nazývajú sa \emph{Legendreove polynómy
+A.--M.~Legendrea, a~nazývajú sa \emph{Legendreove polynómy
 stupňa~$n$}.  Funkcia~$H(\alpha, t)$ sa nazýva \emph{generická funkcia pre
 Legendreove polynómy}.  Dosadením~(\ref{eq:pn}),
 (\ref{eq:maclaurin_series_of_generic_function}) 
@@ -3207,8 +3116,8 @@ ktoré sa nachádzajú nad geoidom \parencite[napríklad][]{Ince2020}.
 
 V~Kapitole~\ref{sec:spherical_harmonics} sme uviedli, že do radu sférických
 harmonických funkcií je možné rozvinúť nielen gravitačný potenciál, ale každú
-funkciu, ktorá spĺňa podmienku~(\ref{eq:f_l2}).  Rozviňme preto do maximálneho 
-stupňa~$N$ napríklad zemskú topografiu $H(\varphi, \lambda)$,
+funkciu, ktorá spĺňa podmienku~(\ref{eq:f_l2}).  Rozviňme preto do stupňa~$N$ 
+napríklad zemskú topografiu $H(\varphi, \lambda)$,
 %
 \begin{equation}
 \label{eq:h_shs}
@@ -3219,19 +3128,19 @@ H(\varphi, \lambda) = \sum_{n = 0}^{N} \sum_{k = -n}^n \bar{h}_{nk} \,
 Obrázok~\ref{fig:shs_h} znázorňuje vplyv parametra~$N$ na priestorové 
 rozlíšenie funkcie $H(\varphi, \lambda)$.  Koeficienty~$\bar{h}_{nk}$ boli 
 prevzaté z~modelu~DTM2006.0 \parencite{DTM2006}.  Hoci všetky tri mapy sú 
-vypočítané s~rovnakým vzorkovaním $0.25^{\circ}$ vo sférickej šírke a~dĺžke, 
-miera detailu stúpa od vrchnej mapy smerom nadol.  Je to spôsobené tým, že 
-maximálny stupeň $N$, ktorý udáva maximálne priestorové rozlíšenie funkcie 
-$H(\varphi,\lambda)$, narastá postupne od~$N = 30$ cez~$N = 90$ až do~$N 
-= 360$.  Polovica najkratšej vlnovej dĺžky funkcie rozvinutej do sférického 
-harmonického stupňa $N$ je daná vzťahom
+vypočítané s~rovnakým vzorkovaním ($0.25^{\circ}$ vo sférickej šírke a~dĺžke), 
+miera detailu stúpa od vrchnej mapy smerom nadol.  Spôsobené je to tým, že 
+maximálny stupeň $N$, ktorý udáva priestorové rozlíšenie funkcie 
+$H(\varphi,\lambda)$, narastá postupne od~$30$ cez~$90$ až do~$360$.  Odhad 
+veľkosti najmenšieho priestorového prvku, ktorý môže byť reprezentovaný 
+sférickým harmonickým rozvojom do stupňa~$N$, je možné vzťahom
 %
 \begin{equation}
 l_{\min}(N) = \frac{\pi \, R}{N}{,}
 \end{equation}
 %
 kde $l_{\min}$ je sférická vzdialenosť v~dĺžkových jednotkách na sfére 
-s~polomerom $R$.  Zvyšovaním
+s~polomerom $R$ \parencite{Barthelmes2013}.  Zvyšovaním
 maximálneho stupňa $N$ teda zvyšujeme podrobnosť funkcie $H(\varphi, \lambda)$.
 
 \begin{figure}
@@ -3241,7 +3150,8 @@ maximálneho stupňa $N$ teda zvyšujeme podrobnosť funkcie $H(\varphi, \lambda
 \includegraphics{./fig-h-shs-nmax360.pdf}
 \caption{Sférický harmonický rozvoj zemskej topografie (jednotky~m) do 
 stupňov~$N = 30$ (vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  
-Výpočet bol uskutočnený Zdrojovým kódom~\ref{src:h_shs}.} \label{fig:shs_h}
+Výpočet bol uskutočnený Zdrojovým kódom~\ref{src:h_shs} 
+z~Prílohy~\ref{app:shs_topography}.} \label{fig:shs_h}
 \end{figure}
 
 Okrem modelu~DTM2006.0 je voľne prístupný aj model Earth2014 
@@ -3424,11 +3334,11 @@ elipsoidických súradniciach}
 
 Z~podobných dôvodov ako v~Kapitole~\ref{sec:laplace_equation_sph} potrebujeme 
 vyjadriť operátor gradient a~Laplaceov operátor aj v~systéme redukovaných 
-elipsoidických súradníc.  Príslušné vzťahy nájdeme podľa 
-Príloh~\ref{app:gradient_in_orthogonal_coordinates} 
+elipsoidických súradníc.  Príslušné vzťahy nájdeme postupom uvedeným 
+v~Prílohách~\ref{app:gradient_in_orthogonal_coordinates} 
 a~\ref{app:laplace_in_orthogonal_coordinates}.
 
-V~súlade s~Kapitolou~\ref{app:gradient_in_orthogonal_coordinates} definujme 
+V~súlade s~Prílohou~\ref{app:gradient_in_orthogonal_coordinates} definujme 
 vektory (pozri vzťah~\ref{eq:xi1xi2xi3_vectors})
 %
 \begin{equation}
@@ -3948,13 +3858,13 @@ funkcií~(Kapitola~\ref{sec:normal_gravity_potential}).  Na záver opíšeme sp�
 výpočtu normálneho tiažového zrýchlenia (Kapitola~\ref{sec:normal_gravity}).  
 Tieto poznatky budú dôležité neskôr 
 v~Kapitole~\ref{sec:disturbing_field_geoid_deflections}, ktorá sa zaoberá 
-určovaním geoidu.  Dodajme, že hoci budeme často hovoriť o~normálnom tiažovom 
-poli \emph{Zeme}, je dobré mať na pamäti, že ide o~matematicko-fyzikálny model 
-definovaný štyrmi základnými parametrami.  Všetky ostatné parametre, či už 
-geometrické alebo fyzikálne, sú odvoditeľné z~týchto parametrov.  S~výnimkou 
-štyroch základných parametrov sa teda všetky veličiny normálneho tiažového poľa 
-získavajú výpočtom, nie meraním ako je tomu v~prípade \emph{skutočného} 
-tiažového poľa Zeme.
+určovaním geoidu.  Po celý čas je pritom vhodné mať na pamäti, že normálne 
+tiažové pole Zeme je matematicko-fyzikálny model, ktorý je definovaný štyrmi 
+základnými parametrami.  Všetky ostatné parametre, či už geometrické alebo 
+fyzikálne, sú odvoditeľné z~týchto parametrov.  S~výnimkou štyroch základných 
+parametrov sa teda všetky veličiny normálneho tiažového poľa získavajú 
+výpočtom, nie meraním ako je tomu v~prípade \emph{skutočného} tiažového poľa 
+Zeme.
 
 
 
@@ -4081,7 +3991,8 @@ Fyzikálny & $U_0$       & $ 62 \, 636 \, 860.850$ & $\mathrm{m}^2 \,
           & $\gamma_b$ & $9.8321863685$ & $\mathrm{m} \, \mathrm{s}^{-2}$ 
 & Normálne tiažové\\
           &            &     &   & zrýchlenie na póle\\
-          & $m$ & $0.00344978600308$ & Bezrozmerné & $m = \omega^2 \, a^2 \, 
+          & $m$ & $0.00344978600308$ & Bezrozmerné & Pomocná konštanta,\\
+          &     &                    &             & $m = \omega^2 \, a^2 \, 
 b \slash (GM)$\\
 \hline
 \end{tabular}
@@ -4165,7 +4076,8 @@ Fyzikálny & $U_0$       & $ 62 \, 636 \, 851.715$ & $\mathrm{m}^2 \,
           & $\gamma_b$ & $9.8321849378$ & $\mathrm{m} \, \mathrm{s}^{-2}$ 
 & Normálne tiažové\\
           &            &     &   & zrýchlenie na póle\\
-          & $m$ & $0.00344978650684$ & Bezrozmerné & $m = \omega^2 \, a^2 \, 
+          & $m$ & $0.00344978650684$ & Bezrozmerné & Pomocná konštanta,\\
+          &     &                    &             & $m = \omega^2 \, a^2 \, 
 b \slash (GM)$\\
 \hline
 \end{tabular}
@@ -5198,13 +5110,13 @@ rozvoje~(\ref{eq:gamma_rlatlon}) do $n = 5$, prípadne $n = 10$.
 \chapter{Poruchové pole, zvislicové odchýlky a~geoid}
 \label{sec:disturbing_field_geoid_deflections}
 
-\emph{Poruchové (anomálne) pole} je definované ako rozdiel medzi skutočným 
-tiažovým poľom a~normálnym tiažovým poľom.  V~procese určovania geoidu 
-a~vonkajšieho tiažového poľa Zeme hrá kľúčovú úlohu, pretože v~praktických 
-aplikáciách nie je spravidla vhodné pracovať priamo s~veličinami skutočného 
-tiažového poľa.  Dôvod je ten, že priamy výpočet tvaru Zeme a~jej tiažového 
-poľa, napríklad z~tiažového zrýchlenia a~z~tiažového potenciálu na povrchu 
-Zeme, je nesmierne náročný \parencite[pozri 
+\emph{Poruchové (anomálne) pole} je rozdiel medzi skutočným tiažovým poľom 
+a~normálnym tiažovým poľom.  V~procese určovania geoidu a~vonkajšieho tiažového 
+poľa Zeme hrá poruchové pole kľúčovú úlohu, pretože v~praktických aplikáciách 
+nie je spravidla vhodné pracovať priamo s~veličinami skutočného tiažového poľa.  
+Dôvod je ten, že priamy výpočet tvaru Zeme a~jej tiažového poľa, napríklad 
+z~tiažového zrýchlenia a~z~tiažového potenciálu na povrchu Zeme, je nesmierne 
+náročný \parencite[pozri 
 napríklad][]{Hormander1976,SansoGeodeticBoundaryValueProblem}.  Úlohy podobného 
 typu môžu byť našťastie často vyriešené približne, napríklad iteráciami či 
 linearizáciou rozvojom do Taylorovho radu.  Aby bolo možné týmito metódami 
@@ -5221,9 +5133,9 @@ fyzikálnu zložku ekvipotenciálneho elipsoidu
 poznáme~(Kapitola~\ref{sec:normal_gravity_field}), ostáva už len určiť malé 
 geometrické prírastky~$N$ k~ekvipotenciálnemu elipsoidu.  Prírastok~$N$ sa 
 nazýva \emph{výška geoidu nad ekvipotenciálnym elipsoidom} a~určuje spravidla 
-sa práve z~veličín poruchového poľa.  Pohybuje sa v~rozsahu približne od $-100\ 
-\mathrm{m}$ do $100\ \mathrm{m}$, teda nadobúda zhruba o~4~rády menšie hodnoty 
-ako stredný polomer Zeme~$6\, 371\ \mathrm{km}$, čo demonštruje efektívnosť 
+sa práve z~veličín poruchového poľa.  Pohybuje sa v~rozsahu približne od $-100$ 
+do $100\ \mathrm{m}$, teda nadobúda zhruba o~4~rády menšie hodnoty ako stredný 
+polomer Zeme~$6\, 371 \, 000\ \mathrm{m}$, čo demonštruje efektívnosť 
 linearizácie súčasnými ekvipotenciálnymi elipsoidmi 
 (Kapitola~\ref{sec:equipotential_ellipsoid}).
 
@@ -5269,11 +5181,11 @@ V_\cidx(P) = U_\cidx(P){.}
 \end{equation}
 %
 Vzhľadom na súčasnú dosiahnuteľnú presnosť určenia poruchového potenciálu 
-(podľa \cite{SansoGeoidDetermination} približne $0.1\ \mathrm{m}^2 
-\ \mathrm{s}^{-2}$) môžeme spoľahlivo považovať rovnosť~(\ref{eq:vg_eq_uc}) za 
-splnenú.  Malé rozdiely medzi $V_\cidx(P)$ a~$U_\cidx(P)$ sú dôsledkom 
-faktorov, ktoré nie sú zahrnuté v~normálnom poli, napríklad premenlivá rýchlosť 
-rotácie Zeme či pohyb zemského pólu.
+(približne $0.1\ \mathrm{m}^2 \ \mathrm{s}^{-2}$ podľa 
+\cite{SansoGeoidDetermination}) môžeme spoľahlivo považovať 
+rovnosť~(\ref{eq:vg_eq_uc}) za splnenú.  Malé rozdiely medzi $V_\cidx(P)$ 
+a~$U_\cidx(P)$ sú dôsledkom faktorov, ktoré nie sú zahrnuté v~normálnom poli, 
+napríklad premenlivá rýchlosť rotácie Zeme či pohyb zemského pólu.
 
 Aplikáciou Laplaceovho operátora~(\ref{eq:laplace_xyz}) na poruchový 
 potenciál~(\ref{eq:disturbing_potential}) je možné 
@@ -5323,7 +5235,7 @@ rovnice~(\ref{eq:disturbing_potential}) a~radov~(\ref{eq:vg_sh_2nd_norm_ynk})
 a~(\ref{eq:ug_spherical}).  Aby sme mohli výhodne skombinovať oba rady do 
 \emph{jedného} rozvoja, musíme vziať do úvahy dva aspekty.  
 %
-\begin{enumerate}[label=\roman*)]
+\begin{enumerate}
 \item Rozvoj~(\ref{eq:vg_sh_2nd_norm_ynk}) je založený na úplne normovaných 
 sférických harmonických funkciách, zatiaľ čo rovnica~(\ref{eq:ug_spherical}) 
 predstavuje rad nenormovaných sférických harmonických funkcií.
@@ -6083,7 +5995,7 @@ a~\ref{fig:dg_ggm_450km}).
 
 
 
-\subsection*{Dve poznámky}
+\subsection*{Dve poznámky k~anomálii tiažového zrýchlenia}
 
 V~súvislosti s~odvodením Brunsovho vzorca a~základnej rovnice fyzikálnej 
 geodézie sa zdá byť vhodné opäť zdôrazniť dôležitosť voľby normálneho poľa.  Ak 
