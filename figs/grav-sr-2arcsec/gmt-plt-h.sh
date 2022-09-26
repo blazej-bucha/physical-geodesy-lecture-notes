@@ -11,7 +11,7 @@ set -e
 
 # Input GMT GRD file to be plotted.  To limit the size of the repository, this
 # file is not distributed but can be obtained from the "grav-sr-2arcsec" model
-# available at "https://www.blazejbucha.com/grav-sr-2arcsec/".
+# available at "https://zenodo.org/record/7074772".
 grdfile="./h.grd"
 
 

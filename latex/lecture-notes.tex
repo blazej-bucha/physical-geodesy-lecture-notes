@@ -1230,13 +1230,13 @@ V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \,
 Jedným z~cieľov fyzikálnej geodézie je určiť vonkajšie gravitačné pole Zeme 
 z odmeraných veličín gravitačného poľa.  Z~praktických dôvodov je ale možné 
 vykonávať merania iba v~malej časti priestoru mimo Zeme, napríklad 
-v~bezprostrednej blízkosti zemského povrchu či na dráhe umelej družice.  Preto 
-ak chceme určiť gravitačné pole v~celom priestore mimo Zeme, bolo by vhodné 
-porozumieť tomu, ako sa gravitačný potenciál v~priestore mení.  Ak by nejaký 
-princíp existoval a~bol by objavený, znamenalo by to, že hoci naše merania sú 
-dostupné iba v~malej časti vonkajšieho priestoru Zeme, dokázali by sme 
-predikovať gravitačný potenciál kdekoľvek mimo Zeme, teda aj v~oblastiach bez 
-dostupných meraní.
+v~bezprostrednej blízkosti zemského povrchu či na dráhe umelej družice Zeme.  
+Preto ak chceme určiť gravitačné pole v~celom priestore mimo Zeme, bolo by 
+vhodné porozumieť tomu, ako sa gravitačný potenciál v~priestore mení.  Ak by 
+nejaký princíp existoval a~bol by objavený, znamenalo by to, že hoci naše 
+merania sú dostupné iba v~malej časti vonkajšieho priestoru Zeme, dokázali by 
+sme predikovať gravitačný potenciál kdekoľvek mimo Zeme, teda aj v~oblastiach 
+bez dostupných meraní.
 
 Tento princíp bol objavený a~je ním práve Laplaceova rovnica.  
 V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
@@ -6446,6 +6446,10 @@ ekvipotenciálnym elipsoidom~GRS80.}
 \label{sec:geoid}
 
 
+\subsection{Okrajová úloha pre poruchový potenciál}
+\label{sec:boundary_value_problem}
+
+
 \subsection{Stokesov integrál}
 \label{sec:stokes_integral}
 
@@ -7470,8 +7474,10 @@ topografie}
 Zdrojovým kódom~\ref{src:h_shs} je možné vypočítať a~zobraziť sférický 
 harmonický rozvoj topografie Zeme.  Sférické harmonické koeficienty 
 $\bar{h}_{nk}$ (pozri rovnicu~\ref{eq:h_shs}) sú prevzaté z~modelu DTM2006.0 
-\parencite{DTM2006}.  Výpočet používa program GrafLab \parencite{GrafLab}.  
-Návody na prácu v~programe GrafLab je možné nájsť na adrese 
+\parencite{DTM2006}.  Výpočet používa program GrafLab \parencite{GrafLab}, 
+ktorý je voľne dostupný na adrese 
+\url{https://github.com/blazej-bucha/graflab}.  Návody na prácu v~programe 
+GrafLab je možné nájsť na adrese 
 \url{https://github.com/blazej-bucha/graflab-cookbook}.
 
 \lstinputlisting[caption=Sférický harmonický rozvoj zemskej topografie
