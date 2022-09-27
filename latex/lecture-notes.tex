@@ -25,6 +25,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{upgreek}
 \usepackage{listings}
@@ -184,6 +185,8 @@
 % =============================================================================
 
 \newcommand{\diff}{\mathrm d}
+\newcommand{\DIFF}{\mathcal D}
+\newcommand{\INT}{\mathcal I}
 \newcommand{\grad}{\mathrm{grad}}
 \newcommand{\divergence}{\mathrm{div}}
 \newcommand{\gidx}{\mathrm g}
@@ -227,15 +230,15 @@
 
 \chapter*{Predslov}
 
-Mnohé geodetické úkony a~merania využívajú pôsobenie tiažového poľa alebo sú 
-ním ovplyvnené, od použitia olovnice až po určovanie polohy pomocou globálnych 
-navigačných družicových systémov.  Táto práca sa zaoberá tiažovým poľom 
-s~dôrazom na geodetický kontext.  Určená je predovšetkým ako doplňujúci učebný 
-text k~predmetom \emph{Fyzikálna geodézia~1} a~\emph{Fyzikálna geodézia~2} pre 
-študentov odboru Geodézia a~kartografia Stavebnej fakulty Slovenskej technickej 
-univerzity v~Bratislave.  Niektoré časti by azda mohli byť užitočné aj 
-pre~študentov príbuzných vedných odborov alebo jednoducho pre záujemcov 
-o~problematiku gravitačného a~tiažového poľa.
+Mnohé geodetické úkony a~merania využívajú pôsobenie tiažového poľa Zeme alebo 
+sú ním ovplyvnené, od použitia olovnice až po určovanie polohy pomocou 
+globálnych navigačných družicových systémov.  Táto práca sa zaoberá tiažovým 
+poľom s~dôrazom na geodetický kontext.  Určená je predovšetkým ako doplňujúci 
+učebný text k~predmetom \emph{Fyzikálna geodézia~1} a~\emph{Fyzikálna 
+geodézia~2} pre študentov odboru Geodézia a~kartografia Stavebnej fakulty 
+Slovenskej technickej univerzity v~Bratislave.  Niektoré časti by azda mohli 
+byť užitočné aj pre~študentov príbuzných vedných odborov alebo jednoducho pre 
+záujemcov o~problematiku gravitačného a~tiažového poľa.
 
 Popísané sú základné princípy gravitačného a~tiažového poľa vychádzajúce 
 z~Newtonovho gravitačného zákona 
@@ -1388,9 +1391,10 @@ neinerciálnom súradnicovom systéme, potrebné je uvážiť nielen gravitačn�
 ale aj~ďalšie sily v~zmysle Newtonovho pohybového zákona.  Na objekt, ktorý sa 
 nachádza na rotujúcej Zemi a~je vzhľadom k~nej v~pokoji, pôsobí okrem 
 gravitačnej sily aj \emph{odstredivá sila}.  Ak je objekt v~pohybe, pôsobí naň 
-aj \emph{Coriolisova sila} \parencite{Torge1989,SansoGeoidDetermination}.  Azda 
-väčšina geodetických meracích zariadení je počas merania vzhľadom k~Zemi 
-v~pokoji, preto Coriolisovu silu nebudeme ďalej uvažovať.  Na záver 
+aj \emph{Coriolisova sila} 
+\parencite{Torge1989,Jekeli2000,SansoGeoidDetermination}.  Azda väčšina 
+geodetických meracích zariadení je počas merania vzhľadom k~Zemi v~pokoji, 
+preto Coriolisovu silu nebudeme ďalej uvažovať.  Na záver 
 spomeňme~\emph{Eulerovu silu}, ktorá je spôsobená zmenou uhlovej rýchlosti 
 rotácie~$\omega$ v~čase \parencite{Torge1989,SansoGeoidDetermination}.  V~tejto 
 práci predpokladáme, že uhlová rýchlosť rotácie Zeme je konštantná, preto 
@@ -4526,6 +4530,7 @@ a~nad ním pomocou štyroch základných parametrov ekvipotenciálneho elipsoidu
 
 
 \subsubsection{Okrajová úloha}
+\label{sec:u_boundary_value_problem}
 
 Na problematiku tejto kapitoly sa môžeme pozrieť aj zo širšieho uhla pohľadu.  
 Najprv sme definovali trojrozmernú uzavretú plochu, ktorú tvorí dvojosový 
@@ -5189,6 +5194,7 @@ ukázať (pozri rovnicu~\ref{eq:laplace_additivity}), že poruchový potenciál 
 harmonická funkcia v~priestore mimo hmôt,
 %
 \begin{equation}
+\label{eq:laplace_xyz_t}
 \nabla^2 T = \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial 
 y^2} + \frac{\partial^2 T}{\partial z^2} = 0{.}
 \end{equation}
@@ -6045,9 +6051,9 @@ rovnicu~\ref{eq:N}).  Medzi časté geodetické merania ale patrí aj určovanie
 polohy bodu na povrchu Zeme pomocou astronomických meraní a~pomocou globálnych 
 navigačných družicových systémov.  Bolo by preto výhodné, ak by sme našli aj 
 vzťah medzi týmito meraniami a~poruchovým potenciálom, pretože by to umožnilo 
-využiť ďalší typ geodetických meraní na určovanie tvaru Zeme.  Hoci to na prvý 
-pohľad nemusí byť zrejmé, takýto vzťah naozaj existuje.  Na jeho nájdenie 
-zavedieme veličinu, ktorú budeme nazývať \emph{zvislicová odchýlka}.
+určovať tvar Zeme z~ďalšieho typu geodetických meraní.  Hoci to na prvý pohľad 
+nemusí byť zrejmé, takýto vzťah naozaj existuje.  Na jeho nájdenie zavedieme 
+veličinu, ktorú budeme nazývať \emph{zvislicová odchýlka}.
 
 Zvislicová odchýlka je uhol medzi skutočnou zvislicou (pozri 
 Kapitolu~\ref{sec:plumbline}) a~zvoleným referenčným smerom 
@@ -6063,29 +6069,32 @@ zvislicová odchýlka~$\Theta^\textrm{Molodenskij}$ a~Pizzettiho zvislicová
 odchýlka~$\Theta^\textrm{Pizzetti}$.  Symbol~$t_W^P$ označuje skutočnú tiažnicu 
 prechádzajúcu bodom~$P$ na povrchu Zeme.  Tiažnica~$t_W^P$ je identická so 
 skutočnou tiažnicou~$t_W^{P_0}$, ktorá prechádza bodom~$P_0$ na geoide.  
+Symboly~$z_W^P$ a~$z_W^{P_0}$ označujú skutočné zvislice v~bodoch~$P$ a~$P_0$.  
 Zvislicou rozumieme dotyčnicu k~tiažnici, v~tomto prípade v~bodoch~$P$ a~$P_0$ 
 (pozri Kapitolu~\ref{sec:plumbline}).  Symbol~$n$ označuje normálu, pričom 
-dolný index označuje plochu, na ktorú je normála kolmá, a~horný index označuje 
-bod, cez ktorý normála prechádza.}
+dolný index označuje plochu, na ktorú je normála kolmá ($e$ pre elipsoid, $U$ 
+pre normálnu ekvipotenciálnu plochu~$U = \textrm{kon\v{s}t.}$), a~horný index 
+označuje bod, cez ktorý normála prechádza.  Poznamenajme, že normála~$n_U^P$ 
+nie je totožná s~\emph{normálnou} zvislicou~$z_U^Q$, hoci sú si veľmi blízke.}
 \label{fig:deflections}
 \end{figure}
 
 \begin{itemize}
 \item \emph{Helmertova zvislicová odchýlka}~$\Theta^\mathrm{Helmert}$ je uhol 
-medzi skutočnou zvislicou~$t_W^P$ prechádzajúcou~bodom~$P$ na povrchu Zeme 
+medzi skutočnou zvislicou~$z_W^P$ prechádzajúcou~bodom~$P$ na povrchu Zeme 
 a~normálou k~elipsoidu~$n_e^P$ prechádzajúcou bodom~$P$.  Táto zvislicová 
 odchýlka sa tiež zvykne nazývať \textit{astronomicko--geodetická zvislicová 
 odchýlka} \parencite{Jekeli1999b}.
 
 \item \emph{Molodenského zvislicová odchýlka}~$\Theta^\mathrm{Molodenskij}$ je 
-uhol medzi skutočnou zvislicou~$t_W^P$ prechádzajúcou bodom~$P$ na povrchu Zeme 
+uhol medzi skutočnou zvislicou~$z_W^P$ prechádzajúcou bodom~$P$ na povrchu Zeme 
 alebo mimo nej a~normálou~$n_U^P$ k~takej normálnej ekvipotenciálnej 
 ploche~$U(Q) = \textrm{kon\v{s}t.}$, ktorej normálny tiažový potenciál~$U(Q)$ 
 je rovný skutočnému tiažovému potenciálu~$W(P)$, pričom normála~$n_U^P$ 
 prechádza bodom~$P$.
 
 \item \emph{Pizzettiho zvislicová odchýlka}~$\Theta^\mathrm{Pizzetti}$ je uhol 
-medzi skutočnou zvislicou~$t_W^{P_0}$ prechádzajúcou bodom~$P_0$ na povrchu 
+medzi skutočnou zvislicou~$z_W^{P_0}$ prechádzajúcou bodom~$P_0$ na povrchu 
 geoidu a~normálou k~elipsoidu~$n_e^{P_0}$ prechádzajúcou bodom~$P_0$.
 
 \item \emph{Gravimetrická zvislicová odchýlka}~$\Theta^\mathrm{grav}$ je uhol 
@@ -6104,7 +6113,8 @@ a~$\boldsymbol\gamma(Q)$.}
 Rozdiel medzi Helmertovou a~Molodenského zvislicovou odchýlkou je spôsobený 
 zakrivením normálnej tiažnice \parencite{Jekeli1999b}.  Zvislicové 
 odchýlky~$\Theta$ nadobúdajú hodnoty od $0'$ v~rovinatom teréne do 
-približne~$2'$ v~najväčších pohoriach na Zemi \parencite{GGMplus}.
+približne~$2'$ v~najväčších pohoriach na Zemi \parencite{GGMplus}, zvyčajne 
+však najviac približne niekoľko desiatkok uhlových sekúnd.
 
 Nech je daný súradnicový systém, v~ktorom je smer skutočnej zvislice určený 
 astronomickými súradnicami~$\Phi$ a~$\Lambda$.  Nech je ďalej daný referenčný 
@@ -6112,10 +6122,11 @@ elipsoid, voči ktorému sú určované súradnice~$\varphi$ a~$\lambda$ referen
 smeru zvislicovej odchýlky.  Predpokladajme, že osi~$Z$ oboch súradnicových 
 systémov sú rovnobežné a~rovnako tak sú rovnobežné aj roviny ich nultých 
 poludníkov \parencite{TorgeGeodesy}.\footnote{Súčasné súradnicové systémy 
-zabezpečujú splnenie týchto podmienok s~dostatočnou presnosťou.}  Rovnobežným 
-posunutím takéhoto súradnicového systému do bodu~$P$, v~ktorom určujeme 
-zvislicovú odchýlku, získame situáciu znázornenú na 
-Obrázku~\ref{fig:deflections_unit_sphere}.
+zabezpečujú splnenie týchto podmienok s~dostatočnou presnosťou.  Riešenie pre 
+súradnicové systémy, ktoré tieto podmienky nespĺňajú, je možné nájsť napríklad 
+v~práci \textcite{Pick2000}.}  Rovnobežným posunutím takéhoto súradnicového 
+systému do bodu~$P$, v~ktorom určujeme zvislicovú odchýlku, získame situáciu 
+znázornenú na Obrázku~\ref{fig:deflections_unit_sphere}.
 
 Zvislicovú odchýlku je možné matematicky popísať rozličnými spôsobmi, z~ktorých 
 dva sú obzvlášť výhodné (Obrázok~\ref{fig:deflections_unit_sphere}).  Jeden 
@@ -6141,7 +6152,7 @@ a~azimutu~$\alpha$ a~2)~pravouhlých priemetov~$\xi$ a~$\eta$ do meridiánovej
 roviny a~do roviny prvého vertikálu.  Symboly~$\Phi$ a~$\Lambda$ označujú 
 astronomické súradnice bodu~$P$, v~ktorom je určovaná zvislicová odchýlka 
 (pozri Obrázok~\ref{fig:deflections}).  Symboly~$\phi$ a~$\lambda$ označujú 
-elipsoidickú šírku a~elipsoidickú dĺžku bodu~$P$.  Referenčným smerom v~tomto 
+elipsoidickú šírku a~elipsoidickú dĺžku bodu~$P$.  Referenčným smerom na~tomto 
 obrázku je teda normála k~elipsoidu, ktorá prechádza bodom~$P$.}
 \label{fig:deflections_unit_sphere}
 \end{figure}
@@ -6155,8 +6166,8 @@ Zložky~$\xi$ a~$\eta$ získame z~Obrázku~\ref{fig:deflections_unit_sphere},
 \end{split}
 \end{equation}
 %
-Veľkosť zvislicovej odchýlky~$\Theta$ môžeme následne vypočítať použitím 
-sférickej kosínusovej vety vo sférickom trojuholníku~$N$, $N_r$ a~$N'_r$ (pozri 
+Veľkosť zvislicovej odchýlky~$\Theta$ môžeme vypočítať sférickou kosínusovou 
+vetou vo sférickom trojuholníku~$N$, $N_r$ a~$N'_r$ (pozri 
 Obrázok~\ref{fig:deflections_unit_sphere}).  Keďže ale uhly~$\Theta$, $\xi$ 
 a~$\eta$ nadobúdajú malé hodnoty (v~absolútnej hodnote nanajvýš približne 
 $2'$), s~dostatočnou mierou aproximácie môžeme použiť kosínusovú vetu pre 
@@ -6185,6 +6196,19 @@ nakoniec získame azimut zvislicovej odchýlky,
 \tan\alpha = \frac{\cos\Phi \, \sin(\Lambda - \lambda)}{\cos\phi \, \sin\Phi 
 - \sin\phi \, \cos\Phi \, \cos(\Lambda - \lambda)}{.}
 \end{equation}
+
+Okrem určovania tvaru Zeme majú zvislicové odchýlky praktické využitie aj 
+v~ďalších geodetických úlohách.  Zvyčajné geodetické prístroje, napríklad 
+teodolit či nivelačný prístroj, sa horizontujú preto, aby sa ich vertikálna os 
+stotožnila so skutočnou zvislicou, ktorá prechádza stredom libely.  Merané 
+vodorovné smery, vertikálne uhly či vertikálne prevýšenia sú tak vztiahnuté 
+k~skutočnej zvislici, resp. skutočnému lokálnemu horizontu.  Keďže ale skutočné 
+zvislice prechádzajúce dvoma rôznymi bodmi nie sú vo všeobecnosti rovnobežné, 
+niektoré geodetické merania si môžu vyžadovať korekciu týchto efektov, obzvlášť 
+ak je vyžadovaná presnosť vysoká.  Na výpočet takýto korekcii slúžia práve 
+zvislicové odchýlky.  Ďalšie využitie zvislicových odchýlok je napríklad na 
+navigáciu inerciálnych navigačných systémov \parencite[pozri 
+napríklad][]{Jekeli2000}.
 
 
 \subsection{Vzťah medzi zvislicovou odchýlkou a~poruchovým potenciálom}
@@ -6285,11 +6309,12 @@ vzťahuje (pozri Obrázok~\ref{fig:deflections}).  Voľba horizontálnej roviny
 môže byť totižto vynútená okolnosťami, a~tak sa môžeme stretnúť s~rozličnými 
 tvarmi rovnice~(\ref{eq:deflection_grav}).  Definujme lokálny karteziánsky 
 súradnicový systém~$x$, $y$, $z$ s~pohyblivým začiatkom v~bode~$P$ nasledovne.  
-Os~$z$ je daná smerom skutočnej zvislice v~bode~$P$ a~je orientovaná kladne vo 
-vonkajšom smere.  Os~$x$ leží v~rovine meridiánu a~je orientovaná kladne na 
-sever.  Os~$y$ dotvára pravouhlý \emph{ľavotočivý} súradnicový systém.  
-Horizontálna rovina~$xy$ je teda kolmá na vektor~$\vec n_W(P)$, a~tak 
-zvislicové odchýlky majú tvar \parencite{Borre_chapter4}
+Os~$z$ je daná smerom skutočnej zvislice v~bode~$P$ (pozri~$z_W^P$ na 
+Obrázku~\ref{fig:deflections}) a~je orientovaná kladne vo vonkajšom smere.  
+Os~$x$ leží v~rovine meridiánu a~je orientovaná kladne na sever.  Os~$y$ 
+dotvára pravouhlý \emph{ľavotočivý} súradnicový systém.  Horizontálna 
+rovina~$xy$ je teda kolmá na vektor~$\vec n_W(P)$, a~tak 
+rovnice~(\ref{eq:deflection_grav}) prejdu do tvaru \parencite{Borre_chapter4}
 %
 \begin{equation}
 \label{eq:deflection_grav_nat}
@@ -6302,7 +6327,7 @@ znalosť lokálneho smeru skutočnej zvislice v~bode~$P$
 (Obrázok~\ref{fig:deflections}).  Lokálny smer skutočnej zvislice v~bode~$P$ je 
 možné získať odmeraním astronomických súradníc~$\Phi$, $\Lambda$ bodu~$P$.
 
-V~praxi sa zvykne voliť horizontálna rovina tak, aby bola kolmá na normálu 
+V~praxi sa horizontálna rovina zvykne voliť tak, aby bola kolmá na normálu 
 k~elipsoidu~$n_e^P$ (pozri Obrázok~\ref{fig:deflections}).  Definujme teda 
 lokálny karteziánsky súradnicový systém~$x^\mathrm{e}$, $y^\mathrm{e}$, 
 $z^\mathrm{e}$ s~pohyblivým začiatkom v~bode~$P$ podobne ako súradnicový 
@@ -6371,7 +6396,8 @@ spôsobená zanedbaním člena~$\frac{\delta g(P)}{\gamma(P)} \,
 \frac{W_{x^\mathrm{s}}(P)}{g(P)}$ v~rovnici~(\ref{eq:deflection_grav_s}) 
 dosahuje približne~$0.8''$ pre~$\xi$.  Chyba v~dôsledku zanedbania 
 člena~$\frac{\delta g(P)}{\gamma(P)} \, \frac{W_{y^\mathrm{s}}(P)}{g(P)}$ je 
-rovnaká ako v~prípade elipsoidickej aproximácie.
+rovnaká ako v~prípade elipsoidickej aproximácie, pretože $y^\mathrm{s} 
+= y^\mathrm{e}$.
 
 Všimnime si, že (pozri rovnice~\ref{eq:dgx_sh}, \ref{eq:dgy_sh} 
 a~\ref{eq:deflection_grav_s})
@@ -6383,18 +6409,19 @@ g_{y^\mathrm{s}}{,}
 \end{equation}
 %
 teda zložky gravimetrickej zvislicovej odchýlky~$\xi$ a~$\eta$ sú dané ako 
-podiel horizontálnych zložiek vektora poruchy tiažového zrýchlenia a~veľkosti 
-vektora normálneho tiažového zrýchlenia.  Rovnaký záver platí aj pre 
-rovnice~(\ref{eq:deflection_grav_nat}) a~(\ref{eq:deflection_grav_e}), čo 
-vyplýva zo všeobecných rovníc~(\ref{eq:xi_eta_eps}) 
-a~(\ref{eq:deflection_eps3}).
+záporný podiel horizontálnych zložiek vektora poruchy tiažového zrýchlenia 
+a~veľkosti vektora normálneho tiažového zrýchlenia.  Zo všeobecných 
+rovníc~(\ref{eq:xi_eta_eps}) a~(\ref{eq:deflection_eps3}) vyplýva rovnaký záver 
+aj pre rovnice~(\ref{eq:deflection_grav_nat}) a~(\ref{eq:deflection_grav_e}) 
+avšak s~použitím príslušného lokálneho súradnicového systému ($x$, $y$, $z$ 
+alebo $x^\mathrm{e}$, $y^\mathrm{e}$, $z^\mathrm{e}$).
 
 
 \subsection{Sférický harmonický rozvoj zvislicovej odchýlky}
 
-Z~rovníc~(\ref{eq:t_sh}), (\ref{eq:dgx_sh}), (\ref{eq:dgy_sh}) 
-a~(\ref{eq:deflection_grav_s}) vyplýva, že sférický harmonický rozvoj 
-gravimetrickej zvislicovej odchýlky vo sférickej aproximácii je daný vzťahmi
+Sférický harmonický rozvoj gravimetrickej zvislicovej odchýlky vo sférickej 
+aproximácii získame z~rovníc~(\ref{eq:t_sh}), (\ref{eq:dgx_sh}), 
+(\ref{eq:dgy_sh}) a~(\ref{eq:deflection_grav_s}),
 %
 \begin{equation}
 \label{eq:deflection_grav_s_sph}
@@ -6420,8 +6447,9 @@ v~oblastiach, v~ktorých dochádza k~prudkej horizontálnej zmene skutočného
 tiažového potenciálu (resp. poruchového potenciálu), napríklad v~oblastiach 
 pohorí či tektonických zlomov.  Toto pozorovanie možno vysvetliť horizontálnym 
 deriváciami vo vzťahoch~(\ref{eq:deflection_grav_s_sph}).  Vidíme tiež výraznú 
-podobnosť medzi vrchnými dvoma mapami na Obrázkoch~\ref{fig:dg_ggm_grs80} 
-a~\ref{fig:deflections_ggm}.  Táto podobnosť je spôsobená úzkou súvislosťou 
+podobnosť medzi vrchnými dvoma mapami poruchy tiažového zrýchlenia na 
+Obrázku~\ref{fig:dg_ggm_grs80} a zvislicovej odchýlky na 
+Obrázku~\ref{fig:deflections_ggm}.  Táto podobnosť je daná úzkou súvislosťou 
 medzi horizontálnymi zložkami vektora poruchy tiažového zrýchlenia a~zložkami 
 zvislicovej odchýlky (pozri vzťah~\ref{eq:deflection_grav_s_sph}).
 
@@ -6445,23 +6473,186 @@ ekvipotenciálnym elipsoidom~GRS80.}
 \section{Geoid}
 \label{sec:geoid}
 
+Vráťme sa teraz na chvíľu späť do úvodnej kapitoly, v~ktorej sme tvar Zeme 
+definovali dvoma spôsobmi.  V~zmysle prvej definície je tvar Zeme daný jej 
+fyzickým povrchom, ktorý má komplikovaný priebeh.  Takto chápaný tvar Zeme je 
+predmetom Molodenského teórie 
+\parencite{Molodensky1962,Borre2006,MoritzPhysicalGeodesy}.  V~druhom prístupe 
+je tvar Zeme definovaný geoidom, teda ekvipotenciálnou plochou s~konštantným 
+tiažovým potenciálom.  Na týchto stranách bližšie popíšeme geoid a~niektoré 
+základné metódy jeho určovania.  Molodenského prístup k~určovaniu tvaru Zeme 
+a~jej vonkajšieho tiažového poľa nie je predmetom tejto práce.\footnote{Pre 
+predstavenie Molodenského teórie, pozri napríklad prácu~\textcite{Janak2006}.  
+Pre krátku diskusiu k~obom prístupom pozri Doslov k~tejto práci.}
+
+Z~Kapitol~\ref{sec:gravity_disturbance} až~\ref{sec:deflections} vieme, že 
+medzi merateľné veličiny fyzikálnej geodézie patria (okrem ďalších veličín) 
+najmä porucha tiažového zrýchlenia~$\delta g$, anomália tiažového 
+zrýchlenia~$\Delta g$ a~zvislicové odchýlky~$\xi$, $\eta$.  Geoid preto 
+určujeme spravidla najmä z~týchto veličín.  Z~rovnice~(\ref{eq:N}) ďalej vieme, 
+že určiť geoid, alebo povedané presnejšie, určiť výšku geoidu nad referenčným 
+elipsoidom~$N$ (Obrázok~\ref{fig:geoid}), v~podstate znamená určiť poruchový 
+potenciál na geoide~$T(P_0)$, pretože normálne tiažové zrýchlenie~$\gamma(Q_0)$ 
+vystupujúce v~rovnici~(\ref{eq:N}) môžeme jednoducho vypočítať Somiglianovým 
+vzťahom~(\ref{eq:somigliana}).  Našťastie, \emph{linearizované} vzťahy medzi 
+merateľnými veličinami fyzikálnej geodézie a~neznámym poruchovým potenciálom už 
+poznáme (vzťahy~\ref{eq:dg_normals}, \ref{eq:Dg_fundamental_equation_earth}, 
+\ref{eq:Dg_fundamental_equation_earth_sph}, \ref{eq:deflection_grav_nat}, 
+\ref{eq:deflection_grav_e}, \ref{eq:deflection_grav_s}).  Je dobré si ale 
+všimnúť, že v~týchto vzťahoch vystupujú derivácie neznámeho poruchového 
+potenciálu, teda vypočítať nimi poruchový potenciál~$T$ nie je jednoduché, 
+resp. priamočiare.
+
+Označme symbolmi~$\DIFF_{\delta g}$, $\DIFF_{\Delta g}$, $\DIFF_{\xi}$ 
+a~$\DIFF_{\eta}$ \emph{diferenciálne operátory}, ktoré transformujú poruchový 
+potenciál na príslušnú veličinu, ktorá je uvedená v~dolnom indexe za 
+symbolom~$\DIFF$.  Napríklad
+%
+\begin{equation}
+\label{eq:diff_xi}
+\DIFF_{\xi} = -\frac{1}{\gamma(P)} \, \frac{\partial}{r \, \partial\varphi}
+\end{equation}
+%
+je diferenciálny operátor, ktorý po aplikovaní na poruchový potenciál, dáva 
+meridiánovú zložku zvislicovej odchýlky vo sférickej aproximácii (porovnaj 
+rovnice~\ref{eq:deflection_grav_s} a~\ref{eq:diff_xi}),
+%
+\begin{equation}
+\xi = \DIFF_{\xi} T{.}
+\end{equation}
+%
+Získame tak vzťahy
+%
+\begin{equation}
+\label{eq:diff_operators}
+\delta g = \DIFF_{\delta g}T{,} \quad \Delta g = \DIFF_{\Delta g}T{,} \quad \xi 
+= \DIFF_{\xi}T{,} \quad \eta = \DIFF_{\eta}T{.}
+\end{equation}
+%
+Aby sme dokázali vypočítať poruchový potenciál, na ktorý 
+v~rovnici~(\ref{eq:diff_operators}) pôsobia rozličné diferenciálne operátory, 
+potrebujeme nájsť \emph{integrálne operátory}~$\INT_{\delta g}$, $\INT_{\Delta 
+g}$, $\INT_{\xi}$, $\INT_{\eta}$.  Tie umožnia transformáciu merateľných 
+veličín na hľadaný poruchový potenciál, a teda výšku geoidu~$N$, vzťahmi,
+%
+\begin{equation}
+\label{eq:int_operators}
+T = \INT_{\delta g} \delta g{,} \quad T = \INT_{\Delta g}\Delta g{,} \quad 
+T = \INT_{\xi}\xi{,} \quad T = \INT_{\eta}\eta{.}
+\end{equation}
+
+Integrálne vzťahy~(\ref{eq:int_operators}) budeme hľadať pomocou okrajových 
+úloh pre poruchový potenciál.  S~okrajovými úlohami sme sa už čiastočne stretli 
+v~Kapitolách~\ref{sec:meaning_of_laplace_equation_in_practice} 
+a~\ref{sec:u_boundary_value_problem}.
+
 
 \subsection{Okrajová úloha pre poruchový potenciál}
 \label{sec:boundary_value_problem}
 
+Nech~$\Omega$ je Zemské teleso s~hranicou~$\partial \Omega$.  Hranica~$\partial 
+\Omega$ predstavuje povrch Zeme, v~tomto prípade geoid.  O~hranici~$\partial 
+\Omega$ budeme predpokladať, že je dostatočne hladká\footnote{Rigoróznu 
+matematickú definíciu pojmu~\emph{hladká plocha} je možné nájsť napríklad 
+v~prácach \textcite{Hormander1976} a~\textcite{SansoGeoidDetermination}.} na 
+to, aby na nej bolo možné integrovať.  Táto podmienka je splnená, pretože 
+geoid, ktorý je ekvipoteciálnou plochou, je hladký 
+(Kapitola~\ref{sec:equipotential_surface}).  Ďalej, nech sa mimo 
+hranice~$\partial \Omega$ nenachádzajú žiadne hmoty, teda napríklad ani nebeské 
+telesá, ani zemská atmosféra či ani tá časť zemských hmôt, ktoré sa spravidla 
+nachádzajú nad geoidom v~pevninskej časti zemského povrchu.  Túto vonkajšiu 
+oblasť označme~$\mathbb{R}^3 - \Omega$.
 
-\subsection{Stokesov integrál}
-\label{sec:stokes_integral}
+Našim cieľom je nájsť vzťahy, ktoré by umožnili získať poruchový potenciál na 
+hranici~$\partial \Omega$ a v~celej oblasti~$\mathbb{R}^3 - \Omega$ z~poruchy 
+tiažového zrýchlenia, anomálie tiažového zrýchlenia a~zo zvislicových odchýlok, 
+o~ktorých predpokladáme, že sú známe (odmerané) na hranici~$\partial \Omega$.  
+S trochou námahy nie je náročné uvedomiť si, že túto úlohu by nebolo možné 
+vyriešiť bez toho, aby sme vedeli dostatočne veľa o~tom, ako sa samotný 
+poruchový potenciál \emph{mení} v~priestore mimo Zeme.  Táto informácia je 
+zachytená Laplaceovou rovnicou pre poruchový potenciál~(\ref{eq:laplace_xyz_t}) 
+(pre diskusiu o~význame Laplaceovej rovnice pre fyzikálnu geodéziu pozri 
+Kapitolu~\ref{sec:meaning_of_laplace_equation_in_practice}).  \emph{Okrajovou 
+úlohou pre poruchový potenciál} teda rozumieme hľadanie takého riešenia 
+diferenciálnej rovnice~(\ref{eq:laplace_xyz_t}), ktoré mimo Zeme~$\Omega$ 
+vyhovuje tejto rovnici a~na hranici~$\partial \Omega$ reprodukuje zadanú 
+podmienku.  Podmienku zadanú na hranici~$\partial \Omega$ nazývame 
+\emph{okrajová podmienka}.  Okrajová podmienka musí byť v~nejakom vzťahu voči 
+hľadanému poruchovému potenciálu.  Ako okrajová podmienka tak môže byť na 
+hranici~$\partial \Omega$ zadaná napríklad niektorá z~nasledovných veličín:
+%
+\begin{itemize}
+\item samotný poruchový potenciál~$T$,
+%
+\item prvá vertikálna derivácia poruchového potenciálu v~podobe poruchy 
+tiažového zrýchlenia~$\DIFF_{\delta g} T$ (rovnica~\ref{eq:dg_normals}),
+%
+\item lineárna kombinácia poruchového potenciál~$T$ a~jeho vertikálnej 
+derivácie v~podobe anomálie tiažového zrýchlenia~$\DIFF_{\Delta g}T$ 
+(rovnica~\ref{eq:Dg_fundamental_equation_earth}),
+%
+\item druhá vertikálna derivácia poruchového potenciálu~$\partial^2 
+T / \partial r^2$, atď.
+\end{itemize}
+%
+V~praxi závisí voľba typu okrajovej podmienky najmä od typu dostupných dát.
 
+Vzťahy~(\ref{eq:int_operators}) sú všeobecným zápisom riešenia získaného 
+z~okrajovej úlohy pre poruchový potenciál.  Na pravej strane týchto rovníc 
+vystupujú okrajové podmienky na hranici~$\partial \Omega$ (odmerané vstupné 
+dáta) a~na ľavej strane vystupuje hľadaný poruchový potenciál~$T$.  Spomeňme, 
+že poruchový potenciál získaný z~každej z~týchto okrajových úloh je, 
+prirodzene, totožný, 
+%
+\begin{equation}
+T = \INT_{\delta g} \delta g = \INT_{\Delta g}\Delta g = \INT_{\xi}\xi 
+= \INT_{\eta}\eta{.}
+\end{equation}
+%
+Rozdielne sú iba okrajové podmienky, a teda aj získaný vzťah medzi veličinou 
+z~okrajovej podmienky a~poruchovým potenciálom.  Rozdielnosť získaných vzťahov 
+demonštrujú rozdielne operátory~$\INT_{\delta g}$, $\INT_{\Delta g}$, 
+$\INT_{\xi}$ a~$\INT_{\eta}$.
+
+Po bezprostredne nasledujúcej krátkej poznámke o~okrajových úlohách prejdeme ku 
+matematickej formulácii okrajových úloh pre poruchový potenciál s~rôznymi 
+okrajovými podmienkami.  V~Kapitole~\ref{sec:hotine_integral} budú na geoide 
+zadané poruchy tiažového zrýchlenia.  Následne 
+v~Kapitolách~\ref{sec:stokes_integral} a~\ref{sec:vm_integral} budeme uvažovať 
+anomálie tiažového zrýchlenia a~zvislicové odchýlky a~na záver 
+v~Kapitole~\ref{sec:poisson_integral} samotný poruchový potenciál.  Opäť 
+pripomeňme, že na získanie poruchového potenciálu sa sústredíme preto, lebo 
+výpočet výšky geoidu nad referenčným elipsoidom zo známeho poruchového 
+potenciálu je jednoduchý (vzťah~\ref{eq:N}).
+
+
+\subsubsection{Poznámka k~okrajovým a~počiatočným úlohám}
+
+\emph{Okrajová úloha} je v~matematike všeobecný pojem, ktorý označuje riešenie 
+diferenciálnej rovnice so zadanou okrajovou podmienkou.  Okrajová podmienka sa 
+spravidla vzťahuje k~priestoru (napríklad povrch telesa).  Naproti tomu, pojmom 
+\emph{počiatočná úloha} označujeme riešenie diferenciálnej rovnice so zadanou 
+počiatočnou podmienkou.  Počiatočná podmienka sa zvyčajne vzťahuje k~časovému 
+okamihu.  Počiatočné úlohy sa teda zaoberajú vývojom diferenciálnej rovnice 
+v~čase.  Podrobnejšie informácie o~okrajových a~počiatočných úlohách, o~ich 
+klasifikácii a~o~metódach ich riešenia je možné nájsť napríklad v~prácach 
+\textcite{Janak2006} a~\textcite{Macak2021}.
 
 
 \subsection{Hotineov integrál}
 \label{sec:hotine_integral}
 
 
+\subsection{Stokesov integrál}
+\label{sec:stokes_integral}
 
-\subsection{Kvázigeoid}
-\label{sec:quasigeoid}
+
+\subsection{Vening--Meineszov integrál}
+\label{sec:vm_integral}
+
+
+\subsection{Poissonov integrál}
+\label{sec:poisson_integral}
 
 
 

@@ -19,6 +19,53 @@
      id="defs2">
     <marker
        style="overflow:visible"
+       id="marker1421"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path1419" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1399"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1382"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1346"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       style="overflow:visible"
        id="marker7825"
        refX="0"
        refY="0"
@@ -28,7 +75,7 @@
       <path
          transform="scale(0.6)"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#030000;fill-opacity:1;fill-rule:evenodd;stroke:#030000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path7823" />
     </marker>
     <marker
@@ -53,11 +100,12 @@
        refY="0"
        orient="auto"
        inkscape:stockid="Arrow2Mend"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       inkscape:collect="always">
       <path
          transform="scale(-0.6)"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#030000;fill-opacity:1;fill-rule:evenodd;stroke:#030000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path6959" />
     </marker>
     <marker
@@ -1654,11 +1702,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="202.22637"
-     inkscape:cy="281.66236"
+     inkscape:zoom="32"
+     inkscape:cx="189.13196"
+     inkscape:cy="98.833352"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -1744,7 +1792,7 @@
        inkscape:original-d="m 2.2128866,91.035099 c 4.164266,-0.16396 8.3281004,-0.328177 12.4917614,-0.492663 3.311244,-2.343657 6.621911,-4.687358 9.932644,-7.031557 9.111493,2.632315 18.221738,5.264081 27.332729,7.895874 7.063563,-0.662029 14.12631,-1.324271 21.189092,-1.986806 5.215442,0.704379 10.430188,1.408332 15.644863,2.111942 4.234304,0.382962 8.468052,0.765633 12.701514,1.148037"
        sodipodi:nodetypes="ccccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.265, 1.06;stroke-dashoffset:0;stroke-opacity:1"
        d="m 67.17118,7.70115 c -3.914342,7.118245 -7.828584,14.236309 -11.542873,21.794674 -3.714289,7.558365 -7.148504,15.374665 -9.824792,22.7903 -2.676288,7.415636 -4.913023,15.87604 -5.813416,19.540556 -0.900393,3.664515 -2.430178,10.69071 -2.989146,13.6665 -0.558967,2.975789 -1.391127,8.30012 -2.033547,12.410459"
        id="path1293"
        sodipodi:nodetypes="cccccc"
@@ -1787,12 +1835,6 @@
        inkscape:path-effect="#path-effect1381"
        inkscape:original-d="M 53.675343,42.055557 58.999595,7.7248408"
        sodipodi:nodetypes="cc" />
-    <circle
-       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.654957;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="path2037-4"
-       cx="55.657097"
-       cy="29.277237"
-       r="0.48102045" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 36.692755,97.796973 c 0,0 0,-28.426041 0,-28.426041"
@@ -1800,12 +1842,6 @@
        inkscape:path-effect="#path-effect4731"
        inkscape:original-d="M 36.692755,97.796973 V 69.370932"
        sodipodi:nodetypes="cc" />
-    <circle
-       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.654957;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="path2037-4-6-7-5-5"
-       cx="36.677967"
-       cy="87.204002"
-       r="0.48102045" />
     <path
        id="path5660"
        style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
@@ -1834,6 +1870,39 @@
        cx="55.657097"
        cy="97.370789"
        r="0.48102045" />
+    <path
+       style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 48.618829,43.767686 c 0,0 17.48573,-35.9998061 17.48573,-35.9998061"
+       id="path4729-9"
+       inkscape:path-effect="#path-effect1346"
+       inkscape:original-d="M 48.618829,43.767686 66.104559,7.7678799"
+       sodipodi:nodetypes="cc" />
+    <circle
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.654957;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-4"
+       cx="55.657097"
+       cy="29.277237"
+       r="0.48102045" />
+    <path
+       style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 34.694742,97.887447 c 0,0 5.326978,-28.47607 5.326978,-28.47607"
+       id="path4729-9-1"
+       inkscape:path-effect="#path-effect1382"
+       inkscape:original-d="M 34.694742,97.887447 40.02172,69.411377"
+       sodipodi:nodetypes="cc" />
+    <circle
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.654957;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-4-6-7-5-5"
+       cx="36.677967"
+       cy="87.204002"
+       r="0.48102045" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1421)"
+       d="m 38.109769,53.627285 c 1.658547,1.332985 3.316805,2.665737 4.974774,3.998256"
+       id="path1397"
+       inkscape:path-effect="#path-effect1399"
+       inkscape:original-d="m 38.109769,53.627285 c 1.658522,1.333016 3.31678,2.665768 4.974774,3.998256"
+       sodipodi:nodetypes="cc" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1970,17 +2039,17 @@
     <path
        id="path1451"
        style="fill:none;fill-opacity:0.1;fill-rule:evenodd;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
-       d="m 50.641766,27.006264 c 0.886931,-1.879492 2.799251,-3.180051 5.015331,-3.180051 0.87208,0 1.69712,0.201405 2.43114,0.560239"
+       d="m 50.641766,27.006264 c 0.886931,-1.879492 2.799251,-3.180051 5.015331,-3.180051 0.853427,0 1.661804,0.192881 2.383915,0.53743"
        sodipodi:nodetypes="csc" />
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
-       x="66.919212"
-       y="5.3298521"
+       x="29.888939"
+       y="52.177689"
        id="text3665-0-1-5-5-4"><tspan
          sodipodi:role="line"
-         x="66.919212"
-         y="5.3298521"
+         x="29.888939"
+         y="52.177689"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
          id="tspan1508-6-4-1-5">$t_W^P=t_W^{P_0}$</tspan></text>
     <text
@@ -1994,12 +2063,12 @@
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
-       x="66.054527"
-       y="13.935331"
+       x="37.42342"
+       y="13.77838"
        id="text3665-0-1-5-5-4-0"><tspan
          sodipodi:role="line"
-         x="66.054527"
-         y="13.935331"
+         x="37.42342"
+         y="13.77838"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
          id="tspan1508-6-4-1-5-4">$\Theta^\textrm{Helmert}$</tspan></text>
     <text
@@ -2015,12 +2084,12 @@
          id="tspan1508-6-4-1-5-4-4">$\Theta^\textrm{Molodenskij}$</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke"
-       d="m 36.21563,74.561538 c 0.158315,-0.0059 0.317373,-0.0088 0.477123,-0.0088 0.884766,0 1.748323,0.0908 2.581863,0.263599 0.212402,0.04403 0.422855,0.09339 0.631213,0.147922"
+       d="m 36.21563,74.561538 c 0.158315,-0.0059 0.317373,-0.0088 0.477123,-0.0088 0.884766,0 1.748321,0.09081 2.581863,0.263599 0.102816,0.02131 0.205175,0.04387 0.307061,0.06767"
        id="path4747"
        sodipodi:nodetypes="cssc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker5230);paint-order:fill markers stroke"
-       d="m 39.671277,74.898537 c 1.075212,0.222895 1.954677,0.551997 2.796268,1.005042"
+       d="m 39.4843,74.861671 c 1.075212,0.222895 1.954677,0.551997 2.796268,1.005042"
        id="path5208"
        sodipodi:nodetypes="cc" />
     <path
@@ -2031,12 +2100,12 @@
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
-       x="41.076012"
-       y="73.351997"
+       x="19.099997"
+       y="76.400383"
        id="text3665-0-1-5-5-4-0-5-7"><tspan
          sodipodi:role="line"
-         x="41.076012"
-         y="73.351997"
+         x="19.099997"
+         y="76.400383"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
          id="tspan1508-6-4-1-5-4-4-0">$\Theta^\textrm{Pizzetti}$</tspan></text>
     <text
@@ -2053,12 +2122,12 @@
     <path
        id="path6245"
        style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
-       d="m 54.625615,12.048464 c 0.341256,-0.02011 0.685178,-0.03031 1.031482,-0.03031 2.920355,0 5.671303,0.72532 8.082526,2.005641 0.33984,0.180449 0.672931,0.371923 0.998797,0.573945"
-       sodipodi:nodetypes="cssc" />
+       d="m 54.625615,12.048464 c 0.341256,-0.02011 0.685178,-0.03031 1.031482,-0.03031 2.920355,0 5.671303,0.72532 8.082526,2.005641"
+       sodipodi:nodetypes="csc" />
     <path
        id="path6254"
        style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker6264);paint-order:fill markers stroke"
-       d="m 64.10399,14.217264 c 0.887105,0.471038 1.604372,0.951435 2.28774,1.509393"
+       d="m 63.544846,13.921961 c 0.887105,0.471038 1.604372,0.951435 2.28774,1.509393"
        sodipodi:nodetypes="cc" />
     <path
        id="path6524"
@@ -2073,7 +2142,7 @@
     <path
        id="path6951"
        style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker7217);paint-order:fill markers stroke"
-       d="M 51.291569,37.756937 C 50.497901,37.24467 49.633478,36.595605 49.098859,35.999648"
+       d="m 51.119643,37.634426 c -0.793668,-0.512267 -1.658091,-1.161332 -2.19271,-1.757289"
        sodipodi:nodetypes="cc" />
     <path
        id="path7815"
@@ -2102,5 +2171,27 @@
          y="101.89316"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
          id="tspan1508-6-9-6">$Q_0$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
+       x="65.089981"
+       y="5.4046555"
+       id="text3665-0-1-5-5-8-9"><tspan
+         sodipodi:role="line"
+         x="65.089981"
+         y="5.4046555"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
+         id="tspan1508-6-4-1-3-3">$z_W^{P}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
+       x="41.671394"
+       y="68.568672"
+       id="text3665-0-1-5-5-8-9-7"><tspan
+         sodipodi:role="line"
+         x="41.671394"
+         y="68.568672"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
+         id="tspan1508-6-4-1-3-3-4">$z_W^{P_0}$</tspan></text>
   </g>
 </svg>
