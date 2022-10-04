@@ -3830,10 +3830,16 @@ okolo pevnej osi.  Nech $S$ je ekvipotenciálna plocha jeho tiažového poľa
 obklopujúca celé teleso.  \emph{Stokesov--Poincarého} teorém hovorí, že tiažový 
 potenciál vo vonkajšom priestore plochy~$S$ je jednoznačne určený konštantami 
 $M$ a~$\omega$ a~parametrami, ktoré definujú plochu~$S$ 
-\parencite{TorgeGeodesy}.
+\parencite{TorgeGeodesy}.  G.~G.~Stokes (1819~-- 1903) bol írsko--anglický 
+matematik a fyzik, ktorý významne prispel do viacerých vedných odvetví, 
+napríklad do mechaniky tekutín (Navierova--Stokesova rovnica) či do optiky 
+(polarizácia svetla).  H.~Poincaré (1854~-- 1912) bol francúzsky matematik 
+a~teoretický fyzik.  V~geodézii je známy napríklad pre redukciu odmeraného 
+tiažového zrýchlenia z~povrchu Zeme do vnútra Zeme \parencite[Poincaré--Prey 
+redukcia, pozri napríklad][]{MoritzPhysicalGeodesy}.
 
-Na jednoznačné zadefinovanie ekvipotenciálneho elipsoidu a~jeho vonkajšieho 
-tiažového poľa preto postačuje určiť štyri nezávislé \emph{základné parametre}.  
+Na jednoznačné definovanie ekvipotenciálneho elipsoidu a~jeho vonkajšieho 
+tiažového poľa teda postačuje určiť štyri nezávislé \emph{základné parametre}.  
 Dva z~týchto parametrov sú geometrické, resp. veľmi úzko súvisia s~geometriou 
 elipsoidu (napríklad hlavná polos a~sploštenie elipsoidu), a~dva parametre sú 
 fyzikálne (hmotnosť a~uhlová rýchlosť rotácie).  Všetky ostatné veličiny 
@@ -6198,13 +6204,21 @@ získame azimut zvislicovej odchýlky
 - \sin\phi \, \cos\Phi \, \cos(\Lambda - \lambda)}{.}
 \end{equation}
 %
-Na základe známej hodnoty meridiánovej a~priečnej zložky zvislicovej odchýlky 
-tiež môžeme zvislicovú odchýlku premietnuť do ľubovoľného smeru, ktorý je daný 
-azimutom~$A$ (OBRAZOK),
+Pomocou známej hodnoty meridiánovej a~priečnej zložky zvislicovej odchýlky tiež 
+môžeme zvislicovú odchýlku premietnuť do ľubovoľného smeru, ktorý je daný 
+azimutom~$A$ (Obrázok~\ref{fig:deflections_projection}),
 %
 \begin{equation}
 \varepsilon = \xi \, \cos A + \eta \, \sin A{.}
 \end{equation}
+
+\begin{figure}[bt]
+\centering
+\input{./fig-deflections-projection.pdf_tex}
+\caption{Priemet zvislicovej odchýlky~$\Theta = [\xi, \eta]^\top$ do spojnice 
+s~azimutom~$A$ v~rovinnej aproximácii.}
+\label{fig:deflections_projection}
+\end{figure}
 
 Okrem určovania tvaru Zeme majú zvislicové odchýlky praktické využitie aj 
 v~ďalších geodetických úlohách.  Geodetické prístroje ako teodolit či nivelačný 
@@ -6682,46 +6696,52 @@ vo forme sférickej aproximácie anomálie tiažového zrýchlenia:
 \lim_{P \to \infty} T(P) &= 0{.}\label{eq:bvp_Dg_t_infty}
 \end{alignat}
 %
-Vzťah~(\ref{eq:bvp_Dg_laplace}) uvádza diferenciálnu rovnicu, ktorú riešime na 
-oblasti~$\mathbb{R}^3 - \overline\Omega$.  
+Vzťah~(\ref{eq:bvp_Dg_laplace}) definuje diferenciálnu rovnicu, ktorá je 
+predmetom riešenia okrajovej úlohy na oblasti~$\mathbb{R}^3 - \overline\Omega$.  
 Rovnica~(\ref{eq:bvp_Dg_boundary_condition}) špecifikuje konkrétny typ 
 okrajovej podmienky, ktorá platí na geoide~$\partial\Omega$.  
 Rovnica~(\ref{eq:bvp_Dg_t_infty}) dodáva ďalšiu informáciu o~poruchovom 
 potenciáli; hovorí, že s~narastajúcou vzdialenosťou bodu~$P$ od 
-Zeme~$\overline\Omega$ sa poruchový potenciál~$T$ blíži k~nule (pozri 
+Zeme~$\overline\Omega$ sa poruchový potenciál~$T$ blíži k~nule (pozri tiež 
 vzťah~\ref{eq:t_infty}).  Bez~rovníc~(\ref{eq:bvp_Dg_boundary_condition}) 
 a~(\ref{eq:bvp_Dg_t_infty}) by mala diferenciálna 
 rovnica~(\ref{eq:bvp_Dg_laplace}) nekonečne veľa riešení.  Toto tvrdenie možno 
 jednoducho dokázať napríklad na funkcii~$c \slash l(P)$, kde~$c$ je reálna 
-konštanta~$c$ a~$l(P)$ je vzdialenosť bodu~$P$ od začiatku súradnicového 
-systému, ktorý sa nachádza, povedzme, v~ťažisku Zeme~$\overline\Omega$.  
-Z~rovnice totižto vieme, že funkcia~$c \slash l(P)$ vyhovuje 
-rovnici~(\ref{eq:bvp_Dg_laplace}) pre \emph{ľubovoľnú} reálnu konštantu~$c$ za 
-predpokladu~$l(P) > 0$.  Rovnice~(\ref{eq:bvp_Dg_boundary_condition}) 
-a~(\ref{eq:bvp_Dg_t_infty}) tak zabezpečujú, že získame práve jedno riešenie 
-rovnice~(\ref{eq:bvp_Dg_laplace}).  Odvodenie riešenia okrajovej úlohy v~tejto 
-práce vynachádzame a~zameriame sa skôr na popis získaného riešenia.  Odvodenie 
-je možné nájsť napríklad v~prácach~\textcite{MoritzPhysicalGeodesy} 
-a~\textcite{Janak2006}.
+konštanta a~$l(P)$ je vzdialenosť bodu~$P$ od začiatku súradnicového systému, 
+ktorý sa nachádza, povedzme, v~ťažisku Zeme~$\overline\Omega$.  
+Z~rovníc~(\ref{eq:nabla_l}) a~(\ref{eq:l_2nd_derivatives}) totižto vieme, že 
+funkcia~$c \slash l(P)$ vyhovuje rovnici~(\ref{eq:bvp_Dg_laplace}) pre 
+\emph{ľubovoľnú} reálnu konštantu~$c$ za predpokladu~$l(P) > 0$.  
+Rovnice~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) tak 
+zabezpečujú, že získame práve jedno riešenie rovnice~(\ref{eq:bvp_Dg_laplace}).  
+Odvodenie riešenia okrajovej úlohy v~tejto práce vynecháme a~zameriame sa skôr 
+na popis získanej rovnice.  Odvodenie je možné nájsť napríklad 
+v~prácach~\textcite{MoritzPhysicalGeodesy} a~\textcite{Janak2006}.
 
 Riešením okrajovej úlohy~(\ref{eq:bvp_Dg_laplace})~--~(\ref{eq:bvp_Dg_t_infty}) 
 je vzťah
 %
 \begin{equation}
 \label{eq:stokes}
-T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(P, P') \, \Delta g(P) \, \diff 
-\sigma(P'){,} \quad P \in \mathbb{R}^3 - \overline\Omega{,} \quad P' \in 
+T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(P, P') \, \Delta g(P') \, 
+\diff \sigma(P'){,} \quad P \in \mathbb{R}^3 - \overline\Omega{,} \quad P' \in 
 \sigma{,}
 \end{equation}
 %
 ktorý sa nazýva \emph{Stokesov integrál}.  Symbol~$R$ označuje polomer 
 referenčnej sféry Zeme (napríklad stredný či rovníkový polomer Zeme), $\sigma$ 
-je jednotková sféra, $S$ je \emph{Stokesovo integračné jadro} (niekedy tiež 
-nazývané Stokesova funkcia), $P(r, \varphi, \lambda)$ je bod, v~ktorom je 
-počítaný poruchový potenciál, a~$P'(R, \varphi', \lambda')$ je bod na 
-jednotkovej sfére (Obrázok~\ref{fig:surface_integral}).  Stokesovo integračné 
-jadro~$S$ je funkcia, ktorá závisí iba od vzájomnej polohy výpočtového bodu~$P$ 
-a~diferenciálneho elementu~$\diff\sigma(P')$ \parencite{MoritzPhysicalGeodesy},
+je jednotková sféra a~$\diff\sigma$ je jej diferenciál,
+%
+\begin{equation}
+\diff\sigma = \cos\varphi' \, \diff\varphi' \, \diff\lambda'{,}
+\end{equation}
+%
+$S$ je \emph{Stokesovo integračné jadro} (niekedy tiež nazývané Stokesova 
+funkcia), $P(r, \varphi, \lambda)$ je bod, v~ktorom je počítaný poruchový 
+potenciál, a~$P'(R, \varphi', \lambda')$ je bod na jednotkovej sfére 
+(Obrázok~\ref{fig:surface_integral}).  Stokesovo integračné jadro~$S$ je 
+funkcia, ktorá závisí iba od vzájomnej polohy bodov~$P$ a~$P'$ 
+\parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:stokes_kernel_general}
@@ -6734,7 +6754,7 @@ S(P, P') &= S(\underbrace{r, \varphi, \lambda}_{P}, \underbrace{R, \varphi',
 \end{split}
 \end{equation}
 %
-kde~$l$ a~$\psi$ sú Euklidovská a~sférická vzdialenosť medzi~$P$ a~$P'$ 
+kde~$l$ a~$\psi$ sú Euklidovská a~sférická vzdialenosť medzi bodmi~$P$ a~$P'$ 
 (rovnice~\ref{eq:l_sph} a~\ref{eq:cospsi}).  Ak~$r = R$, všeobecný tvar 
 Stokesovho integračného jadra prejde do tvaru, ktorý závisí iba od sférickej 
 vzdialenosti~$\psi$,
@@ -6767,6 +6787,9 @@ $\diff\sigma$.}
 \label{fig:surface_integral}
 \end{figure}
 
+
+\subsection{Stokesovo integračné jadro}
+
 Význam Stokesovej funkcie vo vzťahu~(\ref{eq:stokes}) lepšie pochopíme po 
 grafickom znázornení jej priebehu (Obrázok~\ref{fig:stokes_kernel}).  Z~obrázku 
 a~z~rovnice~(\ref{eq:stokes_kernel}) je zrejmé, hodnota Stokesovej funkcie 
@@ -6797,19 +6820,21 @@ singularita pozri tiež Kapitolu~\ref{sec:spheroidal_harmonics}),
 \lim\limits_{P \rightarrow P'} S(P, P') = \infty{.}
 \end{equation}
 %
-Táto situácia nastáva vtedy, keď integrál~(\ref{eq:stokes}) je počítaný na tej 
-sfére, na ktorej je zadaná okrajová podmienka v~podobe anomálií tiažového 
-zrýchlenia, teda ak~$r = R$ a~súčasne~$P(r, \varphi, \lambda) = P'(R, \varphi', 
-\lambda')$.  Napriek vlastnosti~(\ref{eq:stokes_singularity}) však bude 
-výsledok integrácie, a~teda aj poruchový potenciál v~bode~$P$, nadobúdať 
-\emph{konečnú} hodnotu (pre podobnú situáciu v~súvislosti s~Newtonovým 
-integrálom pozri tiež diskusiu zo záveru Kapitoly~\ref{sec:potential_theory}).  
-Napriek tomu je ale v~numerických výpočtoch potrebné venovať osobitnú pozornosť 
-prípadu, kedy sú výpočtový bod a~stred integračného elementu totožné, a~použiť 
-vhodné matematické úpravy (pozri napríklad \cite{MoritzPhysicalGeodesy} či 
-\cite{Hees1991}).  Je potrebné dodať, že vo všeobecnosti neplatí, že každé 
-singulárne integračné jadro vedie ku konečným hodnotám integrálu.  To, či je 
-hodnota integrálu konečná alebo nie, závisí od typu singularity.
+K~singularite Stokesovej funkcie dochádza vtedy, keď integrál~(\ref{eq:stokes}) 
+je počítaný na tej sfére, na ktorej je zadaná okrajová podmienka v~podobe 
+anomálií tiažového zrýchlenia, teda ak~$r = R$ a~súčasne~$P(r, \varphi, 
+\lambda) = P'(R, \varphi', \lambda')$.  Napriek 
+vlastnosti~(\ref{eq:stokes_singularity}) však bude výsledok 
+integrácie~(\ref{eq:stokes_singularity}), teda poruchový potenciál v~bode~$P$, 
+nadobúdať \emph{konečnú} hodnotu (pre podobnú situáciu v~súvislosti 
+s~Newtonovým integrálom pozri tiež diskusiu zo záveru 
+Kapitoly~\ref{sec:potential_theory}).  V~numerických výpočtoch je ale i~tak 
+potrebné venovať osobitnú pozornosť prípadu, v~ktorom sú výpočtový bod a~stred 
+integračného elementu totožné, a~použiť vhodné matematické úpravy (pozri 
+napríklad \cite{MoritzPhysicalGeodesy} či \cite{Hees1991}).  Dodajme, že vo 
+všeobecnosti neplatí, že každé singulárne integračné jadro vedie ku konečným 
+hodnotám integrálu.  To, či je hodnota integrálu konečná alebo nie, závisí od 
+typu singularity.
 %
 \item \emph{Homogénnosť}.  Hodnota Stokesovho integračného jadra nezávisí od 
 polohy bodov~$P$ a~$P'$ v~priestore za predpokladu, že $r$ a~$\psi$ ostávajú 
@@ -6829,7 +6854,7 @@ do radu Legendreových polynómov \parencite{MoritzPhysicalGeodesy},
 \begin{equation}
 \label{eq:stokes_spectral}
 S(r, \psi) = \sum_{n = 2}^{\infty} \frac{2n + 1}{n - 1} \, \left( \frac{R}{r} 
-\right)^{n + 1} \, P_n(\cos\psi).
+\right)^{n + 1} \, P_n(\cos\psi){.}
 \end{equation}
 %
 Rovnice~(\ref{eq:stokes_kernel_general}) a~(\ref{eq:stokes_kernel}) nazývame 
@@ -6849,20 +6874,121 @@ rovnice~\ref{eq:stokes_spectral}).  Výpočet Stokesovho jadra spektrálnym tvar
 by bol v~tejto situácii nevhodný, pretože nekonečný rad by musel byť 
 v~praktickom výpočte obmedzený na konečný počet členov, čo by spôsobilo 
 aproximačné chyby.  Ak ale boli anomálie tiažového zrýchlenia~$\Delta g$ 
-vypočítané z~konečného sférické harmonického radu vzťahom~(\ref{eq:Dg_sh_sa}) 
+vypočítané z~konečného sférického harmonického radu vzťahom~(\ref{eq:Dg_sh_sa}) 
 do stupňa~$N$, potom môže byť výhodnejšie použiť spektrálny 
 tvar~(\ref{eq:stokes_spectral}) rozvinutý do identického maximálneho 
-stupňa~$N$.\footnote{Z~teoretického hľadiska to však nie je potrebné a~použitý 
-môže byť aj priestorový tvar jadra, príp. spektrálny tvar jadra rozvinutý do 
-stupňa~$N$ alebo do vyššieho stupňa.}
+stupňa~$N$.\footnote{Z~teoretického hľadiska môže byť ekvivalentne použitý aj 
+priestorový tvar Stokesovho jadra, príp. jeho spektrálny tvar, ktorý je 
+rozvinutý do vyššieho stupňa ako~$N$ \parencite[pozri 
+napríklad][]{Freeden2009}.}
 
-*** Add note on the zero-degree term ***
+Všimnime si, že vo vzťahoch~(\ref{eq:stokes_kernel_general}), 
+(\ref{eq:stokes_kernel}) a~(\ref{eq:stokes_spectral}) sa \emph{nenachádza} 
+vplyv nultého harmonického stupňa (sumácia v~rovnici~\ref{eq:stokes_spectral} 
+začína od stupňa~$2$ a~pravé strany týchto rovníc sú si rovné).  S~uvážením 
+nultého harmonického stupňa má Stokesovo integračné jadro nasledovný tvar,
+%
+\begin{equation}
+\label{eq:stokes_kernel_general_n0}
+S(r, \psi) = \frac{2R}{l} - 3\frac{R \, l}{r^2} - \frac{R^2}{r^2} \, 
+\cos\psi\left( 5 + 3 \, \ln \frac{r - R \, \cos\psi + l}{2 \, r} \right){,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:stokes_kernel_n0}
+\begin{split}
+S(\psi) = \frac{1}{\sin\dfrac{\psi}{2}} - 6 \, \sin\frac{\psi}{2} - 5 \, 
+\cos\psi - 3 \, \cos\psi \, \ln\left( \sin\frac{\psi}{2} + \sin^2\frac{\psi}{2} 
+\right){,}
+\end{split}
+\end{equation}
+%
+\begin{equation}
+\label{eq:stokes_spectral_n0}
+S(r, \psi) = \sum_{n = 0{,}\, n \neq 1}^{\infty} \frac{2n + 1}{n - 1} \, \left( 
+\frac{R}{r} \right)^{n + 1} \, P_n(\cos\psi){.}
+\end{equation}
+%
+Tieto tvary je potrebné použiť vtedy, keď anomálie tiažového zrýchlenia vo 
+vzťahu~(\ref{eq:stokes}) obsahujú aj vplyv nultého harmonického člena 
+z~rovnice~(\ref{eq:Dg_sh_sa}).  Všimnime si tiež, že stupeň~$n$ 
+v~rovnici~(\ref{eq:stokes_spectral_n0}) nesmie byť rovný~$1$ (došlo by 
+k~deleniu nulou), čo je ale v~súlade s~anomáliami tiažového zrýchlenia, na 
+ktoré nevplýva harmonický stupeň~$n = 1$ (pozri rovnicu~\ref{eq:Dg_sh_sa}).
+
+
+\subsection{Stokesov integrál ako konvolučný integrál}
+
+Výpočtom integrálu na pravej strane rovnice~(\ref{eq:stokes}) získame poruchový 
+potenciál v~bode~$P$, teda jedno číslo.  Ak chceme získať poruchový potenciál 
+v~ďalšom bode, $P_1$, integráciu je potrebné zopakovať s~novým výpočtovým 
+bodom~$P_1$.  Dôvod je ten, že hoci anomálie tiažového zrýchlenia~$\Delta 
+g(P')$ sú identické (daná funkcia na hranici~$\partial\Omega$), zmena polohy 
+výpočtového bodu $P$ na~$P_1$ spôsobí, že nové Stokesovo integračné 
+jadro~$S(P_1, P')$, ktoré zodpovedá bodu~$P_1$, bude vážiť tie isté anomálie 
+tiažového zrýchlenia~$\Delta g(P')$ iným spôsobom ako predošlé integračné 
+jadro~$S(P, P')$.  Ak teda chceme získať poruchový potenciál~$P$ v~každom bode 
+na Zemi, výpočtový bod~$P$ je potrebné vnímať ako premennú a~integráciu 
+opakovať, vždy s~iným výpočtovým bodom.  Výsledkom tohto procesu bude nová 
+funkcia, ktorou je poruchový potenciál na celej sfére.  Táto matematická 
+operácia, ktorá transformuje dve funkcie, v~našom prípade Stokesovo integračné 
+jadro~$S$ a~anomálie tiažového zrýchlenia~$\Delta g$, na tretiu funkciu, 
+v~tomto prípade poruchový potenciál~$T$, sa nazýva \emph{konvolúcia}.
+
+Konvolúciu anomálií tiažového zrýchlenia so Stokesovým integračným jadrom 
+zapíšeme nasledovne,
+%
+\begin{equation}
+\label{eq:stokes_convolution}
+(S * \Delta g)(P) = \frac{R}{4\pi} \, \iint\limits_\sigma S(P, P') \, \Delta 
+g(P') \, \diff\sigma{,}
+\end{equation}
+%
+kde $(S * \Delta g)(P)$ predstavuje novú funkciu, poruchový potenciál, ktorý je 
+výsledkom konvolučného násobenia.  Symbol~$P$ vo 
+vzťahu~(\ref{eq:stokes_convolution}) teda označuje premennú.
+
+Vo fyzikálnej geodézii sa veľmi často stretávame s~konvolučnými integrálmi.  
+Konvolučným integrálom je napríklad aj samotný Newtonov 
+integrál~(\ref{eq:vg_body}) a~ďalšie integrály, ktoré sú z~neho odvodené 
+(napríklad integrál~\ref{eq:gg_body}).  Vo vzťahu~(\ref{eq:vg_body}) hrá 
+hustota~$\rho$ podobnú úlohu ako anomálie tiažového zrýchlenia~$\Delta g$ vo 
+vzťahu~(\ref{eq:stokes}), a~prevrátená hodnota vzdialenosti, $1 \slash l$, 
+predstavuje integračné jadro.  Všimnime si, že vo vzťahu~(\ref{eq:gg_body}) 
+vystupuje v~úlohe meraných dát tá istá hustota ako 
+v~rovnici~(\ref{eq:vg_body}); keďže ale vzťah medzi gravitačným zrýchlením 
+z~rovnice~(\ref{eq:gg_body}) a~hustotou je iný ako vzťah medzi gravitačným 
+potenciálom (\ref{eq:vg_body}) a~hustotou, konvolučné jadro, $\vec r \slash 
+l^3$, je tentokrát, prirodzene, iné ako v~rovnici~(\ref{eq:vg_body}).  Môžeme 
+teda povedať, že rozličné integračné jadrá transformujú tú istú funkciu 
+rozdielne.
+
+Konvolučné integrály sa vyskytujú v~mnohých oblasti matematiky, fyziky 
+a~ďalších vedných disciplínach.  Jedno z~množstva využití konvolúcie je na 
+potlačenie šumu na zvukových nahrávkach.  Vstupný signál, teda pôvodná 
+nahrávka, je konvolučne vynásobený vhodným integračným jadrom, výsledkom čoho 
+je upravená nahrávka s~potlačeným šumom, teda výstupný signál 
+(Obrázok~\ref{fig:convolution}).  Aplikáciou iného konvolučného jadra na tú 
+istú nahrávku môžeme, naopak, zvýrazniť napríklad istú časť spektra na 
+nahrávke, povedzme nízke frekvencie a~pod.  Pre konvolučné integrály je 
+typické, že ich numerický výpočet je časovo veľmi náročný.  Snahou preto je 
+použiť efektívne algoritmy, napríklad rýchlu Fourierovu transformáciu 
+\parencite[napríklad][]{PressNumericalRecipes} či vlnkovú transformáciu 
+\parencite[napríklad][]{KellerWavelets}.  Obe transformácie sa používajú aj na 
+efektívny výpočet konvolučných integrálov fyzikálnej geodézie \parencite[pozri 
+napríklad][]{Forsberg1984,Freeden1998a,SansoGeoidDetermination}.
+
+\begin{figure}[bt]
+\centering
+\input{./fig-convolution.pdf_tex}
+\caption{Konvolúcia z~pohľadu spracovania signálu.  \textit{Vstupný signál} je 
+konvolučným násobením transformovaný na \textit{výstupný signál}.}
+\label{fig:convolution}
+\end{figure}
 
 
 
-
-\subsection{Vening--Meineszov integrál}
-\label{sec:vm_integral}
+\subsection{Sférická aproximácia v~Stokesovom integrále}
 
 
 \section{Hotineov integrál}
@@ -6879,6 +7005,10 @@ stupňa~$N$ alebo do vyššieho stupňa.}
 
 \section{Ďalšie metódy určovania geoidu}
 \label{sec:other_geoid_determination_methods}
+
+
+\section{Vening--Meineszov integrál}
+\label{sec:vm_integral}
 
 
 
