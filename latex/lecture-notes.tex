@@ -4792,7 +4792,7 @@ $\gamma_\beta$ vo všeobecnosti nenulový.
 \label{sec:normal_gravity_taylor}
 
 Poloha bodov gravimetrických meraní je v~súčasnosti určovaná spravidla 
-globálnymi navigačnými družicovými systémami a~často býva vyjadrená 
+globálnymi navigačnými družicovými systémami (GNSS) a~často býva vyjadrená 
 v~elipsoidických súradniciach.  V~tejto kapitole sú najprv predstavené 
 elipsoidické súradnice a~následne sú odvodené vzťahy na výpočet normálneho 
 tiažového zrýchlenia na povrchu ekvipotenciálneho elipsoidu a~nad ním 
@@ -5719,9 +5719,8 @@ Znalosť polohy je potrebná kvôli výpočtu normálneho tiažového zrýchleni
 (Kapitola~\ref{sec:normal_gravity_field}).  Zo súradníc definujúcich~polohu 
 potrebujeme poznať spravidla elipsoidickú šírku~$\phi$ a~elipsoidickú výšku~$h$ 
 (Kapitola~\ref{sec:normal_gravity_taylor}).  V~súčasnosti už môže byť 
-elipsoidická výška odmeraná jednoducho pomocou globálnych navigačných 
-družicových systémov.  V~preddružicovej ére však bolo možné odmerať iba 
-fyzikálne výšky pomocou nivelácie (pozri 
+elipsoidická výška odmeraná jednoducho pomocou GNSS.  V~preddružicovej ére však 
+bolo možné odmerať iba fyzikálne výšky pomocou nivelácie (pozri 
 Kapitolu~\ref{sec:potential_differences}), v~tomto prípade dĺžku normálnej 
 tiažnice~$t_U$ medzi bodmi~$Q_0$ a~$Q$ (Obrázok~\ref{fig:gravity_anomaly}).  
 Táto vzdialenosť sa nazýva \emph{normálna výška podľa Molodenského}~$H_n$ 
@@ -6575,9 +6574,16 @@ Kapitole~\ref{sec:boundary_value_problem} najprv načrtneme princíp určovania
 poruchového potenciálu pomocou okrajových úloh.  
 V~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:poisson_integral} potom 
 popíšeme rôzne typy okrajových úloh, s~ktorými sa vo fyzikálnej geodézii často 
-stretávame.  Pripomeňme, že na získanie poruchového potenciálu sa sústredíme 
-preto, lebo výpočet výšky geoidu nad referenčným elipsoidom zo známeho 
-poruchového potenciálu je jednoduchý (vzťah~\ref{eq:N}).
+stretávame.  Pri čítaní týchto kapitol si všimnime, že vonkajšie tiažové pole 
+Zeme určujeme, podobne ako v~Kapitole~\ref{sec:spherical_harmonic_expansion}, 
+bez potreby priamej znalosti hustoty.  Okrajové úlohy budú totižto formulované 
+tak, že informácia o~hustote Zeme bude zachytená vo vstupných anomáliách, 
+resp. poruchách tiažového zrýchlenia (vzťahy~\ref{eq:int_operators}).  Tie 
+v~praxi získavame gravimetrickým meraním veľkosti vektora tiažového zrýchlenia 
+(Kapitola~\ref{sec:gravity_measurements}), ktoré túto informáciu implicitne 
+obsahuje (Kapitola~\ref{sec:gg}).  Pripomeňme, že na získanie poruchového 
+potenciálu sa sústredíme preto, lebo výpočet výšky geoidu nad referenčným 
+elipsoidom zo známeho poruchového potenciálu je jednoduchý (vzťah~\ref{eq:N}).
 
 K~výpočtu geoidu zo zvislicových odchýlok pristúpime iným spôsobom.  Zatiaľ čo 
 poruchy a~anomálie tiažového zrýchlenia možno chápať skôr fyzikálne, pretože 
@@ -6765,6 +6771,16 @@ S(P, P') &= S(\underbrace{r, \varphi, \lambda}_{P}, \underbrace{R, \varphi',
 kde~$l$ a~$\psi$ sú Euklidovská a~sférická vzdialenosť medzi bodmi~$P$ a~$P'$ 
 (rovnice~\ref{eq:l_sph} a~\ref{eq:cospsi}).
 
+\begin{figure}[bt]
+\centering
+\input{./fig-surface-integral.pdf_tex}
+\caption{Výpočtový bod~$P(\varphi, \lambda)$ premietnutý na jednotkovú sféru 
+a~diferenciálny integračný element~$\diff\sigma'$ na jednotkovej sfére.  
+Symbol~$\psi$ označuje sférickú vzdialenosť medzi~$P$ a~$\diff\sigma'$ 
+a~$\alpha$ označuje azimut spojnice~$P$ a~$\diff\sigma'$.}
+\label{fig:surface_integral}
+\end{figure}
+
 Stokesov integrál~(\ref{eq:stokes}) umožňuje vypočítať poruchový potenciál 
 kdekoľvek v~oblasti~$\mathbb{R}^3 - \overline\Omega$.  Osobitne zaujímavý je 
 prípad, v~ktorom výpočtový bod leží na rovnakej sfére ako anomálie tiažového 
@@ -6789,28 +6805,10 @@ T = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(\psi) \, \Delta g_0 \, \diff
 \sigma{,}
 \end{equation}
 %
-pričom~$T(P)$, $P(R, \varphi, \lambda) \in \partial\Omega$, a~$\Delta g_0(P')$, 
-$P'(R, \varphi', \lambda') \in \partial\Omega$.  Symbol~$\Delta g_0$ označuje 
-anomálie tiažového zrýchlenia~$\Delta g(P_0)$ na geoide (pozri 
-Kapitolu~\ref{sec:gravity_anomaly}).
-
-\begin{figure}[bt]
-\centering
-\includegraphics{./fig-stokes-kernel.pdf}
-\caption{Stokesova funkcia~$S(\psi)$ (vzťah~\ref{eq:stokes_kernel}) na 
-intervale~$[5^\circ, 180^\circ]$.}
-\label{fig:stokes_kernel}
-\end{figure}
-
-\begin{figure}[bt]
-\centering
-\input{./fig-surface-integral.pdf_tex}
-\caption{Výpočtový bod~$P(\varphi, \lambda)$ premietnutý na jednotkovú sféru 
-a~diferenciálny integračný element~$\diff\sigma'$ na jednotkovej sfére.  
-Symbol~$\psi$ označuje sférickú vzdialenosť medzi~$P$ a~$\diff\sigma'$ 
-a~$\alpha$ označuje azimut spojnice~$P$ a~$\diff\sigma'$.}
-\label{fig:surface_integral}
-\end{figure}
+pričom~$T = T(P)$, $P(R, \varphi, \lambda) \in \partial\Omega$, $\Delta g_0 
+= \Delta g_0(P')$, $P'(R, \varphi', \lambda') \in \partial\Omega$ 
+a~$\diff\sigma = \diff\sigma'$.  Symbol~$\Delta g_0$ označuje anomálie 
+tiažového zrýchlenia na geoide (pozri Kapitolu~\ref{sec:gravity_anomaly}).
 
 Dosadením rovnice~(\ref{eq:stokes_simplified}) do Brunsovho vzorca~(\ref{eq:N}) 
 získame vzťah na výpočet výšky geoidu nad referenčným elipsoidom z~meraní 
@@ -6819,11 +6817,11 @@ tiažového zrýchlenia,
 \begin{equation}
 \label{eq:stokes_N}
 N = \frac{R}{4\pi \, \gamma_0} \, \iint\limits_{\sigma} S(\psi) \, \Delta g_0 
-\, \diff \sigma{.}
+\, \diff \sigma{,}
 \end{equation}
 %
-Rovnica~(\ref{eq:stokes_N}) predstavuje jednu zo základných rovníc fyzikálnej 
-geodézie.
+kde $\gamma_0 = \gamma(Q_0)$.  Rovnica~(\ref{eq:stokes_N}) predstavuje jednu zo 
+základných rovníc fyzikálnej geodézie.
 
 Dodajme, že z~rovnice~(\ref{eq:stokes}) vyplýva tvar hľadaného integrálneho 
 operátora~$\mathcal{I}_{\Delta g}$ z~rovnice~(\ref{eq:int_operators}),
@@ -6858,6 +6856,14 @@ Obrázku~\ref{fig:stokes_kernel} tiež vidíme, že Stokesovo integračné jadro
 nadobúda nulové hodnoty pre sférické vzdialenosti približne~$39^\circ$ 
 a~$117^\circ$ \parencite{TorgeGeodesy}.  Príspevok anomálií tiažového, ktoré sa 
 nachádzajú v~týchto vzdialenostiach voči výpočtovému bodu, je preto nulový.
+
+\begin{figure}[bt]
+\centering
+\includegraphics{./fig-stokes-kernel.pdf}
+\caption{Stokesova funkcia~$S(\psi)$ (vzťah~\ref{eq:stokes_kernel}) na 
+intervale~$[5^\circ, 180^\circ]$.}
+\label{fig:stokes_kernel}
+\end{figure}
 
 Stokesova funkcia má niekoľko ďalších zaujímavých vlastností.
 %
@@ -7128,7 +7134,7 @@ intervale~$[5^\circ, 180^\circ]$.}
 
 Hotineovo integračné jadro má podobné vlastnosti ako Stokesovo integračné jadro 
 (pozri Kapitolu~\ref{sec:stokes_kernel}), teda je singulárne, homogénne 
-a izotrópne.  Na rozdiel od Stokesovho jadra ale ide o~monotónne klesajúcu 
+a izotropne.  Na rozdiel od Stokesovho jadra ale ide o~monotónne klesajúcu 
 funkciu.  Teda čím ďalej sa nachádza integračný element $\diff\sigma'$ od 
 výpočtového bodu~$P$, tým menšia váha~$H$ v~Hotineho 
 integráli~(\ref{eq:hotine}) je pridelená príslušnej poruche tiažového 
@@ -7190,7 +7196,7 @@ integračné jadro,
 %
 Podobne ako v~predošlých Kapitolách~\ref{sec:stokes_integral} 
 a~\ref{sec:hotine_integral}, Poissonovo jadro je singulárne, homogénne 
-a izotrópne a~Poissonov integrál je konvolučný.  Vyobrazenie Poissonovho jadra 
+a izotropne a~Poissonov integrál je konvolučný.  Vyobrazenie Poissonovho jadra 
 vynecháme, pretože pre fixnú hodnotu sprievodiča~$r$ ide o~známu funkciu~$c 
 \slash l^3$, kde $c = r^2 - R^2$.
 
@@ -7220,6 +7226,101 @@ bez potreby formulovania a~riešenia okrajovej úlohy.
 
 \section{Ďalšie metódy určovania geoidu}
 \label{sec:other_geoid_determination_methods}
+
+\subsection{Numerické riešenie geodetických okrajových úloh}
+
+V~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:poisson_integral} sme 
+načrtli určovanie geoidu a~vonkajšieho tiažového poľa Zeme riešením okrajových 
+úloh.  Riešenia, ktoré sme získali, sa nazývajú \emph{analytické riešenia}.  
+Analytickým riešením tu rozumieme presný tvar hľadaného riešenia v~podobe 
+funkcie (rovnice~\ref{eq:stokes}, \ref{eq:hotine} a~\ref{eq:poisson}), ktorá 
+vyhovuje definícii danej okrajovej úlohy.  Mohli by sme ale povedať, že daňou 
+za získanie jednoduchého analytického riešenia, bolo použitie sférickej 
+aproximácie, teda v~plošných integráloch~(\ref{eq:stokes}), (\ref{eq:hotine}) 
+a~(\ref{eq:poisson}) je potrebné predpokladať, že okrajová podmienka je zadaná 
+na sfére, nie na geoide.  V~presnejšom priblížení je možné vykonávať integráciu 
+na ekvipotenciálnom elipsoide, avšak daný vzťah je zložitejší (pozri referencie 
+v~Kapitole~\ref{sec:stokes_spherical_approximation}).  Je prirodzené očakávať, 
+že ak by sme chceli ďalej zvyšovať presnosť analytického riešenia okrajovej 
+úlohy (teda ďalej by sme plochu, po ktorej sa integruje, približovali geoidu), 
+získané riešenia by sa neustále komplikovali.  Samozrejme, iba za predpokladu, 
+že hľadané funkcie by vôbec bolo možné analyticky nájsť.
+
+V~takýchto situáciách je výhodnejšie, niekedy aj nutné, použiť \emph{numerické 
+riešenie} okrajovej úlohy.  V~numerickom riešení sa zvykne oblasť hľadaného 
+riešenia okrajovej úlohy \emph{diskretizovať} pomocou vhodných elementov, čo 
+umožní riešiť danú úlohu lokálne v~rámci elementu, a~následne postupovať 
+v~riešení úlohy od elementu k~elementu.  V~okrajových úlohách, ktoré sú 
+definované v~trojrozmernom priestore, môže byť ako element použitá napríklad 
+kocka, hranol a pod.  Takéto riešenie je síce približné, no v~mnohých úlohách 
+matematiky, fyziky a~ďalších vedných disciplínach je často aj jediné, ktoré je 
+možné prakticky získať.  \emph{Numerické riešenie okrajových úloh pre poruchový 
+potenciál} tak predstavuje ďalšiu vetvu metód určovania tvaru Zeme a~jej 
+vonkajšieho tiažového poľa.  Je potešením na tomto mieste spomenúť, že medzi 
+popredných svetových odborníkov v~numerickom riešení geodetických okrajových 
+úloh patrí bezpochyby tím matematikov a~geodetov Katedry matematiky 
+a~deskriptívnej geometrie Stavebnej fakulty Slovenskej technickej univerzity 
+v~Bratislave.  Bližšie sa oboznámiť s~týmito metódami je tak možné aj 
+v~prácach, ktoré sú napísané v~slovenskom jazyku 
+\parencite[napríklad][]{Janak2006,Macak2021}, prípadne v~odborných publikáciách 
+v~anglickom jazyku 
+\parencite[napríklad][]{Cunderlik2008,Faskova2010,Macak2014}.
+
+
+\subsection{Metódy založené na sférických harmonických funkciách}
+
+V~praktických aplikáciách sú merané dáta dostupné vždy v~konečnom počte bodov, 
+a~nie vo forme spojitej funkcie ako bolo predpokladané 
+v~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:geoid_astrogeodetic}.  Nech 
+je teda daných napríklad~$M$ anomálii tiažového zrýchlenia~$\Delta g$, ktoré sú 
+doplnené o~príslušné polohy bodov v~podobe sférických súradníc~$(r, \varphi, 
+\lambda)$.  To znamená, že v~rovnici~(\ref{eq:Dg_sh_sa}) poznáme ľavú stranu 
+(merané dáta) a~na pravej strane vieme vypočítať zo známej polohy všetky členy 
+okrem sférických harmonických koeficientov~$\bar{t}_{nk}$.  
+Vzťah~(\ref{eq:Dg_sh_sa}) je lineárny z~pohľadu sférických harmonických 
+koeficientov~$\bar{t}_{nk}$, a~tak jeho deriváciou podľa~$\bar{t}_{nk}$ je 
+možné zostaviť maticu plánu a~z~meraní~$\Delta g$ odhadnúť metódou najmenších 
+štvorcov najviac~$M$ koeficientov~$\bar{t}_{nk}$ do maximálneho stupňa~$N \leq 
+\sqrt{M} - 1$.  Z~rovnice~(\ref{eq:Dg_sh_sa}) totižto vyplýva, že do 
+maximálneho stupňa~$N_1$ existuje~$(N_1 + 1)^2$ sférických harmonických 
+koeficientov~$\bar{t}_{nk}$.  Na základe koeficientov~$\bar{t}_{nk}$ 
+odhadnutých metódou najmenších štvorcov je následne možné vzťahmi~(\ref{eq:N}) 
+a~(\ref{eq:t_sh}) vypočítať priebeh geoidu pomocou sférických harmonických 
+funkcií.
+
+V~praxi sa využívajú na výpočet koeficientov~$\bar{t}_{nk}$ nielen anomálie 
+tiažového zrýchlenia, ale prakticky všetky dostupné typy meraní, obzvlášť 
+družicové merania.  Následne sa~tieto dáta kombinujú metódou najmenších 
+štvorcov.  Princíp výpočtu koeficientov~$\bar{t}_{nk}$ z~družicových meraní 
+tkvie v~prvom rade v~nájdení matematického vzťahu medzi dátami, ktoré je možné 
+pomocou družice odmerať, a~niektorou z~veličín tiažového poľa.  Keďže prakticky 
+každú veličinu gravitačného, resp. tiažového poľa je možne reprezentovať 
+sférickým harmonickým rozvojom, vzťah medzi meraniami na družici a~neznámymi 
+koeficientmi je tým pádom známy.  Uvažujme družicu vybavenú GNSS prijímačom, 
+ktorý meria polohu družice každú, povedzme, sekundu.  Vieme, že druhou 
+(numerickou) deriváciou tejto polohy je možné získať výsledne zrýchlenie 
+pôsobiace na družicu v~danom momente.  Parciálne zrýchlenia, ktoré sú udeľované 
+družici, môžu byť spôsobené napríklad tlakom slnečného žiarenia pôsobiaceho na 
+družicu, odporom atmosféry či slnečným žiarením odrazeným od zemského povrchu 
+na družicu.  Kľúčovým je v~tejto situácii ale gravitačné zrýchlenie, ktoré Zem 
+udeľuje družici.  Po matematickom odstránení všetkých zrýchlení, ktoré nie sú 
+spôsobené gravitačným poľom Zeme (medzi takéto zrýchlenia patria aj gravitačné 
+zrýchlenia udelené Mesiacom, Slnkom a~planétami Slnečnej sústavy), tak získame 
+vektor gravitačného zrýchlenia, ktorý pôsobí na družicu každú sekundu jej 
+obehu.  Spôsobom podobným predošlému odseku tak vieme pomocou rovníc 
+(\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) vypočítať sférické harmonické 
+koeficienty gravitačného poľa Zeme.  Táto metóda sa v~literatúre nazýva 
+\emph{metóda zrýchlení} a~v~našom regióne sa jej venuje skupina okolo Aleša 
+Bezd\v{e}ka, ktorý pôsobí na Astronomickom ústave Akadémie vied Českej 
+republiky \parencite[pozri napríklad][]{Bezdek2014}.  Okrem metódy zrýchlení 
+existuje množstvo ďalších metód, ktoré využívajú aj iné typy družicových dát 
+ako tu spomenutá dráha družice a~dokonca aj z~dráhy družice je možné odhadnúť 
+koeficienty~$\bar{t}_{nk}$ rozličnými spôsobmi \parencite[pozri 
+napríklad][]{SeeberSatelliteGeodesy,MoritzPhysicalGeodesy}.
+
+
+\subsection{Metódy remove--compute--restore}
+
 
 
 
