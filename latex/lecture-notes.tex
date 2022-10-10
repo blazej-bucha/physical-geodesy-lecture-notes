@@ -6210,6 +6210,7 @@ môžeme zvislicovú odchýlku premietnuť do ľubovoľného smeru, ktorý je da
 azimutom~$A$ (Obrázok~\ref{fig:deflections_projection}),
 %
 \begin{equation}
+\label{eq:deflection_vareps}
 \varepsilon = \xi \, \cos A + \eta \, \sin A{.}
 \end{equation}
 
@@ -7223,6 +7224,86 @@ bez potreby formulovania a~riešenia okrajovej úlohy.
 \section{Astronomicko--geodetická metóda určenia geoidu}
 \label{sec:geoid_astrogeodetic}
 
+Astronomicko--geodetická metóda určuje geoid z~jeho sklonu voči 
+ekvipotenciálnemu elipsoidu.  Tento sklon je daný Pizzettiho zvislicovou 
+odchýlkou (Obrázok~\ref{fig:deflections}), ktorú v~tejto kapitole budeme 
+označovať symbolmi~$\xi_0$, $\eta_0$, $\Theta_0$ a~$\varepsilon_0$ bez horného 
+indexu, no s~dolným indexom, ktorý indikuje, že tieto veličiny sú vztiahnuté ku 
+geoidu.
+
+\begin{figure}[bt]
+\centering
+\input{./fig-astrogeodetic-method.pdf_tex}
+\caption{Astronomicko--geodetická metóda určenia geoidu}
+\label{fig:astrogeodetic_method}
+\end{figure}
+
+Na~Obrázku~\ref{fig:astrogeodetic_method} vidíme, že diferenciálne prevýšenie 
+geoidu medzi bodmi~$A$ a~$B$ je dané vzťahom
+%
+\begin{equation}
+\label{eq:N_deflections}
+\diff N = -\varepsilon_0 \, \diff s{,}
+\end{equation}
+%
+pričom $\varepsilon_0$ je priemet zvislicovej odchýlky do spojnice~$A$, $B$ 
+(vzťah~\ref{eq:deflection_vareps}).  Znamienko mínus 
+v~rovnici~(\ref{eq:N_deflections}) je konvenčne dohodnuté, podobne ako sme 
+konvenčne použili v~rovnici~(\ref{eq:deflection_eps}) vektory vonkajších 
+normál~$\vec n_W$, $\vec n_U$ a~nie vektory vnútorných normál~$-\vec n_W$, 
+$-\vec n_U$.  Integráciou rovnice~(\ref{eq:N_deflections}) od bodu~$A$ po 
+bod~$B$ získame výšku geoidu v~bode~$B$,
+%
+\begin{equation}
+\label{eq:N_deflections_nb}
+N_B = N_A - \int\limits_A^B \varepsilon_0 \, \diff s{,}
+\end{equation}
+%
+kde~$\varepsilon_0$ je priemet zvislicovej odchýlky do spojnice bodov~$A$, $B$, 
+pričom $\varepsilon_0$ sa na spojnici mení.  Astronomicko--geodetická metóda 
+určenia geoidu je teda \emph{relatívna} metóda, ktorou určujeme prevýšenie 
+geoidu medzi dvoma bodmi,
+%
+\begin{equation}
+\label{eq:N_deflections_delta}
+\Delta N_{AB} = N_B - N_A = - \int\limits_A^B \varepsilon_0 \, \diff s{.}
+\end{equation}
+
+V~praktických aplikáciách nie je známa zvislicová odchýlka~$\varepsilon_0$ 
+\emph{spojito} pozdĺž spojnice bodov~$A$ a~$B$, ale len \emph{diskrétne}, 
+zväčša v~koncových bodoch spojnice.  Integrál~(\ref{eq:N_deflections_delta}) 
+preto vypočítame \emph{numerickou integráciou}, v~ktorej spojitú 
+funkciu~$\varepsilon_0$ a~diferenciálne vzdialenosti~$\diff s$ nahradíme 
+diskrétnymi hodnotami~$\varepsilon_{0,i}$ a~konečnými dĺžkami~$\Delta s_i$.  
+Spravidla sú k~dispozícii zvislicové odchýlky~$\varepsilon_{0,A}$ 
+a~$\varepsilon_{0,B}$ na koncových bodoch spojnice a~vzdialenosť~$\Delta 
+s_{AB}$ medzi bodmi~$A$, $B$.  Obdĺžnikovou metódou získame nasledovný tvar 
+prevýšenia geoidu medzi bodmi~$A$ a~$B$ \parencite[pozri 
+napríklad][]{Macak2021},
+%
+\begin{equation}
+\label{eq:N_deflections_delta_ni}
+\Delta N_{AB} = -\frac{\varepsilon_{0,A} + \varepsilon_{0,B}}{2} \, \Delta 
+s_{AB}{.}
+\end{equation}
+%
+Čím je zložitejší priebeh geoidu medzi bodmi $A$ a~$B$, tým väčšej chyby sa 
+dopúšťame použitím numerickej integrácie.  V~takom prípade je potrebné, pokiaľ 
+je to možné, skrátiť vzdialenosti medzi bodmi siete.
+
+Ak je geoid určovaný na viacerých bodoch, spravidla sa z~bodov vytvorí 
+trojuholníková sieť a~vzťahom~(\ref{eq:N_deflections_delta_ni}) sa vypočítajú 
+prevýšenia geoidu medzi bodmi siete.  V~dôsledku chýb meraní a~v~dôsledku 
+použitia numerickej integrácie však spravidla nebude súčet prevýšení 
+v~trojuholníkoch nulový.  Prevýšenia sa preto vyrovnajú metódou najmenších 
+štvorcov tak, aby súčet prevýšení v~každom trojuholníku bol nulový.  Na záver 
+je potrebné odhadnuté prevýšenia geoidu pripojiť na jeden bod, v~ktorom je 
+známa absolútna výška geoidu nad referenčným elipsoidom.
+
+Na záver dodajme, že geoid, môže byť vypočítaný zo zvislicových odchýlok aj 
+integrálnymi vzťahmi, ktoré majú podobný charakter ako Stokesov a~Hotineov 
+integrál \parencite[pozri napríklad][]{Sjoberg2017}.
+
 
 \section{Ďalšie metódy určovania geoidu}
 \label{sec:other_geoid_determination_methods}
@@ -7231,37 +7312,34 @@ bez potreby formulovania a~riešenia okrajovej úlohy.
 
 V~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:poisson_integral} sme 
 načrtli určovanie geoidu a~vonkajšieho tiažového poľa Zeme riešením okrajových 
-úloh.  Riešenia, ktoré sme získali, sa nazývajú \emph{analytické riešenia}.  
-Analytickým riešením tu rozumieme presný tvar hľadaného riešenia v~podobe 
-funkcie (rovnice~\ref{eq:stokes}, \ref{eq:hotine} a~\ref{eq:poisson}), ktorá 
-vyhovuje definícii danej okrajovej úlohy.  Mohli by sme ale povedať, že daňou 
-za získanie jednoduchého analytického riešenia, bolo použitie sférickej 
-aproximácie, teda v~plošných integráloch~(\ref{eq:stokes}), (\ref{eq:hotine}) 
-a~(\ref{eq:poisson}) je potrebné predpokladať, že okrajová podmienka je zadaná 
-na sfére, nie na geoide.  V~presnejšom priblížení je možné vykonávať integráciu 
-na ekvipotenciálnom elipsoide, avšak daný vzťah je zložitejší (pozri referencie 
-v~Kapitole~\ref{sec:stokes_spherical_approximation}).  Je prirodzené očakávať, 
-že ak by sme chceli ďalej zvyšovať presnosť analytického riešenia okrajovej 
-úlohy (teda ďalej by sme plochu, po ktorej sa integruje, približovali geoidu), 
-získané riešenia by sa neustále komplikovali.  Samozrejme, iba za predpokladu, 
-že hľadané funkcie by vôbec bolo možné analyticky nájsť.
+úloh.  Riešenia, ktoré sme získali (rovnice~\ref{eq:stokes}, \ref{eq:hotine} 
+a~\ref{eq:poisson}), sa nazývajú \emph{analytické riešenia}.  Analytickým 
+riešením rozumieme presný tvar hľadaného riešenia v~podobe funkcie, ktorá 
+vyhovuje definícii okrajovej úlohy.  Okrajové úlohy sme si ale zjednodušili 
+využím konceptu sférickej aproximácie, ktorá predpokladá okrajovú podmienku na 
+sfére, nie na geoide.  V~presnejšom priblížení je možné využiť elipsoidickú 
+aproximáciu, teda integrovať okrajovú podmienku na ekvipotenciálnom elipsoide, 
+ktorý je lepším priblížením geoidu ako sféra.  Prirodzene, takáto úloha je 
+zložitejšia ako vo sférickej aproximácii (pozri referencie 
+v~Kapitole~\ref{sec:stokes_spherical_approximation}).  Ďalšie zvyšovanie 
+presnosti analytického riešenia je nesmierne náročné.
 
-V~takýchto situáciách je výhodnejšie, niekedy aj nutné, použiť \emph{numerické 
-riešenie} okrajovej úlohy.  V~numerickom riešení sa zvykne oblasť hľadaného 
-riešenia okrajovej úlohy \emph{diskretizovať} pomocou vhodných elementov, čo 
-umožní riešiť danú úlohu lokálne v~rámci elementu, a~následne postupovať 
-v~riešení úlohy od elementu k~elementu.  V~okrajových úlohách, ktoré sú 
-definované v~trojrozmernom priestore, môže byť ako element použitá napríklad 
-kocka, hranol a pod.  Takéto riešenie je síce približné, no v~mnohých úlohách 
-matematiky, fyziky a~ďalších vedných disciplínach je často aj jediné, ktoré je 
-možné prakticky získať.  \emph{Numerické riešenie okrajových úloh pre poruchový 
-potenciál} tak predstavuje ďalšiu vetvu metód určovania tvaru Zeme a~jej 
-vonkajšieho tiažového poľa.  Je potešením na tomto mieste spomenúť, že medzi 
-popredných svetových odborníkov v~numerickom riešení geodetických okrajových 
-úloh patrí bezpochyby tím matematikov a~geodetov Katedry matematiky 
-a~deskriptívnej geometrie Stavebnej fakulty Slovenskej technickej univerzity 
-v~Bratislave.  Bližšie sa oboznámiť s~týmito metódami je tak možné aj 
-v~prácach, ktoré sú napísané v~slovenskom jazyku 
+V~takýchto situáciách je výhodnejšie (v~mnohých prípadoch dokonca nutné) použiť 
+\emph{numerické riešenie} okrajovej úlohy.  V~numerickom riešení sa zvykne 
+oblasť hľadaného riešenia \emph{diskretizovať} pomocou vhodných elementárnych 
+telies.  Tento krok umožní riešiť úlohu lokálne v~rámci jedného elementu, 
+a~následne postupovať v~riešení úlohy v~susednom elemente.  V~okrajových 
+úlohách, ktoré sú definované v~trojrozmernom priestore, môže byť ako 
+elementárne teleso použitá napríklad kocka či hranol.  Takéto riešenie je síce 
+približné, no v~mnohých úlohách matematiky, fyziky a~ďalších vedných 
+disciplínach je často jediné, ktoré je možné prakticky získať.  \emph{Numerické 
+riešenie okrajových úloh pre poruchový potenciál} tak predstavuje ďalšiu vetvu 
+metód určovania tvaru Zeme a~jej vonkajšieho tiažového poľa.  Je potešením 
+spomenúť, že medzi popredných svetových odborníkov v~numerickom riešení 
+geodetických okrajových úloh patrí bezpochyby tím matematikov a~geodetov 
+z~Katedry matematiky a~deskriptívnej geometrie Stavebnej fakulty Slovenskej 
+technickej univerzity v~Bratislave.  Bližšie sa oboznámiť s~týmito metódami je 
+tak možné aj v~prácach, ktoré sú napísané v~slovenskom jazyku 
 \parencite[napríklad][]{Janak2006,Macak2021}, prípadne v~odborných publikáciách 
 v~anglickom jazyku 
 \parencite[napríklad][]{Cunderlik2008,Faskova2010,Macak2014}.
@@ -7269,58 +7347,115 @@ v~anglickom jazyku
 
 \subsection{Metódy založené na sférických harmonických funkciách}
 
-V~praktických aplikáciách sú merané dáta dostupné vždy v~konečnom počte bodov, 
-a~nie vo forme spojitej funkcie ako bolo predpokladané 
+V~praktických aplikáciách sú dáta, z~ktorých určujeme tvar Zeme, dostupné vždy 
+v~konečnom počte bodov, a~nie vo forme spojitej funkcie ako bolo predpokladané 
 v~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:geoid_astrogeodetic}.  Nech 
-je teda daných napríklad~$M$ anomálii tiažového zrýchlenia~$\Delta g$, ktoré sú 
-doplnené o~príslušné polohy bodov v~podobe sférických súradníc~$(r, \varphi, 
-\lambda)$.  To znamená, že v~rovnici~(\ref{eq:Dg_sh_sa}) poznáme ľavú stranu 
-(merané dáta) a~na pravej strane vieme vypočítať zo známej polohy všetky členy 
-okrem sférických harmonických koeficientov~$\bar{t}_{nk}$.  
-Vzťah~(\ref{eq:Dg_sh_sa}) je lineárny z~pohľadu sférických harmonických 
-koeficientov~$\bar{t}_{nk}$, a~tak jeho deriváciou podľa~$\bar{t}_{nk}$ je 
-možné zostaviť maticu plánu a~z~meraní~$\Delta g$ odhadnúť metódou najmenších 
-štvorcov najviac~$M$ koeficientov~$\bar{t}_{nk}$ do maximálneho stupňa~$N \leq 
-\sqrt{M} - 1$.  Z~rovnice~(\ref{eq:Dg_sh_sa}) totižto vyplýva, že do 
-maximálneho stupňa~$N_1$ existuje~$(N_1 + 1)^2$ sférických harmonických 
-koeficientov~$\bar{t}_{nk}$.  Na základe koeficientov~$\bar{t}_{nk}$ 
-odhadnutých metódou najmenších štvorcov je následne možné vzťahmi~(\ref{eq:N}) 
-a~(\ref{eq:t_sh}) vypočítať priebeh geoidu pomocou sférických harmonických 
-funkcií.
+je teda daných~$M$ anomálií tiažového zrýchlenia~$\Delta g$, ktoré sú doplnené 
+o~príslušné polohy bodov v~podobe sférických súradníc~$(r, \varphi, \lambda)$.  
+To znamená, že v~rovnici~(\ref{eq:Dg_sh_sa}) poznáme ľavú stranu (merané dáta) 
+a~na pravej strane vieme zo známej polohy vypočítať všetky členy okrem 
+sférických harmonických koeficientov~$\bar{t}_{nk}$.  Vzťah~(\ref{eq:Dg_sh_sa}) 
+je z~pohľadu sférických harmonických koeficientov~$\bar{t}_{nk}$ lineárny.  
+Z~jeho derivácií podľa~$\bar{t}_{nk}$ je tak možné zostaviť maticu plánu 
+a~z~meraní~$\Delta g$ následne odhadnúť metódou najmenších štvorcov najviac~$M$ 
+koeficientov~$\bar{t}_{nk}$ do maximálneho stupňa~$N \leq \sqrt{M} 
+- 1$.\footnote{Z~rovnice~(\ref{eq:Dg_sh_sa}) vyplýva, že sférický harmonický 
+rozvoj do stupňa~$N$ má~$M = (N + 1)^2$ sférických harmonických 
+koeficientov~$\bar{t}_{nk}$.  Preto~$M$ koeficientov implikuje maximálny 
+stupeň~$N = \sqrt{M} - 1$.}  Z~koeficientov~$\bar{t}_{nk}$ je následne možné 
+vzťahmi~(\ref{eq:N}) a~(\ref{eq:t_sh}) vypočítať priebeh geoidu s~využitím 
+sférických harmonických funkcií.
 
-V~praxi sa využívajú na výpočet koeficientov~$\bar{t}_{nk}$ nielen anomálie 
-tiažového zrýchlenia, ale prakticky všetky dostupné typy meraní, obzvlášť 
-družicové merania.  Následne sa~tieto dáta kombinujú metódou najmenších 
-štvorcov.  Princíp výpočtu koeficientov~$\bar{t}_{nk}$ z~družicových meraní 
-tkvie v~prvom rade v~nájdení matematického vzťahu medzi dátami, ktoré je možné 
-pomocou družice odmerať, a~niektorou z~veličín tiažového poľa.  Keďže prakticky 
-každú veličinu gravitačného, resp. tiažového poľa je možne reprezentovať 
-sférickým harmonickým rozvojom, vzťah medzi meraniami na družici a~neznámymi 
-koeficientmi je tým pádom známy.  Uvažujme družicu vybavenú GNSS prijímačom, 
-ktorý meria polohu družice každú, povedzme, sekundu.  Vieme, že druhou 
-(numerickou) deriváciou tejto polohy je možné získať výsledne zrýchlenie 
-pôsobiace na družicu v~danom momente.  Parciálne zrýchlenia, ktoré sú udeľované 
-družici, môžu byť spôsobené napríklad tlakom slnečného žiarenia pôsobiaceho na 
-družicu, odporom atmosféry či slnečným žiarením odrazeným od zemského povrchu 
-na družicu.  Kľúčovým je v~tejto situácii ale gravitačné zrýchlenie, ktoré Zem 
-udeľuje družici.  Po matematickom odstránení všetkých zrýchlení, ktoré nie sú 
-spôsobené gravitačným poľom Zeme (medzi takéto zrýchlenia patria aj gravitačné 
-zrýchlenia udelené Mesiacom, Slnkom a~planétami Slnečnej sústavy), tak získame 
-vektor gravitačného zrýchlenia, ktorý pôsobí na družicu každú sekundu jej 
-obehu.  Spôsobom podobným predošlému odseku tak vieme pomocou rovníc 
-(\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) vypočítať sférické harmonické 
-koeficienty gravitačného poľa Zeme.  Táto metóda sa v~literatúre nazýva 
-\emph{metóda zrýchlení} a~v~našom regióne sa jej venuje skupina okolo Aleša 
-Bezd\v{e}ka, ktorý pôsobí na Astronomickom ústave Akadémie vied Českej 
-republiky \parencite[pozri napríklad][]{Bezdek2014}.  Okrem metódy zrýchlení 
-existuje množstvo ďalších metód, ktoré využívajú aj iné typy družicových dát 
-ako tu spomenutá dráha družice a~dokonca aj z~dráhy družice je možné odhadnúť 
-koeficienty~$\bar{t}_{nk}$ rozličnými spôsobmi \parencite[pozri 
-napríklad][]{SeeberSatelliteGeodesy,MoritzPhysicalGeodesy}.
+V~praxi sa koeficienty~$\bar{t}_{nk}$ odhadujú nielen z~anomálií tiažového 
+zrýchlenia, ale prakticky zo všetkých dostupných dát, využívajúc pritom aj 
+družicové merania.  Princíp výpočtu koeficientov~$\bar{t}_{nk}$ z~družicových 
+meraní spočíva v~nájdení matematického vzťahu medzi družicovými dátami 
+a~niektorou z~veličín gravitačného poľa.  Následne, keďže prakticky každá 
+veličina gravitačného poľa je reprezentovateľná sférickým harmonickým rozvojom, 
+je možné získať vzťah medzi meraniami na družici a~neznámymi koeficientmi.  
+Uvažujme družicu vybavenú GNSS prijímačom, ktorý meria polohu družice každú, 
+povedzme, sekundu.  Vieme, že druhou (numerickou) deriváciou tejto polohy je 
+možné získať \emph{výsledne} zrýchlenie pôsobiace na družicu v~danom momente.  
+\emph{Parciálne} zrýchlenia, ktoré sú udeľované družici, sú spôsobované 
+napríklad tlakom priameho slnečného žiarenia pôsobiaceho na družicu, odporom 
+atmosféry či tlakom slnečného žiarenia, ktoré je odrazené od zemského povrchu 
+na družicu.  Kľúčovým parciálnym zrýchlením je gravitačné zrýchlenie, ktoré Zem 
+udeľuje družici.  Matematickým odstránením všetkých modelovateľných či 
+merateľných parciálnych zrýchlení, ktoré nie sú spôsobené gravitačným poľom 
+Zeme (medzi takéto zrýchlenia patria aj gravitačné zrýchlenia udelené Mesiacom, 
+Slnkom a~planétami Slnečnej sústavy), tak získame dobrú aproximáciu vektora 
+gravitačného zrýchlenia, ktoré Zem udeľuje družici.  Spôsobom podobným 
+predošlému odseku tak vieme zo sekundového vzorkovania vektora gravitačného 
+zrýchlenia vypočítať pomocou rovníc (\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) 
+sférické harmonické koeficienty gravitačného poľa Zeme.  Táto metóda sa v~literatúre nazýva \emph{metóda zrýchlení}.   V~našom regióne sa jej dlhodobo 
+venuje skupina pôsobiaca na Astronomickom ústave Akadémie vied Českej republiky 
+v~Ond\v{r}ejove.  Táto skupina vyvinula originálny variant metódy zrýchlení 
+dosahujúci prvotriednu kvalitu v~celosvetovom meradle 
+\parencite{Bezdek2014,encarnacao2020}.  Okrem metódy zrýchlení existuje 
+množstvo ďalších prístupov, ktoré využívajú aj ďalšie typy družicových dát 
+\parencite[pozri][]{SeeberSatelliteGeodesy}.  Navyše, dokonca aj z~dráhy 
+družice je možné odhadnúť koeficienty~$\bar{t}_{nk}$ rozličnými spôsobmi 
+\parencite[napríklad][]{Baur2014}.
 
 
 \subsection{Metódy remove--compute--restore}
 
+Výpočet geoidu vzťahmi~(\ref{eq:stokes_N}) a~(\ref{eq:hotine_N}) je náročný ani 
+nie tak z~hľadiska výpočtového času (pozri 
+Kapitolu~\ref{sec:stokes_convolution}), ako skôr z~pohľadu vstupných dát.  
+Všimnime si, že obe rovnice integrujú anomálie, resp. tiažového zrýchlenia na 
+celej sfére~$\sigma$.  Predpokladaná je teda dostupnosť gravimetrických meraní 
+na celej Zemi.  Celosvetové gravimetrické databázy síce existujú, no ich 
+priestorové rozlíšenie dosahuje v~súčasnosti nanajvýš zhruba~$15'$ 
+\parencite{EGM2008,Pail2018}, teda približne~$28$~km na rovníku.  Takáto 
+hustota nepostačuje na dosiahnutie vyžadovanej zhruba centimetrovej presnosti 
+geoidu.  Naproti tomu, gravimetrické databázy na úrovni kontinentov či štátov 
+sú nezriedka výrazne hustejšie (na Slovensku napríklad~3~-- 6 gravimetrických 
+meraní na $\textrm{km}^2$).  Z~odmeraných anomálií tiažového zrýchlenia sa 
+preto zvykne pomocou družicových sférických harmonických modelov odstrániť 
+dlhovlnný trend anomálií tiažového zrýchlenia do stupňa~$N$ 
+(angl.~\emph{remove}), čím získame \emph{reziduálne anomálie tiažového 
+zrýchlenia}.  Tieto reziduálne anomálie tiažového zrýchlenia sú následne 
+použité na výpočet \emph{reziduálnej výšky geoidu} nad referenčným elipsoidom, 
+napríklad pomocou Stokesovho integrálu (angl.~\emph{compute}).  Na záver je 
+k~získanej reziduálnej výške geoidu pridaný globálny dlhovlnný trend, ktorý je 
+spočítaný opäť zo sférického harmonického modelu (angl.~\emph{restore}).  
+Kľúčovou je skutočnosť, že prostrednú časť metódy (\emph{compute}) je možné 
+s~rozumnou mierou aproximácie spočítať s~využitím iba regionálnych 
+gravimetrických dát, napríklad 100~km od výpočtového bodu.  Integračnou 
+oblasťou v~Stokesovom integračnom jadre tak už nie je celá sféra~$\sigma$, ale 
+len sférický zvrchlík~$\sigma_0$ so stredom vo výpočtovom bode.  Takáto 
+aproximácia je možná preto, lebo vplyv vzdialených \emph{reziduálnych} anomálií 
+tiažového zrýchlenia na výšku geoidu je s~dostatočnou mierou presnosti 
+zanedbateľný, pokiaľ sú stupeň~$N$ a~integračná oblasť~$\sigma_0$ vzájomne 
+vhodne zvolené.
+
+Metóda remove--compute--restore teda umožňuje vhodnú kombináciu vysokej 
+lokálnej hustoty regionálnych gravimetrických databáz s~globálnym charakterom 
+družicových meraní.  Je potrebné spomenúť, že časť~\emph{compute} môže byť 
+realizovaná aj inými metódami výpočtu ako je Stokesov integrál, napríklad 
+metódou kolokácie \parencite{MoritzAdvancedGeodesy,MoritzPhysicalGeodesy}.  To 
+isté v~princípe platí aj pre časti \emph{remove} a~\emph{restore}, hoci v~tomto 
+prípade je použitie sférických harmonických modelov takmer pravidlom.  
+Podrobnosti o~metóde remove--compute--restore je možné nájsť napríklad 
+v~prácach \textcite{Sjoberg2005} a~\textcite{MoritzPhysicalGeodesy}.
+
+Dodajme aspoň v~stručnosti, že metóda remove--compute--restore sa zvykne 
+kombinovať s~metódou reziduálneho terénneho modelu 
+\parencite{Forsberg1981,Forsberg1984}.  Táto metóda vychádza zo skutočnosti, že 
+na lokálnej úrovni (povedzme niekoľko desiatok kilometrov od výpočtového bodu) 
+je tiažové zrýchlenie veľmi závislé od hmôt, ktoré sa nachádzajú v~blízkosti 
+výpočtového bodu (pozri Obrázok~\ref{fig:gg_grav_sr_2arcsec}).  Tvar lokálnych 
+hmôt je spravidla dobre popísaný digitálnymi modelmi terénu.  V~súčasnosti sú 
+bežné digitálne modely terénu štátov s~metrovým rozlíšením a~s~vertikálnou 
+presnosťou pár desiatok centimetrov.  Podrobnosť týchto modelov je teda výrazne 
+vyššia ako podrobnosť terestrických gravimetrických databáz.  Metóda 
+reziduálneho terénneho modelu sa tak snaží využiť túto skutočnosť a~výpočtom 
+gravitačného účinku takýchto hmôt dopomôcť k~ešte presnejšiemu výpočtu 
+reziduálnych anomálii tiažového zrýchlenia, ktoré sa následne využívajú 
+v~metóde remove--compute--restore.  Samozrejme, obe metódy môžu byť použité 
+nielen s~anomáliami tiažového zrýchlenia, ale aj s~poruchami tiažového 
+zrýchlenia, zvislicovými odchýlkami a~ďalšími veličinami fyzikálnej geodézie.
 
 
 
