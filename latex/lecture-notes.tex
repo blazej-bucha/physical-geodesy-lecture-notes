@@ -6190,6 +6190,7 @@ Použitím vzťahov sférickej trigonometrie
 \parencite[napríklad][]{MoritzPhysicalGeodesy},
 %
 \begin{equation}
+\label{eq:deflection_aux}
 \begin{split}
 \sin\Theta \, \cos\alpha &= \cos\phi \, \sin\Phi - \sin\phi \, \cos\Phi \, 
 \cos(\Lambda - \lambda){,}\\
@@ -6236,6 +6237,7 @@ inerciálnych navigačných systémov \parencite[pozri napríklad][]{Jekeli2000}
 
 
 \subsection{Vzťah medzi zvislicovou odchýlkou a~poruchovým potenciálom}
+\label{sec:deflections_disturbing_potential}
 
 Na získanie vzťahu medzi zvislicovými odchýlkami a~poruchovým potenciálom 
 budeme uvažovať gravimetrickú zvislicovú odchýlku pre jej priamočiaru súvislosť 
@@ -6749,6 +6751,7 @@ referenčnej sféry Zeme (napríklad stredný či rovníkový polomer Zeme), $\s
 je jednotková sféra a~$\diff\sigma'$ je jej diferenciál,
 %
 \begin{equation}
+\label{eq:diff_sigma}
 \diff\sigma' = \cos\varphi' \, \diff\varphi' \, \diff\lambda'{,}
 \end{equation}
 %
@@ -7137,7 +7140,7 @@ Hotineovo integračné jadro má podobné vlastnosti ako Stokesovo integračné 
 (pozri Kapitolu~\ref{sec:stokes_kernel}), teda je singulárne, homogénne 
 a izotropne.  Na rozdiel od Stokesovho jadra ale ide o~monotónne klesajúcu 
 funkciu.  Teda čím ďalej sa nachádza integračný element $\diff\sigma'$ od 
-výpočtového bodu~$P$, tým menšia váha~$H$ v~Hotineho 
+výpočtového bodu~$P$, tým menšia váha~$H$ v~Hotineovom 
 integráli~(\ref{eq:hotine}) je pridelená príslušnej poruche tiažového 
 zrýchlenia.
 
@@ -7224,12 +7227,11 @@ bez potreby formulovania a~riešenia okrajovej úlohy.
 \section{Astronomicko--geodetická metóda určenia geoidu}
 \label{sec:geoid_astrogeodetic}
 
-Astronomicko--geodetická metóda určuje geoid z~jeho sklonu voči 
-ekvipotenciálnemu elipsoidu.  Tento sklon je daný Pizzettiho zvislicovou 
-odchýlkou (Obrázok~\ref{fig:deflections}), ktorú v~tejto kapitole budeme 
-označovať symbolmi~$\xi_0$, $\eta_0$, $\Theta_0$ a~$\varepsilon_0$ bez horného 
-indexu, no s~dolným indexom, ktorý indikuje, že tieto veličiny sú vztiahnuté ku 
-geoidu.
+Astronomicko--geodetická metóda určuje geoid zo sklonu geoidu voči 
+ekvipotenciálnemu elipsoidu.  Tento sklon je popísaný Pizzettiho zvislicovou 
+odchýlkou (Obrázok~\ref{fig:deflections}), ktorej priemet do spojnice dvoch 
+bodov budeme v~tejto kapitole označovať symbolom~$\varepsilon_0$ bez horného 
+indexu.  Dolný index indikuje, že zvislicová odchýlka sa vzťahuje ku geoidu.
 
 \begin{figure}[bt]
 \centering
@@ -7239,47 +7241,46 @@ geoidu.
 \end{figure}
 
 Na~Obrázku~\ref{fig:astrogeodetic_method} vidíme, že diferenciálne prevýšenie 
-geoidu medzi bodmi~$A$ a~$B$ je dané vzťahom
+geoidu medzi bodmi~$A$ a~$B$ je dané vzťahom \parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
 \label{eq:N_deflections}
 \diff N = -\varepsilon_0 \, \diff s{,}
 \end{equation}
 %
-pričom $\varepsilon_0$ je priemet zvislicovej odchýlky do spojnice~$A$, $B$ 
-(vzťah~\ref{eq:deflection_vareps}).  Znamienko mínus 
-v~rovnici~(\ref{eq:N_deflections}) je konvenčne dohodnuté, podobne ako sme 
-konvenčne použili v~rovnici~(\ref{eq:deflection_eps}) vektory vonkajších 
-normál~$\vec n_W$, $\vec n_U$ a~nie vektory vnútorných normál~$-\vec n_W$, 
-$-\vec n_U$.  Integráciou rovnice~(\ref{eq:N_deflections}) od bodu~$A$ po 
-bod~$B$ získame výšku geoidu v~bode~$B$,
+kde $\varepsilon_0$ je priemet zvislicovej odchýlky do spojnice bodov~$A$, $B$ 
+(vzťah~\ref{eq:deflection_vareps}).  Znamienko mínus je konvenčne dohodnuté, 
+podobne ako sme konvenčne použili v~rovnici~(\ref{eq:deflection_eps}) vektory 
+vonkajších normál~$\vec n_W$, $\vec n_U$ a~nie vektory vnútorných normál~$-\vec 
+n_W$, $-\vec n_U$.  Integráciou rovnice od bodu~$A$ po bod~$B$ získame výšku 
+geoidu v~bode~$B$,
 %
 \begin{equation}
 \label{eq:N_deflections_nb}
 N_B = N_A - \int\limits_A^B \varepsilon_0 \, \diff s{,}
 \end{equation}
 %
-kde~$\varepsilon_0$ je priemet zvislicovej odchýlky do spojnice bodov~$A$, $B$, 
-pričom $\varepsilon_0$ sa na spojnici mení.  Astronomicko--geodetická metóda 
-určenia geoidu je teda \emph{relatívna} metóda, ktorou určujeme prevýšenie 
-geoidu medzi dvoma bodmi,
+pričom~$\varepsilon_0$ sa pozdĺž spojnice môže meniť.  Astronomicko--geodetická 
+metóda určenia geoidu je teda \emph{relatívna} metóda, ktorou určujeme 
+\emph{prevýšenie geoidu} medzi dvoma bodmi,
 %
 \begin{equation}
 \label{eq:N_deflections_delta}
 \Delta N_{AB} = N_B - N_A = - \int\limits_A^B \varepsilon_0 \, \diff s{.}
 \end{equation}
 
-V~praktických aplikáciách nie je známa zvislicová odchýlka~$\varepsilon_0$ 
-\emph{spojito} pozdĺž spojnice bodov~$A$ a~$B$, ale len \emph{diskrétne}, 
-zväčša v~koncových bodoch spojnice.  Integrál~(\ref{eq:N_deflections_delta}) 
-preto vypočítame \emph{numerickou integráciou}, v~ktorej spojitú 
+V~praktických aplikáciách zvislicová odchýlka~$\varepsilon_0$ nie je známa 
+\emph{spojito} pozdĺž spojnice bodov~$A$ a~$B$, tak ako to vyžaduje 
+vzťah~(\ref{eq:N_deflections_delta}), ale len \emph{diskrétne}, zväčša 
+v~koncových bodoch spojnice.  Integrál~(\ref{eq:N_deflections_delta}) preto 
+vypočítame \emph{numerickou integráciou}, v~ktorej spojitú 
 funkciu~$\varepsilon_0$ a~diferenciálne vzdialenosti~$\diff s$ nahradíme 
 diskrétnymi hodnotami~$\varepsilon_{0,i}$ a~konečnými dĺžkami~$\Delta s_i$.  
 Spravidla sú k~dispozícii zvislicové odchýlky~$\varepsilon_{0,A}$ 
 a~$\varepsilon_{0,B}$ na koncových bodoch spojnice a~vzdialenosť~$\Delta 
 s_{AB}$ medzi bodmi~$A$, $B$.  Obdĺžnikovou metódou získame nasledovný tvar 
-prevýšenia geoidu medzi bodmi~$A$ a~$B$ \parencite[pozri 
-napríklad][]{Macak2021},
+prevýšenia geoidu medzi bodmi~$A$ a~$B$ \parencite[pre popis obdĺžnikovej 
+metódy pozri napríklad][]{Macak2021},
 %
 \begin{equation}
 \label{eq:N_deflections_delta_ni}
@@ -7287,18 +7288,18 @@ napríklad][]{Macak2021},
 s_{AB}{.}
 \end{equation}
 %
-Čím je zložitejší priebeh geoidu medzi bodmi $A$ a~$B$, tým väčšej chyby sa 
-dopúšťame použitím numerickej integrácie.  V~takom prípade je potrebné, pokiaľ 
-je to možné, skrátiť vzdialenosti medzi bodmi siete.
+Prirodzene, čím je zložitejší priebeh geoidu medzi bodmi $A$ a~$B$, tým väčšej 
+chyby sa dopúšťame použitím numerickej integrácie.  V~takom prípade je 
+potrebné, pokiaľ je to možné, skrátiť vzdialenosti medzi bodmi siete.
 
-Ak je geoid určovaný na viacerých bodoch, spravidla sa z~bodov vytvorí 
+Ak je geoid určovaný na viacerých bodoch, zvyčajne sa z~bodov vytvorí 
 trojuholníková sieť a~vzťahom~(\ref{eq:N_deflections_delta_ni}) sa vypočítajú 
 prevýšenia geoidu medzi bodmi siete.  V~dôsledku chýb meraní a~v~dôsledku 
 použitia numerickej integrácie však spravidla nebude súčet prevýšení 
-v~trojuholníkoch nulový.  Prevýšenia sa preto vyrovnajú metódou najmenších 
-štvorcov tak, aby súčet prevýšení v~každom trojuholníku bol nulový.  Na záver 
-je potrebné odhadnuté prevýšenia geoidu pripojiť na jeden bod, v~ktorom je 
-známa absolútna výška geoidu nad referenčným elipsoidom.
+v~trojuholníkoch siete nulový.  Prevýšenia sa preto vyrovnajú metódou 
+najmenších štvorcov tak, aby súčet prevýšení v~každom trojuholníku bol nulový.  
+Na záver je potrebné odhadnuté prevýšenia geoidu pripojiť na jeden bod, 
+v~ktorom je známa absolútna výška geoidu nad referenčným elipsoidom.
 
 Na záver dodajme, že geoid, môže byť vypočítaný zo zvislicových odchýlok aj 
 integrálnymi vzťahmi, ktoré majú podobný charakter ako Stokesov a~Hotineov 
@@ -7368,14 +7369,14 @@ sférických harmonických funkcií.
 
 V~praxi sa koeficienty~$\bar{t}_{nk}$ odhadujú nielen z~anomálií tiažového 
 zrýchlenia, ale prakticky zo všetkých dostupných dát, využívajúc pritom aj 
-družicové merania.  Princíp výpočtu koeficientov~$\bar{t}_{nk}$ z~družicových 
-meraní spočíva v~nájdení matematického vzťahu medzi družicovými dátami 
-a~niektorou z~veličín gravitačného poľa.  Následne, keďže prakticky každá 
-veličina gravitačného poľa je reprezentovateľná sférickým harmonickým rozvojom, 
-je možné získať vzťah medzi meraniami na družici a~neznámymi koeficientmi.  
-Uvažujme družicu vybavenú GNSS prijímačom, ktorý meria polohu družice každú, 
-povedzme, sekundu.  Vieme, že druhou (numerickou) deriváciou tejto polohy je 
-možné získať \emph{výsledne} zrýchlenie pôsobiace na družicu v~danom momente.  
+družicové merania.  Výpočet koeficientov~$\bar{t}_{nk}$ z~družicových meraní 
+spočíva v~nájdení matematického vzťahu medzi družicovými dátami a~niektorou 
+z~veličín gravitačného poľa.  Následne, keďže prakticky každá veličina 
+gravitačného poľa môže byť vyjadrená sférickým harmonickým rozvojom, je možné 
+získať vzťah medzi meraniami na družici a~neznámymi koeficientmi.  Uvažujme 
+družicu vybavenú GNSS prijímačom, ktorý meria polohu družice každú, povedzme, 
+sekundu.  Vieme, že druhou (numerickou) deriváciou tejto polohy je možné získať 
+\emph{výsledne} zrýchlenie pôsobiace na družicu v~danom momente.  
 \emph{Parciálne} zrýchlenia, ktoré sú udeľované družici, sú spôsobované 
 napríklad tlakom priameho slnečného žiarenia pôsobiaceho na družicu, odporom 
 atmosféry či tlakom slnečného žiarenia, ktoré je odrazené od zemského povrchu 
@@ -7387,7 +7388,8 @@ Slnkom a~planétami Slnečnej sústavy), tak získame dobrú aproximáciu vektor
 gravitačného zrýchlenia, ktoré Zem udeľuje družici.  Spôsobom podobným 
 predošlému odseku tak vieme zo sekundového vzorkovania vektora gravitačného 
 zrýchlenia vypočítať pomocou rovníc (\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) 
-sférické harmonické koeficienty gravitačného poľa Zeme.  Táto metóda sa v~literatúre nazýva \emph{metóda zrýchlení}.   V~našom regióne sa jej dlhodobo 
+sférické harmonické koeficienty gravitačného poľa Zeme.  Táto metóda sa 
+v~literatúre nazýva \emph{metóda zrýchlení}.   V~našom regióne sa jej dlhodobo 
 venuje skupina pôsobiaca na Astronomickom ústave Akadémie vied Českej republiky 
 v~Ond\v{r}ejove.  Táto skupina vyvinula originálny variant metódy zrýchlení 
 dosahujúci prvotriednu kvalitu v~celosvetovom meradle 
@@ -7463,6 +7465,232 @@ zrýchlenia, zvislicovými odchýlkami a~ďalšími veličinami fyzikálnej geod
 \section{Vening--Meineszov integrál}
 \label{sec:vm_integral}
 
+V~Kapitole~\ref{sec:deflections_disturbing_potential} sme ukázali, akým 
+spôsobom súvisia gravimetrické zvislicové odchýlky s~tiažovým poľom Zeme 
+(vzťah~\ref{eq:deflection_grav_s}).  Rovnicu~(\ref{eq:deflection_grav_s}) ale 
+spravidla nevieme priamo vypočítať, pretože poruchový potenciál vystupuje vo 
+fyzikálnej geodézii väčšinou ako neznáma funkcia 
+(Kapitola~\ref{sec:disturbing_potential}).  Jeden z~možných spôsobov výpočtu je 
+pomocou sférického harmonického rozvoja poruchového potenciálu 
+(rovnica~\ref{eq:deflection_grav_s_sph}).  Ďalšou  možnosťou je skombinovať 
+geometrickú interpretáciu zvislicových odchýlok na geoide 
+(vzťah~\ref{eq:N_deflections}) a~Stokesov či Hotineov integrál 
+(rovnice~\ref{eq:stokes_N} a~\ref{eq:hotine_N}).  Táto kapitola je spracovaná 
+podľa \textcite{MoritzPhysicalGeodesy} a~využíva sférickú aproximáciu 
+zvislicových odchýlok.
+
+Vyjadrime z~rovnice~(\ref{eq:N_deflections}) zvislicovú 
+odchýlku~$\varepsilon_0$,
+%
+\begin{equation}
+\label{eq:eps0}
+\varepsilon_0 = -\frac{\diff N}{\diff s}{.}
+\end{equation}
+%
+Z~Kapitoly~\ref{sec:deflections} vieme, že priemet zvislicovej 
+odchýlky~$\varepsilon_0$ môžeme popísať dvoma kolmými zložkami.  Prvá zložka 
+popisuje zvislicovú odchýlku v~smere sever--juh, $\xi_0$, a~druhá v~smere 
+východ--západ, $\eta_0$.  Podobne potrebujeme získať priemety~$\diff s_\varphi$ 
+a~$\diff s_\lambda$ diferenciálu $\diff s$.  Keďže ide o~priemety 
+v~horizontálnej rovine lokálneho karteziánskeho súradnicového 
+systému~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom 
+(pozri Obrázok~\ref{fig:cart_sph} a~tiež 
+Kapitolu~\ref{sec:deflections_disturbing_potential}), 
+z~rovnice~(\ref{eq:diffr}) 
+Prílohy~\ref{app:differential_of_line_element_in_sph_coords} vyplývajú 
+nasledovné vzťahy,
+%
+\begin{equation}
+\label{eq:ds}
+\begin{split}
+\diff s_\varphi &= R \, \diff \varphi{,}\\
+%
+\diff s_\lambda &= R \, \cos\varphi \, \diff \lambda{,}
+\end{split}
+\end{equation}
+%
+kde~$R$ je polomer referenčnej sféry, ktorá aproximuje geoid (pozri 
+Kapitolu~\ref{sec:stokes_integral}).  Ak je zvislica vychýlená iba v~smere 
+sever--juh, vzťah~(\ref{eq:eps0}) prejde do tvaru
+%
+\begin{equation}
+\label{eq:xi0}
+\xi_0 = -\frac{\diff N}{\diff s_\varphi}{.}
+\end{equation}
+%
+Ak je zvislica vychýlená iba v~smere východ--západ, dostaneme vzťah
+%
+\begin{equation}
+\label{eq:lambda0}
+\lambda_0 = -\frac{\diff N}{\diff s_\lambda}{.}
+\end{equation}
+%
+Kombináciou rovníc~(\ref{eq:ds}), (\ref{eq:xi0}) a~(\ref{eq:lambda0}) získame 
+zložky zvislicovej odchýlky vo všeobecnom smere,
+%
+\begin{equation}
+\begin{split}
+\label{eq:xi0_eta0_der}
+\xi_0 &= -\frac{1}{R} \, \frac{\partial N}{\partial \varphi}{,}\\
+%
+\lambda_0 &= -\frac{1}{R \, \cos\varphi} \, \frac{\partial N}{\partial 
+\lambda}{.}
+\end{split}
+\end{equation}
+%
+Vzťah~(\ref{eq:xi0_eta0_der}) teda umožňuje vypočítať zvislicové odchýlky na 
+geoide z~priebehu geoidu, zatiaľ čo vzťah~(\ref{eq:N_deflections}) umožňuje 
+inverzný výpočet geoidu zo zvislicových odchýlok.
+
+Dosadením Stokesovho integrálu~(\ref{eq:stokes_N}) do 
+vzťahov~(\ref{eq:xi0_eta0_der}) získame rovnice
+%
+\begin{equation}
+\label{eq:vm}
+\begin{split}
+\xi_0 &= -\frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\partial 
+S(\psi)}{\partial \varphi} \, \Delta g_0 \, \diff\sigma{,}\\
+\eta_0 &= -\frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\partial 
+S(\psi)}{\cos\varphi \, \partial \lambda} \, \Delta g_0 \, \diff\sigma{.}
+\end{split}
+\end{equation}
+%
+Nájdime teraz derivácie~$\partial S(\psi) \slash \partial\varphi$ a~$\partial 
+S(\psi) \slash \partial\lambda$.  Zo vzťahu~(\ref{eq:stokes_kernel}) vieme, že 
+Stokesovo jadro~$S(\psi)$ je funkciou sférickej vzdialenosti~$\psi$, ktorá však 
+závisí od sférickej šírky~$\varphi$ aj od~sférickej dĺžky~$\lambda$ 
+(vzťah~\ref{eq:cospsi}).  Derivujeme teda zloženú funkciu,
+%
+\begin{equation}
+\label{eq:stokes_kernel_partials}
+\begin{split}
+\frac{\partial S(\psi)}{\partial \varphi} &= \frac{\diff S(\psi)}{\diff \psi} 
+\, \frac{\partial\psi}{\partial\varphi}{,}\\
+%
+\frac{\partial S(\psi)}{\partial \lambda} &= \frac{\diff S(\psi)}{\diff \psi} 
+\, \frac{\partial\psi}{\partial\lambda}{.}\\
+\end{split}
+\end{equation}
+%
+Deriváciu~$\diff S(\psi) \slash \diff \psi$ získame derivovaním Stokesovho 
+jadra~(\ref{eq:stokes_kernel}) podľa sférickej vzdialenosti~$\psi$.  Na 
+získanie parciálnych derivácií~$\partial\psi \slash \partial\varphi$ 
+a~$\partial\psi \slash \partial\lambda$ je výhodné diferencovať vzťah pre 
+kosínus sférickej šírky (pozri rovnicu~\ref{eq:cospsi})
+%
+\begin{equation}
+\cos\psi = \sin\varphi \, \sin\varphi' + \cos\varphi \, \cos\varphi' \,
+\cos(\lambda - \lambda'){,}
+\end{equation}
+%
+kde $\varphi'$, $\lambda'$ sú súradnice integračného elementu (pozri 
+vzťah~\ref{eq:diff_sigma}).  Získame tak rovnice
+%
+\begin{equation}
+\label{eq:vm_aux}
+\begin{split}
+-\sin\psi \, \frac{\partial \psi}{\partial \varphi} &= \cos\varphi \, 
+\sin\varphi' - \sin\varphi \, \cos\varphi' \, \cos(\lambda' - \lambda) {,}\\
+-\sin\psi \, \frac{\partial \psi}{\partial \lambda} &= \cos\varphi \, 
+\cos\varphi' \, \sin(\lambda' - \lambda){.}
+\end{split}
+\end{equation}
+%
+Na ďalšiu úpravu rovníc~(\ref{eq:vm_aux}) využime 
+vzťahy~(\ref{eq:deflection_aux}), pričom použijeme aktuálnu symboliku, teda 
+symboly~$\Theta$, $\phi$, $\Phi$, $\Lambda$ nahradíme symbolmi~$\psi$, 
+$\varphi$, $\varphi'$, $\lambda'$ (porovnaj 
+Obrázky~\ref{fig:deflections_unit_sphere} a~\ref{fig:surface_integral}),
+%
+\begin{equation}
+\label{eq:vm_aux2}
+\begin{split}
+\sin\psi \, \cos\alpha &= \cos\varphi \, \sin\varphi' - \sin\varphi \, 
+\cos\varphi' \, \cos(\lambda' - \lambda){,}\\
+\sin\psi \, \sin\alpha &= \cos\varphi' \, \sin(\lambda' - \lambda){.}
+\end{split}
+\end{equation}
+%
+Z~rovníc~(\ref{eq:vm_aux}) a~(\ref{eq:vm_aux2}) teda vyplývajú vzťahy
+%
+\begin{equation}
+\label{eq:vm_aux3}
+\begin{split}
+\frac{\partial\psi}{\partial\varphi} &= -\cos\alpha{,}\\
+%
+\frac{\partial\psi}{\partial\lambda} &= -\cos\varphi \, \sin\alpha{.}
+\end{split}
+\end{equation}
+%
+S~využitím~(\ref{eq:stokes_kernel_partials}) a~(\ref{eq:vm_aux3}) dostaneme 
+hľadané parciálne derivácie Stokesovho jadra podľa sférickej šírky~$\varphi$ 
+a~sférickej dĺžky~$\lambda$,
+%
+\begin{equation}
+\label{eq:stokes_kernel_partials2}
+\begin{split}
+\frac{S(\psi)}{\partial\varphi} &= -\frac{\diff S(\psi)}{\diff \psi} \, 
+\cos\alpha{,}\\
+%
+\frac{S(\psi)}{\partial\lambda} &= -\frac{\diff S(\psi)}{\diff \psi} \, 
+\cos\varphi \, \sin\alpha{.}
+\end{split}
+\end{equation}
+%
+Dosadením~(\ref{eq:stokes_kernel_partials2}) do~(\ref{eq:vm}) tak získame 
+výsledné vzťahy,
+    %
+    \begin{equation}
+\label{eq:vm2}
+\begin{split}
+\xi_0 &= \frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\diff 
+S(\psi)}{\diff \psi} \, \cos\alpha \, \Delta g_0 \, \diff\sigma{,}\\
+\eta_0 &= \frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\diff 
+S(\psi)}{\diff \psi} \, \sin\alpha \, \Delta g_0 \, \diff\sigma{.}
+\end{split}
+\end{equation}
+
+Rovnice~(\ref{eq:vm2}) sa nazývajú \emph{Vening--Meineszove integrály} a~sú 
+pomenované po holandskom geofyzikovi a~geodetovi F.~A.~Veningovi Meineszovi 
+(1887~-- 1966), ktorý ich odvodil v~roku 1928.  Tieto integrály~umožňujú 
+výpočet gravimetrických zvislicových odchýlok na geoide z~anomálií tiažového 
+zrýchlenia na geoide.  Tvar derivácie~$\diff S(\psi) \slash \diff\psi$ nebudeme 
+podrobne odvádzať a~uvedieme iba jej výsledný tvar
+\parencite{MoritzPhysicalGeodesy},
+%
+\begin{equation}
+\frac{\diff S(\psi)}{\diff \psi} = - \frac{\cos\dfrac{\psi}{2}}{2 \, 
+\sin^2\dfrac{\psi}{2}} + 8 \, \sin\psi - 6 \, \cos\dfrac{\psi}{2} - 3\, \frac{1 
+- \sin\dfrac{\psi}{2}}{\sin\psi} + 3 \, \sin\psi \, \ln \left[ 
+\sin\dfrac{\psi}{2} + \sin^2\dfrac{\psi}{2} \right]{.}
+\end{equation}
+
+Vening--Meineszove integrály~(\ref{eq:vm2}) patria medzi konvolučné integrály 
+(Kapitola~\ref{sec:stokes_convolution}) a~ich integračné jadrá
+%
+\begin{equation}
+\label{eq:vm_kernels}
+\frac{\diff S(\psi)}{\diff\psi} \, \cos\alpha{,} \quad \frac{\diff 
+S(\psi)}{\diff\psi} \, \sin\alpha
+\end{equation}
+%
+sú singulárne a~homogénne, avšak nie sú izotropne (pozri 
+Kapitolu~\ref{sec:stokes_kernel}).  Neizotropnosť jadier~(\ref{eq:vm_kernels}) 
+je spôsobená ich závislosťou od azimutu~$\alpha$ spojnice výpočtového bodu 
+a~integračného elementu (Obrázok~\ref{fig:surface_integral}).
+
+Dodajme, že do rovnice~(\ref{eq:xi0_eta0_der}) môže byť dosadený aj Hotineov 
+integrál~(\ref{eq:hotine_N}) namiesto Stokesovho integrálu~(\ref{eq:stokes_N}).  
+Získame tým formálne podobné vzťahy, avšak s~integračnými jadrami
+%
+\begin{equation}
+\label{eq:vm_kernels2}
+\frac{\diff H(\psi)}{\diff\psi} \, \cos\alpha{,} \quad \frac{\diff 
+H(\psi)}{\diff\psi} \, \sin\alpha
+\end{equation}
+%
+a~poruchami tiažového zrýchlenia~$\delta g_0$ namiesto anomálií tiažového 
+zrýchlenia~$\Delta g_0$.
 
 
 
@@ -7471,6 +7699,7 @@ zrýchlenia, zvislicovými odchýlkami a~ďalšími veličinami fyzikálnej geod
 % -----------------------------------------------------------------------------
 
 \chapter*{Doslov}
+
 
 
 
@@ -7637,6 +7866,7 @@ súradnicového systému $x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$
 v~globálnom súradnicovom systéme $x$, $y$, $z$,
 %
 \begin{equation}
+\label{eq:vector_r}
 \vec r =
 %
 \begin{bmatrix}
@@ -8483,6 +8713,85 @@ GrafLab je možné nájsť na adrese
 \lstinputlisting[caption=Sférický harmonický rozvoj zemskej topografie
 v~programovacom jazyku MATLAB, label=src:h_shs, language=matlab,
 captionpos=t]{../matlab/shs_h.m}
+
+
+
+
+
+
+\chapter{Diferenciál vzdialenosti vo sférických súradniciach}
+\label{app:differential_of_line_element_in_sph_coords}
+
+V~tejto prílohe odvodíme vzťah pre druhú mocninu diferenciálu 
+vzdialenosti~$\diff s^2$ vo sférických súradniciach~$r$, $\varphi$, $\lambda$.
+
+Definujme polohový vektor~$\vec r$ pomocou globálnych karteziánskych 
+súradníc~$x$, $y$, $z$ nasledovne (pozri vzťahy~\ref{eq:sph2cart}),
+%
+\begin{equation}
+\vec r =
+%
+\begin{bmatrix}
+x(\varphi, \lambda, r)\\
+y(\varphi, \lambda, r)\\
+z(\varphi, r)
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+r \, \cos\varphi \, \cos\lambda\\
+r \, \cos\varphi \, \sin\lambda\\
+r \, \sin\varphi
+\end{bmatrix}
+%
+{.}
+\end{equation}
+%
+Totálny diferenciál polohového vektora~$\diff \vec r$ získame vzťahom (pozri 
+Kapitolu~\ref{sec:potential_differences})
+%
+\begin{equation}
+\label{eq:diffr}
+\begin{split}
+\diff \vec r &= \frac{\partial \vec r}{\partial x} \, \diff x + \frac{\partial 
+\vec r}{\partial y} \, \diff y + \frac{\partial \vec r}{\partial z} \, \diff 
+z = \hat{\vec e}_1^\mathrm{s} \, \diff \varphi + \hat{\vec e}_2^\mathrm{s} \, 
+\diff \lambda + \hat{\vec e}_3^\mathrm{s} \, \diff r{,}\\
+%
+&= \|\hat{\vec e}_1^\mathrm{s}\| \,\vec e_1^\mathrm{s} \, \diff\varphi 
++ \|\hat{\vec e}_2^\mathrm{s}\| \, \vec e_2^\mathrm{s} \, \diff\lambda 
++ \|\hat{\vec e}_3^\mathrm{s}\| \, \vec e_3^\mathrm{s} \, \diff r\\
+%
+&= \vec e_1^\mathrm{s} \, r \, \diff\varphi + \vec e_2^\mathrm{s} \, r \, 
+\cos\varphi \, \diff\lambda + \vec e_3^\mathrm{s} \, \diff r{,}
+\end{split}
+\end{equation}
+%
+kde vektory~$\hat{\vec e}_1^\mathrm{s}$, $\hat{\vec e}_2^\mathrm{s}$, 
+$\hat{\vec e}_3^\mathrm{s}$ sú dané rovnicami~(\ref{eq:er_elat_elon}) a~ich 
+veľkosti $\| \hat{\vec e}_1^\mathrm{s} \|$, $\| \hat{\vec e}_2^\mathrm{s} \|$, 
+$\| \hat{\vec e}_3^\mathrm{s} \|$ spolu s~príslušnými jednotkovými 
+vektormi~$\vec e_1^\mathrm{s}$, $\vec e_2^\mathrm{s}$, $\vec e_3^\mathrm{s}$ je 
+možné nájsť vo vzťahoch~(\ref{eq:er_elat_elon_unit}).  Po uvážení ortogonality 
+vektorov~$\vec e_1^\mathrm{s}$, $\vec e_2^\mathrm{s}$, $\vec e_3^\mathrm{s}$ 
+(pozri Prílohu~\ref{app:gradient_in_spherical_coordinates} a~tiež 
+vzťahy~\ref{eq:ei_orthogonality} a~\ref{eq:ei_unit_length}) získame hľadaný 
+vzťah,
+%
+\begin{equation}
+\begin{split}
+\diff s^2 &= \diff \vec r \cdot \diff \vec r = \left( \vec e_1^\mathrm{s} \, 
+r \, \diff \varphi + \vec e_2^\mathrm{s} \, r \, \cos\varphi \, \diff \lambda 
++ \vec e_3^\mathrm{s} \, \diff r \right) \cdot \left( \vec e_1^\mathrm{s} \, 
+r \, \diff \varphi + \vec e_2^\mathrm{s} \, r \, \cos\varphi \, \diff \lambda 
++ \vec e_3^\mathrm{s} \, \diff r \right)\\
+%
+&=  r^2 \, \diff\varphi^2 + r^2 \, \cos^2\varphi \, \diff\lambda^2 + \diff 
+r^2{.}
+\end{split}
+\end{equation}
+
 
 
 
