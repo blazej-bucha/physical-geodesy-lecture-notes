@@ -329,15 +329,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="24.353694"
-     inkscape:cy="157.94639"
+     inkscape:zoom="4"
+     inkscape:cx="155.99027"
+     inkscape:cy="128.94632"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="3828"
-     inkscape:window-height="2087"
+     inkscape:window-width="2548"
+     inkscape:window-height="1527"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
@@ -489,17 +489,17 @@
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.289666;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1893-6-1-2-6)"
-       d="M 45.83351,15.592309 C 44.967708,23.084137 44.101881,30.57618 43.236103,38.067794"
+       d="m 45.83351,15.592309 c -0.902175,7.806454 -1.804375,15.613122 -2.706525,23.419363"
        id="path2265-9-7-8-9"
        inkscape:path-effect="#path-effect2034"
-       inkscape:original-d="m 45.83351,15.592309 c 0,0 -1.731338,14.983905 -2.597407,22.475485"
+       inkscape:original-d="m 45.83351,15.592309 c 0,0 -1.804083,15.613156 -2.706525,23.419363"
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 45.870773,15.328319 c -0.831037,7.191056 -1.6621,14.382338 -2.493111,21.573167"
+       d="m 45.870773,15.328319 c -0.870694,7.53409 -1.741414,15.068407 -2.612082,22.602271"
        id="path2265-9-7-8"
        inkscape:path-effect="#path-effect3964"
-       inkscape:original-d="m 45.870773,15.328319 c 0,0 -1.661809,14.382372 -2.493111,21.573167"
+       inkscape:original-d="m 45.870773,15.328319 c 0,0 -1.741123,15.068441 -2.612082,22.602271"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
@@ -539,15 +539,15 @@
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="45.971786"
-       y="27.156525"
+       x="45.921375"
+       y="29.534307"
        id="text2041-0-3-3"
        inkscape:transform-center-x="-2.8573912"
        inkscape:transform-center-y="-0.096321403"><tspan
          sodipodi:role="line"
          id="tspan2071-9-6-1"
-         x="45.971786"
-         y="27.156525"
+         x="45.921375"
+         y="29.534307"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Bold'"
    id="tspan3319-0-9">F</tspan>$_\mathrm{g}(t_1)$</tspan></text>

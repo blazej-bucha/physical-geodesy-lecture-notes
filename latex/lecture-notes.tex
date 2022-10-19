@@ -320,10 +320,10 @@ Tvar Zeme možno definovať niekoľkými spôsobmi v~závislosti od kontextu
 \parencite{MoritzTheFigureOfTheEarth}.  Azda najprirodzenejšie je definovať 
 tvar Zeme jej skutočným fyzickým povrchom, ktorý je viditeľný voľným okom.  
 Tento povrch obsahuje nespočetné množstvo zložitých terénnych útvarov, 
-napríklad strmé útesy či rokliny.  Hoci sú takéto oblasti krásne na pohľad, 
+napríklad strmé útesy či rokliny.  Hoci sú tieto oblasti krásne na pohľad, 
 znemožňujú aplikáciu istej časti potrebného matematického aparátu, okrem iného 
-plošnú integráciu.  Takto chápaný zemský povrch budeme preto skúmať až po istom 
-vyhladení.  Napriek vyhladeniu je to však stále veľmi zložitá plocha.
+plošnú integráciu.  Takto chápaný zemský povrch je preto spravidla skúmaný až 
+po istom vyhladení.  Napriek vyhladeniu je to však stále veľmi zložitá plocha.
 
 K~definovaniu tvaru Zeme môžeme pristúpiť aj~iným spôsobom.  Približne dve 
 tretiny zemského povrchu tvorí voda v~podobe oceánov a~morí.  Za istých 
@@ -411,11 +411,12 @@ Z~rovnice~(\ref{eq:newton_law}) vyplýva, že Slnko pôsobí v~čase~$t_0$ na
 planétu gravitačnou silou~$\vec F_\gidx(t_0)$, ktorej smer je daný spojnicou 
 planéty a~Slnka.  Gravitačná sila preto priťahuje planétu v~smere vektora~$\vec 
 F_\gidx(t_0)$, čím mení hypotetickú trajektóriu, ktorou by sa planéta 
-pohybovala bez pôsobenia tejto sily.  Gravitačná sila v~kombinácii s~vektorom 
-rýchlosti tak spôsobí, že planéta sa v~skutočnosti dostane do polohy~$P(t_1)$.  
-V~čase~$t_1$ sa opísaná situácia opakuje, pričom vektory rýchlosti a~sily už 
-majú iný smer a~s~vysokou pravdepodobnosťou aj inú veľkosť.  Gravitačná sila 
-Slnka teda zakrivuje trajektóriu planéty \emph{v~každom okamihu}.
+pohybovala bez pôsobenia tejto sily.  V~kombinácii s~vektorom rýchlosti tak 
+gravitačná sila spôsobí, že planéta sa v~skutočnosti dostane do 
+polohy~$P(t_1)$.  V~čase~$t_1$ sa opísaná situácia opakuje, pričom vektory 
+rýchlosti a~sily už majú iný smer a~s~vysokou pravdepodobnosťou aj inú veľkosť.  
+Gravitačná sila Slnka teda zakrivuje trajektóriu planéty \emph{v~každom 
+okamihu}.
 
 \begin{figure}
 \centering
@@ -429,7 +430,7 @@ javov, napríklad príliv a~odliv, či zodpovedať otázku, prečo majú planét
 približne sférický tvar.  Je pozoruhodné, že hoci rovnica~(\ref{eq:newton_law}) 
 bola odpozorovaná z~pohybu nebeských telies, zhoduje sa i~s experimentmi, ktoré 
 boli vykonané na vzdialenosť niekoľkých desiatok mikrometrov 
-\parencite{Lee2020}.  Napriek uvedenému, azda je potrebné spomenúť 
+\parencite{Lee2020}.  Napriek uvedenému je azda potrebné spomenúť 
 aj~skutočnosť, že Newtonov gravitačný zákon je \emph{nesprávny} 
 \parencite{Feynman}.  Predpokladá napríklad, že zmena hmotnosti či vzdialenosti 
 má okamžitý gravitačný účinok, a~to aj~v~prípade telies nachádzajúcich sa vo 
@@ -450,8 +451,8 @@ geodézie.
 \label{sec:gg}
 
 Gravitačná sila~(\ref{eq:newton_law}) pôsobiaca medzi hmotnými bodmi~$P$ 
-a~$Q$~závisí od hmotnosti oboch hmotných bodov.  Skúsme preto normovať vektor 
-gravitačnej sily hmotnosťou~$m_P$.  Získame tým vektorovú veličinu, ktorú 
+a~$Q$~závisí od hmotnosti oboch hmotných bodov.  Vektor gravitačnej sily je 
+preto výhodné normovať hmotnosťou~$m_P$.  Získame tým vektorovú veličinu, ktorú 
 budeme nazývať \emph{gravitačné zrýchlenie},
 %
 \begin{equation}
@@ -464,17 +465,17 @@ kde~$m = m_Q$.  Rovnica~(\ref{eq:gg_point_mass}) hovorí, že hmotný
 bod~$Q$ udeľuje hmotnému bodu~$P$ zrýchlenie~$\vec g_\gidx(P)$.   Inými
 slovami, gravitačné zrýchlenie~$\vec g_\gidx(P)$ nezávisí od hmotnosti~$m_P$, 
 začiatok má v~bode~$P$ a~smeruje do hmotného bodu~$Q$.  V~súvislosti
-s~hmotným bodom~$P$ je preto možné vynechať pre jednoduchosť prívlastok
+s~hmotným bodom~$P$ je preto možné pre jednoduchosť vynechať prívlastok
 \emph{hmotný} a~považovať~$P$ za geometrický bod bez fyzikálnych vlastností.
 Skutočnosť, že gravitačné zrýchlenie priťahovaného telesa nezávisí od jeho
 hmotnosti experimentálne potvrdil Gaileo Gailei (1564--1642).
 
-Z Newtonovho gravitačného zákona vyplýva, že v~sústave~$N$ hmotných bodov je 
-celkové gravitačné zrýchlenie v~bode~$P$ dané vektorovým súčtom čiastkových 
-gravitačných zrýchlení, ktoré udeľujú jednotlivé hmotné body 
-(Obrázok~\ref{fig:gg_n_point_masses}).\footnote{\uv{\textit{[\dots] každý 
-hmotný bod [\dots] priťahuje každý iný hmotný bod [\dots]}}, pozri 
-Kapitolu~\ref{sec:newton_law}.}  Tento princíp sa nazýva \emph{princíp 
+Popíšme teraz vektor gravitačného zrýchlenia v~sústave~$N$ hmotných bodov 
+(Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každý hmotný 
+bod [\dots] priťahuje každý iný hmotný bod [\dots]}} (pozri 
+Kapitolu~\ref{sec:newton_law}), celkové gravitačné zrýchlenie v~bode~$P$ je 
+dané vektorovým súčtom čiastkových gravitačných zrýchlení, ktoré sú generované 
+jednotlivými hmotnými bodmi.  Tento princíp sa nazýva \emph{princíp 
 superpozície} \parencite[pozri napríklad][]{Hotine}.  Gravitačné zrýchlenie 
 generované~$N$ hmotnými bodmi tak získame vzťahom
 %
@@ -491,48 +492,48 @@ generované~$N$ hmotnými bodmi tak získame vzťahom
 piatich hmotných bodov~$Q_1$ až~$Q_5$ s~rôznou hmotnosťou a~polohou voči 
 bodu~$P$.  Vektor~$\vec g_\gidx$ je daný vektorovým súčtom čiastkových 
 gravitačných zrýchlení~$\vec g_{\gidx,1}$ až~$\vec g_{\gidx,5}$, ktoré sú 
-generované jednotlivými hmotnými bodmi.}
+generované príslušnými hmotnými bodmi.}
 \label{fig:gg_n_point_masses}
 \end{figure}
 
 Newtonov gravitačný zákon~(\ref{eq:newton_law}) 
 a~rovnice~(\ref{eq:gg_point_mass}) a~(\ref{eq:gg_N_point_masses}) platia iba 
-pre hmotné body.  V~tomto tvare je možné aplikovať ich napríklad na popis 
-pohybu planét Slnečnej sústavy.  Rozmery planét sú totiž natoľko zanedbateľné 
-v~porovnaní s~ich vzájomnou vzdialenosťou, že sa nedopustíme nerozumne veľkej 
-chyby, ak hmotnosti planét sústredíme do ich ťažísk a~zanedbáme tvar planét.  
-Menej priaznivá situácia nastáva vtedy, keď sa bod~$P$ nachádza v~blízkosti 
-priťahujúceho telesa, ktoré má komplikovaný tvar a~hustotu.  Príkladom je 
-družica na nízkej obežnej dráhe Zeme.  Aby sme aj v takejto situácii dokázali 
-presne určiť gravitačné zrýchlenie, ktoré Zem udeľuje družici, je potrebné opäť 
-aplikovať princíp superpozície, teda individuálne získať gravitačný vplyv 
-spôsobený jednotlivými časťami Zeme a~následne tieto vplyvy sčítať.  Tentokrát 
-si už ale nevystačíme s~konceptom hmotných bodov 
-(rovnica~\ref{eq:gg_N_point_masses}), pretože tie sme definovali ako 
-bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi 
-nedokážeme aproximovať nenulový objem telesa.
+pre hmotné body.  V~tomto tvare môžu byť aplikované napríklad na popis pohybov, 
+ktoré vykonávajú planéty Slnečnej sústavy.  Rozmery planét sú totiž natoľko 
+zanedbateľné v~porovnaní s~ich vzájomnou vzdialenosťou, že sa nedopustíme 
+nerozumne veľkej chyby, ak hmotnosti planét sústredíme do ich ťažísk 
+a~zanedbáme tvar planét.  Menej priaznivá situácia nastáva vtedy, keď sa 
+bod~$P$ nachádza v~blízkosti priťahujúceho telesa, ktoré má komplikovaný tvar 
+a~hustotu.  Príkladom je družica na nízkej obežnej dráhe Zeme.  Na získanie 
+výsledného gravitačného zrýchlenia, ktoré Zem udeľuje družici, opäť využijeme 
+princípe superpozície, teda sčítame individuálne gravitačné vplyvy spôsobené 
+jednotlivými časťami Zeme.  Tentokrát si už ale nevystačíme s~konceptom 
+hmotných bodov (rovnica~\ref{eq:gg_N_point_masses}), pretože tie sme definovali 
+ako bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi 
+nedokážeme aproximovať nenulový objem priťahujúceho telesa.
 
-Zaveďme pojem \emph{všeobecné teleso}, ktoré má konečný objem~$\tau$ a~jeho 
-hustota~$\rho$ je ohraničenou funkciou polohy 
+Zaveďme pojem \emph{všeobecné teleso}.  Všeobecné teleso má konečný 
+objem~$\tau$ a~jeho hustota~$\rho$ je ohraničenou funkciou polohy 
 (Obrázok~\ref{fig:gravitating_body}).  V~zmysle integrálneho počtu rozdeľme 
-toto teleso na diferenciálne hmotné elementy~$\diff m$, pričom
+všeobecné teleso na diferenciálne hmotné elementy~$\diff m$, pričom
 %
 \begin{equation}
 \label{eq:dm}
 \diff m = \rho \, \diff \tau{.}
 \end{equation}
 %
-Hustota $\rho$ sa môže meniť medzi hmotnými elementmi~$\diff m$ v~závislosti od 
-štruktúry telesa, ale nesmie sa meniť v~rámci elementu samotného.  Ďalej budeme 
-predpokladať, že hmota diferenciálneho elementu~$\diff m$ je koncentrovaná 
-v~niektorom bode elementu \parencite{Kellogg1967}.  Po uvážení 
-rovnice~(\ref{eq:dm}) je diferenciál gravitačného zrýchlenia generovaného 
-hmotným elementom~$\diff m$ daný vzťahom (porovnaj so 
-vzťahmi~\ref{eq:gg_point_mass} a~\ref{eq:dm})
+Hustota $\rho$ sa môže meniť medzi diferenciálnymi hmotnými elementmi~$\diff m$ 
+v~závislosti od štruktúry telesa, ale nesmie sa meniť v~rámci elementu 
+samotného.  Ďalej budeme predpokladať, že hmota diferenciálneho elementu~$\diff 
+m$ je koncentrovaná v~niektorom bode elementu \parencite{Kellogg1967}.  Po 
+uvážení rovnice~(\ref{eq:dm}) je diferenciál gravitačného zrýchlenia 
+generovaného diferenciálnym hmotným elementom~$\diff m$ daný vzťahom (porovnaj 
+so vzťahom~\ref{eq:gg_point_mass})
 %
 \begin{equation}
 \label{eq:gg_dm}
-\diff \vec g_\gidx(P) = -G \frac{\vec r}{l^3} \rho \, \diff\tau{,}
+\diff \vec g_\gidx(P) = -G \frac{\vec r}{l^3} \, \diff m = -G \frac{\vec 
+r}{l^3} \rho \, \diff\tau{,}
 \end{equation}
 %
 kde vektor~$\vec r$ je definovaný rozdielom polohových vektorov bodov~$P$
@@ -565,14 +566,14 @@ l = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
 \label{fig:gravitating_body}
 \end{figure}
 
-Pri aplikovaní Newtonovho gravitačného zákona na diferenciálne elementy treba 
-mať na pamäti, že tento zákon bol formulovaný pre hmotné body, nie pre 
-diferenciálne elementy.  Diferenciálne elementy~$\diff m$, akokoľvek sú malé, 
-nikdy nie sú identické s~hmotnými bodmi.  Inými slovami, Newtonov gravitačný 
-zákon neposkytuje spôsob výpočtu gravitačného účinku diferenciálneho elementu 
-\parencite{Kellogg1967}.  Budeme preto musieť vysloviť ďalší predpoklad, a~síce 
-že tento zákon je možné aplikovať aj na diferenciálne elementy, čím získame 
-rovnosť~(\ref{eq:gg_dm}).
+Pri aplikovaní Newtonovho gravitačného zákona na diferenciálne hmotné elementy 
+treba mať na pamäti, že tento zákon bol formulovaný pre hmotné body, nie pre 
+diferenciálne hmotné elementy.  Diferenciálne elementy~$\diff m$, akokoľvek sú 
+malé, nikdy nie sú identické s~hmotnými bodmi.  Inými slovami, Newtonov 
+gravitačný zákon neposkytuje spôsob výpočtu gravitačného účinku diferenciálneho 
+hmotného elementu \parencite{Kellogg1967}.  Budeme preto musieť vysloviť ďalší 
+predpoklad, a~síce že tento zákon je možné aplikovať aj na diferenciálne hmotné 
+elementy, čím získame rovnosť~(\ref{eq:gg_dm}).
 
 Celkové gravitačné zrýchlenie generované všeobecným telesom získame
 využitím princípu superpozície, teda integráciou vzťahu~(\ref{eq:gg_dm}),
@@ -585,10 +586,11 @@ využitím princípu superpozície, teda integráciou vzťahu~(\ref{eq:gg_dm}),
 %
 Rovnica~(\ref{eq:gg_body}) už môže byť korektne použitá na výpočet gravitačného 
 zrýchlenia všeobecného telesa (napríklad Zeme) v~ľubovoľnom bode~$P$ (napríklad 
-v~ťažisku družice).
+v~ťažisku družice), pretože správne zohľadňuje tvar telesa a~rozloženie jeho 
+hustoty.
 
-V~širšom zmysle je možné vektor gravitačného zrýchlenia odmerať, preto má táto 
-veličina pre fyzikálnu geodéziu kľúčový význam.  V~sústave jednotiek SI má 
+Vektor gravitačného zrýchlenia je v~širšom zmysle možné odmerať, preto má pre 
+fyzikálnu geodéziu kľúčový význam.  V~sústave jednotiek SI má 
 jednotku~$\mathrm{m}\ \mathrm{s}^{-2}$.  Veľmi často sa stretneme aj 
 s~jednotkou~$1\ \mathrm{Gal} = 10^{-2}\ \mathrm{m}\ \mathrm{s}^{-2}$, ktorá je 
 pomenovaná podľa Galilea Galileiho, prípadne s~jej násobkami~$1\ \mathrm{mGal} 
@@ -596,25 +598,14 @@ pomenovaná podľa Galilea Galileiho, prípadne s~jej násobkami~$1\ \mathrm{mGa
 \mathrm{m}\ \mathrm{s}^{-2}$.
 
 Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti vektora 
-gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Porovnaním 
-s~topografiou (Obrázok~\ref{fig:h_grav_sr_2arcsec}) je možné pozorovať, že 
-v~miestach s~veľkou nadmorskou výškou je veľkosť gravitačného zrýchlenia 
-spravidla menšia ako v~miestach s~malou nadmorskou výškou a~naopak.  
-Z~globálneho hľadiska je tiažové zrýchlenie ovplyvnené najmä tvarom Zeme, 
-predovšetkým jej veľkosťou a~sploštením, a~rozsiahlymi hustotnými celkami vo 
-vnútri Zeme.
-
-Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti vektora
-gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Z~porovnania
-s~topografiou (Obrázok~\ref{fig:h_grav_sr_2arcsec}) je zrejmé, že gravitačné
-zrýchlenie je veľmi závislé od lokálnych hmôt, teda od hustoty a~tvaru blízkych
-diferenciálnych elementov~$\diff m = \rho \, \diff \tau$ a~ich vzdialenosti~$l$
-od bodu~$P$, v~ktorom je gravitačné zrýchlenie skúmané (pozri
-vzťah~\ref{eq:gg_body}).  Na lokálnej úrovni je možné pozorovať, že v~miestach
-s~veľkou nadmorskou výškou je veľkosť gravitačného zrýchlenia spravidla menšia
-ako v~miestach s~malou nadmorskou výškou a~naopak.  Z~globálneho hľadiska je
-tiažové zrýchlenie ovplyvnené najmä tvarom Zeme, predovšetkým jej sploštením,
-a~rozsiahlymi hustotnými celkami vo vnútri Zeme.
+gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Z~globálneho 
+hľadiska je gravitačné zrýchlenie ovplyvnené najmä tvarom Zeme, jej hmotnosťou, 
+sploštením a~rozsiahlymi hustotnými celkami v~jej vnútri.  Na regionálnej 
+úrovni možno pozorovať silnú závislosť medzi topografiou 
+(Obrázok~\ref{fig:h_grav_sr_2arcsec}) a~veľkosťou vektora gravitačného 
+zrýchlenia (Obrázok~\ref{fig:gg_grav_sr_2arcsec}).  Vidíme napríklad, 
+že~miestach s~veľkou nadmorskou výškou je veľkosť gravitačného zrýchlenia 
+spravidla menšia ako v~miestach s~malou nadmorskou výškou a~naopak.
 
 \begin{figure}
 \centering
@@ -643,19 +634,19 @@ elipsoidickej výšky (jednotky~m).  Dáta sú prevzaté z~modelu
 \subsection{Gravitačný potenciál}
 \label{sec:vg}
 
-Gravitačné zrýchlenie~$\vec g_\gidx$ je vektorová veličina, ktorá má v~každom 
-bode definovanú trojicu reálnych čísel.  V~niektorých situáciách je výhodnejšie 
-pracovať so skalárnou veličinou, teda takou, ktorá má v~každom bode definované 
-práve jedno reálne číslo.  Tento prístup je mladší ako Newtonov gravitačný 
-zákon zhruba o~jedno storočie \parencite{MacMillan1930,Jekeli2015}.  Fenomén 
-gravitácie chápe ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi 
-vzájomne súvisiacimi veličinami.  Podľa \textcite{MacMillan1930} prišiel 
-s~konceptom potenciálu poľa taliansky matematik a~astronóm 
-J.~L.~Lagrange~(1736--1813).  Ak by sme našli skalárnu veličinu gravitačného 
-poľa, informáciu poskytnutú troma číslami v~podobe gravitačného vektora by sme 
-dokázali zredukovať na jedno jediné číslo bez straty informácie o~poli 
-samotnom.  Skalárna veličina gravitačného poľa sa nazýva \emph{gravitačný 
-potenciál} a~označuje sa symbolom~$V_\gidx$.
+Gravitačné zrýchlenie je vektorová veličina, ktorá má v~každom bode definovanú 
+trojicu reálnych čísel.  V~niektorých situáciách je výhodnejšie pracovať so 
+skalárnou veličinou, teda takou, ktorá má v~každom bode definované práve jedno 
+reálne číslo.  Tento prístup je mladší ako Newtonov gravitačný zákon zhruba 
+o~jedno storočie \parencite{MacMillan1930,Jekeli2015}.  Fenomén gravitácie 
+chápe ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi vzájomne 
+súvisiacimi veličinami.  Podľa \textcite{MacMillan1930} prišiel s~konceptom 
+potenciálu poľa taliansky matematik a~astronóm J.~L.~Lagrange~(1736--1813).  Ak 
+by sme našli skalárnu veličinu gravitačného poľa, informáciu poskytnutú troma 
+číslami v~podobe gravitačného vektora by sme dokázali zredukovať na jedno 
+jediné číslo bez straty informácie o~poli samotnom.  Skalárna veličina 
+gravitačného poľa sa nazýva \emph{gravitačný potenciál} a~označuje sa 
+symbolom~$V_\gidx$.
 
 Gravitačný potenciál definujeme pomocou gravitačného zrýchlenia.  Pre lepšie 
 pochopenie vzťahu medzi oboma veličinami však najprv predstavíme diferenciálny 
@@ -664,8 +655,8 @@ potenciálu.
 
 \subsubsection{Operátor gradient v~karteziánskom súradnicovom systéme}
 
-Operátor gradient je v~trojrozmernom karteziánskom súradnicovom systéme~$x$, 
-$y$, $z$ definovaný nasledovne,
+\emph{Operátor gradient} je v~trojrozmernom karteziánskom súradnicovom 
+systéme~$x$, $y$, $z$ definovaný vzťahom
 %
 \begin{equation}
 \label{eq:gradient}
@@ -710,8 +701,6 @@ rovnobežné so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system})
 {,}
 \end{equation}
 %
-pričom
-%
 \begin{equation}
 \label{eq:unit_vectors_unit_length}
 \| \vec e_i \| = 1{,} \quad i = 1, 2,3{.}
@@ -732,11 +721,10 @@ f}{\partial y} + \vec e_3 \frac{\partial f}{\partial z} =
 {.}
 \end{equation}
 %
-Vektor~$\nabla f(x, y, z)$ \emph{udáva smer a~veľkosť najväčšieho nárastu} 
-funkcie~$f$ v~bode so súradnicami~$x$, $y$, $z$.  Jeho zložky $\partial 
-f \slash \partial x$, $\partial f \slash \partial y$ a~$\partial f \slash 
-\partial z$ popisujú zmenu skalárnej funkcie~$f$ v~smere jednotkových 
-vektorov~$\vec e_1$, $\vec e_2$, $\vec e_3$ v~bode~$x$, $y$, $z$.
+Vektor~$\nabla f(x, y, z)$ udáva \emph{smer a~veľkosť najväčšieho nárastu} 
+funkcie~$f$ v~bode so súradnicami~$x$, $y$, $z$.  Jeho zložky popisujú zmenu 
+skalárnej funkcie~$f$ v~smere vektorov~$\vec e_1$, $\vec e_2$, $\vec e_3$ 
+v~bode~$x$, $y$, $z$.
 
 Operátor gradient je \emph{lineárny}, teda pre diferencovateľné funkcie~$f$ 
 a~$g$ a~konštantu~$c$ platí
@@ -780,17 +768,16 @@ Vzťah~(\ref{eq:gg_grad_vg}) hovorí, že vektor gravitačného zrýchlenia udá
 smer a~veľkosť najväčšieho nárastu gravitačného potenciálu.  
 Rovnica~(\ref{eq:vg_at_infty}) znamená, že v~nekonečnej vzdialenosti od telesa 
 nadobúda gravitačný potenciál nulovú hodnotu.  Tento vzťah zabezpečuje, že 
-existuje práve jedna funkcia~$V_\gidx$ vyhovujúca rovnici~(\ref{eq:gg_grad_vg}) 
-\parencite{SansoGeoidDetermination}.
+existuje práve jedna funkcia~$V_\gidx$, ktorá vyhovuje 
+rovnici~(\ref{eq:gg_grad_vg}) \parencite{SansoGeoidDetermination}.
 
 Poznamenajme, že bod s~nulovým gravitačným potenciálom je možné vybrať 
 ľubovoľne, čo však neznamená, že jeho voľba je nedôležitá.  Naopak, miesto 
 nulového gravitačného potenciálu ovplyvňuje hodnoty gravitačného potenciálu.  
-Hovoríme preto, že \emph{gravitačný potenciál je relatívna veličina}.  
-V~princípe to znamená, že skôr než poznať absolútnu hodnotu gravitačného 
-potenciálu v~niektorom bode je často dôležitejšie poznať relatívne vzťahy 
-gravitačného potenciálu v~priestore, napríklad rozdiel potenciálu medzi dvoma 
-bodmi.
+Hovoríme preto, že \emph{gravitačný potenciál je relatívna veličina}.  Často je 
+preto dôležitejšie poznať relatívne vzťahy medzi gravitačným potenciálom 
+v~priestore, napríklad rozdiel potenciálu medzi dvoma bodmi, než je potrebné 
+poznať absolútnu hodnotu gravitačného potenciálu v~niektorom bode.
 
 Gravitačný potenciál hmotného bodu je daný vzťahom
 %
@@ -828,9 +815,8 @@ G \, m
 {.}
 \end{equation}
 %
-V~rovnici~(\ref{eq:gg_from_vg_point_mass}) sme využili 
-vlastnosť~(\ref{eq:gradient_homogenity}) operátora gradient, pretože $G \, 
-m = c$ v~rovnici~(\ref{eq:vg_point_mass}) je konštanta.  
+Využili sme pritom vlastnosť operátora gradient~(\ref{eq:gradient_homogenity}), 
+pretože $G \, m$ je v~rovnici~(\ref{eq:vg_point_mass}) konštantou.  
 Vzťah~(\ref{eq:gg_from_vg_point_mass}) predstavuje gravitačné zrýchlenie~$\vec 
 g_\gidx(P)$ z~rovnice~(\ref{eq:gg_point_mass}), čím bola dokázaná 
 rovnosť~(\ref{eq:gg_grad_vg}).  Platnosť vzťahu~(\ref{eq:vg_at_infty}) pre 
@@ -934,7 +920,7 @@ pozri napríklad~\textcite{Pick1973}.
 \section{Teória potenciálu}
 \label{sec:potential_theory}
 
-Rovnica~(\ref{eq:vg_body}) sa v~geovedách zvykne nazývať \emph{Newtonov
+Rovnica~(\ref{eq:vg_body}) sa zvykne v~geovedách nazývať \emph{Newtonov
 integrál}.  Hovorí, že ak poznáme tvar a~priestorové rozloženie hustoty telesa,
 gravitačný potenciál telesa môže byť vypočítaný.  Newtonov
 integrál má vo fyzikálnej geodézii kľúčový význam, nakoľko gravitačný potenciál 
@@ -972,8 +958,8 @@ A.--M.~Legendre (1752~-- 1833), P.~S.~Laplace, britský samouk G.~Green
 V~nasledujúcich piatich kapitolách (\ref{sec:laplace_equation_cart}~--
 \ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými
 vlastnosťami gravitačného potenciálu, ktoré vyplývajú z~teórie potenciálu.
-Vlastnosti budú popísané pre gravitačný potenciál mimo telesa a~vo vnútri
-telesa.
+Vlastnosti budú popísané najprv pre gravitačný potenciál mimo telesa a~neskôr 
+vo vnútri telesa.
 
 
 
@@ -7244,7 +7230,7 @@ indexu.  Dolný index indikuje, že zvislicová odchýlka sa vzťahuje ku geoidu
 \begin{figure}[bt]
 \centering
 \input{./fig-astrogeodetic-method.pdf_tex}
-\caption{Astronomicko--geodetická metóda určenia geoidu}
+\caption{Astronomicko--geodetická metóda určenia geoidu.}
 \label{fig:astrogeodetic_method}
 \end{figure}
 
