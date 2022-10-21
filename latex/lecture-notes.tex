@@ -368,14 +368,14 @@ Dva hmotné body~$P$ a~$Q$ sa navzájom priťahujú \emph{gravitačnou silou}
 %
 \begin{equation}
 \label{eq:newton_law}
-\vec F_\gidx = -G \frac{m_P \, m_Q}{l^2} \, \frac{\vec r}{l}{.}
+\vec F_\gidx = -G \frac{m_P \, m_Q}{\ell^2} \, \frac{\vec r}{\ell}{.}
 \end{equation}
 %
 Symbol~$G$ označuje gravitačnú konštantu, $m_P$ a~$m_Q$ predstavujú hmotnosti 
-hmotných bodov, $\vec r$ je vektor definovaný polohou bodov~$P$ a~$Q$ so 
-začiatkom v~bode~$Q$ a~$l$ je vzdialenosť medzi hmotnými bodmi, $l = \| \vec 
-r \|$.  Záporné znamienko v~rovnici znamená, že vektor sily má začiatok v~bode 
-$P$ a~smeruje do bodu~$Q$ (Obrázok~\ref{fig:newton_law}).
+hmotných bodov, $\vec r$ je vektor spojnice bodov~$P$ a~$Q$ so začiatkom 
+v~bode~$Q$ a~$\ell$ je vzdialenosť medzi hmotnými bodmi, $\ell = \| \vec r \|$.  
+Záporné znamienko v~rovnici znamená, že vektor sily má začiatok v~bode $P$ 
+a~smeruje do bodu~$Q$ (Obrázok~\ref{fig:newton_law}).
 
 \begin{figure}[b]
 \centering
@@ -391,13 +391,14 @@ Rovnica~(\ref{eq:newton_law}) sa nazýva \emph{gravitačný zákon} a~bola
 publikovaná I.~Newtonom (1642--1727) v~práci \emph{Philosophi\ae Naturalis 
 Principia Mathematica} z~roku 1687.  Hovorí, že každý hmotný bod vo vesmíre 
 priťahuje každý iný hmotný bod silou, ktorej veľkosť je priamo úmerná súčinu 
-ich hmotností a~nepriamo úmerná štvorcu ich vzdialenosti.  Smer sily je daný 
-spojnicou hmotných bodov \parencite{Kellogg1967}.  \emph{Hmotný bod} je 
-idealizovaný pojem predstavujúci časticu s~nulovým rozmerom a~konečnou 
-nenulovou hmotnosťou bez akýchkoľvek ďalších vlastností či štruktúry.  Hodnota 
-gravitačnej konštanty odporúčaná od roku 2018 \emph{Komisiou pre dáta vo vede 
-a~technológiách} (CODATA) je~$G = (6.67430 \pm 0.00015) \times 10^{-11} 
-\ \mathrm{m}^3 \ \mathrm{kg}^{-1} \ \mathrm{s}^{-2}$.
+hmotností dvoch priťahovaných hmotných bodov a~nepriamo úmerná štvorcu ich 
+vzdialenosti; smer sily je daný spojnicou hmotných bodov 
+\parencite{Kellogg1967}.  \emph{Hmotný bod} je idealizovaný pojem predstavujúci 
+časticu s~nulovým rozmerom a~konečnou nenulovou hmotnosťou bez akýchkoľvek 
+ďalších vlastností či štruktúry.  Hodnota gravitačnej konštanty odporúčaná od 
+roku 2018 \emph{Komisiou pre dáta vo vede a~technológiách} (CODATA) je~$G 
+= (6.67430 \pm 0.00015) \times 10^{-11} \ \mathrm{m}^3 \ \mathrm{kg}^{-1} 
+\ \mathrm{s}^{-2}$.
 
 Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme 
 polohu planéty v~čase~$t_0$ symbolom~$P(t_0)$ a~vektor jej okamžitej rýchlosti 
@@ -451,28 +452,60 @@ geodézie.
 \label{sec:gg}
 
 Gravitačná sila~(\ref{eq:newton_law}) pôsobiaca medzi hmotnými bodmi~$P$ 
-a~$Q$~závisí od hmotnosti oboch hmotných bodov.  Vektor gravitačnej sily je 
-preto výhodné normovať hmotnosťou~$m_P$.  Získame tým vektorovú veličinu, ktorú 
-budeme nazývať \emph{gravitačné zrýchlenie},
+a~$Q$~závisí od hmotností oboch hmotných bodov.  Vektor gravitačnej sily je 
+preto výhodné normovať hmotnosťou toho hmotného bodu, v~ktorom má vektor 
+gravitačnej sily začiatok, v~tomto prípade teda hmotnosťou~$m_P$ (pozri 
+Obrázok~\ref{fig:newton_law}).  Získame tým vektorovú veličinu, ktorú budeme 
+nazývať \emph{gravitačné zrýchlenie}.  Vektor gravitačného zrýchlenia budeme 
+označovať symbolom~$\vec g_\gidx$.
+
+Nech~$x$, $y$, $z$ a~$x_Q$, $y_Q$, $z_Q$ sú súradnice hmotných bodov~$P$ a~$Q$, 
+ktoré majú hmotnosti~$m_P$ a~$m_Q$.  Vektor gravitačného zrýchlenia v~bode~$P$ 
+je daný vzťahom
 %
 \begin{equation}
 \label{eq:gg_point_mass}
-\vec g_\gidx(P) = \frac{\vec F_\gidx}{m_P} = -G \frac{m}{l^2} \, \frac{\vec
-r}{l}{,}
+\vec g_\gidx(P) = \frac{\vec F_\gidx}{m_P} = -G \frac{m_Q}{\ell^2} \, 
+\frac{\vec r}{\ell}{,}
 \end{equation}
 %
-kde~$m = m_Q$.  Rovnica~(\ref{eq:gg_point_mass}) hovorí, že hmotný
-bod~$Q$ udeľuje hmotnému bodu~$P$ zrýchlenie~$\vec g_\gidx(P)$.   Inými
-slovami, gravitačné zrýchlenie~$\vec g_\gidx(P)$ nezávisí od hmotnosti~$m_P$, 
-začiatok má v~bode~$P$ a~smeruje do hmotného bodu~$Q$.  V~súvislosti
-s~hmotným bodom~$P$ je preto možné pre jednoduchosť vynechať prívlastok
-\emph{hmotný} a~považovať~$P$ za geometrický bod bez fyzikálnych vlastností.
-Skutočnosť, že gravitačné zrýchlenie priťahovaného telesa nezávisí od jeho
-hmotnosti experimentálne potvrdil Gaileo Gailei (1564--1642).
+kde vektor~$\vec r$ je definovaný rozdielom polohových vektorov bodov~$P$ 
+a~$Q$,
+%
+\begin{equation}
+\label{eq:r}
+\vec r =
+%
+\begin{bmatrix}
+x - x_Q \\
+y - y_Q \\
+z - z_Q
+\end{bmatrix}
+{,}
+\end{equation}
+%
+a~$\ell = \| \vec r \|$ je jeho veľkosť, teda Euklidovská vzdialenosť medzi 
+bodmi $P$ a~$Q$,
+%
+\begin{equation}
+\label{eq:l}
+\ell = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
+\end{equation}
 
-Popíšme teraz vektor gravitačného zrýchlenia v~sústave~$N$ hmotných bodov 
-(Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každý hmotný 
-bod [\dots] priťahuje každý iný hmotný bod [\dots]}} (pozri 
+Rovnica~(\ref{eq:gg_point_mass}) hovorí, že hmotný
+bod~$Q$ udeľuje hmotnému bodu~$P$ gravitačné zrýchlenie~$\vec g_\gidx(P)$, 
+pričom vektor gravitačného zrýchlenia~$\vec g_\gidx(P)$ nezávisí od 
+hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného bodu~$Q$.  
+V~súvislosti
+s~hmotným bodom~$P$ je preto možné pre jednoduchosť vynechať prívlastok
+\emph{hmotný} a~považovať~$P$ za geometrický bod bez fyzikálnych vlastností.  
+Budeme preto hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ vektor gravitačného 
+zrýchlenia~$\vec g_\gidx(P)$.  Nezávislosť gravitačného zrýchlenia od hmotnosti 
+priťahovaného telesa experimentálne potvrdil Gaileo Gailei (1564--1642).
+
+Nájdime teraz vzťah pre gravitačné zrýchlenie generované sústavou~$N$ hmotných 
+bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každý 
+hmotný bod [\dots] priťahuje každý iný hmotný bod [\dots]}} (pozri 
 Kapitolu~\ref{sec:newton_law}), celkové gravitačné zrýchlenie v~bode~$P$ je 
 dané vektorovým súčtom čiastkových gravitačných zrýchlení, ktoré sú generované 
 jednotlivými hmotnými bodmi.  Tento princíp sa nazýva \emph{princíp 
@@ -482,7 +515,7 @@ generované~$N$ hmotnými bodmi tak získame vzťahom
 \begin{equation}
 \label{eq:gg_N_point_masses}
 \vec g_\gidx(P) = \sum_{i = 1}^{N}\vec g_{\gidx,i}(P) = -G \sum_{i = 1}^{N}
-\frac{m_i}{l_i^2} \, \frac{\vec r_i}{l_i}{.}
+\frac{m_i}{\ell_i^2} \, \frac{\vec r_i}{\ell_i}{.}
 \end{equation}
 
 \begin{figure}
@@ -504,12 +537,12 @@ zanedbateľné v~porovnaní s~ich vzájomnou vzdialenosťou, že sa nedopustíme
 nerozumne veľkej chyby, ak hmotnosti planét sústredíme do ich ťažísk 
 a~zanedbáme tvar planét.  Menej priaznivá situácia nastáva vtedy, keď sa 
 bod~$P$ nachádza v~blízkosti priťahujúceho telesa, ktoré má komplikovaný tvar 
-a~hustotu.  Príkladom je družica na nízkej obežnej dráhe Zeme.  Na získanie 
-výsledného gravitačného zrýchlenia, ktoré Zem udeľuje družici, opäť využijeme 
-princípe superpozície, teda sčítame individuálne gravitačné vplyvy spôsobené 
-jednotlivými časťami Zeme.  Tentokrát si už ale nevystačíme s~konceptom 
-hmotných bodov (rovnica~\ref{eq:gg_N_point_masses}), pretože tie sme definovali 
-ako bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi 
+a~hustotu (napríklad družica na nízkej obežnej dráhe Zeme).  Na získanie 
+výsledného gravitačného zrýchlenia opäť využijeme princíp superpozície, teda 
+sčítame individuálne gravitačné vplyvy spôsobené jednotlivými časťami 
+priťahujúceho telesa.  Tentokrát si už ale nevystačíme s~konceptom hmotných 
+bodov (rovnica~\ref{eq:gg_N_point_masses}), pretože tie sme definovali ako 
+bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi 
 nedokážeme aproximovať nenulový objem priťahujúceho telesa.
 
 Zaveďme pojem \emph{všeobecné teleso}.  Všeobecné teleso má konečný 
@@ -528,35 +561,12 @@ samotného.  Ďalej budeme predpokladať, že hmota diferenciálneho elementu~$\
 m$ je koncentrovaná v~niektorom bode elementu \parencite{Kellogg1967}.  Po 
 uvážení rovnice~(\ref{eq:dm}) je diferenciál gravitačného zrýchlenia 
 generovaného diferenciálnym hmotným elementom~$\diff m$ daný vzťahom (porovnaj 
-so vzťahom~\ref{eq:gg_point_mass})
+s~rovnicou~\ref{eq:gg_point_mass})
 %
 \begin{equation}
 \label{eq:gg_dm}
-\diff \vec g_\gidx(P) = -G \frac{\vec r}{l^3} \, \diff m = -G \frac{\vec 
-r}{l^3} \rho \, \diff\tau{,}
-\end{equation}
-%
-kde vektor~$\vec r$ je definovaný rozdielom polohových vektorov bodov~$P$
-a~$Q$,
-%
-\begin{equation}
-\label{eq:r}
-\vec r =
-%
-\begin{bmatrix}
-x - x_Q \\
-y - y_Q \\
-z - z_Q
-\end{bmatrix}
-{,}
-\end{equation}
-%
-a~$l = \| \vec r \|$ je jeho veľkosť, teda Euklidovská vzdialenosť medzi bodmi
-$P$ a~$Q$,
-%
-\begin{equation}
-\label{eq:l}
-l = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
+\diff \vec g_\gidx(P) = -G \frac{\vec r}{\ell^3} \, \diff m = -G \frac{\vec 
+r}{\ell^3} \rho \, \diff\tau{.}
 \end{equation}
 
 \begin{figure}
@@ -580,7 +590,7 @@ využitím princípu superpozície, teda integráciou vzťahu~(\ref{eq:gg_dm}),
 %
 \begin{equation}
 \label{eq:gg_body}
-\vec g_\gidx(P) = -G \iiint\limits_{\tau} \frac{\vec r}{l^3} \, \rho \, 
+\vec g_\gidx(P) = -G \iiint\limits_{\tau} \frac{\vec r}{\ell^3} \, \rho \, 
 \diff\tau{.}
 \end{equation}
 %
@@ -779,11 +789,11 @@ preto dôležitejšie poznať relatívne vzťahy medzi gravitačným potenciálo
 v~priestore, napríklad rozdiel potenciálu medzi dvoma bodmi, než je potrebné 
 poznať absolútnu hodnotu gravitačného potenciálu v~niektorom bode.
 
-Gravitačný potenciál hmotného bodu je daný vzťahom
+Gravitačný potenciál hmotného bodu s~hmotnosťou~$m_Q$ je daný vzťahom
 %
 \begin{equation}
 \label{eq:vg_point_mass}
-V_\gidx(P) = \frac{G \, m}{l}{.}
+V_\gidx(P) = \frac{G \, m_Q}{\ell}{.}
 \end{equation}
 %
 Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg})
@@ -793,37 +803,38 @@ rovnice~(\ref{eq:l}) dostaneme vzťah
 %
 \begin{equation}
 \label{eq:gg_from_vg_point_mass}
-\nabla V_\gidx(P) = \nabla \left( \frac{G \, m}{l} \right) = G \, m \, \nabla 
-\left( \frac{1}{l} \right) =
+\nabla V_\gidx(P) = \nabla \left( \frac{G \, m_Q}{\ell} \right) = G \, m_Q \, 
+\nabla \left( \frac{1}{\ell} \right) =
 %
-G \, m
+G \, m_Q
+%
 \begin{bmatrix}
-\dfrac{\partial}{\partial x} \left( \dfrac{1}{l} \right)\\[2ex]
-\dfrac{\partial}{\partial y} \left( \dfrac{1}{l} \right)\\[2ex]
-\dfrac{\partial}{\partial z} \left( \dfrac{1}{l} \right)
+\dfrac{\partial}{\partial x} \left( \dfrac{1}{\ell} \right)\\[2ex]
+\dfrac{\partial}{\partial y} \left( \dfrac{1}{\ell} \right)\\[2ex]
+\dfrac{\partial}{\partial z} \left( \dfrac{1}{\ell} \right)
 \end{bmatrix}
 %
 =
 %
--G \, m
+-G \, m_Q
 %
 \begin{bmatrix}
-\dfrac{x - x_Q}{l^3}{,}\\[2ex]
-\dfrac{y - y_Q}{l^3}{,}\\[2ex]
-\dfrac{z - z_Q}{l^3}
+\dfrac{x - x_Q}{\ell^3}{,}\\[2ex]
+\dfrac{y - y_Q}{\ell^3}{,}\\[2ex]
+\dfrac{z - z_Q}{\ell^3}
 \end{bmatrix}
 {.}
 \end{equation}
 %
 Využili sme pritom vlastnosť operátora gradient~(\ref{eq:gradient_homogenity}), 
-pretože $G \, m$ je v~rovnici~(\ref{eq:vg_point_mass}) konštantou.  
+pretože $G \, m_Q$ je v~rovnici~(\ref{eq:vg_point_mass}) konštantou.  
 Vzťah~(\ref{eq:gg_from_vg_point_mass}) predstavuje gravitačné zrýchlenie~$\vec 
 g_\gidx(P)$ z~rovnice~(\ref{eq:gg_point_mass}), čím bola dokázaná 
 rovnosť~(\ref{eq:gg_grad_vg}).  Platnosť vzťahu~(\ref{eq:vg_at_infty}) pre 
 $V_\gidx$ z~rovnice~(\ref{eq:vg_point_mass}) je zrejmá,
 %
 \begin{equation}
-\lim_{l \to \infty} \frac{G \, m}{l} = 0{.}
+\lim_{\ell \to \infty} \frac{G \, m_Q}{\ell} = 0{.}
 \end{equation}
 
 V~sústave~$N$ hmotných bodov je celkový gravitačný potenciál daný súčtom
@@ -849,7 +860,7 @@ $\diff m = \rho \, \diff \tau$ a~gravitačný potenciál získame integráciou,
 %
 \begin{equation}
 \label{eq:vg_body}
-V_\gidx(P) = G \iiint\limits_{\tau} \frac{\rho}{l} \diff\tau{.}
+V_\gidx(P) = G \iiint\limits_{\tau} \frac{\rho}{\ell} \diff\tau{.}
 \end{equation}
 %
 Dôkaz, že rovnica~(\ref{eq:vg_body}) vyhovuje prijatej definícii gravitačného
@@ -891,21 +902,21 @@ Funkcia~$U$, ktorej súčiny
 %
 \begin{equation}
 \label{eq:regular_function}
-l \, U{,} \quad l^2 \, \frac{\partial U}{\partial x}{,} \quad l^2 \, 
-\frac{\partial U}{\partial y}{,} \quad l^2 \, \frac{\partial U}{\partial z}
+\ell \, U{,} \quad \ell^2 \, \frac{\partial U}{\partial x}{,} \quad \ell^2 \, 
+\frac{\partial U}{\partial y}{,} \quad \ell^2 \, \frac{\partial U}{\partial z}
 \end{equation}
 %
-nadobúdajú konečné hodnoty pre~$l \rightarrow \infty$, kde~$l$ je vzdialenosť 
-od ľubovoľného pevného bodu, sa nazýva \emph{regulárna funkcia v~nekonečne} 
-\parencite{Kellogg1967,Pick1973}.  Gravitačný potenciál~(\ref{eq:vg_body}) 
-všeobecného telesa je regulárna funkcia v~nekonečne, pretože všetky štyri 
-súčiny~(\ref{eq:regular_function}) nadobúdajú konečné hodnoty pre~$l 
-\rightarrow \infty$.  V~tejto práci dokážeme toto tvrdenie iba pre limitu 
-prvého súčinu,
+nadobúdajú konečné hodnoty pre~$\ell \rightarrow \infty$, kde~$\ell$ je 
+vzdialenosť od ľubovoľného pevného bodu, sa nazýva \emph{regulárna funkcia 
+v~nekonečne} \parencite{Kellogg1967,Pick1973}.  Gravitačný 
+potenciál~(\ref{eq:vg_body}) všeobecného telesa je regulárna funkcia 
+v~nekonečne, pretože všetky štyri súčiny~(\ref{eq:regular_function}) nadobúdajú 
+konečné hodnoty pre~$\ell \rightarrow \infty$.  V~tejto práci dokážeme toto 
+tvrdenie iba pre limitu prvého súčinu,
 %
 \begin{equation}
 \label{eq:vg_regular}
-\lim_{l \rightarrow \infty} l \, V_\gidx = G \iiint\limits_{\tau} \rho \, 
+\lim_{\ell \rightarrow \infty} \ell \, V_\gidx = G \iiint\limits_{\tau} \rho \, 
 \diff\tau = GM{,}
 \end{equation}
 %
@@ -945,17 +956,17 @@ v~prípade, ak sa výpočtový bod~$P$ v~rovnici~(\ref{eq:vg_body}) nachádza vo
 vnútri telesa?  Za takýchto okolností musí nevyhnutne dôjsť k~situácii, 
 v~ktorej sú súradnice bodu~$P$ identické so súradnicami jedného diferenciálneho 
 hmotného elementu~$\diff m$.  Vzájomná vzdialenosť medzi bodom~$P$ 
-a~elementom~$\diff m$, ktorá vystupuje v~menovateli, bude preto~$l = 0$.  
+a~elementom~$\diff m$, ktorá vystupuje v~menovateli, bude preto~$\ell = 0$.  
 Konverguje alebo diverguje v~takejto situácii integrál~(\ref{eq:vg_body})?  
 Jednou z~mnohých ďalších výziev sú gravitačné polia generované objektmi 
 komplikovaných tvarov, napríklad Zemou, ktorej povrch obsahuje množstvo náhlych 
 ostrých zmien.  Je preto prirodzené, že teória potenciálu pritiahla záujem 
 brilantných matematikov akými boli, okrem iných, J.~L.~Lagrange, 
 A.--M.~Legendre (1752~-- 1833), P.~S.~Laplace, britský samouk G.~Green 
-(1793--1841) či C.~F.~Gauss (pre diskusiu o~Gaussovom prínose, pozri napríklad 
+(1793--1841) či C.~F.~Gauss (pre diskusiu o~Gaussovom prínose pozri napríklad 
 \cite{Freeden2018}).
 
-V~nasledujúcich piatich kapitolách (\ref{sec:laplace_equation_cart}~--
+V~nasledujúcich piatich kapitolách (\ref{sec:laplace_equation_cart}~až 
 \ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými
 vlastnosťami gravitačného potenciálu, ktoré vyplývajú z~teórie potenciálu.
 Vlastnosti budú popísané najprv pre gravitačný potenciál mimo telesa a~neskôr 
@@ -969,7 +980,7 @@ vo vnútri telesa.
 \label{sec:laplace_equation_cart}
 
 Pierre-Simon Laplace zistil, že gravitačný potenciál každého všeobecného telesa
-spĺňa \emph{v~priestore mimo hmôt} rovnicu
+spĺňa v~priestore \emph{mimo} hmôt rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
@@ -982,8 +993,8 @@ Operátor~$\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor}
 a rovnica~(\ref{eq:vg_laplace_cart}) sa nazýva \emph{Laplaceova rovnica} pre
 gravitačný potenciál.
 
-Laplaceov operátor definujeme pomocou operátora gradient nasledovne
-\parencite{SansoGeoidDetermination},
+Laplaceov operátor definujeme pomocou operátora gradient vzťahom
+\parencite{SansoGeoidDetermination}
 %
 \begin{equation}
 \label{eq:laplace_grad_grad_notation}
@@ -1071,40 +1082,40 @@ v~ktorom je operátor gradient vyjadrený.  V~mnohých situáciách je ale táto
 forma názorná a~zjednodušuje zápis, preto na miestach, kde by nemalo dôjsť 
 k~nesprávnej interpretácii ju budeme používať.
 
-Skúsme overiť, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}) 
-vyhovuje Laplaceovej rovnici~(\ref{eq:vg_laplace_cart}).  Budeme uvažovať 
-vzdialenosť~$l > 0$ nakoľko gravitačný potenciál hmotného bodu nie je 
-definovaný pre~$l = 0$.  S~uvážením~(\ref{eq:laplace_homogenity}) postačuje 
+Overme, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}) vyhovuje 
+Laplaceovej rovnici~(\ref{eq:vg_laplace_cart}).  Budeme uvažovať 
+vzdialenosť~$\ell > 0$, pretože gravitačný potenciál hmotného bodu nie je 
+definovaný pre~$\ell = 0$.  S~uvážením~(\ref{eq:laplace_homogenity}) postačuje 
 dokázať rovnosť
 %
 \begin{equation}
 \label{eq:nabla_l}
-\nabla^2 \left( \frac{1}{l} \right) = 0{,}
+\nabla^2 \left( \frac{1}{\ell} \right) = 0{,}
 \end{equation}
 %
-pretože~$G \, m$ je konštanta.  Vypočítajme preto druhé parciálne
-derivácie funkcie~$1 \slash l$,
+keďže~$G \, m_Q$ je konštanta.  Vypočítajme preto druhé parciálne
+derivácie funkcie~$1 \slash \ell$ v~smere súradnicových osí,
 %
 \begin{equation}
 \label{eq:l_2nd_derivatives}
 \begin{split}
-\frac{\partial^2}{\partial x^2} \left( \frac{1}{l} \right) &=
--\frac{\partial}{\partial x} \left( \frac{x - x_Q}{l^3} \right) = \left(3
-\frac{(x - x_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
+\frac{\partial^2}{\partial x^2} \left( \frac{1}{\ell} \right) &=
+-\frac{\partial}{\partial x} \left( \frac{x - x_Q}{\ell^3} \right) = \left(3
+\frac{(x - x_Q)^2}{\ell^5} - \frac{1}{\ell^3} \right){,}\\
 %
-\frac{\partial^2}{\partial y^2} \left( \frac{1}{l} \right) &=
--\frac{\partial}{\partial y} \left( \frac{y - y_Q}{l^3} \right) = \left(3
-\frac{(y - y_Q)^2}{l^5} - \frac{1}{l^3} \right){,}\\
+\frac{\partial^2}{\partial y^2} \left( \frac{1}{\ell} \right) &=
+-\frac{\partial}{\partial y} \left( \frac{y - y_Q}{\ell^3} \right) = \left(3
+\frac{(y - y_Q)^2}{\ell^5} - \frac{1}{\ell^3} \right){,}\\
 %
-\frac{\partial^2}{\partial z^2} \left( \frac{1}{l} \right) &=
--\frac{\partial}{\partial z} \left( \frac{z - z_Q}{l^3} \right) = \left(3
-\frac{(z - z_Q)^2}{l^5} - \frac{1}{l^3} \right){.}
+\frac{\partial^2}{\partial z^2} \left( \frac{1}{\ell} \right) &=
+-\frac{\partial}{\partial z} \left( \frac{z - z_Q}{\ell^3} \right) = \left(3
+\frac{(z - z_Q)^2}{\ell^5} - \frac{1}{\ell^3} \right){.}
 \end{split}
 \end{equation}
 %
 Súčet členov na pravej strane predošlých troch rovníc je nulový, čím bolo
 dokázané, že gravitačný potenciál hmotného bodu vyhovuje Laplaceovej
-diferenciálnej rovnici~(\ref{eq:vg_laplace_cart}) pre~$l > 0$.
+diferenciálnej rovnici~(\ref{eq:vg_laplace_cart}) pre~$\ell > 0$.
 
 Využitím vzťahov~(\ref{eq:l_2nd_derivatives}) a~vlastností Laplaceovho
 operátora~(\ref{eq:laplace_additivity}) a~(\ref{eq:laplace_homogenity}) je
@@ -1116,14 +1127,14 @@ generovaný sústavou~$N$ hmotných bodov,
 V_{\gidx,i} = 0{,}
 \end{equation}
 %
-ako aj gravitačný potenciál všeobecného telesa v~bode \emph{mimo telesa},
+ako aj gravitačný potenciál všeobecného telesa v~bode \emph{mimo} telesa,
 %
 \begin{equation}
 \nabla^2 V_\gidx = G\, \iiint\limits_\tau \rho \, \left[ 
 \frac{\partial^2}{\partial
-x^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial
-y^2}\left(\frac{1}{l}\right) + \frac{\partial^2}{\partial
-z^2}\left(\frac{1}{l}\right) \right] \diff\tau = 0{.}
+x^2}\left(\frac{1}{\ell}\right) + \frac{\partial^2}{\partial
+y^2}\left(\frac{1}{\ell}\right) + \frac{\partial^2}{\partial
+z^2}\left(\frac{1}{\ell}\right) \right] \diff\tau = 0{.}
 \end{equation}
 
 
@@ -1240,20 +1251,21 @@ Tento princíp bol objavený a~je ním práve Laplaceova rovnica.
 V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
 zákon~(\ref{eq:newton_law}) vysvetľuje \emph{princíp} (mechanizmus) pohybu 
 planéty okolo Slnka.  Vďaka tomuto princípu postačuje poznať niekoľko vstupných 
-údajov v~čase~$t_0$ (polohy planéty a~Slnka, ich rýchlosti a~pôsobiace 
-gravitačné sily) a~poloha planéty môže byť vypočítaná v~ľubovoľnom čase 
-v~budúcnosti či v~minulosti.  Úloha je síce výrazne komplikovanejšia, ak 
-uvážime prítomnosť ďalších nebeských telies, pretože aj tie ovplyvňujú svojou 
-gravitačnou silou našu planétu a~naša planéta ovplyvňuje svojou gravitačnou 
-silou ostatné planéty, no úloha je riešiteľná rovnakým spôsobom.  V~prípade 
-Laplaceovej rovnice je situácia veľmi podobná.  Ak poznáme napríklad gravitačný 
-potenciál či gravitačné zrýchlenie na celom povrchu Zeme, znalosť 
-\emph{princípu} zmeny gravitačného potenciálu\footnote{Presnejšie by azda bolo 
-povedať \textit{zmenu zmeny} gravitačného potenciálu, keďže Laplaceova 
-rovnica~(\ref{eq:vg_laplace_cart}) obsahuje druhé derivácie.} mimo Zeme 
-v~podobe Laplaceovej rovnice umožňuje zistiť, akú hodnotu nadobúda gravitačný 
-potenciál v~ľubovoľnom bode tejto oblasti.  Laplaceova rovnica má preto kľúčový 
-význam v~procese určovania vonkajšieho gravitačného poľa Zeme.
+údajov v~čase~$t_0$ (polohy planéty a~Slnka, vektor rýchlosti planéty a~vektor 
+gravitačnej sily, ktorá pôsobí medzi Slnkom a~planétou) a~poloha planéty môže 
+byť vypočítaná v~ľubovoľnom čase v~budúcnosti či v~minulosti.  Úloha je síce 
+výrazne komplikovanejšia, ak uvážime prítomnosť ďalších nebeských telies, 
+pretože aj tie ovplyvňujú svojou gravitačnou silou našu planétu a~naša planéta 
+ovplyvňuje svojou gravitačnou silou ostatné planéty, no úloha je riešiteľná 
+rovnakým spôsobom.  V~prípade Laplaceovej rovnice je situácia veľmi podobná.  
+Ak poznáme napríklad gravitačný potenciál či gravitačné zrýchlenie na celom 
+povrchu Zeme, znalosť \emph{princípu} zmeny gravitačného 
+potenciálu\footnote{Presnejšie by azda bolo povedať \textit{zmenu zmeny} 
+gravitačného potenciálu, keďže Laplaceova rovnica~(\ref{eq:vg_laplace_cart}) 
+obsahuje druhé derivácie.} mimo Zeme v~podobe Laplaceovej rovnice umožňuje 
+zistiť, akú hodnotu nadobúda gravitačný potenciál v~ľubovoľnom bode tejto 
+oblasti.  Laplaceova rovnica má preto kľúčový význam v~procese určovania 
+vonkajšieho gravitačného poľa Zeme.
 
 
 
@@ -1263,29 +1275,30 @@ význam v~procese určovania vonkajšieho gravitačného poľa Zeme.
 
 Laplaceovej rovnici vyhovuje nielen gravitačný potenciál mimo telesa, ale
 nekonečné množstvo funkcií.  Zaveďme preto pojem \emph{harmonická funkcia}.
-Harmonická funkcia je taká funkcia, ktorá má spojité prvé a~druhé parciálne
-derivácie na otvorenej množine~$\Omega$ a~vyhovuje Laplaceovej rovnici
-%
-\begin{equation}
-\nabla^2 f = 0
-\end{equation}
-%
-v~každom bode oblasti~$\Omega$.
+Funkcia je harmonická v~oblasti~$\Omega$ trojrozmerného priestoru, ak vyhovuje 
+Laplaceovej rovnici v~každom bode oblasti~$\Omega$ 
+\parencite{MoritzPhysicalGeodesy}.  Ak oblasť~$\Omega$ je vonkajším priestorom 
+uzavretej plochy, potom musí navyše spĺňať podmienku regularity 
+\parencite[pozri vzťah~\ref{eq:regular_function};][]{MoritzPhysicalGeodesy}.
 
-Každá harmonická funkcia je \emph{analytická} v~oblasti, v~ktorej vyhovuje
-Laplaceovej rovnici \parencite{MoritzPhysicalGeodesy}.  To znamená, že každá
+Harmonické funkcie majú niekoľko zaujímavých a~dôležitých vlastností 
+\parencite[pozri napríklad][]{Pick1973,Kellogg1967,Janak2006}.  Na tomto mieste 
+spomeňme aspoň jednu z~nich.  Každá harmonická funkcia je \emph{analytická} 
+v~oblasti, v~ktorej vyhovuje
+Laplaceovej rovnici.  To znamená, že každá
 harmonická funkcia je spojitá, má spojité všetky derivácie a~v každom bode
-oblasti~$\Omega$ ju možno rozvinúť do mocninového radu (napríklad Taylorovho),
-ktorý konverguje.  Táto vlastnosť je dôležitá, preto sa pri nej na chvíľku
+oblasti~$\Omega$ ju možno rozvinúť do Taylorovho radu 
+\parencite{MoritzPhysicalGeodesy}.  Táto vlastnosť je dôležitá, preto sa pri 
+nej na chvíľku
 pristavme.
 
-Uvažujme všeobecné teleso generujúce gravitačné pole.  Nech sú dané dva body,
+Uvažujme všeobecné teleso.  Nech sú dané dva body,
 $P_1(r, \varphi, \lambda)$ a~$P_2(r + \Delta r, \varphi, \lambda)$, $\Delta
 r > 0$, nachádzajúce sa mimo tohto telesa a~na tej istej spojnici so začiatkom
 súradnicového systému, ktorý sa nachádza v~ťažisku telesa
-(Obrázok~\ref{fig:analytical_continuation}).  Keďže gravitačný potenciál mimo
-telesa je harmonická, a~teda analytická, funkcia, môžeme ho v~bode~$P_1$
-rozvinúť do Taylorovho radu, ktorý konverguje,
+(Obrázok~\ref{fig:analytical_continuation}).  Keďže gravitačný potenciál je 
+harmonická, a~teda analytická, funkcia v~oblasti mimo hmôt, môžeme ho 
+v~bode~$P_1$ rozvinúť do Taylorovho radu,
 %
 \begin{equation}
 \label{eq:vg_analytical_continuation}
@@ -1884,8 +1897,8 @@ Samozrejme, gravitačný potenciál nepatrí do vyššie opísaného trojrozmern
 priestoru vektorov~$\vec r$.  V~abstraktnejšom chápaní slova priestor je však 
 aj gravitačný potenciál súčasťou nejakého priestoru, napríklad priestoru 
 funkcií, ktoré sú harmonické mimo Zeme.  Vieme už, že medzi takéto funkcie 
-patrí okrem gravitačného potenciálu napríklad aj funkcia~$1 \slash l$, 
-pričom~$l$ je vzdialenosť bodu nachádzajúceho sa mimo Zeme od ťažiska Zeme 
+patrí okrem gravitačného potenciálu napríklad aj funkcia~$1 \slash \ell$, 
+pričom~$\ell$ je vzdialenosť bodu nachádzajúceho sa mimo Zeme od ťažiska Zeme 
 (pozri rovnice~\ref{eq:nabla_l} a~\ref{eq:l_2nd_derivatives}).  Takýchto 
 funkcií je nespočetné množstvo a~tvoria v~matematickom zmysle istý priestor.  
 Podobne ako v~trojrozmernom priestore vektorov~$\vec r$, i~v tomto priestore 
@@ -1957,22 +1970,22 @@ telesa, teda v~tej časti priestoru, v~ktorom je gravitačný potenciál harmoni
 Obrázok~\ref{fig:cart_sph}) bodov~$P$ a~$Q$ označme symbolmi~$(r, \varphi,
 \lambda)$ a~$(r_Q, \varphi_Q, \lambda_Q)$.
 
-Vyjadrime vzdialenosť~$l$ medzi bodmi~$P$ a~$Q$
+Vyjadrime vzdialenosť~$\ell$ medzi bodmi~$P$ a~$Q$
 z~Obrázku~\ref{fig:gravitating_body} aplikovaním kosínusovej vety
 v~trojuholníku~$OPQ$ (Obrázok~\ref{fig:distance_l}),
 %
 \begin{equation}
 \label{eq:l_sph}
-l = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
+\ell = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
 \end{equation}
 %
 kde~$\psi$ je uhol medzi spojnicami~$OQ$ a~$OP$ v~rovine trojuholníka~$OPQ$.
-Prevrátenú hodnotu vzdialenosti~$1 \slash l$ vystupujúcu vo
+Prevrátenú hodnotu vzdialenosti~$1 \slash \ell$ vystupujúcu vo
 vzťahu~(\ref{eq:vg_body}) tak môžeme vyjadriť nasledovne,
 %
 \begin{equation}
 \label{eq:1l}
-\frac{1}{l} = \frac{1}{\sqrt{ r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi
+\frac{1}{\ell} = \frac{1}{\sqrt{ r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi
 }} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r}
 \right)^2 - 2 \dfrac{r_Q}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
 \end{equation}
@@ -2039,11 +2052,11 @@ stupňa~$n$}.  Funkcia~$H(\alpha, t)$ sa nazýva \emph{generická funkcia pre
 Legendreove polynómy}.  Dosadením~(\ref{eq:pn}),
 (\ref{eq:maclaurin_series_of_generic_function}) 
 a~(\ref{eq:generic_function_for_lps}) do~(\ref{eq:1l}) získame rozvoj funkcie 
-$1 \slash l$ do radu Legendreových polynómov,
+$1 \slash \ell$ do radu Legendreových polynómov,
 %
 \begin{equation}
 \label{eq:1l_legpol}
-\frac{1}{l} = \frac{1}{r} \, \sum_{n = 0}^\infty \left( \frac{r_Q}{r} 
+\frac{1}{\ell} = \frac{1}{r} \, \sum_{n = 0}^\infty \left( \frac{r_Q}{r} 
 \right)^{n} \, P_n(\cos\psi) = \frac{1}{r_Q} \, \sum_{n = 0}^\infty \left( 
 \frac{r_Q}{r} \right)^{n + 1} \, P_n(\cos\psi){.}
 \end{equation}
@@ -2118,14 +2131,14 @@ rád Legendreovej funkcie nulový, zvykne sa v~zápise vynechať, teda $P_n(t)
 stupňa~$n$ a~rádu~$m$ súvisí s~$m$-tou deriváciou Legendreoveho polynómu stupňa 
 $n$.  Vo vzťahu~(\ref{eq:pn_decomposition_formula}) pribudol ešte 
 člen~$\delta_{m0}$, ktorý má názov Kroneckerovo delta.  Všeobecná definícia 
-pre~$m$ a~$l$ má tvar
+pre~$m$ a~$\ell$ má tvar
 %
 \begin{equation}
 \delta_{ml} =
 %
 \begin{cases}
-1{,} \quad \mathrm{ak} \quad m = l{,}\\
-0{,} \quad \mathrm{ak} \quad m \neq l{.}
+1{,} \quad \mathrm{ak} \quad m = \ell{,}\\
+0{,} \quad \mathrm{ak} \quad m \neq \ell{.}
 \end{cases}
 \end{equation}
 
@@ -2301,22 +2314,22 @@ v~\textcite{SansoGeoidDetermination}.
 
 Podobne ako skalárny súčin dvoch rôznych jednotkových vektorov~$\vec e_i$ 
 a~$ \vec e_j$ je nulový (rovnica~\ref{eq:ei_orthogonality}), nulový je 
-i~skalárny súčin dvoch rôznych Legendreovych polynómov~$P_n(t)$ a~$P_l(t)$,
+i~skalárny súčin dvoch rôznych Legendreovych polynómov~$P_n(t)$ a~$P_\ell(t)$,
 %
 \begin{equation}
 \label{eq:lp_orthogonality}
-\int\limits_{-1}^1 P_n(t) \, P_l(t) \, \diff t = 0{,} \quad n \neq l{.}
+\int\limits_{-1}^1 P_n(t) \, P_\ell(t) \, \diff t = 0{,} \quad n \neq \ell{.}
 \end{equation}
 %
 Hovoríme preto, podobne ako v~súvislosti s~jednotkovými vektormi, že
 \emph{Legendreove polynómy sú ortogonálne} na intervale $t \in [-1, 1].$
 Rovnicu~(\ref{eq:lp_orthogonality}) možno zovšeobecniť doplnením prípadu~$n
-= l$ \parencite[napríklad][]{Hobson},
+= \ell$ \parencite[napríklad][]{Hobson},
 %
 \begin{equation}
 \label{eq:lp_orthogonality_2}
-\int\limits_{-1}^1 P_n(t) \, P_l(t) \, \diff t = \frac{2}{2n + 1} \, 
-\delta_{nl}{.}
+\int\limits_{-1}^1 P_n(t) \, P_\ell(t) \, \diff t = \frac{2}{2n + 1} \, 
+\delta_{n\ell}{.}
 \end{equation}
 
 Rovnice~(\ref{eq:f_synthesis}) a~(\ref{eq:f_analysis}) sú vo fyzikálnej
@@ -2324,7 +2337,8 @@ geodézii veľmi často využívané a~v~istej miere sme sa s~nimi stretli už
 v~predchádzajúcej kapitole.  Nech~$r$ a~$r_Q$ z~rovnice~(\ref{eq:1l_legpol}) sú 
 konštanty, pre ktoré platí~$r > r_Q$ (pozri podmienku
 $\alpha < 1$ v~rovnici~\ref{eq:generic_function_for_lps}).  Keď označíme $f(t)
-= 1 \slash l(t)$, $t = \cos\psi$, pomocou rovníc~(\ref{eq:lp_orthogonality_2})
+= 1 \slash \ell(t)$, $t = \cos\psi$, pomocou 
+rovníc~(\ref{eq:lp_orthogonality_2})
 a~(\ref{eq:1l_legpol}) sa môžeme presvedčiť, že koeficienty~$f_n$
 z~rovnice~(\ref{eq:f_analysis}) sú dané vzťahom
 %
@@ -2341,7 +2355,7 @@ vyjadreniu vektora~$\vec r$ pomocou jednotkových vektorov~$\vec e_i$
 z~Kapitoly~\ref{sec:sh_motivation}.  Tento rozvoj je v~mnohých situáciách 
 výhodný, pretože môže napríklad zjednodušiť odvodenie.  Napokon, najlepšie to 
 demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme 
-funkciu~$1 \slash l$ rozvinuli do radu Legendreových polynómov a~následne 
+funkciu~$1 \slash \ell$ rozvinuli do radu Legendreových polynómov a~následne 
 Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
 
 Z~vlastností Legendreových polynómov spomeňme ešte aspoň nasledovné
@@ -2429,12 +2443,13 @@ P_{2,2}(t) & = 3(1 - t^2){.}\\
 \label{fig:lf}
 \end{figure}
 
-Legendreove funkcie rôznych stupňov~$n$, $l$ a~rovnakého rádu~$m$ sú
+Legendreove funkcie rôznych stupňov~$n$, $\ell$ a~rovnakého rádu~$m$ sú
 ortogonálne \parencite{Freeden2009},
 %
 \begin{equation}
 \label{eq:pnm_orthogonality}
-\int\limits_{-1}^{1} P_{nm}(t) \, P_{lm}(t) \, \diff t = 0{,} \quad n \neq l{.}
+\int\limits_{-1}^{1} P_{nm}(t) \, P_{\ell m}(t) \, \diff t = 0{,} \quad n \neq 
+\ell{.}
 \end{equation}
 %
 Pre dve Legendreove funkcie rovnakého stupňa a~rádu platí
@@ -2785,15 +2800,15 @@ P_n(\cos\psi) = \frac{1}{2n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
 \lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q)
 \end{equation}
 %
-a~prevrátenú hodnotu vzdialenosti $1 \slash l$ z~rovnice~(\ref{eq:1l}) v~tvare
+a~prevrátenú hodnotu vzdialenosti $1 \slash \ell$ z~rovnice~(\ref{eq:1l}) 
+v~tvare
 %
 \begin{equation}
 \label{eq:1l_sh}
-\frac{1}{l} = \frac{1}{r_Q} \, \sum_{n = 0}^{\infty} \frac{1}{2n + 1} \, \left( 
-\frac{r_Q}{r} \right)^{n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
+\frac{1}{\ell} = \frac{1}{r_Q} \, \sum_{n = 0}^{\infty} \frac{1}{2n + 1} \, 
+\left( \frac{r_Q}{r} \right)^{n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
 \lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q){.}
 \end{equation}
-%
 
 Z~numerického hľadiska je výpočet nenormovaných Legendreových funkcií 
 problematický, a~to už i~pre stupne a~rády presahujúce niekoľko stoviek.  
@@ -6623,24 +6638,23 @@ poruchový potenciál Zeme.}
 
 Našim cieľom je nájsť vzťahy, ktoré by umožnili získať poruchový potenciál na 
 hranici~$\partial \Omega$ a v~celej oblasti~$\mathbb{R}^3 - \overline{\Omega}$ 
-z~poruchy tiažového zrýchlenia a~z~anomálie tiažového zrýchlenia, o~ktorých 
-predpokladáme, že sú známe (odmerané) na hranici~$\partial \Omega$.  S trochou 
-námahy nie je náročné uvedomiť si, že túto úlohu by nebolo možné vyriešiť bez 
-toho, aby sme vedeli dostatočne veľa o~tom, ako sa samotný poruchový potenciál 
-\emph{mení} vo vonkajšom priestore mimo hranice~$\partial\Omega$, na ktorej sú 
-dostupné anomálie, resp. poruchy tiažového zrýchlenia.  Informáciu, ktorá 
-popisuje túto zmenu poruchového potenciálu, zachytáva Laplaceova 
-rovnica~(\ref{eq:laplace_xyz_t}).\footnote{Pre diskusiu o~význame Laplaceovej 
-rovnice pre fyzikálnu geodéziu pozri 
+z~porúch alebo anomálií tiažového zrýchlenia, ktoré sú známe (odmerané) na 
+hranici~$\partial \Omega$.  S trochou námahy nie je náročné uvedomiť si, že 
+túto úlohu by nebolo možné vyriešiť bez toho, aby sme vedeli dostatočne veľa 
+o~tom, ako sa samotný poruchový potenciál \emph{mení} vo vonkajšom priestore 
+hranice~$\partial\Omega$, na ktorej sú dostupné anomálie, resp. poruchy 
+tiažového zrýchlenia.  Informáciu, ktorá popisuje túto zmenu poruchového 
+potenciálu, zachytáva Laplaceova rovnica~(\ref{eq:laplace_xyz_t}).\footnote{Pre 
+diskusiu o~význame Laplaceovej rovnice pre fyzikálnu geodéziu pozri 
 Kapitolu~\ref{sec:meaning_of_laplace_equation_in_practice}.}  \emph{Okrajovou 
 úlohou pre poruchový potenciál} teda rozumieme hľadanie takého riešenia 
 diferenciálnej rovnice~(\ref{eq:laplace_xyz_t}), ktoré v~oblasti~$\mathbb{R}^3 
-- \overline\Omega$ vyhovuje tejto rovnici a~na hranici~$\partial \Omega$ 
-reprodukuje zadanú podmienku.  Podmienku zadanú na hranici~$\partial \Omega$ 
-nazývame \emph{okrajová podmienka}.  Okrajová podmienka musí byť v~nejakom 
-vzťahu voči hľadanému poruchovému potenciálu.  Ako okrajová podmienka tak môže 
-byť na hranici~$\partial \Omega$ zadaná napríklad niektorá z~nasledovných 
-veličín:
+- \overline\Omega$ vyhovuje rovnici~(\ref{eq:laplace_xyz_t}) a~na 
+hranici~$\partial \Omega$ reprodukuje zadanú podmienku.  Podmienku zadanú na 
+hranici~$\partial \Omega$ nazývame \emph{okrajová podmienka}.  Okrajová 
+podmienka musí byť v~nejakom vzťahu voči hľadanému poruchovému potenciálu.  Ako 
+okrajová podmienka tak môže byť na hranici~$\partial \Omega$ zadaná napríklad 
+niektorá z~nasledovných veličín:
 %
 \begin{itemize}
 \item lineárna kombinácia poruchového potenciálu~$T$ a~jeho prvej derivácie 
@@ -6717,13 +6731,13 @@ potenciáli; hovorí, že s~narastajúcim sprievodičom~$r$ bodu~$P(r, \varphi,
 (pozri tiež vzťah~\ref{eq:t_infty}).  
 Bez~rovníc~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) by 
 mala diferenciálna rovnica~(\ref{eq:bvp_Dg_laplace}) nekonečne veľa riešení.  
-Toto tvrdenie možno jednoducho dokázať napríklad na funkcii~$c \slash l(P)$, 
-kde~$c$ je reálna konštanta a~$l(P)$ je vzdialenosť bodu~$P$ od začiatku 
+Toto tvrdenie možno jednoducho dokázať napríklad na funkcii~$c \slash \ell(P)$, 
+kde~$c$ je reálna konštanta a~$\ell(P)$ je vzdialenosť bodu~$P$ od začiatku 
 súradnicového systému, ktorý sa nachádza, povedzme, v~ťažisku 
 Zeme~$\overline\Omega$.  Z~rovníc~(\ref{eq:nabla_l}) 
-a~(\ref{eq:l_2nd_derivatives}) totižto vieme, že funkcia~$c \slash l(P)$ 
+a~(\ref{eq:l_2nd_derivatives}) totižto vieme, že funkcia~$c \slash \ell(P)$ 
 vyhovuje rovnici~(\ref{eq:bvp_Dg_laplace}) pre \emph{ľubovoľnú} reálnu 
-konštantu~$c$ za predpokladu~$l(P) > 0$.  
+konštantu~$c$ za predpokladu~$\ell(P) > 0$.  
 Rovnice~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) tak 
 zabezpečujú, že získame práve jedno riešenie rovnice~(\ref{eq:bvp_Dg_laplace}).  
 Odvodenie riešenia okrajovej úlohy v~tejto práce vynecháme a~zameriame sa skôr 
@@ -6761,13 +6775,13 @@ iba od vzájomnej polohy bodov~$P$ a~$P'$ \parencite{MoritzPhysicalGeodesy},
 S(P, P') &= S(\underbrace{r, \varphi, \lambda}_{P}, \underbrace{R, \varphi', 
 \lambda'}_{P'}) = S(r, \psi)\\
 %
-&= \frac{2R}{l} + \frac{R}{r} - 3\frac{R \, l}{r^2} - \frac{R^2}{r^2} \, 
-\cos\psi\left( 5 + 3 \, \ln \frac{r - R \, \cos\psi + l}{2 \, r} \right){,}
+&= \frac{2R}{\ell} + \frac{R}{r} - 3\frac{R \, \ell}{r^2} - \frac{R^2}{r^2} \, 
+\cos\psi\left( 5 + 3 \, \ln \frac{r - R \, \cos\psi + \ell}{2 \, r} \right){,}
 \end{split}
 \end{equation}
 %
-kde~$l$ a~$\psi$ sú Euklidovská a~sférická vzdialenosť medzi bodmi~$P$ a~$P'$ 
-(rovnice~\ref{eq:l_sph} a~\ref{eq:cospsi}).
+kde~$\ell$ a~$\psi$ sú Euklidovská a~sférická vzdialenosť medzi bodmi~$P$ 
+a~$P'$ (rovnice~\ref{eq:l_sph} a~\ref{eq:cospsi}).
 
 \begin{figure}[bt]
 \centering
@@ -6944,8 +6958,8 @@ začína od stupňa~$2$ a~pravé strany týchto rovníc sú si rovné).  S~uvá�
 nultého harmonického stupňa má Stokesovo integračné jadro nasledovný tvar,
 %
 \begin{align}
-S(r, \psi) &= \frac{2R}{l} - 3\frac{R \, l}{r^2} - \frac{R^2}{r^2} \, 
-\cos\psi\left( 5 + 3 \, \ln \frac{r - R \, \cos\psi + l}{2 \, r} \right){,}
+S(r, \psi) &= \frac{2R}{\ell} - 3\frac{R \, \ell}{r^2} - \frac{R^2}{r^2} \, 
+\cos\psi\left( 5 + 3 \, \ln \frac{r - R \, \cos\psi + \ell}{2 \, r} \right){,}
 \label{eq:stokes_kernel_general_n0}
 \\
 %
@@ -7002,14 +7016,14 @@ Konvolučným integrálom je napríklad aj samotný Newtonov
 integrál~(\ref{eq:vg_body}) a~ďalšie integrály, ktoré sú z~neho odvodené 
 (napríklad integrál~\ref{eq:gg_body}).  Vo vzťahu~(\ref{eq:vg_body}) hrá 
 hustota~$\rho$ podobnú úlohu ako anomálie tiažového zrýchlenia~$\Delta g$ vo 
-vzťahu~(\ref{eq:stokes}), a~prevrátená hodnota vzdialenosti~$1 \slash l$ 
+vzťahu~(\ref{eq:stokes}), a~prevrátená hodnota vzdialenosti~$1 \slash \ell$ 
 predstavuje integračné jadro.  Všimnime si, že vo vzťahu~(\ref{eq:gg_body}) 
 vystupuje v~úlohe meraných dát tá istá hustota ako 
 v~rovnici~(\ref{eq:vg_body}); keďže ale vzťah medzi gravitačným zrýchlením 
 z~rovnice~(\ref{eq:gg_body}) a~hustotou je iný ako vzťah medzi gravitačným 
 potenciálom (\ref{eq:vg_body}) a~hustotou, konvolučné jadro, $\vec r \slash 
-l^3$, je tentokrát iné ako v~rovnici~(\ref{eq:vg_body}).  Rozličné integračné 
-jadrá teda transformujú tú istú funkciu rozdielne.
+\ell^3$, je tentokrát iné ako v~rovnici~(\ref{eq:vg_body}).  Rozličné 
+integračné jadrá teda transformujú tú istú funkciu rozdielne.
 
 Konvolučné integrály sa vyskytujú v~mnohých oblasti matematiky, fyziky 
 a~ďalších vedných disciplínach.  Jedno z~množstva využití konvolúcie je na 
@@ -7095,8 +7109,8 @@ nazýva \emph{Hotineovo integračné jadro} a~jej všeobecný tvar je daný vzť
 %
 \begin{equation}
 \label{eq:hotine_kernel_general}
-H(P, P') = H(r, \psi) = \frac{2R}{l} - \ln\left(\frac{l + R - r \, \cos\psi}{r 
-\, (1 - \cos\psi)}\right){,}
+H(P, P') = H(r, \psi) = \frac{2R}{\ell} - \ln\left(\frac{\ell + R - r \, 
+\cos\psi}{r \, (1 - \cos\psi)}\right){,}
 \end{equation}
 %
 ktorý sa pre~$r = R$ zjednoduší do tvaru (Obrázok~\ref{fig:hotine_kernel})
@@ -7187,7 +7201,7 @@ a~nazýva sa \emph{Poissonov integrál}.  Symbol~$\Pi$ označuje Poissonovo
 integračné jadro,
 %
 \begin{align}
-\Pi(r, \psi) &= \frac{r^2 - R^2}{l^3}{,}\label{eq:poisson_kernel}\\
+\Pi(r, \psi) &= \frac{r^2 - R^2}{\ell^3}{,}\label{eq:poisson_kernel}\\
 \Pi(r, \psi) &= \sum_{n = 0}^{\infty} (2n + 1) \, \left( \frac{R}{r} \right)^{n 
 + 1} \, P_n(\cos\psi)\label{eq:poisson_kernel_spectral}{.}
 \end{align}
@@ -7196,7 +7210,7 @@ Podobne ako v~predošlých Kapitolách~\ref{sec:stokes_integral}
 a~\ref{sec:hotine_integral}, Poissonovo jadro je singulárne, homogénne 
 a izotropne a~Poissonov integrál je konvolučný.  Vyobrazenie Poissonovho jadra 
 vynecháme, pretože pre fixnú hodnotu sprievodiča~$r$ ide o~známu funkciu~$c 
-\slash l^3$, kde $c = r^2 - R^2$.
+\slash \ell^3$, kde $c = r^2 - R^2$.
 
 Poissonov integrál umožňuje získať akúkoľvek harmonickú funkciu v~celom 
 priestore~$\mathbb{R}^3 - \overline\Omega$ z~hodnôt tejto funkcie na 
