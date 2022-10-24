@@ -664,6 +664,7 @@ operátor gradient a~až následne pristúpime k~samotnej definícii gravitačn�
 potenciálu.
 
 \subsubsection{Operátor gradient v~karteziánskom súradnicovom systéme}
+\label{sec:gradient}
 
 \emph{Operátor gradient} je v~trojrozmernom karteziánskom súradnicovom 
 systéme~$x$, $y$, $z$ definovaný vzťahom
@@ -784,10 +785,10 @@ rovnici~(\ref{eq:gg_grad_vg}) \parencite{SansoGeoidDetermination}.
 Poznamenajme, že bod s~nulovým gravitačným potenciálom je možné vybrať 
 ľubovoľne, čo však neznamená, že jeho voľba je nedôležitá.  Naopak, miesto 
 nulového gravitačného potenciálu ovplyvňuje hodnoty gravitačného potenciálu.  
-Hovoríme preto, že \emph{gravitačný potenciál je relatívna veličina}.  Často je 
-preto dôležitejšie poznať relatívne vzťahy medzi gravitačným potenciálom 
-v~priestore, napríklad rozdiel potenciálu medzi dvoma bodmi, než je potrebné 
-poznať absolútnu hodnotu gravitačného potenciálu v~niektorom bode.
+Hovoríme, že \emph{gravitačný potenciál je relatívna veličina}.  Často je preto 
+dôležitejšie poznať relatívne vzťahy medzi gravitačným potenciálom v~priestore, 
+napríklad rozdiel potenciálu medzi dvoma bodmi, než je potrebné poznať 
+absolútnu hodnotu gravitačného potenciálu v~niektorom bode.
 
 Gravitačný potenciál hmotného bodu s~hmotnosťou~$m_Q$ je daný vzťahom
 %
@@ -1231,6 +1232,29 @@ Laplaceova rovnica pre gravitačný potenciál má vo sférických súradniciach
 V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \,
 \cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
+%
+Deriváciou dvoch členov v~zátvorkách môžeme Laplaceovu rovnicu zapísať aj 
+v~tvare
+%
+\begin{equation}
+\label{eq:vg_laplace_sph2}
+\nabla^2 V_\gidx = \frac{\partial^2 V_\gidx}{\partial r^2} + \frac{2}{r} \, 
+\frac{\partial V_\gidx}{\partial r} + \frac{1}{r^2} \, \frac{\partial^2 
+V_\gidx}{\partial \varphi^2} - \frac{\tan\varphi}{r^2} \, \frac{\partial 
+V_\gidx}{\partial \varphi} + \frac{1}{r^2 \,
+\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
+\end{equation}
+%
+V~niektorých situáciách je výhodné rovnicu~(\ref{eq:vg_laplace_sph2}) ešte 
+vynásobiť členom~$r^2$,
+%
+\begin{equation}
+\label{eq:vg_laplace_sph3}
+\nabla^2 V_\gidx = r^2 \, \frac{\partial^2 V_\gidx}{\partial r^2} + 2r \, 
+\frac{\partial V_\gidx}{\partial r} + \frac{\partial^2 V_\gidx}{\partial 
+\varphi^2} - \tan\varphi \, \frac{\partial V_\gidx}{\partial \varphi} 
++ \frac{1}{\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
+\end{equation}
 
 
 \subsection{Praktický význam Laplaceovej rovnice}
@@ -1251,7 +1275,7 @@ Tento princíp bol objavený a~je ním práve Laplaceova rovnica.
 V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
 zákon~(\ref{eq:newton_law}) vysvetľuje \emph{princíp} (mechanizmus) pohybu 
 planéty okolo Slnka.  Vďaka tomuto princípu postačuje poznať niekoľko vstupných 
-údajov v~čase~$t_0$ (polohy planéty a~Slnka, vektor rýchlosti planéty a~vektor 
+údajov v~čase~$t_0$ (polohu planéty, vektor rýchlosti planéty a~vektor 
 gravitačnej sily, ktorá pôsobí medzi Slnkom a~planétou) a~poloha planéty môže 
 byť vypočítaná v~ľubovoľnom čase v~budúcnosti či v~minulosti.  Úloha je síce 
 výrazne komplikovanejšia, ak uvážime prítomnosť ďalších nebeských telies, 
@@ -1322,11 +1346,11 @@ gravitačného potenciálu, ktoré sú obsiahnuté v~deriváciách~$\partial^i V
 \slash \partial r^i$ v~bode~$P_1$, dokážeme určiť hodnotu gravitačného 
 potenciálu v~ľubovoľnom bode v~radiálnom smere pre~$\Delta r > 0$.  Tento 
 proces sa nazýva \emph{analytické pokračovanie} gravitačného potenciálu nahor.  
-Čím je väčšia vzdialenosť~$\Delta r$, tým pomalšie 
-rad~(\ref{eq:vg_analytical_continuation}) konverguje a~naopak.  Analyticky 
-pokračovať je možné aj v~iných smeroch ako v~radiálnom.  V~takom prípade je 
-potrebné derivovať gravitačný potenciál v~príslušnom smere.  Rovnako tak je 
-možné analyticky pokračovať aj iné veličiny gravitačného poľa, napríklad vektor 
+Čím je vzdialenosť~$\Delta r$ väčšia, tým pomalšie 
+rad~(\ref{eq:vg_analytical_continuation}) spravidla konverguje a~naopak.  
+Analyticky pokračovať je možné aj v~iných smeroch.  V~takom prípade je potrebné 
+derivovať gravitačný potenciál v~príslušnom smere.  Rovnako tak je možné 
+analyticky pokračovať aj iné veličiny gravitačného poľa, napríklad vektor 
 gravitačného zrýchlenia,
 %
 \begin{equation}
@@ -1374,8 +1398,8 @@ Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Druhé
 derivácie gravitačného potenciálu vystupujúce v~operátore $\nabla^2$ (pozri 
 rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph}) nie sú vo 
 všeobecnosti v~takom prípade definované \parencite{Kellogg1967}.  Dôvodom je 
-nespojitosť hustoty~$\rho$, ktorá sa na povrchu mení z~$\rho \neq 0$ na 0, 
-resp. naopak, v~závislosti od smeru prechodu.
+nespojitosť hustoty~$\rho$, ktorá sa na povrchu telesa mení z~$\rho \neq 0$ na 
+0, resp. naopak, v~závislosti od smeru prechodu.
 
 
 
@@ -1391,16 +1415,16 @@ súradnicový systém sa nazýva \emph{inerciálny súradnicový systém}.
 
 Uvažujme trojrozmerný karteziánsky súradnicový systém so začiatkom v~ťažisku 
 Zeme a~s~osou~$z$, ktorá je totožná s~rotačnou osou Zeme.  Nech tento 
-súradnicový systém rotuje spolu so Zemou uhlovou rýchlosťou~$\omega$.  Takýto 
-súradnicový systém nie je inerciálny, pretože vzhľadom na inerciálny 
-súradnicový systém v~ňom dochádza prinajmenšom k~dvom nelineárnym pohybom.  
-Prvý vzniká v~dôsledku rotácie Zeme okolo vlastnej osi, druhý je spôsobený 
-obehom Zeme okolo Slnka.  Ak chceme študovať sily pôsobiace na Zemi v~takomto 
-neinerciálnom súradnicovom systéme, potrebné je uvážiť nielen gravitačnú silu, 
-ale aj~ďalšie sily v~zmysle Newtonovho pohybového zákona.  Na objekt, ktorý sa 
-nachádza na rotujúcej Zemi a~je vzhľadom k~nej v~pokoji, pôsobí okrem 
-gravitačnej sily aj \emph{odstredivá sila}.  Ak je objekt v~pohybe, pôsobí naň 
-aj \emph{Coriolisova sila} 
+súradnicový systém rotuje spolu so Zemou uhlovou rýchlosťou rotácie 
+Zeme~$\omega$.  Takýto súradnicový systém nie je inerciálny, pretože vzhľadom 
+na inerciálny súradnicový systém v~ňom dochádza prinajmenšom k~dvom nelineárnym 
+pohybom \parencite{SansoGeoidDetermination}.  Prvý vzniká v~dôsledku rotácie 
+Zeme okolo vlastnej osi, druhý je spôsobený obehom Zeme okolo Slnka.  Ak chceme 
+študovať sily pôsobiace na Zemi v~takomto neinerciálnom súradnicovom systéme, 
+potrebné je uvážiť nielen gravitačnú silu, ale aj~ďalšie sily v~zmysle 
+Newtonovho pohybového zákona.  Na objekt, ktorý sa nachádza na rotujúcej Zemi 
+a~je vzhľadom k~nej v~pokoji, pôsobí okrem gravitačnej sily aj \emph{odstredivá 
+sila}.  Ak je objekt v~pohybe, pôsobí naň aj \emph{Coriolisova sila} 
 \parencite{Torge1989,Jekeli2000,SansoGeoidDetermination}.  Azda väčšina 
 geodetických meracích zariadení je počas merania vzhľadom k~Zemi v~pokoji, 
 preto Coriolisovu silu nebudeme ďalej uvažovať.  Na záver 
@@ -1423,8 +1447,9 @@ silovým pôsobením medzi objektmi.
 
 Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je \emph{odstredivá sila}
 $\vec F_\cidx$.  Uvažujme neinerciálny súradnicový systém v~zmysle predošlého
-odseku a~hmotný bod~$P(x, y, z)$ s~hmotnosťou~$1\ \mathrm{kg}$.  V~dôsledku
-nelineárnych pohybov súradnicového systému je tomuto hmotnému bodu udeľované
+odseku.  Nech je daný hmotný bod~$P(x, y, z)$ s~hmotnosťou~$1\ \mathrm{kg}$ 
+kdekoľvek na Zemi alebo v~jej vnútri.  V~dôsledku rotácie Zeme a~rotácie 
+súradnicového systému okolo osi~$Z$ je tomuto hmotnému bodu udeľované 
 \emph{odstredivé zrýchlenie}~$\vec g_\cidx(P)$,
 %
 \begin{equation}
@@ -1436,6 +1461,7 @@ x\\
 y\\
 0
 \end{bmatrix}
+%
 {.}
 \end{equation}
 %
@@ -1444,7 +1470,8 @@ odstredivého zrýchlenia mení iba so vzdialenosťou~$p = \| \vec p \|$ od
 rotačnej osi (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
-\| \vec g_\cidx \| = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2}{.}
+\| \vec g_\cidx \| = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2} = \omega^2 \, 
+r \, \cos\varphi{.}
 \end{equation}
 %
 Čím je vzdialenosť~$p$ väčšia, tým je väčšie i~odstredivé zrýchlenie a~naopak.
@@ -1488,11 +1515,13 @@ preto sa využívajú aj \emph{relatívne gravimetre}.  Týmito prístrojmi je a
 možné určiť iba rozdiel veľkostí tiažového zrýchlenia, či už medzi dvoma bodmi 
 alebo na jednom bode, no v~inom čase.  V~súčasnosti bežná presnosť určenia~$\| 
 \vec g(P) \|$ dosahuje hodnotu niekoľkých mikroGalov.  \emph{Smer} vektora 
-tiažového zrýchlenia je možné odmerať astronomickým určením zemepisnej šírky 
-a~zemepisnej dĺžky bodu~$P$.  Presnosť určenia astronomických súradníc sa 
-v~súčasnosti pohybuje približne v~desatinách uhlovej sekundy.    Vedný odbor 
-zaoberajúci sa meraním tiažového zrýchlenia sa nazýva \emph{gravimetria} (pozri 
-napríklad \cite{Torge1989,Rozimant1994} či \cite{Janak2010}).  
+tiažového zrýchlenia~$\vec g(P)$ je daný astronomickou šírkou a~astronomickou 
+dĺžkou bodu~$P$, a~tak je možné odmerať ho astronomickým určením polohy 
+bodu~$P$ \parencite{MoritzPhysicalGeodesy}.  Presnosť určenia astronomických 
+súradníc sa v~súčasnosti pohybuje približne v~desatinách uhlovej sekundy.    
+Vedný odbor zaoberajúci sa meraním tiažového zrýchlenia sa nazýva 
+\emph{gravimetria} (pozri napríklad \cite{Torge1989,Rozimant1994} či 
+\cite{Janak2010}).  
 
 
 
@@ -1534,8 +1563,8 @@ a
 g_\gidx(P) + \vec g_\cidx(P){.}
 \end{equation}
 %
-Vektory~$\vec g_\cidx(P)$ a~$\vec g(P)$ udávajú v~zmysle vlastností operátora 
-gradient (Kapitola~\ref{sec:vg}) veľkosť a~smer najväčšieho nárastu
+V~zmysle vlastností operátora gradient (Kapitola~\ref{sec:gradient}) udávajú 
+vektory~$\vec g_\cidx(P)$ a~$\vec g(P)$ veľkosť a~smer najväčšieho nárastu
 odstredivého a~tiažového potenciálu~$V_\cidx(P)$ a~$W(P)$ v~bode~$P$.  Platnosť
 rovnice~(\ref{eq:gc_vc}) možno overiť pomocou~(\ref{eq:gradient})
 a~(\ref{eq:vc}), čím získame~(\ref{eq:gc}).  V~rovnici~(\ref{eq:g_gradW}) bola
@@ -1614,8 +1643,8 @@ prechádza stredom libely.  Z~dôvodu približne sférického tvaru Zeme a~zvlne
 ekvipotenciálnych plôch nemožno vo všeobecnosti predpokladať rovnobežnosť 
 horizontálnych rovín na dvoch rôznych stanoviskách.  V~prípade teodolitu sú 
 v~tejto rovine merané vodorovné smery.  Preto ak je vyžadovaná presnosť vysoká 
-alebo záujmová lokalita je rozsiahla a~má zložitú topografiu,  merania je 
-potrebné korigovať o~vplyv nerovnobežnosti horizontálnych rovín medzi 
+alebo ak je záujmová lokalita rozsiahla alebo má zložitú topografiu,  merania 
+je potrebné korigovať o~vplyv nerovnobežnosti horizontálnych rovín medzi 
 stanoviskami \parencite[pozri napríklad][]{VanicekGeodesy}.
 
 \subsubsection{Tiažnica}
@@ -1625,10 +1654,10 @@ Siločiara tiažového poľa sa nazýva \emph{tiažnica}.  Tiažnica je priestor
 krivka, ktorá je kolmá na všetky ekvipotenciálne plochy 
 (Obrázok~\ref{fig:equipotential_surfaces}).  Dotyčnica k~tiažnici sa nazýva 
 \emph{zvislica}.  Smer zvislice je totožný so smerom vektora tiažového 
-zrýchlenia, a~teda so smerom zavesenej olovnice.  V~geodézii sa tiažnice 
-využívajú napríklad na definovanie fyzikálnych (nadmorských) výšok.  Jedna taká 
-výška má názov \emph{ortometrická výška} a~je meraná pozdĺž tiažnice od geoidu 
-po bod~$P$ (pozri Obrázok~\ref{fig:equipotential_surfaces}).
+zrýchlenia (smer zavesenej olovnice).  V~geodézii sa tiažnice využívajú 
+napríklad na definovanie fyzikálnych (nadmorských) výšok.  Jedna taká výška má 
+názov \emph{ortometrická výška} a~je meraná pozdĺž tiažnice od geoidu po 
+bod~$P$ (pozri Obrázok~\ref{fig:equipotential_surfaces}).
 
 Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad 
 teodolitu) bola totožná s~lokálnou zvislicou.  Táto podmienka je splnená po 
@@ -1767,7 +1796,7 @@ niekedy zvykne udávať v~geopotenciálnych jednotkách~gpu,
 \mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
 \end{equation}
 %
-Rozdiel tiažového potenciálu je v~súčasnosti možné určiť približne s~presnosťou 
+Rozdiel tiažového potenciálu je možné v~súčasnosti určiť s~presnosťou približne 
 $\pm 0.1\ \mathrm{Gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
 \parencite{MoritzPhysicalGeodesy}.
 
@@ -1810,7 +1839,7 @@ H = \frac{C}{\bar{g}}{,}
 \end{equation}
 %
 Rovnica~(\ref{eq:orthometric_height_2}) definuje ortometrickú výšku, teda dĺžku 
-tiažnice od geoidu po daný bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces}).
+tiažnice od geoidu po bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces}).
 
 
 
@@ -1852,8 +1881,8 @@ osí (pozri rovnicu~\ref{eq:unit_vectors}).  Nech symbol~$\vec r$ predstavuje
 \begin{figure}
 \centering
 \input{./fig-vector-in-3d.pdf_tex}
-\caption{Polohový vektor~$\vec r$ bodu~$P$ v~trojrozmernom súradnicovom 
-systéme.}
+\caption{Polohový vektor~$\vec r$ bodu~$P$ v~trojrozmernom karteziánskom 
+súradnicovom systéme.}
 \label{fig:unit_vectors}
 \end{figure}
 
@@ -1921,7 +1950,8 @@ V_\gidx(r, \varphi, \lambda) = \sum_{n = 0}^{\infty} \sum_{k = -n}^{n} v_{nk}
 %
 Konštanty~$v_{nk}$ vo vzťahu~(\ref{eq:vg_analysis}) predstavujú súradnice
 gravitačného potenciálu~$V_\gidx(r, \varphi, \lambda)$ vo vyššie opísanom
-abstraktom priestore harmonických funkcií a~symbol~$Y_{nk}(\varphi, \lambda)$
+abstraktom priestore harmonických funkcií mimo Zeme a~symbol~$Y_{nk}(\varphi, 
+\lambda)$
 označuje \emph{sférické harmonické funkcie}.  Koeficienty~$N_{n|k|}$ závisia
 iba od~$n$ a~$k$ a~budú diskutované neskôr.  Vzťah~(\ref{eq:vg_analysis}) je
 tak obdobou vzťahu (\ref{eq:r_analysis}), súradnice~$v_{nk}$ možno prirovnať
@@ -1980,8 +2010,8 @@ v~trojuholníku~$OPQ$ (Obrázok~\ref{fig:distance_l}),
 \end{equation}
 %
 kde~$\psi$ je uhol medzi spojnicami~$OQ$ a~$OP$ v~rovine trojuholníka~$OPQ$.
-Prevrátenú hodnotu vzdialenosti~$1 \slash \ell$ vystupujúcu vo
-vzťahu~(\ref{eq:vg_body}) tak môžeme vyjadriť nasledovne,
+Prevrátenú hodnotu vzdialenosti~$1 \slash \ell$ zo vzťahu~(\ref{eq:vg_body}) 
+tak môžeme vyjadriť nasledovne,
 %
 \begin{equation}
 \label{eq:1l}
@@ -2085,7 +2115,7 @@ bodov~$Q$ a~$P$,
 %
 Bolo by preto vhodné nájsť taký vzťah pre Legendreov polynóm~$P_n(\cos\psi)$,
 v~ktorom by každá prípadná funkcia závisela iba od jednej z~premenných
-$\varphi$, $ \lambda$, $\varphi_Q$ alebo $\lambda_Q$, a~nie od viacerých
+$\varphi$, $ \lambda$, $\varphi_Q$, $\lambda_Q$, a~nie od viacerých
 premenných ako je tomu po dosadení~(\ref{eq:cospsi})
 do~(\ref{eq:vg_legpol}).  Na tento účel slúži \emph{dekompozičný vzorec pre
 Legendreove polynómy}, niekedy tiež nazývaný aj adičný teorém či súčtová veta.
@@ -2104,15 +2134,15 @@ ekvivalentných formách, napríklad
 P_n(\cos\psi) &= P_n(\sin\varphi) \, P_n(\sin\varphi_Q)\\
 %
 &\phantom{={}} +2 \sum_{m = 1}^{n} \frac{(n - m)!}{(n + m)!} \,
-P_{nm}(\sin\varphi) \, P_{nm}(\sin\varphi_Q) \, \cos\left[k (\lambda
+P_{nm}(\sin\varphi) \, P_{nm}(\sin\varphi_Q) \, \cos\left[m (\lambda
 - \lambda_Q) \right]\\
 %
 &= (2 - \delta_{m0}) \, \sum_{m = 0}^{n} \frac{(n - m)!}{(n + m)!} \, \left[
 P_{nm}(\sin\varphi) \, \cos(m\lambda) \, P_{nm}(\sin\varphi_Q) \,
-\cos(k\lambda_Q)\right.\\
+\cos(m\lambda_Q)\right.\\
 %
 &\phantom{={}}+\left. P_{nm}(\sin\varphi) \, \sin(m\lambda) \,
-P_{nm}(\sin\varphi_Q) \, \sin(k\lambda_Q)\right]{.}
+P_{nm}(\sin\varphi_Q) \, \sin(m\lambda_Q)\right]{.}
 \end{split}
 \end{equation}
 %
@@ -2129,9 +2159,9 @@ n$ (pozri druhú sumáciu vo vzťahu~\ref{eq:pn_decomposition_formula}).  Ak je
 rád Legendreovej funkcie nulový, zvykne sa v~zápise vynechať, teda $P_n(t) 
 = P_{n0}(t)$.  Zo vzťahu~(\ref{eq:pnm_def}) vidíme, že Legendreova funkcia 
 stupňa~$n$ a~rádu~$m$ súvisí s~$m$-tou deriváciou Legendreoveho polynómu stupňa 
-$n$.  Vo vzťahu~(\ref{eq:pn_decomposition_formula}) pribudol ešte 
-člen~$\delta_{m0}$, ktorý má názov Kroneckerovo delta.  Všeobecná definícia 
-pre~$m$ a~$\ell$ má tvar
+$n$ podľa premennej~$t$.  Vo vzťahu~(\ref{eq:pn_decomposition_formula}) 
+pribudol ešte člen~$\delta_{m0}$, ktorý má názov Kroneckerovo delta.  Všeobecná 
+definícia pre~$m$ a~$\ell$ má tvar
 %
 \begin{equation}
 \delta_{ml} =
@@ -2171,19 +2201,19 @@ S_{nm}
 \diff\tau(Q){.}
 \end{equation}
 %
-Všimnime si, že vo vzťahu~(\ref{eq:vg_sh_no_norm}) sú premennými iba súradnice
-$r, \varphi, \lambda$ výpočtového bodu~$P$, v~ktorom určujeme gravitačný
-potenciál (pozri Obrázok~\ref{fig:gravitating_body}).  Naproti tomu, vo
-vzťahu~(\ref{eq:vg_shc_no_norm}) sú premenné iba súradnice $r_Q,\varphi_Q,
-\lambda_Q$ diferenciálneho elementu~$\diff\tau(Q)$
-(Obrázok~\ref{fig:gravitating_body}).  Navyše, koeficienty~$C_{nm}$ a~$S_{nm}$
-sú pre dané teleso \emph{konštantné}.  Inými slovami, ak poznáme konštanty
-$C_{nm}$ a~$S_{nm}$, potom vďaka vzťahu~(\ref{eq:vg_sh_no_norm}) poznáme
-gravitačný potenciál~$V_\gidx$ v~(takmer) ľubovoľnom bode~$P$ mimo daného
-telesa.  Nepripomína to situáciu z~Kapitoly~\ref{sec:sh_motivation}, v~ktorej
-sme tvrdili, že ak poznáme súradnice~$r_i$ vektora~$\vec r$, potom poznáme
-vektor~$\vec r$?  Hoci to ešte nemusí byť na prvý pohľad zrejmé, koeficienty
-$C_{nm}$ a~$S_{nm}$ sú v~skutočnosti veľmi úzko spojené so súradnicami~$v_{nm}$
+Všimnime si, že vo vzťahu~(\ref{eq:vg_sh_no_norm}) sú premennými iba súradnice 
+$r, \varphi, \lambda$ výpočtového bodu~$P$, v~ktorom určujeme gravitačný 
+potenciál (pozri Obrázok~\ref{fig:gravitating_body}).  Naproti tomu, vo 
+vzťahu~(\ref{eq:vg_shc_no_norm}) sú premenné iba súradnice $r_Q,\varphi_Q, 
+\lambda_Q$ diferenciálneho elementu~$\diff\tau(Q)$ 
+(Obrázok~\ref{fig:gravitating_body}).  Ďalej vidíme, že koeficienty~$C_{nm}$ 
+a~$S_{nm}$ sú pre dané teleso \emph{konštantné}.  Ak teda poznáme konštanty 
+$C_{nm}$ a~$S_{nm}$, potom vďaka vzťahu~(\ref{eq:vg_sh_no_norm}) poznáme 
+gravitačný potenciál~$V_\gidx$ v~(takmer) ľubovoľnom bode~$P$ mimo daného 
+telesa.  Nepripomína to situáciu z~Kapitoly~\ref{sec:sh_motivation}, v~ktorej 
+sme tvrdili, že ak poznáme súradnice~$r_i$ vektora~$\vec r$, potom poznáme 
+vektor~$\vec r$?  Hoci to ešte nemusí byť na prvý pohľad zrejmé, koeficienty 
+$C_{nm}$ a~$S_{nm}$ sú v~skutočnosti veľmi úzko spojené so súradnicami~$v_{nm}$ 
 z~rovnice~(\ref{eq:vg_synthesis}).
 
 Po nahradení nekonečna nezáporným celým číslom~$N$ je možné 
@@ -2287,9 +2317,7 @@ z~trojrozmerného karteziánskeho súradnicového systému je možné popísať 
 jednotkových vektorov~$\vec e_i$, $i = 1, 2, 3$.  Obdobne je možné pomocou
 niektorých systémov funkcií popísať každú spojitú funkciu~$f(t)$ na intervale
 $t \in [1, 1]$.  Jeden z~takýchto systémov funkcií predstavujú práve
-Legendreove polynómy~$P_n(t)$.
-
-Rovnica
+Legendreove polynómy~$P_n(t)$, $n = 0, 1, 2, \dots$  Rovnica
 %
 \begin{equation}
 \label{eq:f_synthesis}
@@ -2312,9 +2340,10 @@ Dôkaz platnosti rovníc~(\ref{eq:f_synthesis}) a~(\ref{eq:f_analysis}) je možn
 nájsť napríklad vo \textcite{Freeden2009} či 
 v~\textcite{SansoGeoidDetermination}.
 
-Podobne ako skalárny súčin dvoch rôznych jednotkových vektorov~$\vec e_i$ 
-a~$ \vec e_j$ je nulový (rovnica~\ref{eq:ei_orthogonality}), nulový je 
-i~skalárny súčin dvoch rôznych Legendreovych polynómov~$P_n(t)$ a~$P_\ell(t)$,
+Pokračujme ďalej v~analógii s~jednotkovými vektormi.  Podobne ako skalárny 
+súčin dvoch rôznych jednotkových vektorov~$\vec e_i$ a~$ \vec e_j$ je nulový 
+(rovnica~\ref{eq:ei_orthogonality}), nulový je i~skalárny súčin dvoch rôznych 
+Legendreovych polynómov~$P_n(t)$ a~$P_\ell(t)$,
 %
 \begin{equation}
 \label{eq:lp_orthogonality}
@@ -2355,8 +2384,8 @@ vyjadreniu vektora~$\vec r$ pomocou jednotkových vektorov~$\vec e_i$
 z~Kapitoly~\ref{sec:sh_motivation}.  Tento rozvoj je v~mnohých situáciách 
 výhodný, pretože môže napríklad zjednodušiť odvodenie.  Napokon, najlepšie to 
 demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme 
-funkciu~$1 \slash \ell$ rozvinuli do radu Legendreových polynómov a~následne 
-Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
+funkciu~$1 \slash \ell$ rozvinuli do radu Legendreových polynómov a~následne do 
+radu Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
 
 Z~vlastností Legendreových polynómov spomeňme ešte aspoň nasledovné
 \parencite{Freeden2009},
@@ -2417,7 +2446,7 @@ množstvo rekurentných vzorcov, napríklad \parencite{Freeden2009}
 %
 \begin{equation}
 \label{eq:pnm_recurrence}
-P_{nm}(t) = \frac{2n - 1}{n - m} \, t \, P_{n - 1, m}(t) + \frac{n + m - 1}{n
+P_{nm}(t) = \frac{2n - 1}{n - m} \, t \, P_{n - 1, m}(t) - \frac{n + m - 1}{n
 - m} \, P_{n - 2, m}(t){.}
 \end{equation}
 %
@@ -2489,13 +2518,13 @@ P_{nm}(-t) &= (-1)^{n + m} \, P_{nm}(t){,}\\
 P_{nm}(\pm1) &= 0{,} \quad m \neq 0{.}
 \end{align}
 
-Numerický výpočet Legendreových funkcií je zvyčajne uskutočňovaný rekurentnými 
-vzťahmi.  Ide však o~netriviálnu úlohu, obzvlášť pre vysoké stupne a~rády 
+Na numerický výpočet Legendreových funkcií sú zvyčajne použité rekurentné 
+vzťahy.  Ide však o~netriviálnu úlohu, obzvlášť pre vysoké stupne a~rády 
 \parencite{Holmes2002a,Fukushima2012a,Ishioka2018}.  
 Vlastnosť~(\ref{eq:pnm_symmetry}) je preto výhodná; ak potrebujeme vypočítať 
 $P_{nm}(\sin\varphi)$ a~$P_{nm}(\sin(-\varphi))$, rekurentné vzťahy môžeme 
 aplikovať iba na získanie jedného z~týchto členov a~druhý člen dopočítame 
-jednoduchým vzťahom~(\ref{eq:pnm_symmetry}).
+vzťahom~(\ref{eq:pnm_symmetry}).
 
 \subsection{Condonov--Shortleyho fázový faktor}
 \label{sec:legendre_functions_cs_factor}
@@ -2532,7 +2561,7 @@ definované vzťahom~(\ref{eq:pnm_ferrer}).
 \section{Sférické harmonické funkcie}
 \label{sec:spherical_harmonics}
 
-V~rovnici~(\ref{eq:vg_sh_no_norm}) zaveďme substitúciu pre členy, ktoré závisia
+Zaveďme v~rovnici~(\ref{eq:vg_sh_no_norm}) substitúciu pre členy, ktoré závisia
 iba od uhlovej časti sférických súradníc,
 %
 \begin{equation}
@@ -2583,8 +2612,11 @@ z~Prílohy~\ref{app:sh}.}
 \end{figure}
 
 Grafická reprezentácia sférických harmonických funkcií je uvedená na 
-Obrázkoch~\ref{fig:sh} a~\ref{fig:sh3d}.  Možno si všimnúť, že sférické 
-harmonické funkcie stupňa~$n$ a~rádu $k = 0$ (ľavý stĺpec na obrázkoch) menia 
+Obrázkoch~\ref{fig:sh} a~\ref{fig:sh3d}.  Z~obrázkov možno vypozorovať niekoľko 
+vlastností sférických harmonických funkcií.
+%
+\begin{itemize}
+\item Ak $k = 0$ (ľavý stĺpec na obrázkoch), sférické harmonické funkcie menia 
 $n$-krát znamienko v~smere sférickej šírky a~nezávisia od sférickej dĺžky.  Obe 
 vlastnosti môžu byť overené dosadením~$k = 0$ do rovnice~(\ref{eq:ynk_no_norm}) 
 (pozri tiež Kapitolu~\ref{sec:legendre_polynomials} a~Obrázok~\ref{fig:lp}),
@@ -2600,20 +2632,21 @@ rovnicu~\ref{eq:yn0} a~vlastnosti Legendreových polynómov
 v~Kapitole~\ref{sec:legendre_polynomials}). Funkcie~$Y_{n0}(\varphi, \lambda)$ 
 sa nazývajú \emph{zonálne sférické harmonické funkcie}.
 
-Ak $0 < |k| < n$ (prostredný stĺpec na obrázkoch), sférická harmonická funkcia
-mení znamienko s~oboma súradnicami.  V~smere sférickej šírky dochádza k~$n
-- |k|$ zmenám znamienka.  Počet $n - |k|$ vyplýva z~$|k|$-tej derivácie
-Legendreovho polynómu $P_n(\sin\varphi)$ (pozri rovnice~\ref{eq:pnm_def}
-a~\ref{eq:pnm_ferrer}).  Deriváciou polynómu sa znižuje jeho stupeň, a~teda aj
-počet možností meniť znamienko.  V~smere sférickej dĺžky sa znamienko mení
-$2|k|$-krát, čo vyplýva z~vlastností trigonometrických funkcií
-$\cos(k\lambda)$ a~$\sin(|k|\lambda)$.  Sférická harmonická funkcia rádu $0
-< |k| < n$ má prívlastok \emph{teserálna}.
+\item Ak $0 < |k| < n$ (prostredný stĺpec na obrázkoch), sférická harmonická 
+funkcia mení znamienko s~oboma súradnicami.  V~smere sférickej šírky dochádza 
+k~$n - |k|$ zmenám znamienka.  Počet $n - |k|$ vyplýva z~$|k|$-tej derivácie 
+Legendreovho polynómu $P_n(\sin\varphi)$ (pozri rovnice~\ref{eq:pnm_def} 
+a~\ref{eq:pnm_ferrer}).  Deriváciou polynómu sa znižuje jeho stupeň, a~teda aj 
+počet možností meniť znamienko.  V~smere sférickej dĺžky sa znamienko mení 
+$2|k|$-krát, čo vyplýva z~vlastností trigonometrických funkcií $\cos(k\lambda)$ 
+a~$\sin(|k|\lambda)$.  Sférická harmonická funkcia rádu $0 < |k| < n$ má 
+prívlastok \emph{teserálna}.
 
-Ak $|k| = n$ (pravý stĺpec na obrázkoch), sférická harmonická funkcia
-mení znamienko $0$-krát v~smere sférickej šírky, pretože $n - |k| = n - n = 0$,
-a~$2|k|$-krát v~smere sférickej dĺžky.  Takáto funkcia sa nazýva
+\item Ak $|k| = n$ (pravý stĺpec na obrázkoch), sférická harmonická funkcia 
+mení znamienko $0$-krát v~smere sférickej šírky, pretože $n - |k| = n - n = 0$, 
+a~$2|k|$-krát v~smere sférickej dĺžky.  Takáto funkcia sa nazýva 
 \emph{sektorálna sférická harmonická funkcia}.
+\end{itemize}
 
 Podobne ako jednotkové vektory, Legendreove polynómy či niektoré Legendreove
 funkcie, i~sférické harmonické funkcie sú ortogonálne.  Táto vlastnosť vyplýva
@@ -2764,8 +2797,8 @@ n = 0, 1, \dots, \quad k = -n, \dots, n{.}&
 \end{split}
 \end{equation}
 %
-Použitím normy~(\ref{eq:sh_norm}) je možné podobne ako 
-v~rovnici~(\ref{eq:ynk_no_norm_orthogonality}) ukázať, že platí
+Podobne ako v~súvislosti s~rovnicou~(\ref{eq:ynk_no_norm_orthogonality}), 
+použitím normy~(\ref{eq:sh_norm}) možno dokázať rovnosť
 %
 \begin{equation}
 \label{eq:ynk_norm_orthogonality}
@@ -2853,8 +2886,8 @@ S_{nm}{,}
 \end{equation}
 %
 kde $M$ je hmotnosť telesa, ktoré generuje gravitačný potenciál a~$R$ je
-polomer najmenšej sféry, v~ktorej sa nachádza celé teleso, $R
-= \max(r_\mathrm{S}(\varphi_Q, \lambda_Q))$.  Vzťah~(\ref{eq:vg_sh_no_norm})
+polomer najmenšej sféry, v~ktorej sa nachádza celé teleso.  
+Vzťah~(\ref{eq:vg_sh_no_norm})
 potom prejde do tvaru
 %
 \begin{equation}
@@ -2948,14 +2981,14 @@ telesa~$M$.  Ak obmedzíme nekonečné rady~(\ref{eq:vg_sh_no_norm}),
 V_\gidx(P) = \frac{GM}{r}{.}
 \end{equation}
 %
-Rovnica~(\ref{eq:vg_sh_0degree}) predstavuje gravitačný potenciál hmotného bodu
-s~hmotnosťou $M$ vo vzdialenosti $r$ od hmotného bodu (pozri
-rovnicu~\ref{eq:vg_point_mass}).  Pomocou Newtonovho
-integrálu~(\ref{eq:vg_body}) možno ukázať, že gravitačný potenciál gule
-s~konštantnou hustotou (homogénna guľa) je tiež ekvivalentný so
-vzťahom~(\ref{eq:vg_sh_0degree}).  Preto ak obmedzíme nekonečný sférický
-harmonický rozvoj gravitačného potenciálu na maximálny stupeň $N = 0$, získame
-gravitačný potenciál homogénnej gule, ktorá nahrádza skutočné teleso.
+Rovnica~(\ref{eq:vg_sh_0degree}) predstavuje gravitačný potenciál hmotného bodu 
+s~hmotnosťou $M$ vo vzdialenosti $r$ od hmotného bodu (pozri 
+rovnicu~\ref{eq:vg_point_mass}).  Pomocou Newtonovho 
+integrálu~(\ref{eq:vg_body}) možno ukázať, že gravitačný potenciál gule 
+s~konštantnou hustotou (homogénna guľa) je v~bodoch mimo gule taktiež 
+ekvivalentný so vzťahom~(\ref{eq:vg_sh_0degree}).  Preto ak obmedzíme nekonečný 
+sférický harmonický rozvoj gravitačného potenciálu na maximálny stupeň $N = 0$, 
+získame gravitačný potenciál homogénnej gule, ktorá nahrádza skutočné teleso.
 
 Vydeľme rovnicu~(\ref{eq:vg_shc_no_norm}) hmotnosťou $M$ a~zopakujme postup pre
 stupeň $n = 1$ a~rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) získame
@@ -2992,7 +3025,7 @@ už, zdá sa, nemajú priamočiaru fyzikálnu interpretáciu.
 \label{sec:spherical_harmonics_applications}
 
 V~tejto kapitole ukážeme dve typické aplikácie sférických harmonických rozvojov 
-vo fyzikálnej geodézii, modelovanie vonkajšieho gravitačného 
+vo fyzikálnej geodézii: modelovanie vonkajšieho gravitačného 
 poľa~(Kapitola~\ref{sec:sh_applications_gravity_field})
 a~modelovanie topografie približne sférických 
 telies~(Kapitola~\ref{sec:sh_applications_topography}).
@@ -3012,8 +3045,8 @@ družice je ovplyvnená ináč v~oblasti so silným gravitačným poľom (naprí
 masívnymi pohoriami) a~ináč v~oblasti so slabším gravitačným poľom.  V~dôsledku
 premenlivého gravitačného poľa Zeme preto družica neobieha po
 elipse.\footnote{Dráhu družice ovplyvňujú aj iné faktory, napríklad tlak
-slnečného žiarenia, odpor atmosféry a~pod.  Tieto vplyvy pre jednoduchosť
-zanedbáme.}  Jej skutočná dráha je komplikovaná priestorová krivka,
+slnečného žiarenia, odpor atmosféry a~pod.  Tieto vplyvy sme pre jednoduchosť
+zanedbali.}  Jej skutočná dráha je komplikovaná priestorová krivka,
 reflektujúca gravitačné pole v~danej oblasti, a~elipsa je len jej priblíženie
 (Obrázok~\ref{fig:orbital_motion_real}).  Ak by sme teda poznali skutočnú dráhu
 družice, mali by sme byť schopní inverzným spôsobom vypočítať to pole, ktoré je
@@ -3144,7 +3177,7 @@ miera detailu stúpa od vrchnej mapy smerom nadol.  Spôsobené je to tým, že
 maximálny stupeň $N$, ktorý udáva priestorové rozlíšenie funkcie 
 $H(\varphi,\lambda)$, narastá postupne od~$30$ cez~$90$ až do~$360$.  Odhad 
 veľkosti najmenšieho priestorového prvku, ktorý môže byť reprezentovaný 
-sférickým harmonickým rozvojom do stupňa~$N$, je možné vzťahom
+sférickým harmonickým rozvojom do stupňa~$N$, je možné získať vzťahom
 %
 \begin{equation}
 l_{\min}(N) = \frac{\pi \, R}{N}{,}
@@ -3292,8 +3325,8 @@ harmonického radu je tak väčšia o~vyšrafovanú oblasť.}
 Nech je daný dvojosový referenčný elipsoid s~dĺžkou hlavnej polosi $a$ 
 a~s~dĺžkou vedľajšej polosi $b$.  Parametre~$a$ a~$b$ sú volené tak, aby vhodne 
 aproximovali tvar telesa, napríklad v~zmysle metódy najmenších štvorcov.  
-Zaveďme parameter \emph{lineárna excentricita}~$E$, ktorý bude označovať 
-vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu 
+Zaveďme ďalej pojem \emph{lineárna excentricita}~$E$.  Parameter~$E$ označuje 
+vzdialenosť medzi stredom elipsy, ktorá vznikne meridiánovým rezom elipsoidu, 
 a jedným z~jej ohnísk (Obrázok~\ref{fig:reduced_ell_coords}).  Z~definície 
 elipsy vyplýva, že lineárna excentricita je daná vzťahom
 %
@@ -3401,8 +3434,7 @@ platí
 \begin{split}
 \| \hat{\vec e}_1^\mathrm{r} \| &= \sqrt{u^2 + E^2 \, \sin^2\beta}{,}\\
 %
-\| \hat{\vec e}_2^\mathrm{r} \| &= \sqrt{\left( u^2 + E^2 \right)} \, 
-\cos\beta{,}\\
+\| \hat{\vec e}_2^\mathrm{r} \| &= \sqrt{ u^2 + E^2} \, \cos\beta{,}\\
 %
 \| \hat{\vec e}_3^\mathrm{r} \| &= \sqrt{\frac{u^2 + E^2 \, \sin^2\beta}{u^2 
 + E^2}}{.}
@@ -3444,18 +3476,18 @@ e}_i^\mathrm{r} \|}{,} \quad i = 1, 2, 3{,}
 sú jednotkové vektory v~smere osí~$x^\mathrm{r}$, $y^\mathrm{r}$ 
 a~$z^\mathrm{r}$.
 
-Laplaceovu rovnicu pre gravitačný potenciál dostaneme pomocou 
-vzťahov~(\ref{eq:ei_reduced_ell_magnitudes}) 
+Laplaceovu rovnicu pre gravitačný potenciál dostaneme 
+vzťahmi~(\ref{eq:ei_reduced_ell_magnitudes}) 
 a~(\ref{eq:laplace_orthogonal_system_final_2})
 \parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:vg_laplace_ellred}
 (u^2 + E^2) \, \frac{\partial^2 V_\gidx}{\partial u^2} + 2u \, \frac{\partial 
-V_\gidx}{\partial u} + \frac{1}{\cos\beta} \, \frac{\partial}{\partial\beta} 
-\left( \cos\beta \, \frac{\partial V_\gidx}{\partial\beta} \right) + \frac{u^2 
-+ E^2 \, \sin^2\beta}{(u^2 + E^2) \, \cos^2\beta} \, \frac{\partial^2 
-V_\gidx}{\partial \lambda^2} = 0{.}
+V_\gidx}{\partial u} +  \frac{\partial^2 V_\gidx}{\partial\beta^2} - \tan\beta 
+\, \frac{\partial V_\gidx}{\partial \beta} + \frac{u^2 + E^2 \, 
+\sin^2\beta}{(u^2 + E^2) \, \cos^2\beta} \, \frac{\partial^2 V_\gidx}{\partial 
+\lambda^2} = 0{.}
 \end{equation}
 
 
