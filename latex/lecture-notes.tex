@@ -3495,14 +3495,14 @@ V_\gidx}{\partial u} +  \frac{\partial^2 V_\gidx}{\partial\beta^2} - \tan\beta
 \section{Sféroidické harmonické funkcie}
 \label{sec:spheroidal_harmonics}
 
-V~Kapitole~\ref{sec:vg_sh_expansion} sme uviedli, že k~rozvoju gravitačného 
+V~Kapitole~\ref{sec:vg_sh_expansion} sme uviedli, že rozvoj gravitačného 
 potenciálu do radu sférických harmonických funkcií~(rovnica 
-\ref{eq:vg_sh_no_norm}) je možné dopracovať sa aj riešením Laplaceovej 
-diferenciálnej rovnice metódou separácie premenných vo sférických 
+\ref{eq:vg_sh_no_norm}) môžeme získať aj riešením Laplaceovej diferenciálnej 
+rovnice metódou separácie premenných vo sférických 
 súradniciach~(rovnica~\ref{eq:vg_laplace_sph}).  Cieľom takéhoto prístupu je 
 nájsť tri funkcie, $f_{\mathrm{s}}(r)$, $g_{\mathrm{s}}(\varphi)$ 
-a $h_{\mathrm{s}}(\lambda)$.  Je možne ukázať, že riešením tejto úlohy sú 
-funkcie nasledovného tvaru (porovnaj s~rovnicou~\ref{eq:vg_sh_no_norm}),
+a $h_{\mathrm{s}}(\lambda)$.  Je možne ukázať, že tieto funkcie majú tvar 
+(porovnaj s~rovnicou~\ref{eq:vg_sh_no_norm})
 %
 \begin{align}
 \label{eq:fs}
@@ -3520,16 +3520,17 @@ h_{\mathrm{s}}(\lambda) &=
 \end{cases}
 \end{align}
 %
-kde $n = 0, 1, 2, \dots$ a~$m = 0, 1, \dots, n$.  Pre úplnosť dodajme, že 
-funkcia $f_{\mathrm{s}}(r)$ môže mať aj tvar $f_{\mathrm{s}}(r) = r^n$.  Toto 
-riešenie sa využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry 
+kde $n = 0, 1, 2, \dots$ a~$m = 0, 1, \dots, n$.\footnote{Funkcia 
+$f_{\mathrm{s}}(r)$ môže mať aj tvar $f_{\mathrm{s}}(r) = r^n$.  Toto riešenie 
+sa využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry 
 \parencite{MoritzPhysicalGeodesy}.  Takáto situácia ale nie je predmetom tejto 
-práce.
+práce.  Takisto funkcia~$g_\mathrm{s}(\varphi)$ môže mať aj ďalší 
+tvar~$Q_{nm}(\sin\varphi)$, ktorý bude diskutovaný neskôr v~tejto kapitole.}
 
 Jeden z~možných prístupov získania sféroidických harmonických funkcií je práve 
 riešením Laplaceovej diferenciálnej rovnice v~redukovaných elipsoidických 
-súradniciach~(\ref{eq:vg_laplace_ellred}) metódou separácie premenných.  Týmto 
-spôsobom získame funkcie \parencite{MoritzPhysicalGeodesy}
+súradniciach~(\ref{eq:vg_laplace_ellred}) metódou separácie premenných.  
+Získame tým funkcie \parencite{MoritzPhysicalGeodesy}
 %
 \begin{align}
 \label{eq:fr}
@@ -3548,14 +3549,15 @@ h_{\mathrm{r}}(\lambda) &=
 \end{cases}
 \end{align}
 %
-kde $i^2 = -1$ je imaginárna jednotka.  Podobne ako v~rovnici~(\ref{eq:fs}), 
-funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar $f_{\mathrm{r}}(u) 
-= P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na rozvoj 
-\emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.
+kde $i^2 = -1$ je imaginárna jednotka.\footnote{Podobne ako 
+v~rovnici~(\ref{eq:fs}), funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar 
+$f_{\mathrm{r}}(u) = P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na 
+rozvoj \emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.  Druhý 
+možný tvar funkcie~$g_\mathrm{r}(\beta)$ je~$Q_{nm}(\sin\beta)$.}
 
 Člen $Q_{nm}\left( i \frac{u}{E} \right)$ v~rovnici~(\ref{eq:fr}) sa nazýva 
 \emph{pridružená Legendreova funkcia druhého druhu}.  Pre komplexný argument $z 
-= i \frac{u}{E}$ je definovaná vzťahom \parencite{MoritzPhysicalGeodesy}
+= i \frac{u}{E}$ je definovaná vzťahom \parencite{MoritzTheFigureOfTheEarth}
 %
 \begin{equation}
 \label{eq:qnm_imag_def}
@@ -3629,7 +3631,7 @@ kde
 %
 \begin{equation}
 \label{eq:tanh}
-\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \mathrm{arctanh} \, t{,}
+\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \mathrm{arctanh} \, (t){,}
 \end{equation}
 %
 pričom $\mathrm{arctanh}$ označuje inverznú funkciu k~hyperbolickému tangensu, 
@@ -3710,13 +3712,11 @@ Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je lineárnou kombináciou funkci
 (\ref{eq:fr}), (\ref{eq:gr}) a~(\ref{eq:hr}) (pozri tiež 
 vzťah~\ref{eq:ynk_norm}), ktoré boli získané riešením Laplaceovej 
 diferenciálnej rovnice metódou separácie premenných v~redukovaných 
-elipsoidických súradniciach.
-
-Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je formálne podobná 
-vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež jednoducho prepísaná do 
-tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ (porovnaj 
-rovnice~\ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}) či do radu 
-nenormovaných sféroidických harmonických funkcií, podobne ako je tomu 
+elipsoidických súradniciach.  Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je 
+formálne podobná vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež 
+jednoducho prepísaná do tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ 
+(porovnaj rovnice~\ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}) či do 
+radu nenormovaných sféroidických harmonických funkcií, podobne ako je tomu 
 v~rovniciach~(\ref{eq:vg_sh_no_norm}) a~(\ref{eq:vg_sh_1st_norm}),
 %
 \begin{equation}
@@ -3726,7 +3726,7 @@ V_\gidx(u, \beta, \lambda) = \sum_{n = 0}^\infty \sum_{m = 0}^n
 \, \left( C^{\mathrm{r}}_{nm} \, \cos(m\lambda) + S^{\mathrm{r}}_{nm} \, 
 \sin(m\lambda) \right) \, P_{nm}(\sin\beta){.}
 \end{equation}
-%
+
 Funkcia $Q_{n|k|}\left( i \frac{u}{E} \right)$ zo vzťahu~(\ref{eq:fr}) je 
 komplexná funkcia.  Vo sféroidických harmonických 
 rozvojoch~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
@@ -3743,9 +3743,9 @@ konvergencie (pozri Obrázok~\ref{fig:spheroidal_harmonics_convergence}).  Na
 povrchu elipsoidu konvergencie a/alebo v~neho vnútri konvergencia zaručená nie 
 je.
 
-Člen $Q_{n|k|}\left( i \frac{u}{E} \right) \slash Q_{n|k|}\left( i \frac{b}{E} 
-\right)$ v~rovnici~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) má podobnú úlohu, akú 
-má člen $\left( \frac{R}{r} \right)^{n + 1}$ 
+Podiel $Q_{n|k|}\left( i \frac{u}{E} \right) \slash Q_{n|k|}\left( 
+i \frac{b}{E} \right)$ v~rovnici~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) má 
+podobnú úlohu, akú má člen $\left( \frac{R}{r} \right)^{n + 1}$ 
 vo~vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}), teda umožniť výpočet gravitačného 
 potenciálu aj nad referenčným elipsoidom (v~prípade sférického harmonického 
 rozvoja nad referenčnou sférou s~polomerom~$R$).  V~súvislosti 
