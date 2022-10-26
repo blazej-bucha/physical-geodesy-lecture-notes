@@ -3811,23 +3811,24 @@ geocentrická gravitačná konštanta~$GM$, teda súčin Newtonovej gravitačnej
 konštanty~$G$ a~hmotnosti Zeme~$M$, ďalej polomer gule~$R$ a~uhlová rýchlosť 
 rotácie~$\omega$.  Vonkajšie tiažové pole homogénnej gule je síce jednoducho 
 matematicky opísateľné, nevyhovuje ale väčšine súčasných aplikácií z~hľadiska 
-presnosti.  Vo fyzikálnej geodézii sa zvykne preto využívať prevažne len 
-v~niektorých špecifických situáciách, napríklad ak postačuje i~nižšia presnosť.
+presnosti.  Vo fyzikálnej geodézii sa preto spravidla využíva len v~niektorých 
+špecifických situáciách, napríklad ak postačuje i~nižšia presnosť.
 
 V dôsledku sploštenia Zeme je dvojosový rotačný elipsoid presnejšou 
 geometrickou aproximáciou geoidu ako sféra.  Okrem svojho geometrického tvaru 
 je geoid špecifický tým, že hodnota skutočného tiažového potenciálu $W_0$ je 
-konštantná v~každom jeho bode (pozri Kapitolu~\ref{sec:equipotential_surface}).  
-Túto vlastnosť by bolo výhodné zužitkovať aj pri voľbe normálneho tiažového 
-poľa, ktoré je založené na elipsoide.  Budeme preto požadovať, aby 
-\emph{normálny tiažový potenciál} $U_0$ bol na povrchu elipsoidu konštantný.  
-Vhodnou voľbou geometrických parametrov (napríklad hlavná a~vedľajšia polos) 
-a fyzikálnych parametrov (napríklad normálny tiažový potenciál $U_0$) potom 
-získame vernú aproximáciu geoidu, alebo inými slovami, dostatočne presné 
-približné hodnoty na linearizáciu úloh, ktoré sú spojené s~určovaním geoidu.  
-Dvojosový rotačný elipsoid s~konštantným normálnym tiažovým potenciálom na 
-svojom povrchu sa nazýva \emph{ekvipotenciálny elipsoid}.  V~súčasnosti je to 
-najčastejší spôsob voľby normálneho tiažového poľa Zeme.
+konštantná na celom jeho povrchu (pozri 
+Kapitolu~\ref{sec:equipotential_surface}).  Túto vlastnosť by bolo výhodné 
+zužitkovať aj pri voľbe normálneho tiažového poľa, ktoré je založené na 
+elipsoide.  Budeme preto požadovať, aby \emph{normálny tiažový potenciál} $U_0$ 
+bol na povrchu elipsoidu konštantný.  Vhodnou voľbou geometrických parametrov 
+(napríklad hlavná a~vedľajšia polos) a fyzikálnych parametrov (napríklad 
+normálny tiažový potenciál $U_0$ na povrchu elipsoidu) potom získame vernú 
+aproximáciu geoidu, alebo inými slovami, dostatočne presné približné hodnoty na 
+linearizáciu úloh, ktoré sú spojené s~určovaním geoidu.  Dvojosový rotačný 
+elipsoid s~konštantným normálnym tiažovým potenciálom na svojom povrchu sa 
+nazýva \emph{ekvipotenciálny elipsoid}.  V~súčasnosti je to najčastejší spôsob 
+voľby normálneho tiažového poľa Zeme.
 
 Ďalšou možnosťou voľby normálneho tiažového poľa je sférický harmonický rozvoj 
 gravitačného potenciálu do konečného harmonického stupňa 
@@ -3836,17 +3837,19 @@ gravitačného potenciálu do konečného harmonického stupňa
 takto definovaný normálny tiažový potenciál konštantný, sa nazýva 
 \emph{sféroid}.  Obmedzením rozvoja potenciálu na stupeň~2 získame 
 \emph{Brunsov sféroid} a~obmedzením na stupeň~4 získame \emph{Helmertov 
-sféroid} \parencite{Moritz1967}.  V~oboch prípadoch sú koeficienty stupňa~1 
-nulové, pretože začiatok súradnicového systému je vložený do ťažiska Zeme 
+sféroid} \parencite{Moritz1967}.  Oba sféroidy majú koeficienty stupňa~1 
+nulové, pretože začiatok súradnicového systému je vložený do geometrického 
+stredu ekvipotenciálneho elipsoidu 
 (pozri~Kapitolu~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}).  
-V definícii Helmertovho sféroidu sú nulové navyše aj koeficienty stupňa~3 
-z dôvodu zabezpečenia symetrie voči rovine rovníka (pozri geometrickú 
-interpretáciu sférických harmonických funkcií 
-v~Kapitole~\ref{sec:spherical_harmonics}).   V~praktických aplikáciách sa  
-Brunsov ani Helmertov sféroid nezvyknú v~súčasnosti používať.  Obe plochy sú 
-totiž veľmi blízke dvojosovému rotačnému elipsoidu, avšak sú výrazne 
-zložitejšie.  Navyše, získaná dodatočná presnosť zväčša nie je významná 
-\parencite{Moritz1967}.
+V definícii Helmertovho sféroidu sú nulové navyše aj koeficienty stupňa~3, aby 
+bola zabezpečená symetria normálneho poľa voči rovine rovníka (pozri 
+geometrickú interpretáciu sférických harmonických funkcií 
+v~Kapitole~\ref{sec:spherical_harmonics}).   V~súčasnosti sa Brunsov ani 
+Helmertov sféroid nezvyknú používať.  Obe plochy sú totiž veľmi blízke 
+dvojosovému rotačnému elipsoidu a~dodatočná presnosť je získaná za cenu výrazne 
+náročnejšieho matematického popisu oboch plôch, čo odporuje požiadavke 
+jednoduchosti z~Kapitoly~\ref{sec:normal_gravity_field}.  Navyše, získaná 
+dodatočná presnosť zväčša nie je významná \parencite{Moritz1967}.
 
 Či už ide o~ekvipotenciálny elipsoid alebo sféroid, všimnime si, že v~ani 
 jednom prípade sme nepotrebovali vysloviť predpoklad o~priestorovom rozložení 
@@ -3921,7 +3924,7 @@ tiažového poľa Zeme.
 \subsection{Ekvipotenciálny elipsoid GRS80}
 \label{sec:grs80}
 
-Jednu z~možných štvoríc základných parametrov tvorí
+Jednu z~možných štvoríc základných parametrov ekvipotenciálneho elipsoidu tvorí
 %
 \begin{itemize}
 \item hlavná polos~$a$,
@@ -3944,7 +3947,7 @@ v Canberra v~decembri 1979.
 Všimnime si, že medzi základnými parametrami sa nachádza geocentrická 
 gravitačná konštanta $GM$ a~nie hmotnosť Zeme~$M$, ktorá je podľa 
 Stokesovho--Poincarého teorému postačujúca na jednoznačné definovanie tiažového 
-potenciálu vo vonkajšom priestore ekvipotenciálnej plochy 
+potenciálu vo vonkajšom priestore ekvipotenciálneho elipsoidu 
 (Kapitola~\ref{sec:equipotential_ellipsoid}).  Dôvod je ten, že 
 súčin~konštánt~$G$ a~$M$ je možné určiť presnejšie ako samostatný parameter~$M$ 
 \parencite[pozri napríklad][]{Pick2000}.  Spomeňme tiež, že hodnota konštanty 
@@ -3970,14 +3973,14 @@ parametre sme zahrnuli, okrem iných, \emph{prvú numerickú excentricitu}
 %
 \begin{equation}
 \label{eq:1st_eccentricity}
-e = \frac{a^2 - b^2}{a} = \frac{E}{a}{,}
+e = \frac{\sqrt{a^2 - b^2}}{a} = \frac{E}{a}{,}
 \end{equation}
 %
 \emph{druhú numerickú excentricitu}
 %
 \begin{equation}
 \label{eq:2nd_eccentricity}
-e' = \frac{a^2 - b^2}{b} = \frac{E}{b}{,}
+e' = \frac{\sqrt{a^2 - b^2}}{b} = \frac{E}{b}{,}
 \end{equation}
 %
 a \emph{sploštenie}
@@ -3987,12 +3990,14 @@ a \emph{sploštenie}
 f = \frac{a - b}{b}{.}
 \end{equation}
 %
-Vzťahy na výpočet odvodených fyzikálnych parametrov z~Tabuľky~\ref{tab:grs80_derived} budú 
-odvodené v~nasledujúcich častiach tejto kapitoly.
+Vzťahy na výpočet odvodených fyzikálnych parametrov 
+z~Tabuľky~\ref{tab:grs80_derived} budú odvodené v~nasledujúcich častiach tejto 
+kapitoly.
 
 \begin{table*}
 \begin{center}
-\caption{Základné parametre ekvipotenciálneho elipsoidu GRS80.}
+\caption{Základné parametre ekvipotenciálneho elipsoidu GRS80 
+\parencite{GRS80}.}
 \label{tab:grs80_fundamental}
 \small
 \begin{tabular}{l l l l}
@@ -4057,27 +4062,10 @@ Elipsoid GRS80 je oficiálny referenčný systém Medzinárodnej asociácie geod
 \subsection{Ekvipotenciálny elipsoid WGS84}
 \label{sec:wgs84}
 
-Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť sploštenie~$f$ 
-(rovnica~\ref{eq:flattening}) namiesto koeficientu~$J_{2,0}$.  Týmto spôsobom 
-je definovaný ekvipotenciálny elipsoid \emph{WGS4} 
-\parencite[angl. \textit{World Geodetic System~1984};][]{WGS84}, ktorý vychádza 
-z~elipsoidu GRS80 (Tabuľka~\ref{tab:wgs84_fundamental}).  Vybraté odvodené 
-parametre elipsoidu WGS84 sú uvedené v~Tabuľke~\ref{tab:wgs84_derived}.  
-Z hľadiska tvaru sú oba elipsoidy podobné; dĺžka ich hlavnej polosi je $6\, 
-378\, 137\ \mathrm{m}$ a~dĺžka vedľajšej polosi, vypočítaná zo základných 
-parametrov, sa odlišuje iba o~desatinu milimetra (porovnaj 
-Tabuľky~\ref{tab:grs80_derived} a~\ref{tab:wgs84_derived}).  Z~fyzikálneho 
-hľadiska je už medzi elipsoidmi rozdiel väčší.  Uhlová rýchlosť rotácie oboch 
-elipsoidov je síce rovnaká, no odlišné hodnoty geocentrických gravitačných 
-konštánt spôsobujú rozdiel v~normálnom tiažovom potenciáli na elipsoide.  
-Rozdiel medzi oboma hodnotami je približne o~5 rádov väčší ako v~súčasnosti 
-dosiahnuteľná presnosť určenia rozdielu skutočného tiažového potenciálu medzi 
-dvoma bodmi (pozri Kapitolu~\ref{sec:potential_differences}).
-
 \begin{table*}
 \begin{center}
 \caption{Základné parametre ekvipotenciálneho elipsoidu WGS84 
-\parencite{MoritzPhysicalGeodesy}.}
+\parencite{WGS84}.}
 \label{tab:wgs84_fundamental}
 \small
 \begin{tabular}{l l l l}
@@ -4094,6 +4082,24 @@ $\omega$ & $7\,292\,115 \times 10^{-11}$ & $\mathrm{rad} \ \mathrm{s}^{-1}$
 \end{tabular}
 \end{center}
 \end{table*}
+
+Ďalšou možnosťou definície ekvipotenciálneho elipsoidu je použiť sploštenie~$f$ 
+(rovnica~\ref{eq:flattening}) namiesto koeficientu~$J_{2,0}$.  Týmto spôsobom 
+je definovaný ekvipotenciálny elipsoid \emph{WGS4} 
+\parencite[angl. \textit{World Geodetic System~1984};][]{WGS84}, ktorý vychádza 
+z~elipsoidu GRS80 (Tabuľka~\ref{tab:wgs84_fundamental}).  Vybraté odvodené 
+parametre elipsoidu WGS84 sú uvedené v~Tabuľke~\ref{tab:wgs84_derived}.  
+Z hľadiska tvaru sú oba elipsoidy podobné; dĺžka ich hlavnej polosi je $6\, 
+378\, 137\ \mathrm{m}$ a~dĺžka vedľajšej polosi, vypočítaná zo základných 
+parametrov, sa odlišuje iba o~desatinu milimetra (porovnaj 
+Tabuľky~\ref{tab:grs80_derived} a~\ref{tab:wgs84_derived}).  Z~fyzikálneho 
+hľadiska je už medzi elipsoidmi rozdiel väčší.  Uhlová rýchlosť rotácie oboch 
+elipsoidov je síce rovnaká, no odlišné hodnoty geocentrických gravitačných 
+konštánt spôsobujú rozdiel v~normálnom tiažovom potenciáli na elipsoide.  
+Rozdiel medzi oboma hodnotami je približne o~5 rádov väčší ako v~súčasnosti 
+dosiahnuteľná presnosť určenia rozdielu skutočného tiažového potenciálu medzi 
+dvoma bodmi, ktoré sú od seba vzdialené niekoľko kilometrov (pozri 
+Kapitolu~\ref{sec:potential_differences}).
 
 \begin{table*}
 \begin{center}
@@ -4199,19 +4205,20 @@ P_n(\sin\beta)
 \end{equation}
 %
 je normálny gravitačný potenciál (pozri 
-rovnicu~\ref{eq:vg_spheroidalh_no_norm}) vyhovujúci Laplaceovej rovnici
+rovnicu~\ref{eq:vg_spheroidalh_no_norm}) vyhovujúci Laplaceovej rovnici vo 
+vonkajšom priestore elipsoidu,
 %
 \begin{equation}
 \label{eq:ug_laplace_cart}
 \nabla^2 U_\gidx = \frac{\partial^2 U_\gidx}{\partial x^2} + \frac{\partial^2 
-U_\gidx}{\partial y^2} + \frac{\partial^2 U_\gidx}{\partial z^2} = 0
+U_\gidx}{\partial y^2} + \frac{\partial^2 U_\gidx}{\partial z^2} = 0{,}
 \end{equation}
 %
 a
 %
 \begin{equation}
 \label{eq:uc_sph}
-U_\cidx(u, \beta) = \frac{1}{2} \omega^2 \, (u^2 + E^2) \, \cos^2\beta
+U_\cidx(u, \beta) = \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta
 \end{equation}
 %
 je normálny odstredivý potenciál (rovnica~\ref{eq:vc_spheroidal}).  Pre lepšiu 
@@ -4226,8 +4233,7 @@ vypočítať z~meraní skutočného poľa
 (Kapitola~\ref{sec:spherical_harmonics_applications}), koeficienty normálneho 
 poľa $C_n^\mathrm{r}$ je možné vypočítať zo štyroch základných parametrov 
 ekvipotenciálneho elipsoidu (pozri Kapitolu~\ref{sec:equipotential_ellipsoid}).  
-Skúsme preto zistiť, čomu sú rovné sféroidické harmonické koeficienty 
-$C_n^\mathrm{r}$.
+Hľadajme preto vzťah pre sféroidické harmonické koeficienty $C_n^\mathrm{r}$.
 
 Nech sa výpočtový bod nachádza na povrchu ekvipotenciálneho elipsoidu, teda $u 
 = b$.  Potom
@@ -4354,11 +4360,12 @@ vyjadriť $U_0$ pomocou $a$, $b$, $GM$ a~$\omega$.
 
 Z~Kapitoly~\ref{sec:spheroidal_harmonic_expansion} vieme, že podiely 
 Legendreových funkcií druhého druhu sú reálne čísla.  Vyjadrime preto 
-vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime, že 
-\parencite{MoritzTheFigureOfTheEarth}
+vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime vzťah 
+\parencite{Moritz1967}
 %
 \begin{equation}
-\mathrm{arccoth} (i \, x) = -i \, \arctan\frac{1}{x}{,}
+\mathrm{arccoth} (i \, x) = \frac{1}{i} \, \mathrm{arccot} \, x = -i \, 
+\arctan\frac{1}{x}{,}
 \end{equation}
 %
 potom $Q_0$ a~$Q_2$ komplexného argumentu $i \frac{u}{E}$ 
@@ -4778,7 +4785,7 @@ a^2 \, \frac{q}{q_0} - \omega^2 \, (u^2 + E^2) \right) \, \cos\beta \,
 \sin\beta{.}
 \end{equation}
 %
-Podobným spôsob dostaneme člen~$\gamma_u$,
+Podobným spôsobom dostaneme člen~$\gamma_u$,
 %
 \begin{equation}
 \label{eq:gamma_u}
@@ -5197,9 +5204,8 @@ po bod~$P_0$ po normálne k elipsoidu, ktorá prechádza bodom~$P$.}
 \end{figure}
 
 V~tejto kapitole popíšeme najdôležitejšie veličiny poruchového poľa 
-(Kapitoly~\ref{sec:disturbing_potential} a~\ref{sec:gravity_anomaly}) a~ukážeme 
-spôsoby, ktorými z~nich možno vypočítať~zvislicové odchýlky 
-(Kapitola~\ref{sec:deflections}) a~geoid (Kapitola~\ref{sec:geoid}).
+(Kapitoly~\ref{sec:disturbing_potential} a~\ref{sec:gravity_anomaly}) 
+a~zvislicové odchýlky (Kapitola~\ref{sec:deflections}).
 
 
 
