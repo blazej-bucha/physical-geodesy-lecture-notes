@@ -5227,8 +5227,7 @@ T(P) &= W(P) - U(P) = (V_\gidx(P) + V_\cidx(P)) - (U_\gidx(P) + U_\cidx(P))\\
 \end{split}
 \end{equation}
 %
-Na získanie poslednej rovnosti vo vzťahu~(\ref{eq:disturbing_potential}) sme 
-využili predpoklad
+Na získanie poslednej rovnosti sme využili predpoklad
 %
 \begin{equation}
 \label{eq:vg_eq_uc}
@@ -5278,8 +5277,7 @@ $M = M_\mathrm{e}$, potom
 \lim_{r \rightarrow \infty} r \, T = 0{.}
 \end{equation}
 %
-Ak okrem~$M = M_\mathrm{e}$ platí aj to, že súradnicový systém je geocentrický, 
-potom \parencite{Pick1973}
+Ak je navyše súradnicový systém geocentrický, potom \parencite{Pick1973}
 %
 \begin{equation}
 \lim_{r \rightarrow \infty} r^2 \, T = 0{.}
@@ -5342,7 +5340,8 @@ a
 \end{split}
 \end{equation}
 %
-pričom (pozri rovnice~\ref{eq:c20_j20}, \ref{eq:c20_j20_2} a~\ref{eq:j2n0})
+pričom (pozri rovnice~\ref{eq:sh_norm}, \ref{eq:cnm_snm_2nd_norm}, 
+\ref{eq:c20_j20}, \ref{eq:c20_j20_2} a~\ref{eq:j2n0})
 %
 \begin{equation}
 \label{eq:cell_2n}
@@ -5373,8 +5372,8 @@ harmonický rozvoj poruchového potenciálu.
 Poruchový potenciál sa udáva vo fyzikálnej jednotke~$\mathrm{m}^2 
 \ \mathrm{s}^{-2}$ a~nadobúda hodnoty približne od $-1000\ \mathrm{m}^2 
 \ \mathrm{s}^{-2}$ do $1000 \ \mathrm{m}^2 \ \mathrm{s}^{-2}$ (porovnaj 
-s~hodnotami~${\sim}6 \times 10^7\ \mathrm{m}^2 \ \mathrm{s}^{-2}$ gravitačného 
-potenciálu na Obrázku~\ref{fig:vg_grav_sr_2arcsec}).  
+s~hodnotami gravitačného potenciálu~${\sim}6 \times 10^7\ \mathrm{m}^2 
+\ \mathrm{s}^{-2}$ na Obrázku~\ref{fig:vg_grav_sr_2arcsec}).  
 Obrázok~\ref{fig:disturbing_potential_on_grs80} znázorňuje poruchový potenciál 
 na povrchu ekvipotenciálneho elipsoidu.  Pozorujeme jednak dlhovlnný trend, 
 napríklad v~okolí minima v~Indickom oceáne a~maxima v~Indonézii, ale tiež 
@@ -5425,9 +5424,9 @@ nedokážeme jednoducho odmerať
 (Kapitola~\ref{sec:centrifugal_and_gravity_potential}).  Snažíme sa ho ale 
 určiť, pretože poruchový potenciál priamo súvisí s~výpočtom geoidu.  
 V~Kapitolách~\ref{sec:gravity_disturbance} a~\ref{sec:gravity_anomaly} 
-predstavíme veličiny poruchového poľa, ktoré dokážeme odmerať.  Na záver 
-v~Kapitolách~\ref{sec:deflections} a~\ref{sec:geoid} ukážeme vypočet 
-zvislicových odchýlok a~geoidu z~týchto veličín.
+predstavíme veličiny poruchového poľa, ktoré dokážeme odmerať.  Neskôr 
+v~Kapitole~\ref{sec:geoid} ukážeme výpočet zvislicových odchýlok a~geoidu 
+z~týchto veličín.
 
 
 
@@ -5626,8 +5625,8 @@ je singulárna kvôli členu~$\diff P_{nk}(\sin\varphi) \slash \diff \varphi$
 (pozri~\ref{eq:vgx_sh}); singularitu v~rovnici~(\ref{eq:dgy_sh}) spôsobuje člen 
 $1 \slash \cos\varphi$.  Výpočtu rovníc~(\ref{eq:dgx_sh}) a~(\ref{eq:dgy_sh}) 
 v~oblastiach pólov je preto potrebné venovať osobitnú pozornosť.  Použiť je 
-možné napríklad nesingulárne metódy výpočtu z~prác \textcite{Petrovskaya2012} 
-či \textcite{Sebera2013} \parencite[pozri tiež][]{Ivanov2018}.
+možné napríklad nesingulárne metódy výpočtu z~prác \textcite{Petrovskaya2012}, 
+\textcite{Sebera2013} či \textcite{Ivanov2018}.
 
 Vektor poruchy tiažového zrýchlenia~(\ref{eq:dg_vec_sph}) môže byť 
 transformovaný do iného súradnicového systému použitím príslušných rotačných 
@@ -5651,11 +5650,10 @@ zrýchlenia~$\delta g(P)$ je daný vzťahom
 Na~Obrázku~\ref{fig:dg_ggm_grs80} je znázornený priebeh prvkov vektora poruchy 
 tiažového zrýchlenia v~súradnicovom systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, 
 $z^\mathrm{s}$ (rovnice~\ref{eq:dgx_sh} až~\ref{eq:dgz_sh}).  Na mape 
-elementu~$\delta g_{x^\mathrm{s}}$ si môžeme všimnúť vizuálne vystupujúce prvky 
-gravitačného poľa prevažne v~smere sférickej dĺžky~$\lambda$, teda v~smere 
-kolmom na smer derivovania (pozri rovnicu~\ref{eq:dgx_sh}).  Podobne na 
-mape~$\delta g_{y^\mathrm{s}}$ vystupujú do popredia najmä prvky v~smere 
-sférickej šírky vďaka derivácii v~smere sférickej dĺžky~(pozri 
+elementu~$\delta g_{x^\mathrm{s}}$ vidíme prvky gravitačného poľa prevažne 
+v~smere sférickej dĺžky~$\lambda$, teda v~smere kolmom na smer derivovania 
+(pozri rovnicu~\ref{eq:dgx_sh}).  Podobne na mape~$\delta g_{y^\mathrm{s}}$ 
+vystupujú do popredia najmä prvky v~smere sférickej šírky (pozri 
 rovnicu~\ref{eq:dgy_sh}).  Na základe porovnania s~obrázkom poruchového 
 potenciálu~\ref{fig:disturbing_potential_on_grs80} tiež možno konštatovať, že 
 krátkovlnné prvky poruchy tiažového zrýchlenia sú výrazne silnejšie ako 
@@ -5679,7 +5677,7 @@ v~porovnaní s~poruchovým potenciálom.
 \caption{Prvky vektora poruchy tiažového zrýchlenia $\delta g_{x^\mathrm{s}}$ 
 (vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) a~$\delta 
 g_{z^\mathrm{s}}$ (spodná mapa)~(jednotky~$\mathrm{mGal}$) zemského 
-gravitačného poľa vypočítaného zo sférického harmonického modelu EIGEN-6C4 do 
+gravitačného poľa vypočítané zo sférického harmonického modelu EIGEN-6C4 do 
 stupňa~720 na povrchu elipsoidu~GRS80.  Normálny gravitačný potenciál je 
 generovaný ekvipotenciálnym elipsoidom~GRS80.}
 \label{fig:dg_ggm_grs80}
@@ -5691,8 +5689,8 @@ porucha tiažového zrýchlenia sa citeľne vyhlaďuje s~narastajúcou vzdialeno
 od Zeme.  Toto vyhladzovanie je dokonca rýchlejšie ako v~prípade poruchového 
 potenciálu (porovnaj s~Obrázkami~\ref{fig:disturbing_potential_on_grs80} 
 a~\ref{fig:disturbing_potential_at_450km}), pretože gravitačné zrýchlenie klesá 
-s~druhou mocninou vzdialenosti (pozri rovnicu~\ref{eq:gg_body}), zatiaľ čo 
-gravitačný potenciál klesá s~prvou mocninou vzdialenosti výpočtového bodu od 
+s~druhou mocninou vzdialenosti (rovnica~\ref{eq:gg_body}), zatiaľ čo gravitačný 
+potenciál klesá s~prvou mocninou vzdialenosti výpočtového bodu od 
 diferenciálneho hmotného elementu (rovnica~\ref{eq:vg_body}).
 
 \begin{figure}
@@ -5775,9 +5773,8 @@ Táto vzdialenosť sa nazýva \emph{normálna výška podľa Molodenského}~$H_n
 \parencite{MoritzPhysicalGeodesy}.\footnote{Niveláciou je možné určiť aj iné 
 typy fyzikálnych výšok \parencite[pozri napríklad][]{MoritzPhysicalGeodesy}.}  
 Normálne tiažové zrýchlenie tak bolo možné vypočítať v~bode~$Q$ z~výšky~$H_n$ 
-určenej niveláciou.  S~ohľadom na súčasnú dostupnosť globálnych navigačných 
-družicových systémov je možné očakávať, že v~budúcnosti bude vo fyzikálnej 
-geodézii dominovať porucha tiažového zrýchlenia 
+určenej niveláciou.  S~ohľadom na súčasnú dostupnosť GNSS je možné očakávať, že 
+v~budúcnosti bude vo fyzikálnej geodézii dominovať porucha tiažového zrýchlenia 
 \parencite{MoritzPhysicalGeodesy}.  V~súčasnosti sa bežne stretávame s~poruchou 
 tiažového zrýchlenia aj s~anomáliou tiažového zrýchlenia.
 
@@ -5796,7 +5793,7 @@ Obrázok~\ref{fig:gravity_anomaly}).}
 Hoci vektory~$\vec g$ a~$\boldsymbol\gamma$ sú 
 v~rovnici~(\ref{eq:Dg_vector_earth}) počítané v~dvoch rôznych bodoch, vektor 
 anomálie tiažového zrýchlenia~$\Delta \vec g$ budeme formálne pripisovať 
-bodu~$P$, čomu zodpovedá zápis~$\Delta \vec g(P)$, ktorý používame.
+bodu~$P$, čomu zodpovedá zápis~$\Delta \vec g(P)$.
 
 Vektor anomálie tiažového zrýchlenia môže byť definovaný aj na geoide vzťahom 
 (Obrázok~\ref{fig:gravity_anomaly})
@@ -5821,12 +5818,12 @@ a~tiež Kapitolu~\ref{sec:physical_heights}).
 
 Okrem vektorovej anomálie tiažového zrýchlenia sa často stretávame aj so 
 skalárnou definíciou anomálie tiažového zrýchlenia (pozri tiež 
-Kapitolu~\ref{sec:gravity_disturbance}), či už na povrchu Zeme
+Kapitolu~\ref{sec:gravity_disturbance}), či už na povrchu Zeme,
 %
 \begin{equation}
 \label{eq:Dg_scalar_earth}
 \Delta g(P) = \| \vec g(P) \| - \| \boldsymbol \gamma (Q) \| = g(P) 
-- \gamma(Q){.}
+- \gamma(Q){,}
 \end{equation}
 %
 alebo na geoide,
@@ -5863,15 +5860,16 @@ v~rovnici~(\ref{eq:Dg_scalar_earth}) a~zakrivenie normálnej tiažnice.  Úlohu 
 výrazne zjednodušíme linearizáciou problému a~využitím elipsoidickej 
 aproximácie z~Obrázku~\ref{fig:heights}.  Obe aproximácie sú postačujúce pre 
 praktické aplikácie \parencite{MoritzAdvancedGeodesy}.  Následne odvodíme vzťah 
-medzi oboma veličinami aj vo sférickej aproximácii.  Exaktné riešenie bolo 
-nájdené v~prácach~\textcite{Meissl1971b} a~\textcite{Borre_chapter8} 
-\parencite[pozri tiež napríklad][]{MoritzAdvancedGeodesy,Janak2006}.
+medzi oboma veličinami vo sférickej aproximácii.  Exaktné riešenie bolo nájdené 
+v~prácach~\textcite{Meissl1971b} a~\textcite{Borre_chapter8} \parencite[pozri 
+tiež napríklad][]{MoritzAdvancedGeodesy,Janak2006}.
 
 \subsubsection{Elipsoidická aproximácia}
 
 Hľadať budeme najprv vzťah medzi~$\Delta g(P_0)$ a~$T(P_0)$ v~bode~$P_0$ na 
-geoide.  Rozviňme~$\gamma$ do Taylorovho radu v~bode~$Q_0$ a~následne 
-zanedbajme členy druhého a~vyšších rádov, ktorých vplyv je malý,
+geoide.  Rozviňme normálne tiažové zrýchlenia~$\gamma(P_0)$ do Taylorovho radu 
+v~bode~$Q_0$ a~následne zanedbajme členy druhého a~vyšších rádov, ktorých vplyv 
+je malý,
 %
 \begin{equation}
 \label{eq:gamma_P0}
@@ -5895,10 +5893,9 @@ h}\right|_{Q_0} \, N\\
 \end{split}
 \end{equation}
 %
-Rovnica~(\ref{eq:Dg_T_tmp}) popisuje, okrem iného, vzťah medzi poruchou 
-a anomáliou tiažového zrýchlenia.  Výšku geoidu nad referenčným elipsoidom~$N$ 
-ďalej získame rozvojom normálneho tiažového potenciálu do Taylorovho radu 
-v~bode~$Q_0$,
+Rovnica~(\ref{eq:Dg_T_tmp}) popisuje vzťah medzi poruchou a anomáliou tiažového 
+zrýchlenia.  Výšku geoidu nad referenčným elipsoidom~$N$ ďalej získame rozvojom 
+normálneho tiažového potenciálu~$U(P_0)$ do Taylorovho radu v~bode~$Q_0$,
 %
 \begin{equation}
 \label{eq:U_P0}
@@ -5917,8 +5914,9 @@ N = \frac{T(P_0)}{\gamma(Q_0)}.
 \end{equation}
 %
 Vzťah~(\ref{eq:N}) sa nazýva \emph{Brunsov vzorec} a~umožňuje vypočítať 
-geometrický parameter, výšku geoidu nad referenčným elipsoidom~$N$, 
-z~fyzikálneho parametra, ktorým je poruchový potenciál~$T(P_0)$ na geoide.  
+\emph{geometrický parameter} (výšku geoidu nad referenčným elipsoidom~$N$) 
+\emph{z~fyzikálnych parametrov} (poruchový potenciál~$T(P_0)$ na geoide 
+a~normálne tiažové zrýchlenié~$\gamma(Q_0)$ na ekvipotenciálnom elipsoide).  
 Brunsov vzorec je základom určovania geoidu.  Dodajme, že zanedbanie členov 
 druhého a~vyšších rádov v~rovnici~(\ref{eq:U_P0}) spôsobuje chyby v~určení~$N$ 
 na úrovni niekoľko málo milimetrov \parencite{Jekeli2015,Sjoberg2017}, teda 
@@ -5941,7 +5939,7 @@ h}\right|_{Q_0} \, T(P_0){.}
 Rovnica~(\ref{eq:Dg_fundamental_equation_geoid}) sa nazýva \emph{základná 
 rovnica fyzikálnej geodézie}.
 
-Podobným spôsobom možno napísať základnú rovnicu fyzikálnej geodézie pre 
+Podobným spôsobom možno získať základnú rovnicu fyzikálnej geodézie pre 
 anomáliu tiažového zrýchlenia na povrchu Zeme,
 %
 \begin{equation}
@@ -5961,7 +5959,7 @@ Na získanie vzťahu~(\ref{eq:Dg_fundamental_equation_earth}) sme využili
 %
 ktorý je možné získať podobne ako vzťah~(\ref{eq:N}).
 
-Anomáliu tiažového zrýchlenia možno definovať v~širšom zmysle nielen pre body 
+V~širšom zmysle možno anomáliu tiažového zrýchlenia definovať nielen pre body 
 na povrchu Zeme alebo na geoide, ale aj pre body mimo Zeme.  Symbol~$P$ potom 
 označuje bod, v~ktorom je dané tiažové zrýchlenie~$g(P)$ 
 v~rovnici~(\ref{eq:Dg_scalar_earth}) a~bod~$Q$ je daný priesečníkom normálnej 
@@ -5969,7 +5967,7 @@ tiažnice prechádzajúcej bodom~$P$ a~normálnej ekvipotenciálnej plochy
 s~normálnym tiažovým potenciálom~$U(Q) = W(P)$ 
 \parencite{MoritzPhysicalGeodesy}.  Odvodením získame aj v~tomto prípade 
 vzťah~(\ref{eq:Dg_fundamental_equation_earth}), ktorý využíva elipsoidickú 
-aproximáciu.  Potom body $P$ a~$Q$ ležia na normále k~ekvipotenciálnemu 
+aproximáciu.  Body $P$ a~$Q$ potom ležia na normále k~ekvipotenciálnemu 
 elipsoidu, ktorá prechádza bodom~$P$, pričom pre polohu bodu~$Q$ platí $U(Q) 
 = W(P)$.  Pre kvantifikáciu efektu linearizácie na anomáliu tiažového 
 zrýchelnia pozri napríklad prácu \textcite{Claessens2006}.
@@ -6103,12 +6101,12 @@ V~Kapitolách~\ref{sec:gravity_disturbance} a~\ref{sec:gravity_anomaly} sme
 videli, že jedna z~merateľných veličín fyzikálnej geodézie, tiažové zrýchlenie, 
 súvisí s~poruchovým potenciálom, a~teda aj s~určovaným tvarom Zeme (pozri 
 rovnicu~\ref{eq:N}).  Medzi časté geodetické merania ale patrí aj určovanie 
-polohy bodu na povrchu Zeme pomocou astronomických meraní a~pomocou globálnych 
-navigačných družicových systémov.  Bolo by preto výhodné, ak by sme našli aj 
-vzťah medzi týmito meraniami a~poruchovým potenciálom, pretože by to umožnilo 
-určovať tvar Zeme z~ďalšieho typu geodetických meraní.  Hoci to na prvý pohľad 
-nemusí byť zrejmé, takýto vzťah naozaj existuje.  Na jeho nájdenie zavedieme 
-veličinu, ktorú budeme nazývať \emph{zvislicová odchýlka}.
+polohy bodu na povrchu Zeme pomocou astronomických a~GNSS meraní.  Bolo by 
+preto výhodné, ak by sme našli aj vzťah medzi týmito meraniami a~poruchovým 
+potenciálom, pretože by to umožnilo určovať tvar Zeme z~ďalšieho typu 
+geodetických meraní.  Hoci to na prvý pohľad nemusí byť zrejmé, takýto vzťah 
+naozaj existuje.  Na jeho nájdenie zavedieme veličinu, ktorú budeme nazývať 
+\emph{zvislicová odchýlka}.
 
 Zvislicová odchýlka je uhol medzi skutočnou zvislicou (pozri 
 Kapitolu~\ref{sec:plumbline}) a~zvoleným referenčným smerom 
@@ -6173,7 +6171,7 @@ však najviac približne niekoľko desiatkok uhlových sekúnd.
 
 Nech je daný súradnicový systém, v~ktorom je smer skutočnej zvislice určený 
 astronomickými súradnicami~$\Phi$ a~$\Lambda$.  Nech je ďalej daný referenčný 
-elipsoid, voči ktorému sú určované súradnice~$\varphi$ a~$\lambda$ referenčného 
+elipsoid, voči ktorému sú určované súradnice~$\phi$ a~$\lambda$ referenčného 
 smeru zvislicovej odchýlky.  Predpokladajme, že osi~$Z$ oboch súradnicových 
 systémov sú rovnobežné a~rovnako tak sú rovnobežné aj roviny ich nultých 
 poludníkov \parencite{TorgeGeodesy}.\footnote{Súčasné súradnicové systémy 
@@ -6188,14 +6186,12 @@ dva sú obzvlášť výhodné (Obrázok~\ref{fig:deflections_unit_sphere}).  Jed
 využíva veľkosť uhlového vychýlenia~$\Theta$ medzi skutočnou zvislicou 
 a~referenčným smerom a~azimut~$\alpha$, ktorý udáva smer vychýlenia v~rovine 
 lokálneho horizontu.  Druhý prístup rozkladá zvislicovú odchýlku do dvoch 
-kolmých smerov.  Jedna zložka zachytáva uhlový rozdiel medzi skutočnou 
-zvislicou a~referenčným smerom po premietnutí zvislicovej odchýlky do~roviny 
-meridiánu; budeme ju označovať symbolom~$\xi$.  Druhá zložka popisuje uhlový 
-rozdiel medzi skutočnou zvislicou a~referenčným smerom po premietnutí do~roviny 
-prvého vertikálu; označovať ju budeme symbolom~$\eta$.  Zvislicovú odchýlku 
-preto môžeme chápať ako dvojrozmerný vektor~$\boldsymbol\Theta = [\xi, 
-\eta]^\top$, ktorý má svoju veľkosť~$\Theta = \| \boldsymbol\Theta \|$ 
-a~smer~$\alpha$.
+kolmých smerov.  Jedna zložka popisuje priemet zvislicovej odchýlky do~roviny 
+meridiánu; budeme ju označovať symbolom~$\xi$.  Druhá zložka popisuje priemet 
+zvislicovej odchýlky do~roviny prvého vertikálu; označovať ju budeme 
+symbolom~$\eta$.  Zvislicovú odchýlku preto môžeme chápať ako dvojrozmerný 
+vektor~$\boldsymbol\Theta = [\xi, \eta]^\top$, ktorý má svoju veľkosť~$\Theta 
+= \| \boldsymbol\Theta \|$ a~smer~$\alpha$.
 
 \begin{figure}[bt]
 \centering
@@ -6350,7 +6346,10 @@ môžeme ďalej upraviť túto rovnicu do tvaru
 \boldsymbol\varepsilon(P) &= - \frac{\nabla W(P) - \nabla U(P)}{\gamma(P)} 
 - \frac{\gamma(P) - g(P)}{\gamma(P)} \, \frac{\nabla W(P)}{g(P)}\\
 %
-&= - \frac{\nabla T(P)}{\gamma(P)} + \frac{\delta g(P)}{\gamma(P)} \, \vec 
+&= - \frac{\nabla T(P)}{\gamma(P)} + \frac{\delta g(P)}{\gamma(P)} \,  \, 
+\frac{\nabla W(P)}{g(P)}\\
+%
+&= - \frac{\nabla T(P)}{\gamma(P)} - \frac{\delta g(P)}{\gamma(P)} \, \vec 
 n_W(P){.}\\
 \end{split}
 \end{equation}
@@ -6395,9 +6394,9 @@ rovnice~(\ref{eq:deflection_grav}) prejdu do tvaru \parencite{Borre_chapter4}
 \xi = -\frac{T_x(P)}{\gamma(P)}{,} \quad \eta = -\frac{T_y(P)}{\gamma(P)}{,}
 \end{equation}
 %
-pretože v~súradnicovom systéme~$x$, $y$, $z$ platí $W_x(P) = W_y(P) = 0$.  
-V~praktických výpočtoch sa ale tento tvar používa zriedkavo, pretože vyžaduje 
-znalosť lokálneho smeru skutočnej zvislice v~bode~$P$ 
+pretože v~takto definovanom súradnicovom systéme~$x$, $y$, $z$ platí $W_x(P) 
+= W_y(P) = 0$.  V~praktických výpočtoch sa ale tento tvar používa zriedkavo, 
+pretože vyžaduje znalosť lokálneho smeru skutočnej zvislice v~bode~$P$ 
 (Obrázok~\ref{fig:deflections}).  Lokálny smer skutočnej zvislice v~bode~$P$ je 
 možné získať odmeraním astronomických súradníc~$\Phi$, $\Lambda$ bodu~$P$.
 
@@ -6477,6 +6476,7 @@ Všimnime si, že (pozri rovnice~\ref{eq:dgx_sh}, \ref{eq:dgy_sh}
 a~\ref{eq:deflection_grav_s})
 %
 \begin{equation}
+\label{eq:dg_horizontal}
 \frac{1}{r} \, \frac{\partial T}{\partial \varphi} = \delta g_{x^\mathrm{s}}{,} 
 \quad \frac{1}{r \cos\varphi} \, \frac{\partial T}{\partial \lambda} = \delta 
 g_{y^\mathrm{s}}{,}
@@ -6502,14 +6502,15 @@ aproximácii získame z~rovníc~(\ref{eq:t_sh}), (\ref{eq:dgx_sh}),
 \begin{split}
 \xi(P) &= -\frac{\delta g_{x^\mathrm{s}}(P)}{\gamma(P)} = -\frac{1}{r \, 
 \gamma(P)} \, \left.\frac{\partial T}{\partial \varphi}\right|_P 
-= \frac{GM}{R^2} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n + 2} \sum_{k 
-= -n}^{n} \bar{t}_{nk} \, \frac{\partial \bar{Y}_{nk}(\varphi, 
-\lambda)}{\partial \varphi}{,}\\
+= -\frac{GM}{R^2 \, \gamma(P)} \sum_{n = 0}^\infty \left( \frac{R}{r} 
+\right)^{n + 2} \sum_{k = -n}^{n} \bar{t}_{nk} \, \frac{\partial 
+\bar{Y}_{nk}(\varphi, \lambda)}{\partial \varphi}{,}\\
 %
 \eta(P) &= -\frac{\delta g_{y^\mathrm{s}}(P)}{\gamma(P)} = -\left.\frac{1}{r \, 
-\cos\varphi \,\gamma(P)} \, \frac{\partial T}{\partial \lambda}\right|_P 
-= \frac{GM}{R^2 \, \cos\varphi} \sum_{n = 0}^\infty \left( \frac{R}{r} 
-\right)^{n + 2} \sum_{k = -n}^{n}\bar{t}_{nk} \, \frac{\partial 
+\cos\varphi \,\gamma(P)} \, \frac{\partial T}{\partial \lambda}\right|_P\\
+%
+&= - \frac{GM}{R^2 \, \cos\varphi \, \gamma(P)} \sum_{n = 0}^\infty \left( 
+\frac{R}{r} \right)^{n + 2} \sum_{k = -n}^{n}\bar{t}_{nk} \, \frac{\partial 
 \bar{Y}_{nk}(\varphi, \lambda)}{\partial \lambda}{.}\\
 \end{split}
 \end{equation}
@@ -6539,7 +6540,8 @@ podobnosť medzi vrchnými dvoma mapami poruchy tiažového zrýchlenia na
 Obrázku~\ref{fig:dg_ggm_grs80} a zvislicovej odchýlky na 
 Obrázku~\ref{fig:deflections_ggm}.  Táto podobnosť je daná úzkou súvislosťou 
 medzi horizontálnymi zložkami vektora poruchy tiažového zrýchlenia a~zložkami 
-zvislicovej odchýlky (pozri vzťah~\ref{eq:deflection_grav_s_sph}).
+zvislicovej odchýlky (pozri vzťahy~\ref{eq:dg_horizontal} 
+a~\ref{eq:deflection_grav_s_sph}).
 
 
 
