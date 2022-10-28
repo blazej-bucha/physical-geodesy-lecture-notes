@@ -6553,12 +6553,12 @@ a~\ref{eq:deflection_grav_s_sph}).
 \chapter{Geoid}
 \label{sec:geoid}
 
-Vráťme sa na chvíľu do úvodnej kapitoly, v~ktorej sme uviedli dva prístupy 
+Vráťme sa na chvíľu do úvodnej kapitoly, v~ktorej sme načrtli dva prístupy 
 k~definícii tvaru Zeme.  V~zmysle prvej definície je tvar Zeme daný jej 
 skutočným fyzickým povrchom, ktorý ale musí byť kvôli svojmu komplikovanému 
 priebehu do istej miery vyhladený.  Určovaním takto chápaného tvaru Zeme a~jej 
 vonkajšieho tiažového poľa sa zaoberá Molodenského teória 
-\parencite{Molodensky1962,Borre2006,MoritzAdvancedGeodesy,MoritzPhysicalGeodesy}.  
+\parencite{Molodensky1962,Borre_chapter8,MoritzAdvancedGeodesy,MoritzPhysicalGeodesy}.  
 V~druhom prístupe je tvar Zeme definovaný geoidom, teda ekvipotenciálnou 
 plochou s~konštantným tiažovým potenciálom.  Na týchto stranách sa budeme 
 bližšie zaoberať iba druhým spomínaným prístupom.\footnote{Pre predstavenie 
@@ -6584,16 +6584,15 @@ vertikálnej alebo horizontálnej.
 
 Označme symbolmi~$\DIFF_{\Delta g}$ a~$\DIFF_{\delta g}$ \emph{diferenciálne 
 operátory}, ktoré transformujú poruchový potenciál na veličinu, ktorá je 
-uvedená v~dolnom indexe za symbolom~$\DIFF$.  Napríklad aplikácia 
-diferenciálneho operátora
+uvedená v~dolnom indexe za symbolom~$\DIFF$.  Napríklad diferenciálny operátor
 %
 \begin{equation}
 \label{eq:diff_Dg}
 \DIFF_{\Delta g} = -\frac{\partial}{\partial r} - \frac{2}{r}
 \end{equation}
 %
-na poruchový potenciál dáva sférickú aproximáciu anomálie tiažového zrýchlenia 
-(porovnaj rovnice~\ref{eq:Dg_fundamental_equation_earth_sph} 
+transformuje poruchový potenciál na sférickú aproximáciu anomálie tiažového 
+zrýchlenia (porovnaj rovnice~\ref{eq:Dg_fundamental_equation_earth_sph} 
 a~\ref{eq:diff_Dg}),
 %
 \begin{equation}
@@ -6757,7 +6756,7 @@ vo forme sférickej aproximácie anomálie tiažového zrýchlenia:
 \Delta g(P) &= -\left.\frac{\partial T}{\partial r}\right|_P 
 - \left.\frac{2}{r}\right|_P \, T(P){,} \quad &&P \in 
 \partial\Omega{,}\label{eq:bvp_Dg_boundary_condition}\\
-T &\rightarrow 0 &&\textrm{pre} \quad r \rightarrow 
+T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow 
 \infty{.}\label{eq:bvp_Dg_t_infty}
 \end{alignat}
 %
@@ -6766,37 +6765,36 @@ predmetom riešenia okrajovej úlohy na oblasti~$\mathbb{R}^3 - \overline\Omega$
 Rovnica~(\ref{eq:bvp_Dg_boundary_condition}) špecifikuje konkrétny typ 
 okrajovej podmienky, ktorá platí na geoide~$\partial\Omega$.  
 Vzťah~(\ref{eq:bvp_Dg_t_infty}) dodáva ďalšiu informáciu o~poruchovom 
-potenciáli; hovorí, že s~narastajúcim sprievodičom~$r$ bodu~$P(r, \varphi, 
-\lambda)$ od Zeme~$\overline\Omega$ sa poruchový potenciál~$T$ blíži k~nule 
-(pozri tiež vzťah~\ref{eq:t_infty}).  
-Bez~rovníc~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) by 
-mala diferenciálna rovnica~(\ref{eq:bvp_Dg_laplace}) nekonečne veľa riešení.  
-Toto tvrdenie možno jednoducho dokázať napríklad na funkcii~$c \slash \ell(P)$, 
-kde~$c$ je reálna konštanta a~$\ell(P)$ je vzdialenosť bodu~$P$ od začiatku 
-súradnicového systému, ktorý sa nachádza, povedzme, v~ťažisku 
-Zeme~$\overline\Omega$.  Z~rovníc~(\ref{eq:nabla_l}) 
-a~(\ref{eq:l_2nd_derivatives}) totižto vieme, že funkcia~$c \slash \ell(P)$ 
-vyhovuje rovnici~(\ref{eq:bvp_Dg_laplace}) pre \emph{ľubovoľnú} reálnu 
-konštantu~$c$ za predpokladu~$\ell(P) > 0$.  
+potenciáli; hovorí, že s~narastajúcou vzdialenosťou bodu~$P$ od 
+Zeme~$\overline\Omega$ sa poruchový potenciál~$T$ blíži k~nule (pozri tiež 
+vzťah~\ref{eq:t_infty}).  Bez~rovníc~(\ref{eq:bvp_Dg_boundary_condition}) 
+a~(\ref{eq:bvp_Dg_t_infty}) by mala diferenciálna 
+rovnica~(\ref{eq:bvp_Dg_laplace}) nekonečne veľa riešení.  Toto tvrdenie možno 
+jednoducho dokázať napríklad na funkcii~$c \slash \ell(P)$, kde~$c$ je reálna 
+konštanta a~$\ell(P)$ je vzdialenosť bodu~$P$ od začiatku súradnicového 
+systému, ktorý sa nachádza, povedzme, v~ťažisku Zeme~$\overline\Omega$.  
+Z~rovníc~(\ref{eq:nabla_l}) a~(\ref{eq:l_2nd_derivatives}) totižto vieme, že 
+funkcia~$c \slash \ell(P)$ vyhovuje rovnici~(\ref{eq:bvp_Dg_laplace}) pre 
+\emph{ľubovoľnú} reálnu konštantu~$c$ za predpokladu~$\ell(P) > 0$.  
 Rovnice~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) tak 
 zabezpečujú, že získame práve jedno riešenie rovnice~(\ref{eq:bvp_Dg_laplace}).  
 Odvodenie riešenia okrajovej úlohy v~tejto práce vynecháme a~zameriame sa skôr 
 na popis získanej rovnice.  Odvodenie je možné nájsť napríklad 
 v~prácach~\textcite{MoritzPhysicalGeodesy} a~\textcite{Janak2006}.
 
-Riešením okrajovej úlohy~(\ref{eq:bvp_Dg_laplace})~--~(\ref{eq:bvp_Dg_t_infty}) 
+Riešením okrajovej úlohy~(\ref{eq:bvp_Dg_laplace}) až~(\ref{eq:bvp_Dg_t_infty}) 
 je vzťah
 %
 \begin{equation}
 \label{eq:stokes}
 T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(P, P') \, \Delta g(P') \, 
-\diff \sigma'{,} \quad P \in \mathbb{R}^3 - \overline\Omega{,} \quad P' \in 
-\partial\Omega{,}
+\diff \sigma'{,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) \cup 
+\partial\Omega{,} \quad P' \in \partial\Omega{,}
 \end{equation}
 %
 ktorý sa nazýva \emph{Stokesov integrál}.  Symbol~$R$ označuje polomer 
-referenčnej sféry Zeme (napríklad stredný či rovníkový polomer Zeme), $\sigma$ 
-je jednotková sféra a~$\diff\sigma'$ je jej diferenciál,
+referenčnej sféry (napríklad stredný či rovníkový polomer Zeme), $\sigma$ je 
+jednotková sféra, $\diff\sigma'$ je diferenciál jednotkovej sféry,
 %
 \begin{equation}
 \label{eq:diff_sigma}
@@ -6834,11 +6832,12 @@ a~$\alpha$ označuje azimut spojnice~$P$ a~$\diff\sigma'$.}
 \end{figure}
 
 Stokesov integrál~(\ref{eq:stokes}) umožňuje vypočítať poruchový potenciál 
-kdekoľvek v~oblasti~$\mathbb{R}^3 - \overline\Omega$.  Osobitne zaujímavý je 
-prípad, v~ktorom výpočtový bod leží na rovnakej sfére ako anomálie tiažového 
-zrýchlenia, teda keď~$r = R$.  Všeobecný tvar Stokesovho 
-jadra~(\ref{eq:stokes_kernel_general}) potom prejde do tvaru, ktorý závisí iba 
-od sférickej vzdialenosti~$\psi$,
+kdekoľvek v~oblasti~$\left( \mathbb{R}^3 - \overline\Omega\right) \cup 
+\partial\Omega$.  Osobitne zaujímavý je prípad, v~ktorom výpočtový bod leží na 
+rovnakej sfére ako anomálie tiažového zrýchlenia, teda keď~$r = R$.  Všeobecný 
+tvar Stokesovho jadra~(\ref{eq:stokes_kernel_general}) potom prejde do tvaru, 
+ktorý závisí iba od sférickej vzdialenosti~$\psi$ 
+\parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:stokes_kernel}
@@ -6891,23 +6890,25 @@ aplikovaný.
 \subsection{Stokesovo integračné jadro}
 \label{sec:stokes_kernel}
 
-Význam Stokesovej funkcie vo vzťahu~(\ref{eq:stokes}) lepšie pochopíme po 
-grafickom znázornení jej priebehu (Obrázok~\ref{fig:stokes_kernel}).  Z~obrázku 
-a~z~rovnice~(\ref{eq:stokes_kernel}) je zrejmé, hodnota Stokesovej funkcie 
+Význam Stokesovej funkcie vo vzťahu~(\ref{eq:stokes_simplified}) lepšie 
+pochopíme po grafickom znázornení jej priebehu 
+(Obrázok~\ref{fig:stokes_kernel}).  Z~obrázku 
+a~z~rovnice~(\ref{eq:stokes_kernel}) je zrejmé, že hodnota Stokesovej funkcie 
 klesá so zväčšujúcou sa sférickou vzdialenosťou~$\psi$ až po vzdialenosť~$\psi 
 \approx 72^\circ$, po ktorej začína mierne stúpať s~narastajúcim~$\psi$.  
-V~súvislosti s~rovnicou~(\ref{eq:stokes}) to znamená, že na hodnotu poruchového 
-potenciálu~$T(P)$ majú najväčší vplyv anomálie tiažového zrýchlenia~$\Delta 
-g(P')$, ktoré sa nachádzajú v~blízkosti výpočtového bodu~$P$.  Inými slovami, 
-anomálie tiažového zrýchlenia~$\Delta g(P')$ v~blízkom okolí výpočtového bodu 
-sú v~rovnici~(\ref{eq:stokes}) násobené (\emph{vážené}) väčšími hodnotami 
-Stokesovej funkcie~$S$ ako tie anomálie, ktoré sa nachádzajú ďaleko od 
-výpočtového bodu; ich relatívny prínos do hodnoty poruchového potenciálu je tak 
-väčší ako v~prípade veľkých vzdialeností medzi~$P$ a~$\diff\sigma'$.  Na 
-Obrázku~\ref{fig:stokes_kernel} tiež vidíme, že Stokesovo integračné jadro 
-nadobúda nulové hodnoty pre sférické vzdialenosti približne~$39^\circ$ 
-a~$117^\circ$ \parencite{TorgeGeodesy}.  Príspevok anomálií tiažového, ktoré sa 
-nachádzajú v~týchto vzdialenostiach voči výpočtovému bodu, je preto nulový.
+V~súvislosti s~rovnicou~(\ref{eq:stokes_simplified}) to znamená, že na hodnotu 
+poruchového potenciálu~$T(P)$ majú najväčší vplyv anomálie tiažového 
+zrýchlenia~$\Delta g(P')$, ktoré sa nachádzajú v~blízkosti výpočtového 
+bodu~$P$.  Inými slovami, anomálie tiažového zrýchlenia~$\Delta g(P')$ 
+v~blízkom okolí výpočtového bodu sú v~rovnici~(\ref{eq:stokes_simplified}) 
+násobené (\emph{vážené}) väčšími hodnotami Stokesovej funkcie~$S$ ako tie 
+anomálie, ktoré sa nachádzajú ďaleko od výpočtového bodu; ich relatívny prínos 
+do hodnoty poruchového potenciálu je tak väčší ako v~prípade veľkých 
+vzdialeností medzi~$P$ a~$\diff\sigma'$.  Na Obrázku~\ref{fig:stokes_kernel} 
+tiež vidíme, že Stokesovo integračné jadro nadobúda nulové hodnoty pre sférické 
+vzdialenosti približne~$39^\circ$ a~$117^\circ$ \parencite{TorgeGeodesy}.  
+Príspevok anomálií tiažového, ktoré sa nachádzajú v~týchto vzdialenostiach voči 
+výpočtovému bodu, je preto nulový.
 
 \begin{figure}[bt]
 \centering
@@ -6921,7 +6922,8 @@ Stokesova funkcia má niekoľko ďalších zaujímavých vlastností.
 %
 \begin{itemize}
 \item \emph{Singularita}.  Pre~$P(r, \varphi, \lambda) \rightarrow P'(R, 
-\varphi', \lambda')$ sa hodnota Stokesovej funkcie blíži k~nekonečnu (pre pojem 
+\varphi', \lambda')$ sa hodnota Stokesovej 
+funkcie~(\ref{eq:stokes_kernel_general}) blíži k~nekonečnu (pre pojem 
 singularita pozri tiež Kapitolu~\ref{sec:spheroidal_harmonics}),
 %
 \begin{equation}
@@ -6931,34 +6933,33 @@ singularita pozri tiež Kapitolu~\ref{sec:spheroidal_harmonics}),
 %
 K~singularite Stokesovej funkcie dochádza vtedy, keď integrál~(\ref{eq:stokes}) 
 je počítaný na tej sfére, na ktorej je zadaná okrajová podmienka v~podobe 
-anomálií tiažového zrýchlenia, teda ak~$r = R$ a~súčasne~$P(r, \varphi, 
-\lambda) = P'(R, \varphi', \lambda')$.  Napriek 
-vlastnosti~(\ref{eq:stokes_singularity}) však bude výsledok 
-integrácie~(\ref{eq:stokes}), teda poruchový potenciál v~bode~$P$, nadobúdať 
-\emph{konečnú} hodnotu (pre podobnú situáciu v~súvislosti s~Newtonovým 
-integrálom pozri tiež diskusiu zo záveru Kapitoly~\ref{sec:potential_theory}).  
-V~numerických výpočtoch je ale i~tak potrebné venovať osobitnú pozornosť 
-prípadu, v~ktorom sú výpočtový bod a~stred integračného elementu totožné, 
-a~použiť vhodné matematické úpravy (pozri napríklad 
-\cite{MoritzPhysicalGeodesy} či \cite{Hees1991}).  Dodajme, že vo všeobecnosti 
-neplatí, že každé singulárne integračné jadro vedie ku konečným hodnotám 
-integrálu.  To, či je hodnota integrálu konečná alebo nie, závisí od typu 
-singularity.
+anomálií tiažového zrýchlenia, teda keď~$r = R$, a~súčasne keď platí~$(\varphi, 
+\lambda) = (\varphi', \lambda')$.  Napriek singularite Stokesovho integračného 
+jadra však bude výsledok integrácie~(\ref{eq:stokes}), teda poruchový potenciál 
+v~bode~$P$, nadobúdať \emph{konečnú} hodnotu (pre podobnú situáciu v~súvislosti 
+s~Newtonovým integrálom pozri tiež diskusiu zo záveru 
+Kapitoly~\ref{sec:potential_theory}).  V~numerických výpočtoch je ale i~tak 
+potrebné venovať osobitnú pozornosť prípadu, v~ktorom sú výpočtový bod a~stred 
+integračného elementu totožné, a~použiť vhodné matematické úpravy (pozri 
+napríklad \cite{MoritzPhysicalGeodesy} či \cite{Hees1991}).  Dodajme, že vo 
+všeobecnosti neplatí, že každé singulárne integračné jadro vedie ku konečným 
+hodnotám integrálu.  To, či je hodnota integrálu konečná alebo nie, závisí od 
+typu singularity.
 %
 \item \emph{Homogénnosť}.  Hodnota Stokesovho integračného jadra nezávisí od 
 polohy bodov~$P$ a~$P'$ v~priestore za predpokladu, že $r$ a~$\psi$ ostávajú 
 nezmenené.  Ak sa napríklad body~$P$ a~$P'$ nachádzajú na tej istej sfére a~na 
-tom istom meridiáne, hodnota Stokesovej funkcie~$S(\psi)$ je rovnaká bez ohľadu 
-na to, v~ktorej časti meridiánu a~na ktorom meridiáne sa body~$P$ a~$P'$ 
-nachádzajú, pokiaľ ich vzdialenosť~$\psi$ ostáva nezmenená.
+tom istom meridiáne, hodnota Stokesovej funkcie~(\ref{eq:stokes_kernel}) je 
+rovnaká bez ohľadu na to, v~ktorej časti meridiánu a~na ktorom meridiáne sa 
+body~$P$ a~$P'$ nachádzajú, pokiaľ ich vzdialenosť~$\psi$ ostáva nezmenená.
 %
 \item \emph{Izotropnosť}.  Hodnota Stokesovho integračného jadra nezávisí od 
 azimutu~$\alpha$ spojnice bodov~$P$ a~$P'$ (pozri 
 Obrázok~\ref{fig:surface_integral}).
 \end{itemize}
 
-Stokesovu funkciu je možné vyjadriť aj ekvivalentným spôsobom pomocou rozvoja 
-do radu Legendreových polynómov \parencite{MoritzPhysicalGeodesy},
+Stokesovu funkciu je možné ekvivalentne vyjadriť aj rozvojom do radu 
+Legendreových polynómov \parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:stokes_spectral}
@@ -7092,8 +7093,8 @@ konvolučným násobením transformovaný na \textit{výstupný signál}.}
 \subsection{Sférická aproximácia v~Stokesovom integráli}
 \label{sec:stokes_spherical_approximation}
 
-Riešenie~(\ref{eq:stokes}) okrajovej úlohy~(\ref{eq:bvp_Dg_laplace})~-- 
-(\ref{eq:bvp_Dg_t_infty}) bolo získané s~využitím sférickej aproximácie.  
+Riešenie~(\ref{eq:stokes}) okrajovej úlohy~(\ref{eq:bvp_Dg_laplace}) 
+až~(\ref{eq:bvp_Dg_t_infty}) bolo získané s~využitím sférickej aproximácie.  
 Sférická aproximácia bola použitá jednak v~definícii okrajovej 
 podmienky~(\ref{eq:bvp_Dg_boundary_condition}), ale tiež v~riešení okrajovej 
 úlohy, čo má niekoľko dôsledkov pre praktické určovanie geoidu 
@@ -7118,29 +7119,28 @@ elipsoide \parencite{Martinec1997}.
 \section{Hotineov integrál}
 \label{sec:hotine_integral}
 
-Definujme teraz takú okrajovú úlohu, ktorá umožní vypočítať poruchový 
-potenciál, a~teda geoid, z~porúch tiažového zrýchlenia vo sférickej 
-aproximácii:
+Definujme teraz takú okrajovú úlohu, ktorá umožní vypočítať poruchový potenciál 
+z~porúch tiažového zrýchlenia vo sférickej aproximácii:
 %
 \begin{alignat}{2}
 \nabla^2 T(P) &= 0{,} &&P \in \mathbb{R}^3 
 - \overline\Omega{,}\label{eq:bvp_dg_laplace}\\
 \delta g(P) &= -\left.\frac{\partial T}{\partial r}\right|_P{,} \quad &&P \in 
 \partial\Omega{,}\label{eq:bvp_dg_boundary_condition}\\
-T &\rightarrow 0 &&\textrm{pre} \quad r \rightarrow 
+T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow 
 \infty{.}\label{eq:bvp_dg_t_infty}
 \end{alignat}
 
-Riešením okrajovej úlohy~(\ref{eq:bvp_dg_laplace})~-- 
-(\ref{eq:bvp_dg_t_infty}), ktoré je možné nájsť napríklad v~prácach 
+Riešením okrajovej úlohy~(\ref{eq:bvp_dg_laplace}) 
+až~(\ref{eq:bvp_dg_t_infty}), ktoré je možné nájsť napríklad v~prácach 
 \textcite{MoritzPhysicalGeodesy} či \textcite{SansoGeoidDetermination}, získame 
 rovnicu
 %
 \begin{equation}
 \label{eq:hotine}
 T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} H(P, P') \, \delta g(P') \, 
-\diff \sigma'{,} \quad P \in \mathbb{R}^3 - \overline\Omega{,} \quad P' \in 
-\partial\Omega{.}
+\diff \sigma'{,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) \cup 
+\partial\Omega{,} \quad P' \in \partial\Omega{.}
 \end{equation}
 %
 Vzťah~(\ref{eq:hotine}) sa nazýva \emph{Hotineov integrál}.  Funkcia~$H$ sa 
@@ -7174,7 +7174,7 @@ medzi konvolučné integrály (Kapitola~\ref{sec:stokes_convolution}) a~bol
 získaný vo sférickej aproximácii 
 (Kapitola~\ref{sec:stokes_spherical_approximation}).  Hľadaný tvar integrálneho 
 operátora~$\mathcal{I}_{\delta g}$ z~rovnice~(\ref{eq:int_operators}) je zrejmý 
-z~porovnania rovníc~(\ref{eq:stokes}), (\ref{eq:hotine}) a~(\ref{eq:iDg}).
+z~porovnania rovníc~(\ref{eq:stokes}), (\ref{eq:iDg}) a~(\ref{eq:hotine}).
 
 \begin{figure}[bt]
 \centering
@@ -7221,7 +7221,7 @@ poruchového potenciálu:
 - \overline\Omega{,}\label{eq:bvp_t_laplace}\\
 T(P) &= f(P){,} \quad &&P \in 
 \partial\Omega{,}\label{eq:bvp_t_boundary_condition}\\
-T &\rightarrow 0 &&\textrm{pre} \quad r \rightarrow 
+T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow 
 \infty{,}\label{eq:bvp_t_t_infty}
 \end{alignat}
 %
@@ -7234,7 +7234,8 @@ napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination} má tvar
 \begin{equation}
 \label{eq:poisson}
 T(P) = \frac{R}{4\pi} \, \iint\limits_\sigma \Pi(P, P') \, T(P') \, 
-\diff\sigma'
+\diff\sigma'{,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) \cup 
+\partial\Omega{,} \quad P' \in \partial\Omega{,}
 \end{equation}
 %
 a~nazýva sa \emph{Poissonov integrál}.  Symbol~$\Pi$ označuje Poissonovo 
@@ -7253,21 +7254,22 @@ vynecháme, pretože pre fixnú hodnotu sprievodiča~$r$ ide o~známu funkciu~$c
 \slash \ell^3$, kde $c = r^2 - R^2$.
 
 Poissonov integrál umožňuje získať akúkoľvek harmonickú funkciu v~celom 
-priestore~$\mathbb{R}^3 - \overline\Omega$ z~hodnôt tejto funkcie na 
-hranici~$\partial\Omega$.  Z~Kapitoly~\ref{sec:harmonic_function} vieme, že 
-tento proces sa niekedy nazýva analytické pokračovanie, v~tomto prípade tiež 
-\emph{harmonické pokračovanie}, pretože funkcia~$T$ vystupujúca v~Poissonovom 
-integráli musí byť harmonická.  Poissonov integrál sa často používa aj 
-inverzným spôsobom na pokračovanie nadol, hoci táto úloha je vo všeobecnosti 
-nestabilná \parencite{SansoGeodeticBoundaryValueProblem}.  Okrem poruchového 
-potenciálu je možné aplikovať Poissonov integrál aj na ďalšie harmonické 
-funkcie, napríklad gravitačný potenciál~$V$ či funkciu~$r \, \Delta g$, ktorá 
-je taktiež harmonická (samotná funkcia~$\Delta g$ však harmonická nie je).  
-Poissonov integrál teda umožňuje riešiť mnohé kľúčové úlohy fyzikálnej 
-geodézie.  Priamo na výpočet geoidu sa nezvykne používať, pretože predpokladá 
-dostupnosť poruchového potenciálu na geoide.  Ak by bol ale poruchový potenciál 
-na geoide známy, mohol by byť priamo použitý v~Brunsovom vzorci~(\ref{eq:N}) 
-bez potreby formulovania a~riešenia okrajovej úlohy.
+priestore~$\left( \mathbb{R}^3 - \overline\Omega \right) \cup \partial\Omega$ 
+z~hodnôt tejto funkcie na hranici~$\partial\Omega$.  
+Z~Kapitoly~\ref{sec:harmonic_function} vieme, že tento proces sa niekedy nazýva 
+analytické pokračovanie, v~tomto prípade tiež \emph{harmonické pokračovanie}, 
+pretože funkcia~$T$ vystupujúca v~Poissonovom integráli musí byť harmonická.  
+Poissonov integrál sa často používa aj inverzným spôsobom na pokračovanie 
+nadol, hoci táto úloha je vo všeobecnosti nestabilná 
+\parencite{SansoGeodeticBoundaryValueProblem}.  Okrem poruchového potenciálu je 
+možné aplikovať Poissonov integrál aj na ďalšie harmonické funkcie, napríklad 
+gravitačný potenciál~$V$ či funkciu~$r \, \Delta g$, ktorá je taktiež 
+harmonická (samotná funkcia~$\Delta g$ však harmonická nie je).  Poissonov 
+integrál teda umožňuje riešiť mnohé kľúčové úlohy fyzikálnej geodézie.  Priamo 
+na výpočet geoidu sa nezvykne používať, pretože predpokladá dostupnosť 
+poruchového potenciálu na geoide.  Ak by bol ale poruchový potenciál na geoide 
+známy, mohol by byť priamo použitý v~Brunsovom vzorci~(\ref{eq:N}) bez potreby 
+formulovania a~riešenia okrajovej úlohy.
 
 
 
@@ -7402,8 +7404,8 @@ v~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:geoid_astrogeodetic}.  Nech
 je teda daných~$M$ anomálií tiažového zrýchlenia~$\Delta g$, ktoré sú doplnené 
 o~príslušné polohy bodov v~podobe sférických súradníc~$(r, \varphi, \lambda)$.  
 To znamená, že v~rovnici~(\ref{eq:Dg_sh_sa}) poznáme ľavú stranu (merané dáta) 
-a~na pravej strane vieme priamočiaro vypočítať zo známej polohy všetky členy 
-okrem sférických harmonických koeficientov~$\bar{t}_{nk}$.  
+a~na pravej strane vieme zo známej polohy priamočiaro vypočítať všetky členy 
+okrem neznámych sférických harmonických koeficientov~$\bar{t}_{nk}$.  
 Vzťah~(\ref{eq:Dg_sh_sa}) je z~pohľadu koeficientov~$\bar{t}_{nk}$ lineárny.  
 Z~jeho derivácií podľa~$\bar{t}_{nk}$ je tak možné zostaviť maticu plánu 
 a~z~meraní~$\Delta g$ následne odhadnúť metódou najmenších štvorcov najviac~$M$ 
@@ -7412,7 +7414,7 @@ koeficientov~$\bar{t}_{nk}$ do maximálneho stupňa~$N \leq \sqrt{M}
 rozvoj do stupňa~$N$ má~$M = (N + 1)^2$ sférických harmonických 
 koeficientov~$\bar{t}_{nk}$.  Preto~$M$ koeficientov implikuje maximálny 
 stupeň~$N = \sqrt{M} - 1$.}  Z~koeficientov~$\bar{t}_{nk}$ je následne možné 
-vzťahmi~(\ref{eq:N}) a~(\ref{eq:t_sh}) vypočítať priebeh geoidu s~využitím 
+vzťahmi~(\ref{eq:t_sh}) a~(\ref{eq:N}) vypočítať priebeh geoidu s~využitím 
 sférických harmonických funkcií.
 
 V~praxi sa koeficienty~$\bar{t}_{nk}$ odhadujú nielen z~anomálií tiažového 
@@ -7460,25 +7462,25 @@ existujú, no ich priestorové rozlíšenie dosahuje v~súčasnosti nanajvýš
 zhruba~$15'$ \parencite{EGM2008,Pail2018}, teda približne~$28$~km na rovníku.  
 Takáto hustota nepostačuje na dosiahnutie vyžadovanej zhruba centimetrovej 
 presnosti geoidu.  Naproti tomu, gravimetrické databázy na úrovni kontinentov 
-či štátov sú nezriedka výrazne hustejšie (na Slovensku napríklad~3~-- 
-6 gravimetrických meraní na $\textrm{km}^2$).  Z~odmeraných anomálií tiažového 
+či štátov sú nezriedka výrazne hustejšie (na Slovensku napríklad~3 až~6 
+gravimetrických meraní na~$\textrm{km}^2$).  Z~odmeraných anomálií tiažového 
 zrýchlenia sa preto zvykne pomocou družicových sférických harmonických modelov 
 odstrániť dlhovlnný trend anomálií tiažového zrýchlenia do stupňa~$N$ 
 (angl.~\emph{remove}), čím získame \emph{reziduálne anomálie tiažového 
 zrýchlenia}.  Tieto reziduálne anomálie tiažového zrýchlenia sú následne 
 použité na výpočet \emph{reziduálnej výšky geoidu} nad referenčným elipsoidom, 
 napríklad pomocou Stokesovho integrálu (angl.~\emph{compute}).  Na záver je 
-k~získanej reziduálnej výške geoidu pridaný globálny dlhovlnný trend, ktorý je 
-spočítaný opäť zo sférického harmonického modelu (angl.~\emph{restore}).  
-Kľúčovou je skutočnosť, že prostrednú časť metódy (\emph{compute}) je možné 
-s~rozumnou mierou aproximácie spočítať s~využitím iba regionálnych 
-gravimetrických dát, napríklad 100~km od výpočtového bodu.  Integračnou 
-oblasťou v~Stokesovom integračnom jadre tak už nemusí byť celá sféra~$\sigma$, 
-ale len sférický zvrchlík~$\sigma_0$ so stredom vo výpočtovom bode.  Takáto 
-aproximácia je možná preto, lebo vplyv vzdialených \emph{reziduálnych} anomálií 
-tiažového zrýchlenia na výšku geoidu je s~dostatočnou mierou presnosti 
-zanedbateľný, pokiaľ sú stupeň~$N$ a~integračná oblasť~$\sigma_0$ vhodne 
-zvolené.
+k~získanej reziduálnej výške geoidu pridaný globálny dlhovlnný trend geoidu, 
+ktorý je spočítaný opäť zo sférického harmonického modelu 
+(angl.~\emph{restore}).  Kľúčovou je skutočnosť, že prostrednú časť metódy 
+(\emph{compute}) je možné s~rozumnou mierou aproximácie spočítať s~využitím iba 
+regionálnych gravimetrických dát, napríklad 100~km od výpočtového bodu.  
+Integračnou oblasťou v~Stokesovom integrále tak už nemusí byť celá 
+sféra~$\sigma$, ale len sférický zvrchlík~$\sigma_0$ so stredom vo výpočtovom 
+bode.  Takáto aproximácia je možná preto, lebo vplyv vzdialených 
+\emph{reziduálnych} anomálií tiažového zrýchlenia na výšku geoidu je 
+s~dostatočnou mierou presnosti zanedbateľný, pokiaľ sú stupeň~$N$ a~integračná 
+oblasť~$\sigma_0$ vhodne zvolené.
 
 Metóda remove--compute--restore teda umožňuje vhodnú kombináciu vysokej 
 lokálnej hustoty regionálnych gravimetrických databáz s~globálnym charakterom 
@@ -7500,12 +7502,13 @@ hmôt je spravidla dobre popísaný digitálnymi modelmi terénu.  V~súčasnost
 bežné digitálne modely terénu s~metrovým rozlíšením a~s~vertikálnou presnosťou 
 lepšou ako pár desiatok centimetrov.  Podrobnosť týchto modelov je teda výrazne 
 vyššia ako podrobnosť terestrických gravimetrických databáz.  Metóda 
-reziduálneho terénneho modelu sa snaží využiť túto podrobnosť a~výpočtom 
-gravitačného účinku takýchto hmôt dopomôcť k~ešte presnejšiemu výpočtu 
-reziduálnych anomálii tiažového zrýchlenia, ktoré sa následne využívajú 
-v~metóde remove--compute--restore.  Samozrejme, obe metódy môžu byť použité 
-nielen s~anomáliami tiažového zrýchlenia, ale aj s~poruchami tiažového 
-zrýchlenia, zvislicovými odchýlkami a~ďalšími veličinami fyzikálnej geodézie.
+reziduálneho terénneho modelu sa snaží využiť podrobnosť digitálnych modelov 
+terénu a~výpočtom gravitačného účinku takýchto hmôt dopomôcť k~ešte 
+presnejšiemu výpočtu reziduálnych anomálii tiažového zrýchlenia, ktoré sa 
+následne využívajú v~metóde remove--compute--restore.  Samozrejme, obe metódy 
+môžu byť použité nielen s~anomáliami tiažového zrýchlenia, ale aj s~poruchami 
+tiažového zrýchlenia, zvislicovými odchýlkami a~ďalšími veličinami fyzikálnej 
+geodézie.
 
 
 
@@ -7523,11 +7526,12 @@ pomocou sférického harmonického rozvoja poruchového potenciálu
 (rovnica~\ref{eq:deflection_grav_s_sph}).  V~tejto kapitole ukážeme ďalší 
 prístup, ktorý kombinuje geometrickú interpretáciu zvislicových odchýlok na 
 geoide (vzťah~\ref{eq:N_deflections}) a~Stokesov integrál 
-(rovnice~\ref{eq:stokes_N} a~\ref{eq:hotine_N}).  Kapitola je spracovaná podľa 
+(vzťah~\ref{eq:stokes_N}).  Kapitola je spracovaná podľa 
 \textcite{MoritzPhysicalGeodesy} a~využíva sférickú aproximáciu zvislicových 
 odchýlok s~využitím lokálneho kartenziánskeho súradnicového 
 systému~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom 
-(pozri Obrázok~\ref{fig:cart_sph}).
+(pozri Obrázok~\ref{fig:cart_sph}).  Zvislicové odchýlky budeme hľadať na 
+geoide.
 
 Vyjadrime z~rovnice~(\ref{eq:N_deflections}) zvislicovú 
 odchýlku~$\varepsilon_0$,
@@ -7541,10 +7545,11 @@ Z~Kapitoly~\ref{sec:deflections} vieme, že priemet zvislicovej
 odchýlky~$\varepsilon_0$ môžeme popísať dvoma kolmými zložkami~$\xi_0$ 
 a~$\eta_0$, ktoré sú udávané v~smere sever--juh a~v~smere východ--západ.  
 Podobne, $\diff s$ je diferenciál dĺžky v~smere priemetu~$\varepsilon_0$.  
-Potrebujeme preto získať jeho zložky v~smere meridiánu a~v~smere prvého 
-vertikálu v~lokálnom karteziánskom súradnicovom systéme~$x^\mathrm{s}$, 
-$y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom v~bode, v~ktorom je 
-určovaná zvislicová odchýlka.  Z~rovnice~(\ref{eq:diffr2}) 
+Potrebujeme preto získať zložky diferenciálu~$\diff s$ v~smere meridiánu 
+a~v~smere prvého vertikálu v~lokálnom karteziánskom súradnicovom 
+systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom 
+v~tom bode, v~ktorom je určovaná zvislicová odchýlka.  
+Z~rovnice~(\ref{eq:diffr2}) 
 Prílohy~\ref{app:differential_of_line_element_in_sph_coords} vyplývajú 
 nasledovné vzťahy pre zložky diferenciálu~$\diff s$ v~horizontálnej 
 rovine~$x^\mathrm{s}$, $y^\mathrm{s}$,
@@ -7571,7 +7576,7 @@ Ak je zvislica vychýlená iba v~smere východ--západ, dostaneme vzťah
 %
 \begin{equation}
 \label{eq:lambda0}
-\lambda_0 = -\frac{\diff N}{\diff s_\lambda}{.}
+\eta_0 = -\frac{\diff N}{\diff s_\lambda}{.}
 \end{equation}
 %
 Kombináciou rovníc~(\ref{eq:ds}), (\ref{eq:xi0}) a~(\ref{eq:lambda0}) získame 
@@ -7582,12 +7587,11 @@ zložky zvislicovej odchýlky vo všeobecnom smere,
 \label{eq:xi0_eta0_der}
 \xi_0 &= -\frac{1}{R} \, \frac{\partial N}{\partial \varphi}{,}\\
 %
-\lambda_0 &= -\frac{1}{R \, \cos\varphi} \, \frac{\partial N}{\partial 
-\lambda}{.}
+\eta_0 &= -\frac{1}{R \, \cos\varphi} \, \frac{\partial N}{\partial \lambda}{.}
 \end{split}
 \end{equation}
 %
-Vzťah~(\ref{eq:xi0_eta0_der}) teda umožňuje vypočítať zvislicové odchýlky na 
+Vzťahy~(\ref{eq:xi0_eta0_der}) teda umožňujú vypočítať zvislicové odchýlky na 
 geoide zo sklonu geoidu, zatiaľ čo vzťah~(\ref{eq:N_deflections}) umožňuje 
 inverzný výpočet sklonu geoidu zo zvislicových odchýlok.
 
@@ -7724,11 +7728,10 @@ S(\psi)}{\diff\psi} \, \sin\alpha
 \end{equation}
 %
 sú singulárne a~homogénne, avšak nie sú izotropne (pozri 
-Kapitolu~\ref{sec:stokes_kernel}).  Neizotropnosť jadier~(\ref{eq:vm_kernels}) 
-je spôsobená závislosťou od azimutu~$\alpha$ spojnice výpočtového bodu 
-a~integračného elementu (Obrázok~\ref{fig:surface_integral}).
+Kapitolu~\ref{sec:stokes_kernel}).  Neizotropnosť je spôsobená závislosťou od 
+azimutu~$\alpha$ (Obrázok~\ref{fig:surface_integral}).
 
-Dodajme, že do rovnice~(\ref{eq:xi0_eta0_der}) môže byť dosadený aj Hotineov 
+Dodajme, že do rovnice~(\ref{eq:xi0_eta0_der}) môže byť dosadený Hotineov 
 integrál~(\ref{eq:hotine_N}) namiesto Stokesovho integrálu~(\ref{eq:stokes_N}).  
 Získame tým formálne podobné vzťahy, avšak s~integračnými jadrami
 %
