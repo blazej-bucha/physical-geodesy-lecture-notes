@@ -7770,7 +7770,7 @@ elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od povrchu
 elipsoidu po daný bod.  Takáto výška má geometrický charakter, ktorý 
 nereflektuje skutočné tiažové pole Zeme.  Práve z~tohto dôvodu nie je vhodná 
 pre mnohé úlohy geodézie, napríklad na vytýčenie \emph{vodorovnej} roviny 
-v~teréne.  Potenciál GNSS meraní však v~geodézii predsa len dokážeme využiť, 
+v~teréne.  Potenciál GNSS meraní však v~tejto úlohe predsa len dokážeme využiť, 
 keď si uvedomíme, že odčítaním výšky geoidu~$N$ od elipsoidickej výšky~$h$ 
 získame ortometrickú výšku~$H_o$ (Obrázok~\ref{fig:heights}), ktorá už má 
 fyzikálny charakter, a~tak je rozumnejšie využiť ju na vytýčenie 
@@ -7788,26 +7788,43 @@ predstavená.  Nie je ale tomu tak preto, že Molodenského teória je nedôlež
 pre fyzikálnu geodéziu.  Presný opak je pravdou!  Pravdou ale tiež je, že tento 
 prístup je o~niečo zložitejší ako určovanie geoidu a~autor sa necíti byť 
 kompetentný na náležité zvládnutie tejto neľahkej úlohy.  Potešenie spôsobené 
-spoznávaním Molodenského prístupu je preto potrebné získať z~iných zdrojov, 
-napríklad z~tých, ktoré sú citované na príslušných miestach práce.  Význam 
-Molodenského teórie v~slovenskom kontexte podčiarkuje skutočnosť, že práve 
-tento prístup je na Slovensku využívaný na určovanie tvaru Zeme a~jej tiažového 
-poľa.
+spoznávaním Molodenského prístupu je preto potrebné získať z~iných zdrojov.  
+Význam Molodenského teórie v~slovenskom kontexte podčiarkuje skutočnosť, že 
+práve tento prístup je na Slovensku využívaný na určovanie tvaru Zeme a~jej 
+tiažového poľa.
 
 Druhou nedotknutou témou je prítomnosť hmôt nad geoidom v~procese určovania 
-geoidu.  V~Kapitole~\ref{sec:geoid} sme totižto predpokladali, že vo vonkajšom 
+geoidu.  V~Kapitole~\ref{sec:geoid} sme predpokladali, že vo vonkajšom 
 priestore geoidu sa nenachádzajú hmoty.  V~skutočnosti sa vo väčšine 
 kontinentálnych častí zemského povrchu nad geoidom zemské hmoty nachádzajú, 
 a~to na miestach s~kladnou ortometrickou výškou.  Tieto hmoty nazývame 
 \emph{topografické hmoty}.  Nad týmito hmotami sa ďalej nachádzajú 
 \emph{atmosférické hmoty}.  Aby v~priestore nad geoidom platila Laplaceova 
 rovnica, topografické aj atmosférické hmoty je potrebné matematicky odstrániť.  
-Matematické odstránenie atmosférických a~obzvlášť topografických hmôt patrí 
-medzi najnáročnejšie kroky v~procese určovania geoidu.  V~ďalšom kroku je 
-potrebné matematicky zredukovať (pokračovať nadol) anomálie tiažového 
-zrýchlenia z~povrchu Zeme (na ktorom boli odmerané) na geoid, kde sú potrebné 
-kvôli definovaniu okrajovej podmienky.  Týmto témam sa venuje napríklad práca 
-\textcite{Janak2006}.
+Matematické odstránenie topografických hmôt patrí medzi najnáročnejšie kroky 
+v~procese určovania geoidu.  Následne je potrebné matematicky zredukovať 
+(pokračovať nadol) anomálie tiažového zrýchlenia z~povrchu Zeme (na ktorom boli 
+odmerané) na geoid, kde sú potrebné kvôli definovaniu okrajovej podmienky.  
+Týmto témam sa venuje napríklad práca \textcite{Janak2006}.
+
+V~Kapitole~\ref{sec:spherical_harmonic_expansion} o~sférických harmonických 
+funkciách sme často prirovnávali diskutovanú problematiku k~vlastnostiam 
+jednotkových vektorov.  Matematickú formuláciu týchto vlastností sférických 
+harmonických funkcií je možné získať s~využitím aparátu časti matematiky, ktorá 
+sa nazýva \emph{funkcionálna analýza}.  Funkcionálna analýza je ale pomerne 
+abstraktná časť matematiky, ktorá navyše v~súčasnosti ani nie je zaradená do 
+obsahu študijného programu Geodézia a~kartografia na Stavebnej fakulte 
+Slovenskej technickej univerzity v~Bratislave.  Využívali sme preto prirovnania 
+k~jednotkovým vektorom, ktoré majú v~širšom zmysle mnoho podobných vlastností 
+ako sférické harmonické funkcie a~navyše sú jednoducho predstaviteľné, čo by 
+azda mohlo aspoň z~časti dopomôcť k~porozumeniu sférických harmonických funkcií 
+v~širšom kontexte.  Základy funkcionálnej analýzy je možné nájsť napríklad 
+v~práci~\textcite{Janak2006}.  Podrobnejšie informácie je možné nájsť napríklad 
+v~knihe~\textcite{Rektorys}, ktorá je napísaná v~češtine a~svojou formou je 
+prístupná i~inžinierom a~fyzikom.  Odporúčať tiež môžeme geodetickú literatúru 
+v~anglickom jazyku, napríklad \textcite{MoritzAdvancedGeodesy}, 
+\textcite{SansoGeoidDetermination}, \textcite{Borre2006}, 
+\textcite{Freeden2009} či publikácie RNDr.~Ing.~Petra Holotu, DrSc.
 
 Zrejme nebudeme ďaleko od pravdy, keď budeme tvrdiť, že vedecká a~akademická 
 literatúra, nevynímajúc tieto strany, sa v~istom zmysle rodí veľmi ťažko.  
