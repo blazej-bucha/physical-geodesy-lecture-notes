@@ -18,8 +18,11 @@
 % LaTeX packages and main settings
 % =============================================================================
 
-\documentclass[a4paper,12pt]{book}
-\usepackage[backend=biber,style=iso-authoryear,maxcitenames=2]{biblatex}
+\documentclass[a4paper, 12pt]{book}
+\usepackage[backend=biber,
+            style=iso-authoryear,
+            maxcitenames=2,
+            uniquelist=false]{biblatex}
 \usepackage[main=slovak]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -34,7 +37,7 @@
 \usepackage{accsupp}
 \usepackage{csquotes}
 \usepackage{cancel}
-\usepackage[width=0.95\textwidth,font=small]{caption}
+\usepackage[width=0.95\textwidth, font=small]{caption}
 \usepackage[unicode,
             pdfborder={0 0 0},
             colorlinks=true,
@@ -62,13 +65,13 @@
 
 
 % Replace "et al." by the Slovak "a kol."
-\DefineBibliographyStrings{slovak}{ andothers = {a\addspace kol\adddot} }
+\DefineBibliographyStrings{slovak}{ andothers = {a\nobreakspace kol\adddot} }
 
 
 % Change the default separators between the authors of the same bibtex entry.  
 % In the main text, we want "a" between two authors.  In the "References" 
 % section, we want ";" between all authors.
-\DeclareDelimFormat{multinamedelim}{\addspace a \addspace}
+\DeclareDelimFormat{multinamedelim}{\addspace a\nobreakspace}
 \DeclareDelimFormat[bib]{multinamedelim}{\addsemicolon\space}
 \DeclareDelimAlias[bib]{finalnamedelim}{multinamedelim}
 
@@ -1618,7 +1621,7 @@ tvrdenie vyplýva priamo z~rovnice~(\ref{eq:g_gradW}).
 Matematický popis tvaru ekvipotenciálnych plôch reálnych telies je náročný.  
 Z~Newtonovho integrálu~(\ref{eq:vg_body}) vieme (pozri tiež 
 Kapitolu~\ref{sec:potential_theory}), že gravitačné pole je dané tvarom 
-a hustotou telesa.  Zložité nepravidelné tvary či rozloženia hustoty spôsobujú 
+a~hustotou telesa.  Zložité nepravidelné tvary či rozloženia hustoty spôsobujú 
 zvlnenia ekvipotenciálnych plôch.  Na regionálnej úrovni je nepravidelný tvar 
 ekvipotenciálnych plôch do veľkej miery spôsobený lokálnymi hmotami, napríklad 
 pohoriami.  Z~globálneho pohľadu je tvar ekvipotenciálnych plôch daný skôr 
@@ -8081,8 +8084,8 @@ f \slash \partial z$ vyjadríme pomocou parciálnych derivácií $\partial f \sl
 použitím niektorej z~metód lineárnej algebry.
 
 Obzvlášť jednoduchá metóda riešenia systému rovníc~(\ref{eq:grad_cart2sph}) je 
-nasledovná.  Normovaním vektorov~(\ref{eq:er_elat_elon}) získame jednotkové 
-vektory v~smere súradnicových osí~$x^\mathrm{s}$, $y^\mathrm{s}$, 
+nasledovná.  Normovaním vektorov~(\ref{eq:er_elat_elon}) ich veľkosťami získame 
+jednotkové vektory v~smere súradnicových osí~$x^\mathrm{s}$, $y^\mathrm{s}$, 
 $z^\mathrm{s}$,
 %
 \begin{equation}
@@ -8170,9 +8173,8 @@ r \, \cos\varphi \, \left( \vec e^\mathrm{s}_2 \right)^\top\\[2ex]
 =
 %
 \begin{bmatrix}
-\dfrac{1}{r} \, \vec e^\mathrm{s}_1\\[2ex]
-\dfrac{1}{r \, \cos\varphi} \, \vec e^\mathrm{s}_2\\[2ex]
-\vec e^\mathrm{s}_3
+\dfrac{1}{r} \, \vec e^\mathrm{s}_1 \quad \dfrac{1}{r \, \cos\varphi} \, \vec 
+e^\mathrm{s}_2 \quad \vec e^\mathrm{s}_3
 \end{bmatrix}
 {.}
 \end{equation}
@@ -8190,9 +8192,8 @@ Riešenie rovnice~(\ref{eq:grad_cart2sph_2}) má teda tvar
 =
 %
 \begin{bmatrix}
-\dfrac{1}{r} \, \vec e^\mathrm{s}_1\\[2ex]
-\dfrac{1}{r \, \cos\varphi} \, \vec e^\mathrm{s}_2\\[2ex]
-\vec e^\mathrm{s}_3
+\dfrac{1}{r} \, \vec e^\mathrm{s}_1 \quad \dfrac{1}{r \, \cos\varphi} \, \vec 
+e^\mathrm{s}_2 \quad \vec e^\mathrm{s}_3
 \end{bmatrix}
 %
 \,
@@ -8285,8 +8286,11 @@ je jednotkový vektor v~smere súradnicovej osi~$\xi_i$~a
 V~Kapitole~\ref{app:laplace_in_spherical_system} je odvodený Laplaceov operátor 
 vo sférickom súradnicovom systéme (rovnica~\ref{eq:vg_laplace_sph}).  
 V~Kapitole~\ref{app:laplace_in_orthogonal_coordinates} je odvodený všeobecný 
-tvar Laplaceovho operátora v~ortogonálnom súradnicovom systéme.
-
+tvar Laplaceovho operátora v~ortogonálnom súradnicovom systéme.  
+Kapitola~\ref{app:laplace_in_spherical_system} je spracovaná 
+podľa~\textcite{MichelLectures} 
+a~Kapitola~\ref{app:laplace_in_orthogonal_coordinates} 
+podľa~\textcite{SansoGeoidDetermination}.
 
 
 \section{Laplaceov operátor vo sférickom súradnicovom systéme}
@@ -8359,9 +8363,13 @@ e_3^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, \frac{\partial}{\partial r}
 &\phantom{={}}+\frac{1}{r \, \cos\varphi} \, \underbrace{\vec e_3^\mathrm{s} 
 \cdot \frac{\partial \vec e_2^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} 
 \cdot \vec 0 = 0} \, \frac{\partial}{\partial \lambda} + \underbrace{\vec 
-e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, \frac{\partial}{\partial r} \, 
-\left( \frac{1}{r \, \cos\varphi} \right) \, \frac{\partial^2}{\partial r \, 
-\partial \lambda} + \underbrace{\vec e_3^\mathrm{s} \cdot \frac{\partial \vec 
+e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, \frac{\partial}{\partial r} 
+\left( \frac{1}{r \, \cos\varphi} \right) \, \frac{\partial}{\partial \lambda} 
++ \underbrace{\vec e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, \frac{1}{r 
+\, \cos\varphi} \, \frac{\partial^2}{\partial r \, \partial 
+\lambda}\nonumber\displaybreak[2]\\
+%
+&\phantom{={}}+ \underbrace{\vec e_3^\mathrm{s} \cdot \frac{\partial \vec 
 e_3^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} \cdot \vec 0 = 0} \, 
 \frac{\partial}{\partial r} + \underbrace{\vec e_3^\mathrm{s} \cdot \vec 
 e_3^\mathrm{s}}_{1} \, \frac{\partial^2}{\partial r^2}{.}\nonumber
@@ -8482,9 +8490,8 @@ získaných súčinov, dostaneme operátor
 \section{Laplaceov operátor v~ortogonálnom súradnicovom systéme}
 \label{app:laplace_in_orthogonal_coordinates}
 
-Odvodenie z~predchádzajúcej kapitoly možno zovšeobecniť na ľubovoľný 
-ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.  Táto kapitola je 
-spracovaná podľa~\textcite{SansoGeoidDetermination}.
+Odvodenie z~Kapitoly~\ref{app:laplace_in_spherical_system} možno zovšeobecniť 
+na ľubovoľný ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.
 
 Všeobecný tvar Laplaceovho operátora získame pomocou 
 rovníc~(\ref{eq:laplace_grad_grad_notation}) 
@@ -8629,7 +8636,7 @@ vzťahu~(\ref{eq:e_laplace}),
 %
 \begin{equation}
 \label{eq:laplace_orthogonal_system_third_term}
-\sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|} \, \frac{\partial^2}{\partial 
+\sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|^2} \, \frac{\partial^2}{\partial 
 \xi_j^2} = \frac{1}{E} \, \sum_{j = 1}^3 \frac{E}{\| \hat{\vec e}_j \|^2} \, 
 \frac{\partial^2}{\partial \xi_j^2}{.}
 \end{equation}
@@ -8674,7 +8681,8 @@ operátora, s~ktorým sa možno často stretnúť v~literatúre
 
 Z~rovnice~(\ref{eq:laplace_orthogonal_system_final_2}) vidíme, že na získanie 
 Laplaceovho operátora v~ortogonálnom súradnicovom systéme postačuje vypočítať 
-veľkosti vektorov $\hat{\vec e}_i$ a~dosadiť ich do tohto vzťahu.
+veľkosti vektorov $\hat{\vec e}_i$ a~dosadiť ich do 
+vzťahu~(\ref{eq:laplace_orthogonal_system_final_2}).
 
 
 
@@ -8686,9 +8694,8 @@ Zdrojový kód~\ref{src:lp} vypočíta a~graficky znázorní Legendreove polynó
 $P_n(t) = P_n(\sin\varphi)$ stupňov $n = 0, 1, \dots, n_{\max}$ pre $\varphi 
 \in [-\frac{\pi}{2}, \frac{\pi}{2}]$.  Polynómy sú pre názornosť počítané 
 Bonnetovým rekurentným vzťahom~(\ref{eq:pn_bonnet}), ktorý je vhodný na 
-praktickú numerickú implementáciu.  Funkciou 
-\texttt{scipy.special.eval\_legendre} z~modulu \texttt{scipy} je možné 
-vypočítať Legendreove funkcie bez nutnosti programovania rekurentných vzťahov.
+praktickú numerickú implementáciu.  Legendreove polynómy môžu byť vypočítané aj 
+funkciou \texttt{scipy.special.eval\_legendre} z~modulu \texttt{scipy}.
 
 \lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov
 v~programovacom jazyku Python, language=mypython, label=src:lp,

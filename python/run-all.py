@@ -5,25 +5,25 @@
 import os
 
 
-for f in os.listdir("."):
+for f in os.listdir('.'):
 
-    if f == "run-all.py":
+    if f == 'run-all.py':
         continue
 
 
-    if os.path.splitext(f)[-1] == ".py":
-        print("Executing file '%s'.." % f)
+    if os.path.splitext(f)[-1] == '.py':
+        print(f'Executing file \'{f}\'..')
         exec(open(f).read())
     else:
         continue
 
 
-for f in os.listdir("."):
+for f in os.listdir('.'):
 
-    if os.path.splitext(f)[-1] == ".pdf":
-        dst = "../latex/" + f
-        print("Moving '%s' to '%s'..." % (f, dst))
+    if os.path.splitext(f)[-1] == '.pdf':
+        dst = '../latex/' + f
+        print(f'Moving \'{f}\' to \'{dst}\'...')
         os.rename(f, dst)
 
 
-print("Done.")
+print('Done.')

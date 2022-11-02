@@ -23,7 +23,7 @@ if k >= 0:
 else:
     ynm = lpmv(np.abs(k), n, np.sin(lat)) * np.sin(np.abs(k) * lon)
 
-# Odstránenie Condon--Shortley fázového faktora
+# Odstránenie Condonovho--Shortleyho fázového faktora
 ynm *= (-1)**np.abs(k)
 
 # Sprievodič
@@ -39,7 +39,7 @@ z = r * np.sin(lat)
 
 # Vykreslenie
 fig, ax = plt.subplots(figsize=(4.0 / 2.54, 4.0 / 2.54),
-                       subplot_kw={"projection": "3d"})
+                       subplot_kw={'projection': '3d'})
 ax.set_box_aspect((np.ptp(x), np.ptp(y), np.ptp(z)))
 norm = mpl.colors.Normalize()
 ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap=plt.cm.bwr,
@@ -50,9 +50,8 @@ plt.tight_layout(pad=-2.0)
 plt.show()
 
 # Nazov výstupného súboru
-fileout = "./fig-spherical-harmonic-n%d-k%d" % (n, k)
+fileout = f'./fig-spherical-harmonic-n{n}-k{k}'
 if zobrazenie_3d:
-    fileout += "-3d.pdf"
-else:
-    fileout += ".pdf"
+    fileout += '-3d'
+fileout += '.pdf'
 fig.savefig(fileout, dpi=300)
