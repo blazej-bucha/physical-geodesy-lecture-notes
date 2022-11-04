@@ -6780,7 +6780,7 @@ funkcia~$c \slash \ell(P)$ vyhovuje rovnici~(\ref{eq:bvp_Dg_laplace}) pre
 \emph{ľubovoľnú} reálnu konštantu~$c$ za predpokladu~$\ell(P) > 0$.  
 Rovnice~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) tak 
 zabezpečujú, že získame práve jedno riešenie rovnice~(\ref{eq:bvp_Dg_laplace}).  
-Odvodenie riešenia okrajovej úlohy v~tejto práce vynecháme a~zameriame sa skôr 
+Odvodenie riešenia okrajovej úlohy v~tejto práci vynecháme a~zameriame sa skôr 
 na popis získanej rovnice.  Odvodenie je možné nájsť napríklad 
 v~prácach~\textcite{MoritzPhysicalGeodesy} a~\textcite{Janak2006}.
 
@@ -6909,8 +6909,8 @@ do hodnoty poruchového potenciálu je tak väčší ako v~prípade veľkých
 vzdialeností medzi~$P$ a~$\diff\sigma'$.  Na Obrázku~\ref{fig:stokes_kernel} 
 tiež vidíme, že Stokesovo integračné jadro nadobúda nulové hodnoty pre sférické 
 vzdialenosti približne~$39^\circ$ a~$117^\circ$ \parencite{TorgeGeodesy}.  
-Príspevok anomálií tiažového, ktoré sa nachádzajú v~týchto vzdialenostiach voči 
-výpočtovému bodu, je preto nulový.
+Príspevok anomálií tiažového nachádzajúcich sa v~týchto vzdialenostiach voči 
+výpočtovému bodu je preto nulový.
 
 \begin{figure}[bt]
 \centering
@@ -7022,8 +7022,8 @@ vzťahu~(\ref{eq:stokes}) obsahujú aj vplyv nultého harmonického člena
 z~rovnice~(\ref{eq:Dg_sh_sa}).  Všimnime si tiež, že stupeň~$n$ 
 v~rovnici~(\ref{eq:stokes_spectral_n0}) nesmie byť rovný~$1$ (aby bolo 
 zamedzené deleniu nulou), čo je v~súlade s~anomáliami tiažového zrýchlenia, 
-pretože na ne nevplýva harmonický stupeň~$n = 1$ (pozri poznámku 
-k~rovnici~\ref{eq:Dg_sh_sa}).
+pretože harmonický stupeň~$n = 1$ na anomálie tiažového zrýchlenia nevplýva 
+(pozri poznámku k~rovnici~\ref{eq:Dg_sh_sa}).
 
 
 \subsection{Stokesov integrál ako konvolučný integrál}
@@ -7041,7 +7041,7 @@ získať poruchový potenciál~$P$ v~každom bode na Zemi, výpočtový bod~$P$ 
 potrebné vnímať ako premennú a~integráciu opakovať, vždy s~iným výpočtovým 
 bodom.  Výsledkom tohto procesu bude nová funkcia, ktorou je poruchový 
 potenciál na celej sfére.  Matematická operácia, ktorá transformuje dve funkcie 
-na tretiu funkciu sa nazýva \emph{konvolúcia}.  V~našom prípade konvolúciou 
+na tretiu funkciu, sa nazýva \emph{konvolúcia}.  V~našom prípade konvolúciou 
 transformujeme Stokesovo integračné jadro~$S$ a~anomálie tiažového 
 zrýchlenia~$\Delta g$ na poruchový potenciál~$T$.  Symbolicky túto operáciu 
 zapíšeme nasledovne,
@@ -7245,8 +7245,9 @@ integračné jadro,
 %
 \begin{align}
 \Pi(r, \psi) &= \frac{r^2 - R^2}{\ell^3}{,}\label{eq:poisson_kernel}\\
-\Pi(r, \psi) &= \sum_{n = 0}^{\infty} (2n + 1) \, \left( \frac{R}{r} \right)^{n 
-+ 1} \, P_n(\cos\psi)\label{eq:poisson_kernel_spectral}{.}
+\Pi(r, \psi) &= \frac{1}{R} \, \sum_{n = 0}^{\infty} (2n + 1) \, \left( 
+\frac{R}{r} \right)^{n + 1} \, 
+P_n(\cos\psi)\label{eq:poisson_kernel_spectral}{.}
 \end{align}
 %
 Podobne ako v~predošlých Kapitolách~\ref{sec:stokes_integral} 
@@ -7260,15 +7261,15 @@ priestore~$\left( \mathbb{R}^3 - \overline\Omega \right) \cup \partial\Omega$
 z~hodnôt tejto funkcie na hranici~$\partial\Omega$.  
 Z~Kapitoly~\ref{sec:harmonic_function} vieme, že tento proces sa niekedy nazýva 
 analytické pokračovanie, v~tomto prípade tiež \emph{harmonické pokračovanie}, 
-pretože funkcia~$T$ vystupujúca v~Poissonovom integráli musí byť harmonická.  
+keďže funkcia~$T$ vystupujúca v~Poissonovom integráli musí byť harmonická.  
 Poissonov integrál sa často používa aj inverzným spôsobom na pokračovanie 
 nadol, hoci táto úloha je vo všeobecnosti nestabilná 
 \parencite{SansoGeodeticBoundaryValueProblem}.  Okrem poruchového potenciálu je 
 možné aplikovať Poissonov integrál aj na ďalšie harmonické funkcie, napríklad 
-gravitačný potenciál~$V$ či funkciu~$r \, \Delta g$, ktorá je taktiež 
+na gravitačný potenciál~$V$ či na funkciu~$r \, \Delta g$, ktorá je taktiež 
 harmonická (samotná funkcia~$\Delta g$ však harmonická nie je).  Poissonov 
 integrál teda umožňuje riešiť mnohé kľúčové úlohy fyzikálnej geodézie.  Priamo 
-na výpočet geoidu sa nezvykne používať, pretože predpokladá dostupnosť 
+na výpočet geoidu sa ale nezvykne používať, pretože predpokladá dostupnosť 
 poruchového potenciálu na geoide.  Ak by bol ale poruchový potenciál na geoide 
 známy, mohol by byť priamo použitý v~Brunsovom vzorci~(\ref{eq:N}) bez potreby 
 formulovania a~riešenia okrajovej úlohy.
@@ -7330,7 +7331,8 @@ funkciu~$\varepsilon_0$ a~diferenciálne vzdialenosti~$\diff s$ nahradíme
 diskrétnymi hodnotami~$\varepsilon_{0,i}$ a~konečnými dĺžkami~$\Delta s_i$.  
 Spravidla sú k~dispozícii zvislicové odchýlky~$\varepsilon_{0,A}$ 
 a~$\varepsilon_{0,B}$ na koncových bodoch spojnice a~vzdialenosť~$\Delta 
-s_{AB}$ medzi bodmi~$A$, $B$.  Obdĺžnikovou metódou získame prevýšenie geoidu 
+s_{AB}$ medzi bodmi~$A$, $B$.  Obdĺžnikovou metódou aproximácie 
+integrálu~(\ref{eq:N_deflections_delta}) získame približné prevýšenie geoidu 
 medzi bodmi~$A$ a~$B$ \parencite[pre popis obdĺžnikovej metódy pozri 
 napríklad][]{Macak2021},
 %
@@ -7348,7 +7350,7 @@ Ak je geoid určovaný na viacerých bodoch, zvyčajne sa z~bodov vytvorí
 trojuholníková sieť a~vzťahom~(\ref{eq:N_deflections_delta_ni}) sa vypočítajú 
 prevýšenia geoidu medzi bodmi siete.  V~dôsledku chýb meraní a~v~dôsledku 
 použitia numerickej integrácie však spravidla nebude súčet prevýšení 
-v~trojuholníkoch siete nulový.  Prevýšenia sa preto vyrovnajú metódou 
+v~trojuholníkoch siete nulový.  Prevýšenia sa preto zvyknú vyrovnať metódou 
 najmenších štvorcov tak, aby súčet prevýšení v~každom trojuholníku bol nulový.  
 Na záver je potrebné odhadnuté prevýšenia geoidu pripojiť na jeden bod, 
 v~ktorom je známa absolútna výška geoidu nad referenčným elipsoidom.
@@ -7765,7 +7767,7 @@ geodetických metód môžu totižto azda pôsobiť ako očividné, no až podro
 premýšľaním si uvedomíme, že táto zrejmosť je len zdanlivá.  Videli sme, že 
 nemalé úsilie si vyžaduje opis už i~len tak bežných geodetických konceptov, 
 akými sú lokálny horizont či smer zavesenej olovnice.  S~pokrokom vedy, výskumu 
-a~technológií sa výsledky výskumu tiažového poľa Zeme čoraz častejšie využívajú 
+a~technológií sa výsledky výskumu tiažového poľa Zeme využívajú čoraz častejšie 
 aj v~bežnej geodetickej praxi, hoci to (opäť) nemusí byť na prvý pohlaď zrejmé.  
 Príkladom je určovanie výšky bodu na povrchu Zeme GNSS metódami.  Tie určujú 
 elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od povrchu 
