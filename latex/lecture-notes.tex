@@ -6064,6 +6064,85 @@ a~\ref{fig:dg_ggm_450km}).
 
 
 
+
+
+\subsection{Anomálie tiažového zrýchlenia vo voľnom vzduchu a~Bouguerove 
+anomálie tiažového zrýchlenia}
+
+Veličina definovaná vzťahmi~(\ref{eq:Dg_vector_earth}) 
+a~(\ref{eq:Dg_scalar_earth}) sa v~literatúre zvykne označovať aj pojmom 
+\emph{povrchová anomália tiažového zrýchlenia vo voľnom vzduchu} 
+\parencite{SansoGeoidDetermination}.  Často sa tiež môžeme stretnúť aj 
+s~\emph{anomáliou tiažového zrýchlenia vo voľnom vzduchu na geoide} 
+\parencite{MoritzPhysicalGeodesy}.  Na získanie tejto veličiny budeme 
+predpokladať, že nad geoidom nie sú žiadne hmoty.  Anomália tiažového 
+zrýchlenia vo voľnom vzduchu na geoide je potom daná vzťahom
+%
+\begin{equation}
+\Delta g_\mathrm{vv}(P_0) = g(P) + F - \gamma(Q_0){,}
+\end{equation}
+%
+kde člen
+%
+\begin{equation}
+F = -\left.\frac{\partial g}{\partial H}\right|_{P_0} \, H \approx 
+-\left.\frac{\partial \gamma}{\partial h}\right|_{Q_0} \, H
+\end{equation}
+%
+sa nazýva \emph{redukcia tiažového zrýchlenia vo voľnom vzduchu}.  Člen~$F$ 
+teda \emph{približne} redukuje skutočné tiažové zrýchlenie z~bodu~$P$ na 
+povrchu Zeme do bodu~$P_0$ na geoide vzťahom
+%
+\begin{equation}
+g(P) + F \approx g(P_0){,}
+\end{equation}
+%
+pričom predpokladá, že medzi geoidom a~bodom~$P$ nie sú žiadne hmoty.  Bod~$P$ 
+sa teda nachádza \emph{vo voľnom vzduchu}.
+Vzťah pre~$F$ získame rozvinutím skutočného tiažového zrýchlenia na geoide do 
+Taylorovho radu po zanedbaní nelineárnych členov,
+%
+\begin{equation}
+g(P) = g(P_0) + \sum_{i = 1}^{\infty} \left.\frac{\partial^i g}{\partial 
+H^i}\right|_{P_0} \, H^i \approx g(P_0) + \left.\frac{\partial g}{\partial 
+H}\right|_{P_0} \, H \approx g(P_0) + \left.\frac{\partial \gamma}{\partial 
+h}\right|_{Q_0} \, H = g(P_0) - F{.}
+\end{equation}
+%
+Takýto rozvoj je platný, pretože podľa predpokladu nie sú nad geoidom žiadne 
+hmoty.
+
+Na záver aspoň stručne spomeňme \emph{Bouguerovu anomáliu tiažového zrýchlenia} 
+\parencite{MoritzPhysicalGeodesy}, ktorá získala názov po P.~Bouguerovi 
+(1698~-- 1758), francúzskom matematikovi, geofyzikovi, geodetovi a~astronómovi.  
+Táto anomália sa využíva najmä v~geofyzike na detekciu podpovrchových 
+hustotných kontrastov.  Na jej získanie je potrebné vypočítať gravitačný účinok 
+topografických hmôt na tiažové zrýchlenie.  \emph{Topografické hmoty} sú hmoty, 
+ktoré sa nachádzajú medzi geoidom a~fyzickým povrchom Zeme.  Keďže gravitačný 
+účinok topografických hmôt je z~Bouerovových anomálií približným spôsobom 
+odstránený, tieto anomálie majú výrazne hladší priebeh ako anomálie tiažového 
+zrýchlenia vo voľnom vzduchu, ktoré sú veľmi závislé od lokálnych hmôt.  Túto 
+vlastnosť často využívame v~geodézii nasledovným spôsobom.  Anomálie tiažového 
+zrýchlenia vo voľnom vzduchu sú v~teréne odmerané spravidla v~nepravidelnej 
+sieti bodov.  Na numericky efektívne určovanie tvaru Zeme by ale bolo výhodné, 
+aby anomálie tiažového zrýchlenia vo voľnom vzduchu boli rozmiestnené 
+v~pravidelnej sieti bodov.  Preto je spravidla potrebné tieto anomálie 
+interpolovať do pravidelnej siete bodov.  Keďže ale anomálie tiažového 
+zrýchlenia majú komplikovaný priebeh, podobne ako samotný zemský povrch, nie je 
+vhodné interpolovať priamo tento typ anomálií.  Namiesto toho môžeme v~bodoch 
+nepravidelnej siete vypočítať najprv Bouguerove anomálie, ktoré sú výrazne 
+hladšie ako anomálie vo voľnom vzduchu, a~preto je možné presnejšie ich 
+interpolovať do vyžadovanej pravidelnej siete bodov.  Hľadané anomálie 
+tiažového zrýchlenia vo voľnom vzduchu následne získame v~bodoch pravidelnej 
+siete spätným výpočtom z~Bouguerových anomálií.  Bouguerove anomálie sa teda 
+v~geodézii využívajú najmä ako pomocná veličina.
+
+Bližšie podrobnosti o~gravitačnom účinku topografických hmôt, o~anomáliách 
+tiažového zrýchlenia a~o~Bouguerových anomáliách, ako aj o~ich historickom 
+pozadí je možné nájsť napríklad v~publikácii \textcite{Vajda2020}.
+
+
+
 \subsection*{Dve poznámky k~anomálii tiažového zrýchlenia}
 
 V~súvislosti s~odvodením Brunsovho vzorca a~základnej rovnice fyzikálnej 
@@ -6089,7 +6168,6 @@ hľadaného riešenia, je potrebné zvyšovať presnosť a~rozlíšenie vstupný
 údajov, čo je v~praktických aplikáciách problematické kvôli náročnosti 
 získavania meraných dát.  Redukcia anomálií tiažového zrýchlenia zo zemského 
 povrchu na geoid tak patrí medzi najnáročnejšie časti určovania geoidu.
-
 
 
 
@@ -7794,20 +7872,19 @@ kompetentný na náležité zvládnutie tejto neľahkej úlohy.  Význam Moloden
 teórie v~slovenskom kontexte podčiarkuje skutočnosť, že práve tento prístup je 
 na Slovensku využívaný na určovanie tvaru Zeme a~jej tiažového poľa.
 
-Druhou nedotknutou témou je prítomnosť hmôt nad geoidom v~procese určovania 
+Druhou nedotknutou témou je prítomnosť topografických hmôt v~procese určovania 
 geoidu.  V~Kapitole~\ref{sec:geoid} sme predpokladali, že vo vonkajšom 
 priestore geoidu sa nenachádzajú hmoty.  V~skutočnosti sa vo väčšine 
-kontinentálnych častí zemského povrchu nad geoidom zemské hmoty nachádzajú, 
-a~to na miestach s~kladnou ortometrickou výškou.  Tieto hmoty nazývame 
-\emph{topografické hmoty}.  Nad týmito hmotami sa ďalej nachádzajú 
-\emph{atmosférické hmoty}.  Aby v~priestore nad geoidom platila Laplaceova 
-rovnica, topografické aj atmosférické hmoty je potrebné matematicky odstrániť.  
-Následne je potrebné matematicky zredukovať (pokračovať nadol) anomálie 
-tiažového zrýchlenia z~povrchu Zeme (na ktorom boli odmerané) na geoid, kde sú 
-potrebné kvôli definovaniu okrajovej podmienky.  Matematické odstránenie 
-topografických hmôt a~pokračovanie nadol patria medzi najnáročnejšie kroky 
-v~procese určovania geoidu.  Týmto témam sa venuje napríklad práca 
-\textcite{Janak2006}.
+kontinentálnych častí zemského povrchu nad geoidom nachádzajú topografické 
+hmoty, a~to na miestach s~kladnou ortometrickou výškou.  Nad týmito hmotami sa 
+ďalej nachádzajú \emph{atmosférické hmoty}.  Aby v~priestore nad geoidom 
+platila Laplaceova rovnica, topografické aj atmosférické hmoty je potrebné 
+matematicky odstrániť.  Následne je potrebné matematicky zredukovať (pokračovať 
+nadol) anomálie tiažového zrýchlenia z~povrchu Zeme (na ktorom boli odmerané) 
+na geoid, kde sú potrebné kvôli definovaniu okrajovej podmienky.  Matematické 
+odstránenie topografických hmôt a~pokračovanie nadol patria medzi 
+najnáročnejšie kroky v~procese určovania geoidu.  Týmto témam sa venuje 
+napríklad práca \textcite{Janak2006}.
 
 Pre názornosť sme v~Kapitole~\ref{sec:spherical_harmonic_expansion} často 
 prirovnávali vlastnosti sférických harmonických funkcií k~vlastnostiam 
