@@ -461,9 +461,9 @@ Obrázok~\ref{fig:newton_law}).  Získame tým vektorovú veličinu, ktorú bude
 nazývať \emph{gravitačné zrýchlenie}.  Vektor gravitačného zrýchlenia budeme 
 označovať symbolom~$\vec g_\gidx$.
 
-Nech~$x$, $y$, $z$ a~$x_Q$, $y_Q$, $z_Q$ sú súradnice hmotných bodov~$P$ a~$Q$, 
-ktoré majú hmotnosti~$m_P$ a~$m_Q$.  Vektor gravitačného zrýchlenia v~bode~$P$ 
-je daný vzťahom
+Nech sú dané dva hmotné body~$P$ a~$Q$ s~hmotnosťami~$m_P$ a~$m_Q$.  Označme 
+karteziánske súradnice týchto hmotných bodov symbolmi~$x$, $y$, $z$ a~$x_Q$, 
+$y_Q$, $z_Q$.  Vektor gravitačného zrýchlenia v~bode~$P$ je potom daný vzťahom
 %
 \begin{equation}
 \label{eq:gg_point_mass}
@@ -501,7 +501,7 @@ hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného bodu~$Q$.
 V~súvislosti
 s~hmotným bodom~$P$ je preto možné pre jednoduchosť vynechať prívlastok
 \emph{hmotný} a~považovať~$P$ za geometrický bod bez fyzikálnych vlastností.  
-Budeme preto hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ vektor gravitačného 
+Budeme hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ vektor gravitačného 
 zrýchlenia~$\vec g_\gidx(P)$.  Nezávislosť gravitačného zrýchlenia od hmotnosti 
 priťahovaného telesa experimentálne potvrdil Gaileo Gailei (1564--1642).
 
@@ -510,7 +510,7 @@ bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každ
 hmotný bod [\dots] priťahuje každý iný hmotný bod [\dots]}} (pozri 
 Kapitolu~\ref{sec:newton_law}), celkové gravitačné zrýchlenie v~bode~$P$ je 
 dané vektorovým súčtom čiastkových gravitačných zrýchlení, ktoré sú generované 
-jednotlivými hmotnými bodmi.  Tento princíp sa nazýva \emph{princíp 
+jednotlivými hmotnými bodmi.  Táto vlastnosť sa nazýva \emph{princíp 
 superpozície} \parencite[pozri napríklad][]{Hotine}.  Gravitačné zrýchlenie 
 generované~$N$ hmotnými bodmi tak získame vzťahom
 %
@@ -534,16 +534,17 @@ generované príslušnými hmotnými bodmi.}
 Newtonov gravitačný zákon~(\ref{eq:newton_law}) 
 a~rovnice~(\ref{eq:gg_point_mass}) a~(\ref{eq:gg_N_point_masses}) platia iba 
 pre hmotné body.  V~tomto tvare môžu byť aplikované napríklad na popis pohybov, 
-ktoré vykonávajú planéty Slnečnej sústavy.  Rozmery planét sú totiž natoľko 
-zanedbateľné v~porovnaní s~ich vzájomnou vzdialenosťou, že sa nedopustíme 
-nerozumne veľkej chyby, ak hmotnosti planét sústredíme do ich ťažísk 
-a~zanedbáme tvar planét.  Menej priaznivá situácia nastáva vtedy, keď sa 
-bod~$P$ nachádza v~blízkosti priťahujúceho telesa, ktoré má komplikovaný tvar 
-a~hustotu (napríklad družica na nízkej obežnej dráhe Zeme).  Na získanie 
-výsledného gravitačného zrýchlenia opäť využijeme princíp superpozície, teda 
-sčítame individuálne gravitačné vplyvy spôsobené jednotlivými časťami 
-priťahujúceho telesa.  Tentokrát si už ale nevystačíme s~konceptom hmotných 
-bodov (rovnica~\ref{eq:gg_N_point_masses}), pretože tie sme definovali ako 
+ktoré vykonávajú planéty Slnečnej sústavy.  Rozmery Slnka a~planét sú totiž 
+natoľko zanedbateľné v~porovnaní s~ich vzájomnými vzdialenosťami, že sa 
+nedopustíme nerozumne veľkej chyby, ak ich úplne zanedbáme, teda ak Slnko 
+a~planéty nahradíme hmotnými bodmi.  Menej priaznivá situácia nastáva vtedy, 
+keď sa bod~$P$ nachádza v~blízkosti priťahujúceho telesa, ktoré má komplikovaný 
+tvar a~hustotu, a tak nemôže byť nahradené jedným hmotným bodom (napríklad 
+družica na nízkej obežnej dráhe Zeme).  Na získanie výsledného gravitačného 
+zrýchlenia využijeme aj tentokrát princíp superpozície, teda sčítame 
+individuálne gravitačné príspevky jednotlivých častí priťahujúceho telesa.  
+Časti priťahujúceho telesa už ale nemôžeme nahradiť hmotnými bodmi 
+(rovnica~\ref{eq:gg_N_point_masses}), pretože hmotné body sme definovali ako 
 bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi 
 nedokážeme aproximovať nenulový objem priťahujúceho telesa.
 
@@ -560,9 +561,9 @@ všeobecné teleso na diferenciálne hmotné elementy~$\diff m$, pričom
 Hustota $\rho$ sa môže meniť medzi diferenciálnymi hmotnými elementmi~$\diff m$ 
 v~závislosti od štruktúry telesa, ale nesmie sa meniť v~rámci elementu 
 samotného.  Ďalej budeme predpokladať, že hmota diferenciálneho elementu~$\diff 
-m$ je koncentrovaná v~niektorom bode elementu \parencite{Kellogg1967}.  Po 
-uvážení rovnice~(\ref{eq:dm}) je diferenciál gravitačného zrýchlenia 
-generovaného diferenciálnym hmotným elementom~$\diff m$ daný vzťahom (porovnaj 
+m$ je koncentrovaná v~niektorom bode elementu \parencite{Kellogg1967}.  
+Diferenciál gravitačného zrýchlenia generovaný diferenciálnym hmotným elementom 
+je po uvážení rovnice~(\ref{eq:dm}) daný vzťahom (porovnaj 
 s~rovnicou~\ref{eq:gg_point_mass})
 %
 \begin{equation}
@@ -578,14 +579,14 @@ r}{\ell^3} \rho \, \diff\tau{.}
 \label{fig:gravitating_body}
 \end{figure}
 
-Pri aplikovaní Newtonovho gravitačného zákona na diferenciálne hmotné elementy 
-treba mať na pamäti, že tento zákon bol formulovaný pre hmotné body, nie pre 
+Keď aplikujeme Newtonov gravitačný zákon na diferenciálne hmotné elementy, je 
+potrebné mať na pamäti, že tento zákon bol formulovaný pre hmotné body, nie pre 
 diferenciálne hmotné elementy.  Diferenciálne elementy~$\diff m$, akokoľvek sú 
 malé, nikdy nie sú identické s~hmotnými bodmi.  Inými slovami, Newtonov 
 gravitačný zákon neposkytuje spôsob výpočtu gravitačného účinku diferenciálneho 
 hmotného elementu \parencite{Kellogg1967}.  Budeme preto musieť vysloviť ďalší 
 predpoklad, a~síce že tento zákon je možné aplikovať aj na diferenciálne hmotné 
-elementy, čím získame rovnosť~(\ref{eq:gg_dm}).
+elementy v~zmysle rovnice~(\ref{eq:gg_dm}).
 
 Celkové gravitačné zrýchlenie generované všeobecným telesom získame
 využitím princípu superpozície, teda integráciou vzťahu~(\ref{eq:gg_dm}),
@@ -736,8 +737,8 @@ f}{\partial y} + \vec e_3 \frac{\partial f}{\partial z} =
 %
 Vektor~$\nabla f(x, y, z)$ udáva \emph{smer a~veľkosť najväčšieho nárastu} 
 funkcie~$f$ v~bode so súradnicami~$x$, $y$, $z$.  Jeho zložky popisujú zmenu 
-skalárnej funkcie~$f$ v~smere vektorov~$\vec e_1$, $\vec e_2$, $\vec e_3$ 
-v~bode~$x$, $y$, $z$.
+skalárnej funkcie~$f$ v~bode~$x$, $y$, $z$ v~smere vektorov~$\vec e_1$, $\vec 
+e_2$, $\vec e_3$.
 
 Operátor gradient je \emph{lineárny}, teda pre diferencovateľné funkcie~$f$ 
 a~$g$ a~konštantu~$c$ platí
@@ -934,7 +935,7 @@ pozri napríklad~\textcite{Pick1973}.
 \section{Teória potenciálu}
 \label{sec:potential_theory}
 
-Rovnica~(\ref{eq:vg_body}) sa zvykne v~geovedách nazývať \emph{Newtonov
+Rovnica~(\ref{eq:vg_body}) sa v~geovedách zvykne nazývať \emph{Newtonov
 integrál}.  Hovorí, že ak poznáme tvar a~priestorové rozloženie hustoty telesa,
 gravitačný potenciál telesa môže byť vypočítaný.  Newtonov
 integrál má vo fyzikálnej geodézii kľúčový význam, nakoľko gravitačný potenciál 
@@ -1247,14 +1248,14 @@ V_\gidx}{\partial \varphi} + \frac{1}{r^2 \,
 \cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
 %
-V~niektorých situáciách je výhodné rovnicu~(\ref{eq:vg_laplace_sph2}) ešte 
-vynásobiť členom~$r^2$,
+V~niektorých situáciách je výhodné vynásobiť ešte 
+rovnicu~(\ref{eq:vg_laplace_sph2}) členom~$r^2$,
 %
 \begin{equation}
 \label{eq:vg_laplace_sph3}
-\nabla^2 V_\gidx = r^2 \, \frac{\partial^2 V_\gidx}{\partial r^2} + 2r \, 
-\frac{\partial V_\gidx}{\partial r} + \frac{\partial^2 V_\gidx}{\partial 
-\varphi^2} - \tan\varphi \, \frac{\partial V_\gidx}{\partial \varphi} 
+r^2 \, \frac{\partial^2 V_\gidx}{\partial r^2} + 2r \, \frac{\partial 
+V_\gidx}{\partial r} + \frac{\partial^2 V_\gidx}{\partial \varphi^2} 
+- \tan\varphi \, \frac{\partial V_\gidx}{\partial \varphi} 
 + \frac{1}{\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
 
@@ -1266,12 +1267,12 @@ Jedným z~cieľov fyzikálnej geodézie je určiť vonkajšie gravitačné pole 
 z odmeraných veličín gravitačného poľa.  Z~praktických dôvodov je ale možné 
 vykonávať merania iba v~malej časti priestoru mimo Zeme, napríklad 
 v~bezprostrednej blízkosti zemského povrchu či na dráhe umelej družice Zeme.  
-Preto ak chceme určiť gravitačné pole v~celom priestore mimo Zeme, bolo by 
-vhodné porozumieť tomu, ako sa gravitačný potenciál v~priestore mení.  Ak by 
-nejaký princíp existoval a~bol by objavený, znamenalo by to, že hoci naše 
-merania sú dostupné iba v~malej časti vonkajšieho priestoru Zeme, dokázali by 
-sme predikovať gravitačný potenciál kdekoľvek mimo Zeme, teda aj v~oblastiach 
-bez dostupných meraní.
+Preto ak chceme určiť gravitačné pole aj v~iných častiach priestoru mimo Zeme, 
+bolo by vhodné porozumieť tomu, ako sa gravitačný potenciál v~tomto priestore 
+mení.  Ak by nejaký princíp existoval a~bol by objavený, znamenalo by to, že 
+hoci naše merania sú dostupné iba v~malej časti vonkajšieho priestoru Zeme, 
+gravitačný potenciál mimo Zeme môže byť z~týchto meraní vypočítaný aj v~nových 
+oblastiach, ktoré nie sú pokryté meraniami.
 
 Tento princíp bol objavený a~je ním práve Laplaceova rovnica.  
 V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
@@ -1332,7 +1333,7 @@ V_\gidx(P_2) = \sum_{i = 0}^\infty \frac{1}{i!} \, \left.\frac{\partial^i
 V_\gidx}{\partial r^i}\right|_{P_1} \, \Delta r^i{.}
 \end{equation}
 %
-Symbol $\left.\frac{\partial^i V_\gidx}{\partial r^i} \right|_{P_1}$ označuje 
+Zápis $\left.\frac{\partial^i V_\gidx}{\partial r^i} \right|_{P_1}$ označuje 
 $i$-tu deriváciu gravitačného potenciálu~$V_\gidx$ v~bode~$P_1$.
 
 \begin{figure}
@@ -1395,7 +1396,7 @@ vzťahu~(\ref{eq:vg_poisson_equation}) nachádza mimo hmôt, potom~$\rho(P) = 0$
 Rovnicu~(\ref{eq:vg_poisson_equation}) publikoval v~roku 1813 v~práci 
 \textit{Bulletin de la société philomatique}.
 
-Posledná oblasť, v~ktorej sa môže nachádzať bod~$P$, no nie je pokrytá ani 
+Posledná oblasť, v~ktorej sa môže bod~$P$ nachádzať, no nie je pokrytá ani 
 Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Druhé 
 derivácie gravitačného potenciálu vystupujúce v~operátore $\nabla^2$ (pozri 
 rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph}) nie sú vo 
@@ -1492,12 +1493,12 @@ Zeme sférického tvaru a~konštantnej hustoty.}
 \label{fig:gravity_vector}
 \end{figure}
 
-Výsledné zrýchlenie pôsobiace na hmotný bod s~hmotnosťou~$1 \ \mathrm{kg}$ je
-v~neinerciálnom systéme dané súčtom gravitačného zrýchlenia~$\vec g_\gidx(P)$
-a~odstredivého zrýchlenia~$\vec g_\cidx(P)$.\footnote{Ostatné zrýchlenia (pozri
-Kapitolu~\ref{sec:centrifugal_gravity_field}) sme pre účely tejto práce 
-s~prijateľnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva 
-\emph{tiažové zrýchlenie} a~budeme ho označovať symbolom~$\vec g(P)$ 
+Výsledné zrýchlenie pôsobiace na hmotný bod s~hmotnosťou~$1 \ \mathrm{kg}$ je 
+v~neinerciálnom súradnicovom systéme dané súčtom gravitačného zrýchlenia~$\vec 
+g_\gidx(P)$ a~odstredivého zrýchlenia~$\vec g_\cidx(P)$.\footnote{Ostatné 
+zrýchlenia (pozri Kapitolu~\ref{sec:centrifugal_gravity_field}) sme pre účely 
+tejto práce s~prijateľnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa 
+nazýva \emph{tiažové zrýchlenie} a~budeme ho označovať symbolom~$\vec g(P)$ 
 (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
@@ -1639,15 +1640,16 @@ ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a~naopak.  Ve
 vektora tiažového zrýchlenia~$\| \vec g \|$ je tak väčšia v~oblasti pólov ako
 v~oblasti rovníka.
 
-Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna 
-rovina (lokálny horizont) je dotyková k~ekvipotenciálnej ploche, ktorá 
-prechádza stredom libely.  Z~dôvodu približne sférického tvaru Zeme a~zvlnenia 
-ekvipotenciálnych plôch nemožno vo všeobecnosti predpokladať rovnobežnosť 
-horizontálnych rovín na dvoch rôznych stanoviskách.  V~prípade teodolitu sú 
-v~tejto rovine merané vodorovné smery.  Preto ak je vyžadovaná presnosť vysoká 
-alebo ak je záujmová lokalita rozsiahla alebo má zložitú topografiu,  merania 
-je potrebné korigovať o~vplyv nerovnobežnosti horizontálnych rovín medzi 
-stanoviskami \parencite[pozri napríklad][]{VanicekGeodesy}.
+Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna os 
+leží v~rovine lokálneho horizontu, ktorý je dotykovou rovinou 
+k~ekvipotenciálnej ploche prechádzajúcej stredom libely.  Z~dôvodu približne 
+sférického tvaru Zeme a~kvôli zvlneniu ekvipotenciálnych plôch nemožno vo 
+všeobecnosti predpokladať rovnobežnosť lokálnych horizontov na dvoch rôznych 
+stanoviskách.  V~prípade teodolitu sú v~tejto rovine merané vodorovné smery.  
+Preto ak je vyžadovaná presnosť vysoká alebo ak je záujmová lokalita rozsiahla 
+alebo má zložitú topografiu,  merania je potrebné korigovať o~vplyv 
+nerovnobežnosti lokálnych horizontov na jednotlivých stanoviskách 
+\parencite[pozri napríklad][]{VanicekGeodesy}.
 
 \subsubsection{Tiažnica}
 \label{sec:plumbline}
@@ -1675,8 +1677,7 @@ smeroch, presné merania si môžu vyžadovať zavedenie korekcií.
 
 Hoci tiažový potenciál priamo odmerať nedokážeme, \emph{rozdiel} tiažového 
 potenciálu dokážeme určiť nepriamo kombináciou nivelácie a~gravimetrie.  Pred 
-popísaním tejto metódy je ale potrebné pristaviť sa pri pojme totálny 
-diferenciál.
+popísaním tejto metódy je ale potrebné vysvetliť pojem totálny diferenciál.
 
 Ak sa poloha bodu~$P$ zmení o~vektor~$\Delta \vec x$,
 %
@@ -1909,10 +1910,10 @@ $\vec r$ vzťahom
 Konštanta~$r_i$ predstavuje váhu, ktorou sa jednotkový vektor~$\vec e_i$ 
 podieľa na lineárnej kombinácii~(\ref{eq:r_synthesis}).  Môžeme tiež povedať, 
 že konštanty~$r_i$ sú súradnice koncového bodu vektora~$\vec r$.  Takýmto bodom 
-môže byť napríklad koncový bod polohového vektora bodu na povrchu Zeme 
-v~geocentrickom karteziánskom súradnicovom systéme.  Nie je náročné presvedčiť 
-sa, že konštanta~$r_i$ je daná skalárnym súčinom vektora~$\vec r$ a~príslušného 
-jednotkového vektora~$\vec e_i$,
+môže byť napríklad bod na povrchu Zeme v~geocentrickom karteziánskom 
+súradnicovom systéme.  Nie je náročné presvedčiť sa, že konštanta~$r_i$ je daná 
+skalárnym súčinom vektora~$\vec r$ a~príslušného jednotkového vektora~$\vec 
+e_i$,
 %
 \begin{equation}
 \label{eq:r_analysis}
@@ -2029,12 +2030,12 @@ tak môžeme vyjadriť nasledovne,
 \label{fig:distance_l}
 \end{figure}
 
-Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie
-matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátvorka
-obsahuje tri sčítance umocnené na~$-\frac{1}{2}$.  Výhodnejšie je rozvinúť
-hranatú zátvorku spolu s~jej exponentom do mocninového radu.  Jeden zo spôsobov
-rozvinutia funkcie do mocninového radu je pomocou Taylorovho radu.  Nech je 
-daná analytická funkcia~$f(x)$, ktorá je nekonečne diferencovateľná 
+Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
+matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátvorka 
+obsahuje tri sčítance umocnené na exponent~$-\frac{1}{2}$.  Výhodnejšie je 
+rozvinúť hranatú zátvorku spolu s~jej exponentom do mocninového radu.  Jeden zo 
+spôsobov rozvinutia funkcie do mocninového radu je pomocou Taylorovho radu.  
+Nech je daná analytická funkcia~$f(x)$, ktorá je nekonečne diferencovateľná 
 v~bode~$x_0$.  Taylorov rozvoj funkcie~$f(x)$ v~bode~$x_0$ má tvar
 %
 \begin{equation}
@@ -2331,7 +2332,7 @@ pre ľubovoľné $t \in [-1, 1]$.  Vzťah~(\ref{eq:f_synthesis}) je možné vní
 ako analógiu vzťahu~(\ref{eq:r_synthesis}), pričom~$f_n$ sú súradnice funkcie
 $f(t)$ a~Legendreove polynómy~$P_n(t)$ plnia podobnú úlohu ako jednotkové
 vektory~$\vec e_i$.  Konštanty~$f_n$ sú dané skalárnym súčinom funkcií~$f(t)$
-a~$P_n(t)$ (porovnaj s~\ref{eq:r_analysis}),
+a~$P_n(t)$ (porovnaj so vzťahom~\ref{eq:r_analysis}),
 %
 \begin{equation}
 \label{eq:f_analysis}
@@ -2442,14 +2443,12 @@ P_{nm}(t) = \frac{1}{2^n}(1 - t^2)^{m \slash 2} \sum_{s = 0}^{\left\lfloor
 - m - 2s)!} \, t^{n - m - 2s}{,}
 \end{equation}
 %
-či
-%
-množstvo rekurentných vzorcov, napríklad \parencite{Freeden2009}
+či množstvo rekurentných vzorcov, napríklad \parencite{Freeden2009}
 %
 \begin{equation}
 \label{eq:pnm_recurrence}
 P_{nm}(t) = \frac{2n - 1}{n - m} \, t \, P_{n - 1, m}(t) - \frac{n + m - 1}{n
-- m} \, P_{n - 2, m}(t){.}
+- m} \, P_{n - 2, m}(t){,} \quad n \geq 2{.}
 \end{equation}
 %
 Niekoľko prvých Legendreových funkcií má nasledovný tvar
@@ -2531,9 +2530,9 @@ vzťahom~(\ref{eq:pnm_symmetry}).
 \subsection{Condonov--Shortleyho fázový faktor}
 \label{sec:legendre_functions_cs_factor}
 
-V geodézii a~geomagnetizme sú Legendreove funkcie definované takmer výhradne 
-vzťahom~(\ref{eq:pnm_ferrer}).  V~iných vedných odboroch, napríklad fyzike či 
-seizmológii, sa používa definícia, ktorá obsahuje člen $(-1)^m$ 
+V geodézii a~v~geomagnetizme sú Legendreove funkcie definované takmer výhradne 
+vzťahom~(\ref{eq:pnm_ferrer}).  V~iných vedných odboroch, napríklad vo fyzike 
+či v~seizmológii, sa používa definícia, ktorá obsahuje člen $(-1)^m$ 
 \parencite[pozri][]{Wieczorek2015,Olver2010},
 %
 \begin{equation}
@@ -2732,7 +2731,7 @@ zrekonštruovať (vzťah~\ref{eq:f_shs_no_norm}).  V~priestore funkcií $f(\varp
 plnia sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$ podobnú úlohu ako 
 plnia jednotkové vektory $\vec e_i$ v~priestore trojrozmerných vektorov $\vec 
 r$.  Funkcia $f(\varphi,\lambda)$ môže byť napríklad gravitačný či magnetický 
-potenciál telesa na sfére, ktorá obopína celé teleso, topografia Zeme či inej 
+potenciál telesa na sfére obopínajúcej celé teleso, topografia Zeme či inej 
 planéty a~množstvo ďalších funkcií.  Každú takúto funkciu možno rozvinúť do 
 vlastného radu sférických harmonických funkcií (vzťah~\ref{eq:f_shs_no_norm}), 
 pričom každá funkcia bude mať vlastné súradnice $f_{nk}$, podobne ako každý 
@@ -3026,8 +3025,8 @@ už, zdá sa, nemajú priamočiaru fyzikálnu interpretáciu.
 \section{Aplikácie sférického harmonického rozvoja}
 \label{sec:spherical_harmonics_applications}
 
-V~tejto kapitole ukážeme dve typické aplikácie sférických harmonických rozvojov 
-vo fyzikálnej geodézii: modelovanie vonkajšieho gravitačného 
+V~tejto kapitole ukážeme dve aplikácie sférických harmonických rozvojov vo 
+fyzikálnej geodézii: modelovanie vonkajšieho gravitačného 
 poľa~(Kapitola~\ref{sec:sh_applications_gravity_field})
 a~modelovanie topografie približne sférických 
 telies~(Kapitola~\ref{sec:sh_applications_topography}).
@@ -3176,7 +3175,7 @@ rozlíšenie funkcie $H(\varphi, \lambda)$.  Koeficienty~$\bar{h}_{nk}$ boli
 prevzaté z~modelu~DTM2006.0 \parencite{DTM2006}.  Hoci všetky tri mapy sú 
 vypočítané s~rovnakým vzorkovaním ($0.25^{\circ}$ vo sférickej šírke a~dĺžke), 
 miera detailu stúpa od vrchnej mapy smerom nadol.  Spôsobené je to tým, že 
-maximálny stupeň $N$, ktorý udáva priestorové rozlíšenie funkcie 
+maximálny stupeň~$N$, ktorý udáva priestorové rozlíšenie funkcie 
 $H(\varphi,\lambda)$, narastá postupne od~$30$ cez~$90$ až do~$360$.  Odhad 
 veľkosti najmenšieho priestorového prvku, ktorý môže byť reprezentovaný 
 sférickým harmonickým rozvojom do stupňa~$N$, je možné získať vzťahom
