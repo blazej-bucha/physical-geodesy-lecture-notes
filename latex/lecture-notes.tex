@@ -1647,9 +1647,9 @@ sférického tvaru Zeme a~kvôli zvlneniu ekvipotenciálnych plôch nemožno vo
 všeobecnosti predpokladať rovnobežnosť lokálnych horizontov na dvoch rôznych 
 stanoviskách.  V~rovine lokálneho horizontu sú merané napríklad vodorovné 
 smery.  Preto ak je vyžadovaná presnosť vysoká alebo ak je záujmová lokalita 
-rozsiahla alebo má zložitú topografiu,  merania môže byť potrebné korigovať 
-o~vplyv nerovnobežnosti lokálnych horizontov \parencite[pozri 
-napríklad][]{VanicekGeodesy}.
+rozsiahla alebo má zložitú topografiu, niektoré geodetické merania môže byť 
+potrebné korigovať o~vplyv nerovnobežnosti lokálnych horizontov 
+\parencite[pozri napríklad][]{VanicekGeodesy}.
 
 \subsubsection{Tiažnica}
 \label{sec:plumbline}
@@ -1670,7 +1670,7 @@ na vertikálnu os prístroja.  K~lokálnej zvislici sa vzťahujú napríklad mer
 vertikálne uhly.  Približne sférický tvar Zeme a~zvlnenie ekvipotenciálnych 
 plôch spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú vo 
 všeobecnosti medzi stanoviskami rovnobežné.  V~úlohách, ktoré vyžadujú vysokú 
-presnosť, môže byť preto potrebné korigovať odmerané geodetické údaje o~vplyv 
+presnosť, môže byť preto potrebné korigovať geodetické merania o~vplyv 
 nerovnobežnosti lokálnych zvislíc.
 
 \subsubsection{Určenie rozdielu tiažového potenciálu}
@@ -3791,30 +3791,30 @@ Fyzikálna geodézia určuje tvar Zeme z~informácie o~jej tiažovom poli, napr�
 z~tiažového potenciálu a~z~vektora tiažového zrýchlenia na povrchu Zeme.  Táto 
 úloha je neľahká, pretože vzťah medzi tiažovým poľom a~hľadaným zemským 
 povrchom je nelineárny.  Spravidla sa preto pristupuje k~linearizácii pomocou 
-rozvoja do Taylorovho radu, v~ktorom sa zanedbajú členy druhého a~vyšších 
-rádov.  \emph{Normálne tiažové pole Zeme} je jednoduchý a~súčasne dostatočne 
-presný model skutočného tiažového poľa Zeme, využívaný práve na výpočet 
-približných hodnôt v~linearizovaných úlohách fyzikálnej geodézie.  Požiadavka 
-jednoduchosti je odôvodnená potrebou prijateľne náročných výpočtov v~normálnom 
-poli, napríklad pomocou uzavretých vzťahov pre \emph{normálne tiažové 
-zrýchlenie} $\boldsymbol{\gamma}$ či \emph{normálny tiažový potenciál} $U$.  
-Dostatočná presnosť je potrebná nato, aby bolo možné s~rozumnou mierou 
-aproximácie zanedbať nelineárne členy Taylorovho rozvoja.  Požiadavky 
-jednoduchosti a~presnosti normálneho tiažového poľa si vzájomne odporujú, preto 
-je potrebné nájsť medzi nimi vhodný kompromis.
+rozvoja do Taylorovho radu, pričom členy druhého a~vyšších rádov sa zanedbajú.  
+\emph{Normálne tiažové pole Zeme} je jednoduchý a~súčasne dostatočne presný 
+model skutočného tiažového poľa Zeme, využívaný práve na výpočet približných 
+hodnôt v~linearizovaných úlohách fyzikálnej geodézie.  Požiadavka jednoduchosti 
+je odôvodnená potrebou prijateľne náročných výpočtov v~normálnom poli, 
+napríklad pomocou uzavretých vzťahov pre \emph{normálne tiažové zrýchlenie} 
+$\boldsymbol{\gamma}$ či \emph{normálny tiažový potenciál} $U$.  Dostatočná 
+presnosť je potrebná nato, aby nelineárne členy Taylorovho rozvoja mohli byť 
+s~rozumnou mierou aproximácie zanedbané.  Požiadavky jednoduchosti a~presnosti 
+normálneho tiažového poľa si vzájomne odporujú, preto je potrebné nájsť medzi 
+nimi vhodný kompromis.
 
 \section{Voľba normálneho tiažového poľa}
 \label{sec:choice_of_normal_gravity_field}
 
-Jedno z~najjednoduchších telies ponúkajúcich sa na definíciu normálneho 
-tiažového poľa Zeme je \emph{homogénna rotujúca guľa} definovaná troma 
-nezávislými parametrami.  Obvyklou trojicou nezávislých parametrov sú 
-geocentrická gravitačná konštanta~$GM$, teda súčin Newtonovej gravitačnej 
-konštanty~$G$ a~hmotnosti Zeme~$M$, ďalej polomer gule~$R$ a~uhlová rýchlosť 
-rotácie~$\omega$.  Vonkajšie tiažové pole homogénnej gule je síce jednoducho 
-matematicky opísateľné, nevyhovuje ale väčšine súčasných aplikácií z~hľadiska 
-presnosti.  Vo fyzikálnej geodézii sa preto spravidla využíva len v~niektorých 
-špecifických situáciách, napríklad ak postačuje i~nižšia presnosť.
+Jedno z~najjednoduchších telies, ktoré môžu byť použité na definíciu normálneho 
+tiažového poľa Zeme, je \emph{homogénna rotujúca guľa}.  Obvyklou trojicou 
+nezávislých definičných parametrov homogénnej rotujúcej gule je geocentrická 
+gravitačná konštanta~$GM$, teda súčin Newtonovej gravitačnej konštanty~$G$ 
+a~hmotnosti Zeme~$M$, ďalej polomer gule~$R$ a~uhlová rýchlosť 
+rotácie~$\omega$.  Vonkajšie tiažové pole homogénnej rotujúcej gule je síce 
+jednoducho matematicky opísateľné, nevyhovuje ale väčšine súčasných aplikácií 
+z~hľadiska presnosti.  Vo fyzikálnej geodézii sa preto spravidla využíva len 
+v~niektorých špecifických situáciách, napríklad ak postačuje i~nižšia presnosť.
 
 V dôsledku sploštenia Zeme je dvojosový rotačný elipsoid presnejšou 
 geometrickou aproximáciou geoidu ako sféra.  Okrem svojho geometrického tvaru 
@@ -3855,18 +3855,19 @@ dodatočná presnosť zväčša nie je významná \parencite{Moritz1967}.
 
 Či už ide o~ekvipotenciálny elipsoid alebo sféroid, všimnime si, že v~ani 
 jednom prípade sme nepotrebovali vysloviť predpoklad o~priestorovom rozložení 
-hustôt.  Fyzikálna geodézia využíva normálne tiažové pole predovšetkým na účely 
-linearizácie.  Zdá sa byť preto kľúčové najmä to, aby normálna ekvipotenciálna 
-plocha s~normálnym tiažovým potenciálom~$U_0$ bola geometricky blízka geoidu, 
-ďalej aby normálny tiažový potenciál~$U_0$ bol blízky skutočnému tiažovému 
-potenciálu~$W_0$ na geoide, a~nakoniec aby geometrická aj fyzikálna časť 
-normálneho poľa boli jednoducho matematicky opísateľné.  Pre niektoré príbuzné 
-vedné odbory, napríklad geofyziku, je však znalosť hustoty v~normálnom telese 
-potrebná \parencite{Karcol2017}.  V~takýchto situáciách nemusí byť voľba 
-ekvipotenciálneho elipsoidu tá najvýhodnejšia.  Diskusiu k~možnostiam 
-priestorového rozloženia hustoty vo vnútri ekvipotenciálneho elipsoidu je možné 
-nájsť napríklad v~prácach \textcite{MoritzTheFigureOfTheEarth}, 
-\textcite{TorgeGeodesy}, \textcite{Conway2000} či \textcite{Karcol2017}.
+hustôt v~normálnom telese.  Fyzikálna geodézia využíva normálne tiažové pole 
+predovšetkým na účely linearizácie.  Zdá sa byť preto kľúčové najmä to, aby 
+normálna ekvipotenciálna plocha s~normálnym tiažovým potenciálom~$U_0$ bola 
+geometricky blízka geoidu, ďalej aby normálny tiažový potenciál~$U_0$ bol 
+blízky skutočnému tiažovému potenciálu~$W_0$ na geoide, a~nakoniec aby 
+geometrická aj fyzikálna časť normálneho poľa boli jednoducho matematicky 
+opísateľné.  Pre niektoré príbuzné vedné odbory, napríklad pre geofyziku, je 
+však znalosť hustoty v~normálnom telese potrebná \parencite{Karcol2017}.  
+V~takýchto situáciách nemusí byť voľba ekvipotenciálneho elipsoidu tá 
+najvýhodnejšia.  Diskusiu k~možnostiam priestorového rozloženia hustoty vo 
+vnútri ekvipotenciálneho elipsoidu je možné nájsť napríklad v~prácach 
+\textcite{MoritzTheFigureOfTheEarth}, \textcite{TorgeGeodesy}, 
+\textcite{Conway2000} či \textcite{Karcol2017}.
 
 
 
@@ -3890,19 +3891,19 @@ Na jednoznačné definovanie ekvipotenciálneho elipsoidu a~jeho vonkajšieho
 tiažového poľa teda postačuje určiť štyri nezávislé \emph{základné parametre}.  
 Dva z~týchto parametrov sú geometrické, resp. veľmi úzko súvisia s~geometriou 
 elipsoidu (napríklad hlavná polos a~sploštenie elipsoidu), a~dva parametre sú 
-fyzikálne (hmotnosť a~uhlová rýchlosť rotácie).  Všetky ostatné veličiny 
-normálneho tiažového poľa je možné vypočítať z~týchto základných parametrov, či 
-už ide o~geometrické parametre (napríklad vedľajšia polos či lineárna 
-excentricita elipsoidu) alebo fyzikálne parametre (normálny tiažový potenciál 
-a pod.).  Parametre, ktoré sú vypočítané zo základných parametrov, budeme 
-nazývať \emph{odvodené parametre}.  Teóriu ekvipotenciálneho elipsoidu 
-rozpracovali taliansky geodet, astronóm, geofyzik a~matematik P.~Pizzetti 
-(1860--1918) a~taliansky matematik a~matematický fyzik C.~Somigliana 
-(1860--1955) v~prácach \textcite{Pizzetti1984} a~\textcite{Somigliana1929}.
+fyzikálne (hmotnosť a~uhlová rýchlosť rotácie).  Zo základných parametrov je 
+možné vypočítať všetky ostatné veličiny normálneho tiažového poľa, či už ide 
+o~geometrické parametre (napríklad vedľajšia polos či lineárna excentricita 
+elipsoidu) alebo o~fyzikálne parametre (normálny tiažový potenciál a pod.).  
+Parametre, ktoré sú vypočítané zo základných parametrov, budeme nazývať 
+\emph{odvodené parametre}.  Teóriu ekvipotenciálneho elipsoidu rozpracovali 
+taliansky geodet, astronóm, geofyzik a~matematik P.~Pizzetti (1860--1918) 
+a~taliansky matematik a~matematický fyzik C.~Somigliana (1860--1955) v~prácach 
+\textcite{Pizzetti1984} a~\textcite{Somigliana1929}.
 
 Základné parametre ekvipotenciálnych elipsoidov sú v~súčasnosti určované 
 spravidla družicovými technikami a~astronomickými meraniami.  Historický 
-prehľad geodetických referenčných systémov a~spôsoby ich určenia je možné nájsť 
+prehľad geodetických referenčných systémov a~spôsobov ich určenia je dostupný 
 napríklad v~prácach \textcite{TorgeGeodesy} a~\textcite{MoritzPhysicalGeodesy}.  
 V ďalších častiach práce popíšeme dva najpoužívanejšie ekvipotenciálne 
 elipsoidy (Kapitoly~\ref{sec:grs80} a~\ref{sec:wgs84}).  Následne odvodíme 
@@ -3969,9 +3970,10 @@ C_{2,0} &= -J_{2,0}{,}\\
 \bar{C}_{2,0} &= \frac{C_{2,0}}{\sqrt{5}} = -\frac{J_{2,0}}{\sqrt{5}}{.}
 \end{align}
 
-Tabuľka~\ref{tab:grs80_derived} uvádza číselné hodnoty niektorých odvodených geometrických 
-a fyzikálnych parametrov ekvipotenciálneho elipsoidu~GRS80.  Medzi geometrické 
-parametre sme zahrnuli, okrem iných, \emph{prvú numerickú excentricitu}
+Tabuľka~\ref{tab:grs80_derived} uvádza číselné hodnoty niektorých odvodených 
+geometrických a fyzikálnych parametrov ekvipotenciálneho elipsoidu~GRS80.  
+Medzi geometrické parametre sme zahrnuli, okrem iných, \emph{prvú numerickú 
+excentricitu}
 %
 \begin{equation}
 \label{eq:1st_eccentricity}
@@ -3993,7 +3995,7 @@ f = \frac{a - b}{b}{.}
 \end{equation}
 %
 Vzťahy na výpočet odvodených fyzikálnych parametrov 
-z~Tabuľky~\ref{tab:grs80_derived} budú odvodené v~nasledujúcich častiach tejto 
+z~Tabuľky~\ref{tab:grs80_derived} budú uvedené v~nasledujúcich častiach tejto 
 kapitoly.
 
 \begin{table*}
@@ -4095,13 +4097,13 @@ Z hľadiska tvaru sú oba elipsoidy podobné; dĺžka ich hlavnej polosi je $6\,
 378\, 137\ \mathrm{m}$ a~dĺžka vedľajšej polosi, vypočítaná zo základných 
 parametrov, sa odlišuje iba o~desatinu milimetra (porovnaj 
 Tabuľky~\ref{tab:grs80_derived} a~\ref{tab:wgs84_derived}).  Z~fyzikálneho 
-hľadiska je už medzi elipsoidmi rozdiel väčší.  Uhlová rýchlosť rotácie oboch 
+hľadiska je už medzi elipsoidmi väčší rozdiel.  Uhlová rýchlosť rotácie oboch 
 elipsoidov je síce rovnaká, no odlišné hodnoty geocentrických gravitačných 
-konštánt spôsobujú rozdiel v~normálnom tiažovom potenciáli na elipsoide.  
-Rozdiel medzi oboma hodnotami je približne o~5 rádov väčší ako v~súčasnosti 
-dosiahnuteľná presnosť určenia rozdielu skutočného tiažového potenciálu medzi 
-dvoma bodmi, ktoré sú od seba vzdialené niekoľko kilometrov (pozri 
-Kapitolu~\ref{sec:potential_differences}).
+konštánt spôsobujú rozdielny normálny tiažový potenciál na elipsoide.  Rozdiel 
+medzi hodnotami normálneho tiažového potenciálu na elipsoide je približne o~5 
+rádov väčší ako v~súčasnosti dosiahnuteľná presnosť určenia rozdielu skutočného 
+tiažového potenciálu medzi dvoma bodmi, ktoré sú od seba vzdialené niekoľko 
+kilometrov (pozri Kapitolu~\ref{sec:potential_differences}).
 
 \begin{table*}
 \begin{center}
@@ -4183,14 +4185,15 @@ V_\cidx = \frac{1}{2} \, \omega^2 \, (u^2 + E^2) \, \cos^2\beta{,}
 %
 získame vzťah pre tiažový potenciál $W$ všeobecného telesa (pozri 
 rovnicu~\ref{eq:w}).  Normálny tiažový potenciál~$U$ ekvipotenciálneho 
-elipsoidu je ale opísateľný jednoduchším spôsobom.  Dôvodom sú dve symetrie 
-normálneho poľa, jedna voči osi rotácie a~druhá voči rovine rovníka.  Prvá 
-symetria spôsobuje, že všetky nezonálne sféroidické harmonické 
+elipsoidu je ale opísateľný jednoduchším spôsobom ako tiažový potenciál 
+všeobecného telesa.  Dôvodom sú dve symetrie normálneho poľa, jedna voči osi 
+rotácie a~druhá voči rovine rovníka.  Prvá symetria spôsobuje, že všetky 
+nezonálne sféroidické harmonické 
 funkcie~v~rovnici~(\ref{eq:vg_spheroidalh_no_norm}) musia byť nulové, pretože 
 závisia od dĺžky~$\lambda$.  Vďaka druhej symetrii sú nenulové iba párne 
 zonálne sféroidické harmonické funkcie (pozri vlastnosti sférických 
 harmonických funkcií v~Kapitole~\ref{sec:spherical_harmonics}).  Normálny 
-tiažový potenciál môžeme teda zapísať v~tvare
+tiažový potenciál ekvipotenciálneho elipsoidu môžeme teda zapísať v~tvare
 %
 \begin{equation}
 \label{eq:u_sph}
@@ -4235,7 +4238,8 @@ vypočítať z~meraní skutočného poľa
 (Kapitola~\ref{sec:spherical_harmonics_applications}), koeficienty normálneho 
 poľa $C_n^\mathrm{r}$ je možné vypočítať zo štyroch základných parametrov 
 ekvipotenciálneho elipsoidu (pozri Kapitolu~\ref{sec:equipotential_ellipsoid}).  
-Hľadajme preto vzťah pre sféroidické harmonické koeficienty $C_n^\mathrm{r}$.
+Hľadajme preto vzťah medzi sféroidickými harmonickými koeficientmi 
+$C_n^\mathrm{r}$ a~základnými parametrami ekvipotenciálneho elipsoidu.
 
 Nech sa výpočtový bod nachádza na povrchu ekvipotenciálneho elipsoidu, teda $u 
 = b$.  Potom
@@ -4260,8 +4264,9 @@ konštanta $U(b, \beta) = U_0$ (normálny tiažový potenciál na ekvipotenciál
 elipsoide je z~definície konštantný, pozri 
 Kapitolu~\ref{sec:equipotential_ellipsoid}).  Po druhé, prostredná časť rovnice 
 obsahuje člen s~funkciou~$\cos^2\beta$, ktorá, podobne ako Legendreove 
-polynómy, závisí od $\sin\beta$, pretože $\cos^2\beta = 1 - \sin^2\beta$.  
-Pomocou vzťahov (pozri rovnicu~\ref{eq:linear_eccentricity})
+polynómy~$P_n(\sin\beta)$, závisí od $\sin\beta$, pretože $\cos^2\beta 
+= 1 - \sin^2\beta$.  Pomocou vzťahov (pozri 
+rovnicu~\ref{eq:linear_eccentricity})
 %
 \begin{equation}
 a^2 = b^2 + E^2
@@ -4354,11 +4359,11 @@ a~v~jeho vonkajšom priestore pre $u \geq b$.
 
 Pokúsme sa teraz vyjadriť normálny gravitačný potenciál~$U_\gidx$ 
 z~rovnice~(\ref{eq:ug_spheroidal}) pomocou základných parametrov 
-ekvipotenciálneho elipsoidu.  V~rovnici~(\ref{eq:ug_spheroidal}) totiž 
-vystupuje normálny tiažový potenciál na elipsoide $U_0$, ktorý zvyčajne nepatrí 
-medzi základne parametre ekvipotenciálneho elipsoidu (hoci aj takýto prístup 
-existuje, pozri napríklad \cite{TorgeGeodesy}).  Našim ďalším cieľom je preto  
-vyjadriť $U_0$ pomocou $a$, $b$, $GM$ a~$\omega$.
+ekvipotenciálneho elipsoidu~$a$, $b$, $GM$ a~$\omega$.  
+V~rovnici~(\ref{eq:ug_spheroidal}) totiž vystupuje normálny tiažový potenciál 
+na elipsoide $U_0$, ktorý zvyčajne nepatrí medzi základne parametre 
+ekvipotenciálneho elipsoidu (hoci aj takýto prístup existuje, pozri napríklad 
+\cite{TorgeGeodesy}).
 
 Z~Kapitoly~\ref{sec:spheroidal_harmonic_expansion} vieme, že podiely 
 Legendreových funkcií druhého druhu sú reálne čísla.  Vyjadrime preto 
@@ -4428,7 +4433,7 @@ rádov rozvoja~(\ref{eq:arctan_series}).
 
 Pre zjednodušenie ďalšieho odvodenia je dobré uvedomiť si, že ak~$u$ 
 v~rovnici~(\ref{eq:eu_atan}) nadobúda veľké hodnoty, potom jeho hodnota je 
-približne rovná sprievodiču $r$.  Túto skutočnosť ukážeme nasledovne.  
+približne rovná sprievodiču $r$.  Toto tvrdenie dokážeme nasledovne.  
 Z~rovníc~(\ref{eq:ellred2cart}) vieme, že
 %
 \begin{equation}
@@ -4674,13 +4679,13 @@ Kapitolu~\ref{sec:harmonic_function}).  Táto veličina je harmonická a~vyhovuj
 Laplaceovej rovnici~(\ref{eq:vg_laplace_cart}), pretože ide o~lineárnu 
 kombináciu sférických harmonických funkcií~(\ref{eq:ug_spherical}).  
 \emph{Nereprezentuje} preto vnútorný normálny gravitačný potenciál v~hmotách 
-elipsoidu, pretože v~tejto oblasti platí pre $U_\gidx$ Poissonova 
+elipsoidu, keďže v~tejto oblasti platí pre $U_\gidx$ Poissonova 
 rovnica~(\ref{eq:vg_poisson_equation}).  V~praktických aplikáciách postačuje 
 počítať rad~(\ref{eq:ug_spherical}) do $n = 5$, prípadne $n = 10$, teda do 
 sférických harmonických stupňov~$10$, resp.~$20$.
 
-Vzťah pre normálny odstredivý potenciál vyplýva z~rovníc~(\ref{eq:vc}) 
-a~(\ref{eq:sph2cart}),
+Vzťah pre normálny odstredivý potenciál vo sférických súradniciach vyplýva 
+z~rovníc~(\ref{eq:vc}) a~(\ref{eq:sph2cart}),
 %
 \begin{equation}
 \label{eq:uc_spherical}
@@ -4690,10 +4695,10 @@ U_\cidx(r, \varphi) = \frac{1}{2} \, \omega^2 \, r^2 \, \cos^2\varphi{.}
 Dosadením vzťahov~(\ref{eq:ug_spherical}) a~(\ref{eq:uc_spherical}) 
 do~(\ref{eq:u_sph}) získame výsledný vzťah pre normálny tiažový potenciál vo 
 sférických súradniciach.  Všimnime si, že v~rovniciach~(\ref{eq:ug_spherical}) 
-a~(\ref{eq:uc_spherical}) vystupujú ako konštanty opäť iba štyri základné 
-parametre ekvipotenciálneho elipsoidu: $a$, $J_{2,0}$, $GM$ a~$\omega$.  Ide 
-tak o~ďalší výpočet odvodeného fyzikálneho parametra ekvipotenciálneho 
-elipsoidu z~jeho základných parametrov.
+a~(\ref{eq:uc_spherical}) sú konštantami opäť iba štyri základné parametre 
+ekvipotenciálneho elipsoidu: $a$, $J_{2,0}$, $GM$ a~$\omega$.  Ide tak o~ďalší 
+výpočet odvodeného fyzikálneho parametra ekvipotenciálneho elipsoidu 
+zo~základných parametrov ekvipotenciálneho elipsoidu.
 
 
 
@@ -4712,11 +4717,12 @@ parametre ekvipotenciálneho elipsoidu.
 V tejto kapitole najprv ukážeme exaktný spôsob výpočtu normálneho tiažového 
 zrýchlenia v~redukovaných elipsoidických súradniciach 
 (Kapitola~\ref{sec:normal_gravity_potential_in_reduced_ell_coords}).  Táto 
-metóda je v~praktických aplikáciách využívaná zriedkavejšie.  Azda je tomu tak 
-preto, že polohu bodu, v~ktorom meriame skutočné tiažové zrýchlenie, nezvykneme 
-v~praxi určovať v~redukovaných elipsoidických súradniciach.  Tento prístup je 
-ale dôležitý obzvlášť z~teoretického hľadiska a~z~pohľadu numerických 
-simulácií, lebo využíva uzavreté vzťahy.  
+metóda je v~praktických aplikáciách využívaná zriedkavo.  Jeden z~dôvodov je 
+zrejme ten, že poloha bodu, v~ktorom je merané skutočné tiažové zrýchlenie, nie 
+je v~praxi zväčša vyjadrovaná v~redukovaných elipsoidických súradniciach (hoci 
+do týchto súradníc môže byť jednoducho transformovaná).  Tento prístup je ale 
+dôležitý obzvlášť z~teoretického hľadiska a~z~pohľadu numerických simulácií, 
+lebo využíva uzavreté matematické vzťahy.  
 V~Kapitole~\ref{sec:normal_gravity_taylor} je následne uvedený najčastejší 
 spôsob výpočtu pomocou Taylorovho rozvoja v~elipsoidických súradniciach.  Hoci 
 táto metóda je iba približná, pretože nekonečný Taylorov rozvoj musí byť 
@@ -7533,35 +7539,36 @@ družice je možné odhadnúť koeficienty~$\bar{t}_{nk}$ rozličnými spôsobmi
 
 \subsection{Metódy remove--compute--restore}
 
-Výpočet geoidu vzťahmi~(\ref{eq:stokes_N}) a~(\ref{eq:hotine_N}) je náročný ani 
-nie tak z~hľadiska výpočtového času (pozri 
-Kapitolu~\ref{sec:stokes_convolution}), ako skôr z~pohľadu vstupných dát.  
+Výpočet geoidu vzťahmi~(\ref{eq:stokes_N}) a~(\ref{eq:hotine_N}) je náročný 
+nielen z~hľadiska výpočtového času (pozri 
+Kapitolu~\ref{sec:stokes_convolution}), ale aj z~pohľadu vstupných dát.  
 Všimnime si, že obe rovnice integrujú anomálie, resp. poruchy tiažového 
 zrýchlenia na celej sfére~$\sigma$.  Predpokladaná je teda dostupnosť 
 gravimetrických meraní na celej Zemi.  Celosvetové gravimetrické databázy síce 
-existujú, no ich priestorové rozlíšenie dosahuje v~súčasnosti nanajvýš 
+existujú, no v~súčasnosti ich priestorové rozlíšenie dosahuje nanajvýš 
 zhruba~$15'$ \parencite{EGM2008,Pail2018}, teda približne~$28$~km na rovníku.  
-Takáto hustota nepostačuje na dosiahnutie vyžadovanej zhruba centimetrovej 
+Táto hustota nepostačuje na dosiahnutie vyžadovanej zhruba centimetrovej 
 presnosti geoidu.  Naproti tomu, gravimetrické databázy na úrovni kontinentov 
 či štátov sú nezriedka výrazne hustejšie (na Slovensku napríklad~3 až~6 
-gravimetrických meraní na~$\textrm{km}^2$).  Z~odmeraných anomálií tiažového 
-zrýchlenia sa preto zvykne pomocou družicových sférických harmonických modelov 
-odstrániť dlhovlnný trend anomálií tiažového zrýchlenia do stupňa~$N$ 
-(angl.~\emph{remove}), čím získame \emph{reziduálne anomálie tiažového 
-zrýchlenia}.  Tieto reziduálne anomálie tiažového zrýchlenia sú následne 
-použité na výpočet \emph{reziduálnej výšky geoidu} nad referenčným elipsoidom, 
-napríklad pomocou Stokesovho integrálu (angl.~\emph{compute}).  Na záver je 
-k~získanej reziduálnej výške geoidu pridaný globálny dlhovlnný trend geoidu, 
-ktorý je spočítaný opäť zo sférického harmonického modelu 
-(angl.~\emph{restore}).  Kľúčovou je skutočnosť, že prostrednú časť metódy 
-(\emph{compute}) je možné s~rozumnou mierou aproximácie spočítať s~využitím iba 
-regionálnych gravimetrických dát, napríklad 100~km od výpočtového bodu.  
-Integračnou oblasťou v~Stokesovom integráli tak už nemusí byť celá 
-sféra~$\sigma$, ale len sférický zvrchlík~$\sigma_0$ so stredom vo výpočtovom 
-bode.  Takáto aproximácia je možná preto, lebo vplyv vzdialených 
-\emph{reziduálnych} anomálií tiažového zrýchlenia na výšku geoidu je 
-s~dostatočnou mierou presnosti zanedbateľný, pokiaľ sú stupeň~$N$ a~integračná 
-oblasť~$\sigma_0$ vhodne zvolené.
+gravimetrických meraní na~$\textrm{km}^2$).
+
+Z~podrobných regionálnych anomálií tiažového zrýchlenia sa preto zvykne 
+odstrániť (angl.~\emph{remove}) dlhovlnný trend.  Na tento účel sa spravidla 
+využívajú družicové sférické harmonické modely do stupňa~$N$.  Získame tým 
+\emph{reziduálne anomálie tiažového zrýchlenia}, ktoré sú následne použité na 
+výpočet (angl.~\emph{compute}) \emph{reziduálnej výšky geoidu} nad referenčným 
+elipsoidom, napríklad pomocou Stokesovho integrálu.  Na záver je k~získanej 
+reziduálnej výške geoidu vrátený (angl.~\emph{restore}) globálny dlhovlnný 
+trend geoidu, ktorý je spočítaný opäť zo sférického harmonického modelu.  
+Kľúčovou je skutočnosť, že na získanie rozumnej presnosti je postačujúce 
+v~prostrednej časti metódy (\emph{compute}) použiť regionálne gravimetrické 
+dáta, napríklad do vzdialenosti 100~km od výpočtového bodu.  Integračnou 
+oblasťou v~Stokesovom integráli tak už nemusí byť celá sféra~$\sigma$, ale len 
+sférický zvrchlík~$\sigma_0$ so stredom vo výpočtovom bode.  Takáto aproximácia 
+je možná, pretože vplyv vzdialených \emph{reziduálnych} anomálií tiažového 
+zrýchlenia na \emph{reziduálnu} výšku geoidu je s~dostatočnou mierou presnosti 
+zanedbateľný, pokiaľ sú stupeň~$N$ a~integračná oblasť~$\sigma_0$ vhodne 
+zvolené.
 
 Metóda remove--compute--restore teda umožňuje vhodnú kombináciu vysokej 
 lokálnej hustoty regionálnych gravimetrických databáz s~globálnym charakterom 
@@ -7835,42 +7842,41 @@ zrýchlenia~$\Delta g_0$.
 
 Súčasná geodézia stojí na mnohých pilieroch.  Jedným z~nich je znalosť 
 tiažového poľa Zeme.  Vďaka schopnosti merať a~modelovať tiažové pole dokážeme 
-s~mnohými geodetickými údajmi narábať presnejšie, než keby sme vplyv tiažového 
-poľa neuvažovali.  Medzi tieto údaje patria napríklad merané vodorovné smery 
-a~zvislé uhly či~nivelačné a~GNSS merania.  Aby sme porozumeli geodézii, je 
-preto výhodné pochopiť fyzikálnu podstatu princípov, na ktorých sú geodetické 
+určiť mnohé geodetické veličiny presnejšie, než keby sme vplyv tiažového poľa 
+neuvažovali.  Medzi tieto údaje patria napríklad merané vodorovné smery 
+a~zvislé uhly či~nivelačné a~GNSS merania.  Aby sme lepšie porozumeli geodézii, 
+je výhodné pochopiť fyzikálnu podstatu princípov, na ktorých sú geodetické 
 merania založené alebo ich implicitne využívajú.  Princípy niektorých 
-geodetických metód môžu totiž azda pôsobiť ako očividné, no až podrobnejším 
+geodetických metód môžu totiž pôsobiť ako očividné, no až podrobnejším 
 premýšľaním si uvedomíme, že táto zrejmosť je len zdanlivá.  Videli sme, že 
-nemalé úsilie si vyžaduje opis už i~len tak bežných geodetických konceptov, 
-akými sú lokálny horizont či smer zavesenej olovnice.  S~pokrokom vedy, výskumu 
+nemalé úsilie si vyžaduje opis už i~tak bežných geodetických konceptov, akými 
+sú lokálny horizont či smer zavesenej olovnice.  S~pokrokom vedy, výskumu 
 a~technológií sa výsledky výskumu tiažového poľa Zeme využívajú čoraz častejšie 
 aj v~bežnej geodetickej praxi, hoci to (opäť) nemusí byť na prvý pohlaď zrejmé.  
 Príkladom je určovanie výšky bodu na povrchu Zeme GNSS metódami.  Tie určujú 
 elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od povrchu 
-elipsoidu po daný bod.  Takáto výška má geometrický charakter, ktorý 
-nereflektuje skutočné tiažové pole Zeme.  Práve z~tohto dôvodu nie je vhodná 
-pre mnohé úlohy geodézie, napríklad na vytýčenie \emph{vodorovnej} roviny 
-v~teréne.  Potenciál GNSS meraní však v~tejto úlohe predsa len dokážeme využiť, 
-keď si uvedomíme, že odčítaním výšky geoidu~$N$ od elipsoidickej výšky~$h$ 
-získame ortometrickú výšku~$H_o$ (Obrázok~\ref{fig:heights}), ktorá už má 
-fyzikálny charakter, a~tak je rozumnejšie využiť ju na vytýčenie 
-\emph{vodo}rovnej roviny.  V~súčasnosti je takýto prepočet medzi výškami bežnou 
-činnosťou geodetov, pričom je uskutočňovaný buď priamo v~GNSS prijímači alebo 
-v~následnom spracovaní, niekedy azda i~bez vedomia samotného geodeta.  
-Porozumieť tiažovému poľu Zeme sa teda oplatí.
+elipsoidu po daný bod.  Táto výška má geometrický charakter, ktorý nereflektuje 
+skutočné tiažové pole Zeme.  Práve z~tohto dôvodu nie je vhodná pre mnohé úlohy 
+geodézie, napríklad na vytýčenie \emph{vodorovnej} roviny v~teréne.  Potenciál 
+GNSS meraní však v~tejto úlohe predsa len dokážeme využiť, keď si uvedomíme, že 
+odčítaním výšky geoidu~$N$ od elipsoidickej výšky~$h$ získame ortometrickú 
+výšku~$H_o$ (Obrázok~\ref{fig:heights}).  Táto výška už má fyzikálny charakter, 
+a~tak je rozumnejšie využiť ju na vytýčenie \emph{vodo}rovnej roviny.  
+V~súčasnosti je takýto prepočet medzi výškami bežnou činnosťou geodetov, pričom 
+je uskutočňovaný buď priamo v~GNSS prijímači alebo v~následnom spracovaní, 
+niekedy azda i~bez vedomia samotného geodeta.  Porozumieť tiažovému poľu Zeme 
+sa teda oplatí.
 
-O~poskytnutie poznatkov, ktoré sa javia byť vhodné pre porozumenie tiažového 
-poľa, sa snažila aj táto práca.  Niektoré koncepty však neboli diskutované 
-vôbec alebo boli spomenuté iba okrajovo.  V~prvom rade, práca sa zaoberala 
-určovaním tvaru Zeme v~podobe geoidu.  Molodenského metóda určovania fyzického 
-povrchu Zeme (pozri úvodnú kapitolu a~Kapitolu~\ref{sec:geoid}) nebola 
-predstavená.  Nie je ale tomu tak preto, že Molodenského teória je nedôležitá 
-pre fyzikálnu geodéziu.  Presný opak je pravdou!  Pravdou ale tiež je, že tento 
-prístup je o~niečo zložitejší ako určovanie geoidu a~autor sa necíti byť 
-kompetentný na náležité zvládnutie tejto neľahkej úlohy.  Význam Molodenského 
-teórie v~slovenskom kontexte podčiarkuje skutočnosť, že práve tento prístup je 
-na Slovensku využívaný na určovanie tvaru Zeme a~jej tiažového poľa.
+O~poskytnutie poznatkov, ktoré by napomohli porozumieť základom teórie 
+gravitačného a~tiažového poľa, sa snažila aj táto práca.  Niektoré koncepty 
+však neboli diskutované vôbec alebo boli spomenuté iba okrajovo.  V~prvom rade, 
+práca sa zaoberala určovaním tvaru Zeme v~podobe geoidu.  Molodenského metóda 
+určovania fyzického povrchu Zeme (pozri úvodnú kapitolu 
+a~Kapitolu~\ref{sec:geoid}) nebola predstavená.  Nie je ale tomu tak preto, že 
+táto teória je nedôležitá pre fyzikálnu geodéziu.  Presný opak je pravdou!  
+Význam Molodenského teórie v~slovenskom kontexte podčiarkuje aj skutočnosť, že 
+práve tento prístup je na Slovensku využívaný na určovanie tvaru Zeme a~jej 
+tiažového poľa.  Molodenského koncepcia však presahuje rámec tejto práce.
 
 Druhou nedotknutou témou je prítomnosť topografických hmôt v~procese určovania 
 geoidu.  V~Kapitole~\ref{sec:geoid} sme predpokladali, že vo vonkajšom 
@@ -7901,8 +7907,7 @@ nájsť napríklad v~knihe~\textcite{Rektorys}, ktorá je napísaná v~češtine
 a~svojou formou je prístupná aj~inžinierom a~fyzikom.  Odporúčať tiež môžeme 
 geodetickú literatúru v~anglickom jazyku, napríklad 
 \textcite{MoritzAdvancedGeodesy}, \textcite{SansoGeoidDetermination}, 
-\textcite{Borre2006}, \textcite{Freeden2009} či publikácie RNDr.~Ing.~Petra 
-Holotu, DrSc.
+\textcite{Borre2006} či \textcite{Freeden2009}.
 
 Zrejme nebudeme ďaleko od pravdy, keď budeme tvrdiť, že vedecká a~akademická 
 literatúra, nevynímajúc tieto strany, sa v~istom zmysle rodí veľmi ťažko.  
@@ -8301,8 +8306,8 @@ f}{\partial \varphi}{,}\\
 \end{split}
 \end{equation}
 %
-Keďže funkcia~$f$ je ľubovoľná skalárna diferencovateľná funkcia (pozri 
-začiatok tejto kapitoly), vzťah~(\ref{eq:grad_cart2sph_3}) dokazuje 
+Keďže funkcia~$f$ je podľa predpokladu ľubovoľná skalárna diferencovateľná 
+funkcia, vzťah~(\ref{eq:grad_cart2sph_3}) dokazuje 
 rovnicu~(\ref{eq:gradient_sph}).
 
 
@@ -8921,7 +8926,7 @@ $\bar{h}_{nk}$ (pozri rovnicu~\ref{eq:h_shs}) sú prevzaté z~modelu DTM2006.0
 \parencite{DTM2006}.  Výpočet používa program GrafLab \parencite{GrafLab}, 
 ktorý je voľne dostupný na adrese 
 \url{https://github.com/blazej-bucha/graflab}.  Návody na prácu v~programe 
-GrafLab je možné nájsť na adrese 
+GrafLab sú prístupné na adrese 
 \url{https://github.com/blazej-bucha/graflab-cookbook}.
 
 \lstinputlisting[caption=Sférický harmonický rozvoj zemskej topografie
