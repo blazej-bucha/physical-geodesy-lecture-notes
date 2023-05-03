@@ -16,5 +16,5 @@ for nmax = [30, 90, 360]
 
 end
 
-% Prechod do pôvodného pracovného adresára
+% Návrat do pôvodného pracovného adresára
 cd ../../
