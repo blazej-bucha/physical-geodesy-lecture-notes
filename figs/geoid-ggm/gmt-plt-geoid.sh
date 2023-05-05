@@ -9,26 +9,34 @@ set -e
 # INPUTS
 # ====================================================================
 
-# Input GMT GRD file to be plotted.  To limit the size of the repository, this
-# file is not distributed but can be obtained from the "grav-sr-2arcsec" model
-# available at "https://zenodo.org/record/7074772".
-grdfile="./vg.grd"
+# -----------------------------------------------------------------------------
+#
+# NOTE: Due to their size, the input data files to plot the gravity
+# disturbances are not a part of the repository.  They can be, however, easily
+# computed, say, as an exercise.
+#
+# -----------------------------------------------------------------------------
+
+# Input data file to be plotted.  To limit the size of the repository, this
+# file is not distributed but can easily be computed with, say, GrafLab.
+infile="./geoid-ggm.txt"
 
 
-# Output file without the file extension.  Create will be "ps" and "pdf" files.
-outfile="../../latex/fig-vg-grav-sr-2arcsec"
+# Prefix of the output file names include the path.  Create will be a "pdf"
+# files.
+outfile_prefix="../../latex/fig-"
 
 
 # Cartographic projection (projection_lon0/map_width_in_cm)
-proj="M19.95/8c"
+proj="W180/11c"
 
 
 # Region to be plotted (min_lon/max_lon/min_lat/max_lat in degrees)
-region="19.5/20.4/48.8/49.3"
+region="0.0/360.0/-90.0/90.0"
 
 
 # Geographic grid
-geogrd="20mg20m/10mg10mWSen"
+geogrd="60dg60d/30dg30dWSen"
 
 
 # Color scale
@@ -36,15 +44,15 @@ colorscale="viridis"
 
 
 # min/max/step values to create a color pallet
-colorscale_lims="62568000/62585600/1000"
+colorscale_lims="-80/80/10"
 
 
 # min/max values of the colorbar
-colorbar_minmax="62568000/62585600"
+colorbar_minmax="-80/80"
 
 
 # Step of colorbar values to be shown
-colorbar_step="5000"
+colorbar_step="20"
 
 
 # Colorbar label
@@ -52,7 +60,7 @@ colorbar_label=""
 
 
 # Colorbar location
-colorbar_loc="4c/-0.5c/8c/0.2"
+colorbar_loc="5.5c/-0.5c/11c/0.2"
 
 
 # Colorbar position ("h" for horizontal, "v" for vertical)
@@ -60,7 +68,7 @@ colorbar_pos="h"
 
 
 # Some further GMT stuff
-gmt gmtset PAPER_MEDIA Custom_10.0cx9c
+gmt gmtset PAPER_MEDIA Custom_12cx7c
 gmt gmtset MAP_ORIGIN_X 0c
 gmt gmtset MAP_ORIGIN_Y 0c
 gmt gmtset ANNOT_FONT_SIZE_PRIMARY 8p
@@ -80,8 +88,21 @@ gmt gmtset TICK_LENGTH 0.075c
 # GMT plotting
 # ====================================================================
 
+# Prepare the input and output file names (no suffices)
+infile=$(basename $infile ".txt")
+outfile=$outfile_prefix$infile
+
+
+echo "Plotting $infile.txt..."
+
+
 # Color pallet table file (deleted at the end of the script)
 cptfile="data.cpt"
+
+
+# Create a GMT GRD file to be plotted
+grdfile="plt-tmp.grd"
+gmt xyz2grd $infile.txt -G$grdfile -R$region -rg -I0.25/0.25 -fg -:
 
 
 # Create a shading effect
@@ -100,15 +121,11 @@ gmt grdimage $grdfile \
              -B$geogrd \
              -Ishading.int \
              -K \
-             -X1.3c \
-             -Y1.5c \
-             -E150 \
+             -X0.6c \
+             -Y1.2c \
+             -E200 \
              -Q \
              -P > $outfile.ps
-
-
-# Plot the SR borders
-gmt psxy sr-border.txt -R$region -J$proj -W0.7,black -O -K -A >> $outfile.ps
 
 
 # Add the colorbar
@@ -116,12 +133,15 @@ gmt psscale -C$cptfile \
             -D$colorbar_loc$colorbar_pos \
             -G$colorbar_minmax \
             -B$colorbar_step/:$colorbar_label: \
-            -Y-0.3c \
+            -Y-0.0c \
             -O >> $outfile.ps
 
 
 # Convert the output "ps" file to the "pdf" format.
 gmt psconvert $outfile.ps -P -Tf
+
+
+rm $outfile.ps
 
 # ====================================================================
 
@@ -133,10 +153,10 @@ gmt psconvert $outfile.ps -P -Tf
 # Clean-up the mess
 # ====================================================================
 
+rm $grdfile
 rm $cptfile
 rm shading.int
 rm gmt.history
 rm gmt.conf
-rm $outfile.ps
 
 # ====================================================================

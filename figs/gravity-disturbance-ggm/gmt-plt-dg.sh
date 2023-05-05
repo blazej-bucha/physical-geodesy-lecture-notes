@@ -36,19 +36,19 @@ geogrd="60dg60d/30dg30dWSen"
 
 
 # Color scale
-colorscale="haxby"
+colorscale="viridis"
 
 
 # min/max/step values to create a color pallet
-colorscale_lims="-1000/1000/10"
+colorscale_lims="-90/90/10"
 
 
 # min/max values of the colorbar
-colorbar_minmax="-1000/1000"
+colorbar_minmax="-90/90"
 
 
 # Step of colorbar values to be shown
-colorbar_step="200"
+colorbar_step="20"
 
 
 # Colorbar label
@@ -83,7 +83,7 @@ gmt gmtset TICK_LENGTH 0.075c
 
 # GMT plotting
 # ====================================================================
-for file in `ls disturbing-potential-*.txt`
+for file in `ls gravity-disturbance-*.txt`
 do
     # Prepare the input and output file names (no suffices)
     infile=$(basename $file ".txt")
@@ -123,7 +123,6 @@ do
                  -E200 \
                  -Q \
                  -P > $outfile.ps
-
 
     # Add the colorbar
     gmt psscale -C$cptfile \

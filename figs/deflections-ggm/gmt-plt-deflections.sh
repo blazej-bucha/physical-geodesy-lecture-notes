@@ -11,8 +11,8 @@ set -e
 
 # -----------------------------------------------------------------------------
 #
-# NOTE: Due to their size, the input data files to plot the gravity
-# disturbances are not a part of the repository.  They can be, however, easily
+# NOTE: Due to their size, the input data files to plot the deflections of the
+# vertical are not a part of the repository.  They can be, however, easily
 # computed, say, as an exercise.
 #
 # -----------------------------------------------------------------------------
@@ -36,19 +36,7 @@ geogrd="60dg60d/30dg30dWSen"
 
 
 # Color scale
-colorscale="haxby"
-
-
-# min/max/step values to create a color pallet
-colorscale_lims="-100/100/10"
-
-
-# min/max values of the colorbar
-colorbar_minmax="-100/100"
-
-
-# Step of colorbar values to be shown
-colorbar_step="50"
+colorscale="viridis"
 
 
 # Colorbar label
@@ -83,7 +71,7 @@ gmt gmtset TICK_LENGTH 0.075c
 
 # GMT plotting
 # ====================================================================
-for file in `ls gravity-disturbance-*.txt`
+for file in `ls deflections-*.txt`
 do
     # Prepare the input and output file names (no suffices)
     infile=$(basename $file ".txt")
@@ -91,6 +79,18 @@ do
 
 
     echo "Plotting $infile.txt..."
+
+
+    if [[ "$file" == "deflections-theta.txt" ]]; then
+        # Use a different colorscale for total deflections of the vertical
+        colorscale_lims="0/20/1"
+        colorbar_minmax="0/20"
+        colorbar_step="5"
+    else
+        colorscale_lims="-20/20/1"
+        colorbar_minmax="-20/20"
+        colorbar_step="5"
+    fi
 
 
     # Color pallet table file (deleted at the end of the script)

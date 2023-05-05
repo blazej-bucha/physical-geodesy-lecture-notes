@@ -13,6 +13,7 @@ ax.plot(psi * 180.0 / np.pi, hotine)
 ax.set_xlabel("$\psi$ $(^\circ)$")
 ax.set_ylabel("$H(\psi)$")
 ax.grid(visible=True)
+plt.subplots_adjust(top=0.98, bottom=0.15)
 plt.show()
 
 fig.savefig("../../latex/fig-hotine-kernel.pdf")

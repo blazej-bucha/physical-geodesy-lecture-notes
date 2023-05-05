@@ -32,15 +32,15 @@ geogrd="20mg20m/10mg10mWSen"
 
 
 # Color scale
-colorscale="haxby"
+colorscale="viridis"
 
 
 # min/max/step values to create a color pallet
-colorscale_lims="981900/982300/1"
+colorscale_lims="981900/982320/1"
 
 
 # min/max values of the colorbar
-colorbar_minmax="981900/982300"
+colorbar_minmax="981900/982320"
 
 
 # Step of colorbar values to be shown

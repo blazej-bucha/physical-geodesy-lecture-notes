@@ -36,7 +36,7 @@ geogrd="60dg60d/30dg30dWSen"
 
 
 # Color scale
-colorscale="mby"
+colorscale="viridis"
 
 
 # min/max/step values to create a color pallet
