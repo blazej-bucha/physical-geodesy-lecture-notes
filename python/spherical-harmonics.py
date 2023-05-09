@@ -4,7 +4,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy.special import lpmv
 
-# Sférický harmonický stupeň "n" a rád "k"
+# Sférický harmonický stupeň "n = 0, 1, ..." a rád "k = -n, ..., n"
 n = 3
 k = 1
 
