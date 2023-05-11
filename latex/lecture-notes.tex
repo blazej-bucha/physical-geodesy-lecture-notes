@@ -261,6 +261,17 @@ vhodné, text sme doplnili o~počítačový kód, ktorý prakticky demonštruje
 diskutovanú problematiku.  Nádejame sa, že jeho vlastným štúdiom, testovaním 
 a~úpravou je možné niektorým konceptom porozumieť jednoduchšie.
 
+Pri písaní textu sme predpokladali, že čitateľ má znalosti zo sférickej 
+trigonometrie, vektorového, diferenciálneho a~integrálneho počtu na úrovni 
+prvého stupňa vysokoškolského štúdia.  Pre doplnenie poznatkov so sférickej 
+trigonometrie je možné nahliadnuť napríklad do~skrípt \textcite{Melicher2009} 
+a~\textcite{Minarechova2019}.  Integrálny a~diferenciálny počet je diskutovaný 
+v~skriptách \textcite{Minarechova2019} a~\textcite{Macak2021}.  Podrobnosti 
+o~súradnicových systémoch používaných v~geodézii a~o~transformáciách medzi nimi 
+je možné nájsť napríklad v~práci \textcite{Melicher2009}.  Doplňujúce 
+informácie z~oblasti fyzikálnej geodézie a~gravimetrie je možné nájsť 
+v~skriptách \textcite{Janak2006} a~\textcite{Janak2010}.
+
 Aj keď napísaniu tejto práce bolo venované veľké úsilie, bolo by prekvapivé, ak 
 by sa v~nej nenašli časti, ktoré mohli byť spracované zrozumiteľnejšie, alebo 
 témy, ktoré v~nej obsiahnuté nie sú, no mohli či mali byť diskutované.  Skôr 
@@ -282,23 +293,24 @@ software.  Vyslovujeme preto vďaku a~slová ocenenia veľkej komunite
 excelentných programátorov za to, že poskytujú prvotriedny slobodný software.
 
 Úprimné slová vďaky ale patria v~prvom rade blízkym, priateľom a~kolegom, ktorí 
-mi pomáhali počas písania práce.  Ďakujem recenzentom, Petrovi Vajdovi z~Ústavu 
-vied o~Zemi Slovenskej akadémie vied, Josefovi Seberovi z~Astronomického ústavu 
-Akadémie Vied Českej republiky a~Milošovi Vaľkovi z~Geodetického observatória 
-Pecný Výskumného ústavu geodetického, topografického a kartografického, za ich 
-ochotu a~venovaný čas.  Zuzane Minarechovej ďakujem za neúnavné viacnásobné 
-čítanie textu a~za mnoho hodnotných postrehov a~korekcií.  Za cenné pripomienky 
-k~forme a~k~štylistike veľmi ďakujem Eme Nogovej.  Jurajovi Janákovi 
-a~Martinovi Pitoňákovi ďakujem za obsahové komentáre, ktoré mi pomohli lepšie 
-formovať štruktúru a~obsah práce.  Za cenné postrehy a~za povzbudivé slová 
-vďačím Palovi Zahorcovi.  Za mnohonásobné prečítanie, za hŕbu štylistických 
-korektúr, za ochotu takmer rok počúvať o~témach, ktoré som práve spracovával 
-a~za neutíchajúcu podporu ďakujem Saške.
+mi pomáhali počas písania práce.  Za starostlivé prečítanie textu a~za 
+pripomienky, ktoré významne prispeli ku~zlepšeniu tejto práce, ďakujem 
+recenzentom, Petrovi Vajdovi z~Ústavu vied o~Zemi Slovenskej akadémie vied, 
+Josefovi Seberovi z~Astronomického ústavu Akadémie Vied Českej republiky 
+a~Milošovi Vaľkovi z~Geodetického observatória Pecný Výskumného ústavu 
+geodetického, topografického a kartografického.  Zuzane Minarechovej ďakujem za 
+neúnavné viacnásobné čítanie textu a~za mnoho hodnotných postrehov a~korekcií.  
+Za cenné pripomienky k~forme a~k~štylistike veľmi ďakujem Eme Nogovej.  
+Jurajovi Janákovi a~Martinovi Pitoňákovi ďakujem za obsahové komentáre, ktoré 
+mi pomohli lepšie formovať štruktúru a~obsah práce.  Za cenné postrehy a~za 
+povzbudivé slová vďačím Palovi Zahorcovi.  Za mnohonásobné prečítanie, za hŕbu 
+štylistických korektúr, za ochotu takmer rok počúvať o~témach, ktoré som práve 
+spracovával a~za neutíchajúcu podporu ďakujem Saške.
 
 
 \vspace{4ex}
 
-\noindent V~Bratislave 12.~10.~2022 \hfill Blažej Bucha
+\noindent V~Bratislave 10.~5.~2023 \hfill Blažej Bucha
 
 
 
@@ -372,7 +384,7 @@ Dva hmotné body~$P$ a~$Q$ sa navzájom priťahujú \emph{gravitačnou silou}
 %
 \begin{equation}
 \label{eq:newton_law}
-\vec F_\gidx = -G \frac{m_P \, m_Q}{\ell^2} \, \frac{\vec r}{\ell}{.}
+\vec F_\gidx = -G \frac{m_P \, m_Q}{\ell^3} \, \vec r{.}
 \end{equation}
 %
 Symbol~$G$ označuje gravitačnú konštantu, $m_P$ a~$m_Q$ predstavujú hmotnosti 
@@ -407,12 +419,11 @@ Nech planéta obieha okolo Slnka (Obrázok~\ref{fig:orbital_motion}).  Označme
 polohu planéty v~čase~$t_0$ symbolom~$P(t_0)$ a~vektor jej okamžitej rýchlosti 
 symbolom~$\vec v(t_0)$.  Predpokladajme, že planéta má v~čase~$t_0$ udelenú 
 nenulovú rýchlosť, $\| \vec v(t_0) \| > 0$.  Ak by od času~$t_0$ nepôsobila na 
-planétu žiadna sila, \emph{Newtonov pohybový zákon} hovorí, že planéta by sa 
-ďalej pohybovala rovnomerným priamočiarym pohybom v~smere vektora~$\vec 
-v(t_0)$.  Za istý čas by sa teda dostala do polohy~$P'(t_1)$.  Jediný spôsob 
-ako zmeniť túto dráhu je pôsobiť na planétu silou.  
-Z~rovnice~(\ref{eq:newton_law}) vyplýva, že Slnko pôsobí v~čase~$t_0$ na 
-planétu gravitačnou silou~$\vec F_\gidx(t_0)$, ktorej smer je daný spojnicou 
+planétu žiadna sila, planéta by sa ďalej pohybovala rovnomerným priamočiarym 
+pohybom v~smere vektora~$\vec v(t_0)$.  Za istý čas by sa teda dostala do 
+polohy~$P'(t_1)$.  Jediný spôsob ako zmeniť túto dráhu je pôsobiť na planétu 
+silou.  Z~rovnice~(\ref{eq:newton_law}) vyplýva, že Slnko pôsobí v~čase~$t_0$ 
+na planétu gravitačnou silou~$\vec F_\gidx(t_0)$, ktorej smer je daný spojnicou 
 planéty a~Slnka.  Gravitačná sila preto priťahuje planétu v~smere vektora~$\vec 
 F_\gidx(t_0)$, čím mení hypotetickú trajektóriu, ktorou by sa planéta 
 pohybovala bez pôsobenia tejto sily.  V~kombinácii s~vektorom rýchlosti tak 
@@ -455,21 +466,19 @@ geodézie.
 \label{sec:gg}
 
 Gravitačná sila~(\ref{eq:newton_law}) pôsobiaca medzi hmotnými bodmi~$P$ 
-a~$Q$~závisí od hmotností oboch hmotných bodov.  Vektor gravitačnej sily je 
-preto výhodné normovať hmotnosťou toho hmotného bodu, v~ktorom má vektor 
-gravitačnej sily začiatok, v~tomto prípade teda hmotnosťou~$m_P$ (pozri 
-Obrázok~\ref{fig:newton_law}).  Získame tým vektorovú veličinu, ktorú budeme 
-nazývať \emph{gravitačné zrýchlenie}.  Vektor gravitačného zrýchlenia budeme 
-označovať symbolom~$\vec g_\gidx$.
+a~$Q$~závisí od hmotností oboch hmotných bodov.  Je preto výhodné normovať ju 
+hmotnosťou toho hmotného bodu, v~ktorom má vektor~$\vec F_\gidx$ začiatok, 
+v~tomto prípade teda hmotnosťou~$m_P$ (pozri Obrázok~\ref{fig:newton_law}).  
+Získame tým vektorovú veličinu, ktorú budeme nazývať \emph{gravitačné 
+zrýchlenie} a~označovať ju budeme symbolom~$\vec g_\gidx$.
 
 Nech sú dané dva hmotné body~$P$ a~$Q$ s~hmotnosťami~$m_P$ a~$m_Q$.  Označme 
 karteziánske súradnice týchto hmotných bodov symbolmi~$x$, $y$, $z$ a~$x_Q$, 
-$y_Q$, $z_Q$.  Vektor gravitačného zrýchlenia v~bode~$P$ je potom daný vzťahom
+$y_Q$, $z_Q$.  Gravitačné zrýchlenie v~bode~$P$ je potom dané vzťahom
 %
 \begin{equation}
 \label{eq:gg_point_mass}
-\vec g_\gidx(P) = \frac{\vec F_\gidx}{m_P} = -G \frac{m_Q}{\ell^2} \, 
-\frac{\vec r}{\ell}{,}
+\vec g_\gidx(P) = \frac{\vec F_\gidx}{m_P} = -G \frac{m_Q}{\ell^3} \, \vec r{,}
 \end{equation}
 %
 kde vektor~$\vec r$ je definovaný rozdielom polohových vektorov bodov~$P$ 
@@ -495,16 +504,14 @@ bodmi $P$ a~$Q$,
 \ell = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
 \end{equation}
 
-Rovnica~(\ref{eq:gg_point_mass}) hovorí, že hmotný
-bod~$Q$ udeľuje hmotnému bodu~$P$ gravitačné zrýchlenie~$\vec g_\gidx(P)$, 
-pričom vektor gravitačného zrýchlenia~$\vec g_\gidx(P)$ nezávisí od 
-hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného bodu~$Q$.  
-V~súvislosti
-s~hmotným bodom~$P$ je preto možné pre jednoduchosť vynechať prívlastok
-\emph{hmotný} a~považovať~$P$ za geometrický bod bez fyzikálnych vlastností.  
-Budeme hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ vektor gravitačného 
-zrýchlenia~$\vec g_\gidx(P)$.  Nezávislosť gravitačného zrýchlenia od hmotnosti 
-priťahovaného telesa experimentálne potvrdil Gaileo Gailei (1564--1642).
+Rovnica~(\ref{eq:gg_point_mass}) hovorí, že vektor~$\vec g_\gidx(P)$ je 
+nezávislý od hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného 
+bodu~$Q$.  V~súvislosti s~hmotným bodom~$P$ je preto možné pre jednoduchosť 
+vynechať prívlastok \emph{hmotný} a~považovať~$P$ za geometrický bod bez 
+fyzikálnych vlastností.  Budeme hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ 
+gravitačné zrýchlenie~$\vec g_\gidx(P)$.  Nezávislosť gravitačného zrýchlenia 
+od hmotnosti priťahovaného telesa experimentálne potvrdil Gaileo Gailei 
+(1564--1642).
 
 Nájdime teraz vzťah pre gravitačné zrýchlenie generované sústavou~$N$ hmotných 
 bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každý 
@@ -518,7 +525,7 @@ generované~$N$ hmotnými bodmi tak získame vzťahom
 \begin{equation}
 \label{eq:gg_N_point_masses}
 \vec g_\gidx(P) = \sum_{i = 1}^{N}\vec g_{\gidx,i}(P) = -G \sum_{i = 1}^{N}
-\frac{m_i}{\ell_i^2} \, \frac{\vec r_i}{\ell_i}{.}
+\frac{m_i}{\ell_i^3} \, \vec r_i{.}
 \end{equation}
 
 \begin{figure}
@@ -550,7 +557,7 @@ bezrozmerné (Kapitola~\ref{sec:newton_law}).  Bezrozmernými hmotnými bodmi
 nedokážeme aproximovať nenulový objem priťahujúceho telesa.
 
 Zaveďme pojem \emph{všeobecné teleso}.  Všeobecné teleso má konečný 
-objem~$\tau$ a~jeho hustota~$\rho$ je ohraničenou funkciou polohy 
+objem~$\tau$ a~jeho hustota~$\rho > 0$ je ohraničenou funkciou polohy 
 (Obrázok~\ref{fig:gravitating_body}).  V~zmysle integrálneho počtu rozdeľme 
 všeobecné teleso na diferenciálne hmotné elementy~$\diff m$, pričom
 %
@@ -603,30 +610,29 @@ zrýchlenia všeobecného telesa (napríklad Zeme) v~ľubovoľnom bode~$P$ (napr
 v~ťažisku družice), pretože správne zohľadňuje tvar telesa a~rozloženie jeho 
 hustoty.
 
-Vektor gravitačného zrýchlenia je v~širšom zmysle možné odmerať, preto má pre 
-fyzikálnu geodéziu kľúčový význam.  V~sústave jednotiek SI má 
-jednotku~$\mathrm{m}\ \mathrm{s}^{-2}$.  Veľmi často sa stretneme aj 
-s~jednotkou~$1\ \mathrm{Gal} = 10^{-2}\ \mathrm{m}\ \mathrm{s}^{-2}$, ktorá je 
-pomenovaná podľa Galilea Galileiho, prípadne s~jej násobkami~$1\ \mathrm{mGal} 
-= 10^{-5}\ \mathrm{m}\ \mathrm{s}^{-2}$ a~$1\ \upmu \mathrm{Gal} = 10^{-8}\ 
-\mathrm{m}\ \mathrm{s}^{-2}$.
+Gravitačné zrýchlenie je v~širšom zmysle možné odmerať, preto má pre fyzikálnu 
+geodéziu kľúčový význam.  V~sústave jednotiek SI má jednotku~$\mathrm{m}\ 
+\mathrm{s}^{-2}$.  Veľmi často sa stretneme aj s~jednotkou~$1\ \mathrm{Gal} 
+= 10^{-2}\ \mathrm{m}\ \mathrm{s}^{-2}$, ktorá je pomenovaná podľa Galilea 
+Galileiho, prípadne s~jej násobkami~$1\ \mathrm{mGal} = 10^{-5}\ \mathrm{m}\ 
+\mathrm{s}^{-2}$ a~$1\ \upmu \mathrm{Gal} = 10^{-8}\ \mathrm{m}\ 
+\mathrm{s}^{-2}$.
 
-Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti vektora 
-gravitačného zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Z~globálneho 
-hľadiska je gravitačné zrýchlenie ovplyvnené najmä tvarom Zeme, jej hmotnosťou, 
-sploštením a~rozsiahlymi hustotnými celkami v~jej vnútri.  Na regionálnej 
-úrovni možno pozorovať silnú závislosť medzi topografiou 
-(Obrázok~\ref{fig:h_grav_sr_2arcsec}) a~veľkosťou vektora gravitačného 
-zrýchlenia (Obrázok~\ref{fig:gg_grav_sr_2arcsec}).  Vidíme napríklad, že 
-v~miestach s~veľkou nadmorskou výškou je veľkosť gravitačného zrýchlenia 
-spravidla menšia ako v~miestach s~malou nadmorskou výškou a~naopak.
+Obrázok~\ref{fig:gg_grav_sr_2arcsec} zobrazuje priebeh veľkosti gravitačného 
+zrýchlenia v~oblasti Vysokých a~Nízkych Tatier.  Z~globálneho hľadiska je 
+gravitačné zrýchlenie ovplyvnené najmä tvarom Zeme, jej hmotnosťou, sploštením 
+a~rozsiahlymi hustotnými celkami v~jej vnútri.  Na regionálnej úrovni možno 
+pozorovať silnú závislosť od topografie (Obrázok~\ref{fig:h_grav_sr_2arcsec}).  
+Vidíme napríklad, že v~miestach s~veľkou nadmorskou výškou je veľkosť 
+gravitačného zrýchlenia spravidla menšia ako v~miestach s~malou nadmorskou 
+výškou a~naopak.
 
 \begin{figure}
 \centering
 \includegraphics{./fig-gg-grav-sr-2arcsec.pdf}
-\caption{Veľkosť vektora gravitačného zrýchlenia~$\| \vec g_\gidx \|$ na 
-zemskom povrchu v~oblasti Vysokých a~Nízkych Tatier (jednotky mGal).  Dáta sú 
-prevzaté z~modelu \texttt{grav-sr-2arcsec} \parencite{GravSR2arcsec}.}
+\caption{Veľkosť gravitačného zrýchlenia~$\| \vec g_\gidx \|$ na zemskom 
+povrchu v~oblasti Vysokých a~Nízkych Tatier (jednotky~mGal).  Dáta sú prevzaté 
+z~modelu \texttt{grav-sr-2arcsec} \parencite{GravSR2arcsec}.}
 \label{fig:gg_grav_sr_2arcsec}
 \end{figure}
 
@@ -648,10 +654,10 @@ elipsoidickej výšky (jednotky~m).  Dáta sú prevzaté z~modelu
 \subsection{Gravitačný potenciál}
 \label{sec:vg}
 
-Gravitačné zrýchlenie je vektorová veličina, ktorá má v~každom bode definovanú 
-trojicu reálnych čísel.  V~niektorých situáciách je výhodnejšie pracovať so 
-skalárnou veličinou, teda takou, ktorá má v~každom bode definované práve jedno 
-reálne číslo.  Tento prístup je mladší ako Newtonov gravitačný zákon zhruba 
+Gravitačné zrýchlenie je vektorová veličina, ktorá je v~každom bode definovaná 
+trojicou reálnych čísel.  V~niektorých situáciách je výhodnejšie pracovať so 
+skalárnou veličinou, teda takou, ktorá je v~každom bode definovaná práve jedným 
+reálnym číslom.  Tento prístup je mladší ako Newtonov gravitačný zákon zhruba 
 o~jedno storočie \parencite{MacMillan1930,Jekeli2015}.  Fenomén gravitácie 
 chápe ako \emph{pole}, ktorého vlastnosti môžu byť popísané rôznymi vzájomne 
 súvisiacimi veličinami.  Podľa \textcite{MacMillan1930} prišiel s~konceptom 
@@ -670,23 +676,9 @@ potenciálu.
 \subsubsection{Operátor gradient v~karteziánskom súradnicovom systéme}
 \label{sec:gradient}
 
-\emph{Operátor gradient} je v~trojrozmernom karteziánskom súradnicovom 
-systéme~$x$, $y$, $z$ definovaný vzťahom
-%
-\begin{equation}
-\label{eq:gradient}
-\nabla = \grad = \vec e_1 \frac{\partial}{\partial x} + \vec e_2
-\frac{\partial}{\partial y} + \vec e_3 \frac{\partial}{\partial z} =
-\begin{bmatrix}
-\dfrac{\partial}{\partial x} \\[2ex]
-\dfrac{\partial}{\partial y} \\[2ex]
-\dfrac{\partial}{\partial z}
-\end{bmatrix}
-{,}
-\end{equation}
-%
-kde~$\vec e_1$, $\vec e_2$, $\vec e_3$ sú jednotkové vektory
-rovnobežné so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system}),
+Nech je daný trojrozmerný karteziánsky súradnicový systém~$x$, $y$, $z$ 
+s~jednotkovými vektormi~$\vec e_1$, $\vec e_2$, $\vec e_3$, ktoré sú rovnobežné 
+so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system}),
 %
 \begin{equation}
 \label{eq:unit_vectors}
@@ -720,14 +712,18 @@ rovnobežné so smerom súradnicových osí (Obrázok~\ref{fig:3d_coord_system})
 \label{eq:unit_vectors_unit_length}
 \| \vec e_i \| = 1{,} \quad i = 1, 2,3{.}
 \end{equation}
-
-Po aplikovaní operátora gradient na \emph{skalárnu} diferencovateľnú 
-funkciu~$f$ získame \emph{vektorovú} funkciu,
+%
+Gradient skalárnej diferencovateľnej funkcie~$f(x, y, z)$ je vektorová 
+funkcia~$\vec f(x, y, z)$, ktorá udáva \emph{smer a~veľkosť najväčšieho 
+nárastu} funkcie~$f$ v~bode so súradnicami~$x$, $y$, $z$.  V~trojrozmernom 
+karteziánskom súradnicovom systéme~$x$, $y$, $z$ je gradient funkcie~$f$ daný 
+predpisom
 %
 \begin{equation}
-\nabla f = \grad \ f = \vec e_1 \frac{\partial f}{\partial x} + \vec e_2 
-\frac{\partial
-f}{\partial y} + \vec e_3 \frac{\partial f}{\partial z} =
+\label{eq:gradient}
+\vec f = \nabla f = \grad \ f = \vec e_1 \, \frac{\partial f}{\partial x} 
++ \vec e_2 \, \frac{\partial
+f}{\partial y} + \vec e_3 \, \frac{\partial f}{\partial z} =
 \begin{bmatrix}
 \dfrac{\partial f}{\partial x} \\[2ex]
 \dfrac{\partial f}{\partial y} \\[2ex]
@@ -736,10 +732,10 @@ f}{\partial y} + \vec e_3 \frac{\partial f}{\partial z} =
 {.}
 \end{equation}
 %
-Vektor~$\nabla f(x, y, z)$ udáva \emph{smer a~veľkosť najväčšieho nárastu} 
-funkcie~$f$ v~bode so súradnicami~$x$, $y$, $z$.  Jeho zložky popisujú zmenu 
-skalárnej funkcie~$f$ v~bode~$x$, $y$, $z$ v~smere vektorov~$\vec e_1$, $\vec 
-e_2$, $\vec e_3$.
+Symbol~$\nabla$, resp.~$\grad$ označuje operátor gradient.  Derivácie~$\partial 
+f \slash \partial x$, $\partial f \slash \partial y$ a~$\partial f \slash 
+\partial z$, teda prvky vektorovej funkcie~$\vec f$, popisujú zmenu skalárnej 
+funkcie~$f$ v~smere vektorov~$\vec e_1$, $\vec e_2$, $\vec e_3$.
 
 Operátor gradient je \emph{lineárny}, teda pre diferencovateľné funkcie~$f$ 
 a~$g$ a~konštantu~$c$ platí
@@ -779,8 +775,8 @@ a~spĺňa podmienku
 \lim_{P \to \infty} V_\gidx(P) = 0{.}
 \end{equation}
 %
-Vzťah~(\ref{eq:gg_grad_vg}) hovorí, že vektor gravitačného zrýchlenia udáva 
-smer a~veľkosť najväčšieho nárastu gravitačného potenciálu.  
+Vzťah~(\ref{eq:gg_grad_vg}) hovorí, že vektor~$\vec g_\gidx(P)$ udáva smer 
+a~veľkosť najväčšieho nárastu gravitačného potenciálu v~bode~$P$.  
 Rovnica~(\ref{eq:vg_at_infty}) znamená, že v~nekonečnej vzdialenosti od telesa 
 nadobúda gravitačný potenciál nulovú hodnotu.  Tento vzťah zabezpečuje, že 
 existuje práve jedna funkcia~$V_\gidx$, ktorá vyhovuje 
@@ -801,10 +797,10 @@ Gravitačný potenciál hmotného bodu s~hmotnosťou~$m_Q$ je daný vzťahom
 V_\gidx(P) = \frac{G \, m_Q}{\ell}{.}
 \end{equation}
 %
-Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg})
-a~(\ref{eq:vg_at_infty}).  Aplikujme operátor gradient~(\ref{eq:gradient})
-na gravitačný potenciál~(\ref{eq:vg_point_mass}).  S~využitím 
-rovnice~(\ref{eq:l}) dostaneme vzťah
+Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg}) 
+a~(\ref{eq:vg_at_infty}).  Aplikujme operátor gradient 
+z~rovnice~(\ref{eq:gradient}) na gravitačný potenciál~(\ref{eq:vg_point_mass}).  
+S~využitím rovnice~(\ref{eq:l}) dostaneme vzťah
 %
 \begin{equation}
 \label{eq:gg_from_vg_point_mass}
@@ -852,11 +848,11 @@ m_i}{l_i}{.}
 \end{equation}
 %
 Podobne ako v~rovnici~(\ref{eq:gg_from_vg_point_mass}) sa môžeme presvedčiť, že 
-aplikovaním operátora gradient na gravitačný
-potenciál~(\ref{eq:vg_N_point_masses}) získame vektor gravitačného
-zrýchlenia~(\ref{eq:gg_N_point_masses}).  Rovnice~(\ref{eq:gg_grad_vg}) 
-a~(\ref{eq:vg_at_infty}) teda platia i~v~prípade gravitačného
-potenciálu, ktorý je generovaný sústavou~$N$ hmotných bodov.
+aplikovaním operátora gradient na gravitačný 
+potenciál~(\ref{eq:vg_N_point_masses}) získame gravitačné 
+zrýchlenie~(\ref{eq:gg_N_point_masses}).  Rovnice~(\ref{eq:gg_grad_vg}) 
+a~(\ref{eq:vg_at_infty}) teda platia i~v~prípade gravitačného potenciálu, ktorý 
+je generovaný sústavou~$N$ hmotných bodov.
 
 Od gravitačného potenciálu~$N$ hmotných bodov prejdeme ku
 gravitačnému potenciálu všeobecného telesa podobnou úvahou ako
@@ -885,10 +881,10 @@ začiatočný a~koncový bod dráhy.  Ak sú začiatočný a~koncový bod totož
 je nulová.  Bez tejto vlastnosti by nebolo možné nájsť skalárnu funkciu 
 $V_\gidx$, ktorá by vyhovovala rovnici~(\ref{eq:gg_grad_vg}).
 
-Na rozdiel od vektora gravitačného zrýchlenia, gravitačný potenciál nedokážeme
+Na rozdiel od gravitačného zrýchlenia, gravitačný potenciál nedokážeme
 priamo merať.  Vo fyzikálnej geodézii často vystupuje ako neznáma funkcia,
-ktorú sa snažíme určiť, napríklad z~vektora gravitačného zrýchlenia.  V~sústave
-SI má gravitačný potenciál fyzikálnu jednotku~$\mathrm{m}^2\ \mathrm{s}^{-2}$.
+ktorú sa snažíme určiť, napríklad z~gravitačného zrýchlenia.  Gravitačný 
+potenciál má v~sústave~SI fyzikálnu jednotku~$\mathrm{m}^2\ \mathrm{s}^{-2}$.
 Priebeh gravitačného potenciálu v~oblasti Vysokých a~Nízkych Tatier je
 znázornený na Obrázku~\ref{fig:vg_grav_sr_2arcsec}.
 
@@ -957,18 +953,19 @@ zaoberá sa rozličnými zdrojmi poľa (hmotný bod, hmotná priamka, nekonečne
 vrstva, všeobecné teleso a~pod.) s~rôznym priestorovým rozložením hustôt 
 (konštantná, premenlivá, kladná, dokonca i~záporná a~pod.) a~neobmedzuje sa iba 
 na gravitačné pole.  Táto úloha je nesmierne náročná.  Čo sa napríklad stane, 
-ak sa výpočtový bod~$P$ v~rovnici~(\ref{eq:vg_body}) nachádza vo vnútri telesa?  
-Za takýchto okolností musí nevyhnutne dôjsť k~situácii, v~ktorej sú súradnice 
-bodu~$P$ identické so súradnicami jedného diferenciálneho hmotného 
-elementu~$\diff m$.  Vzájomná vzdialenosť medzi bodom~$P$ a~elementom~$\diff 
-m$, ktorá vystupuje v~menovateli, bude preto~$\ell = 0$.  Konverguje alebo 
-diverguje v~takomto prípade integrál~(\ref{eq:vg_body})?  Jednou z~mnohých 
-ďalších výziev sú gravitačné polia generované objektmi komplikovaných tvarov, 
-napríklad Zemou, ktorej povrch obsahuje náhle a~ostré zmeny.  Je preto 
-prirodzené, že teória potenciálu pritiahla záujem brilantných matematikov akými 
-boli, okrem iných, J.~L.~Lagrange, A.--M.~Legendre (1752~-- 1833), 
-P.~S.~Laplace, britský samouk G.~Green (1793--1841) či C.~F.~Gauss (pre 
-diskusiu o~Gaussovom prínose pozri napríklad \cite{Freeden2018}).
+ak sa v~rovnici~(\ref{eq:gg_body}) alebo~(\ref{eq:vg_body}) nachádza výpočtový 
+bod~$P$ vo vnútri telesa?  Za takýchto okolností musí nevyhnutne dôjsť 
+k~situácii, v~ktorej sú súradnice bodu~$P$ identické so súradnicami jedného 
+diferenciálneho hmotného elementu~$\diff m$.  Vzájomná vzdialenosť medzi 
+bodom~$P$ a~elementom~$\diff m$, ktorá vystupuje v~menovateli, bude preto~$\ell 
+= 0$.  Konverguje alebo diverguje v~takomto prípade 
+integrál~(\ref{eq:vg_body})?  Jednou z~mnohých ďalších výziev sú gravitačné 
+polia generované objektmi komplikovaných tvarov, napríklad Zemou, ktorej povrch 
+obsahuje náhle a~ostré zmeny.  Je preto prirodzené, že teória potenciálu 
+pritiahla záujem brilantných matematikov akými boli, okrem iných, 
+J.~L.~Lagrange, A.--M.~Legendre (1752~-- 1833), P.~S.~Laplace, britský samouk 
+G.~Green (1793--1841) či C.~F.~Gauss (pre diskusiu o~Gaussovom prínose pozri 
+napríklad \cite{Freeden2018}).
 
 V~nasledujúcich piatich kapitolách (\ref{sec:laplace_equation_cart}~až 
 \ref{sec:poisson_equation}) sa budeme zaoberať niektorými základnými
@@ -997,41 +994,38 @@ Operátor~$\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor}
 a rovnica~(\ref{eq:vg_laplace_cart}) sa nazýva \emph{Laplaceova rovnica} pre
 gravitačný potenciál.
 
-Laplaceov operátor definujeme pomocou operátora gradient vzťahom
-\parencite{SansoGeoidDetermination}
+Aplikáciu Laplaceovho operátora na dvakrát diferencovateľnú funkciu~$f$ môžeme 
+zapísať pomocou už známeho operátora gradient~(\ref{eq:gradient}) nasledovne 
+\parencite{SansoGeoidDetermination},
 %
 \begin{equation}
 \label{eq:laplace_grad_grad_notation}
-\nabla^2 = \nabla \cdot \nabla{,}
-\end{equation}
-%
-kde symbol $\cdot$ označuje \emph{skalárny súčin dvoch vektorov}.  
-Operátor~$\nabla^2$ v~trojrozmernom karteziánskom súradnicovom systéme získame 
-pomocou vzťahov~(\ref{eq:laplace_grad_grad_notation}) a~(\ref{eq:gradient}),
-%
-\begin{equation}
-\label{eq:laplace_xyz}
 \begin{split}
-\nabla^2 &= \nabla \cdot \nabla = \left( \vec e_1 \, \frac{\partial}{\partial 
-x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec e_3 \, 
-\frac{\partial}{\partial z} \right) \cdot \left( \vec e_1 \, 
+\nabla^2 f &= \nabla \cdot \nabla f = \left( \vec e_1 \, 
 \frac{\partial}{\partial x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec 
-e_3 \, \frac{\partial}{\partial z} \right)\\
+e_3 \, \frac{\partial}{\partial z} \right) \cdot \left( \vec e_1 \, 
+\frac{\partial f}{\partial x} + \vec e_2 \, \frac{\partial f}{\partial y} 
++ \vec e_3 \, \frac{\partial f}{\partial z} \right)\\
 %
-&=\vec e_1 \cdot \frac{\partial \vec e_1}{\partial x} \, 
-\frac{\partial}{\partial x} + \vec e_1 \cdot \vec e_1 
-\frac{\partial^2}{\partial x^2} + \vec e_1 \cdot \frac{\partial \vec 
-e_2}{\partial x} \, \frac{\partial}{\partial y} + \vec e_1 \cdot \vec e_2 
-\frac{\partial^2}{\partial x \, \partial y} + \dots + \vec e_3 \cdot \vec e_3 
-\frac{\partial^2}{\partial z^2}\\
+&= \vec e_1 \cdot \frac{\partial \vec e_1}{\partial x} \, \frac{\partial 
+f}{\partial x} + \vec e_1 \cdot \vec e_1 \frac{\partial^2 f}{\partial x^2} 
++ \vec e_1 \cdot \frac{\partial \vec e_2}{\partial x} \, \frac{\partial 
+f}{\partial y} + \vec e_1 \cdot \vec e_2 \frac{\partial^2 f}{\partial x \, 
+\partial y} + \dots + \vec e_3 \cdot \vec e_3 \frac{\partial^2 f}{\partial 
+z^2}\\
 %
-&=\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} 
-+ \frac{\partial^2}{\partial z^2}{.}
+&=\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} 
++ \frac{\partial^2 f}{\partial z^2}{,}
 \end{split}
 \end{equation}
 %
-V~rovnici~(\ref{eq:laplace_xyz}) sme využili nasledovné vlastnosti 
-jednotkových vektorov a~skalárneho súčinu dvoch vektorov,
+kde symbol $\cdot$ označuje \emph{skalárny súčin dvoch vektorov}.\footnote{Oblé 
+zátvorky v~rovnici~(\ref{eq:laplace_grad_grad_notation}) sú použité na určenie 
+priority algebrických operácií násobenia a~sčítania, nie na označenie prvkov 
+vektorov.  Prvky vektorov a~matíc udávame vždy v~hranatých zátvorkách.} Na 
+získanie posledného výrazu v~rovnici~(\ref{eq:laplace_grad_grad_notation}) sme 
+využili nasledovné vlastnosti jednotkových vektorov a~skalárneho súčinu 
+vektorov,
 %
 \begin{align}
 \label{eq:ei_orthogonality}
@@ -1064,27 +1058,6 @@ funkcie $f$ a~$g$ a~konštantu~$c$ platí
 \label{eq:laplace_homogenity}
 \nabla^2 (c \, f) &= c \, \nabla^2 f{.}
 \end{align}
-
-Je dôležité upozorniť, že zápis $\nabla^2 = \nabla \cdot \nabla$ kombinovaný 
-s~posledným výrazom rovnice~(\ref{eq:gradient}) môže poľahky viesť 
-k~nesprávnemu vyjadreniu Laplaceovho operátora.  V~tomto nesprávnom prístupe sú 
-vynásobené zodpovedajúce si prvky operátora gradient (pozri posledný výraz 
-v~rovnici~\ref{eq:gradient}) a~následne sú získané súčiny sčítané (v~súlade 
-s~definíciou skalárneho súčinu dvoch vektorov).  Hoci 
-v~prípade~(\ref{eq:gradient}) získame správny tvar Laplaceovho operátora aj 
-takýmto spôsobom, neskôr v~Prílohe~\ref{app:laplace_in_spherical_system} sa 
-presvedčíme, že tento postup nie je vo všeobecnosti správny.  Dôvod je ten, že 
-jednotkové vektory súradnicového systému môžu závisieť od premenných, podľa 
-ktorých sa derivuje.  V~poslednom výraze rovnice~(\ref{eq:gradient}) však táto 
-závislosť nie je explicitne uvedená.  Tejto chybe sa vyhneme, ak operátor 
-gradient vyjadríme pomocou jednotkových vektorov (predposledný výraz 
-v~rovnici~\ref{eq:gradient}) a~tento tvar následne dosadíme 
-do~(\ref{eq:laplace_grad_grad_notation}) (pozri rovnicu~\ref{eq:laplace_xyz}).  
-Posledný výraz rovnice~(\ref{eq:gradient}) je preto potrebné vnímať 
-predovšetkým formálne, pričom je vždy nutné mať na pamäti súradnicový systém, 
-v~ktorom je operátor gradient vyjadrený.  V~mnohých situáciách je ale táto 
-forma názorná a~zjednodušuje zápis, preto na miestach, kde by nemalo dôjsť 
-k~nesprávnej interpretácii, ju budeme používať.
 
 Overme, či gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}) vyhovuje 
 Laplaceovej rovnici~(\ref{eq:vg_laplace_cart}).  Budeme uvažovať 
@@ -1195,17 +1168,17 @@ Prílohu~\ref{app:gradient_in_orthogonal_systems})
 %
 \begin{equation}
 \label{eq:gradient_sph}
-\nabla = \grad = \vec e_1^\mathrm{s} \, \frac{1}{r} \, \frac{\partial}{\partial 
-\varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r \, \cos\varphi} \, 
-\frac{\partial}{\partial \lambda} + \vec e_3^\mathrm{s} 
-\frac{\partial}{\partial r}\\
+\nabla f = \grad f = \vec e_1^\mathrm{s} \, \frac{1}{r} \, \frac{\partial 
+f}{\partial \varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r \, \cos\varphi} \, 
+\frac{\partial f}{\partial \lambda} + \vec e_3^\mathrm{s} \, \frac{\partial 
+f}{\partial r}\\
 %
 =
 %
 \begin{bmatrix}
-\dfrac{1}{r} \, \dfrac{\partial}{\partial \varphi} \\[2ex]
-\dfrac{1}{r \, \cos\varphi} \, \dfrac{\partial}{\partial \lambda}\\[2ex]
-\dfrac{\partial}{\partial r}
+\dfrac{1}{r} \, \dfrac{\partial f}{\partial \varphi} \\[2ex]
+\dfrac{1}{r \, \cos\varphi} \, \dfrac{\partial f}{\partial \lambda}\\[2ex]
+\dfrac{\partial f}{\partial r}
 \end{bmatrix}
 {.}
 \end{equation}
@@ -1219,10 +1192,10 @@ sprievodiča prechádzajúceho bodom~$P$ a~je orientovaná kladne vo vonkajšom
 smere.  Os~$x^\mathrm{s}$ leží v~rovine meridiánu a~je orientovaná kladne na 
 sever.  Os~$y^\mathrm{s}$ dotvára pravouhlý \emph{ľavotočivý} súradnicový 
 systém.  Aplikovaním operátora gradient~(\ref{eq:gradient_sph}) na gravitačný 
-potenciál~$V_\gidx(r, \varphi, \lambda)$ získame vektor gravitačného 
-zrýchlenia~$\vec g_\gidx(r, \varphi, \lambda)$, ktorého prvky popisujú zmenu 
-gravitačného potenciálu v~bode~$P$ v~smere súradnicových osí~$x^\mathrm{s}$, 
-$y^\mathrm{s}$ a~$z^\mathrm{s}$.
+potenciál~$V_\gidx(r, \varphi, \lambda)$ získame gravitačné zrýchlenie~$\vec 
+g_\gidx(r, \varphi, \lambda)$, ktorého prvky popisujú zmenu gravitačného 
+potenciálu v~bode~$P$ v~smere súradnicových osí~$x^\mathrm{s}$, $y^\mathrm{s}$ 
+a~$z^\mathrm{s}$.
 
 Laplaceova rovnica pre gravitačný potenciál má vo sférických súradniciach tvar 
 (Príloha~\ref{app:laplace_in_spherical_coordinates})
@@ -1258,6 +1231,7 @@ V_\gidx}{\partial r} + \frac{\partial^2 V_\gidx}{\partial \varphi^2}
 - \tan\varphi \, \frac{\partial V_\gidx}{\partial \varphi} 
 + \frac{1}{\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
+
 
 
 \subsection{Praktický význam Laplaceovej rovnice}
@@ -1296,7 +1270,6 @@ vonkajšieho gravitačného poľa Zeme.
 
 
 
-
 \subsection{Harmonická funkcia}
 \label{sec:harmonic_function}
 
@@ -1324,7 +1297,7 @@ $P_1(r, \varphi, \lambda)$ a~$P_2(r + \Delta r, \varphi, \lambda)$, $\Delta
 r > 0$, nachádzajúce sa mimo tohto telesa a~na tej istej spojnici so začiatkom
 súradnicového systému, ktorý sa nachádza v~ťažisku telesa
 (Obrázok~\ref{fig:analytical_continuation}).  Keďže gravitačný potenciál je 
-harmonická, a~teda analytická, funkcia v~oblasti mimo hmôt, môžeme ho 
+harmonická, a~teda analytická funkcia v~oblasti mimo hmôt, môžeme ho 
 v~bode~$P_1$ rozvinúť do Taylorovho radu,
 %
 \begin{equation}
@@ -1335,7 +1308,9 @@ V_\gidx}{\partial r^i}\right|_{P_1} \, \Delta r^i{.}
 %
 Zápis $\left.\frac{\partial^i V_\gidx}{\partial r^i} \right|_{P_1}$ označuje 
 $i$-tu deriváciu gravitačného potenciálu~$V_\gidx$ podľa sprievodiča~$r$ 
-v~bode~$P_1$.
+v~bode~$P_1$.  Pripomeňme, že~$0! = 1$ a~ďalej že nultá derivácia funkcie~$f$ 
+je rovná funkcii~$f$, v~tomto prípade teda~$\left.\frac{\partial^0 
+V_\gidx}{\partial r^0} \right|_{P_1} = V_\gidx(P_1)$.
 
 \begin{figure}
 
@@ -1354,8 +1329,8 @@ proces sa nazýva \emph{analytické pokračovanie} gravitačného potenciálu na
 rad~(\ref{eq:vg_analytical_continuation}) spravidla konverguje a~naopak.  
 Analyticky pokračovať je možné aj v~iných smeroch.  V~takom prípade je potrebné 
 derivovať gravitačný potenciál v~príslušnom smere.  Rovnako tak je možné 
-analyticky pokračovať aj iné veličiny gravitačného poľa, napríklad vektor 
-gravitačného zrýchlenia,
+analyticky pokračovať aj iné veličiny gravitačného poľa, napríklad gravitačné 
+zrýchlenie,
 %
 \begin{equation}
 \label{eq:gg_analytical_continuation}
@@ -1367,8 +1342,8 @@ g_\gidx}{\partial r^i}\right|_{P_1} \, \Delta r^i{.}
 Na záver dodajme, že situácia je výrazne komplikovanejšia, ak analyticky 
 pokračujeme nadol z~bodu~$P_2$ do bodu~$P_1$.  Táto úloha je zle podmienená 
 a numericky nestabilná \parencite{SansoGeodeticBoundaryValueProblem}.  
-V~praktických aplikáciách to znamená, že i~malá chyba vo vstupných dátach 
-spôsobuje veľké chyby vo výsledkoch.
+V~praktických aplikáciách to znamená, že i~malá zmena vo vstupných údajoch 
+spôsobuje veľké zmeny vo výsledkoch.
 
 
 
@@ -1402,8 +1377,8 @@ Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Druhé
 derivácie gravitačného potenciálu vystupujúce v~operátore $\nabla^2$ (pozri 
 rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph}) nie sú vo 
 všeobecnosti v~takom prípade definované \parencite{Kellogg1967}.  Dôvodom je 
-nespojitosť hustoty~$\rho$, ktorá sa na povrchu telesa mení z~$\rho \neq 0$ na 
-0, resp. naopak, v~závislosti od smeru prechodu.
+nespojitosť hustoty~$\rho$, ktorá sa na povrchu telesa mení z~$\rho > 0$ na 0, 
+resp. naopak, v~závislosti od smeru prechodu.
 
 
 
@@ -1418,28 +1393,55 @@ ktorý je v~pokoji alebo je v~stave rovnomerného priamočiareho pohybu.  Takýt
 súradnicový systém sa nazýva \emph{inerciálny súradnicový systém}.
 
 Uvažujme trojrozmerný karteziánsky súradnicový systém so začiatkom v~ťažisku 
-Zeme a~s~osou~$z$, ktorá je totožná s~rotačnou osou Zeme.  Nech tento 
-súradnicový systém rotuje spolu so Zemou uhlovou rýchlosťou rotácie 
-Zeme~$\omega$.  Takýto súradnicový systém nie je inerciálny, pretože vzhľadom 
-na inerciálny súradnicový systém v~ňom dochádza prinajmenšom k~dvom nelineárnym 
+Zeme a~s~osou~$z$, ktorá je totožná s~rotačnou osou Zeme.  Os~$x$ nech leží 
+v~priesečníku rovín rovníka a~Greenwichského meridiánu a~os~$y$ nech dotvára 
+pravotočivý súradnicový systém.  Nech je tento súradnicový systém pevne spojený 
+so Zemou.  Takýto súradnicový systém nie je inerciálny, pretože vzhľadom na 
+inerciálny súradnicový systém v~ňom dochádza prinajmenšom k~dvom nelineárnym 
 pohybom \parencite{SansoGeoidDetermination}.  Prvý vzniká v~dôsledku rotácie 
-Zeme okolo vlastnej osi, druhý je spôsobený obehom Zeme okolo Slnka.  Ak chceme 
-študovať sily pôsobiace na Zemi v~takomto neinerciálnom súradnicovom systéme, 
-potrebné je uvážiť nielen gravitačnú silu, ale aj~ďalšie sily v~zmysle 
-Newtonovho pohybového zákona.  Na objekt, ktorý sa nachádza na rotujúcej Zemi, 
-pôsobí okrem gravitačnej sily aj \emph{odstredivá sila}.  Ak je objekt 
-v~pohybe, pôsobí naň aj \emph{Coriolisova sila} 
+Zeme okolo vlastnej osi, druhý je spôsobený obehom Zeme okolo Slnka.  Aby sme 
+mohli študovať sily pôsobiace na Zemi pomocou druhého Newtonovho pohybového 
+zákona v~takomto neinerciálnom súradnicovom systéme, uvážiť musíme nielen 
+gravitačnú silu, ale aj~ďalšie (zdanlivo) pôsobiace sily.  Na objekt, ktorý sa 
+nachádza na rotujúcej Zemi, pôsobí okrem gravitačnej sily aj \emph{odstredivá 
+sila}.  Ak je takýto objekt v~pohybe, pôsobí naň aj \emph{Coriolisova sila} 
 \parencite{Torge1989,Jekeli2000,MoritzPhysicalGeodesy,SansoGeoidDetermination}.  
 Azda väčšina geodetických meracích zariadení je počas merania vzhľadom k~Zemi 
-v~pokoji, preto Coriolisovu silu nebudeme ďalej uvažovať.  Na záver 
-spomeňme~\emph{Eulerovu silu}, ktorá je spôsobená zmenou uhlovej rýchlosti 
-rotácie~$\omega$ v~čase \parencite{Torge1989,SansoGeoidDetermination}.  V~tejto 
-práci predpokladáme, že uhlová rýchlosť rotácie Zeme je konštantná, preto 
-nebudeme ďalej uvažovať ani Eulerovu silu.  Tieto tri sily, odstredivá, 
-Coriolisova a~Eulerova, sa zaraďujú medzi \emph{zotrvačné sily}, niekedy tiež 
-nazývané fiktívne sily.  Zotrvačné sily sú zdanlivé sily, ktoré sú spôsobené 
-neinerciálnosťou vzťažnej sústavy pozorovateľa, a~teda nevznikajú vzájomným 
-silovým pôsobením medzi objektmi.
+v~pokoji, preto Coriolisovu silu nebudeme uvažovať.  Ak sa uhlová rýchlosť 
+rotácie mení v~čase, je potrebné uvážiť~\emph{Eulerovu silu} 
+\parencite{Torge1989,SansoGeoidDetermination}.  V~tejto práci predpokladáme, že 
+uhlová rýchlosť rotácie Zeme je konštantná, preto nebudeme ďalej uvažovať ani 
+Eulerovu silu.  Tieto tri sily, odstredivá, Coriolisova a~Eulerova, sa zaraďujú 
+medzi \emph{zotrvačné sily}, niekedy tiež nazývané fiktívne sily.  Zotrvačné 
+sily sú zdanlivé sily, ktoré sú spôsobené neinerciálnosťou vzťažnej sústavy 
+pozorovateľa, a~teda nevznikajú vzájomným silovým pôsobením medzi objektmi.
+
+Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je spôsobená rotáciou 
+Zeme a~nazýva sa \emph{odstredivá sila}
+$\vec F_\cidx$.  Pole spôsobené rotáciou Zeme budeme nazývať \emph{odstredivé 
+pole}.  Zatiaľ čo gravitačné pole Zeme je v~zmysle Newtonovho gravitačného 
+zákona~(\ref{eq:newton_law}) dôsledkom hmôt, ktoré tvoria zemské teleso, 
+odstredivé pole Zeme je spôsobené neinerciálnosťou vyššie opísaného 
+súradnicového systému, v~ktorom v~geodézii zvyčajne vyjadrujeme polohu.  
+Zjednodušene by sme teda mohli povedať, že odstredivé pole je (zdanlivo) 
+spôsobené rotáciou Zeme.  Uvážením spoločného pôsobenia gravitačného 
+a~odstredivého poľa získame \emph{tiažové pole}.  Formálne teda môžeme napísať 
+vzťah
+%
+\begin{equation}
+\nonumber
+\textrm{Gravitačné pole} + \textrm{Odstredivé pole} = \textrm{Tiažové pole}{.}
+\end{equation}
+
+Tiažové pole má pre fyzikálnu geodéziu fundamentálny význam.  Jedna z~veličín 
+tiažového poľa, tiažové zrýchlenie, je totiž jedným z~prostredníkov, vďaka 
+ktorým vieme získať a~matematicky uchopiť informáciu o~skutočnom tiažovom poli 
+našej Zeme.  Ďalšia z~veličín tiažového poľa, konkrétne tiažový potenciál, sa 
+napríklad používa na samotnú definíciu fyzikálneho tvaru Zeme, teda geoidu 
+(pozri úvodnú kapitolu).
+
+V~nasledujúcich dvoch kapitolách popíšeme veličiny odstredivého a~tiažového 
+poľa, s~ktorými sa budeme stretávať v~ďalších častiach práce.
 
 
 
@@ -1449,12 +1451,14 @@ silovým pôsobením medzi objektmi.
 \subsection{Odstredivé a~tiažové zrýchlenie}
 \label{sec:centrifugal_and_gravity_acceleration}
 
-Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je \emph{odstredivá sila}
-$\vec F_\cidx$.  Uvažujme neinerciálny súradnicový systém v~zmysle predošlého
-odseku.  Nech je daný hmotný bod~$P(x, y, z)$ s~hmotnosťou~$1\ \mathrm{kg}$ 
-kdekoľvek na Zemi alebo v~jej vnútri.  V~dôsledku rotácie Zeme a~rotácie 
-súradnicového systému okolo osi~$Z$ je tomuto hmotnému bodu udeľované 
-\emph{odstredivé zrýchlenie}~$\vec g_\cidx(P)$,
+Uvažujme neinerciálny súradnicový systém~$x$, $y$, $z$ v~zmysle 
+Kapitoly~\ref{sec:centrifugal_gravity_field}.  Od teraz však budeme navyše 
+predpokladať, že uhlová rýchlosť rotácie Zeme~$\omega$ je konštantná a~tiež že 
+rotačná os Zeme nemení svoju polohu voči súradnicovej osi~$z$.  Nech je daný 
+hmotný bod~$P(x, y, z)$ s~hmotnosťou~$1\ \mathrm{kg}$ kdekoľvek na Zemi alebo 
+v~jej vnútri.  V~dôsledku rotácie súradnicového systému, v~ktorom vyjadrujeme 
+polohu, je hmotnému bodu~$P$ udeľované \emph{odstredivé zrýchlenie}~$\vec 
+g_\cidx(P)$,
 %
 \begin{equation}
 \label{eq:gc}
@@ -1469,9 +1473,9 @@ y\\
 {.}
 \end{equation}
 %
-Za predpokladu konštantnej uhlovej rýchlosti rotácie~$\omega$ sa veľkosť
-odstredivého zrýchlenia mení iba so vzdialenosťou~$p = \| \vec p \|$ od 
-rotačnej osi (Obrázok~\ref{fig:gravity_vector}),
+Veľkosť odstredivého zrýchlenia~$\vec g_\cidx(P)$ sa mení iba so 
+vzdialenosťou~$p = \| \vec p \|$ od rotačnej osi 
+(Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
 \| \vec g_\cidx \| = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2} = \omega^2 \, 
@@ -1479,18 +1483,18 @@ r \, \cos\varphi{.}
 \end{equation}
 %
 Čím je vzdialenosť~$p$ väčšia, tým je väčšie i~odstredivé zrýchlenie a~naopak.
-Zo vzťahu~(\ref{eq:gc}) je zrejmé, že odstredivé zrýchlenie je kolmé na os
-rotácie a~má smer vzďaľujúci sa od rotačnej osi
-(Obrázok~\ref{fig:gravity_vector}).  Uhlová rýchlosť rotácie Zeme je približne
+Smer vektora~$\vec g_\cidx(P)$ je kolmý na os
+rotácie (pozri vzťah~\ref{eq:gc} a~Obrázok~\ref{fig:gravity_vector}).  Uhlová 
+rýchlosť rotácie Zeme je približne
 rovná~$\omega = 7\, 292\, 115 \times 10^{-11} \ \mathrm{rad} \ \mathrm{s}^{-1}$ 
 \parencite{GRS80}{.}
 
 \begin{figure}
 \centering
 \input{./fig-gravity-vector.pdf_tex}
-\caption{Vektory gravitačného~$\vec g_\gidx$, odstredivého~$\vec g_\cidx$
-a~tiažového zrýchlenia~$\vec g$ v~bode~$P$ na povrchu idealizovanej rotujúcej
-Zeme sférického tvaru a~konštantnej hustoty.}
+\caption{Gravitačné zrýchlenie~$\vec g_\gidx$, odstredivé zrýchlenie~$\vec 
+g_\cidx$ a~tiažové zrýchlenie~$\vec g$ v~bode~$P$ na povrchu idealizovanej 
+rotujúcej Zeme sférického tvaru a~konštantnej hustoty.}
 \label{fig:gravity_vector}
 \end{figure}
 
@@ -1511,21 +1515,20 @@ nazýva \emph{tiažové zrýchlenie} a~budeme ho označovať symbolom~$\vec g(P)
 \subsubsection{Meranie tiažového zrýchlenia}
 \label{sec:gravity_measurements}
 
-Vektor tiažového zrýchlenia je možné odmerať, a~tak predstavuje ústrednú 
-veličinu v~procese určovania tvaru Zeme.  Prístroj na meranie \emph{veľkosti} 
-vektora tiažového zrýchlenia~$\| \vec g(P) \|$ sa nazýva \emph{absolútny 
-gravimeter}.  Merania absolútnymi gravimetrami sú časovo aj finančne náročné, 
-preto sa využívajú aj \emph{relatívne gravimetre}.  Týmito prístrojmi je ale 
-možné určiť iba rozdiel veľkostí tiažového zrýchlenia, či už medzi dvoma bodmi 
-alebo na jednom bode, no v~inom čase.  V~súčasnosti bežná presnosť určenia~$\| 
-\vec g(P) \|$ dosahuje hodnotu niekoľkých mikroGalov.  \emph{Smer} vektora 
-tiažového zrýchlenia~$\vec g(P)$ je daný astronomickou šírkou a~astronomickou 
-dĺžkou bodu~$P$, a~tak je možné odmerať ho astronomickým určením polohy 
-bodu~$P$ \parencite{MoritzPhysicalGeodesy}.  Presnosť určenia astronomických 
-súradníc sa v~súčasnosti pohybuje približne v~desatinách uhlovej sekundy.    
-Vedný odbor zaoberajúci sa meraním tiažového zrýchlenia sa nazýva 
-\emph{gravimetria} (pozri napríklad \cite{Torge1989,Rozimant1994} či 
-\cite{Janak2010}).  
+Tiažové zrýchlenie je možné odmerať, a~tak predstavuje ústrednú veličinu 
+v~procese určovania tvaru Zeme.  Prístroj na meranie \emph{veľkosti} tiažového 
+zrýchlenia~$\| \vec g(P) \|$ sa nazýva \emph{absolútny gravimeter}.  Merania 
+absolútnymi gravimetrami sú časovo aj finančne náročné, preto sa využívajú aj 
+\emph{relatívne gravimetre}.  Týmito prístrojmi je ale možné určiť iba rozdiel 
+veľkostí tiažového zrýchlenia, či už medzi dvoma bodmi alebo na jednom bode, no 
+v~inom čase.  V~súčasnosti bežná presnosť určenia~$\| \vec g(P) \|$ dosahuje 
+hodnotu niekoľkých mikroGalov.  \emph{Smer} vektora~$\vec g(P)$ je daný 
+astronomickou šírkou a~astronomickou dĺžkou bodu~$P$, a~tak je možné odmerať ho 
+astronomickým určením polohy bodu~$P$ \parencite{MoritzPhysicalGeodesy}.  
+Presnosť určenia astronomických súradníc sa v~súčasnosti pohybuje približne 
+v~desatinách uhlovej sekundy.    Vedný odbor zaoberajúci sa meraním tiažového 
+zrýchlenia sa nazýva \emph{gravimetria} (pozri napríklad 
+\cite{Torge1989,Rozimant1994} či \cite{Janak2010}).  
 
 
 
@@ -1615,7 +1618,7 @@ nespojito meniť v~závislosti od hustoty \parencite{MoritzPhysicalGeodesy}.
 bode definované práve jednu hodnotu (skalárna veličina), preto sa 
 ekvipotenciálne plochy nemôžu pretnúť \parencite{MacMillan1930}.
 
-\item Vektor tiažového zrýchlenia v~ľubovoľnom bode je kolmý na ekvipotenciálnu
+\item Smer tiažového zrýchlenia je v~každom bode kolmý na ekvipotenciálnu
 plochu prechádzajúcu týmto bodom \parencite{MoritzPhysicalGeodesy}.  Toto 
 tvrdenie vyplýva priamo z~rovnice~(\ref{eq:g_gradW}).
 \end{itemize}
@@ -1633,13 +1636,13 @@ presný výpočet geoidu.  Podrobnejší popis niektorých dôležitých vlastno
 ekvipotenciálnych plôch, napríklad ich krivostí, je možné nájsť napríklad 
 v~prácach \textcite{MoritzPhysicalGeodesy} a~\textcite{Janak2006}.
 
-Obrázok~\ref{fig:equipotential_surfaces} schematicky znázorňuje ekvipotenciálne
-plochy tiažového poľa Zeme s~konštantným krokom tiažového potenciálu~$\delta
-W$.  Možno si všimnúť, že priestorový rozostup ekvipotenciálnych plôch je väčší
-v~rovníkových oblastiach ako v~polárnych oblastiach.  Malý rozostup
-ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a~naopak.  Veľkosť
-vektora tiažového zrýchlenia~$\| \vec g \|$ je tak väčšia v~oblasti pólov ako
-v~oblasti rovníka.
+Obrázok~\ref{fig:equipotential_surfaces} schematicky znázorňuje ekvipotenciálne 
+plochy tiažového poľa Zeme s~konštantným krokom tiažového potenciálu~$\delta 
+W$.  Možno si všimnúť, že priestorový rozostup ekvipotenciálnych plôch je väčší 
+v~rovníkových oblastiach ako v~polárnych oblastiach.  Malý rozostup 
+ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa a~naopak.  Veľkosť 
+tiažového zrýchlenia~$\| \vec g \|$ je tak väčšia v~oblasti pólov ako v~oblasti 
+rovníka.
 
 Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna os 
 leží v~rovine lokálneho horizontu, ktorý je dotykovou rovinou 
@@ -1658,11 +1661,11 @@ potrebné korigovať o~vplyv nerovnobežnosti lokálnych horizontov
 Siločiara tiažového poľa sa nazýva \emph{tiažnica}.  Tiažnica je priestorová 
 krivka, ktorá je kolmá na všetky ekvipotenciálne plochy 
 (Obrázok~\ref{fig:equipotential_surfaces}).  Dotyčnica k~tiažnici sa nazýva 
-\emph{zvislica}.  Smer zvislice je totožný so smerom vektora tiažového 
-zrýchlenia (smer zavesenej olovnice).  V~geodézii sa tiažnice využívajú 
-napríklad na definovanie fyzikálnych (nadmorských) výšok.  Jedna taká výška má 
-názov \emph{ortometrická výška} a~je meraná pozdĺž tiažnice od geoidu po 
-bod~$P$ (pozri Obrázok~\ref{fig:equipotential_surfaces}).
+\emph{zvislica}.  Smer zvislice je totožný so smerom tiažového zrýchlenia (smer 
+zavesenej olovnice).  V~geodézii sa tiažnice využívajú napríklad na definovanie 
+fyzikálnych (nadmorských) výšok.  Jedna taká výška má názov \emph{ortometrická 
+výška} a~je meraná pozdĺž tiažnice od geoidu po bod~$P$ (pozri 
+Obrázok~\ref{fig:equipotential_surfaces}).
 
 Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad 
 teodolitu) bola totožná s~lokálnou zvislicou.  Táto podmienka je splnená po 
@@ -1769,7 +1772,7 @@ daný vzťahom
 \cos(180^{\circ}) = -g(P) \, \diff H{,}
 \end{equation}
 %
-kde~$g(P) = \| \vec g(P) \|$ je veľkosť vektora tiažového zrýchlenia v~bode~$P$ 
+kde~$g(P) = \| \vec g(P) \|$ je veľkosť tiažového zrýchlenia v~bode~$P$ 
 a~$\diff H = \| \diff \vec x \|$ je diferenciálna dĺžka tiažnice.  Integráciou 
 rovnice~(\ref{eq:w_totdiff_plumb}) od bodu~$A$ po bod~$B$ (pozri 
 Obrázok~\ref{fig:total_differential}) získame rozdiel tiažového potenciálu,
@@ -1859,15 +1862,15 @@ tiažnice od geoidu po bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces}).
 Newtonov integrál~(\ref{eq:vg_body}) nie je vhodný na priamy praktický výpočet 
 gravitačného poľa Zeme.  Predpokladá totiž, že poznáme dve matematické funkcie: 
 jednu, ktorá definuje tvar telesa a~druhú, ktorá opisuje jeho hustotu.  
-Problematická je obzvlášť hustota.  Hoci hustotné modely Zeme existujú 
-\parencite[napríklad][]{Dziewonski1981}, ich použitie vo 
-vzťahu~(\ref{eq:vg_body}) ešte stále neposkytuje vyžadovanú geodetickú 
-presnosť.  V~tejto situácii nie sú postačujúce ani regionálne hustotné modely.  
-Tie síce majú vyššiu presnosť a~aj lepšie priestorové rozlíšenie, no 
-vo~fyzikálnej geodézii sú spravidla používané nanajvýš ako cenná (niekedy aj 
-nutná) doplnková informácia o~zdroji gravitačného poľa.  V~tejto kapitole sa 
-zameriame na praktický spôsob modelovania gravitačného poľa Zeme \emph{bez 
-potreby priamej znalosti hustoty}.
+Problematická je obzvlášť hustota.  Hoci približné hustotné modely zemského 
+telesa existujú \parencite[napríklad][]{Dziewonski1981}, ich použitie vo 
+vzťahu~(\ref{eq:vg_body}) neposkytuje vyžadovanú geodetickú presnosť.  V~tejto 
+situácii nie sú postačujúce ani regionálne hustotné modely.  Tie síce majú 
+vyššiu presnosť a~aj lepšie priestorové rozlíšenie, no vo~fyzikálnej geodézii 
+sú spravidla používané nanajvýš ako cenná (niekedy aj nutná) doplnková 
+informácia o~zdroji gravitačného poľa.  V~tejto kapitole sa zameriame na 
+praktický spôsob modelovania gravitačného poľa Zeme \emph{bez potreby priamej 
+znalosti hustoty}.
 
 
 
@@ -2556,11 +2559,7 @@ druhého rádu pre Legendreove polynómy,
 P_n(t)}{\diff t} + n \, (n + 1) \, P_n(t) = 0{.}
 \end{equation}
 
-Rekurentné vzťahy pre derivácie Legendreových funkcií je možné nájsť napríklad 
-v~prácach~\textcite{Tscherning1976b}, \textcite{Bosch2000}, 
-\textcite{Holmes2002a}, \textcite{Freeden2009} a~\textcite{Fukushima2012b}.
-
-Na záver spomeňme ešte aspoň dve ďalšie vlastnosti Legendreových funkcií,
+Z~ďalších vlastností Legendreových funkcií spomeňme aspoň dve,
 %
 \begin{align}
 \label{eq:pnm_symmetry}
@@ -2569,21 +2568,21 @@ P_{nm}(-t) &= (-1)^{n + m} \, P_{nm}(t){,}\\
 P_{nm}(\pm1) &= 0{,} \quad m \neq 0{.}
 \end{align}
 
-Na numerický výpočet Legendreových funkcií sú zvyčajne použité rekurentné 
+Na numerický výpočet Legendreových funkcií sa zvyčajne používajú rekurentné 
 vzťahy.  Ide však o~netriviálnu úlohu, obzvlášť pre vysoké stupne a~rády 
 \parencite{Holmes2002a,Fukushima2012a,Ishioka2018}.  
 Vlastnosť~(\ref{eq:pnm_symmetry}) je preto výhodná; ak potrebujeme vypočítať 
 $P_{nm}(\sin\varphi)$ a~$P_{nm}(\sin(-\varphi))$, rekurentné vzťahy môžeme 
 aplikovať iba na získanie jedného z~týchto členov a~druhý člen dopočítame 
-vzťahom~(\ref{eq:pnm_symmetry}).
+vzťahom~(\ref{eq:pnm_symmetry}).  Rekurentné vzťahy pre derivácie Legendreových 
+funkcií je možné nájsť napríklad v~prácach~\textcite{Tscherning1976b}, 
+\textcite{Bosch2000}, \textcite{Holmes2002a}, \textcite{Freeden2009} 
+a~\textcite{Fukushima2012b}.
 
-\subsection{Condonov--Shortleyho fázový faktor}
-\label{sec:legendre_functions_cs_factor}
-
-V geodézii a~v~geomagnetizme sú Legendreove funkcie definované takmer výhradne 
-vzťahom~(\ref{eq:pnm_ferrer}).  V~iných vedných odboroch, napríklad vo fyzike 
-či v~seizmológii, sa používa definícia, ktorá obsahuje člen $(-1)^m$ 
-\parencite[pozri][]{Wieczorek2015,Olver2010},
+Na záver dodajme, že v~geodézii a~v~geomagnetizme sú Legendreove funkcie 
+definované takmer výhradne vzťahom~(\ref{eq:pnm_ferrer}).  V~iných vedných 
+odboroch, napríklad vo fyzike či v~seizmológii, sa používa definícia, ktorá 
+obsahuje člen $(-1)^m$ \parencite[pozri][]{Wieczorek2015,Olver2010},
 %
 \begin{equation}
 \begin{split}
@@ -3126,8 +3125,8 @@ obsahuje informáciu o~všetkých veličinách gravitačného poľa.  Zo
 vzťahu~(\ref{eq:vg_sh_2nd_norm}) je preto možné vyťažiť oveľa viac ako len 
 informáciu o~gravitačnom potenciáli.  Napríklad aplikovaním operátora 
 gradient~(\ref{eq:gradient_sph}) na gravitačný 
-potenciál~(\ref{eq:vg_sh_2nd_norm}) možno získať prvky vektora gravitačného 
-zrýchlenia v~lokálnom karteziánskom súradnicovom systéme s~pohyblivým začiatkom 
+potenciál~(\ref{eq:vg_sh_2nd_norm}) možno získať prvky gravitačného zrýchlenia 
+v~lokálnom karteziánskom súradnicovom systéme s~pohyblivým začiatkom 
 $x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ (Obrázok~\ref{fig:cart_sph}),
 %
 \begin{align}
@@ -3436,8 +3435,8 @@ $\beta$, $\lambda$ pozri napríklad \textcite{MoritzPhysicalGeodesy}.
 
 
 
-\subsection{Operátor gradient a~Laplaceova rovnica v~redukovaných 
-elipsoidických súradniciach}
+\section{Operátor gradient a~Laplaceova rovnica v~redukovaných elipsoidických 
+súradniciach}
 \label{sec:gradient_and_laplace_in_reduced_ell_coords}
 
 Z~podobných dôvodov ako v~Kapitole~\ref{sec:laplace_equation_sph} potrebujeme 
@@ -3511,21 +3510,21 @@ elipsoidických súradniciach,
 %
 \begin{align}
 \label{eq:gradient_red_ell}
-\nabla = \grad &= \vec e_1^\mathrm{r} \, \frac{1}{\sqrt{u^2 + E^2 \, 
-\sin^2\beta}} \, \frac{\partial}{\partial \beta} + \vec e_2^\mathrm{r} \, 
-\frac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \frac{\partial}{\partial \lambda} 
+\nabla f = \grad f &= \vec e_1^\mathrm{r} \, \frac{1}{\sqrt{u^2 + E^2 \, 
+\sin^2\beta}} \, \frac{\partial f}{\partial \beta} + \vec e_2^\mathrm{r} \, 
+\frac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \frac{\partial f}{\partial \lambda} 
 + \vec e_3^\mathrm{r} \, \sqrt{\frac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, 
-\frac{\partial}{\partial u}\nonumber\displaybreak[2]\\
+\frac{\partial f}{\partial u}\nonumber\displaybreak[2]\\
 %
 &=
 %
 \begin{bmatrix}
-\dfrac{1}{\sqrt{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial}{\partial 
+\dfrac{1}{\sqrt{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial f}{\partial 
 \beta}\\[2ex]
-\dfrac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \dfrac{\partial}{\partial 
+\dfrac{1}{\sqrt{u^2 + E^2} \, \cos\beta} \, \dfrac{\partial f}{\partial 
 \lambda}\\[2ex]
-\sqrt{\dfrac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial}{\partial 
-u}
+\sqrt{\dfrac{u^2 + E^2}{u^2 + E^2 \, \sin^2\beta}} \, \dfrac{\partial 
+f}{\partial u}
 \end{bmatrix}
 {,}
 \end{align}
@@ -3639,7 +3638,7 @@ Q_{n}(z) = \frac{1}{2} \, P_n(z) \, \ln\frac{z + 1}{z - 1} - \sum_{s = 1}^n
 Pre reálny argument $t$ je definovaná vzťahom\footnote{V~niektorej literatúre 
 sú Legendreove funkcie druhého druhu reálneho argumentu definované aj 
 s~použitím Condonovho--Shortleyho fázového faktora $(-1)^m$ (pozri 
-Kapitolu~\ref{sec:legendre_functions_cs_factor} a~napríklad \cite{Olver2010}).}
+Kapitolu~\ref{sec:legendre_functions} a~napríklad \cite{Olver2010}).}
 \parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
@@ -3738,9 +3737,6 @@ druhu nepoužívajú v~praktických aplikáciách ako riešenie pre funkcie
 $g_\mathrm{s}(\varphi)$ a~$g_\mathrm{r}(\beta)$ (pozri rovnice~\ref{eq:gs} 
 a~\ref{eq:gr}), a~to napriek tomu, že sú taktiež riešením Legendreovej 
 diferenciálnej rovnice \parencite{MoritzPhysicalGeodesy}.
-
-
-\subsection{Numerický výpočet Legendreových funkcií druhého druhu}
 
 Presný a~efektívny numerický výpočet funkcií $Q_{nm}\left( i \frac{u}{E} 
 \right)$ je náročný, obzvlášť pre vysoké stupne a~rády.  Z~dôvodov, ktoré budú 
@@ -3857,7 +3853,7 @@ napríklad][]{Hirt2014c}.  Na určenie \emph{fyzikálnych} výšok je potrebné
 uvážiť nielen geometrickú, ale aj fyzikálnu časť výšky 
 (Kapitola~\ref{sec:physical_heights}).  Fyzikálna geodézia preto určuje tvar 
 Zeme z~informácie o~jej tiažovom poli, napríklad z~tiažového potenciálu 
-a~z~vektora tiažového zrýchlenia na povrchu Zeme.
+a~z~tiažového zrýchlenia na povrchu Zeme.
 
 Určenie tvaru Zeme z~jej tiažového poľa je neľahké, pretože vzťah medzi 
 tiažovým poľom a~hľadaným zemským povrchom je nelineárny.  Spravidla sa preto 
@@ -3874,9 +3870,9 @@ zanedbané.  Požiadavky jednoduchosti a~presnosti si vzájomne odporujú, preto
 potrebné nájsť medzi nimi vhodný kompromis.
 
 Povedané inak, normálne tiažové pole Zeme umožňuje redukciu veličín skutočného 
-tiažového poľa Zeme o~približné hodnoty (napríklad vektor skutočného tiažového 
-zrýchlenia~$\vec g$ zredukujeme o~vektor normálneho tiažového 
-zrýchlenia~$\boldsymbol{\gamma}$).  Získame tým rozličné reziduálne veličiny, 
+tiažového poľa Zeme o~približné hodnoty (napríklad skutočné tiažové 
+zrýchlenie~$\vec g$ zredukujeme o~normálne tiažové 
+zrýchlenie~$\boldsymbol{\gamma}$).  Získame tým rozličné reziduálne veličiny, 
 ktoré majú praktické využitie nielen v~geodézii, ale aj v~mnohých iných 
 geovedných disciplínach.  Príkladom je geofyzika, ktorá využíva normálne 
 tiažové pole Zeme okrem iného na štúdium hustotných kontrastov pod zemským 
@@ -4789,8 +4785,8 @@ zo~základných parametrov ekvipotenciálneho elipsoidu.
 Tiažové zrýchlenie je jedna z~veličín fyzikálnej geodézie, ktorú je možné 
 odmerať (Kapitola~\ref{sec:gravity_measurements}).  V~mnohých úlohách je preto 
 výhodné či dokonca potrebné modelovať ho jednoduchým a~súčasne dostatočne 
-presným spôsobom, napríklad kvôli výpočtu geoidu.  Na tento účel slúži vektor 
-normálneho tiažového zrýchlenia $\boldsymbol\gamma$ (pozri 
+presným spôsobom, napríklad kvôli výpočtu geoidu.  Na tento účel slúži normálne 
+tiažové zrýchlenie~$\boldsymbol\gamma$ (pozri 
 Kapitolu~\ref{sec:normal_gravity_field}).  Vo fyzikálnej geodézii patrí 
 normálne tiažové zrýchlenie medzi najčastejšie používané odvodené fyzikálne 
 parametre ekvipotenciálneho elipsoidu.
@@ -4827,7 +4823,7 @@ gravitačného zrýchlenia (Kapitola~\ref{sec:sh_applications_gravity_field}).
 súradniciach}
 \label{sec:normal_gravity_in_reduced_ell_coords}
 
-Vektor normálneho tiažového zrýchlenia v~bode~$P(u, \beta, \lambda)$ vyjadrený 
+Normálne tiažové zrýchlenie v~bode~$P(u, \beta, \lambda)$ vyjadrené 
 v~súradnicovom systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ (pozri 
 Kapitolu~\ref{sec:gradient_and_laplace_in_reduced_ell_coords}) získame 
 aplikovaním operátora gradient~(\ref{eq:gradient_red_ell}) na normálny tiažový 
@@ -4904,8 +4900,8 @@ preto pre zachovanie rovnosti musí byť prostredný člen
 rovnice~(\ref{eq:gamma_u}) vynásobený podielom~$-\frac{E}{u^2 + E^2}$.  
 Novozavedený člen $q'$ bude využitý neskôr.  Rovnice~(\ref{eq:gamma_lambda}), 
 (\ref{eq:gamma_beta}) a~(\ref{eq:gamma_u}) predstavujú uzavreté vzťahy pre 
-hľadané prvky vektora normálneho tiažového zrýchlenia v~redukovaných 
-elipsoidických súradniciach.  Podobne ako v~prípade normálneho tiažového 
+hľadané prvky vektora~$\boldsymbol \gamma$ v~redukovaných elipsoidických 
+súradniciach.  Podobne ako v~prípade normálneho tiažového 
 potenciálu~(\ref{eq:u_sph_final}), ide o~sféroidické harmonické rozvoje 
 s~konečným počtom členov.
 
@@ -4984,7 +4980,7 @@ Obrázok~\ref{fig:cart_sph}).}
 \subsubsection{Somiglianov vzťah}
 \label{sec:somigliana}
 
-V~tejto kapitole hľadáme vzťah na výpočet veľkosti vektora normálneho tiažového 
+V~tejto kapitole hľadáme vzťah na výpočet veľkosti normálneho tiažového 
 zrýchlenia na povrchu ekvipotenciálneho elipsoidu v~elipsoidických 
 súradniciach.  Kapitola je spracovaná podľa \textcite{MoritzPhysicalGeodesy}.
 
@@ -5039,7 +5035,7 @@ prepísať~(\ref{eq:gamma_ell_1}) do tvaru
 \end{equation}
 
 Ak do rovnice~(\ref{eq:gamma_ell_2}) dosadíme redukovanú šírku $\beta = 0$, 
-dostaneme vzťah na výpočet normálneho tiažoveho zrýchlenia na rovníku,
+dostaneme vzťah na výpočet veľkosti normálneho tiažoveho zrýchlenia na rovníku,
 %
 \begin{equation}
 \label{eq:gamma_a}
@@ -5047,7 +5043,8 @@ dostaneme vzťah na výpočet normálneho tiažoveho zrýchlenia na rovníku,
 q'_0}{q_0} \right){.}
 \end{equation}
 %
-Pre $\beta = \pm 90^\circ$ získame normálne tiažové zrýchlenie na póloch,
+Pre $\beta = \pm 90^\circ$ získame veľkosť normálneho tiažového zrýchlenia na 
+póloch,
 %
 \begin{equation}
 \label{eq:gamma_b}
@@ -5109,14 +5106,13 @@ v~číselných výpočtoch je spravidla presnejší vzťah~(\ref{eq:somigliana_k
 \label{sec:normal_gravity_taylor_expansion}
 
 Na rozdiel od rovnice~(\ref{eq:gamma_vec_general}), ktorá umožňuje výpočet 
-vektora normálneho tiažového zrýchlenia~$\boldsymbol \gamma(u, \beta)$ na 
-povrchu ekvipotenciálneho elipsoidu aj nad ním, Somiglianov 
-vzťah~(\ref{eq:somigliana}) je možné použiť iba na ekvipotenciálnom elipsoide 
-a~iba na výpočet veľkosti vektora normálneho tiažového zrýchlenia~$\| 
-\boldsymbol \gamma(\phi, h = 0) \|$ (smer vektora~$\boldsymbol \gamma(\phi, 
-h = 0)$ je daný normálou k~elipsoidu).  Jeden zo spôsobov získania~$\| 
-\boldsymbol \gamma(\phi, h > 0) \|$ v~priestore nad ekvipotenciálnym elipsoidom 
-s~využitím elipsoidických súradníc je analytickým pokračovaním nahor (pozri 
+vektora~$\boldsymbol \gamma(u, \beta)$ na povrchu ekvipotenciálneho elipsoidu 
+aj nad ním, Somiglianov vzťah~(\ref{eq:somigliana}) je možné použiť iba na 
+ekvipotenciálnom elipsoide a~iba na výpočet jeho veľkosti~$\| \boldsymbol 
+\gamma(\phi, h = 0) \|$ (smer vektora~$\boldsymbol \gamma(\phi, h = 0)$ je daný 
+normálou k~elipsoidu).  Jeden zo spôsobov získania~$\| \boldsymbol \gamma(\phi, 
+h > 0) \|$ v~priestore nad ekvipotenciálnym elipsoidom s~využitím 
+elipsoidických súradníc je analytickým pokračovaním nahor (pozri 
 Kapitolu~\ref{sec:harmonic_function}).  Tento prístup je založený na rozvoji 
 normálneho tiažového zrýchlenia do Taylorovho radu, preto je potrebné určiť 
 plochu, z~ktorej bude normálne tiažové zrýchlenie pokračované nahor.  Vhodnou 
@@ -5206,9 +5202,8 @@ h \approx -0.3086 \ \mathrm{mGal} \ \mathrm{m}^{-1}$ veľmi nepresná a~nevhodn�
 
 Výhodou Taylorovho rozvoja~(\ref{eq:gamma_taylor}) je jeho jednoduchosť a~veľké 
 praktické vyžitie.  Za nevýhodu možno v~niektorých situáciách považovať to, že 
-umožňuje vypočítať iba veľkosť vektora normálneho tiažového zrýchlenia 
-$\gamma(\phi, h)$, nie celý vektor~$\boldsymbol \gamma(\phi, h)$, resp. jeho 
-jednotlivé prvky.
+umožňuje vypočítať iba veľkosť vektora $\| \gamma(\phi, h) \|$, nie celý 
+vektor~$\boldsymbol \gamma(\phi, h)$, resp. jeho jednotlivé prvky.
 
 
 
@@ -5222,7 +5217,7 @@ jednotlivé prvky.
 Aplikovaním operátora gradient vo sférických súradniciach 
 (rovnica~\ref{eq:gradient_sph}) na normálny gravitačný a~odstredivý 
 potenciál~(rovnice~\ref{eq:ug_spherical} a~\ref{eq:uc_spherical}) získame 
-sférický harmonický rozvoj vektora normálneho tiažového zrýchlenia v~lokálnom 
+sférický harmonický rozvoj normálneho tiažového zrýchlenia v~lokálnom 
 kareziánskom súradnicovom systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, 
 $z^\mathrm{s}$ s~pohyblivým začiatkom v~bode~$P(r, \varphi, \lambda)$ (pozri 
 Obrázok~\ref{fig:cart_sph}),
@@ -5352,11 +5347,11 @@ rovnosť~(\ref{eq:vg_eq_uc}) za splnenú.  Malé rozdiely medzi $V_\cidx(P)$
 a~$U_\cidx(P)$ sú dôsledkom faktorov, ktoré nie sú zahrnuté v~normálnom poli, 
 napríklad premenlivá rýchlosť rotácie Zeme či pohyb zemského pólu.
 
-Aplikáciou Laplaceovho operátora~(\ref{eq:laplace_xyz}) na poruchový 
-potenciál~(\ref{eq:disturbing_potential}) je možné s~využitím 
-rovníc~(\ref{eq:vg_laplace_cart}), (\ref{eq:laplace_additivity}) 
-a~(\ref{eq:ug_laplace_cart}) jednoducho ukázať, že poruchový potenciál je 
-harmonická funkcia v~priestore mimo hmôt,
+S~využitím rovníc~(\ref{eq:vg_laplace_cart}), 
+(\ref{eq:laplace_grad_grad_notation}), (\ref{eq:laplace_additivity}), 
+(\ref{eq:ug_laplace_cart}) a~(\ref{eq:disturbing_potential}) je možné 
+jednoducho ukázať, že poruchový potenciál je harmonická funkcia v~priestore 
+mimo hmôt,
 %
 \begin{equation}
 \label{eq:laplace_xyz_t}
@@ -5500,10 +5495,10 @@ vplyvov tak vystúpia do popredia jemné nepravidelnosti gravitačného poľa.
 \begin{figure}
 \centering
 \includegraphics{./fig-disturbing-potential-on-grs80.pdf}
-\caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
-zemského gravitačného poľa vypočítaný zo sférického harmonického modelu 
-EIGEN-6C4 do stupňa~720 na povrchu elipsoidu~GRS80.  Normálny gravitačný 
-potenciál je generovaný ekvipotenciálnym elipsoidom~GRS80.}
+\caption{Poruchový potenciál zemského gravitačného poľa vypočítaný zo 
+sférického harmonického modelu EIGEN-6C4 do stupňa~720 na povrchu 
+elipsoidu~GRS80~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$).  Normálny 
+gravitačný potenciál je generovaný ekvipotenciálnym elipsoidom~GRS80.}
 \label{fig:disturbing_potential_on_grs80}
 \end{figure}
 
@@ -5520,11 +5515,10 @@ a súčasne sa~jeho priebeh vyhladzuje (pozri člen $\left( \frac{R}{r} \right)^
 \begin{figure}
 \centering
 \includegraphics{./fig-disturbing-potential-at-450km.pdf}
-\caption{Poruchový potenciál~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$) 
-získaný rovnakým spôsobom ako 
+\caption{Poruchový potenciál získaný rovnakým spôsobom ako 
 na~Obrázku~\ref{fig:disturbing_potential_on_grs80} avšak vo výške~$450\ 
-\mathrm{km}$ nad elipsoidom~GRS80.  Na oboch obrázkoch je použitá rovnaká 
-farebná škála.}
+\mathrm{km}$ nad elipsoidom~GRS80~(jednotky~$\mathrm{m}^2 \ \mathrm{s}^{-2}$).  
+Na oboch obrázkoch je použitá rovnaká farebná škála.}
 \label{fig:disturbing_potential_at_450km}
 \end{figure}
 
@@ -5544,8 +5538,8 @@ odmerať.
 \section{Porucha tiažového zrýchlenia}
 \label{sec:gravity_disturbance}
 
-Porucha tiažového zrýchlenia je vektorová veličina definovaná rozdielom 
-vektorov skutočného tiažového zrýchlenia a~normálneho tiažového zrýchlenia,
+\emph{Vektorová porucha tiažového zrýchlenia} je vektorová veličina definovaná 
+vzťahom
 %
 \begin{equation}
 \label{eq:dg_vector}
@@ -5553,19 +5547,18 @@ vektorov skutočného tiažového zrýchlenia a~normálneho tiažového zrýchle
 U(P) = \nabla T(P){.}
 \end{equation}
 %
-Poruchu tiažového zrýchlenia~$\delta \vec g$ možno v~širšom zmysle považovať za 
-merateľnú veličinu, pretože vektor skutočného tiažového zrýchlenia~$\vec g$ je 
-merateľná veličina (Kapitola~\ref{sec:gravity_measurements}) a~vektor 
-normálneho tiažového zrýchlenia~$\boldsymbol\gamma$ je možné jednoducho 
-vypočítať (Kapitola~\ref{sec:normal_gravity}).
+Vektorovú poruchu tiažového zrýchlenia~$\delta \vec g$ možno v~širšom zmysle 
+považovať za merateľnú veličinu, pretože skutočné tiažové zrýchlenie~$\vec g$ 
+je možné odmerať (Kapitola~\ref{sec:gravity_measurements}) a~normálne tiažové 
+zrýchlenie~$\boldsymbol\gamma$ je možné vypočítať 
+(Kapitola~\ref{sec:normal_gravity}).
 
 \begin{figure}[bt]
 \centering
 \input{./fig-gravity-disturbance.pdf_tex}
-\caption{Vektor poruchy tiažového zrýchlenia~$\delta \vec g(P) = \vec g(P) 
-- \boldsymbol\gamma(P)$ a~zvislicová odchýlka~$\Theta$ medzi vektormi 
-skutočného tiažového zrýchlenia~$\vec g(P)$ a~normálneho tiažového 
-zrýchlenia~$\boldsymbol\gamma(P)$.  Symboly~$\vec n_W$ a~$\vec n_U$ označujú 
+\caption{Vektorová porucha tiažového zrýchlenia~$\delta \vec g(P) = \vec g(P) 
+- \boldsymbol\gamma(P)$ a~zvislicová odchýlka~$\Theta$ medzi vektormi~$\vec 
+g(P)$ a~$\boldsymbol\gamma(P)$.  Symboly~$\vec n_W$ a~$\vec n_U$ označujú 
 jednotkové vektory normál k~ekvipotenciálnym plochám~$W(P) 
 = \textrm{kon\v{s}t.}$ a~$U(P) = \textrm{kon\v{s}t.}$}
 \label{fig:gravity_disturbance}
@@ -5574,8 +5567,8 @@ jednotkové vektory normál k~ekvipotenciálnym plochám~$W(P)
 Z Kapitoly~\ref{sec:gravity_measurements} vieme, že veľkosť vektora~$\vec g(P)$ 
 je možné získať gravimetrickými meraniami a~jeho smer astronomickým určením 
 zemepisných súradníc bodu~$P$.  Astronomické merania sú ale spravidla náročné.  
-Aj z~tohto dôvodu sa vo fyzikálnej geodézii často stretneme so skalárnou 
-definíciou poruchy tiažového zrýchlenia,
+Aj z~tohto dôvodu sa vo fyzikálnej geodézii často stretneme so \emph{skalárnou 
+poruchou tiažového zrýchlenia},
 %
 \begin{equation}
 \label{eq:dg_scalar}
@@ -5583,8 +5576,8 @@ definíciou poruchy tiažového zrýchlenia,
 - \gamma(P){,}
 \end{equation}
 %
-ktorá zanedbáva rozdielnosť smerov vektorov $\| \vec g(P) \|$ a~$\| \boldsymbol 
-\gamma(P) \|$.\footnote{Ak majú dva vektory rozdielny smer (v~tomto prípade 
+ktorá zanedbáva rozdielny smer vektorov~$\vec g(P)$ a~$\boldsymbol 
+\gamma(P)$.\footnote{Ak majú dva vektory rozdielny smer (v~tomto prípade 
 vektory~$\vec g(P)$ a~$\boldsymbol \gamma(P)$), veľkosť vektora, ktorý vznikne 
 ich rozdielom ($\| \delta \vec g(P) \|$), nie je možné získať rozdielom 
 veľkostí týchto vektorov ($\| \vec g(P) \| - \| \boldsymbol \gamma(P) \|$).}  
@@ -5596,15 +5589,15 @@ vzťahov~(\ref{eq:dg_vector}) a~(\ref{eq:dg_scalar})} platí
 \| \delta \vec g(P) \| \neq \delta g(P){.}
 \end{equation}
 %
-Skalárna definícia poruchy tiažového zrýchlenia má najmä praktický význam, 
-pretože určiť~$\delta g(P)$ je výrazne jednoduchšie ako určiť~$\delta \vec 
-g(P)$.  V~ďalšom texte je potrebné rozlišovať medzi veličinami~$\| \delta \vec 
-g(P) \|$ a~$\delta g(P)$.
+Skalárna porucha tiažového zrýchlenia má najmä praktický význam, pretože 
+určiť~$\delta g(P)$ je výrazne jednoduchšie ako určiť~$\delta \vec g(P)$.  
+V~ďalšom texte je potrebné rozlišovať medzi veličinami~$\| \delta \vec g(P) \|$ 
+a~$\delta g(P)$.
 
 Uhol medzi vektormi $\vec g(P)$ a~$\boldsymbol{\gamma}(P)$ je spravidla 
 nenulový preto, lebo smer vektora~$\vec g(P)$ sa mení v~závislosti od tvaru 
 a rozloženia hmôt Zeme v~okolí bodu~$P$ (pozri Kapitolu~\ref{sec:gg}), avšak 
-vektor normálneho tiažového zrýchlenia túto zmenu kvôli jednoduchosti definície 
+vektor~$\boldsymbol \gamma(P)$ túto zmenu kvôli jednoduchosti definície 
 normálneho tiažového poľa nezachytáva (pozri 
 Kapitolu~\ref{sec:normal_gravity_field}).  Uhol medzi vektormi~$\vec g(P)$ 
 a~$\boldsymbol \gamma(P)$ sa označuje symbolom~$\Theta$ a~nazýva sa 
@@ -5615,11 +5608,12 @@ dostatočne malý na to, aby mohol byť v~mnohých úlohách fyzikálnej geodéz
 zanedbaný.
 
 
-\subsection{Vzťah medzi poruchou tiažového zrýchlenia a~poruchovým potenciálom}
+\subsection{Vzťah medzi skalárnou poruchou tiažového zrýchlenia a~poruchovým 
+potenciálom}
 
-Z~predchádzajúcich kapitol vieme, že porucha tiažového zrýchlenia je merateľná 
-veličina, zatiaľ čo poruchový potenciál je spravidla určovaná veličina.  Je 
-preto potrebné nájsť vzťah medzi oboma veličinami.
+Z~predchádzajúcich kapitol vieme, že skalárna porucha tiažového zrýchlenia je 
+merateľná veličina, zatiaľ čo poruchový potenciál je spravidla určovaná 
+veličina.  Je preto potrebné nájsť vzťah medzi oboma veličinami.
 
 Nech~$\vec n_W$ a~$\vec n_U$ sú jednotkové vektory vonkajších normál 
 k~ekvipotenciálnym plochám~$W(P) = \textrm{konšt.}$ a~$U(P) = \textrm{konšt.}$ 
@@ -5665,25 +5659,25 @@ derivácie~$-\partial U \slash \partial n_U$ deriváciou~$-\partial U \slash
 Obrázok~\ref{fig:gravity_disturbance}).  Ďalej sme nahradili deriváciu 
 poruchového potenciálu v~smere~$n_W$ deriváciou v~smere elipsoidickej 
 normály~$h$, ktorá prechádza bodom~$P$.  Táto veličina sa zvykne nazývať 
-\emph{elipsoidická aproximácia poruchy tiažového zrýchlenia}.  Posledná 
-približná rovnosť predstavuje \emph{sférickú aproximáciu poruchy tiažového 
-zrýchlenia}.  Táto veličina je definovaná deriváciou poruchového potenciálu 
-v~smere sférického sprievodiča~$r$, ktorý prechádza bodom~$P$.  Na záver 
-spomeňme, že veličiny $-\left(\partial T \slash \partial n_W\right)|_P$, 
-$-\left(\partial T \slash \partial h\right)|_P$ a~$-\left(\partial T \slash 
-\partial r\right)|_P$ nemusia byť vždy chápané len ako aproximácie 
-rovnice~(\ref{eq:dg_scalar}).  V~niektorých situáciách môže byť napríklad 
-potrebné definovať skalárnu poruchu tiažového zrýchlenia práve vzťahom~$\delta 
-g(P) = -\left(\partial T \slash \partial n_W\right)|_P$ a~pod.  Pri čítaní 
-literatúry preto treba pozorne vnímať kontext, v~ktorom sa porucha tiažového 
-zrýchlenia vyskytuje.
+\emph{elipsoidická aproximácia skalárnej poruchy tiažového zrýchlenia}.  
+Posledná približná rovnosť predstavuje \emph{sférickú aproximáciu skalárnej 
+poruchy tiažového zrýchlenia}.  Táto veličina je definovaná deriváciou 
+poruchového potenciálu v~smere sférického sprievodiča~$r$, ktorý prechádza 
+bodom~$P$.  Na záver spomeňme, že veličiny $-\left(\partial T \slash \partial 
+n_W\right)|_P$, $-\left(\partial T \slash \partial h\right)|_P$ 
+a~$-\left(\partial T \slash \partial r\right)|_P$ nemusia byť vždy chápané len 
+ako aproximácie rovnice~(\ref{eq:dg_scalar}).  V~niektorých situáciách môže byť 
+napríklad potrebné definovať skalárnu poruchu tiažového zrýchlenia práve 
+vzťahom~$\delta g(P) = -\left(\partial T \slash \partial n_W\right)|_P$ a~pod.  
+Pri čítaní literatúry preto treba pozorne vnímať kontext, v~ktorom sa porucha 
+tiažového zrýchlenia vyskytuje.
 
 
 \subsection{Sférický harmonický rozvoj poruchy tiažového zrýchlenia}
 
 Dosadením~(\ref{eq:t_sh}) do poslednej rovnosti vzťahu~(\ref{eq:dg_vector}) 
-a~s~využitím~(\ref{eq:gradient_sph}) získame sférický harmonický rozvoj vektora 
-poruchy tiažového zrýchlenia v~lokálnom karteziánskom súradnicovom 
+a~s~využitím~(\ref{eq:gradient_sph}) získame sférický harmonický rozvoj 
+vektorovej poruchy tiažového zrýchlenia v~lokálnom karteziánskom súradnicovom 
 systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom 
 v~bode~$P$ (pozri Obrázok~\ref{fig:cart_sph}),
 %
@@ -5737,26 +5731,26 @@ v~oblastiach pólov je preto potrebné venovať osobitnú pozornosť.  Použiť 
 možné napríklad nesingulárne metódy výpočtu z~prác \textcite{Petrovskaya2012}, 
 \textcite{Sebera2013} či \textcite{Ivanov2018}.
 
-Použitím príslušných rotačných matíc môže byť vektor poruchy tiažového 
-zrýchlenia~(\ref{eq:dg_vec_sph}) transformovaný do iného súradnicového systému 
-\parencite[pozri napríklad][]{WGS84}.  Takýmto spôsobom je možné vypočítať 
-napríklad sférický harmonický rozvoj elipsoidickej aproximácie poruchy 
-tiažového zrýchlenia~$-\partial T \slash \partial h$ či vektor~$\delta \vec 
-g(P)$ v~súradnicovom systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ 
-(pozri Kapitolu~\ref{sec:gradient_and_laplace_in_reduced_ell_coords}).  
-V~súradnicovom systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ je možné 
+Použitím príslušných rotačných matíc môže byť vektor~$\delta \vec g(P)$ 
+transformovaný do iného súradnicového systému \parencite[pozri 
+napríklad][]{WGS84}.  Takýmto spôsobom je možné vypočítať napríklad sférický 
+harmonický rozvoj elipsoidickej aproximácie skalárnej poruchy tiažového 
+zrýchlenia~$-\partial T \slash \partial h$ či vektor~$\delta \vec g(P)$ 
+v~súradnicovom systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ (pozri 
+Kapitolu~\ref{sec:gradient_and_laplace_in_reduced_ell_coords}).  V~súradnicovom 
+systéme~$x^\mathrm{r}$, $y^\mathrm{r}$, $z^\mathrm{r}$ je možné 
 vypočítať~$\delta \vec g(P)$ i~priamo pomocou sféroidického harmonického 
 rozvoja.  Z~porovnania rovníc~(\ref{eq:dg_normals}) a~(\ref{eq:dgz_sh}) je tiež 
-zrejmé, že sférický harmonický rozvoj sférickej aproximácie poruchy tiažového 
-zrýchlenia~$\delta g(P)$ je daný vzťahom
+zrejmé, že sférický harmonický rozvoj sférickej aproximácie skalárnej poruchy 
+tiažového zrýchlenia~$\delta g(P)$ je daný vzťahom
 %
 \begin{equation}
 \label{eq:dg_sh_sa}
 \delta g(P) = -\delta g_{z^\mathrm{s}}(P){.}
 \end{equation}
 
-Na~Obrázku~\ref{fig:dg_ggm_grs80} je znázornený priebeh prvkov vektora poruchy 
-tiažového zrýchlenia v~súradnicovom systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, 
+Na~Obrázku~\ref{fig:dg_ggm_grs80} je znázornený priebeh prvkov vektora~$\delta 
+\vec g(P)$ v~súradnicovom systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, 
 $z^\mathrm{s}$ (rovnice~\ref{eq:dgx_sh} až~\ref{eq:dgz_sh}).  Na mape 
 elementu~$\delta g_{x^\mathrm{s}}$ vidíme prvky gravitačného poľa prevažne 
 v~smere sférickej dĺžky~$\lambda$, teda v~smere kolmom na smer derivovania 
@@ -5774,28 +5768,28 @@ s~rovnicou~\ref{eq:t_sh}).  Tým sa v~porovnaní s~poruchovým potenciálom
 zosilňuje vplyv (váha) sférických harmonických funkcií vyšších stupňov a~rádov.  
 Z~Kapitoly~\ref{sec:spherical_harmonics} vieme, že s~narastajúcim stupňom 
 narastá aj oscilácia sférických harmonických funkcií, čo vysvetľuje silnejšiu 
-prítomnosť krátkovlnných prvkov vo~vektore poruchy tiažového zrýchlenia 
-v~porovnaní s~poruchovým potenciálom.
+prítomnosť krátkovlnných prvkov v~poruche tiažového zrýchlenia v~porovnaní 
+s~poruchovým potenciálom.
 
 \begin{figure}
 \centering
 \includegraphics{./fig-gravity-disturbance-on-grs80-x.pdf}
 \includegraphics{./fig-gravity-disturbance-on-grs80-y.pdf}
 \includegraphics{./fig-gravity-disturbance-on-grs80-z.pdf}
-\caption{Prvky vektora poruchy tiažového zrýchlenia $\delta g_{x^\mathrm{s}}$ 
-(vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) a~$\delta 
-g_{z^\mathrm{s}}$ (spodná mapa)~(jednotky~$\mathrm{mGal}$) zemského 
-gravitačného poľa vypočítané zo sférického harmonického modelu EIGEN-6C4 do 
-stupňa~720 na povrchu elipsoidu~GRS80.  Normálny gravitačný potenciál je 
+\caption{Prvky vektorovej poruchy tiažového zrýchlenia $\delta 
+g_{x^\mathrm{s}}$ (vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) 
+a~$\delta g_{z^\mathrm{s}}$ (spodná mapa) zemského gravitačného poľa vypočítané 
+zo sférického harmonického modelu EIGEN-6C4 do stupňa~720 na povrchu 
+elipsoidu~GRS80 (jednotky~$\mathrm{mGal}$).  Normálny gravitačný potenciál je 
 generovaný ekvipotenciálnym elipsoidom~GRS80.}
 \label{fig:dg_ggm_grs80}
 \end{figure}
 
-Obrázok~\ref{fig:dg_ggm_450km} znázorňuje prvky vektora poruchy tiažového 
-zrýchlenia vo výške~$450$~km nad elipsoidom GRS80.  Z~obrázku je zrejmé, že 
-porucha tiažového zrýchlenia sa citeľne vyhladzuje s~narastajúcou vzdialenosťou 
-od Zeme.  Toto vyhladzovanie je dokonca rýchlejšie ako v~prípade poruchového 
-potenciálu (porovnaj s~Obrázkami~\ref{fig:disturbing_potential_on_grs80} 
+Obrázok~\ref{fig:dg_ggm_450km} znázorňuje prvky poruchy tiažového zrýchlenia vo 
+výške~$450$~km nad elipsoidom GRS80.  Z~obrázku je zrejmé, že porucha tiažového 
+zrýchlenia sa citeľne vyhladzuje s~narastajúcou vzdialenosťou od Zeme.  Toto 
+vyhladzovanie je dokonca rýchlejšie ako v~prípade poruchového potenciálu 
+(porovnaj s~Obrázkami~\ref{fig:disturbing_potential_on_grs80} 
 a~\ref{fig:disturbing_potential_at_450km}), pretože gravitačné zrýchlenie klesá 
 s~druhou mocninou vzdialenosti (rovnica~\ref{eq:gg_body}), zatiaľ čo gravitačný 
 potenciál klesá s~prvou mocninou vzdialenosti výpočtového bodu od 
@@ -5806,12 +5800,12 @@ diferenciálneho hmotného elementu (rovnica~\ref{eq:vg_body}).
 \includegraphics{./fig-gravity-disturbance-at-450km-x.pdf}
 \includegraphics{./fig-gravity-disturbance-at-450km-y.pdf}
 \includegraphics{./fig-gravity-disturbance-at-450km-z.pdf}
-\caption{Prvky vektora poruchy tiažového zrýchlenia $\delta g_{x^\mathrm{s}}$ 
-(vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) a~$\delta 
-g_{z^\mathrm{s}}$ (spodná mapa)~(jednotky~$\mathrm{mGal}$) získané rovnakým 
-spôsobom ako na~Obrázku~\ref{fig:dg_ggm_grs80} avšak vo výške~$450\ 
-\mathrm{km}$ nad elipsoidom~GRS80.  Na oboch obrázkoch je použitá rovnaká 
-farebná škála.}
+\caption{Prvky vektorovej poruchy tiažového zrýchlenia $\delta 
+g_{x^\mathrm{s}}$ (vrchná mapa), $\delta g_{y^\mathrm{s}}$ (prostredná mapa) 
+a~$\delta g_{z^\mathrm{s}}$ (spodná mapa) získané rovnakým spôsobom ako 
+na~Obrázku~\ref{fig:dg_ggm_grs80} avšak vo výške~$450\ \mathrm{km}$ nad 
+elipsoidom~GRS80 (jednotky~$\mathrm{mGal}$).  Na oboch obrázkoch je použitá 
+rovnaká farebná škála.}
 \label{fig:dg_ggm_450km}
 \end{figure}
 
@@ -5829,12 +5823,11 @@ z~rovníc~(\ref{eq:dg_vector}) a~(\ref{eq:dg_normals}).
 \section{Anomália tiažového zrýchlenia}
 \label{sec:gravity_anomaly}
 
-S~tiažovým zrýchlením~$\vec g(P)$ sú spojené až dve veličiny poruchového poľa: 
-porucha tiažového zrýchlenia~$\delta \vec g(P)$ 
-(Kapitola~\ref{sec:gravity_disturbance}) a~\emph{anomália tiažového 
-zrýchlenia}~$\Delta \vec g(P)$.  Vektor anomálie tiažového zrýchlenia je 
-definovaný ako rozdiel vektora skutočného tiažového zrýchlenia~$\vec g(P)$ 
-v~bode~$P$ a~vektora normálneho tiažového zrýchlenia~$\boldsymbol\gamma(Q)$ 
+Okrem poruchy tiažového zrýchlenia~$\delta \vec g(P)$ 
+(Kapitola~\ref{sec:gravity_disturbance}) je s~tiažovým zrýchlením spojená aj 
+anomália tiažového zrýchlenia~$\Delta \vec g(P)$.  \emph{Vektorová anomália 
+tiažového zrýchlenia} je daná rozdielom skutočného tiažového zrýchlenia~$\vec 
+g(P)$ v~bode~$P$ a~normálneho tiažového zrýchlenia~$\boldsymbol\gamma(Q)$ 
 \emph{v~bode~$Q$} (Obrázok~\ref{fig:gravity_anomaly}),
 %
 \begin{equation}
@@ -5845,12 +5838,11 @@ v~bode~$P$ a~vektora normálneho tiažového zrýchlenia~$\boldsymbol\gamma(Q)$
 \begin{figure}[bt]
 \centering
 \input{./fig-gravity-anomaly.pdf_tex}
-\caption{Vektory anomálie tiažového zrýchlenia na povrchu Zeme,~$\Delta \vec 
-g(P) = \vec g(P) - \boldsymbol \gamma(Q)$, a~anomálie tiažového zrýchlenia na 
-geoide, $\Delta \vec g(P_0) = \vec g(P_0) - \boldsymbol\gamma(Q_0)$.  Skutočná 
-tiažnica~$t_W$ a~normálna tiažnica~$t_U$ sú z~vizualizačných dôvodov výrazne 
-zakrivené voči normále k~elipsoidu~$n_e$.  V~skutočnosti majú~všetky tri línie 
-blízky priebeh.}
+\caption{Vektorová anomália tiažového zrýchlenia na povrchu Zeme,~$\Delta \vec 
+g(P) = \vec g(P) - \boldsymbol \gamma(Q)$, a~na geoide, $\Delta \vec g(P_0) 
+= \vec g(P_0) - \boldsymbol\gamma(Q_0)$.  Skutočná tiažnica~$t_W$ a~normálna 
+tiažnica~$t_U$ sú z~vizualizačných dôvodov výrazne zakrivené voči normále 
+k~elipsoidu~$n_e$.  V~skutočnosti majú~všetky tri línie blízky priebeh.}
 \label{fig:gravity_anomaly}
 \end{figure}
 
@@ -5900,12 +5892,12 @@ Obrázok~\ref{fig:gravity_anomaly}).}
 \end{figure}
 
 Hoci vektory~$\vec g$ a~$\boldsymbol\gamma$ sú 
-v~rovnici~(\ref{eq:Dg_vector_earth}) počítané v~dvoch rôznych bodoch, vektor 
-anomálie tiažového zrýchlenia~$\Delta \vec g$ budeme formálne pripisovať 
-bodu~$P$, čomu zodpovedá zápis~$\Delta \vec g(P)$.
+v~rovnici~(\ref{eq:Dg_vector_earth}) dané v~dvoch rôznych bodoch, 
+vektor~$\Delta \vec g$ budeme formálne pripisovať bodu~$P$, čomu zodpovedá 
+zápis~$\Delta \vec g(P)$.
 
-Vektor anomálie tiažového zrýchlenia môže byť definovaný aj na geoide vzťahom 
-(Obrázok~\ref{fig:gravity_anomaly})
+Vektorová anomália tiažového zrýchlenia môže byť definovaná aj na geoide, a~to 
+vzťahom (Obrázok~\ref{fig:gravity_anomaly})
 %
 \begin{equation}
 \label{eq:Dg_vector_geoid}
@@ -5925,7 +5917,7 @@ dĺžka skutočnej tiažnice~$t_W$ medzi bodmi~$P_0$ a~$P$ (pozri
 Obrázok~\ref{fig:gravity_anomaly} a~tiež Kapitolu~\ref{sec:physical_heights}).
 
 Okrem vektorovej anomálie tiažového zrýchlenia sa často stretávame aj so 
-skalárnou definíciou anomálie tiažového zrýchlenia (pozri tiež 
+\emph{skalárnou anomáliou tiažového zrýchlenia} (pozri tiež 
 Kapitolu~\ref{sec:gravity_disturbance}), či už na povrchu Zeme,
 %
 \begin{equation}
@@ -5942,7 +5934,7 @@ alebo na geoide,
 - \gamma(Q_0){.}
 \end{equation}
 %
-Podobne ako v~súvislosti s~poruchou tiažového zrýchlenia 
+Podobne ako v~súvislosti so skalárnou poruchou tiažového zrýchlenia 
 (Kapitola~\ref{sec:gravity_disturbance}), aj tentokrát platí
 %
 \begin{equation}
@@ -5957,18 +5949,18 @@ Anomália tiažového zrýchlenia sa väčšinou udáva v~jednotke~mGal.  Anomá
 a~porucha tiažového zrýchlenia sú základné merateľné veličiny fyzikálnej 
 geodézie, z~ktorých sa určuje tvar Zeme.
 
-\subsection{Vzťah medzi anomáliou tiažového zrýchlenia a~poruchovým 
+\subsection{Vzťah medzi skalárnou anomáliou tiažového zrýchlenia a~poruchovým 
 potenciálom}
 
 Nájdime teraz vzťah medzi anomáliou tiažového zrýchlenia a~poruchovým 
-potenciálom, podobne ako sme našli vzťah medzi poruchou tiažového zrýchlenia 
-a poruchovým potenciálom (rovnica~\ref{eq:dg_normals}).  Tentokrát situáciu 
-komplikuje rozdielna poloha bodov~$P$~a~$Q$, resp.~$P_0$~a~$Q_0$, a~zakrivenie 
-normálnej tiažnice (Obrázok~\ref{fig:gravity_anomaly}).  Úlohu si výrazne 
-zjednodušíme linearizáciou problému a~využitím elipsoidickej aproximácie 
-z~Obrázku~\ref{fig:heights}.  Obe aproximácie sú postačujúce pre praktické 
-aplikácie \parencite{MoritzAdvancedGeodesy}.  Následne odvodíme vzťah medzi 
-oboma veličinami vo sférickej aproximácii.  Exaktné riešenie bolo nájdené 
+potenciálom, podobne ako sme našli vzťah medzi skalárnou poruchou tiažového 
+zrýchlenia a poruchovým potenciálom (rovnica~\ref{eq:dg_normals}).  Tentokrát 
+situáciu komplikuje rozdielna poloha bodov~$P$~a~$Q$, resp.~$P_0$~a~$Q_0$, 
+a~zakrivenie normálnej tiažnice (Obrázok~\ref{fig:gravity_anomaly}).  Úlohu si 
+výrazne zjednodušíme linearizáciou problému a~využitím elipsoidickej 
+aproximácie z~Obrázku~\ref{fig:heights}.  Obe aproximácie sú postačujúce pre 
+praktické aplikácie \parencite{MoritzAdvancedGeodesy}.  Následne odvodíme vzťah 
+medzi oboma veličinami vo sférickej aproximácii.  Exaktné riešenie bolo nájdené 
 v~prácach~\textcite{Meissl1971b} a~\textcite{Borre_chapter8} \parencite[pozri 
 tiež napríklad][]{MoritzAdvancedGeodesy,Janak2006}.
 
@@ -6001,9 +5993,10 @@ h}\right|_{Q_0} \, N\\
 \end{split}
 \end{equation}
 %
-Rovnica~(\ref{eq:Dg_T_tmp}) popisuje vzťah medzi poruchou a anomáliou tiažového 
-zrýchlenia.  Výšku geoidu nad referenčným elipsoidom~$N$ získame rozvojom 
-normálneho tiažového potenciálu~$U(P_0)$ do Taylorovho radu v~bode~$Q_0$,
+Rovnica~(\ref{eq:Dg_T_tmp}) popisuje vzťah medzi skalárnou poruchou a~skalárnou 
+anomáliou tiažového zrýchlenia v~elipsoidickej aproximácii.  Výšku geoidu nad 
+referenčným elipsoidom~$N$ získame rozvojom normálneho tiažového 
+potenciálu~$U(P_0)$ do Taylorovho radu v~bode~$Q_0$,
 %
 \begin{equation}
 \label{eq:U_P0}
@@ -6092,16 +6085,19 @@ sprievodiča~$\partial \slash \partial r$,
 T(P){.}
 \end{equation}
 %
-Keďže člen
+Člen
 %
 \begin{equation}
 \label{eq:Dg_fundamental_equation_earth_term}
 \left.\frac{1}{\gamma(Q)} \, \frac{\partial \gamma}{\partial r}\right|_Q
 \end{equation}
 %
-nadobúda malé hodnoty, môžeme pre jednoduchosť uvažovať normálne tiažové 
-zrýchlenie~$\gamma$ generované nerotujúcou homogénnou guľou.  Zo~vzťahu pre 
-potenciál nerotujúcej homogénnej gule~(\ref{eq:vg_sh_0degree}) potom vyplýva
+z~predošlej rovnice nadobúda malé hodnoty, preto môžeme pre jednoduchosť 
+uvažovať normálne tiažové zrýchlenie~$\gamma$ generované nerotujúcou homogénnou 
+guľou (alebo ekvivalentne hmotným bodom, pozri poznámku 
+v~Kapitole~\ref{sec:physical_meaning_of_spherical_harmonic_coefficients}).  
+Zo~vzťahu pre potenciál nerotujúcej homogénnej gule~(\ref{eq:vg_sh_0degree}) 
+potom vyplýva
 %
 \begin{align}
 U &= \frac{GM}{r}{,}\\
@@ -6111,7 +6107,8 @@ U &= \frac{GM}{r}{,}\\
 \frac{\partial \gamma}{\partial r} &= -2 \, \frac{GM}{r^3}{,}
 \end{align}
 %
-a tak môžeme prepísať~(\ref{eq:Dg_fundamental_equation_earth_term}) do tvaru
+a tak môžeme rovnicu~(\ref{eq:Dg_fundamental_equation_earth_term}) prepísať do 
+tvaru
 %
 \begin{equation}
 \left.\frac{1}{\gamma(Q)} \, \frac{\partial \gamma}{\partial r}\right|_Q 
@@ -6134,20 +6131,20 @@ pričom sme pre zjednodušenie využili približnú rovnosť
 T(P){.}
 \end{equation}
 
-Sférická aproximácia anomálie a~poruchy tiažového zrýchlenia spôsobuje chybu 
-v~určení výšky geoidu nad referenčným elipsoidom~$N$ zhruba na úrovni $0.003 \, 
-N$ \parencite{MoritzPhysicalGeodesy}.  Pri dosahovaných hodnotách $N$ zhruba od 
-$-100$ do $100$~m tak ide o~chybu menšiu ako 1~m v~určení geoidu.  Pre presný 
-výpočet geoidu tak už v~súčasnosti nie je sférická aproximácia anomálie 
-a~poruchy tiažového zrýchlenia postačujúca.
+Sférická aproximácia skalárnej anomálie a~skalárnej poruchy tiažového 
+zrýchlenia spôsobuje chybu v~určení výšky geoidu nad referenčným elipsoidom~$N$ 
+zhruba na úrovni $0.003 \, N$ \parencite{MoritzPhysicalGeodesy}.  Pri 
+dosahovaných hodnotách $N$ zhruba od $-100$ do $100$~m tak ide o~chybu v~určení 
+geoidu dosahujúcu $1\ \mathrm{m}$.  Pre presný výpočet geoidu tak už sférická 
+aproximácia v~súčasnosti nie je postačujúca.
 
 
 \subsection{Sférický harmonický rozvoj anomálie tiažového zrýchlenia}
 
 Presný rozvoj anomálie tiažového zrýchlenia do radu sférických harmonických 
 funkcií je kvôli zložitosti~jej definície náročný \parencite[pozri 
-napríklad][]{Barthelmes2013}.  Uvedieme preto iba rozvoj vo sférickej 
-aproximácii.  Dosadením~(\ref{eq:t_sh}) 
+napríklad][]{Barthelmes2013}.  Uvedieme preto iba rozvoj skalárnej anomálie 
+tiažového zrýchlenia vo sférickej aproximácii.  Dosadením~(\ref{eq:t_sh}) 
 do~(\ref{eq:Dg_fundamental_equation_earth_sph}) získame
 %
 \begin{equation}
@@ -6349,8 +6346,7 @@ medzi skutočnou zvislicou~$z_W^{P_0}$ prechádzajúcou bodom~$P_0$ na povrchu
 geoidu a~normálou k~elipsoidu~$n_e^{P_0}$ prechádzajúcou bodom~$P_0$.
 
 \item \emph{Gravimetrická zvislicová odchýlka}~$\Theta^\mathrm{grav}$ je uhol 
-medzi vektorom skutočného tiažového zrýchlenia~$\vec g(P)$ v~bode~$P$ 
-a~vektorom normálneho tiažového zrýchlenia~$\boldsymbol\gamma(P)$ v~bode~$P$ 
+medzi vektormi~$\vec g(P)$ a~$\boldsymbol\gamma(P)$ v~bode~$P$ 
 (Obrázok~\ref{fig:gravity_disturbance}).\footnote{Uhol medzi vektormi~$\vec 
 g(P)$ a~$\boldsymbol\gamma(Q)$ (pozri Obrázok~\ref{fig:gravity_anomaly}) je 
 vzhľadom na malé zakrivenie normálnej tiažnice a~vzhľadom na krátku vzdialenosť 
@@ -6379,17 +6375,14 @@ v~práci \textcite{Pick2000}.}  Rovnobežným posunutím takéhoto súradnicové
 systému do bodu~$P$, v~ktorom určujeme zvislicovú odchýlku, získame situáciu 
 znázornenú na Obrázku~\ref{fig:deflections_unit_sphere}.
 
-Zvislicovú odchýlku je možné matematicky popísať rozličnými spôsobmi, z~ktorých 
-dva sú obzvlášť výhodné (Obrázok~\ref{fig:deflections_unit_sphere}).  Jeden 
-využíva veľkosť uhlového vychýlenia~$\Theta$ medzi skutočnou zvislicou 
-a~referenčným smerom a~azimut~$\alpha$, ktorý udáva smer vychýlenia v~rovine 
-lokálneho horizontu.  Druhý prístup rozkladá zvislicovú odchýlku do dvoch 
-kolmých smerov.  Jedna zložka popisuje priemet zvislicovej odchýlky do~roviny 
-meridiánu; budeme ju označovať symbolom~$\xi$.  Druhá zložka popisuje priemet 
-zvislicovej odchýlky do~roviny prvého vertikálu; označovať ju budeme 
-symbolom~$\eta$.  Zvislicovú odchýlku preto môžeme chápať ako dvojrozmerný 
-vektor~$\boldsymbol\Theta = [\xi, \eta]^\top$, ktorý má svoju veľkosť~$\Theta 
-= \| \boldsymbol\Theta \|$ a~smer~$\alpha$.
+Zvislicovú odchýlku je možné popísať rozličnými spôsobmi, z~ktorých dva sú 
+obzvlášť výhodné (Obrázok~\ref{fig:deflections_unit_sphere}).  Jeden využíva 
+veľkosť uhlového vychýlenia~$\Theta$ medzi skutočnou zvislicou a~referenčným 
+smerom a~azimut~$\alpha$, ktorý udáva smer vychýlenia v~rovine lokálneho 
+horizontu.  Druhý prístup rozkladá zvislicovú odchýlku do dvoch kolmých smerov.  
+Jedna zložka popisuje priemet zvislicovej odchýlky do~roviny meridiánu; budeme 
+ju označovať symbolom~$\xi$.  Druhá zložka popisuje priemet zvislicovej 
+odchýlky do~roviny prvého vertikálu; označovať ju budeme symbolom~$\eta$.
 
 \begin{figure}[bt]
 \centering
@@ -6444,18 +6437,24 @@ získame azimut zvislicovej odchýlky
 (Obrázok~\ref{fig:deflections_unit_sphere}),
 %
 \begin{equation}
+\label{eq:deflection_azimuth}
 \tan\alpha = \frac{\cos\Phi \, \sin(\Lambda - \lambda)}{\cos\phi \, \sin\Phi 
 - \sin\phi \, \cos\Phi \, \cos(\Lambda - \lambda)}{.}
 \end{equation}
 %
-Pomocou známej hodnoty meridiánovej a~priečnej zložky zvislicovej odchýlky tiež 
-môžeme zvislicovú odchýlku premietnuť do ľubovoľného smeru, ktorý je daný 
-azimutom~$A$ (Obrázok~\ref{fig:deflections_projection}),
+Zvislicovú odchýlku môžeme chápať aj ako dvojrozmerný rovinný 
+vektor~$\boldsymbol\Theta = [\xi, \eta]^\top$, ktorý má veľkosť~$\Theta = \| 
+\boldsymbol\Theta \|$ (rovnica~\ref{eq:deflection_total}) a~smer~$\alpha$ 
+(rovnica~\ref{eq:deflection_azimuth}).  Pomocou známej hodnoty meridiánovej 
+a~priečnej zložky zvislicovej odchýlky tiež môžeme zvislicovú odchýlku 
+premietnuť do ľubovoľného smeru, ktorý je daný azimutom~$A$ 
+(Obrázok~\ref{fig:deflections_projection}),
 %
 \begin{equation}
 \label{eq:deflection_vareps}
 \varepsilon = \xi \, \cos A + \eta \, \sin A{.}
 \end{equation}
+
 
 \begin{figure}[bt]
 \centering
@@ -6683,8 +6682,8 @@ g_{y^\mathrm{s}}{,}
 \end{equation}
 %
 teda zložky gravimetrickej zvislicovej odchýlky~$\xi$ a~$\eta$ sú dané ako 
-záporný podiel horizontálnych zložiek vektora poruchy tiažového zrýchlenia 
-a~veľkosti vektora normálneho tiažového zrýchlenia.  Zo všeobecných 
+záporný podiel horizontálnych zložiek vektorovej poruchy tiažového zrýchlenia 
+a~veľkosti normálneho tiažového zrýchlenia.  Zo všeobecných 
 rovníc~(\ref{eq:xi_eta_eps}) a~(\ref{eq:deflection_eps3}) vyplýva rovnaký záver 
 aj pre rovnice~(\ref{eq:deflection_grav_nat}) a~(\ref{eq:deflection_grav_e}) 
 avšak s~použitím príslušného lokálneho súradnicového systému ($x$, $y$, $z$ 
@@ -6739,8 +6738,8 @@ horizontálnym deriváciami vo vzťahoch~(\ref{eq:deflection_grav_s_sph}).  Vid�
 tiež výraznú podobnosť medzi vrchnými dvoma mapami poruchy tiažového zrýchlenia 
 na Obrázku~\ref{fig:dg_ggm_grs80} a zvislicovej odchýlky na 
 Obrázku~\ref{fig:deflections_ggm}.  Táto podobnosť je daná úzkou súvislosťou 
-medzi horizontálnymi zložkami vektora poruchy tiažového zrýchlenia a~zložkami 
-zvislicovej odchýlky (pozri vzťahy~\ref{eq:dg_horizontal} 
+medzi horizontálnymi zložkami vektorovej poruchy tiažového zrýchlenia 
+a~zložkami zvislicovej odchýlky (pozri vzťahy~\ref{eq:dg_horizontal} 
 a~\ref{eq:deflection_grav_s_sph}).
 
 
@@ -6831,18 +6830,17 @@ v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  Okrajové úlohy budú toti�
 formulované tak, že informácia o~hustote Zeme bude zachytená vo vstupných 
 anomáliách, resp. poruchách tiažového zrýchlenia 
 (vzťahy~\ref{eq:int_operators}).  Tie v~praxi získavame gravimetrickým meraním 
-veľkosti vektora tiažového zrýchlenia 
-(Kapitola~\ref{sec:gravity_measurements}), ktoré túto informáciu implicitne 
-obsahuje (Kapitola~\ref{sec:gg}).  Pripomeňme, že na získanie poruchového 
-potenciálu sa sústredíme preto, lebo výpočet výšky geoidu nad referenčným 
-elipsoidom zo známeho poruchového potenciálu na geoide je jednoduchý 
-(vzťah~\ref{eq:N}).
+veľkosti tiažového zrýchlenia (Kapitola~\ref{sec:gravity_measurements}), ktoré 
+túto informáciu implicitne obsahuje (Kapitola~\ref{sec:gg}).  Pripomeňme, že na 
+získanie poruchového potenciálu sa sústredíme preto, lebo výpočet výšky geoidu 
+nad referenčným elipsoidom zo známeho poruchového potenciálu na geoide je 
+jednoduchý (vzťah~\ref{eq:N}).
 
 K~výpočtu geoidu zo zvislicových odchýlok pristúpime iným spôsobom.  Zatiaľ čo 
 poruchy a~anomálie tiažového zrýchlenia možno chápať skôr fyzikálne, pretože 
-priamo súvisia s~\emph{veľkosťou} vektora tiažového zrýchlenia, zvislicové 
-odchýlky možno vnímať geometricky (pozri Obrázok~\ref{fig:deflections}), 
-pretože sú spojené so \emph{smerom} vektora tiažového zrýchlenia 
+priamo súvisia s~\emph{veľkosťou} tiažového zrýchlenia, zvislicové odchýlky 
+možno vnímať geometricky (pozri Obrázok~\ref{fig:deflections}), pretože sú 
+spojené so \emph{smerom} tiažového zrýchlenia 
 \parencite{MoritzPhysicalGeodesy}.  Na výpočet geoidu zo zvislicových odchýlok 
 využijeme v~Kapitole~\ref{sec:geoid_astrogeodetic} práve geometrickú 
 interpretáciu zvislicových odchýlok.
@@ -6991,30 +6989,29 @@ je vzťah
 \begin{equation}
 \label{eq:stokes}
 T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(P, P') \, \Delta g(P') \, 
-\diff \sigma'{,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) \cup 
-\partial\Omega{,} \quad P' \in \partial\Omega{,}
+\diff \sigma(P'){,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) 
+\cup \partial\Omega{,} \quad P' \in \partial\Omega{,}
 \end{equation}
 %
-ktorý sa nazýva \emph{Stokesov integrál}.  Symbol~$R$ označuje polomer 
-referenčnej sféry (napríklad stredný či rovníkový polomer Zeme), $\sigma$ je 
-jednotková sféra, $\diff\sigma'$ je diferenciál jednotkovej sféry,
+ktorý sa nazýva \emph{Stokesov integrál}.  Symbol~$P(r, \varphi, \lambda)$ 
+označuje bod, v~ktorom je počítaný poruchový potenciál, $P'(R, \varphi', 
+\lambda')$ je bod na geoide (Obrázok~\ref{fig:surface_integral}), $R$~označuje 
+polomer referenčnej sféry (napríklad stredný či rovníkový polomer Zeme), 
+$\sigma$ je jednotková sféra, $\diff\sigma(P')$ je jej diferenciál v~bode~$P'$,
 %
 \begin{equation}
 \label{eq:diff_sigma}
-\diff\sigma' = \cos\varphi' \, \diff\varphi' \, \diff\lambda'{,}
+\diff\sigma(P') = \cos\varphi' \, \diff\varphi \, \diff\lambda{,}
 \end{equation}
 %
-$S$ je \emph{Stokesovo integračné jadro} (niekedy tiež nazývané \emph{Stokesova 
-funkcia}), $P(r, \varphi, \lambda)$ je bod, v~ktorom je počítaný poruchový 
-potenciál, a~$P'(R, \varphi', \lambda')$ je bod na geoide 
-(Obrázok~\ref{fig:surface_integral}).  Stokesovo integračné jadro~$S$ závisí 
-iba od vzájomnej polohy bodov~$P$ a~$P'$ \parencite{MoritzPhysicalGeodesy},
+a~$S$ je \emph{Stokesovo integračné jadro} (niekedy tiež nazývané 
+\emph{Stokesova funkcia}).  Stokesovo jadro~$S$ závisí iba od vzájomnej polohy 
+bodov~$P$ a~$P'$ \parencite{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:stokes_kernel_general}
 \begin{split}
-S(P, P') &= S(\underbrace{r, \varphi, \lambda}_{P}, \underbrace{R, \varphi', 
-\lambda'}_{P'}) = S(r, \psi)\\
+S(P, P') &= S(r, \psi)\\
 %
 &= \frac{2R}{\ell} + \frac{R}{r} - 3\frac{R \, \ell}{r^2} - \frac{R^2}{r^2} \, 
 \cos\psi\left( 5 + 3 \, \ln \frac{r - R \, \cos\psi + \ell}{2 \, r} \right){,}
@@ -7083,7 +7080,7 @@ operátora~$\mathcal{I}_{\Delta g}$ (pozri rovnicu~\ref{eq:int_operators}),
 \begin{equation}
 \label{eq:iDg}
 \mathcal{I}_{\Delta g}( \, \cdot \, )(P) = \frac{R}{4\pi} \, 
-\iint\limits_\sigma S(P, P') ( \, \cdot \, )(P') \, \diff\sigma'{,}
+\iint\limits_\sigma S(P, P') ( \, \cdot \, )(P') \, \diff\sigma(P'){,}
 \end{equation}
 %
 kde symbol $(\, \cdot \,)$ označuje funkciu, na ktorú je integrálny operátor 
@@ -7247,7 +7244,7 @@ zapisujeme nasledovne,
 \begin{equation}
 \label{eq:stokes_convolution}
 \frac{R}{4 \, \pi}(S * \Delta g)(P) = \frac{R}{4\pi} \, \iint\limits_\sigma 
-S(P, P') \, \Delta g(P') \, \diff\sigma'{,}
+S(P, P') \, \Delta g(P') \, \diff\sigma(P'){,}
 \end{equation}
 %
 kde symbol~$*$ označuje konvolučné násobenie funkcií~$S$ a~$\Delta g$.
@@ -7330,8 +7327,8 @@ rovnicu
 \begin{equation}
 \label{eq:hotine}
 T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} H(P, P') \, \delta g(P') \, 
-\diff \sigma'{,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) \cup 
-\partial\Omega{,} \quad P' \in \partial\Omega{.}
+\diff \sigma(P'){,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) 
+\cup \partial\Omega{,} \quad P' \in \partial\Omega{.}
 \end{equation}
 %
 Vzťah~(\ref{eq:hotine}) sa nazýva \emph{Hotineov integrál}.  Funkcia~$H$ sa 
@@ -7424,8 +7421,8 @@ napríklad][]{MoritzPhysicalGeodesy,SansoGeoidDetermination} má tvar
 \begin{equation}
 \label{eq:poisson}
 T(P) = \frac{R}{4\pi} \, \iint\limits_\sigma \Pi(P, P') \, T(P') \, 
-\diff\sigma'{,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) \cup 
-\partial\Omega{,} \quad P' \in \partial\Omega{,}
+\diff\sigma(P'){,} \quad P \in \left( \mathbb{R}^3 - \overline\Omega \right) 
+\cup \partial\Omega{,} \quad P' \in \partial\Omega{,}
 \end{equation}
 %
 a~nazýva sa \emph{Poissonov integrál}.  Symbol~$\Pi$ označuje \emph{Poissonovo 
@@ -7656,14 +7653,14 @@ gravitačné zrýchlenie, ktoré Zem udeľuje družici.  Matematickým odstráne
 všetkých modelovateľných či merateľných parciálnych zrýchlení, ktoré nie sú 
 spôsobené gravitačným poľom Zeme (medzi takéto zrýchlenia patria aj gravitačné 
 zrýchlenia udelené Mesiacom, Slnkom a~planétami Slnečnej sústavy), tak získame 
-dobrú aproximáciu vektora gravitačného zrýchlenia, ktoré Zem udeľuje družici.  
-Spôsobom podobným predošlému odseku tak vieme zo sekundového vzorkovania 
-vektora gravitačného zrýchlenia vypočítať pomocou rovníc (\ref{eq:vgx_sh}) 
-až~(\ref{eq:vgz_sh}) sférické harmonické koeficienty gravitačného poľa Zeme.  
-V~literatúre sa táto metóda nazýva \emph{metóda zrýchlení}.   V~našom regióne 
-sa jej dlhodobo venuje skupina pôsobiaca na Astronomickom ústave Akadémie vied 
-Českej republiky v~Ond\v{r}ejove.  Táto skupina vyvinula originálny variant 
-metódy zrýchlení dosahujúci prvotriednu kvalitu v~celosvetovom meradle 
+dobrú aproximáciu gravitačného zrýchlenia, ktoré Zem udeľuje družici.  Spôsobom 
+podobným predošlému odseku tak vieme zo sekundového vzorkovania gravitačného 
+zrýchlenia vypočítať pomocou rovníc (\ref{eq:vgx_sh}) až~(\ref{eq:vgz_sh}) 
+sférické harmonické koeficienty gravitačného poľa Zeme.  V~literatúre sa táto 
+metóda nazýva \emph{metóda zrýchlení}.   V~našom regióne sa jej dlhodobo venuje 
+skupina pôsobiaca na Astronomickom ústave Akadémie vied Českej republiky 
+v~Ond\v{r}ejove.  Táto skupina vyvinula originálny variant metódy zrýchlení 
+dosahujúci prvotriednu kvalitu v~celosvetovom meradle 
 \parencite{Bezdek2014,encarnacao2020}.  Okrem metódy zrýchlení existuje mnoho 
 ďalších prístupov, ktoré využívajú aj ďalšie typy družicových dát 
 \parencite[pozri][]{SeeberSatelliteGeodesy}.  Navyše, dokonca aj z~dráhy 
@@ -7952,7 +7949,7 @@ S(\psi)}{\diff\psi} \, \sin\alpha
 \end{equation}
 %
 sú singulárne a~homogénne, avšak nie sú izotropné (pozri 
-Kapitolu~\ref{sec:stokes_kernel}).  Neizotropnosť je spôsobená závislosťou od 
+Kapitolu~\ref{sec:stokes_kernel}).  Anizotropnosť je spôsobená závislosťou od 
 azimutu~$\alpha$ (Obrázok~\ref{fig:surface_integral}).
 
 Dodajme, že do rovnice~(\ref{eq:xi0_eta0_der}) môže byť dosadený Hotineov 
@@ -7989,8 +7986,8 @@ nemalé úsilie si vyžaduje opis už i~tak bežných geodetických konceptov, a
 sú lokálny horizont či smer zavesenej olovnice.  S~pokrokom vedy, výskumu 
 a~technológií sa výsledky výskumu tiažového poľa Zeme využívajú čoraz častejšie 
 aj v~bežnej geodetickej praxi, hoci to (opäť) nemusí byť na prvý pohlaď zrejmé.  
-Príkladom je určovanie výšky bodu na povrchu Zeme metódami GNSS.  Tie určujú 
-elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od povrchu 
+Príkladom je určovanie výšky bodu na povrchu Zeme metódami GNSS.  Tie umožňujú 
+určiť elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od povrchu 
 elipsoidu po daný bod.  Táto výška má geometrický charakter, ktorý nereflektuje 
 skutočné tiažové pole Zeme.  Práve z~tohto dôvodu nie je vhodná pre mnohé úlohy 
 geodézie, napríklad na vytýčenie \emph{vodorovnej} roviny v~teréne.  Potenciál 
@@ -8295,12 +8292,12 @@ r \, \cos\varphi \, \cos\lambda\\
 \end{equation}
 %
 predstavujú vektory v~smere osí $x^{\mathrm{s}}$, $y^{\mathrm{s}}$ 
-a $z^{\mathrm{s}}$ lokálneho karteziánskeho súradnicového systému.  Gradienty 
-$\partial f \slash \partial x$, $\partial f \slash \partial y$, $\partial 
-f \slash \partial z$ vyjadríme pomocou parciálnych derivácií $\partial f \slash 
-\partial \varphi$, $\partial f \slash \partial \lambda$, $\partial f \slash 
-\partial r$ vyriešením systému lineárnych rovníc~(\ref{eq:grad_cart2sph}) 
-použitím niektorej z~metód lineárnej algebry.
+a $z^{\mathrm{s}}$ lokálneho karteziánskeho súradnicového systému.  
+Derivácie~$\partial f \slash \partial x$, $\partial f \slash \partial y$, 
+$\partial f \slash \partial z$ vyjadríme pomocou parciálnych derivácií 
+$\partial f \slash \partial \varphi$, $\partial f \slash \partial \lambda$, 
+$\partial f \slash \partial r$ vyriešením systému lineárnych 
+rovníc~(\ref{eq:grad_cart2sph}) použitím niektorej z~metód lineárnej algebry.
 
 Obzvlášť jednoduchá metóda riešenia systému rovníc~(\ref{eq:grad_cart2sph}) je 
 nasledovná.  Normovaním vektorov~(\ref{eq:er_elat_elon}) ich veľkosťami získame 
@@ -8502,10 +8499,10 @@ je jednotkový vektor v~smere súradnicovej osi~$\xi_i$~a
 \chapter{Laplaceov operátor v~ortogonálnych súradnicových systémoch}
 \label{app:laplace_in_spherical_coordinates}
 
-V~Kapitole~\ref{app:laplace_in_spherical_system} je odvodený Laplaceov operátor 
-vo sférickom súradnicovom systéme (rovnica~\ref{eq:vg_laplace_sph}).  
+V~Kapitole~\ref{app:laplace_in_spherical_system} je odvodený tvar Laplaceovho 
+operátora vo sférickom súradnicovom systéme (rovnica~\ref{eq:vg_laplace_sph}).  
 V~Kapitole~\ref{app:laplace_in_orthogonal_coordinates} je odvodený všeobecný 
-tvar Laplaceovho operátora v~ortogonálnom súradnicovom systéme.  
+tvar Laplaceovho operátora v~ľubovoľnom ortogonálnom súradnicovom systéme.  
 Kapitola~\ref{app:laplace_in_spherical_system} je spracovaná 
 podľa~\textcite{MichelLectures} 
 a~Kapitola~\ref{app:laplace_in_orthogonal_coordinates} 
@@ -8515,87 +8512,88 @@ podľa~\textcite{SansoGeoidDetermination}.
 \section{Laplaceov operátor vo sférickom súradnicovom systéme}
 \label{app:laplace_in_spherical_system}
 
-Laplaceov operátor vo sférických súradniciach vyjadríme pomocou operátora 
-gradient~(\ref{eq:gradient_sph}), ktorý dosadíme do 
-rovnice~(\ref{eq:laplace_grad_grad_notation}) a~aplikujeme 
-v~zmysle~(\ref{eq:laplace_xyz}),
+S~využitím operátora gradient vo sférických 
+súradniciach~(\ref{eq:gradient_sph}) aplikujme v~zmysle 
+rovnice~(\ref{eq:laplace_grad_grad_notation}) Laplaceov operátor na dvakrát 
+diferencovateľnú funkciu~$f$,
 %
 \begin{align}
 \label{eq:grad_grad_sph}
-\nabla^2 &= \nabla \cdot \nabla\nonumber\\
+\nabla^2 f &= \nabla \cdot \nabla f\nonumber\\
 %
 &= \left( \vec e_1^\mathrm{s} \, \frac{1}{r} \, \frac{\partial}{\partial 
 \varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r \, \cos\varphi} \, 
 \frac{\partial}{\partial \lambda} + \vec e_3^\mathrm{s} 
 \frac{\partial}{\partial r} \right) \cdot \left( \vec e_1^\mathrm{s} \, 
-\frac{1}{r} \, \frac{\partial}{\partial \varphi} + \vec e_2^\mathrm{s} \, 
-\frac{1}{r \, \cos\varphi} \, \frac{\partial}{\partial \lambda} + \vec 
-e_3^\mathrm{s} \frac{\partial}{\partial r} \right)\nonumber\displaybreak[2]\\
+\frac{1}{r} \, \frac{\partial f}{\partial \varphi} + \vec e_2^\mathrm{s} \, 
+\frac{1}{r \, \cos\varphi} \, \frac{\partial f}{\partial \lambda} + \vec 
+e_3^\mathrm{s} \frac{\partial f}{\partial r} \right)\nonumber\displaybreak[2]\\
 %
 &= \frac{1}{r^2} \, \underbrace{\vec e^\mathrm{s}_1 \cdot \frac{\partial \vec 
 e^\mathrm{s}_1}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot (- \vec 
-e_3^\mathrm{s}) = 0} \, \frac{\partial}{\partial \varphi} + \frac{1}{r^2} \, 
+e_3^\mathrm{s}) = 0} \, \frac{\partial f}{\partial \varphi} + \frac{1}{r^2} \, 
 \underbrace{\vec e^\mathrm{s}_1 \cdot \vec e^\mathrm{s}_1}_{1} \, 
-\frac{\partial^2}{\partial \varphi^2} + \frac{1}{r^2 \, \cos\varphi} \, 
+\frac{\partial^2 f}{\partial \varphi^2} + \frac{1}{r^2 \, \cos\varphi} \, 
 \underbrace{\vec e_1^\mathrm{s} \cdot \frac{\partial \vec 
 e_2^\mathrm{s}}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot \vec 0 = 0} \, 
-\frac{1}{\partial \lambda}\nonumber\displaybreak[2]\\
+\frac{\partial f}{\partial \lambda}\nonumber\displaybreak[2]\\
+%
+&\phantom{={}}+ \frac{1}{r^2} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec 
+e_2^\mathrm{s}}_{0} \, \frac{\partial}{\partial \varphi} \left( 
+\frac{1}{\cos\varphi} \right) \, \frac{\partial f}{\partial \lambda} 
++ \frac{1}{r^2 \, \cos\varphi} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec 
+e_2^\mathrm{s}}_{0} \, \frac{\partial^2 f}{\partial \varphi \, \partial 
+\lambda} + \frac{1}{r} \, \underbrace{\vec e_1^\mathrm{s} \cdot \frac{\partial 
+\vec e_3^\mathrm{s}}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot \vec 
+e_1^\mathrm{s} = 1} \, \frac{\partial f}{\partial r}\nonumber\displaybreak[2]\\
 %
 &\phantom{={}}+ \frac{1}{r} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec 
-e_2^\mathrm{s}}_{0} \, \frac{1}{\partial \varphi} \left( \frac{1}{r \, 
-\cos\varphi} \right) \, \frac{\partial}{\partial \lambda} + \frac{1}{r^2 \, 
-\cos\varphi} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} 
-\, \frac{\partial^2}{\partial \varphi \, \partial \lambda} + \frac{1}{r} \, 
-\underbrace{\vec e_1^\mathrm{s} \cdot \frac{\partial \vec 
-e_3^\mathrm{s}}{\partial \varphi}}_{\vec e_1^\mathrm{s} \cdot \vec 
-e_1^\mathrm{s} = 1} \, \frac{\partial}{\partial r}\nonumber\displaybreak[2]\\
-%
-&\phantom{={}}+ \frac{1}{r} \, \underbrace{\vec e_1^\mathrm{s} \cdot \vec 
-e_3^\mathrm{s}}_{0} \, \frac{\partial^2}{\partial \varphi \, \partial r} 
+e_3^\mathrm{s}}_{0} \, \frac{\partial^2 f}{\partial \varphi \, \partial r} 
 + \frac{1}{r^2 \, \cos\varphi} \, \underbrace{\vec e_2^\mathrm{s} \cdot 
 \frac{\partial \vec e_1^\mathrm{s}}{\partial \lambda}}_{\vec e_2^\mathrm{s} 
-\cdot (-\sin\varphi \, \vec e_2^\mathrm{s}) = -\sin\varphi} \, 
-\frac{\partial}{\partial \varphi} + \frac{1}{r^2 \, \cos\varphi} \, 
-\underbrace{\vec e_2^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, 
-\frac{\partial^2}{\partial \varphi \, \partial \lambda}\displaybreak[2]\\
+\cdot (-\sin\varphi \, \vec e_2^\mathrm{s}) = -\sin\varphi} \, \frac{\partial 
+f}{\partial \varphi} + \frac{1}{r^2 \, \cos\varphi} \, \underbrace{\vec 
+e_2^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, \frac{\partial^2 f}{\partial 
+\varphi \, \partial \lambda}\displaybreak[2]\\
 %
 &\phantom{={}}+ \frac{1}{r^2 \, \cos^2\varphi} \, \underbrace{\vec 
 e_2^\mathrm{s} \cdot \frac{\partial \vec e_2^\mathrm{s}}{\partial \lambda}}_{0} 
-\, \frac{\partial}{\partial\lambda} + \frac{1}{r^2 \, \cos^2\varphi} \, 
+\, \frac{\partial f}{\partial\lambda} + \frac{1}{r^2 \, \cos^2\varphi} \, 
 \underbrace{\vec e_2^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{1} \, 
-\frac{\partial^2}{\partial\lambda^2} + \frac{1}{r \, \cos\varphi} \, 
+\frac{\partial^2 f}{\partial\lambda^2} + \frac{1}{r \, \cos\varphi} \, 
 \underbrace{\vec e_2^\mathrm{s} \cdot \frac{\partial \vec 
 e_3^\mathrm{s}}{\partial \lambda}}_{\vec e_2^\mathrm{s} \cdot (\cos\varphi \, 
-\vec e_2^\mathrm{s}) = \cos\varphi} \, \frac{\partial}{\partial 
+\vec e_2^\mathrm{s}) = \cos\varphi} \, \frac{\partial f}{\partial 
 r}\nonumber\displaybreak[2]\\
 %
 &\phantom{={}}+ \frac{1}{r \, \cos\varphi} \, \underbrace{\vec e_2^\mathrm{s} 
-\cdot \vec e_3^\mathrm{s}}_{0} \, \frac{\partial^2}{\partial \lambda \, 
+\cdot \vec e_3^\mathrm{s}}_{0} \, \frac{\partial^2 f}{\partial \lambda \, 
 \partial r} + \frac{1}{r} \, \underbrace{\vec e_3^\mathrm{s} \cdot 
 \frac{\partial \vec e_1^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} \cdot 
-\vec 0 = 0} \, \frac{\partial}{\partial \varphi} + \underbrace{\vec 
+\vec 0 = 0} \, \frac{\partial f}{\partial \varphi} + \underbrace{\vec 
 e_3^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, \frac{\partial}{\partial r} 
-\left( \frac{1}{r} \right) \, \frac{\partial}{\partial \varphi} 
+\left( \frac{1}{r} \right) \, \frac{\partial f}{\partial \varphi} 
 + \underbrace{\vec e_3^\mathrm{s} \cdot \vec e_1^\mathrm{s}}_{0} \, \frac{1}{r} 
-\, \frac{\partial^2}{\partial r \, \partial \varphi}\nonumber\displaybreak[2]\\
+\, \frac{\partial^2 f}{\partial r \, \partial 
+\varphi}\nonumber\displaybreak[2]\\
 %
 &\phantom{={}}+\frac{1}{r \, \cos\varphi} \, \underbrace{\vec e_3^\mathrm{s} 
 \cdot \frac{\partial \vec e_2^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} 
-\cdot \vec 0 = 0} \, \frac{\partial}{\partial \lambda} + \underbrace{\vec 
+\cdot \vec 0 = 0} \, \frac{\partial f}{\partial \lambda} + \underbrace{\vec 
 e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, \frac{\partial}{\partial r} 
-\left( \frac{1}{r \, \cos\varphi} \right) \, \frac{\partial}{\partial \lambda} 
-+ \underbrace{\vec e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, \frac{1}{r 
-\, \cos\varphi} \, \frac{\partial^2}{\partial r \, \partial 
+\left( \frac{1}{r \, \cos\varphi} \right) \, \frac{\partial f}{\partial 
+\lambda} + \underbrace{\vec e_3^\mathrm{s} \cdot \vec e_2^\mathrm{s}}_{0} \, 
+\frac{1}{r \, \cos\varphi} \, \frac{\partial^2 f}{\partial r \, \partial 
 \lambda}\nonumber\displaybreak[2]\\
 %
 &\phantom{={}}+ \underbrace{\vec e_3^\mathrm{s} \cdot \frac{\partial \vec 
 e_3^\mathrm{s}}{\partial r}}_{\vec e_3^\mathrm{s} \cdot \vec 0 = 0} \, 
-\frac{\partial}{\partial r} + \underbrace{\vec e_3^\mathrm{s} \cdot \vec 
-e_3^\mathrm{s}}_{1} \, \frac{\partial^2}{\partial r^2}{.}\nonumber
+\frac{\partial f}{\partial r} + \underbrace{\vec e_3^\mathrm{s} \cdot \vec 
+e_3^\mathrm{s}}_{1} \, \frac{\partial^2 f}{\partial r^2}{.}\nonumber
 \end{align}
 %
 Jednotkové vektory $\vec e_1^\mathrm{s}$, $\vec e_2^\mathrm{s}$ a~$\vec 
-e_3^\mathrm{s}$ vystupujúce v~predošlej rovnici sú dané 
+e_3^\mathrm{s}$ z~predošlej rovnice sú dané 
 vzťahmi~(\ref{eq:er_elat_elon_unit}).  Ich derivácie podľa sférických súradníc 
 majú nasledovný tvar,
 %
@@ -8671,37 +8669,17 @@ majú nasledovný tvar,
 \end{equation}
 %
 Kombináciou rovníc~(\ref{eq:grad_grad_sph}) 
-a~(\ref{eq:er_elat_elon_unit_derivatives}) získame Laplaceov operátor vo 
-sférických súradniciach,
+a~(\ref{eq:er_elat_elon_unit_derivatives}) získame tvar Laplaceovho operátora 
+vo sférických súradniciach,
 %
 \begin{equation}
 \label{eq:laplace_sph}
-\nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
-\frac{\partial}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
-\frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial}{\partial 
+\nabla^2 f = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2
+\frac{\partial f}{\partial r} \right) + \frac{1}{r^2 \, \cos\varphi}
+\frac{\partial}{\partial \varphi} \left( \cos\varphi \frac{\partial f}{\partial 
 \varphi} \right) + \frac{1}{r^2 \,
-\cos^2\varphi}\frac{\partial^2}{\partial \lambda^2}{.}
+\cos^2\varphi}\frac{\partial^2 f}{\partial \lambda^2}{.}
 \end{equation}
-
-\subsubsection{Poznámka o~nesprávnej interpretácii vektorového zápisu operátora 
-gradient}
-
-Vráťme sa k~diskusii o~Laplaceovom operátore 
-z~Kapitoly~\ref{sec:laplace_equation_cart}.  V~predchádzajúcej časti sme 
-ukázali, že správna aplikácia operátora gradient~(\ref{eq:gradient_sph}) 
-v~rovnici~(\ref{eq:laplace_grad_grad_notation}) vedie k~Laplaceovmu operátoru 
-vo sférických súradniciach~(\ref{eq:laplace_sph}).  \emph{Nesprávnym} použitím 
-operátora~(\ref{eq:gradient_sph}), teda vynásobením zodpovedajúcich si prvkov 
-vektora na pravej strane rovnice~(\ref{eq:gradient_sph}) a~následným sčítaním 
-získaných súčinov, dostaneme operátor
-%
-\begin{equation}
-\frac{1}{r^2} \frac{\partial^2}{\partial \varphi^2} + \frac{1}{r^2 \, 
-\cos^2\varphi} \frac{\partial^2}{\partial \lambda^2} 
-+ \frac{\partial^2}{\partial r^2}{,}
-\end{equation}
-%
-čo však \emph{nie je} Laplaceov operátor vo sférických súradniciach.
 
 
 
@@ -8712,29 +8690,29 @@ získaných súčinov, dostaneme operátor
 Odvodenie z~Kapitoly~\ref{app:laplace_in_spherical_system} možno zovšeobecniť 
 na ľubovoľný ortogonálny súradnicový systém $\xi_1$, $\xi_2$, $\xi_3$.
 
-Všeobecný tvar Laplaceovho operátora získame pomocou 
-rovníc~(\ref{eq:laplace_grad_grad_notation}) 
+Nech~$f$ je dvakrát diferencovateľná funkcia.  Všeobecný tvar Laplaceovho 
+operátora získame pomocou rovníc~(\ref{eq:laplace_grad_grad_notation}) 
 a~(\ref{eq:grad_orthogonal_system}),
 %
 \begin{equation}
 \label{eq:laplace_orthogonal_system_1}
 \begin{split}
-\nabla^2 &= \nabla \cdot \nabla = \left( \sum_{i = 1}^3 \frac{\hat{\vec 
+\nabla^2 f &= \nabla \cdot \nabla f = \left( \sum_{i = 1}^3 \frac{\hat{\vec 
 e}_i}{\| \hat{\vec e}_i \|^2} \, \frac{\partial}{\partial \xi_i}\right) \cdot 
 \left( \sum_{j = 1}^3 \frac{\hat{\vec e}_j}{\| \hat{\vec e}_j \|^2} \, 
-\frac{\partial}{\partial \xi_j}
+\frac{\partial f}{\partial \xi_j}
 \right)\\
 %
 &= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 \, \| 
 \hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
-e}_j}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}
+e}_j}{\partial \xi_i} \, \frac{\partial f}{\partial \xi_j}
 - 2\, \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{\hat{\vec e}_i \cdot \hat{\vec 
 e}_j}{\| \hat{\vec e}_i \|^2 \, \|\hat{\vec e}_j \|^3} \, \frac{\partial \| 
-\hat{\vec e}_j \|}{\partial \xi_i} \, \frac{\partial}{\partial \xi_j}\\
+\hat{\vec e}_j \|}{\partial \xi_i} \, \frac{\partial f}{\partial \xi_j}\\
 %
 &\phantom{={}}+ \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{\hat{\vec e}_i \cdot 
 \hat{\vec e}_j}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_j \|^2} \, 
-\frac{\partial^2}{\partial \xi_i \, \partial \xi_j}{.}
+\frac{\partial^2 f}{\partial \xi_i \, \partial \xi_j}{.}
 \end{split}
 %
 \end{equation}
@@ -8772,14 +8750,14 @@ rovnica~(\ref{eq:laplace_orthogonal_system_1}) do tvaru
 \begin{equation}
 \label{eq:laplace_orthogonal_system_2}
 \begin{split}
-\nabla^2 &= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 \, 
-\| \hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
-e}_i}{\partial \xi_j} \, \frac{\partial}{\partial \xi_j}
+\nabla^2 f &= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 
+\, \| \hat{\vec e}_j \|^2} \, \hat{\vec e}_i \cdot \frac{\partial \hat{\vec 
+e}_i}{\partial \xi_j} \, \frac{\partial f}{\partial \xi_j}
 - 2\, \sum_{j = 1}^{3} \frac{1}{\|\hat{\vec e}_j \|^3} \, \frac{\partial \| 
-\hat{\vec e}_j \|}{\partial \xi_j} \, \frac{\partial}{\partial \xi_j}\\
+\hat{\vec e}_j \|}{\partial \xi_j} \, \frac{\partial f}{\partial \xi_j}\\
 %
 &\phantom{={}}+ \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|^2} \, 
-\frac{\partial^2}{\partial \xi_j^2}{.}
+\frac{\partial^2 f}{\partial \xi_j^2}{.}
 \end{split}
 %
 \end{equation}
@@ -8790,46 +8768,46 @@ záver použijeme výsledky oboch úprav, čím získame výsledný tvar Laplace
 operátora v~ľubovoľnom ortogonálnom súradnicovom systéme~$\xi_1$, $\xi_2$, 
 $\xi_3$.
 
-Nech $j = 1$.  Prvé dva členy rovnice~(\ref{eq:laplace_orthogonal_system_2}) 
-potom môžeme upraviť nasledovne,
-%
-\begin{equation}
-\label{eq:laplace_orthogonal_system_two_terms}
-\begin{split}
-&\sum_{i = 1}^{3} \frac{1}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_1 \|^2} \, 
-\hat{\vec e}_i \cdot \frac{\partial \hat{\vec e}_i}{\partial \xi_1} \, 
-\frac{\partial}{\partial \xi_1}
-- 2\, \frac{1}{\|\hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
-\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1}\\
-%
-&= \sum_{i = 1}^{3} \frac{1}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_1 \|^2} 
-\, \| \hat{\vec e}_i \| \, \frac{\partial \| \hat{\vec e}_i \|}{\partial \xi_1} 
-\, \frac{\partial}{\partial \xi_1}
-- 2\, \frac{1}{\|\hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
-\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1}\\
-%
-&= -\frac{1}{\| \hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
-\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1} + \frac{1}{\| \hat{\vec 
-e}_1 \|^2 \, \| \hat{\vec e}_2 \|} \, \frac{\partial \| \hat{\vec e}_2 
-\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1} + \frac{1}{\| \hat{\vec 
-e}_1 \|^2 \, \| \hat{\vec e}_3 \|} \, \frac{\partial \| \hat{\vec e}_3 
-\|}{\partial \xi_1} \, \frac{\partial}{\partial \xi_1}\\
-%
-&= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| \hat{\vec e}_3 
-\|} \, \frac{\partial}{\partial \xi_1} \, \left( \frac{\| \hat{\vec e}_2 \| \, 
-\| \hat{\vec e}_3 \|}{\| \hat{\vec e}_1 \|} \right) \, \frac{\partial}{\partial 
-\xi_1}{.}
-\end{split}
-\end{equation}
-%
-V rovnici~(\ref{eq:laplace_orthogonal_system_two_terms}) sme využili vzťah
+Nech $j = 1$.  S~využitím vzťahu
 %
 \begin{equation}
 \hat{\vec e}_i \cdot \frac{\partial \hat{\vec e}_i}{\partial \xi_j} 
 = \frac{1}{2} \, \frac{\partial}{\partial \xi_j} \, \left( \hat{\vec e}_i \cdot 
 \hat{\vec e}_i \right) = \frac{1}{2} \, \frac{\partial \| \hat{\vec e}_i 
 \|^2}{\partial \xi_j} = \| \hat{\vec e}_i \| \, \frac{\partial \| \hat{\vec 
-e}_i \|}{\partial \xi_j}{.}
+e}_i \|}{\partial \xi_j}
+\end{equation}
+%
+môžeme upraviť prvé dva členy rovnice~(\ref{eq:laplace_orthogonal_system_2}) 
+nasledovne,
+%
+\begin{equation}
+\label{eq:laplace_orthogonal_system_two_terms}
+\begin{split}
+&\sum_{i = 1}^{3} \frac{1}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_1 \|^2} \, 
+\hat{\vec e}_i \cdot \frac{\partial \hat{\vec e}_i}{\partial \xi_1} \, 
+\frac{\partial f}{\partial \xi_1}
+- 2\, \frac{1}{\|\hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
+\|}{\partial \xi_1} \, \frac{\partial f}{\partial \xi_1}\\
+%
+&= \sum_{i = 1}^{3} \frac{1}{\| \hat{\vec e}_i \|^2 \, \| \hat{\vec e}_1 \|^2} 
+\, \| \hat{\vec e}_i \| \, \frac{\partial \| \hat{\vec e}_i \|}{\partial \xi_1} 
+\, \frac{\partial f}{\partial \xi_1}
+- 2\, \frac{1}{\|\hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
+\|}{\partial \xi_1} \, \frac{\partial f}{\partial \xi_1}\\
+%
+&= -\frac{1}{\| \hat{\vec e}_1 \|^3} \, \frac{\partial \| \hat{\vec e}_1 
+\|}{\partial \xi_1} \, \frac{\partial f}{\partial \xi_1} + \frac{1}{\| 
+\hat{\vec e}_1 \|^2 \, \| \hat{\vec e}_2 \|} \, \frac{\partial \| \hat{\vec 
+e}_2 \|}{\partial \xi_1} \, \frac{\partial f}{\partial \xi_1} + \frac{1}{\| 
+\hat{\vec e}_1 \|^2 \, \| \hat{\vec e}_3 \|} \, \frac{\partial \| \hat{\vec 
+e}_3 \|}{\partial \xi_1} \, \frac{\partial f}{\partial \xi_1}\\
+%
+&= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| \hat{\vec e}_3 
+\|} \, \frac{\partial}{\partial \xi_1} \, \left( \frac{\| \hat{\vec e}_2 \| \, 
+\| \hat{\vec e}_3 \|}{\| \hat{\vec e}_1 \|} \right) \, \frac{\partial 
+f}{\partial \xi_1}{.}
+\end{split}
 \end{equation}
 %
 Použitím substitúcie
@@ -8847,7 +8825,7 @@ do konečného tvaru
 \begin{equation}
 \label{eq:laplace_orthogonal_system_two_terms_final}
 \frac{1}{E} \, \sum_{j = 1}^3 \left( \frac{\partial}{\partial \xi_j} \, 
-\frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial}{\partial \xi_j}{.}
+\frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial f}{\partial \xi_j}{.}
 \end{equation}
 
 Tretí člen rovnice~(\ref{eq:laplace_orthogonal_system_2}) upravíme pomocou 
@@ -8855,9 +8833,9 @@ vzťahu~(\ref{eq:e_laplace}),
 %
 \begin{equation}
 \label{eq:laplace_orthogonal_system_third_term}
-\sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|^2} \, \frac{\partial^2}{\partial 
+\sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_j \|^2} \, \frac{\partial^2 f}{\partial 
 \xi_j^2} = \frac{1}{E} \, \sum_{j = 1}^3 \frac{E}{\| \hat{\vec e}_j \|^2} \, 
-\frac{\partial^2}{\partial \xi_j^2}{.}
+\frac{\partial^2 f}{\partial \xi_j^2}{.}
 \end{equation}
 
 Kombináciou~(\ref{eq:laplace_orthogonal_system_two_terms_final}) 
@@ -8867,40 +8845,40 @@ Laplaceovho operátora v~ortogonálnom súradnicovom systéme,
 \begin{equation}
 \label{eq:laplace_orthogonal_system_final}
 \begin{split}
-\nabla^2 &= \frac{1}{E} \, \sum_{j = 1}^3 \left( \frac{\partial}{\partial 
-\xi_j} \, \frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial}{\partial 
+\nabla^2 f &= \frac{1}{E} \, \sum_{j = 1}^3 \left( \frac{\partial}{\partial 
+\xi_j} \, \frac{E}{\| \hat{\vec e}_j \|^2}\right) \, \frac{\partial f}{\partial 
 \xi_j} + \frac{1}{E} \, \sum_{j = 1}^3 \, \frac{E}{\| \hat{\vec e}_j \|^2} \, 
-\frac{\partial^2}{\partial \xi_j^2}\\
+\frac{\partial^2 f}{\partial \xi_j^2}\\
 %
 &= \frac{1}{E} \, \sum_{j = 1}^3 \frac{\partial}{\partial \xi_j} \left( 
-\frac{E}{\| \hat{\vec e}_j  \|^2} \, \frac{\partial}{\partial \xi_j} \right){.}
+\frac{E}{\| \hat{\vec e}_j  \|^2} \, \frac{\partial f}{\partial \xi_j} 
+\right){.}
 \end{split}
 \end{equation}
 %
 Dosadením substitúcie~(\ref{eq:e_laplace}) 
-do~(\ref{eq:laplace_orthogonal_system_final}) dostaneme tvar Laplaceovho 
-operátora, s~ktorým sa možno často stretnúť v~literatúre 
-\parencite[napríklad][]{MoritzPhysicalGeodesy},
+do~(\ref{eq:laplace_orthogonal_system_final}) dostaneme tvar, s~ktorým sa možno 
+často stretnúť v~literatúre \parencite[napríklad][]{MoritzPhysicalGeodesy},
 %
 \begin{equation}
 \label{eq:laplace_orthogonal_system_final_2}
 \begin{split}
-\nabla^2 &= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| 
+\nabla^2 f &= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| 
 \hat{\vec e}_3 \|} \, \left[ \frac{\partial}{\partial \xi_1} \left( \frac{\| 
 \hat{\vec e}_2 \| \, \| \hat{\vec e}_3 \|}{\| \hat{\vec e}_1 \|} \, 
-\frac{\partial}{\partial \xi_1} \right) + \frac{\partial}{\partial \xi_2} 
+\frac{\partial f}{\partial \xi_1} \right) + \frac{\partial}{\partial \xi_2} 
 \left( \frac{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_3 \|}{\| \hat{\vec e}_2 
-\|} \, \frac{\partial}{\partial \xi_2} \right) \right.\\
+\|} \, \frac{\partial f}{\partial \xi_2} \right) \right.\\
 %
 &\phantom{={}}\left. + \frac{\partial}{\partial \xi_3} \left( \frac{\| 
 \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \|}{\| \hat{\vec e}_3 \|} \, 
-\frac{\partial}{\partial \xi_3} \right)\right]{.}
+\frac{\partial f}{\partial \xi_3} \right)\right]{.}
 \end{split}
 \end{equation}
 
 Z~rovnice~(\ref{eq:laplace_orthogonal_system_final_2}) vidíme, že na získanie 
-Laplaceovho operátora v~ortogonálnom súradnicovom systéme postačuje vypočítať 
-veľkosti vektorov $\hat{\vec e}_i$ a~dosadiť ich do 
+Laplaceovho operátora v~ortogonálnom súradnicovom systéme teda postačuje 
+vypočítať veľkosti vektorov~$\hat{\vec e}_i$ a~dosadiť ich do 
 vzťahu~(\ref{eq:laplace_orthogonal_system_final_2}).
 
 
@@ -8936,8 +8914,8 @@ harmonickú funkciu stupňa $n = 0, 1, 2, \dots$ a~rádu $k = -n, \dots, n$
 počítané funkciou \texttt{lpmv} z~Python modulu \texttt{scipy}.  Táto funkcia
 počíta Legendreove funkcie $P_n^{|k|}(\sin\varphi)$, v~ktorých je
 použitý Condonov--Shortlyho fázový faktor (pozri 
-Kapitolu~\ref{sec:legendre_functions_cs_factor}).  Vo fyzikálnej geodézii sa 
-tento faktor väčšinou nepoužíva, preto je vo výpočte odstránený.
+Kapitolu~\ref{sec:legendre_functions}).  Vo fyzikálnej geodézii sa tento faktor 
+väčšinou nepoužíva, preto je vo výpočte odstránený.
 
 Sférické harmonické funkcie je možné vypočítať a~zobraziť aj pomocou služby na 
 stránke ICGEM (pre link pozri poznámku pod čiarou~\ref{fn:icgem_link} na 

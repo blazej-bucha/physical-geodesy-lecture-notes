@@ -110,27 +110,42 @@ do
     gmt grd2cpt $grdfile -C$colorscale -S$colorscale_lims -Z > $cptfile
 
 
-    # Plot the grid
-    gmt grdimage $grdfile \
-                 -C$cptfile \
-                 -R$region \
-                 -J$proj \
-                 -B$geogrd \
-                 -Ishading.int \
-                 -K \
-                 -X0.6c \
-                 -Y1.2c \
-                 -E200 \
-                 -Q \
-                 -P > $outfile.ps
+    if [[ "${file: -6}" == "-z.txt" ]]; then
+        # Plot the grid
+        gmt grdimage $grdfile \
+                     -C$cptfile \
+                     -R$region \
+                     -J$proj \
+                     -B$geogrd \
+                     -Ishading.int \
+                     -K \
+                     -X0.6c \
+                     -Y1.2c \
+                     -E200 \
+                     -Q \
+                     -P > $outfile.ps
 
-    # Add the colorbar
-    gmt psscale -C$cptfile \
-                -D$colorbar_loc$colorbar_pos \
-                -G$colorbar_minmax \
-                -B$colorbar_step/:$colorbar_label: \
-                -Y-0.0c \
-                -O >> $outfile.ps
+        # Add the colorbar
+        gmt psscale -C$cptfile \
+                    -D$colorbar_loc$colorbar_pos \
+                    -G$colorbar_minmax \
+                    -B$colorbar_step/:$colorbar_label: \
+                    -Y-0.0c \
+                    -O >> $outfile.ps
+    else
+        # Plot the grid
+        gmt grdimage $grdfile \
+                     -C$cptfile \
+                     -R$region \
+                     -J$proj \
+                     -B$geogrd \
+                     -Ishading.int \
+                     -X0.6c \
+                     -Y1.2c \
+                     -E200 \
+                     -Q \
+                     -P > $outfile.ps
+    fi
 
 
     # Convert the output "ps" file to the "pdf" format.
