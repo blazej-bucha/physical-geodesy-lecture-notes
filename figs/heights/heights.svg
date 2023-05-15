@@ -1847,17 +1847,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="222.37529"
-     inkscape:cy="220.31553"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="197.29622"
+     inkscape:cy="199.35447"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="3828"
-     inkscape:window-height="2087"
+     inkscape:window-width="3840"
+     inkscape:window-height="2160"
      inkscape:window-x="0"
-     inkscape:window-y="30"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-text-baseline="false"
      inkscape:snap-object-midpoints="true"
@@ -1908,7 +1908,7 @@
        d="M 3.7003106,67.361925 C 14.471082,64.415868 27.385525,62.884663 42.405583,62.884663 c 15.469586,0 29.992538,1.980382 40.898449,5.086675"
        sodipodi:nodetypes="csc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 44.249867,1.3163227 c 0,0 0,61.5772993 0,61.5772993"
        id="path1663"
        inkscape:path-effect="#path-effect1665"
@@ -1960,7 +1960,7 @@
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.15;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 44.249866,16.108742 c 0,0 -7.698722,0 -7.698722,0"
        id="path1865-8-9"
-       inkscape:original-d="m 44.249866,16.108742 -7.698722,0"
+       inkscape:original-d="M 44.249866,16.108742 H 36.551144"
        inkscape:path-effect="#path-effect2621"
        sodipodi:nodetypes="cc" />
     <path
@@ -2171,14 +2171,14 @@
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
-       x="31.598574"
+       x="30.703405"
        y="38.762112"
        id="text3665-0-1-4-0"><tspan
          sodipodi:role="line"
-         x="31.598574"
+         x="30.703405"
          y="38.762112"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
-         id="tspan1508-6-9-90">$H_o$</tspan></text>
+         id="tspan1508-6-9-90">$H^\mathrm{O}$</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.264583"
@@ -2189,6 +2189,6 @@
          x="52.796532"
          y="40.413494"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.264583"
-         id="tspan1508-6-9-90-7">$H_n$</tspan></text>
+         id="tspan1508-6-9-90-7">$H^\mathrm{N}$</tspan></text>
   </g>
 </svg>

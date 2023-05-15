@@ -105,7 +105,7 @@
       <path
          transform="scale(-0.6)"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:#030000;fill-opacity:1;fill-rule:evenodd;stroke:#030000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path6959" />
     </marker>
     <marker
@@ -1702,9 +1702,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="32"
-     inkscape:cx="189.13196"
-     inkscape:cy="98.833352"
+     inkscape:zoom="8"
+     inkscape:cx="218.44783"
+     inkscape:cy="290.05929"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
@@ -2082,21 +2082,6 @@
          y="34.385838"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
          id="tspan1508-6-4-1-5-4-4">$\Theta^\textrm{Molodenskij}$</tspan></text>
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke"
-       d="m 36.21563,74.561538 c 0.158315,-0.0059 0.317373,-0.0088 0.477123,-0.0088 0.884766,0 1.748321,0.09081 2.581863,0.263599 0.102816,0.02131 0.205175,0.04387 0.307061,0.06767"
-       id="path4747"
-       sodipodi:nodetypes="cssc" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker5230);paint-order:fill markers stroke"
-       d="m 39.4843,74.861671 c 1.075212,0.222895 1.954677,0.551997 2.796268,1.005042"
-       id="path5208"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#marker5110);paint-order:fill markers stroke"
-       d="m 33.545918,74.912795 c 0.828212,-0.235327 1.647112,-0.360086 2.684193,-0.360086"
-       id="path5496"
-       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
@@ -2108,6 +2093,21 @@
          y="76.400383"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.10763px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
          id="tspan1508-6-4-1-5-4-4-0">$\Theta^\textrm{Pizzetti}$</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke"
+       d="m 36.21563,74.561538 c 0.158315,-0.0059 0.317373,-0.0088 0.477123,-0.0088 0.884766,0 1.748321,0.09081 2.581863,0.263599 0.102816,0.02131 0.205175,0.04387 0.307061,0.06767"
+       id="path4747"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker5230);paint-order:fill markers stroke"
+       d="m 39.412166,74.845651 c 1.075212,0.222895 1.954677,0.551997 2.796268,1.005042"
+       id="path5208"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#marker5110);paint-order:fill markers stroke"
+       d="m 33.685756,74.916825 c 0.828212,-0.235327 1.647112,-0.360086 2.684193,-0.360086"
+       id="path5496"
+       sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
@@ -2121,33 +2121,33 @@
          id="tspan1508-6-4-1-1">$n_e^{P_0}$</tspan></text>
     <path
        id="path6245"
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
        d="m 54.625615,12.048464 c 0.341256,-0.02011 0.685178,-0.03031 1.031482,-0.03031 2.920355,0 5.671303,0.72532 8.082526,2.005641"
        sodipodi:nodetypes="csc" />
     <path
        id="path6254"
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker6264);paint-order:fill markers stroke"
-       d="m 63.544846,13.921961 c 0.887105,0.471038 1.604372,0.951435 2.28774,1.509393"
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker6264);paint-order:fill markers stroke"
+       d="m 63.50876,13.90344 c 0.887105,0.471038 1.604372,0.951435 2.28774,1.509393"
        sodipodi:nodetypes="cc" />
     <path
        id="path6524"
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#marker1847);paint-order:fill markers stroke"
-       d="m 52.382948,12.290784 c 0.882039,-0.179128 1.787454,-0.272634 2.836007,-0.272634"
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#marker1847);paint-order:fill markers stroke"
+       d="m 52.442932,12.294849 c 0.882039,-0.179128 1.787454,-0.272634 2.836007,-0.272634"
        sodipodi:nodetypes="cc" />
     <path
        id="path6948"
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:fill markers stroke"
        d="m 57.138835,39.009366 c -0.342314,0.03797 -0.690201,0.05746 -1.04264,0.05746 -0.663262,0 -1.3104,-0.06904 -1.934619,-0.20032 -0.896302,-0.188505 -1.74535,-0.505341 -2.527033,-0.930395 -0.317832,-0.172827 -0.624526,-0.363544 -0.918732,-0.570801"
        sodipodi:nodetypes="csssc" />
     <path
        id="path6951"
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker7217);paint-order:fill markers stroke"
-       d="m 51.119643,37.634426 c -0.793668,-0.512267 -1.658091,-1.161332 -2.19271,-1.757289"
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#marker7217);paint-order:fill markers stroke"
+       d="m 51.198215,37.683356 c -0.793668,-0.512267 -1.658091,-1.161332 -2.19271,-1.757289"
        sodipodi:nodetypes="cc" />
     <path
        id="path7815"
-       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#marker6961);paint-order:fill markers stroke"
-       d="m 57.370988,38.9815 c -0.416847,0.05905 -0.842463,0.09387 -1.274793,0.08533 -0.651764,-0.01288 -0.875219,-0.0352 -1.54622,-0.114063"
+       style="fill:none;fill-rule:evenodd;stroke:#030000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#marker6961);paint-order:fill markers stroke"
+       d="m 57.324585,38.96051 c -0.416847,0.05905 -0.842463,0.09387 -1.274793,0.08533 -0.651764,-0.01288 -0.875219,-0.0352 -1.54622,-0.114063"
        sodipodi:nodetypes="csc" />
     <text
        xml:space="preserve"

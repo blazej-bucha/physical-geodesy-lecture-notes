@@ -1197,15 +1197,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="93.376747"
-     inkscape:cy="78.562209"
+     inkscape:zoom="16"
+     inkscape:cx="108.38674"
+     inkscape:cy="110.63627"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="2548"
-     inkscape:window-height="1527"
+     inkscape:window-width="3828"
+     inkscape:window-height="2087"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
@@ -1458,11 +1458,11 @@
          y="41.210182"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$\psi$</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker3034);marker-end:url(#marker4897)"
-       d="m 39.000286,33.873796 c 1.224653,0.05601 2.449033,0.112011 3.45481,0.47781 1.005778,0.365799 2.080675,1.288031 3.011423,2.086587"
+       style="fill:none;stroke:#000000;stroke-width:0.15;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker3034);marker-end:url(#marker4897)"
+       d="m 38.904176,33.873796 c 1.382726,0.106766 2.76517,0.21351 3.862595,0.667586 1.097425,0.454075 1.909845,1.255239 2.721997,2.05614"
        id="path4849"
        inkscape:path-effect="#path-effect4851"
-       inkscape:original-d="m 39.000286,33.873796 c 1.224642,0.05626 2.449021,0.112263 3.673137,0.167997 0.787433,0.675633 1.86233,1.597865 2.793096,2.3964"
+       inkscape:original-d="m 38.904176,33.873796 c 1.382707,0.107009 2.765151,0.213753 4.147333,0.320233 0.812685,0.80143 1.625105,1.602594 2.437259,2.403493"
        sodipodi:nodetypes="ccc" />
   </g>
 </svg>
