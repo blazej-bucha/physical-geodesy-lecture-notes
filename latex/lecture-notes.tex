@@ -262,7 +262,7 @@ diskutovanú problematiku.  Nádejame sa, že jeho vlastným štúdiom, testovan
 a~úpravou je možné niektorým konceptom porozumieť jednoduchšie.
 
 Pri písaní textu sme predpokladali, že čitateľ má znalosti zo sférickej 
-trigonometrie, vektorového, diferenciálneho a~integrálneho počtu na úrovni 
+trigonometrie a~z~vektorového, diferenciálneho a~integrálneho počtu na úrovni 
 prvého stupňa vysokoškolského štúdia.  Pre doplnenie poznatkov so sférickej 
 trigonometrie je možné nahliadnuť napríklad do~skrípt \textcite{Husar2017} 
 a~\textcite{Minarechova2019}.  Integrálny a~diferenciálny počet je diskutovaný 
@@ -1665,14 +1665,14 @@ smery.  Preto ak je vyžadovaná presnosť vysoká alebo ak je záujmová lokali
 rozsiahla alebo má zložitú topografiu, niektoré geodetické merania môže byť 
 potrebné korigovať o~vplyv nerovnobežnosti lokálnych horizontov.  Vzájomné 
 vzťahy medzi lokálnymi horizontmi je možné popísať pomocou tiažového poľa 
-\parencite[pozri napríklad][]{VanicekGeodesy}.  V~širšom zmysle môžeme povedať, 
-že hoci mnohé geodetické merania sú postavené na geometrických princípoch, 
-uskutočňované sú v~tiažovom poli, ktoré ich ovplyvňuje.  V~geodézii preto 
-polohu bodov nemožno presne určovať bez znalosti tiažového poľa.  Na druhú 
-stranu, informácie o~tiažovom poli získavame z~meraní v~bodoch, ktorých presnú 
-polohu potrebujeme poznať.  Táto poloha musí byť preto určená geodeticky.  
-Medzi geodetickými meraniami a~tiažovým poľom teda existuje obojstranný 
-vzájomne úzko prepojený vzťah.
+(pozri napríklad \cite{VanicekGeodesy} alebo \cite{MoritzPhysicalGeodesy}).  
+V~širšom zmysle môžeme povedať, že hoci mnohé geodetické merania sú postavené 
+na geometrických princípoch, uskutočňované sú v~tiažovom poli, ktoré ich 
+ovplyvňuje.  V~geodézii preto polohu bodov nemožno presne určovať bez znalosti 
+tiažového poľa.  Na druhú stranu, informácie o~tiažovom poli získavame z~meraní 
+v~bodoch, ktorých presnú polohu potrebujeme poznať.  Táto poloha musí byť preto 
+určená geodeticky.  Medzi geodetickými meraniami a~tiažovým poľom teda existuje 
+obojstranný vzájomne úzko prepojený vzťah.
 
 \subsubsection{Tiažnica}
 \label{sec:plumbline}
@@ -1699,14 +1699,13 @@ V~geodézii sa tiažnice využívajú napríklad na definovanie fyzikálnych
 \section{Výšky}
 \label{sec:heights}
 
-Výšky prepájajú geometrický aspekt určovania polohy s~tiažovým poľom a~naopak.  
-Ak by sme o~výškach uvažovali iba z~pohľadu geometrie alebo iba z~pohľadu 
-tiažového poľa, v~oboch prípadoch by sme získali výšky, ktoré by mali veľmi 
-obmedzené praktické využitie (napríklad iba na malé lokality).
+Výšky prepájajú geometrický aspekt geodetického určovania polohy s~tiažovým 
+poľom a~naopak.  Ak by sme o~výškach uvažovali iba z~pohľadu geometrie alebo 
+iba z~pohľadu tiažového poľa, v~oboch prípadoch by sme získali výšky s~výrazne 
+obmedzeným praktickým využitím.
 
-V~tejto kapitole popíšeme základné typy výšok, s~ktorými sa v~geodézii často 
-stretávame.  Najprv v~Kapitole~\ref{sec:potential_differences} vysvetlíme 
-princíp určovania rozdielu tiažového potenciálu a~následne 
+V~Kapitole~\ref{sec:potential_differences} najprv vysvetlíme princíp určovania 
+rozdielu tiažového potenciálu, ktorý priamo súvisí s~teóriou výšok, a~následne 
 v~Kapitolách~\ref{sec:orthometric_height} až~\ref{sec:ellipsoidal_height} 
 popíšeme vybrané typy výšok.  Pre rozsiahlosť problematiky však nepôjde 
 o~vyčerpávajúce podanie, ale skôr o~poskytnutie základných informácií, ktoré sú 
@@ -1848,7 +1847,7 @@ niekedy zvykne udávať v~geopotenciálnych jednotkách~gpu,
 \mathrm{m} = 10\ \mathrm{m}^2 \ \mathrm{s}^{-2}{.}
 \end{equation}
 %
-Rozdiel tiažového potenciálu je možné v~súčasnosti určiť s~presnosťou približne 
+V~súčasnosti je možné určiť rozdiel tiažového potenciálu s~presnosťou približne 
 $\pm 0.1\ \mathrm{Gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra 
 \parencite{MoritzPhysicalGeodesy}.
 
@@ -1857,8 +1856,8 @@ $\pm 0.1\ \mathrm{Gal} \ \mathrm{m}$ na vzdialenosť jedného kilometra
 
 Rovnice~(\ref{eq:w_totdiff_plumb}) a~(\ref{eq:w_ab}) a~ich rôzne obmeny sa 
 spolu so~vzťahom~(\ref{eq:geopotential_number}) využívajú na definíciu 
-rozličných typov výšok \parencite[pozri 
-napríklad][]{Jekeli2000a,MoritzPhysicalGeodesy,SansoGeodeticHeights}.  Ak totiž 
+rozličných typov výšok 
+\parencite{Jekeli2000a,MoritzPhysicalGeodesy,SansoGeodeticHeights}.  Ak totiž 
 z~rovnice~(\ref{eq:w_totdiff_plumb}) vyjadríme diferenciál~$\diff H$ a~získanú 
 rovnicu zintegrujeme od~$W_0$ po~$W$, získame vzťah na výpočet dĺžky tiažnice 
 od geoidu po daný bod,
@@ -1892,13 +1891,13 @@ H^\mathrm{O} = \frac{C}{\bar{g}}{,}
 \end{equation}
 %
 Výška~$H^\mathrm{O}$ definovaná rovnicou~(\ref{eq:orthometric_height_2}) sa 
-nazýva \emph{ortometrická výška} a~udáva dĺžku skutočnej tiažnice od geoidu po 
-bod~$P$ (Obrázok~\ref{fig:equipotential_surfaces}).
+nazýva \emph{ortometrická výška} a~udáva dĺžku tiažnice od geoidu po bod~$P$ 
+(Obrázok~\ref{fig:equipotential_surfaces}).
 
 Z~Kapitoly~\ref{sec:potential_differences} vieme, že geopotenciálnu kótu~$C$ je 
 možné odmerať nepriamo pomocou nivelácie a~gravimetrie.  Na výpočet 
-ortometrickej výšky vzťahom~(\ref{eq:orthometric_height_2}) by preto 
-postačovala znalosť priemernej hodnoty tiažového zrýchlenia~$\bar{g}$ pozdĺž 
+ortometrickej výšky vzťahom~(\ref{eq:orthometric_height_2}) by preto malo 
+postačovať určiť už iba priemernú hodnotu tiažového zrýchlenia~$\bar{g}$ pozdĺž 
 tiažnice od geoidu po bod, ktorého výšku chceme získať.  Exaktný výpočet 
 člena~$\bar{g}$ vzťahom~(\ref{eq:mean_g_plumbline}) je však nemožný.  Dôvod je 
 ten, že integrál~(\ref{eq:mean_g_plumbline}) musí byť počítaný v~hmotách, ktoré 
@@ -1910,11 +1909,12 @@ dostupné \parencite[napríklad][]{Sheng2019}, no ich presnosť sa zdá byť eš
 stále nepostačujúca.  Praktická realizácia ortometrických výšok teda závisí od 
 prijatého hustotného modelu.
 
-Jedna z~ďalších nevýhod ortometrických výšok je skutočnosť, že body na jednej 
+Ďalšou nevýhodou ortometrických výšok je skutočnosť, že body na jednej 
 ekvipotenciálnej ploche (za ideálnych podmienok napríklad na ustálenej vodnej 
-hladine) majú vo všeobecnosti \emph{rôznu} ortometrickú výšku.  Ortometrické 
-výšky teda nedostatočne reflektujú smer tečenia vody.  Tento problém majú 
-všetky výšky okrem dynamických výšok (Kapitola~\ref{sec:dynamic_height}).
+hladine jazera) majú vo všeobecnosti \emph{rôznu} ortometrickú výšku.  
+Ortometrické výšky teda nedostatočne reflektujú smer tečenia vody.  Tento 
+problém majú všetky výšky okrem dynamických výšok 
+(Kapitola~\ref{sec:dynamic_height}).
 
 \subsubsection{Helmertova ortometrická výška}
 \label{sec:helmert_height}
@@ -1933,9 +1933,9 @@ redukcia tiažového zrýchlenia a~približne modeluje skutočné tiažové zrý
 \emph{v~hmotách}.  Symbol~$g$ označuje tiažové zrýchlenie na povrchu Zeme.  
 Konštanta~$0.0424\ \mathrm{mGal} \, \mathrm{m}^{-1}$ bola vypočítaná pre 
 strednú hustotu hmôt nad geoidom s~použitím hustoty~$2670\ \mathrm{kg} 
-\ \mathrm{m}^{-3}$ \parencite[pre odvodenie pozri 
+\ \mathrm{m}^{-3}$ \parencite[pre odvodenie Preyovej redukcie pozri 
 napríklad][]{Jekeli2000a,MoritzPhysicalGeodesy,SansoGeodeticHeights}.  
-F. R. Helmert (1843~-- 1917) bol nemecký geodet a~štatistik.  Je autorom 
+F.~R.~Helmert~(1843~-- 1917) bol nemecký geodet a~štatistik.  Je autorom 
 napríklad 7-prvkovej podobnostnej transformácie medzi trojrozmernými 
 súradnicovými systémami.
 
@@ -1954,18 +1954,23 @@ H^\mathrm{D} = \frac{C}{g_\textrm{kon\v{s}t.}}{.}
 Po uvážení vzťahov~$C = W_0 - W$ (rovnica~\ref{eq:geopotential_number}) 
 a~(\ref{eq:dynamic_height}) je zrejmé, že body na tej istej ekvipotenciálnej 
 ploche majú \emph{konštantnú} dynamickú výšku.  Mohlo by sa teda zdať, že 
-dynamická výška rieši problém ostatných výšok (pozri 
-Kapitolu~\ref{sec:orthometric_height}).  V~skutočnosti je však ešte azda menej 
-praktická ako ostatné výšky.  Kvôli konštantnej hodnote~$g_{\textrm{konšt.}}$ 
-je dynamická výška totižto iba akýmsi preškálovaním geopotenciálnej kóty 
-z~fyzikálnych jednotiek~$\mathrm{m}^2 \ \mathrm{s}^{-2}$ do jednotky 
-dĺžky~$\mathrm{m}$.  Neberie pritom do úvahy skutočnosť, že body na dvoch 
-rozdielnych ekvipotenciálnych plochách môžu byť od seba rozlične geometricky 
-vzdialené (porovnaj vzdialenosti medzi ekvipotenciálnymi plochami v~oblasti 
-rovníka a~v~oblastiach pólov na Obrázku~\ref{fig:equipotential_surfaces}).  
-Dynamická výška teda nemá geometrický význam, ale je to výhradne fyzikálna 
-veličina \parencite{Jekeli2000a}.  Koncept výšky bez uváženia geometrie je teda 
-nepraktický a~použiteľný nanajvýš na regionálnej úrovni.
+dynamická výška rieši problém, ktorým sú zaťažené všetky ostatné typy výšok 
+(pozri Kapitolu~\ref{sec:orthometric_height}).  V~skutočnosti je však azda 
+najmenej praktická.  Kvôli konštantnej hodnote~$g_{\textrm{konšt.}}$ je 
+dynamická výška iba akýmsi preškálovaním geopotenciálnej kóty z~fyzikálnych 
+jednotiek~$\mathrm{m}^2 \ \mathrm{s}^{-2}$ do jednotky dĺžky~$\mathrm{m}$.  
+Neberie tak do úvahy skutočnosť, že body na dvoch rozdielnych ekvipotenciálnych 
+plochách môžu byť od seba rozlične geometricky vzdialené (porovnaj vzdialenosti 
+medzi ekvipotenciálnymi plochami v~oblasti rovníka a~v~oblastiach pólov na 
+Obrázku~\ref{fig:equipotential_surfaces}).  Dynamická výška je teda výhradne 
+fyzikálna veličina, ktorá nemá geometrickú interpretáciu 
+\parencite{Jekeli2000a}.
+
+Vidíme, že koncept výšky bez uváženia geometrie je nepraktický.  Takéto výšky 
+sú použiteľné nanajvýš na regionálnej úrovni, kde tieto nedostatky dosahujú 
+zanedbateľné vplyvy voči presnosti geodetických meraní.  V~nasledujúcej 
+kapitole sa presvedčíme, že to isté platí aj o~výškach, ktoré neberú do úvahy 
+tiažové pole.
 
 \subsection{Elipsoidická výška}
 \label{sec:ellipsoidal_height}
@@ -1987,17 +1992,18 @@ Obrázok~\ref{fig:cart_sph}), pretože referenčný elipsoid je dvojosový.}
 \label{fig:ell_coords}
 \end{figure}
 
-Elipsoidickú výšku je možné získať z~meraní, ktoré využívajú globálne navigačné 
-družicové systémy (GNSS).  Zatiaľ čo dynamická výška má výhradne fyzikálny 
-význam a~nemá geometrický význam, s~elipsoidickou výškou je to presne naopak.  
+Elipsoidickú výšku je možné jednoducho vypočítať z~meraní, ktoré využívajú 
+globálne navigačné družicové systémy (GNSS).  Zatiaľ čo dynamická výška má 
+výhradne fyzikálny význam, elipsoidická výška má výhradne geometrický význam.  
 Pre aplikácie, ktoré vyžadujú aspoň do určitej miery uvážiť smer tečenia vody, 
 je preto elipsoidická výška nevhodná.  Vhodnejšie je použiť napríklad 
 ortometrickú výšku (Kapitola~\ref{sec:orthometric_height}).  Rozdiel medzi 
 elipsoidickou výškou a~ortometrickou výškou môže dosahovať až desiatky metrov 
 a~výrazne varíruje s~polohou, dokonca i~na regionálnej úrovni.  V~praktických 
-aplikáciách sa elipsoidická výška často zvykne transformovať na inú výšku, 
-napríklad na ortometrickú výšku.  Vzťah medzi ortometrickou a~elipsoidickou 
-výškou bude podrobnejšie diskutovaný neskôr v~Kapitole~\ref{sec:geoid}.
+aplikáciách sa elipsoidická výška vypočítaná z~GNSS meraní často zvykne 
+transformovať na inú výšku, napríklad na ortometrickú výšku.  Vzťah medzi 
+ortometrickou a~elipsoidickou výškou bude diskutovaný neskôr 
+v~Kapitole~\ref{sec:geoid}.
 
 Na záver doplňme transformáciu elipsoidických súradníc na karteziánske 
 súradnice \parencite{MoritzPhysicalGeodesy}
@@ -2032,6 +2038,61 @@ v~publikáciách~\textcite{Fukushima2006,Claessens2019}.
 
 \section{Časové variácie}
 \label{sec:time_variable_gravity}
+
+Z~predchádzajúcich kapitol vieme, že v~okolí každého hmotného telesa existuje 
+gravitačné pole.  Z~Newtonovho integrálu~(\ref{eq:vg_body}) vyplýva, že toto 
+gravitačné pole závisí od tvaru telesa, rozloženia hustoty v~jeho vnútri a~od 
+polohy bodu vzhľadom k~telesu.  Zmenou jedného alebo viacerých z~týchto 
+parametrov v~čase dochádza k~zmene gravitačného poľa v~čase.  Ak navyše teleso 
+rotuje a~polohu vyjadrujeme v~neinerciálnom súradnicovom systéme, ktorý rotuje 
+spolu s~telesom, potom vzniká aj odstredivé pole.  Časová zmena odstredivého 
+poľa, spôsobená napríklad premenlivou uhlovou rýchlosťou rotácie, potom 
+spôsobuje časovú zmenu tiažového poľa.  V~tejto kapitole stručne spomenieme 
+niektoré príčiny spôsobujúce časovú variáciu gravitačného a~tiažového poľa 
+v~okolí Zeme.
+
+V~tiažovom zrýchlení odmeranom gravimetrickými metódami (pozri 
+Kapitolu~\ref{sec:gravity_measurements} a~najmä~\cite{Janak2010}) je obsiahnutý 
+gravitačný účinok všetkých hmotných objektov vo vesmíre.  Okrem samotnej Zeme 
+majú merateľný gravitačný vplyv predovšetkým Mesiac a~Slnko a~v~oveľa menšej 
+miere aj niektoré planéty Slnečnej sústavy.  Zo známej polohy bodu merania, 
+nebeských telies a~času merania je možné vypočítať \emph{slapové zrýchlenie}.  
+Podľa \textcite{Torge1989} dosahuje slapové zrýchlenie spôsobené Mesiacom 
+a~Slnkom na povrchu Zeme maximálne hodnoty približne~$0.165\ \mathrm{mGal}$ 
+a~$0.075\ \mathrm{mGal}$.  Vzhľadom na súčasnú mikroGalovú presnosť 
+gravimetrických meraní tak ide nezanedbateľný vplyv.  Väčšina geodetických 
+aplikácií si vyžaduje korekciu odmeraného tiažového zrýchlenia o~slapové 
+zrýchlenie.
+
+V~predošlom odseku sme uvažovali, že Zem je dokonale tuhé teleso, ktoré nie je 
+deformované slapovými silami.  V~presnejšom priblížení je Zem pružné teleso, 
+ktoré vplyvom slapových síl mení svoj tvar.  V~dôsledku zmeny tvaru pevnej aj 
+oceánskej časti zemského povrchu tak vznikajú \emph{zemské} a~\emph{oceánske 
+slapy}.  Oceánske slapy vysvetlil Newton \parencite{Torge1989}.  Na zemské 
+slapy poukázal William Thomson, známy skôr pod šľachtickým menom Lord 
+Kelvin~(1824~-- 1907) (tamtiež).  V~dôsledku zemských slapov je súčet slapových 
+efektov z~predošlého odseku väčší približne o~16~\% a~dosahuje tak najväčšiu 
+hodnotu približne~$0.280\ \mathrm{mGal}$ \parencite{Torge1989}.  V~závislosti 
+od lokality dosahujú oceánske slapy hodnoty približne~$0.010\ \mathrm{mGal}$ 
+až~$0.001\ \mathrm{mGal}$ \parencite{Torge1989}.
+
+Rotačná os Zeme neustále mení svoju polohu voči Zemi.  Jedným z~dôsledkov je 
+\emph{pohyb pólu}, ktorý dosahuje niekoľko metrov (desatín uhlovej sekundy) za 
+rok \parencite{MoritzPhysicalGeodesy}.  Pohyb rotačnej osi tak spôsobuje zmenu 
+súradníc bodov na povrchu Zeme ako aj~zmenu odstredivého (rovnica~\ref{eq:gc}) 
+a~tiažového zrýchlenia (rovnica~\ref{eq:g}).  Najväčší vplyv na tiažové 
+zrýchlenie dosahuje v~oblastiach so zemepisnou šírkou~$45^{\circ}$, kde 
+nadobúda maximálnu hodnotu približne~$0.008\ \mathrm{mGal}$ 
+\parencite{Torge1989}.  Okrem polohy rotačnej osi sa mení aj uhlová rýchlosť 
+rotácie Zeme.  Jej vplyv na zmenu tiažového zrýchlenia však nie je väčší ako 
+zhruba~$0.0007\ \mathrm{mGal}$.
+
+Zmeny gravitačného a~tiažového poľa v~okolí Zeme môžu byť spôsobené aj mnohými 
+ďalšími faktormi, vymenujme aspoň pohyb magmy v~zemskom plášti, postglaciálny 
+zdvih, seizmické vlny, hydrologické zmeny, roztápanie ľadovcov a pod.  
+V~literatúre sa niekedy diskutuje aj o~časovej variácii Newtonovej gravitačnej 
+konštanty.  Tento jav však doposiaľ nebol experimentálne potvrdený 
+\parencite{Torge1989}.
 
 
 
