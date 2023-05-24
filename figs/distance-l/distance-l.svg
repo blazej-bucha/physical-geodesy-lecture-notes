@@ -1065,15 +1065,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="32"
-     inkscape:cx="47.122356"
-     inkscape:cy="113.8243"
+     inkscape:zoom="11.313708"
+     inkscape:cx="86.045124"
+     inkscape:cy="75.85541"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="2548"
-     inkscape:window-height="1527"
+     inkscape:window-width="3828"
+     inkscape:window-height="2087"
      inkscape:window-x="0"
      inkscape:window-y="30"
      inkscape:window-maximized="1"
@@ -1089,7 +1089,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1187,10 +1187,10 @@
        inkscape:path-effect="#path-effect1175" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 6.3057379,38.382598 c 0,0 37.7285501,-36.5082118 37.7285501,-36.5082118"
+       d="m 6.3057379,38.382598 c 0,0 37.6723371,-36.1409186 37.6723371,-36.1409186"
        id="path1383"
        inkscape:path-effect="#path-effect1385"
-       inkscape:original-d="M 6.3057379,38.382598 44.034288,1.8743862"
+       inkscape:original-d="M 6.3057379,38.382598 43.978075,2.2416794"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2639);marker-end:url(#marker4279)"
@@ -1243,7 +1243,7 @@
          id="tspan2181">O</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Italic';letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;stroke-width:0.264583"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;stroke-width:0.264583"
        x="27.542158"
        y="5.5460534"
        id="text2001"><tspan
@@ -1251,7 +1251,7 @@
          id="tspan1999"
          x="27.542158"
          y="5.5460534"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Italic';stroke-width:0.264583">l</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';stroke-width:0.264583">$\ell$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

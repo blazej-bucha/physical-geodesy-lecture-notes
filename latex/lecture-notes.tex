@@ -295,7 +295,7 @@ excelentných programátorov za to, že poskytujú prvotriedny slobodný softwar
 
 Úprimné slová vďaky ale patria v~prvom rade blízkym, priateľom a~kolegom, ktorí 
 mi pomáhali počas písania práce.  Za starostlivé prečítanie textu a~za 
-pripomienky, ktoré významne prispeli ku~zlepšeniu tejto práce, ďakujem 
+pripomienky, ktoré významne prispeli k~zlepšeniu tejto práce, ďakujem 
 recenzentom, Petrovi Vajdovi z~Ústavu vied o~Zemi Slovenskej akadémie vied, 
 Josefovi Seberovi z~Astronomického ústavu Akadémie Vied Českej republiky 
 a~Milošovi Vaľkovi z~Geodetického observatória Pecný Výskumného ústavu 
@@ -1075,7 +1075,8 @@ dokázať rovnosť
 \end{equation}
 %
 keďže~$G \, m_Q$ je konštanta.  Vypočítajme preto druhé parciálne
-derivácie funkcie~$1 \slash \ell$ v~smere súradnicových osí,
+derivácie funkcie~$1 \slash \ell$ v~smere súradnicových osí s~využitím 
+rovnice~(\ref{eq:l}),
 %
 \begin{equation}
 \label{eq:l_2nd_derivatives}
@@ -1446,10 +1447,9 @@ súradnicového systému.  Uvážením spoločného pôsobenia gravitačného
 a~odstredivého poľa získame \emph{tiažové pole}.  Formálne teda môžeme napísať 
 vzťah
 %
-\begin{equation}
-\nonumber
+\begin*{equation}
 \textrm{Gravitačné pole} + \textrm{Odstredivé pole} = \textrm{Tiažové pole}{.}
-\end{equation}
+\end*{equation}
 
 Tiažové pole má pre fyzikálnu geodéziu fundamentálny význam.  Jedna z~veličín 
 tiažového poľa, tiažové zrýchlenie, je totiž jedným z~prostredníkov, vďaka 
@@ -1562,7 +1562,8 @@ nazývajú \emph{odstredivý potenciál},
 %
 \begin{equation}
 \label{eq:vc}
-V_c(P) = \frac{1}{2} \, \omega^2 \, (x^2 + y^2){,}
+V_c(P) = \frac{1}{2} \, \omega^2 \, (x^2 + y^2) = \frac{1}{2} \, \omega^2 \, 
+r^2 \, \cos^2\varphi{,}
 \end{equation}
 %
 a~\emph{tiažový potenciál},
@@ -1702,22 +1703,577 @@ presnosť, môže byť preto potrebné korigovať geodetické merania o~vplyv
 nerovnobežnosti lokálnych zvislíc.
 
 V~geodézii sa tiažnice využívajú napríklad na definovanie fyzikálnych 
-(nadmorských) výšok.
+(nadmorských) výšok (Kapitola~\ref{sec:heights}).
 
-\section{Homogénna guľa}
+\section{Homogénna rotujúca guľa}
 \label{sec:homogeneous_ball}
 
-V~tejto kapitole definovať $GM$ ako geocentrickú gravitačnú konštantu.
+\emph{Homogénna guľa} je teleso sférického tvaru s~polomerom~$R$ a~konštantnou 
+hustotu~$\rho$.  Je to jedna z~najjednoduchších aproximácií zemského telesa, 
+preto ju využijeme na získanie hrubej predstavy o~gravitačnom a~tiažovom poli 
+v~okolí skutočnej Zeme.
 
+Gravitačné pole budeme študovať pomocou Newtonovho 
+integrálu~(\ref{eq:vg_body}).  Ten sme až doposiaľ zapisovali všeobecne 
+s~využitím integračného elementu~$\diff \tau$ a~objemu telesa~$\tau$.  Objem 
+diferenciálneho elementu~$\diff \tau$ (Obrázok~\ref{fig:gravitating_body}) je 
+v~karteziánskom súradnicovom systéme daný známym vzťahom
+%
+\begin{equation}
+\label{eq:dtau_cart}
+\diff \tau(Q) = \diff x_Q \, \diff y_Q \, \diff z_Q{.}
+\end{equation}
+% 
+V~tejto kapitole ale chceme analyzovať gravitačné pole v~okolí telesa 
+sférického tvaru, preto bude výrazne jednoduchšie riešiť Newtonov integrál vo 
+sférických súradniciach.  
+V~Kapitole~\ref{sec:newton_integral_in_spherical_coordinates} tak najprv 
+vyjadríme Newtonov integrál~(\ref{eq:vg_body}) v~krivočiarych sférických 
+súradniciach a~následne 
+v~Kapitolách~\ref{sec:homogeneous_ball_gravitational_field} 
+a~\ref{sec:homogeneous_ball_gravity_field} popíšeme gravitačné a~tiažové pole 
+v~okolí homogénnej gule.
+
+\subsection{Newtonov integrál vo sférických súradniciach}
+\label{sec:newton_integral_in_spherical_coordinates}
+
+Transformácia Newtonovho integrálu zo sférických súradníc~$r, \varphi, \lambda$ 
+do karteziánskych súradníc~$x$, $y$, $z$ nie je triviálna, pretože sférické 
+súradnice~$r$, $\varphi$, $\lambda$ závisia od viac ako jednej karteziánskej 
+súradnice, teda $r(x, y, z)$, $\varphi(x, y, z)$ a~$\lambda(x, y)$ (pozri 
+vzťah~\ref{eq:cart2sph}).  Túto úlohu vyriešime zámenou integračných 
+premenných.
+
+Zámenu troch integračných premenných možno formulovať nasledovne.  Nech sú dané 
+súradnicové systémy~$x_1$, $x_2$, $x_3$ a~$u_1(x_1, x_2, x_3)$, $u_2(x_1, x_2, 
+x_3)$, $u_3(x_1, x_2, x_3)$.  Integrál funkcie~$f$ transformujeme zo 
+súradnicového systému~$u_1$, $u_2$, $u_3$ do súradnicového systému~$x_1$, 
+$x_2$, $x_3$ vzťahom \parencite[napríklad][]{Arfken2005,Olver2010}
+%
+\begin{equation}
+\label{eq:iiint_change_of_variable}
+\begin{split}
+\iiint\limits_{\Omega} f(x_1, x_2, x_3) \, \diff x_1 \, \diff x_2 \, \diff x_3 
+ =& \iiint\limits_{\Omega'} f[x_1(u_1, u_2, u_3), x_2(u_1, u_2, u_3), x_3(u_1, 
+ u_2, u_3)] \\
+& \times | \det(\mathbf{J}) | \, \diff u_1 \, \diff u_2 \, \diff u_3{,}
+\end{split}
+\end{equation}
+%
+kde $| \det(\mathbf{J}) |$ je absolútna hodnota determinantu matice
+%
+\begin{equation}
+\label{eq:jacobi}
+\mathbf{J} = 
+\begin{bmatrix}
+\dfrac{\partial x_1}{\partial{u_1}} & \dfrac{\partial x_1}{\partial{u_2}} 
+& \dfrac{\partial x_1}{\partial{u_3}}\\[2ex]
+%
+\dfrac{\partial x_2}{\partial{u_1}} & \dfrac{\partial x_2}{\partial{u_2}} 
+& \dfrac{\partial x_2}{\partial{u_3}}\\[2ex]
+%
+\dfrac{\partial x_3}{\partial{u_1}} & \dfrac{\partial x_3}{\partial{u_2}} 
+& \dfrac{\partial x_3}{\partial{u_3}}
+\end{bmatrix}
+%
+{.}
+\end{equation}
+%
+Maticu~$\vec J$ budeme nazývať \emph{Jacobiho matica}.  Symbol~$\Omega$ 
+označuje zobrazenie oblasti~$\Omega'$ v~zmysle transformácie~$(u_1, u_2, u_3) 
+\rightarrow (x_1, x_2, x_3)$.
+
+Vráťme sa teraz k~Newtonovmu integrálu~(\ref{eq:vg_body_sph}).  Na vyjadrenie 
+diferenciálneho elementu~$\diff \tau(Q)$ (rovnica~\ref{eq:dtau_cart}) vo 
+sférických súradniciach potrebujeme najprv vyjadriť Jacobiho maticu.  Tú 
+získame pomocou rovníc~(\ref{eq:sph2cart}) a~(\ref{eq:jacobi}),
+%
+\begin{equation}
+\label{eq:j_cart_sph}
+\mathbf{J} =
+\begin{bmatrix}
+\dfrac{\partial x_Q}{\partial{r_Q}} & \dfrac{\partial x_Q}{\partial \varphi_Q} 
+& \dfrac{\partial x_Q}{\partial \lambda_Q}\\[2ex]
+%
+\dfrac{\partial y_Q}{\partial{r_Q}} & \dfrac{\partial y_Q}{\partial{\varphi_Q}} 
+& \dfrac{\partial y_Q}{\partial \lambda_Q}\\[2ex]
+%
+\dfrac{\partial z_Q}{\partial{r_Q}} & \dfrac{\partial z_Q}{\partial{\varphi_Q}} 
+& \dfrac{\partial z_Q}{\partial \lambda_Q}
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+\cos\varphi_Q \, \cos\lambda_Q & -r_Q \, \sin\varphi_Q \, \cos\lambda_Q & -r_Q 
+\, \cos\varphi_Q \, \sin\lambda_Q
+\\[2ex]
+\cos\varphi_Q \, \sin\lambda_Q & -r_Q \, \sin\varphi_Q \, \sin\lambda_Q &  r_Q 
+\, \cos\varphi_Q \, \cos\lambda_Q
+\\[2ex]
+ \sin\varphi_Q                 & r_Q \, \cos\varphi_Q                   & 0
+\end{bmatrix}
+%
+{.}
+%
+\end{equation}
+%
+Determinant Jacobiho matice~(\ref{eq:j_cart_sph}) vypočítame napríklad 
+Sarrusovým pravidlom,
+%
+\begin{equation}
+\det (\mathbf{J}) = -r_Q^2 \, \cos\varphi_Q{.}
+\end{equation}
+%
+Pre diferenciál~$\diff \tau(Q)$ teda platí (pozri 
+rovnicu~\ref{eq:iiint_change_of_variable})
+%
+\begin{equation}
+\label{eq:difftau}
+\diff \tau(Q) = \diff x_Q \, \diff y_Q \, \diff z_Q = | \det (\mathbf{J}) | \, 
+\diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q = r_Q^2 \, \cos\varphi_Q \, 
+\diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q{.}
+\end{equation}
+
+S~využitím vzťahov~(\ref{eq:iiint_change_of_variable}) a~(\ref{eq:difftau}) 
+získame Newtonov integrál vo sférických súradniciach
+%
+\begin{equation}
+\label{eq:vg_body_sph}
+V = G \, \iiint\limits_{\tau'} \frac{\rho}{\ell} \, r_Q^2 \, \cos\varphi_Q \, 
+\diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q{,}
+\end{equation}
+%
+kde~$\rho = \rho(Q)$,~$\ell$ je vzdialenosť medzi výpočtovým bodom~$P(r, 
+\varphi, \lambda)$ a~integračným elementom~$Q(r_Q, \varphi_Q, \lambda_Q)$,
+%
+\begin{equation}
+\label{eq:l_sph}
+\ell = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
+\end{equation}
+%
+a~$\psi$ je uhol v~rovinnom trojuholníku~$OPQ$ medzi spojnicami~$OQ$ a~$OP$ 
+(Obrázok~\ref{fig:distance_l}).
+
+\begin{figure}
+\centering
+\input{./fig-distance-l.pdf_tex}
+\caption{Rovinný trojuholník~$OPQ$ z~Obrázku~\ref{fig:gravitating_body}.}
+\label{fig:distance_l}
+\end{figure}
+
+\subsection{Gravitačné pole}
+\label{sec:homogeneous_ball_gravitational_field}
+
+V~tejto kapitole popíšeme gravitačný potenciál a~gravitačné zrýchlenie 
+homogénnej gule v~celom priestore.  Vzťahy budeme hľadať pomocou Newtonovho 
+integrálu~(\ref{eq:vg_body_sph}) zvlášť v~bodoch mimo gule, na povrchu gule 
+a~na záver vo vnútri gule.
+
+Nech je daná homogénna guľa s~polomerom~$R$ a~konštantnou hustotu~$\rho$ 
+(Obrázok~\ref{fig:homogeneous_ball}).  Polohu bodov budeme vyjadrovať 
+v~trojrozmernom karteziánskom súradnicovom systéme~$x$, $y$, $z$ so 
+začiatkom~$O$ v~geometrickom strede gule, ktorý je z~dôvodu konštantnej hustoty 
+súčasne aj ťažiskom gule.  Homogénna guľa je rotačne symetrické teleso, preto 
+jeho gravitačné pole nezávisí ani od sférickej šírky, ani od sférickej dĺžky 
+výpočtového bodu.  Sférickú šírku a~sférickú dĺžku výpočtového bodu preto 
+môžeme zvoliť tak, aby nám umožnili čo najjednoduchší výpočet Newtonovho 
+integrálu~(\ref{eq:vg_body_sph}).  Vhodnou voľbou sa javia byť body ležiace na 
+osi~$z$ (Obrázok~\ref{fig:homogeneous_ball}).  V~celej tejto podkapitole budeme 
+teda predpokladať, že výpočtové body ležia na osi~$z$ mimo gule ($r > R$), na 
+povrchu gule ($r = R$) alebo vo vnútri gule ($r < R$).
+
+\begin{figure}
+\centering
+\input{./fig-homogeneous-ball.pdf_tex}
+\caption{Homogénna guľa s~polomerom~$R$.}
+\label{fig:homogeneous_ball}
+\end{figure}
+
+\subsubsection{Gravitačné pole mimo homogénnej gule}
+
+Nech~$P$ je výpočtový bod nachádzajúci sa mimo homogénnej gule~($r > R$).  
+S~uvážením, že bod~$P$ leží na osi~$z$ (Obrázok~\ref{fig:homogeneous_ball}) je 
+vzdialenosť medzi~$P$ a~$Q(r_Q, \varphi_Q, \lambda_Q)$ daná vzťahom (pozri 
+rovnicu~\ref{eq:l_sph})
+%
+\begin{equation}
+\label{eq:l_sph_ball}
+\ell = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \cos(90^{\circ} - \varphi_Q)} 
+= \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \sin(\varphi_Q)}{.}
+\end{equation}
+%
+Vzdialenosť~$\ell$ nezávisí od sférickej dĺžky~$\lambda_Q$.  Po jej dosadení do 
+Newtonovho integrálu~(\ref{eq:vg_body_sph}) môžeme teda ihneď vypočítať 
+integrál cez sférickú dĺžku~$\lambda_Q$.  Po uvážení konštantnej hustoty~$\rho$ 
+tak získame vzťah
+%
+\begin{equation}
+\label{eq:vg_ball_sph}
+\begin{split}
+V_\gidx(P) &= G \, \rho \, \int\limits_{r_Q = 0}^{R} \int\limits_{\varphi_Q 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda_Q = 0}^{2\pi} 
+\frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, \diff \lambda_Q \, \diff \varphi_Q 
+\, \diff r_Q\\
+%
+&=\, G \, \rho \, \big[ \lambda_Q \big]_{0}^{2\pi} \, \int\limits_{r_Q = 0}^{R} 
+\int\limits_{\varphi_Q = -\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{\ell} \, 
+r_Q^2 \, \cos\varphi_Q \, \diff \varphi_Q \, \diff r_Q\\
+%
+&=2\pi \, G \, \rho \, \int\limits_{r_Q = 0}^{R} \int\limits_{\varphi_Q 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, 
+\diff \varphi_Q \, \diff r_Q{.}
+\end{split}
+\end{equation}
+
+Integrand v~poslednom výraze predošlej rovnice má pomerne zložitý tvar, pretože 
+vzdialenosť~$\ell$, ktorá sa nachádza v~menovateli, závisí od oboch 
+integračných premenných (pozri rovnicu~\ref{eq:l_sph_ball}).  Trik, ktorým si 
+výrazne zjednodušíme integráciu, spočíva v~zámene integračnej 
+premennej~$\varphi_Q$ za premennú~$\ell$.  Na zámenu integračnej 
+premennej~$\varphi_Q$ za~$\ell$ potrebujeme nájsť vzťah medzi~$\diff \varphi_Q$ 
+a~$\diff \ell$ a~následne aj hranice integrálu z~pohľadu novej integračnej 
+premennej~$\ell$.  Derivujme vzťah~(\ref{eq:l_sph_ball}) podľa sférickej 
+šírky~$\varphi_Q$, pričom premenné~$r$ a~$r_Q$ budeme považovať za konštanty,
+%
+\begin{equation}
+\frac{\diff \ell}{\diff \varphi_Q} = -\frac{r \, r_Q \, \cos\varphi_Q}{\ell}{.}
+\end{equation}
+%
+Po úprave dostaneme vzťah
+%
+\begin{equation}
+\cos\varphi_Q \, \diff \varphi_Q = -\frac{\ell \, \diff \ell}{r \, r_Q}{.}
+\end{equation}
+%
+Dosadením poslednej rovnice do~(\ref{eq:vg_ball_sph}) získame integrál
+%
+\begin{equation}
+\label{eq:vg_ball_sph_tmp}
+V_\gidx(P) = -\frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = 0}^R 
+\int\limits_{\ell = \ell_1}^{\ell_2} \diff \ell \, r_Q \, \diff r_Q{,}
+\end{equation}
+%
+ktorý už môže byť vyriešený pomocou základných vzťahov pre integráciu.  Zámenou 
+integračnej premennej je teda niekedy možné jednoduchým spôsobom vyriešiť 
+integrály, ktoré majú inak komplikovaný tvar.
+
+Teraz ostáva už len určiť integračné hranice~$\ell_1$ a~$\ell_2$.  Tie získame 
+dosadením integračných hraníc~$-\frac{\pi}{2}$ a~$\frac{\pi}{2}$ 
+pre~$\varphi_Q$ z~rovnice~(\ref{eq:vg_ball_sph}) do 
+vzťahu~(\ref{eq:l_sph_ball}).  Dosaďme do~(\ref{eq:l_sph_ball}) najprv spodnú 
+hranicu~$-\frac{\pi}{2}$,
+%
+\begin{equation}
+\label{eq:vg_ball_l1}
+\ell_1 = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \sin\left(-\frac{\pi}{2}\right)} 
+= \sqrt{r^2 + r_Q^2 + 2 \, r \, r_Q} = \sqrt{(r + r_Q)^2} = r + r_Q{.}
+\end{equation}
+%
+Pre hornú hranicu~$\frac{\pi}{2}$ získame dve riešenia,
+%
+\begin{align}
+\label{eq:vg_ball_l21}
+\ell_{2,1} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, 
+\sin\left(\frac{\pi}{2}\right)} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q} = \sqrt{(r 
+- r_Q)^2} = r - r_Q{,}\\
+%
+\label{eq:vg_ball_l22}
+\ell_{2,2} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, 
+\sin\left(\frac{\pi}{2}\right)} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q} 
+= \sqrt{(r_Q - r)^2} = r_Q - r{.}
+\end{align}
+%
+O~vzdialenosti~$\ell$ z~rovnice~(\ref{eq:l_sph_ball}) vieme povedať, že musí 
+byť nezáporná.  Zo vzťahov~(\ref{eq:vg_ball_l21})~a~(\ref{eq:vg_ball_l22}) je 
+preto správnym riešením vzťah~(\ref{eq:vg_ball_l21}), pretože iba ten dáva 
+kladnú vzdialenosť pre~$r > R = \max(r_Q)$ (predpoklad zo začiatku podkapitoly) 
+a~všetky~diferenciálne elementy~$r_Q$.  Teda~$\ell_2 = \ell_{2,1}$.
+
+Dosaďme vzťahy pre~$\ell_1$ a~$\ell_{2,1}$ do~(\ref{eq:vg_ball_sph_tmp}) 
+a~vypočítajme oba integrály,
+%
+\begin{equation}
+\label{eq:vg_ball_sph_tmp2}
+\begin{split}
+V_\gidx(P) &= -\frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = 0}^R 
+\int\limits_{\ell = r + r_Q}^{r - r_Q} \diff \ell \, r_Q \, \diff r_Q
+%
+= \frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = 0}^R \int\limits_{\ell 
+= r - r_Q}^{r + r_Q} \diff \ell \, r_Q \, \diff r_Q\\
+%
+&= \frac{2\pi \, G \, \rho}{r} \,  \int\limits_{0}^R \big[ l \big]_{r - r_Q}^{r 
++ r_Q} \, r_Q  \, \diff r_Q
+%
+= \frac{4\pi \, G \, \rho}{r} \, \int\limits_{0}^R r_Q^2 \, \diff r_Q\\
+%
+&=  \frac{4\pi \, G \, \rho}{r} \left[ \frac{r_Q^3}{3} \right]_{0}^{R} 
+= \frac{4}{3}\pi \, G \, \rho \, \frac{R^3}{r}{.}
+\end{split}
+\end{equation}
+%
+Posledný výraz predošlej rovnice môžeme ďalej upraviť, keď si uvedomíme, že 
+člen~$\frac{4}{3} \, \pi \, R^3$ predstavuje objem gule s~polomerom~$R$.  
+Výraz~$\frac{4}{3} \, \pi \, R^3 \, \rho$ teda udáva hmotnosť homogénnej gule 
+s~polomerom~$R$ a~hustotou~$\rho$,
+%
+\begin{equation}
+\label{eq:ball_mass}
+M = \frac{4}{3} \, \pi \, R^3 \, \rho{.}
+\end{equation}
+%
+Dosadením substitúcie~(\ref{eq:ball_mass}) do~(\ref{eq:vg_ball_sph_tmp2}) 
+získame výsledný vzťah pre gravitačný potenciál homogénnej gule v~bodoch 
+\emph{mimo} gule,
+%
 \begin{equation}
 \label{eq:vg_ball_out}
-V_g(P) = \frac{GM}{r}
+V_\gidx(P) = \frac{GM}{r}{.}
 \end{equation}
 
+Všimnime si, že rovnica~(\ref{eq:vg_ball_out}) je totožná so vzťahom pre 
+gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}).  Dodajme tiež, že 
+ak~$M$ predstavuje hmotnosť Zeme, potom súčin~$GM$ 
+z~rovnice~(\ref{eq:vg_ball_out}) sa nazýva \emph{geocentrická gravitačná 
+konštanta}.  Vo fyzikálnej geodézii sa častejšie než so samotnou hmotnosťou~$M$ 
+stretávame s~geocentrickou gravitačnou konštantou~$GM$.  Dôvod je ten, že 
+súčin~konštánt~$G$ a~$M$ je možné určiť presnejšie ako konštantu~$M$ 
+\parencite{Pick2000}.
+
+Predtým, než budeme hľadať vzťahy pre gravitačné zrýchlenie~$\vec g_\gidx$ je 
+potrebné uvedomiť si, že gravitačné zrýchlenie je vektorová 
+veličina~(Kapitola~\ref{sec:gg}).  Prvky vektora~$\vec g_\gidx$ preto závisia 
+od súradnicového systému, v~ktorom ich vyjadrujeme.  V~tejto kapitole vyjadríme 
+vektor gravitačného zrýchlenia v~lokálnom karteziánskom súradnicovom 
+systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ s~pohyblivým začiatkom 
+v~bode~$P$ (Obrázok~\ref{fig:cart_sph}).  Aplikáciou operátora gradient vo 
+sférických súradniciach~(\ref{eq:gradient_sph}) na gravitačný 
+potenciál~(\ref{eq:vg_ball_out}) získame vzťah
+%
 \begin{equation}
-\label{eq:w_ball_out}
-W(P) = \frac{GM}{r} + \frac{1}{2} \, \omega^2 \, (x^2 + y^2)
+\begin{split}
+\vec g_\gidx(P) &= \nabla V_\gidx(P) = \vec e_1^\mathrm{s} \, \frac{1}{r} \, 
+\frac{\partial V_\gidx}{\partial \varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r 
+\, \cos\varphi} \, \frac{\partial V_\gidx}{\partial \lambda} + \vec 
+e_3^\mathrm{s} \, \frac{\partial V_\gidx}{\partial r} =\\
+%
+&=\vec e_3^\mathrm{s} \, \frac{\partial V_\gidx}{\partial r} = \vec 
+e_3^\mathrm{s} \, \frac{\partial}{\partial r}\left( \frac{GM}{r} \right) 
+= -\vec e_3^\mathrm{s} \, \frac{GM}{r^2}
+%
+=
+%
+\begin{bmatrix}
+0\\
+0\\
+-\dfrac{GM}{r^2}
+\end{bmatrix}
+%
+{.}
+\end{split}
 \end{equation}
+%
+Nulové prvky v~smere osí~$x^\mathrm{s}$ a~$y^\mathrm{s}$ znamenajú, že 
+vektor~$\vec g_\gidx(P)$ smeruje do ťažiska homogénnej gule, teda v~zápornom 
+smere osi~$z^\mathrm{s}$ (pozri Obrázok~\ref{fig:cart_sph}).  Pre veľkosť 
+vektora~$\vec g_\gidx(P)$ platí vzťah
+%
+\begin{equation}
+\label{eq:gg_ball_out_magnitude}
+\| \vec g_\gidx(P) \| = \frac{GM}{r^2}{,}
+\end{equation}
+%
+pretože (pozri rovnicu~\ref{eq:er_elat_elon_unit})
+%
+\begin{equation}
+\| \vec e_3^\mathrm{s} \| = 1{.}
+\end{equation}
+%
+Vzťah~(\ref{eq:gg_ball_out_magnitude}) je totožný zo vzťahom pre veľkosť 
+gravitačného zrýchlenia hmotného bodu~(\ref{eq:gg_point_mass}).  Overme toto 
+tvrdenie.  Nech je daný hmotný bod s~hmotnosťou~$m$ a~výpočtový bod~$P$.  Nech 
+polohu výpočtového bodu~$P$ voči hmotnému bodu udáva polohový vektor~$\vec r$ 
+s~veľkosťou~$r = \| \vec r \|$.  Z~rovnice~(\ref{eq:gg_point_mass}) potom 
+vyplýva
+%
+\begin{equation}
+\| \vec g_\gidx(P) \| = \left\lVert -G \frac{m}{r^3} \, \vec r \right\rVert 
+= \frac{G \, m}{r^2}{.}
+\end{equation}
+%
+Získaný vzťah je totožný so vzťahom~(\ref{eq:gg_ball_out_magnitude}).
+
+\subsubsection{Gravitačné pole na povrchu homogénnej gule}
+
+Nech~$P$ je bod nachádzajúci sa na povrchu homogénnej gule~($r = R$).  Obdobným 
+odvodením ako v~predošlej časti získame nasledovné vzťahy pre gravitačný 
+potenciál a~gravitačné zrýchlenie na povrchu homogénnej gule,
+%
+\begin{align}
+\label{eq:vg_ball_on}
+V_\gidx(P) &= \frac{GM}{R}{,}\\
+%
+\vec g_\gidx(P) &= -\vec e_3^\mathrm{s} \, \frac{GM}{R^2} =
+%
+\begin{bmatrix}
+0\\
+0\\
+-\dfrac{GM}{R^2}
+\end{bmatrix}
+{,}\\
+%
+\| \vec g_\gidx(P) \| &= \frac{GM}{R^2}{.}
+\end{align}
+
+\subsubsection{Gravitačné pole vo vnútri homogénnej gule}
+
+Uvažujme teraz, že výpočtový bod~$P$ sa nachádza vo vnútri homogénnej gule~($r 
+< R$).  Rozdeľme homogénnu guľu s~polomerom~$R$ na dve telesá nasledovným 
+spôsobom (Obrázok~XXX).  Prvé teleso bude homogénna guľa s~polomerom, ktorý je 
+rovný sprievodiču výpočtového bodu, teda~$r$.  Druhé teleso bude 
+\emph{homogénna sférická vrstva}, ktorá je zo spodnej časti ohraničená sférou 
+s~polomerom~$r$ a~z~vrchnej časti je ohraničená sférou s~polomerom~$R$.  
+Aplikujme teraz princíp superpozície (Kapitola~\ref{sec:gg}) na gravitačný 
+potenciál~$V_{\gidx}(P)$ homogénnej gule s~polomerom~$R$ vo výpočtovom bode~$P$ 
+tým, že ho rozdelíme na dve časti,~$V_{\gidx,1}(P)$ a~$V_{\gidx,2}(P)$.  
+Gravitačný potenciál~$V_{\gidx,1}(P)$ bude generovaný homogénnou guľou 
+s~polomerom~$r$ a~gravitačný potenciál~$V_{\gidx,2}(P)$ bude generovaný 
+\emph{homogénnou sférickou vrstvou}.  Môžeme teda napísať vzťah
+%
+\begin{equation}
+\label{eq:vg_ball_in_split}
+V_\gidx(P) = V_{\gidx,1}(P) + V_{\gidx,2}(P){,}
+\end{equation}
+%
+pričom
+%
+\begin{equation}
+V_{\gidx,1}(P) = G \, \rho \, \int\limits_{r_Q = 0}^{r} \int\limits_{\varphi_Q 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda_Q = 0}^{2\pi} 
+\frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, \diff \lambda_Q \, \diff \varphi_Q 
+\, \diff r_Q
+\end{equation}
+%
+a
+%
+\begin{equation}
+\label{eq:vg_ball_in_2}
+V_{\gidx,2}(P) = G \, \rho \, \int\limits_{r_Q = r}^{R} \int\limits_{\varphi_Q 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda_Q = 0}^{2\pi} 
+\frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, \diff \lambda_Q \, \diff \varphi_Q 
+\, \diff r_Q{.}
+\end{equation}
+
+Rovnicu pre~$V_{\gidx,1}(P)$ už poznáme z~predchádzajúcej časti 
+(rovnica~\ref{eq:vg_ball_sph_tmp2}).  V~tomto prípade je polomer gule rovný 
+sprievodiču výpočtového bodu, $R = r$, teda
+%
+\begin{equation}
+\label{eq:vg_ball_in_1}
+V_{\gidx,1}(P) = \frac{4}{3} \pi \, G \, \rho \, r^2{.}
+\end{equation}
+
+Gravitačný potenciál homogénnej sférickej vrstvy~$V_{\gidx,2}(P)$ vypočítame 
+pomocou rovnice~(\ref{eq:vg_ball_sph_tmp}).  Za hornú hranicu 
+integrácie~$\ell_2$ použijeme tú z~rovníc~(\ref{eq:vg_ball_l21}) 
+a~(\ref{eq:vg_ball_l22}), ktorá dáva nezápornú vzdialenosť pre uvažovaný 
+výpočtový bod.  Vo výpočte~$V_{\gidx,2}(P)$ uvažujeme diferenciálne elementy so 
+sprievodičom~$r \leq r_Q \leq R$, preto nezápornú vzdialenosť pre všetky 
+diferenciálne elementy dáva iba rovnica~(\ref{eq:vg_ball_l22}).  Dosadením 
+integračných hraníc~$\ell_1$ a~$\ell_{2,2}$ tak dostaneme vzťah
+%
+\begin{equation}
+\begin{split}
+V_{\gidx,2}(P) &= -\frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = r}^R 
+\int\limits_{\ell = r_Q + r}^{r_Q - r} \diff \ell \, r_Q \, \diff r_Q 
+= \frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = r}^R \int\limits_{\ell = r_Q 
+- r}^{r_Q + r} \diff \ell \, r_Q \, \diff r_Q\\
+%
+&= \frac{2\pi \, G \, \rho}{r} \,  \int\limits_{r}^R \big[ l \big]_{r_Q 
+- r}^{r_Q + r} \, r_Q  \, \diff r_Q = 4\pi \, G \, \rho \,  \int\limits_{r}^R 
+r_Q  \, \diff r_Q = 4\pi \, G \, \rho \,  \left[ \frac{r_Q^2}{2} 
+\right]_{r}^R\\
+%
+&= 2\pi \, G \, \rho \,  (R^2 - r^2){.}
+\end{split}
+\end{equation}
+
+Kombináciou rovníc~(\ref{eq:vg_ball_in_split}), (\ref{eq:vg_ball_in_2}) 
+a~(\ref{eq:vg_ball_in_1}) získame výsledný vzťah pre gravitačný potenciál vo 
+vnútri homogénnej gule,
+%
+\begin{equation}
+\label{eq:vg_ball_in}
+V_\gidx(P) = \frac{2}{3} \, \pi \, G \, \rho \, (3 R^2 - r^2) = \frac{GM}{2} 
+\left( \frac{3}{R} - \frac{r^2}{R^3} \right){.}
+\end{equation}
+
+Gravitačné zrýchlenie vo vnútri homogénnej gule v~súradnicovom 
+systéme~$x^\mathrm{s}$, $y^\mathrm{s}$, $z^\mathrm{s}$ získame aplikovaním 
+operátora gradient~(\ref{eq:gradient_sph}) na rovnicu~(\ref{eq:vg_ball_in}),
+%
+\begin{equation}
+\begin{split}
+\vec g_\gidx(P) &= \nabla V_\gidx(P) = \vec e_1^\mathrm{s} \, \frac{1}{r} \, 
+\frac{\partial V_\gidx}{\partial \varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r 
+\, \cos\varphi} \, \frac{\partial V_\gidx}{\partial \lambda} + \vec 
+e_3^\mathrm{s} \, \frac{\partial V_\gidx}{\partial r} =\\
+%
+&=\vec e_3^\mathrm{s} \, \frac{\partial V_\gidx}{\partial r} = \vec 
+e_3^\mathrm{s} \, \frac{\partial}{\partial r}\left[ \frac{GM}{2} \left( 
+\frac{3}{R} - \frac{r^2}{R^3} \right) \right] = -\vec e_3^\mathrm{s} \, 
+\frac{GM}{R^3} \, r
+%
+=
+%
+\begin{bmatrix}
+0\\
+0\\
+-\dfrac{GM}{R^3} \, r
+\end{bmatrix}
+%
+{.}
+\end{split}
+\end{equation}
+%
+Veľkosť vektora~$\vec g_\gidx(P)$ je daná vzťahom
+%
+\begin{equation}
+\| \vec g_\gidx(P) \| = \frac{GM}{R^3} \, r{.}
+\end{equation}
+
+\subsubsection{Grafické zobrazenie~$V_\gidx$ a~$\| \vec g_\gidx \|$ v~okolí 
+homogénnej gule}
+
+\subsection{Tiažové pole}
+\label{sec:homogeneous_ball_gravity_field}
+
+V~tejto časti stručne popíšeme tiažové pole v~okolí homogénnej gule, ktorá 
+rotuje okolo osi~$z$ konštantnou uhlovou rýchlosťou rotácie~$\omega$ 
+(Obrázok~\ref{fig:homogeneous_ball}).  Na rozdiel od 
+Kapitoly~\ref{sec:homogeneous_ball_gravitational_field}, tentokrát budeme 
+uvažovať, že výpočtový bod môže ležať aj mimo súradnicovej osi~$z$.  Vzťahy 
+z~predošlej kapitoly sú aplikovateľné aj v~tejto situácii, pretože sú funkciou 
+iba vzdialenosti~$r$ od ťažiska gule.
+
+Tiažový potenciál v~okolí homogénnej gule získame vzťahom~(\ref{eq:w}), pričom 
+gravitačný potenciál~$V_\gidx(P)$ vypočítame niektorou 
+z~rovníc~(\ref{eq:vg_ball_out}), (\ref{eq:vg_ball_on}) 
+alebo~(\ref{eq:vg_ball_in}), v~závislosti od polohy výpočtového bodu voči 
+homogénnej gule.  Odstredivý potenciál je daný vzťahom~(\ref{eq:vc}).  Na tomto 
+mieste je vhodné spomenúť, že povrch homogénnej rotujúcej gule nie je 
+ekvipotenciálna plocha, pretože tiažový potenciál na povrchu gule ($r = R$) je 
+funkciou sférickej šírky~$\varphi$ výpočtového bodu,
+%
+\begin{equation}
+\label{eq:w_ball_on}
+W(P) = \frac{GM}{R} + \frac{1}{2} \, \omega^2 \, R^2 \, \cos^2\varphi{.}
+\end{equation}
+
+Gravitačné zrýchlenie v~ľubovoľnom bode~$P$ získame vzťahom~(\ref{eq:g}), 
+pričom gravitačné zrýchlenie~$\vec g_\gidx(P)$ je opäť potrebné vypočítať 
+správnym vzťahom v~závislosti od polohy bodu~$P$ voči guli.  Na výpočet 
+odstredivého zrýchlenia je možné použiť vzťah~(\ref{eq:gc}).
 
 \section{Výšky}
 \label{sec:heights}
@@ -2272,22 +2828,14 @@ Nech je dané všeobecné teleso s~objemom~$\tau$ a~hustotou~$\rho$
 no budeme predpokladať, že v~každom diferenciálnom elemente~$\diff \tau(Q)$ je
 konečná.  Nech je ďalej daný bod~$P$, ktorý sa nachádza \emph{mimo} všeobecného
 telesa, teda v~tej časti priestoru, v~ktorom je gravitačný potenciál harmonický
-(Kapitola~\ref{sec:laplace_equation_cart}).  Trojicu sférických súradníc (pozri
-Obrázok~\ref{fig:cart_sph}) bodov~$P$ a~$Q$ označme symbolmi~$(r, \varphi,
-\lambda)$ a~$(r_Q, \varphi_Q, \lambda_Q)$.
+(Kapitola~\ref{sec:laplace_equation_cart}).  Trojicu sférických súradníc 
+(Obrázok~\ref{fig:cart_sph}) bodov~$P$ a~$Q$ označme symbolmi~$(r, \varphi,
+\lambda)$~a~$(r_Q, \varphi_Q, \lambda_Q)$.  Symbolom~$\ell$ budeme označovať 
+vzdialenosť medzi bodmi~$P$~a~$Q$ (rovnica~\ref{eq:l_sph} 
+a~Obrázok~\ref{fig:distance_l}).
 
-Vyjadrime vzdialenosť~$\ell$ medzi bodmi~$P$ a~$Q$
-z~Obrázku~\ref{fig:gravitating_body} aplikovaním kosínusovej vety
-v~trojuholníku~$OPQ$ (Obrázok~\ref{fig:distance_l}),
-%
-\begin{equation}
-\label{eq:l_sph}
-\ell = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
-\end{equation}
-%
-kde~$\psi$ je uhol medzi spojnicami~$OQ$ a~$OP$ v~rovine trojuholníka~$OPQ$.
-Prevrátenú hodnotu vzdialenosti~$1 \slash \ell$ zo vzťahu~(\ref{eq:vg_body}) 
-tak môžeme vyjadriť nasledovne,
+Vyjadrime prevrátenú hodnotu vzdialenosti~$1 \slash \ell$, ktorá vystupuje 
+v~rovnici~(\ref{eq:vg_body}),
 %
 \begin{equation}
 \label{eq:1l}
@@ -2295,15 +2843,8 @@ tak môžeme vyjadriť nasledovne,
 }} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r}
 \right)^2 - 2 \dfrac{r_Q}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
 \end{equation}
-
-\begin{figure}
-\centering
-\input{./fig-distance-l.pdf_tex}
-\caption{Rovinný trojuholník~$OPQ$ z~Obrázku~\ref{fig:gravitating_body}.}
-\label{fig:distance_l}
-\end{figure}
-
-Ak by sme dosadili poslednú rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
+%
+Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
 matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátvorka 
 obsahuje tri sčítance umocnené na exponent~$-\frac{1}{2}$.  Výhodnejšie je 
 rozvinúť tento člen do mocninového radu.  Jeden zo spôsobov rozvinutia funkcie 
@@ -4155,26 +4696,25 @@ predstavíme koncept normálneho poľa.
 \subsection{Homogénna guľa}
 \label{sec:normal_field_ball}
 
-Jedno z~najjednoduchších telies, ktoré by mohlo generovať normálne tiažové pole 
-Zeme, je \emph{homogénna rotujúca guľa} (Kapitola~\ref{sec:homogeneous_ball}).  
-Pre účely geodézie je ale táto voľba nevhodná z~dvoch dôvodov.  Prvý je ten, že 
-sférický tvar gule nedostatočne reprezentuje sploštený tvar Zeme.  Druhým 
-dôvodom je skutočnosť, že tiažový potenciál na povrchu homogénnej rotujúcej 
-gule nie je konštantný (pozri Kapitolu~\ref{sec:homogeneous_ball}).  Problém 
-tejto druhej vlastnosti spočíva v~tom, že homogénna guľa je tu považovaná za 
-tuhé teleso, ktoré v~dôsledku vlastnej gravitácie a~v~dôsledku odstredivej sily 
-nemení svoj tvar \parencite{SansoGeoidDetermination}.  Zem ale nie je tuhé 
-teleso (pozri Kapitolu~\ref{sec:time_variable_gravity}), a~tak pod vplyvom 
+Homogénna rotujúca guľa (Kapitola~\ref{sec:homogeneous_ball}) je jedno 
+z~najjednoduchších telies, ktoré by mohlo generovať normálne tiažové pole Zeme.  
+Táto voľba je však nevhodná z~dvoch dôvodov.  Prvým je sférický tvar gule, 
+ktorý nereprezentuje dostatočne presne sploštený tvar Zeme.  Druhý dôvod je 
+ten, že tiažový potenciál na povrchu homogénnej rotujúcej gule nie je 
+konštantný (Kapitola~\ref{sec:homogeneous_ball}).  Homogénna guľa je tu 
+považovaná za tuhé teleso, ktoré v~dôsledku vlastnej gravitácie a~odstredivej 
+sily nemení svoj tvar \parencite{SansoGeoidDetermination}.  Zem ale nie je tuhé 
+teleso (Kapitola~\ref{sec:time_variable_gravity}), a~tak pod vplyvom 
 spomenutých síl mení svoj tvar, pričom sa snaží ustáliť v~rovnovážnej polohe.  
-Toto správanie je jednoducho predstaviteľné pre~tekutú časť zemského povrchu.  
-Tá má tendenciu ustáliť sa v~rovnovážnej polohe, ktorou je plocha s~konštantnou 
-hodnotou skutočného tiažového potenciálu, teda geoid.  Je preto vhodné 
-požadovať od normálneho tiažového poľa, aby jeho referenčná plocha, ktorá 
-aproximuje geoid nielen geometricky, ale aj fyzikálne, bola súčasne aj 
-ekvipotenciálnou plochou.
+Zmena tvaru zemského telesa v~dôsledku vlastnej gravitácie a~odstredivej sily 
+je jednoducho predstaviteľná pre~tekutú časť zemského povrchu.  Tá má tendenciu 
+ustáliť sa v~rovnovážnej polohe, ktorou je plocha s~konštantnou hodnotou 
+skutočného tiažového potenciálu, teda geoid.  Je preto vhodné požadovať od 
+normálneho tiažového poľa, aby jeho referenčná plocha, ktorá aproximuje geoid 
+nielen geometricky, ale aj fyzikálne, bola súčasne aj ekvipotenciálnou plochou.
 
-Dodajme tiež ale, že ak je v~niektorej z~úloh fyzikálnej geodézie vplyv 
-normálneho tiažového poľa dostatočné malý, niekedy sa využíva \emph{gravitačné} 
+Dodajme ale, že v~niektorých úlohách fyzikálnej geodézie je vplyv normálneho 
+tiažového poľa dostatočné malý na to, aby bolo možné použiť \emph{gravitačné} 
 pole \emph{nerotujúcej} homogénnej gule \parencite{SansoGeoidDetermination}, 
 ktorá má na svojom povrchu konštantný \emph{gravitačný} potenciál 
 (Kapitola~\ref{sec:homogeneous_ball}).
@@ -4186,44 +4726,45 @@ ktorá má na svojom povrchu konštantný \emph{gravitačný} potenciál
 svojom povrchu konštantný normálny tiažový potenciál.  V~súčasnosti je 
 najčastejšou voľbou pre definíciu normálneho tiažového poľa Zeme.
 
-Ekvipotenciálny elipsoid ponúka vhodnejšie riešenie pre oba problémy spojené 
-s~normálnym tiažovým poľom homogénnej rotujúcej gule (pozri predošlú kapitolu).
-Dvojosový rotačný elipsoid je vernejšou geometrickou aproximáciou sploštenej 
-Zeme (geoidu) ako sféra, čím ponúka uspokojivejšie riešenie problému tvaru 
-referenčnej plochy.  Druhá požiadavka spojená s~konštantnou hodnotou normálneho 
-tiažového potenciálu na referenčnej ploche bola vyriešená jednoducho tým, že 
-referenčný elipsoid sme vyhlásili za ekvipotenciálny.  Nepotrebovali sme pritom 
-vysloviť žiadny predpoklad o~priestorovom rozložení hustôt v~ekvipotenciálnom 
-elipsoide.  Je to preto, lebo fyzikálna geodézia sa zaoberá určovaním tvaru 
+Ekvipotenciálny elipsoid je vhodným praktickým riešením oboch problémov, ktoré 
+sú spojené s~normálnym tiažovým poľom homogénnej rotujúcej gule.  V~prvom rade, 
+dvojosový rotačný elipsoid je vernejšou geometrickou aproximáciou sploštenej 
+Zeme ako sféra, čím ponúka uspokojivejšie riešenie problému tvaru referenčnej 
+plochy.  Druhá požiadavka spojená s~konštantnou hodnotou normálneho tiažového 
+potenciálu na referenčnej ploche bola vyriešená jednoducho tým, že referenčný 
+elipsoid sme vyhlásili za ekvipotenciálny.  Nepotrebovali sme pritom vysloviť 
+žiadny predpoklad o~priestorovom rozložení hustôt v~ekvipotenciálnom elipsoide.  
+Je to preto, lebo fyzikálna geodézia sa zaoberá určovaním tvaru 
 a~\emph{vonkajšieho} tiažového poľa Zeme a~normálne tiažové pole využíva 
 predovšetkým na účely linearizácie.  Zdá sa byť preto kľúčové najmä to, aby 
 normálna ekvipotenciálna plocha s~normálnym tiažovým potenciálom~$U_0$ bola 
-geometricky blízka (sploštenému) geoidu, ďalej aby normálny tiažový 
-potenciál~$U_0$ bol rovný alebo aspoň blízky skutočnému tiažovému 
-potenciálu~$W_0$ na geoide, a~nakoniec aby geometrická aj fyzikálna časť 
-normálneho poľa boli jednoducho matematicky opísateľné.  Pre niektoré príbuzné 
-vedné odbory, napríklad pre geofyziku, je však znalosť hustoty v~normálnom 
-telese potrebná \parencite{Karcol2017}.  V~takýchto situáciách nemusí byť voľba 
-ekvipotenciálneho elipsoidu tá najvýhodnejšia.  Diskusiu k~možnostiam 
-priestorového rozloženia hustoty vo vnútri ekvipotenciálneho elipsoidu je možné 
-nájsť napríklad v~prácach \textcite{MoritzTheFigureOfTheEarth}, 
-\textcite{TorgeGeodesy}, \textcite{Conway2000} či \textcite{Karcol2017}.
+geometricky blízka geoidu, ďalej aby normálny tiažový potenciál~$U_0$ bol 
+blízky skutočnému tiažovému potenciálu~$W_0$ na geoide, a~nakoniec aby 
+geometrická aj fyzikálna časť normálneho poľa boli jednoducho matematicky 
+opísateľné.  Vhodne definovaný ekvipotenciálny elipsoid spĺňa všetky tieto 
+požiadavky.  Pre niektoré príbuzné vedné odbory, napríklad pre geofyziku, je 
+však znalosť hustoty v~normálnom telese potrebná \parencite{Karcol2017}.  
+V~takýchto situáciách nemusí byť voľba ekvipotenciálneho elipsoidu tá 
+najvýhodnejšia.  Diskusiu k~možnostiam priestorového rozloženia hustoty vo 
+vnútri ekvipotenciálneho elipsoidu je možné nájsť napríklad v~prácach 
+\textcite{MoritzTheFigureOfTheEarth}, \textcite{TorgeGeodesy}, 
+\textcite{Conway2000} či \textcite{Karcol2017}.
 
 Inými slovami, tak ako homogénna rotujúca guľa, ani ekvipotenciálny elipsoid 
 nie je ideálne riešenie, ktoré by bolo fyzikálne odôvodniteľné.  Z~hľadiska 
-fyzikálnej geodézie je ale jeho veľkou prednosťou to, že ponúka dostatočne 
-dobré praktické riešenie pre v~zásade všetky súčasné problémy, ktoré sú spojené 
-s~linearizovanými úlohami určovania tvaru Zeme a~jej vonkajšieho tiažového 
-poľa.  V~konečnom dôsledku, aj Newtonov gravitačný zákon je nesprávny a~je iba 
-priblížením skutočnosti (pozri úvodnú kapitolu).  Používame ho ale preto, lebo
-umožňuje riešiť mnohé úlohy fyzikálnej geodézie dostatočne presne a~relatívne 
-jednoducho.
+fyzikálnej geodézie je ale jeho veľkou prednosťou skutočnosť, že ponúka 
+dostatočne dobré praktické riešenie pre v~zásade všetky súčasné problémy, ktoré 
+sú spojené s~linearizovanými úlohami určovania tvaru Zeme a~jej vonkajšieho 
+tiažového poľa.  V~konečnom dôsledku, aj Newtonov gravitačný zákon je nesprávny 
+a~je iba priblížením skutočnosti (pozri úvodnú kapitolu).  Napriek tomu ho ale 
+používame, pretože umožňuje riešiť mnohé úlohy fyzikálnej geodézie dostatočne 
+presne a~relatívne jednoducho.
 
-Ďalšou silnou stránkou ekvipotenciálneho elipsoidu je to, že pre mnohé úlohy 
+Ekvipotenciálny elipsoid má navyše ďalšiu silnú stránku.  Pre mnohé úlohy 
 geodézie (napríklad určovanie polohy GNSS metódami) môže vďaka svojmu 
 sploštenému tvaru súčasne plniť aj úlohu geometrického referenčného systému.  
-Tým je prepojená geometrická a~fyzikálna zložka geodézie, ktoré sú potrebné pre 
-určovanie polohy aj pre určovanie tiažového poľa (pozri 
+Tým sú opäť prepojené geometrická a~fyzikálna zložka geodézie, ktoré sú 
+potrebné pre určovanie polohy aj pre určovanie tiažového poľa (pozri 
 Kapitolu~\ref{sec:equipotential_surface}).
 
 \subsection{Sféroid}
@@ -4332,12 +4873,12 @@ Všimnime si, že medzi základnými parametrami sa nachádza geocentrická
 gravitačná konštanta $GM$ a~nie hmotnosť Zeme~$M$, ktorá je podľa 
 Stokesovho--Poincarého teorému postačujúca na jednoznačné definovanie tiažového 
 potenciálu vo vonkajšom priestore ekvipotenciálneho elipsoidu 
-(Kapitola~\ref{sec:equipotential_ellipsoid}).  Dôvod je ten, že 
-súčin~konštánt~$G$ a~$M$ je možné určiť presnejšie ako samostatný parameter~$M$ 
-\parencite[pozri napríklad][]{Pick2000}.  Spomeňme tiež, že hodnota konštanty 
-$GM$ z~Tabuľky~\ref{tab:grs80_fundamental} zahŕňa hmotnosť Zeme \emph{a} 
-hmotnosť zemskej atmosféry a~koeficient $J_{2,0}$ nezahŕňa účinok permanentnej 
-slapovej deformácie Zeme.  Medzi koeficientmi $J_{2,0}$ 
+(Kapitola~\ref{sec:equipotential_ellipsoid}).  Dôvod je ten, že konštantu~$GM$ 
+dokážeme určiť presnejšie ako konštantu~$M$ (pozri 
+Kapitolu~\ref{sec:homogeneous_ball_gravitational_field}).  Spomeňme tiež, že 
+hodnota konštanty $GM$ z~Tabuľky~\ref{tab:grs80_fundamental} zahŕňa hmotnosť 
+Zeme \emph{a} hmotnosť zemskej atmosféry a~koeficient $J_{2,0}$ nezahŕňa účinok 
+permanentnej slapovej deformácie Zeme.  Medzi koeficientmi $J_{2,0}$ 
 (Tabuľka~\ref{tab:grs80_fundamental}), $C_{2,0}$ 
 (rovnica~\ref{eq:vg_sh_no_norm}) a~$\bar{C}_{2,0}$ 
 (rovnica~\ref{eq:vg_sh_2nd_norm}) platia nasledovné vzťahy 
@@ -4807,7 +5348,7 @@ rádov rozvoja~(\ref{eq:arctan_series}).
 
 Pre zjednodušenie ďalšieho odvodenia je dobré uvedomiť si, že ak~$u$ 
 v~rovnici~(\ref{eq:eu_atan}) nadobúda veľké hodnoty, potom jeho hodnota je 
-približne rovná sprievodiču $r$.  Toto tvrdenie dokážeme nasledovne.  
+približne rovná sprievodiču~$r$.  Toto tvrdenie dokážeme nasledovne.  
 Z~rovníc~(\ref{eq:ellred2cart}) vieme, že
 %
 \begin{equation}
