@@ -47,7 +47,6 @@ ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap=plt.cm.bwr,
 ax.set_axis_off()
 ax.set_rasterized(True)
 plt.tight_layout(pad=-2.0)
-plt.show()
 
 # Nazov výstupného súboru
 fileout = f'./fig-spherical-harmonic-n{n}-k{k}'

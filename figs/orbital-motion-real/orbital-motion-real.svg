@@ -441,10 +441,10 @@
        sodipodi:nodetypes="ccccccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5267)"
-       d="m 68.281639,28.635228 c 0,0 -3.588715,-9.263655 -3.588715,-9.263655"
+       d="m 63.595087,28.576357 c 0,0 -3.588715,-9.263655 -3.588715,-9.263655"
        id="path980"
        inkscape:path-effect="#path-effect982"
-       inkscape:original-d="M 68.281639,28.635228 64.692924,19.371573"
+       inkscape:original-d="M 63.595087,28.576357 60.006372,19.312702"
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5267-35)"
@@ -508,13 +508,13 @@
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="51.664936"
-       y="32.327328"
+       x="46.978386"
+       y="32.268456"
        id="text2041-9-1-7"><tspan
          sodipodi:role="line"
          id="tspan2071-7-2-0"
-         x="51.664936"
-         y="32.327328"
+         x="46.978386"
+         y="32.268456"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Idealizovaná dráha</tspan></text>
   </g>
 </svg>

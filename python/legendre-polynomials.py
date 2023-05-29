@@ -30,5 +30,4 @@ for n in range(nmax + 1):
     labels[n] = f'$P_{n}$'
 ax.legend(labels, loc='center', bbox_to_anchor=(0.5, -0.35), ncol=nmax + 1)
 fig.subplots_adjust(bottom=0.3, top=0.98)
-plt.show()
 fig.savefig('./fig-legendre-polynomials.pdf')
