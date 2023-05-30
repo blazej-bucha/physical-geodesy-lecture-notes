@@ -1197,11 +1197,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="108.38674"
-     inkscape:cy="110.63627"
+     inkscape:zoom="8"
+     inkscape:cx="74.103297"
+     inkscape:cy="127.60581"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -1315,6 +1315,18 @@
        id="path2037-2-3"
        cy="40.130497"
        cx="39.814735"
+       r="0.32278284" />
+    <circle
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.55;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-2-3-3"
+       cy="50.91576"
+       cx="32.074455"
+       r="0.32278284" />
+    <circle
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.55;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-2-3-6"
+       cy="21.273239"
+       cx="32.074455"
        r="0.32278284" />
   </g>
   <g

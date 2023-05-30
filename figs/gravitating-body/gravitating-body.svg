@@ -1072,11 +1072,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313709"
-     inkscape:cx="175.57346"
-     inkscape:cy="154.30842"
+     inkscape:zoom="64.000003"
+     inkscape:cx="121.36359"
+     inkscape:cy="178.79466"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -1194,24 +1194,24 @@
     </g>
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.249914px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1259-3)"
-       d="m 30.041002,47.841624 c 0,0 0,-41.721509 0,-41.721509"
+       d="m 30.041002,47.414221 c 0,0 0,-41.294106 0,-41.294106"
        id="path863"
        inkscape:path-effect="#path-effect865"
-       inkscape:original-d="M 30.041002,47.841624 V 6.120115"
+       inkscape:original-d="m 30.041002,47.414221 0,-41.294106"
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1945)"
-       d="m 30.041001,47.841623 c 0,0 -23.6875573,34.666159 -23.6875573,34.666159"
+       d="m 29.79987,48.194513 c 0,0 -23.6875577,34.666159 -23.6875577,34.666159"
        id="path1939"
        inkscape:path-effect="#path-effect1941"
-       inkscape:original-d="M 30.041001,47.841623 6.3534437,82.507782"
+       inkscape:original-d="M 29.79987,48.194513 6.1123123,82.860672"
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4279-7)"
-       d="m 30.041001,47.841623 c 0,0 52.858927,0 52.858927,0"
+       d="m 30.468407,47.841623 c 0,0 52.431521,0 52.431521,0"
        id="path3577"
        inkscape:path-effect="#path-effect3579"
-       inkscape:original-d="M 30.041001,47.841623 H 82.899928"
+       inkscape:original-d="m 30.468407,47.841623 52.431521,0"
        sodipodi:nodetypes="cc" />
   </g>
   <g
@@ -1412,7 +1412,7 @@
          id="tspan2071-5-1-9-8"
          x="38.481674"
          y="44.671181"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$z_Q$</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$z'$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -1423,17 +1423,24 @@
          id="tspan2071-5-1-9-8-8"
          x="41.413567"
          y="52.450798"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$x_Q$</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$x'$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="29.021442"
-       y="58.091625"
+       x="29.469969"
+       y="58.451611"
        id="text2041-89-8-7-9-9-5"><tspan
          sodipodi:role="line"
          id="tspan2071-5-1-9-8-8-2"
-         x="29.021442"
-         y="58.091625"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$y_Q$</tspan></text>
+         x="29.469969"
+         y="58.451611"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$y'$</tspan></text>
+    <ellipse
+       style="display:inline;mix-blend-mode:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-5-3"
+       cx="30.041002"
+       cy="47.841625"
+       rx="0.4274044"
+       ry="0.42740458" />
   </g>
 </svg>

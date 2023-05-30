@@ -1091,9 +1091,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="41.089356"
-     inkscape:cy="206.42381"
+     inkscape:zoom="8"
+     inkscape:cx="117.13821"
+     inkscape:cy="165.08155"
      inkscape:document-units="mm"
      inkscape:current-layer="layer3"
      inkscape:document-rotation="0"
@@ -1144,24 +1144,24 @@
        inkscape:path-effect="#path-effect2735" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.249914px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1259-3)"
-       d="m 29.630164,47.282608 c 0,0 0,-41.7215095 0,-41.7215095"
+       d="m 29.630164,46.855203 c 0,0 0,-41.2941045 0,-41.2941045"
        id="path863"
        inkscape:path-effect="#path-effect865"
-       inkscape:original-d="M 29.630164,47.282608 V 5.5610985"
+       inkscape:original-d="M 29.630164,46.855203 V 5.5610985"
        sodipodi:nodetypes="cc" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1945)"
-       d="m 29.630163,47.282607 c 0,0 -23.6875573,34.666159 -23.6875573,34.666159"
+       d="m 29.389032,47.635497 c 0,0 -23.4464263,34.313269 -23.4464263,34.313269"
        id="path1939"
        sodipodi:nodetypes="cc"
-       inkscape:original-d="M 29.630163,47.282607 5.9426057,81.948766"
+       inkscape:original-d="M 29.389032,47.635497 5.9426057,81.948766"
        inkscape:path-effect="#path-effect1941" />
     <path
        style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4279-7)"
-       d="m 29.630163,47.282607 c 0,0 52.858927,0 52.858927,0"
+       d="m 30.057568,47.282607 c 0,0 52.431522,0 52.431522,0"
        id="path3577"
        inkscape:path-effect="#path-effect3579"
-       inkscape:original-d="M 29.630163,47.282607 H 82.48909"
+       inkscape:original-d="M 30.057568,47.282607 H 82.48909"
        sodipodi:nodetypes="cc" />
   </g>
   <g
@@ -1170,11 +1170,11 @@
      inkscape:label="line, dashed, black"
      style="display:inline">
     <path
-       style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.25000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25000001, 1.00000003000000004;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 29.630164,47.282608 c 0,0 27.818428,-15.846585 27.818428,-15.846585"
+       style="display:inline;mix-blend-mode:normal;fill:none;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 30.00154,47.071056 c 0,0 26.182206,-14.914522 26.182206,-14.914522 0,0 0.893471,-0.50896 0.893471,-0.50896"
        id="path863-1-3"
-       sodipodi:nodetypes="cc"
-       inkscape:original-d="M 29.630164,47.282608 57.448592,31.436023"
+       sodipodi:nodetypes="ccc"
+       inkscape:original-d="m 30.00154,47.071056 26.182206,-14.914522 0.893471,-0.50896"
        inkscape:path-effect="#path-effect1228" />
   </g>
   <g
@@ -1292,5 +1292,12 @@
          x="62.460854"
          y="24.43284"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">$\Delta r$</tspan></text>
+    <ellipse
+       style="display:inline;mix-blend-mode:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-5-36"
+       cx="29.630163"
+       cy="47.282608"
+       rx="0.4274044"
+       ry="0.42740458" />
   </g>
 </svg>

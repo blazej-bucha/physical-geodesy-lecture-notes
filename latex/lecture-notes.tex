@@ -390,7 +390,7 @@ Dva hmotné body~$P$ a~$Q$ sa navzájom priťahujú \emph{gravitačnou silou}
 %
 Symbol~$G$ označuje gravitačnú konštantu, $m_P$ a~$m_Q$ predstavujú hmotnosti 
 hmotných bodov, $\vec r$ je vektor spojnice bodov~$P$ a~$Q$ so začiatkom 
-v~bode~$Q$ a~$\ell$ je vzdialenosť medzi hmotnými bodmi, $\ell = \| \vec r \|$.  
+v~bode~$Q$ a~$\ell = \| \vec r \|$ je vzdialenosť medzi hmotnými bodmi.  
 Záporné znamienko v~rovnici znamená, že vektor sily má začiatok v~bode $P$ 
 a~smeruje do bodu~$Q$ (Obrázok~\ref{fig:newton_law}).
 
@@ -469,16 +469,16 @@ geodézie.
 Gravitačná sila~(\ref{eq:newton_law}) pôsobiaca medzi hmotnými bodmi~$P$ 
 a~$Q$~závisí od hmotností oboch hmotných bodov.  Je preto výhodné normovať ju 
 hmotnosťou toho hmotného bodu, v~ktorom má vektor~$\vec F_\gidx$ začiatok, 
-v~tomto prípade hmotnosťou~$m_P$ (pozri Obrázok~\ref{fig:newton_law}).  Túto 
-veličinu budeme nazývať \emph{gravitačné zrýchlenie} a~označovať ju budeme 
-symbolom~$\vec g_\gidx$.
+v~tomto prípade hmotnosťou~$m_P$ (pozri Obrázok~\ref{fig:newton_law}).  Získame 
+tým novú veličinu, ktorú budeme nazývať \emph{gravitačné zrýchlenie}.  
+Označovať ju budeme symbolom~$\vec g_\gidx$.
 
-Nech~$P$ a~$Q$ sú dva hmotné body so súradnicami~$x, y, z$ a~$x_Q, y_Q, z_Q$ 
-a~s~hmotnosťami~$m_P$ a~$m_Q$.  Gravitačné zrýchlenie v~bode~$P$ je potom dané 
-vzťahom
+Nech~$P$ a~$Q$ sú dva hmotné body s~hmotnosťami~$m_P$~a~$m_Q$.  Nech súradnice 
+bodov~$P$~a~$Q$ sú~$x, y, z$ a~$x', y', z'$.  Gravitačné zrýchlenie v~bode~$P$ 
+je dané vzťahom
 %
 \begin{equation}
-\label{eq:gg_point_mass}
+\label{eq:gg_point_mass_mq}
 \vec g_\gidx(P) = \frac{\vec F_\gidx}{m_P} = -G \frac{m_Q}{\ell^3} \, 
 \vec{r}{,}
 \end{equation}
@@ -491,29 +491,35 @@ a~$Q$,
 \vec r =
 %
 \begin{bmatrix}
-x - x_Q \\
-y - y_Q \\
-z - z_Q
+x - x'\\
+y - y'\\
+z - z'
 \end{bmatrix}
 {,}
 \end{equation}
 %
-a~$\ell = \| \vec r \|$ je jeho veľkosť, teda Euklidovská vzdialenosť medzi 
-bodmi $P$ a~$Q$,
+a~$\ell = \| \vec r \|$ je Euklidovská vzdialenosť medzi bodmi $P$ a~$Q$,
 %
 \begin{equation}
 \label{eq:l}
-\ell = \sqrt{(x - x_Q)^2 + (y - y_Q)^2 + (z - z_Q)^2}{.}
+\ell = \sqrt{(x - x')^2 + (y - y')^2 + (z - z')^2}{.}
 \end{equation}
 
-Rovnica~(\ref{eq:gg_point_mass}) hovorí, že vektor~$\vec g_\gidx(P)$ je 
+Rovnica~(\ref{eq:gg_point_mass_mq}) hovorí, že vektor~$\vec g_\gidx(P)$ je 
 nezávislý od hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného 
-bodu~$Q$.  V~súvislosti s~hmotným bodom~$P$ je preto možné pre jednoduchosť 
+bodu~$Q$.  V~súvislosti s~hmotným bodom~$P$ tak pre jednoduchosť môžeme 
 vynechať prívlastok \emph{hmotný} a~považovať~$P$ za geometrický bod bez 
 fyzikálnych vlastností.  Budeme hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ 
-gravitačné zrýchlenie~$\vec g_\gidx(P)$.  Nezávislosť gravitačného zrýchlenia 
-od hmotnosti priťahovaného telesa experimentálne potvrdil Gaileo Gailei 
-(1564--1642).
+gravitačné zrýchlenie~$\vec g_\gidx(P)$.  Zápis 
+rovnice~(\ref{eq:gg_point_mass_mq}) tak môžeme zjednodušiť do tvaru
+%
+\begin{equation}
+\label{eq:gg_point_mass}
+\vec g_\gidx(P) = -G \frac{m}{\ell^3} \, \vec{r}{,}
+\end{equation}
+%
+kde~$m = m_Q$.  Nezávislosť gravitačného zrýchlenia od hmotnosti priťahovaného 
+telesa experimentálne potvrdil Gaileo Gailei (1564--1642).
 
 Nájdime teraz vzťah pre gravitačné zrýchlenie generované sústavou~$N$ hmotných 
 bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každý 
@@ -792,11 +798,11 @@ dôležitejšie poznať relatívne vzťahy medzi gravitačným potenciálom v~pr
 napríklad rozdiel potenciálu medzi dvoma bodmi, než je potrebné poznať 
 absolútnu hodnotu gravitačného potenciálu v~niektorom bode.
 
-Gravitačný potenciál hmotného bodu s~hmotnosťou~$m_Q$ je daný vzťahom
+Gravitačný potenciál hmotného bodu s~hmotnosťou~$m$ je daný vzťahom
 %
 \begin{equation}
 \label{eq:vg_point_mass}
-V_\gidx(P) = \frac{G \, m_Q}{\ell}{.}
+V_\gidx(P) = \frac{G \, m}{\ell}{.}
 \end{equation}
 %
 Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg}) 
@@ -806,10 +812,10 @@ S~využitím rovnice~(\ref{eq:l}) dostaneme vzťah
 %
 \begin{equation}
 \label{eq:gg_from_vg_point_mass}
-\nabla V_\gidx(P) = \nabla \left( \frac{G \, m_Q}{\ell} \right) = G \, m_Q \, 
+\nabla V_\gidx(P) = \nabla \left( \frac{G \, m}{\ell} \right) = G \, m \, 
 \nabla \left( \frac{1}{\ell} \right) =
 %
-G \, m_Q
+G \, m
 %
 \begin{bmatrix}
 \dfrac{\partial}{\partial x} \left( \dfrac{1}{\ell} \right)\\[2ex]
@@ -819,25 +825,25 @@ G \, m_Q
 %
 =
 %
--G \, m_Q
+-G \, m
 %
 \begin{bmatrix}
-\dfrac{x - x_Q}{\ell^3}{,}\\[2ex]
-\dfrac{y - y_Q}{\ell^3}{,}\\[2ex]
-\dfrac{z - z_Q}{\ell^3}
+\dfrac{x - x'}{\ell^3}{,}\\[2ex]
+\dfrac{y - y'}{\ell^3}{,}\\[2ex]
+\dfrac{z - z'}{\ell^3}
 \end{bmatrix}
 {.}
 \end{equation}
 %
 Využili sme pritom vlastnosť operátora gradient~(\ref{eq:gradient_homogenity}), 
-pretože $G \, m_Q$ z~rovnice~(\ref{eq:vg_point_mass}) je konštanta.  
+pretože $G \, m$ z~rovnice~(\ref{eq:vg_point_mass}) je konštanta.  
 Vzťah~(\ref{eq:gg_from_vg_point_mass}) predstavuje gravitačné zrýchlenie~$\vec 
 g_\gidx(P)$ z~rovnice~(\ref{eq:gg_point_mass}), čím bola dokázaná 
 rovnosť~(\ref{eq:gg_grad_vg}).  Platnosť vzťahu~(\ref{eq:vg_at_infty}) pre 
 $V_\gidx$ z~rovnice~(\ref{eq:vg_point_mass}) je zrejmá,
 %
 \begin{equation}
-\lim_{\ell \to \infty} \frac{G \, m_Q}{\ell} = 0{.}
+\lim_{\ell \to \infty} \frac{G \, m}{\ell} = 0{.}
 \end{equation}
 
 V~sústave~$N$ hmotných bodov získame celkový gravitačný potenciál opäť 
@@ -1074,7 +1080,7 @@ dokázať rovnosť
 \nabla^2 \left( \frac{1}{\ell} \right) = 0{,}
 \end{equation}
 %
-keďže~$G \, m_Q$ je konštanta.  Vypočítajme preto druhé parciálne
+keďže~$G \, m$ je konštanta.  Vypočítajme preto druhé parciálne
 derivácie funkcie~$1 \slash \ell$ v~smere súradnicových osí s~využitím 
 rovnice~(\ref{eq:l}),
 %
@@ -1082,16 +1088,16 @@ rovnice~(\ref{eq:l}),
 \label{eq:l_2nd_derivatives}
 \begin{split}
 \frac{\partial^2}{\partial x^2} \left( \frac{1}{\ell} \right) &=
--\frac{\partial}{\partial x} \left( \frac{x - x_Q}{\ell^3} \right) = \left(3
-\frac{(x - x_Q)^2}{\ell^5} - \frac{1}{\ell^3} \right){,}\\
+-\frac{\partial}{\partial x} \left( \frac{x - x'}{\ell^3} \right) = \left(3
+\frac{(x - x')^2}{\ell^5} - \frac{1}{\ell^3} \right){,}\\
 %
 \frac{\partial^2}{\partial y^2} \left( \frac{1}{\ell} \right) &=
--\frac{\partial}{\partial y} \left( \frac{y - y_Q}{\ell^3} \right) = \left(3
-\frac{(y - y_Q)^2}{\ell^5} - \frac{1}{\ell^3} \right){,}\\
+-\frac{\partial}{\partial y} \left( \frac{y - y'}{\ell^3} \right) = \left(3
+\frac{(y - y')^2}{\ell^5} - \frac{1}{\ell^3} \right){,}\\
 %
 \frac{\partial^2}{\partial z^2} \left( \frac{1}{\ell} \right) &=
--\frac{\partial}{\partial z} \left( \frac{z - z_Q}{\ell^3} \right) = \left(3
-\frac{(z - z_Q)^2}{\ell^5} - \frac{1}{\ell^3} \right){.}
+-\frac{\partial}{\partial z} \left( \frac{z - z'}{\ell^3} \right) = \left(3
+\frac{(z - z')^2}{\ell^5} - \frac{1}{\ell^3} \right){.}
 \end{split}
 \end{equation}
 %
@@ -1452,12 +1458,12 @@ vzťah
 Tiažové pole má pre fyzikálnu geodéziu fundamentálny význam.  Jedna z~veličín 
 tiažového poľa, tiažové zrýchlenie, je totiž jedným z~prostredníkov, vďaka 
 ktorým vieme získať a~matematicky uchopiť informáciu o~skutočnom tiažovom poli 
-našej Zeme.  Ďalšia z~veličín tiažového poľa, konkrétne tiažový potenciál, sa 
-napríklad používa na samotnú definíciu fyzikálneho tvaru Zeme, teda geoidu 
-(pozri úvodnú kapitolu).
+našej Zeme.  Ďalšia z~veličín tiažového poľa, tiažový potenciál, sa používa 
+napríklad na samotnú definíciu fyzikálneho tvaru Zeme, teda geoidu (pozri 
+úvodnú kapitolu).
 
 V~nasledujúcich dvoch kapitolách popíšeme veličiny odstredivého a~tiažového 
-poľa, s~ktorými sa budeme stretávať v~ďalších častiach práce.
+poľa.
 
 
 
@@ -1520,7 +1526,7 @@ v~neinerciálnom súradnicovom systéme dané súčtom gravitačného zrýchleni
 g_\gidx(P)$ a~odstredivého zrýchlenia~$\vec g_\cidx(P)$.\footnote{Ostatné 
 zrýchlenia (pozri Kapitolu~\ref{sec:centrifugal_gravity_field}) sme pre účely 
 tejto práce s~prijateľnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa 
-nazýva \emph{tiažové zrýchlenie} a~budeme ho označovať symbolom~$\vec g(P)$ 
+nazýva \emph{tiažové zrýchlenie} a~označovať ho budeme symbolom~$\vec g(P)$ 
 (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
@@ -1714,13 +1720,14 @@ v~okolí skutočnej Zeme.
 
 Gravitačné pole budeme študovať pomocou Newtonovho 
 integrálu~(\ref{eq:vg_body}).  Ten sme až doposiaľ zapisovali všeobecne 
-s~využitím integračného elementu~$\diff \tau$ a~objemu telesa~$\tau$.  Objem 
-diferenciálneho elementu~$\diff \tau$ (Obrázok~\ref{fig:gravitating_body}) je 
-v~karteziánskom súradnicovom systéme daný známym vzťahom
+s~využitím integračného elementu~$\diff \tau$ a~objemu telesa~$\tau$.  
+V~karteziánskom súradnicovom systéme možno objem diferenciálneho 
+elementu~$\diff \tau$ (Obrázok~\ref{fig:gravitating_body}) vyjadriť jednoducho 
+vzťahom
 %
 \begin{equation}
 \label{eq:dtau_cart}
-\diff \tau(Q) = \diff x_Q \, \diff y_Q \, \diff z_Q{.}
+\diff \tau(Q) = \diff x' \, \diff y' \, \diff z'{.}
 \end{equation}
 % 
 V~tejto kapitole ale chceme analyzovať gravitačné pole v~okolí telesa 
@@ -1791,26 +1798,26 @@ získame pomocou rovníc~(\ref{eq:sph2cart}) a~(\ref{eq:jacobi}),
 \label{eq:j_cart_sph}
 \mathbf{J} =
 \begin{bmatrix}
-\dfrac{\partial x_Q}{\partial{r_Q}} & \dfrac{\partial x_Q}{\partial \varphi_Q} 
-& \dfrac{\partial x_Q}{\partial \lambda_Q}\\[2ex]
+\dfrac{\partial x'}{\partial{r'}} & \dfrac{\partial x'}{\partial \varphi'} 
+& \dfrac{\partial x'}{\partial \lambda'}\\[2ex]
 %
-\dfrac{\partial y_Q}{\partial{r_Q}} & \dfrac{\partial y_Q}{\partial{\varphi_Q}} 
-& \dfrac{\partial y_Q}{\partial \lambda_Q}\\[2ex]
+\dfrac{\partial y'}{\partial{r'}} & \dfrac{\partial y'}{\partial{\varphi'}} 
+& \dfrac{\partial y'}{\partial \lambda'}\\[2ex]
 %
-\dfrac{\partial z_Q}{\partial{r_Q}} & \dfrac{\partial z_Q}{\partial{\varphi_Q}} 
-& \dfrac{\partial z_Q}{\partial \lambda_Q}
+\dfrac{\partial z'}{\partial{r'}} & \dfrac{\partial z'}{\partial{\varphi'}} 
+& \dfrac{\partial z'}{\partial \lambda'}
 \end{bmatrix}
 %
 =
 %
 \begin{bmatrix}
-\cos\varphi_Q \, \cos\lambda_Q & -r_Q \, \sin\varphi_Q \, \cos\lambda_Q & -r_Q 
-\, \cos\varphi_Q \, \sin\lambda_Q
+\cos\varphi' \, \cos\lambda' & -r' \, \sin\varphi' \, \cos\lambda' & -r' \, 
+\cos\varphi' \, \sin\lambda'
 \\[2ex]
-\cos\varphi_Q \, \sin\lambda_Q & -r_Q \, \sin\varphi_Q \, \sin\lambda_Q &  r_Q 
-\, \cos\varphi_Q \, \cos\lambda_Q
+\cos\varphi' \, \sin\lambda' & -r' \, \sin\varphi' \, \sin\lambda' &  r' \, 
+\cos\varphi' \, \cos\lambda'
 \\[2ex]
- \sin\varphi_Q                 & r_Q \, \cos\varphi_Q                   & 0
+ \sin\varphi'                & r' \, \cos\varphi'                  & 0
 \end{bmatrix}
 %
 {.}
@@ -1821,7 +1828,7 @@ Determinant Jacobiho matice~(\ref{eq:j_cart_sph}) vypočítame napríklad
 Sarrusovým pravidlom,
 %
 \begin{equation}
-\det (\mathbf{J}) = -r_Q^2 \, \cos\varphi_Q{.}
+\det (\mathbf{J}) = -(r')^2 \, \cos\varphi'{.}
 \end{equation}
 %
 Pre diferenciál~$\diff \tau(Q)$ teda platí (pozri 
@@ -1829,9 +1836,9 @@ rovnicu~\ref{eq:iiint_change_of_variable})
 %
 \begin{equation}
 \label{eq:difftau}
-\diff \tau(Q) = \diff x_Q \, \diff y_Q \, \diff z_Q = | \det (\mathbf{J}) | \, 
-\diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q = r_Q^2 \, \cos\varphi_Q \, 
-\diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q{.}
+\diff \tau(Q) = \diff x' \, \diff y' \, \diff z' = | \det (\mathbf{J}) | \, 
+\diff r' \, \diff \varphi' \, \diff \lambda' = r'^2 \, \cos\varphi' \, \diff r' 
+\, \diff \varphi' \, \diff \lambda'{.}
 \end{equation}
 
 S~využitím vzťahov~(\ref{eq:iiint_change_of_variable}) a~(\ref{eq:difftau}) 
@@ -1839,8 +1846,8 @@ získame Newtonov integrál vo sférických súradniciach
 %
 \begin{equation}
 \label{eq:vg_body_sph}
-V = G \, \iiint\limits_{\tau'} \frac{\rho}{\ell} \, r_Q^2 \, \cos\varphi_Q \, 
-\diff r_Q \, \diff \varphi_Q \, \diff \lambda_Q{,}
+V = G \, \iiint\limits_{\tau'} \frac{\rho}{\ell} \, (r')^2 \, \cos\varphi' \, 
+\diff r' \, \diff \varphi' \, \diff \lambda'{,}
 \end{equation}
 %
 kde~$\rho = \rho(Q)$,~$\ell$ je vzdialenosť medzi výpočtovým bodom~$P(r, 
@@ -1848,7 +1855,7 @@ kde~$\rho = \rho(Q)$,~$\ell$ je vzdialenosť medzi výpočtovým bodom~$P(r,
 %
 \begin{equation}
 \label{eq:l_sph}
-\ell = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi}{,}
+\ell = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \, \cos\psi}{,}
 \end{equation}
 %
 a~$\psi$ je uhol v~rovinnom trojuholníku~$OPQ$ medzi spojnicami~$OQ$ a~$OP$ 
@@ -1872,7 +1879,7 @@ Nech je daná homogénna guľa s~polomerom~$R$ a~konštantnou hustotu~$\rho$
 v~trojrozmernom karteziánskom súradnicovom systéme~$x, y, z$.  Začiatok 
 súradnicového systému~$O$ nech je v~geometrickom strede gule, ktorý je z~dôvodu 
 konštantnej hustoty súčasne aj ťažiskom gule.  Homogénna guľa je rotačne 
-symetrické teleso, preto jeho gravitačné pole nezávisí ani od sférickej šírky, 
+symetrické teleso, preto jej gravitačné pole nezávisí ani od sférickej šírky, 
 ani od sférickej dĺžky výpočtového bodu.  Sférickú šírku a~sférickú dĺžku 
 výpočtového bodu preto môžeme zvoliť tak, aby nám umožnili čo najjednoduchší 
 výpočet Newtonovho integrálu~(\ref{eq:vg_body_sph}).  Vhodnou voľbou sa javia 
@@ -1896,30 +1903,30 @@ Vzdialenosť medzi~$P$ a~$\diff \tau(Q)$
 %
 \begin{equation}
 \label{eq:l_sph_ball}
-\ell = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \cos(90^{\circ} - \varphi_Q)} 
-= \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \sin(\varphi_Q)}{.}
+\ell = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \cos(90^{\circ} - \varphi')} 
+= \sqrt{r^2 + (r')^2 - 2 \, r \, r' \sin(\varphi')}{.}
 \end{equation}
 %
-Vzdialenosť~$\ell$ nezávisí od sférickej dĺžky~$\lambda_Q$.  Po jej dosadení do 
+Vzdialenosť~$\ell$ nezávisí od sférickej dĺžky~$\lambda'$.  Po jej dosadení do 
 Newtonovho integrálu~(\ref{eq:vg_body_sph}) môžeme teda ihneď vypočítať 
-integrál cez sférickú dĺžku~$\lambda_Q$.  Po uvážení konštantnej hustoty~$\rho$ 
+integrál cez sférickú dĺžku~$\lambda'$.  Po uvážení konštantnej hustoty~$\rho$ 
 tak získame vzťah
 %
 \begin{equation}
 \label{eq:vg_ball_sph}
 \begin{split}
-V_\gidx(P) &= G \, \rho \, \int\limits_{r_Q = 0}^{R} \int\limits_{\varphi_Q 
-= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda_Q = 0}^{2\pi} 
-\frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, \diff \lambda_Q \, \diff \varphi_Q 
-\, \diff r_Q\\
+V_\gidx(P) &= G \, \rho \, \int\limits_{r' = 0}^{R} \int\limits_{\varphi' 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda' = 0}^{2\pi} 
+\frac{1}{\ell} \, (r')^2 \, \cos\varphi' \, \diff \lambda' \, \diff \varphi' \, 
+\diff r'\\
 %
-&=\, G \, \rho \, \big[ \lambda_Q \big]_{0}^{2\pi} \, \int\limits_{r_Q = 0}^{R} 
-\int\limits_{\varphi_Q = -\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{\ell} \, 
-r_Q^2 \, \cos\varphi_Q \, \diff \varphi_Q \, \diff r_Q\\
+&=\, G \, \rho \, \big[ \lambda' \big]_{0}^{2\pi} \, \int\limits_{r' = 0}^{R} 
+\int\limits_{\varphi' = -\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{\ell} \, 
+(r')^2 \, \cos\varphi' \, \diff \varphi' \, \diff r'\\
 %
-&=2\pi \, G \, \rho \, \int\limits_{r_Q = 0}^{R} \int\limits_{\varphi_Q 
-= -\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, 
-\diff \varphi_Q \, \diff r_Q{.}
+&=2\pi \, G \, \rho \, \int\limits_{r' = 0}^{R} \int\limits_{\varphi' 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \frac{1}{\ell} \, (r')^2 \, \cos\varphi' \, 
+\diff \varphi' \, \diff r'{.}
 \end{split}
 \end{equation}
 
@@ -1927,28 +1934,28 @@ Integrand v~poslednom výraze predošlej rovnice má pomerne zložitý tvar, pre
 vzdialenosť~$\ell$, ktorá sa nachádza v~menovateli, závisí od oboch 
 integračných premenných v~zmysle rovnice~(\ref{eq:l_sph_ball}).  Trik, ktorým 
 si výrazne zjednodušíme integráciu, spočíva v~zámene integračnej 
-premennej~$\varphi_Q$ za premennú~$\ell$.  Na zámenu integračnej 
-premennej~$\varphi_Q$ za~$\ell$ potrebujeme nájsť vzťah medzi~$\diff \varphi_Q$ 
+premennej~$\varphi'$ za premennú~$\ell$.  Na zámenu integračnej 
+premennej~$\varphi'$ za~$\ell$ potrebujeme nájsť vzťah medzi~$\diff \varphi'$ 
 a~$\diff \ell$ a~následne aj hranice integrálu z~pohľadu novej integračnej 
 premennej~$\ell$.  Derivujme vzťah~(\ref{eq:l_sph_ball}) podľa sférickej 
-šírky~$\varphi_Q$, pričom premenné~$r$ a~$r_Q$ budeme považovať za konštanty,
+šírky~$\varphi'$, pričom premenné~$r$ a~$r'$ budeme považovať za konštanty,
 %
 \begin{equation}
-\frac{\diff \ell}{\diff \varphi_Q} = -\frac{r \, r_Q \, \cos\varphi_Q}{\ell}{.}
+\frac{\diff \ell}{\diff \varphi'} = -\frac{r \, r' \, \cos\varphi'}{\ell}{.}
 \end{equation}
 %
 Po úprave dostaneme vzťah
 %
 \begin{equation}
-\cos\varphi_Q \, \diff \varphi_Q = -\frac{\ell \, \diff \ell}{r \, r_Q}{.}
+\cos\varphi' \, \diff \varphi' = -\frac{\ell \, \diff \ell}{r \, r'}{.}
 \end{equation}
 %
 Dosadením poslednej rovnice do~(\ref{eq:vg_ball_sph}) získame integrál
 %
 \begin{equation}
 \label{eq:vg_ball_sph_tmp}
-V_\gidx(P) = -\frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = 0}^R 
-\int\limits_{\ell = \ell_1}^{\ell_2} \diff \ell \, r_Q \, \diff r_Q{,}
+V_\gidx(P) = -\frac{2\pi \, G \, \rho}{r} \int\limits_{r' = 0}^R 
+\int\limits_{\ell = \ell_1}^{\ell_2} \diff \ell \, r' \, \diff r'{,}
 \end{equation}
 %
 ktorý už môže byť vyriešený pomocou základných tabuľkových integrálov.  Zámenou 
@@ -1956,37 +1963,35 @@ integračnej premennej je teda niekedy možné jednoduchým spôsobom vyriešiť
 integrály, ktoré majú inak komplikovaný tvar.
 
 Teraz ostáva už len určiť integračné hranice~$\ell_1$ a~$\ell_2$.  Tie získame 
-dosadením integračných hraníc~$-\frac{\pi}{2}$ a~$\frac{\pi}{2}$ 
-pre~$\varphi_Q$ z~rovnice~(\ref{eq:vg_ball_sph}) do 
-vzťahu~(\ref{eq:l_sph_ball}).  Dosaďme do~(\ref{eq:l_sph_ball}) najprv spodnú 
-hranicu~$-\frac{\pi}{2}$,
+dosadením integračných hraníc~$-\frac{\pi}{2}$ a~$\frac{\pi}{2}$ pre~$\varphi'$ 
+z~rovnice~(\ref{eq:vg_ball_sph}) do vzťahu~(\ref{eq:l_sph_ball}).  Dosaďme 
+do~(\ref{eq:l_sph_ball}) najprv spodnú hranicu~$-\frac{\pi}{2}$,
 %
 \begin{equation}
 \label{eq:vg_ball_l1}
-\ell_1 = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, \sin\left(-\frac{\pi}{2}\right)} 
-= \sqrt{r^2 + r_Q^2 + 2 \, r \, r_Q} = \sqrt{(r + r_Q)^2} = r + r_Q{.}
+\ell_1 = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \, \sin\left(-\frac{\pi}{2}\right)} 
+= \sqrt{r^2 + (r')^2 + 2 \, r \, r'} = \sqrt{(r + r')^2} = r + r'{.}
 \end{equation}
 %
 Pre hornú hranicu~$\frac{\pi}{2}$ získame dve riešenia,
 %
 \begin{align}
 \label{eq:vg_ball_l21}
-\ell_{2,1} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, 
-\sin\left(\frac{\pi}{2}\right)} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q} = \sqrt{(r 
-- r_Q)^2} = r - r_Q{,}\\
+\ell_{2,1} = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \, 
+\sin\left(\frac{\pi}{2}\right)} = \sqrt{r^2 + (r')^2 - 2 \, r \, r'} = \sqrt{(r 
+- r')^2} = r - r'{,}\\
 %
 \label{eq:vg_ball_l22}
-\ell_{2,2} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q \, 
-\sin\left(\frac{\pi}{2}\right)} = \sqrt{r^2 + r_Q^2 - 2 \, r \, r_Q} 
-= \sqrt{(r_Q - r)^2} = r_Q - r{.}
+\ell_{2,2} = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \, 
+\sin\left(\frac{\pi}{2}\right)} = \sqrt{r^2 + (r')^2 - 2 \, r \, r'} 
+= \sqrt{(r' - r)^2} = r' - r{.}
 \end{align}
 %
 O~vzdialenosti~$\ell$ z~rovnice~(\ref{eq:l_sph_ball}) vieme povedať, že musí 
 byť nezáporná.  Zo vzťahov~(\ref{eq:vg_ball_l21})~a~(\ref{eq:vg_ball_l22}) 
 preto ponúka správne riešenie rovnica~(\ref{eq:vg_ball_l21}), pretože iba tá 
-dáva kladnú vzdialenosť pre~$r > R = \max(r_Q)$ (predpoklad zo začiatku 
-podkapitoly) a~všetky~diferenciálne elementy~$r_Q$.  Teda~$\ell_2 
-= \ell_{2,1}$.
+dáva kladnú vzdialenosť pre~$r > R = \max(r')$ (predpoklad zo začiatku 
+podkapitoly) a~všetky~diferenciálne elementy~$r'$.  Teda~$\ell_2 = \ell_{2,1}$.
 
 Dosaďme vzťahy pre~$\ell_1$ a~$\ell_{2,1}$ do~(\ref{eq:vg_ball_sph_tmp}) 
 a~vypočítajme oba integrály,
@@ -1994,18 +1999,18 @@ a~vypočítajme oba integrály,
 \begin{equation}
 \label{eq:vg_ball_sph_tmp2}
 \begin{split}
-V_\gidx(P) &= -\frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = 0}^R 
-\int\limits_{\ell = r + r_Q}^{r - r_Q} \diff \ell \, r_Q \, \diff r_Q
+V_\gidx(P) &= -\frac{2\pi \, G \, \rho}{r} \int\limits_{r' = 0}^R 
+\int\limits_{\ell = r + r'}^{r - r'} \diff \ell \, r' \, \diff r'
 %
-= \frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = 0}^R \int\limits_{\ell 
-= r - r_Q}^{r + r_Q} \diff \ell \, r_Q \, \diff r_Q\\
+= \frac{2\pi \, G \, \rho}{r} \int\limits_{r' = 0}^R \int\limits_{\ell 
+= r - r'}^{r + r'} \diff \ell \, r' \, \diff r'\\
 %
-&= \frac{2\pi \, G \, \rho}{r} \,  \int\limits_{0}^R \big[ l \big]_{r - r_Q}^{r 
-+ r_Q} \, r_Q  \, \diff r_Q
+&= \frac{2\pi \, G \, \rho}{r} \,  \int\limits_{0}^R \big[ l \big]_{r - r'}^{r 
++ r'} \, r'  \, \diff r'
 %
-= \frac{4\pi \, G \, \rho}{r} \, \int\limits_{0}^R r_Q^2 \, \diff r_Q\\
+= \frac{4\pi \, G \, \rho}{r} \, \int\limits_{0}^R (r')^2 \, \diff r'\\
 %
-&=  \frac{4\pi \, G \, \rho}{r} \left[ \frac{r_Q^3}{3} \right]_{0}^{R} 
+&=  \frac{4\pi \, G \, \rho}{r} \left[ \frac{(r')^3}{3} \right]_{0}^{R} 
 = \frac{4}{3}\pi \, G \, \rho \, \frac{R^3}{r}{.}
 \end{split}
 \end{equation}
@@ -2049,7 +2054,7 @@ vypočítame vzťahom
 r = \sqrt{x^2 + y^2 + z^2}.
 \end{equation}
 %
-Ak~$x_Q = y_Q = z_Q = 0$ v~rovnici~(\ref{eq:l}) pre~$\ell$, potom~$r = \ell$.  
+Ak~$x' = y' = z' = 0$ v~rovnici~(\ref{eq:l}) pre~$\ell$, potom~$r = \ell$.  
 Platnosť Laplaceovej rovnice tak môžeme dokázať 
 vzťahmi~(\ref{eq:l_2nd_derivatives}) rovnako ako v~prípade hmotného bodu.  
 Presvedčme sa teraz o~platnosti Laplaceovej rovnice v~lokálnom súradnicovom 
@@ -2120,12 +2125,12 @@ pretože (pozri rovnicu~\ref{eq:er_elat_elon_unit})
 \| \vec e_3^\mathrm{s} \| = 1{.}
 \end{equation}
 
-Vzťah~(\ref{eq:gg_ball_out_magnitude}) je totožný zo vzťahom pre veľkosť 
-gravitačného zrýchlenia hmotného bodu~(\ref{eq:gg_point_mass}).  Overme toto 
-tvrdenie.  Nech je daný hmotný bod s~hmotnosťou~$m$ a~výpočtový bod~$P$.  Nech 
-polohu výpočtového bodu~$P$ voči hmotnému bodu udáva polohový vektor~$\vec r$ 
-s~veľkosťou~$r = \| \vec r \|$.  Z~rovnice~(\ref{eq:gg_point_mass}) potom 
-vyplýva
+Vzťah~(\ref{eq:gg_ball_out_magnitude}) je totožný so vzťahom na výpočet 
+veľkosti gravitačného zrýchlenia hmotného bodu.  Overme toto tvrdenie.  Nech je 
+daný hmotný bod s~hmotnosťou~$m$.  Nech polohu výpočtového bodu~$P$ voči 
+hmotnému bodu udáva polohový vektor~$\vec r$ s~veľkosťou~$r = \| \vec r \|$.  
+Z~rovnice pre gravitačné zrýchlenie hmotného bodu~(\ref{eq:gg_point_mass}) 
+potom vyplýva
 %
 \begin{equation}
 \| \vec g_\gidx(P) \| = \left\lVert -G \frac{m}{r^3} \, \vec r \right\rVert 
@@ -2176,20 +2181,20 @@ V_\gidx(P) = V_{\gidx,1}(P) + V_{\gidx,2}(P){,}
 pričom
 %
 \begin{equation}
-V_{\gidx,1}(P) = G \, \rho \, \int\limits_{r_Q = 0}^{r} \int\limits_{\varphi_Q 
-= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda_Q = 0}^{2\pi} 
-\frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, \diff \lambda_Q \, \diff \varphi_Q 
-\, \diff r_Q
+V_{\gidx,1}(P) = G \, \rho \, \int\limits_{r' = 0}^{r} \int\limits_{\varphi' 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda' = 0}^{2\pi} 
+\frac{1}{\ell} \, (r')^2 \, \cos\varphi' \, \diff \lambda' \, \diff \varphi' \, 
+\diff r'
 \end{equation}
 %
 a
 %
 \begin{equation}
 \label{eq:vg_ball_in_2}
-V_{\gidx,2}(P) = G \, \rho \, \int\limits_{r_Q = r}^{R} \int\limits_{\varphi_Q 
-= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda_Q = 0}^{2\pi} 
-\frac{1}{\ell} \, r_Q^2 \, \cos\varphi_Q \, \diff \lambda_Q \, \diff \varphi_Q 
-\, \diff r_Q{.}
+V_{\gidx,2}(P) = G \, \rho \, \int\limits_{r' = r}^{R} \int\limits_{\varphi' 
+= -\frac{\pi}{2}}^{\frac{\pi}{2}} \int\limits_{\lambda' = 0}^{2\pi} 
+\frac{1}{\ell} \, (r')^2 \, \cos\varphi' \, \diff \lambda' \, \diff \varphi' \, 
+\diff r'{.}
 \end{equation}
 
 \begin{figure}
@@ -2216,21 +2221,20 @@ pomocou rovnice~(\ref{eq:vg_ball_sph_tmp}).  Za hornú hranicu
 integrácie~$\ell_2$ použijeme tú z~rovníc~(\ref{eq:vg_ball_l21}) 
 a~(\ref{eq:vg_ball_l22}), ktorá dáva nezápornú vzdialenosť pre uvažovaný 
 výpočtový bod.  V~rovnici~(\ref{eq:vg_ball_in_2}) uvažujeme diferenciálne 
-elementy so sprievodičom~$r \leq r_Q \leq R$, preto nezápornú vzdialenosť pre 
+elementy so sprievodičom~$r \leq r' \leq R$, preto nezápornú vzdialenosť pre 
 všetky diferenciálne elementy dáva iba rovnica~(\ref{eq:vg_ball_l22}).  
 Dosadením integračných hraníc~$\ell_1$ a~$\ell_{2,2}$ tak dostaneme vzťah
 %
 \begin{equation}
 \begin{split}
-V_{\gidx,2}(P) &= -\frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = r}^R 
-\int\limits_{\ell = r_Q + r}^{r_Q - r} \diff \ell \, r_Q \, \diff r_Q 
-= \frac{2\pi \, G \, \rho}{r} \int\limits_{r_Q = r}^R \int\limits_{\ell = r_Q 
-- r}^{r_Q + r} \diff \ell \, r_Q \, \diff r_Q\\
+V_{\gidx,2}(P) &= -\frac{2\pi \, G \, \rho}{r} \int\limits_{r' = r}^R 
+\int\limits_{\ell = r' + r}^{r' - r} \diff \ell \, r' \, \diff r' = \frac{2\pi 
+\, G \, \rho}{r} \int\limits_{r' = r}^R \int\limits_{\ell = r' - r}^{r' + r} 
+\diff \ell \, r' \, \diff r'\\
 %
-&= \frac{2\pi \, G \, \rho}{r} \,  \int\limits_{r}^R \big[ l \big]_{r_Q 
-- r}^{r_Q + r} \, r_Q  \, \diff r_Q = 4\pi \, G \, \rho \,  \int\limits_{r}^R 
-r_Q  \, \diff r_Q = 4\pi \, G \, \rho \,  \left[ \frac{r_Q^2}{2} 
-\right]_{r}^R\\
+&= \frac{2\pi \, G \, \rho}{r} \,  \int\limits_{r}^R \big[ l \big]_{r' - r}^{r' 
++ r} \, r'  \, \diff r' = 4\pi \, G \, \rho \,  \int\limits_{r}^R r'  \, \diff 
+r' = 4\pi \, G \, \rho \,  \left[ \frac{(r')^2}{2} \right]_{r}^R\\
 %
 &= 2\pi \, G \, \rho \,  (R^2 - r^2){.}
 \end{split}
@@ -2956,8 +2960,8 @@ V~tejto kapitole odvodíme vzťah~(\ref{eq:vg_synthesis})
 z~rovnice~(\ref{eq:vg_body}).  Zavedených bude niekoľko nových pojmov, no aby 
 sme pričasto neprerušovali prirodzený myšlienkový postup odvodenia, nové pojmy
 predstavíme len vo forme nevyhnutnej na pochopenie samotného odvodenia.
-Vrátime sa k~nim v~nasledujúcich kapitolách, podobne ako sa čitateľ môže vrátiť
-k~tejto kapitole po prečítaní dovysvetľujúcich kapitol.
+Vrátime sa k~nim v~nasledujúcich kapitolách, podobne ako sa čitateľ môže neskôr 
+vrátiť k~tejto kapitole.
 
 Nech je dané všeobecné teleso s~objemom~$\tau$ a~hustotou~$\rho$
 (Obrázok~\ref{fig:gravitating_body}).  Hustota~$\rho$ sa v~telese môže meniť,
@@ -2965,19 +2969,19 @@ no budeme predpokladať, že v~každom diferenciálnom elemente~$\diff \tau(Q)$ 
 konečná.  Nech je ďalej daný bod~$P$, ktorý sa nachádza \emph{mimo} všeobecného
 telesa, teda v~tej časti priestoru, v~ktorom je gravitačný potenciál harmonický
 (Kapitola~\ref{sec:laplace_equation_cart}).  Trojicu sférických súradníc 
-(Obrázok~\ref{fig:cart_sph}) bodov~$P$ a~$Q$ označme symbolmi~$(r, \varphi,
-\lambda)$~a~$(r_Q, \varphi_Q, \lambda_Q)$.  Symbolom~$\ell$ budeme označovať 
+(Obrázok~\ref{fig:cart_sph}) bodov~$P$ a~$Q$ označme symbolmi~$r, \varphi,
+\lambda$~a~$r', \varphi', \lambda'$.  Symbolom~$\ell$ budeme označovať 
 vzdialenosť medzi bodmi~$P$~a~$Q$ (rovnica~\ref{eq:l_sph} 
 a~Obrázok~\ref{fig:distance_l}).
 
 Vyjadrime prevrátenú hodnotu vzdialenosti~$1 \slash \ell$, ktorá vystupuje 
-v~rovnici~(\ref{eq:vg_body}),
+v~rovnici~(\ref{eq:vg_body}), pomocou vzťahu~(\ref{eq:l_sph}),
 %
 \begin{equation}
 \label{eq:1l}
-\frac{1}{\ell} = \frac{1}{\sqrt{ r^2 + r_Q^2 - 2 \, r \, r_Q \, \cos\psi
-}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r_Q}{r}
-\right)^2 - 2 \dfrac{r_Q}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
+\frac{1}{\ell} = \frac{1}{\sqrt{ r^2 + (r')^2 - 2 \, r \, r' \, \cos\psi
+}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r'}{r}
+\right)^2 - 2 \dfrac{r'}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
 \end{equation}
 %
 Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
@@ -2998,7 +3002,7 @@ Zaveďme nasledovné substitúcie pre niektoré členy z~rovnice~(\ref{eq:1l}),
 %
 \begin{align}
 \label{eq:alpha}
-\alpha &= \frac{r_Q}{r}{,}\\
+\alpha &= \frac{r'}{r}{,}\\
 %
 \label{eq:t}
 t &= \cos\psi{,}\\
@@ -3036,9 +3040,9 @@ substitúcií~(\ref{eq:alpha}) a~(\ref{eq:t}) získame rozvoj funkcie~$1 \slash
 %
 \begin{equation}
 \label{eq:1l_legpol}
-\frac{1}{\ell} = \frac{1}{r} \, \sum_{n = 0}^\infty \left( \frac{r_Q}{r} 
-\right)^{n} \, P_n(\cos\psi) = \frac{1}{r_Q} \, \sum_{n = 0}^\infty \left( 
-\frac{r_Q}{r} \right)^{n + 1} \, P_n(\cos\psi){.}
+\frac{1}{\ell} = \frac{1}{r} \, \sum_{n = 0}^\infty \left( \frac{r'}{r} 
+\right)^{n} \, P_n(\cos\psi) = \frac{1}{r'} \, \sum_{n = 0}^\infty \left( 
+\frac{r'}{r} \right)^{n + 1} \, P_n(\cos\psi){.}
 \end{equation}
 %
 Dosadením prostredného výrazu z~rovnice~(\ref{eq:1l_legpol}) 
@@ -3047,8 +3051,8 @@ dostaneme vzťah
 %
 \begin{equation}
 \label{eq:vg_legpol}
-V_\gidx(P) = \frac{G}{r} \, \iiint\limits_{\tau} \rho(Q) \, \sum_{n 
-= 0}^{\infty} \left( \frac{r_Q}{r} \right)^n \, P_n(\cos\psi) \, 
+V_\gidx(P) = \frac{G}{r} \, \iiint\limits_{\tau} \rho(r', \varphi', \lambda') 
+\, \sum_{n = 0}^{\infty} \left( \frac{r'}{r} \right)^n \, P_n(\cos\psi) \, 
 \diff\tau(Q){.}
 \end{equation}
 
@@ -3059,13 +3063,13 @@ bodov~$Q$ a~$P$,
 %
 \begin{equation}
 \label{eq:cospsi}
-\cos\psi = \sin\varphi \, \sin\varphi_Q + \cos\varphi \, \cos\varphi_Q \,
-\cos(\lambda - \lambda_Q){.}
+\cos\psi = \sin\varphi \, \sin\varphi' + \cos\varphi \, \cos\varphi' \,
+\cos(\lambda - \lambda'){.}
 \end{equation}
 %
 Bolo by preto vhodné nájsť taký vzťah pre Legendreov polynóm~$P_n(\cos\psi)$,
 v~ktorom by každá prípadná funkcia závisela iba od jednej z~premenných
-$\varphi,  \lambda, \varphi_Q, \lambda_Q$, a~nie od viacerých
+$\varphi,  \lambda, \varphi', \lambda'$, a~nie od viacerých
 premenných ako je tomu po dosadení~(\ref{eq:cospsi})
 do~(\ref{eq:vg_legpol}).  Na tento účel slúži \emph{dekompozičný vzorec pre
 Legendreove polynómy}, niekedy tiež nazývaný aj adičný teorém či súčtová veta.
@@ -3081,18 +3085,18 @@ ekvivalentných formách, napríklad
 \begin{equation}
 \label{eq:pn_decomposition_formula}
 \begin{split}
-P_n(\cos\psi) &= P_n(\sin\varphi) \, P_n(\sin\varphi_Q)\\
+P_n(\cos\psi) &= P_n(\sin\varphi) \, P_n(\sin\varphi')\\
 %
 &\phantom{={}} +2 \sum_{m = 1}^{n} \frac{(n - m)!}{(n + m)!} \,
-P_{nm}(\sin\varphi) \, P_{nm}(\sin\varphi_Q) \, \cos\left[m (\lambda
-- \lambda_Q) \right]\\
+P_{nm}(\sin\varphi) \, P_{nm}(\sin\varphi') \, \cos\left[m (\lambda
+- \lambda') \right]\\
 %
 &= \sum_{m = 0}^{n} (2 - \delta_{m0}) \, \frac{(n - m)!}{(n + m)!} \, \left[
-P_{nm}(\sin\varphi) \, \cos(m\lambda) \, P_{nm}(\sin\varphi_Q) \,
-\cos(m\lambda_Q)\right.\\
+P_{nm}(\sin\varphi) \, \cos(m\lambda) \, P_{nm}(\sin\varphi') \,
+\cos(m\lambda')\right.\\
 %
 &\phantom{={}}+\left. P_{nm}(\sin\varphi) \, \sin(m\lambda) \,
-P_{nm}(\sin\varphi_Q) \, \sin(m\lambda_Q)\right]{.}
+P_{nm}(\sin\varphi') \, \sin(m\lambda')\right]{.}
 \end{split}
 \end{equation}
 %
@@ -3140,12 +3144,12 @@ kde
 C_{nm}\\
 S_{nm}
 \end{rcases}
-= (2 - \delta_{m0}) \frac{(n - m)!}{(n + m)!} \iiint\limits_{\tau} \rho(r_Q,
-\varphi_Q, \lambda_Q) \, r_Q^n \, P_{nm}(\sin\varphi_Q)
+= (2 - \delta_{m0}) \frac{(n - m)!}{(n + m)!} \iiint\limits_{\tau} \rho(r',
+\varphi', \lambda') \, (r')^n \, P_{nm}(\sin\varphi')
 %
 \begin{Bmatrix}
-\cos(m\lambda_Q)\\
-\sin(m\lambda_Q)
+\cos(m\lambda')\\
+\sin(m\lambda')
 \end{Bmatrix}
 %
 \diff\tau(Q){.}
@@ -3154,8 +3158,8 @@ S_{nm}
 Všimnime si, že vo vzťahu~(\ref{eq:vg_sh_no_norm}) sú premennými iba súradnice 
 $r, \varphi, \lambda$ výpočtového bodu~$P$, v~ktorom určujeme gravitačný 
 potenciál (pozri Obrázok~\ref{fig:gravitating_body}).  Naproti tomu, vo 
-vzťahu~(\ref{eq:vg_shc_no_norm}) sú premenné iba súradnice $r_Q,\varphi_Q, 
-\lambda_Q$ diferenciálneho elementu~$\diff\tau(Q)$ 
+vzťahu~(\ref{eq:vg_shc_no_norm}) sú premenné iba súradnice $r',\varphi', 
+\lambda'$ diferenciálneho elementu~$\diff\tau(Q)$ 
 (Obrázok~\ref{fig:gravitating_body}).  Ďalej vidíme, že koeficienty~$C_{nm}$ 
 a~$S_{nm}$ sú pre dané teleso \emph{konštantné}.  Ak teda poznáme 
 koeficienty~$C_{nm}$ a~$S_{nm}$, potom vďaka vzťahu~(\ref{eq:vg_sh_no_norm}) 
@@ -3317,8 +3321,8 @@ Rovnicu~(\ref{eq:lp_orthogonality}) možno zovšeobecniť doplnením prípadu~$n
 
 Vo fyzikálnej geodézii sú rovnice~(\ref{eq:f_synthesis}) 
 a~(\ref{eq:f_analysis}) využívané veľmi často a~v~istej miere sme sa s~nimi 
-stretli už v~predchádzajúcej kapitole.  Nech~$r$ a~$r_Q$ 
-z~rovnice~(\ref{eq:1l_legpol}) sú konštanty, pre ktoré platí~$r > r_Q$ (pozri 
+stretli už v~predchádzajúcej kapitole.  Nech~$r$ a~$r'$ 
+z~rovnice~(\ref{eq:1l_legpol}) sú konštanty, pre ktoré platí~$r > r'$ (pozri 
 podmienku $\alpha < 1$ v~rovnici~\ref{eq:generic_function_for_lps}).  Keď 
 označíme $f(t) = 1 \slash \ell(t)$, $t = \cos\psi$, pomocou 
 rovníc~(\ref{eq:lp_orthogonality_2}) a~(\ref{eq:1l_legpol}) sa môžeme 
@@ -3326,7 +3330,7 @@ presvedčiť, že koeficienty~$f_n$ z~rovnice~(\ref{eq:f_analysis}) sú dané
 vzťahom
 %
 \begin{equation}
-f_n = \frac{1}{r_Q} \, \frac{2}{2n + 1} \, \left( \frac{r_Q}{r} \right)^{n
+f_n = \frac{1}{r'} \, \frac{2}{2n + 1} \, \left( \frac{r'}{r} \right)^{n
 + 1}{.}
 \end{equation}
 %
@@ -3825,7 +3829,7 @@ teorém~(\ref{eq:pn_decomposition_formula}) v~tvare
 %
 \begin{equation}
 P_n(\cos\psi) = \frac{1}{2n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
-\lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q)
+\lambda) \, \bar{Y}_{nk}(\varphi', \lambda')
 \end{equation}
 %
 a~prevrátenú hodnotu vzdialenosti $1 \slash \ell$ z~rovnice~(\ref{eq:1l}) 
@@ -3833,9 +3837,9 @@ v~tvare
 %
 \begin{equation}
 \label{eq:1l_sh}
-\frac{1}{\ell} = \frac{1}{r_Q} \, \sum_{n = 0}^{\infty} \frac{1}{2n + 1} \, 
-\left( \frac{r_Q}{r} \right)^{n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
-\lambda) \, \bar{Y}_{nk}(\varphi_Q, \lambda_Q){.}
+\frac{1}{\ell} = \frac{1}{r'} \, \sum_{n = 0}^{\infty} \frac{1}{2n + 1} \, 
+\left( \frac{r'}{r} \right)^{n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
+\lambda) \, \bar{Y}_{nk}(\varphi', \lambda'){.}
 \end{equation}
 
 Z~numerického hľadiska je výpočet nenormovaných Legendreových funkcií 
@@ -3989,11 +3993,11 @@ stupeň $n = 1$ a~rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) získame
 %
 \begin{equation}
 \begin{split}
-\frac{C_{1,0}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, z_Q \, \diff 
+\frac{C_{1,0}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, z' \, \diff 
 \tau(Q) = z_\mathrm{c}{,}\\
-\frac{C_{1,1}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, x_Q \, \diff 
+\frac{C_{1,1}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, x' \, \diff 
 \tau(Q) = x_\mathrm{c}{,}\\
-\frac{S_{1,1}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, y_Q \, \diff 
+\frac{S_{1,1}}{M} &= \frac{1}{M} \iiint\limits_{\tau} \rho(Q) \, y' \, \diff 
 \tau(Q) = y_\mathrm{c}{.}
 \end{split}
 \end{equation}
@@ -4222,13 +4226,13 @@ model topografie zemského Mesiaca do stupňa~2600, MoonTopo2600pa.shape
 
 Pred rozvinutím generickej funkcie pre Legendreove polynómy do Maclaurinovho 
 radu (vzťah~\ref{eq:maclaurin_series_of_generic_function}) sme vyslovili 
-predpoklad $\frac{r_Q}{r} < 1$.  Bez splnenia tejto podmienky 
+predpoklad $\frac{r'}{r} < 1$.  Bez splnenia tejto podmienky 
 rad~(\ref{eq:maclaurin_series_of_generic_function}) nemusí konvergovať.  
 V~takom prípade nie je možné pokračovať v~odvodení 
 z~Kapitoly~\ref{sec:vg_sh_expansion}.  Ak totiž 
 rad~(\ref{eq:maclaurin_series_of_generic_function}) diverguje, zámena poradia 
 integrácie a~sumácie nie je možná.  Na získanie vzťahu~(\ref{eq:vg_sh_no_norm}) 
-sme preto museli predpokladať, že podmienka $\frac{r_Q}{r} < 1$ je splnená.
+sme preto museli predpokladať, že podmienka $\frac{r'}{r} < 1$ je splnená.
 
 \begin{figure}
 \centering
@@ -4241,14 +4245,14 @@ rad~(\ref{eq:vg_sh_no_norm}) nepopisuje skutočný gravitačný potenciál.}
 \label{fig:spherical_harmonics_convergence}
 \end{figure}
 
-Nerovnosť $\frac{r_Q}{r} < 1$ môžeme prepísať do tvaru $r > r_Q$.  Táto
-nerovnosť je splnená pre \emph{všetky} diferenciálne elementy $\diff \tau(r_Q,
-\varphi_Q, \lambda_Q)$ iba vtedy, ak pre sprievodič $r$ výpočtového bodu $P(r,
+Nerovnosť $\frac{r'}{r} < 1$ môžeme prepísať do tvaru $r > r'$.  Táto
+nerovnosť je splnená pre \emph{všetky} diferenciálne elementy $\diff \tau(r',
+\varphi', \lambda')$ iba vtedy, ak pre sprievodič $r$ výpočtového bodu $P(r,
 \varphi, \lambda)$ platí
 %
 \begin{equation}
 \label{eq:spherical_harmonic_convergence}
-r > \max(r_Q) = R{,}
+r > \max(r') = R{,}
 \end{equation}
 %
 kde $R$ je sprievodič najvzdialenejšieho diferenciálneho elementu $\diff\tau$ 
@@ -7984,7 +7988,7 @@ $\sigma$ je jednotková sféra, $\diff\sigma(P')$ je jej diferenciál v~bode~$P'
 %
 \begin{equation}
 \label{eq:diff_sigma}
-\diff\sigma(P') = \cos\varphi' \, \diff\varphi \, \diff\lambda{,}
+\diff\sigma(P') = \cos\varphi' \, \diff\varphi' \, \diff\lambda'{,}
 \end{equation}
 %
 a~$S$ je \emph{Stokesovo integračné jadro} (niekedy tiež nazývané 
@@ -8719,7 +8723,7 @@ zvislicovými odchýlkami a~ďalšími veličinami fyzikálnej geodézie.
 
 
 
-\section{Vening--Meineszove integrály}
+\section{Veningove Meineszove integrály}
 \label{sec:vm_integral}
 
 V~Kapitole~\ref{sec:deflections_disturbing_potential} sme ukázali súvislosť 
@@ -8908,7 +8912,7 @@ S(\psi)}{\diff \psi} \, \sin\alpha \, \Delta g_0 \, \diff\sigma{.}
 \end{split}
 \end{equation}
 
-Rovnice~(\ref{eq:vm2}) sa nazývajú \emph{Vening--Meineszove integrály} a~sú 
+Rovnice~(\ref{eq:vm2}) sa nazývajú \emph{Veningove Meineszove integrály} a~sú 
 pomenované po holandskom geofyzikovi a~geodetovi F.~A.~Veningovi Meineszovi 
 (1887~-- 1966), ktorý ich odvodil v~roku 1928.  Tieto integrály~umožňujú 
 výpočet gravimetrických zvislicových odchýlok na geoide z~anomálií tiažového 
@@ -8923,7 +8927,7 @@ podrobne odvádzať a~uvedieme iba jej výsledný tvar
 \sin\dfrac{\psi}{2} + \sin^2\dfrac{\psi}{2} \right]{.}
 \end{equation}
 
-Vening--Meineszove integrály~(\ref{eq:vm2}) patria medzi konvolučné integrály 
+Veningove Meineszove integrály~(\ref{eq:vm2}) patria medzi konvolučné integrály 
 (Kapitola~\ref{sec:stokes_convolution}).  Ich integračné jadrá
 %
 \begin{equation}
@@ -9866,20 +9870,20 @@ vzťahu~(\ref{eq:laplace_orthogonal_system_final_2}).
 
 
 
-\chapter{Výpočet a zobrazenie gravitačného potenciálu a~gravitačného zrýchlenia 
-homogénnej gule}
+\chapter{Výpočet a zobrazenie gravitačného potenciálu a~veľkosti gravitačného 
+zrýchlenia homogénnej gule}
 \chaptermark{Gravitačný potenciál a~gravitačné zrýchlenie homogénnej gule}
 \label{app:ball}
 
-Zdrojový kód~\ref{src:ball} vypočíta a~zobrazí gravitačný potenciál 
-a~gravitačné zrýchlenie v~okolí homogénnej nerotujúcej gule.  Hmotnosť 
+Zdrojový kód~\ref{src:ball} vypočíta a~zobrazí gravitačný potenciál a~veľkosť 
+gravitačného zrýchlenia v~okolí homogénnej nerotujúcej gule.  Hmotnosť 
 a~polomer homogénnej gule boli zvolené tak, aby aproximovali skutočnú Zem.
 
 \vspace{4ex}
 
 \lstinputlisting[caption=Výpočet a~zobrazenie gravitačného potenciálu 
-a~gravitačného zrýchlenia homogénnej gule v~programovacom jazyku Python, 
-language=mypython, label=src:ball,
+a~veľkosti gravitačného zrýchlenia homogénnej gule v~programovacom jazyku 
+Python, language=mypython, label=src:ball,
 captionpos=t]{../python/homogeneous-ball.py}
 
 

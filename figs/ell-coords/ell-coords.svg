@@ -1006,11 +1006,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.627416"
-     inkscape:cx="224.3343"
-     inkscape:cy="119.24786"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="171.68353"
+     inkscape:cy="140.21133"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="3828"
@@ -1266,6 +1266,20 @@
        id="path2037-3"
        cx="46.960609"
        cy="74.500755"
+       rx="0.4274044"
+       ry="0.42740458" />
+    <ellipse
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="ellipse1232"
+       cx="46.960609"
+       cy="34.492252"
+       rx="0.4274044"
+       ry="0.42740458" />
+    <ellipse
+       style="display:inline;mix-blend-mode:normal;fill:#ffffff;fill-opacity:0.1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-3-3"
+       cx="46.960609"
+       cy="34.492252"
        rx="0.4274044"
        ry="0.42740458" />
   </g>

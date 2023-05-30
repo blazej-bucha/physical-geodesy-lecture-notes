@@ -1065,9 +1065,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313708"
-     inkscape:cx="86.045124"
-     inkscape:cy="75.85541"
+     inkscape:zoom="22.627416"
+     inkscape:cx="45.432523"
+     inkscape:cy="120.93699"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -1180,17 +1180,17 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 6.3519755,38.337856 c 0,0 7.6790905,-26.473806 7.6790905,-26.473806"
+       d="m 6.4710422,37.927371 c 0,0 7.5600238,-26.063321 7.5600238,-26.063321"
        id="path1173"
        sodipodi:nodetypes="cc"
-       inkscape:original-d="M 6.3519755,38.337856 14.031066,11.86405"
+       inkscape:original-d="M 6.4710422,37.927371 14.031066,11.86405"
        inkscape:path-effect="#path-effect1175" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 6.3057379,38.382598 c 0,0 37.6723371,-36.1409186 37.6723371,-36.1409186"
+       d="m 6.6605916,38.042169 c 0,0 37.3174834,-35.8004896 37.3174834,-35.8004896"
        id="path1383"
        inkscape:path-effect="#path-effect1385"
-       inkscape:original-d="M 6.3057379,38.382598 43.978075,2.2416794"
+       inkscape:original-d="M 6.6605916,38.042169 43.978075,2.2416794"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2639);marker-end:url(#marker4279)"
@@ -1276,14 +1276,14 @@
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Italic';letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;stroke-width:0.264583"
-       x="5.5760202"
-       y="23.082666"
+       x="7.3571467"
+       y="23.113966"
        id="text2001-3-7"><tspan
          sodipodi:role="line"
          id="tspan1999-6-5"
-         x="5.5760202"
-         y="23.082666"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';stroke-width:0.264583">$r_Q$</tspan></text>
+         x="7.3571467"
+         y="23.113966"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';stroke-width:0.264583">$r'$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros Italic';letter-spacing:0px;word-spacing:0px;display:inline;mix-blend-mode:normal;stroke-width:0.264583"
@@ -1295,5 +1295,12 @@
          x="9.8674421"
          y="30.935192"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'TeX Gyre Heros';-inkscape-font-specification:'TeX Gyre Heros';stroke-width:0.264583">$\psi$</tspan></text>
+    <ellipse
+       style="display:inline;mix-blend-mode:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path2037-5-6"
+       cx="6.3519754"
+       cy="38.337856"
+       rx="0.4274044"
+       ry="0.42740458" />
   </g>
 </svg>
