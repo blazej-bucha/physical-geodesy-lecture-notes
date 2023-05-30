@@ -470,7 +470,7 @@ Gravitačná sila~(\ref{eq:newton_law}) pôsobiaca medzi hmotnými bodmi~$P$
 a~$Q$~závisí od hmotností oboch hmotných bodov.  Je preto výhodné normovať ju 
 hmotnosťou toho hmotného bodu, v~ktorom má vektor~$\vec F_\gidx$ začiatok, 
 v~tomto prípade hmotnosťou~$m_P$ (pozri Obrázok~\ref{fig:newton_law}).  Získame 
-tým novú veličinu, ktorú budeme nazývať \emph{gravitačné zrýchlenie}.  
+tým vektorovú veličinu, ktorú budeme nazývať \emph{gravitačné zrýchlenie}.  
 Označovať ju budeme symbolom~$\vec g_\gidx$.
 
 Nech~$P$ a~$Q$ sú dva hmotné body s~hmotnosťami~$m_P$~a~$m_Q$.  Nech súradnice 
@@ -505,21 +505,23 @@ a~$\ell = \| \vec r \|$ je Euklidovská vzdialenosť medzi bodmi $P$ a~$Q$,
 \ell = \sqrt{(x - x')^2 + (y - y')^2 + (z - z')^2}{.}
 \end{equation}
 
-Rovnica~(\ref{eq:gg_point_mass_mq}) hovorí, že vektor~$\vec g_\gidx(P)$ je 
-nezávislý od hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného 
+Rovnica~(\ref{eq:gg_point_mass_mq}) hovorí, že vektor~$\vec g_\gidx(P)$ 
+nezávisí od hmotnosti~$m_P$, začiatok má v~bode~$P$ a~smeruje do hmotného 
 bodu~$Q$.  V~súvislosti s~hmotným bodom~$P$ tak pre jednoduchosť môžeme 
 vynechať prívlastok \emph{hmotný} a~považovať~$P$ za geometrický bod bez 
-fyzikálnych vlastností.  Budeme hovoriť, že hmotný bod~$Q$ generuje v~bode~$P$ 
-gravitačné zrýchlenie~$\vec g_\gidx(P)$.  Zápis 
-rovnice~(\ref{eq:gg_point_mass_mq}) tak môžeme zjednodušiť do tvaru
+fyzikálnych vlastností.  Budeme hovoriť, že hmotný bod~$Q$ generuje gravitačné 
+zrýchlenie~$\vec g_\gidx$ v~bode~$P$.  Keďže v~poslednom výraze 
+rovnice~(\ref{eq:gg_point_mass_mq}) vystupuje iba hmotnosť priťahujúceho 
+hmotného bodu, budeme ju zapisovať v~zjednodušenom tvare
 %
 \begin{equation}
 \label{eq:gg_point_mass}
 \vec g_\gidx(P) = -G \frac{m}{\ell^3} \, \vec{r}{,}
 \end{equation}
 %
-kde~$m = m_Q$.  Nezávislosť gravitačného zrýchlenia od hmotnosti priťahovaného 
-telesa experimentálne potvrdil Gaileo Gailei (1564--1642).
+kde~$m = m_Q$.  Nezávislosť gravitačného zrýchlenia od 
+hmotnosti priťahovaného telesa experimentálne potvrdil Gaileo Gailei 
+(1564--1642).
 
 Nájdime teraz vzťah pre gravitačné zrýchlenie generované sústavou~$N$ hmotných 
 bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Keďže \uv{\textit{[\dots] každý 
@@ -633,8 +635,8 @@ závislosť od topografie (Obrázok~\ref{fig:h_grav_sr_2arcsec}).  Vidíme
 napríklad, že v~miestach s~veľkou nadmorskou výškou je veľkosť gravitačného 
 zrýchlenia spravidla menšia ako v~miestach s~malou nadmorskou výškou.  Je to 
 spôsobené tým, že s~narastajúcou výškou spravidla narastá aj vzdialenosť od 
-hmôt~$\ell$, ktorej tretia mocnina sa nachádza v~menovateli 
-rovnice~(\ref{eq:gg_body}).
+hmôt.  Táto vzdialenosť sa nachádza v~menovateli rovnice~(\ref{eq:gg_body}), 
+preto zmenšuje veľkosť gravitačného zrýchlenia.
 
 \begin{figure}
 \centering
@@ -2897,7 +2899,7 @@ priestoru vektorov~$\vec r$.  V~abstraktnejšom chápaní slova priestor je vša
 aj gravitačný potenciál súčasťou nejakého priestoru, napríklad priestoru 
 funkcií, ktoré sú harmonické mimo Zeme.  Vieme už, že medzi takéto funkcie 
 patrí okrem gravitačného potenciálu napríklad aj funkcia~$1 \slash \ell$, 
-pričom~$\ell$ reprezentuje v~tomto prípade vzdialenosť bodu nachádzajúceho sa 
+pričom~$\ell$ v~tomto prípade predstavuje vzdialenosť bodu nachádzajúceho sa 
 mimo Zeme od diferenciálneho hmotného elementu Zeme (pozri 
 Obrázok~\ref{fig:gravitating_body} a~rovnice~\ref{eq:nabla_l} 
 a~\ref{eq:l_2nd_derivatives}).  Takýchto funkcií je nespočetné množstvo 
@@ -3981,7 +3983,7 @@ V_\gidx(P) = \frac{GM}{r}{.}
 \end{equation}
 %
 Tento vzťah je identický s~rovnicou pre gravitačný potenciál hmotného 
-bodu~(\ref{eq:vg_point_mass}) a~rovnicou pre gravitačný potenciál homogénnej 
+bodu~(\ref{eq:vg_point_mass}) a~s~rovnicou pre gravitačný potenciál homogénnej 
 gule v~bodoch mimo gule~(\ref{eq:vg_ball_out}).  Jedna z~možných interpretácii 
 obmedzenia nekonečných rozvojov~(\ref{eq:vg_sh_no_norm}), 
 (\ref{eq:vg_sh_1st_norm}), (\ref{eq:vg_sh_2nd_norm}) 
@@ -4036,23 +4038,23 @@ z~obežnej dráhy umelej družice Zeme.  Tak ako Slnko ovplyvňuje dráhu plané
 v~príklade z~Kapitoly~\ref{sec:newton_law}, podobne i~Zem vplýva na dráhu 
 družice prostredníctvom svojho gravitačného poľa.  Tentokrát je ale situácia 
 zložitejšia ako na Obrázku~\ref{fig:orbital_motion}, pretože družica obieha 
-v~bezprostrednej blízkosti okolo Zeme vo výške približne $250$~-- $500$~km nad 
-jej povrchom.  V~takejto vzdialenosti od Zeme sú priestorové variácie zemského 
-gravitačného poľa dostatočne silné na to, aby ovplyvnili dráhu družice inak 
-v~oblasti so silným gravitačným poľom (napríklad nad masívnymi pohoriami) 
-a~inak v~oblastiach so slabším gravitačným poľom.  Skutočná dráha družice je 
-preto komplikovaná priestorová krivka, reflektujúca gravitačné pole v~danej 
-oblasti, a~elipsa je len jej priblíženie 
-(Obrázok~\ref{fig:orbital_motion_real}).  Ak by sme teda poznali skutočnú dráhu 
-družice, mali by sme byť schopní inverzným spôsobom vypočítať to pole, ktoré je 
-príčinou neeliptickej dráhy.  Inými slovami, zo skutočnej dráhy družice je 
-možné vypočítať sférické harmonické koeficienty $\bar{C}_{nm}$ 
-a~$\bar{S}_{nm}$.  Koeficienty $\bar{C}_{nm}$ a~$\bar{S}_{nm}$ je možné 
-vypočítať i~z mnohých iných geodetických meraní, či už družicových alebo 
-pozemných.  Podrobnejšie informácie o~pohybe družíc v~gravitačnom poli Zeme 
-a~o~družicových misiách a~technikách je možné nájsť napríklad v~prácach 
-\textcite{SeeberSatelliteGeodesy}, \textcite{MoritzPhysicalGeodesy}, 
-\textcite{Kostelecky2008}, \textcite{Melicher2009} a~\textcite{Husar2017}.
+okolo Zeme vo výške približne $250$~-- $500$~km nad jej povrchom.  V~takejto 
+bezprostrednej blízkosti Zeme sú priestorové variácie zemského gravitačného 
+poľa dostatočne silné na to, aby ovplyvnili dráhu družice inak v~oblasti so 
+silným gravitačným poľom (napríklad nad masívnymi pohoriami) a~inak 
+v~oblastiach so slabším gravitačným poľom.  Skutočná dráha družice je preto 
+komplikovaná priestorová krivka, reflektujúca gravitačné pole v~danej oblasti, 
+a~elipsa je len jej priblíženie (Obrázok~\ref{fig:orbital_motion_real}).  Ak by 
+sme teda poznali skutočnú dráhu družice, mali by sme byť schopní inverzným 
+spôsobom vypočítať to pole, ktoré je príčinou neeliptickej dráhy.  Inými 
+slovami, zo skutočnej dráhy družice je možné vypočítať sférické harmonické 
+koeficienty $\bar{C}_{nm}$ a~$\bar{S}_{nm}$.  Koeficienty $\bar{C}_{nm}$ 
+a~$\bar{S}_{nm}$ je možné vypočítať i~z mnohých iných geodetických meraní, či 
+už družicových alebo pozemných.  Podrobnejšie informácie o~pohybe družíc 
+v~gravitačnom poli Zeme a~o~družicových misiách a~technikách je možné nájsť 
+napríklad v~prácach \textcite{SeeberSatelliteGeodesy}, 
+\textcite{MoritzPhysicalGeodesy}, \textcite{Kostelecky2008}, 
+\textcite{Melicher2009} a~\textcite{Husar2017}.
 
 \begin{figure}
 \centering
@@ -4299,8 +4301,8 @@ harmonickému rozvoju} gravitačného potenciálu.  Prívlastok \emph{sféroidic
 označuje, že harmonický rozvoj je vztiahnutý ku sféroidu, teda k~dvojosovému 
 elipsoidu.  Hoci dvojosový elipsoid môže byť sploštený buď na póloch alebo na 
 rovníku, pre modelovanie gravitačného poľa Zeme má praktické využitie takmer 
-výlučne len prvý z~nich.  V~tejto práci sa preto budeme venovať iba elipsoidom, 
-ktoré sú sploštené na póloch.  Výhodou sféroidického harmonického rozvoja je 
+výlučne len prvý z~nich.  Ďalej sa preto budeme venovať iba elipsoidom, ktoré 
+sú sploštené na póloch.  Výhodou sféroidického harmonického rozvoja je 
 spravidla väčšia oblasť konvergencie harmonického radu v~porovnaní so sférickým 
 rozvojom (pozri Obrázok~\ref{fig:spheroidal_harmonics_convergence}).
 
@@ -4362,7 +4364,6 @@ elipsoidická dĺžka $\lambda$ je definovaná rovnako ako sférická dĺžka~$\
 pomocou referenčného elipsoidu s~hlavnou polosou~$a$ a~vedľajšou polosou~$b$.}
 \label{fig:reduced_ell_coords}
 \end{figure}
-
 Jednoduchým spôsobom možno overiť, že medzi redukovanými elipsoidickými 
 súradnicami a~karteziánskymi súradnicami platia nasledovné vzťahy,
 %
@@ -4384,9 +4385,8 @@ karteziánskych súradníc~$x, y, z$ na redukované elipsoidické súradnice~$u,
 
 
 
-\section{Operátor gradient a~Laplaceova rovnica v~redukovaných elipsoidických 
-súradniciach}
-\label{sec:gradient_and_laplace_in_reduced_ell_coords}
+\section{Laplaceova rovnica v~redukovaných elipsoidických súradniciach}
+\label{sec:laplace_in_reduced_ell_coords}
 
 Z~podobných dôvodov ako v~Kapitole~\ref{sec:laplace_equation_sph} potrebujeme 
 vyjadriť operátor gradient a~Laplaceov operátor aj v~systéme redukovaných 
@@ -5807,8 +5807,8 @@ súradniciach}
 
 Normálne tiažové zrýchlenie v~bode~$P(u, \beta, \lambda)$ vyjadrené 
 v~súradnicovom systéme~$x^\mathrm{r}, y^\mathrm{r}, z^\mathrm{r}$~(pozri 
-Kapitolu~\ref{sec:gradient_and_laplace_in_reduced_ell_coords}) získame 
-aplikovaním operátora gradient~(\ref{eq:gradient_red_ell}) na normálny tiažový 
+Kapitolu~\ref{sec:laplace_in_reduced_ell_coords}) získame aplikovaním operátora 
+gradient~(\ref{eq:gradient_red_ell}) na normálny tiažový 
 potenciál~(\ref{eq:u_sph_final}),
 %
 \begin{equation}
@@ -5898,8 +5898,8 @@ potenciálu~$U(b, \beta) = U_0 = \textrm{kon\v{s}t.}$
 (Kapitola~\ref{sec:equipotential_ellipsoid}).  V~bodoch na ekvipotenciálnom 
 elipsoide musí byť preto vektor~$\boldsymbol \gamma(b, \beta) = \nabla U(b, 
 \beta)$ kolmý na elipsoid (Kapitola~\ref{sec:equipotential_surface}).  
-Z~Kapitoly~\ref{sec:gradient_and_laplace_in_reduced_ell_coords} súčasne vieme, 
-že na elipsoid s~malou polosou~$u = b$ je kolmá aj os~$z^\mathrm{r}$ lokálneho 
+Z~Kapitoly~\ref{sec:laplace_in_reduced_ell_coords} súčasne vieme, že na 
+elipsoid s~malou polosou~$u = b$ je kolmá aj os~$z^\mathrm{r}$ lokálneho 
 súradnicového systému~$x^\mathrm{r}, y^\mathrm{r}, z^\mathrm{r}$ s~pohyblivým 
 začiatkom ležiacim na elipsoide.  Smer vektora~$\boldsymbol \gamma(b, \beta)$ 
 je teda totožný so smerom osi~$z^\mathrm{r}$.  Inými slovami, zložky 
@@ -6053,19 +6053,20 @@ v~číselných výpočtoch je spravidla presnejší vzťah~(\ref{eq:somigliana_k
 Na rozdiel od rovnice~(\ref{eq:gamma_vec_general}), ktorá umožňuje výpočet 
 vektora~$\boldsymbol \gamma(u, \beta)$ na povrchu ekvipotenciálneho elipsoidu 
 aj nad ním, Somiglianov vzťah~(\ref{eq:somigliana}) je možné použiť iba na 
-ekvipotenciálnom elipsoide a~iba na výpočet jeho veľkosti~$\| \boldsymbol 
-\gamma(\phi, h = 0) \|$ (smer vektora~$\boldsymbol \gamma(\phi, h = 0)$ je daný 
-normálou k~elipsoidu).  Jeden zo spôsobov získania~$\| \boldsymbol \gamma(\phi, 
-h > 0) \|$ v~priestore nad ekvipotenciálnym elipsoidom s~využitím 
-elipsoidických súradníc je analytickým pokračovaním nahor (pozri 
-Kapitolu~\ref{sec:harmonic_function}).  Tento prístup je založený na rozvoji 
-normálneho tiažového zrýchlenia do Taylorovho radu, preto je potrebné určiť 
-plochu, z~ktorej bude normálne tiažové zrýchlenie pokračované nahor.  Vhodnou 
-plochou je ekvipotenciálny elipsoid, pretože na tejto ploche je možné relatívne 
-jednoducho odvodiť a~následne vypočítať derivácie normálneho tiažového 
-zrýchlenia, ktoré vystupujú v~Taylorovom rozvoji.  Normálne tiažové zrýchlenie 
-vo výške~$h \geq 0$ (bod~$P$ na Obrázku~\ref{fig:ell_coords}) tak získame 
-Taylorovým rozvojom (porovnaj s~rovnicou~\ref{eq:gg_analytical_continuation})
+ekvipotenciálnom elipsoide a~iba na výpočet veľkosti normálneho tiažového 
+zrýchlenia~$\| \boldsymbol \gamma(\phi, h = 0) \|$ (smer vektora~$\boldsymbol 
+\gamma(\phi, h = 0)$ je daný normálou k~elipsoidu).  Jeden zo spôsobov 
+získania~$\| \boldsymbol \gamma(\phi, h > 0) \|$ v~priestore nad 
+ekvipotenciálnym elipsoidom s~využitím elipsoidických súradníc je analytickým 
+pokračovaním nahor (pozri Kapitolu~\ref{sec:harmonic_function}).  Tento prístup 
+je založený na rozvoji normálneho tiažového zrýchlenia do Taylorovho radu, 
+preto je potrebné určiť plochu, z~ktorej bude normálne tiažové zrýchlenie 
+pokračované nahor.  Vhodnou plochou je ekvipotenciálny elipsoid, pretože na 
+tejto ploche je možné relatívne jednoducho odvodiť a~následne vypočítať 
+derivácie normálneho tiažového zrýchlenia, ktoré vystupujú v~Taylorovom 
+rozvoji.  Normálne tiažové zrýchlenie vo výške~$h \geq 0$ (bod~$P$ na 
+Obrázku~\ref{fig:ell_coords}) tak získame Taylorovým rozvojom (porovnaj 
+s~rovnicou~\ref{eq:gg_analytical_continuation})
 %
 \begin{equation}
 \label{eq:gamma_taylor}
@@ -6705,7 +6706,7 @@ napríklad][]{WGS84}.  Takýmto spôsobom je možné vypočítať napríklad sf�
 harmonický rozvoj elipsoidickej aproximácie skalárnej poruchy tiažového 
 zrýchlenia~$-\partial T \slash \partial h$ či vektor~$\delta \vec g(P)$ 
 v~súradnicovom systéme~$x^\mathrm{r}, y^\mathrm{r}, z^\mathrm{r}$ (pozri 
-Kapitolu~\ref{sec:gradient_and_laplace_in_reduced_ell_coords}).  V~súradnicovom 
+Kapitolu~\ref{sec:laplace_in_reduced_ell_coords}).  V~súradnicovom 
 systéme~$x^\mathrm{r}, y^\mathrm{r}, z^\mathrm{r}$ je možné vypočítať~$\delta 
 \vec g(P)$ i~priamo pomocou sféroidického harmonického rozvoja.  Z~porovnania 
 rovníc~(\ref{eq:dg_normals}) a~(\ref{eq:dgz_sh}) je tiež zrejmé, že sférický 
@@ -6816,14 +6817,14 @@ k~elipsoidu~$n_e$.  V~skutočnosti majú~všetky tri línie blízky priebeh.}
 
 Bod~$Q$ získame nasledovne.  Nech bodom~$P$ prechádza normálna tiažnica~$t_U$.  
 Bod~$Q$ je taký bod na tiažnici~$t_U$, pre ktorý platí~$U(Q) = W(P)$.  
-Vzdialenosť medzi bodmi $Q$~a~$P$, v~aproximácii meraná po normále~$n_e$ 
-namiesto pozdĺž normálnej tiažnice~$t_U$ (Obrázok~\ref{fig:gravity_anomaly}), 
-sa nazýva \emph{výšková anomália} a~budeme ju označovať symbolom~$\zeta$ 
-(Obrázok~\ref{fig:heights}).  Keď zostrojíme výškovú anomáliu pre každý bod na 
-zemskom povrchu, získame plochu, ktorú budeme nazývať \emph{teluroid}.  
-Teluroid predstavuje aproximáciu zemského povrchu.  Výšková anomália~$\zeta$ 
-nadobúda celosvetovo hodnoty približne od~$-100$~m do~$100$~m, podobne ako 
-výška geoidu nad referenčným elipsoidom (pozri 
+Vzdialenosť medzi bodmi $Q$~a~$P$, ktorá je meraná v~aproximácii po 
+normále~$n_e$ namiesto pozdĺž normálnej tiažnice~$t_U$ 
+(Obrázok~\ref{fig:gravity_anomaly}), sa nazýva \emph{výšková anomália} a~budeme 
+ju označovať symbolom~$\zeta$ (Obrázok~\ref{fig:heights}).  Keď zostrojíme 
+výškovú anomáliu pre každý bod na zemskom povrchu, získame plochu, ktorú budeme 
+nazývať \emph{teluroid}.  Teluroid predstavuje aproximáciu zemského povrchu.  
+Výšková anomália~$\zeta$ nadobúda celosvetovo hodnoty približne od~$-100$~m 
+do~$100$~m, podobne ako výška geoidu nad referenčným elipsoidom (pozri 
 Kapitolu~\ref{sec:disturbing_field_deflections}).  \emph{Teluroid ale na 
 rozdiel od geoidu nie je ekvipotenciálna plocha}.
 
@@ -6993,9 +6994,9 @@ druhého a~vyšších rádov v~rovnici~(\ref{eq:U_P0}) spôsobuje chyby v~určen
 na úrovni niekoľko málo milimetrov \parencite{Jekeli2015,Sjoberg2017}, teda 
 zhruba o~rád menšie ako je súčasná (približne centimetrová) presnosť určenia 
 geoidu.  Je potrebné tiež zdôrazniť, že vzťah~(\ref{eq:N}) bol získaný za 
-predpokladu~$U_0 = W_0$.  Túto podmienku je pomerne náročné splniť v~praktickej 
-realizácii \parencite{MoritzPhysicalGeodesy}.  Preto ak~$U_0 \neq W_0$, túto 
-nerovnosť je potrebné zohľadniť v~procese odvodenia vzťahu pre~$N$ (pozri 
+predpokladu~$U_0 = W_0$.  V~praktickej realizácii je pomerne náročné splniť 
+túto podmienku \parencite{MoritzPhysicalGeodesy}.  Preto ak~$U_0 \neq W_0$, 
+túto nerovnosť je potrebné zohľadniť v~procese odvodenia vzťahu pre~$N$ (pozri 
 napríklad \cite{VanicekGeodesy} alebo \cite{MoritzPhysicalGeodesy}).
 
 Dosadením~(\ref{eq:N}) do~(\ref{eq:Dg_T_tmp}) získame hľadaný vzťah medzi 
@@ -8711,7 +8712,7 @@ V~súčasnosti sú bežné modely s~metrovým rozlíšením a~s~vertikálnou pre
 lepšou ako pár desiatok centimetrov.  Podrobnosť týchto modelov je teda výrazne 
 vyššia ako podrobnosť terestrických gravimetrických databáz.  Hustota lokálnych 
 hmôt sa spravidla považuje za konštantnú (zväčša~$2670\ \mathrm{kg}\, 
-\mathrm{m}^{-3}$), no je možné použiť aj zložitejšie modely, ak sú dostupné 
+\mathrm{m}^{-3}$), no je možné použiť aj presnejšie modely, ak sú dostupné 
 \parencite[napríklad][]{Yang2018}.  Metóda reziduálneho terénneho modelu sa 
 snaží využiť podrobnosť digitálnych modelov terénu a~výpočtom gravitačného 
 účinku takýchto hmôt dopomôcť k~ešte presnejšiemu výpočtu reziduálnych anomálii 
@@ -9499,10 +9500,9 @@ podľa~\textcite{SansoGeoidDetermination}.
 \section{Laplaceov operátor vo sférickom súradnicovom systéme}
 \label{app:laplace_in_spherical_system}
 
-S~využitím operátora gradient vo sférických 
-súradniciach~(\ref{eq:gradient_sph}) aplikujme v~zmysle 
-rovnice~(\ref{eq:laplace_grad_grad_notation}) Laplaceov operátor na dvakrát 
-diferencovateľnú funkciu~$f$,
+Aplikujme operátor gradient vo sférických súradniciach~(\ref{eq:gradient_sph}) 
+na dvakrát diferencovateľnú funkciu~$f$ v~zmysle 
+rovnice~(\ref{eq:laplace_grad_grad_notation}),
 %
 \begin{align}
 \label{eq:grad_grad_sph}
