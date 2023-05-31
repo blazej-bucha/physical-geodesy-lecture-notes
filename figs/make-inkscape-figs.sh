@@ -1,33 +1,24 @@
 #!/bin/bash
 
-# DESCRIPTION:  Generates "pdf" and "pdf_tex" files for all inkscape figures in
-# a single run.
+# DESCRIPTION:  Generates "pdf" and "pdf_tex" from all inkscape files within
+# the directories in this folder.
 
 
 set -e
 
 
-# List of directories with inkscape figures
-DIRS="./analytical-continuation/
-      ./coordinate-systems/
-      ./distance-l/
-      ./equipotenital-surfaces/
-      ./gg-n-point-masses/
-      ./gravitating-body/
-      ./gravity-vector/
-      ./newton-law/
-      ./orbital-motion-ideal/
-      ./orbital-motion-real/
-      ./spherical-harmonics-convergence/
-      ./unit-vectors/"
+SH_FILE="make_pdf_tex.sh"
 
 
-for DIR in $DIRS
+for DIR in `ls -d */`
 do
     echo "Processing the \"$DIR\" directory..."
+
     cd $DIR
 
-    ./make_pdf_tex.sh
+    if test -f "$SH_FILE"; then
+        ./$SH_FILE
+    fi
 
     cd ..
 done
