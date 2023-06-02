@@ -1443,10 +1443,10 @@ pozorovateľa, a~teda nevznikajú vzájomným silovým pôsobením medzi objektm
 
 Najvýznamnejšia zotrvačná sila vo fyzikálnej geodézii je spôsobená rotáciou 
 Zeme a~nazýva sa \emph{odstredivá sila}
-$\vec F_\cidx$.  Pole (zdanlivo) spôsobené rotáciou Zeme budeme nazývať 
-\emph{odstredivé pole}.  Zatiaľ čo gravitačné pole Zeme je v~zmysle Newtonovho 
-gravitačného zákona~(\ref{eq:newton_law}) dôsledkom hmôt, ktoré tvoria zemské 
-teleso, odstredivé pole Zeme je spôsobené neinerciálnosťou vyššie opísaného 
+$\vec F_\cidx$.  Pole spôsobené rotáciou Zeme budeme nazývať \emph{odstredivé 
+pole}.  Zatiaľ čo gravitačné pole Zeme je v~zmysle Newtonovho gravitačného 
+zákona~(\ref{eq:newton_law}) dôsledkom hmôt, ktoré tvoria zemské teleso, 
+odstredivé pole Zeme je spôsobené neinerciálnosťou vyššie opísaného 
 súradnicového systému.  Uvážením spoločného pôsobenia gravitačného 
 a~odstredivého poľa získame \emph{tiažové pole}.  Formálne teda môžeme napísať 
 vzťah
@@ -1842,9 +1842,12 @@ rovnicu~\ref{eq:iiint_change_of_variable})
 r' \, \diff \varphi' \, \diff \lambda'{.}
 \end{equation}
 %
-Všimnime si, že diferenciál objemu~$\diff \tau(Q)$ vyjadrený vo sférických 
-súradniciach závisí od polohy bodu~$Q$ kvôli členu~$(r')^2 \, \cos\varphi'$.  
-V~karteziánskych súradniciach~$\diff \tau(Q)$ nezávisí od~$Q$ 
+Všimnime si, že vo sférických súradniciach závisí diferenciál objemu~$\diff 
+\tau(Q)$ od polohy integračného elementu.  Je to spôsobené tým, že v~poslednom 
+výraze rovnice~(\ref{eq:dtau_sph}) sa nachádza člen~$(r')^2 \, \cos\varphi'$, 
+ktorý obsahuje súradnice~$r'$ a~$\varphi'$ bodu~$Q$ (pozri 
+Obrázok~\ref{fig:gravitating_body}).  V~karteziánskych súradniciach 
+(rovnica~\ref{eq:dtau_cart}) takáto závislosť neexistuje 
 (rovnica~\ref{eq:dtau_cart}).
 
 S~využitím vzťahov~(\ref{eq:iiint_change_of_variable}) a~(\ref{eq:dtau_sph}) 
@@ -1856,8 +1859,9 @@ V = G \, \iiint\limits_{\tau'} \frac{\rho}{\ell} \, (r')^2 \, \cos\varphi' \,
 \diff r' \, \diff \varphi' \, \diff \lambda'{,}
 \end{equation}
 %
-kde~$\rho = \rho(r', \varphi', \lambda')$, ďalej~$\ell = \ell(r, \psi, r')$ je 
-vzdialenosť medzi výpočtovým bodom~$P$ a~integračným elementom~$\diff\tau(Q)$,
+kde~$\rho = \rho(r', \varphi', \lambda')$ je hustota diferenciálneho 
+elementu~$\diff\tau(Q)$, ďalej~$\ell = \ell(r, \psi, r')$ je vzdialenosť medzi 
+výpočtovým bodom~$P$ a~integračným elementom~$\diff\tau(Q)$,
 %
 \begin{equation}
 \label{eq:l_sph}
@@ -1897,9 +1901,10 @@ ani od sférickej dĺžky výpočtového bodu.  Sférickú šírku a~sférickú 
 výpočtového bodu preto môžeme zvoliť tak, aby nám umožnili čo najjednoduchší 
 výpočet Newtonovho integrálu~(\ref{eq:vg_body_sph}).  Vhodnou voľbou sa javia 
 byť body ležiace na osi~$z$.  V~celej tejto podkapitole budeme teda 
-predpokladať, že výpočtové body ležia na osi~$z$.  Vzťahy budeme hľadať pomocou 
-Newtonovho integrálu~(\ref{eq:vg_body_sph}) zvlášť v~bodoch mimo gule ($r 
-> R$), na povrchu gule ($r = R$) a~na záver vo vnútri gule ($r < R$).
+predpokladať, že výpočtové body ležia na osi~$z$, pokiaľ nebude uvedené inak.  
+Vzťahy budeme hľadať pomocou Newtonovho integrálu~(\ref{eq:vg_body_sph}) zvlášť 
+v~bodoch mimo gule ($r > R$), na povrchu gule ($r = R$) a~na záver vo vnútri 
+gule ($r < R$).
 
 \begin{figure}
 \centering
