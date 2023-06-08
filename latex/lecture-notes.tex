@@ -1846,9 +1846,8 @@ Všimnime si, že vo sférických súradniciach závisí diferenciál objemu~$\d
 \tau(Q)$ od polohy integračného elementu.  Je to spôsobené tým, že v~poslednom 
 výraze rovnice~(\ref{eq:dtau_sph}) sa nachádza člen~$(r')^2 \, \cos\varphi'$, 
 ktorý obsahuje súradnice~$r'$ a~$\varphi'$ bodu~$Q$ (pozri 
-Obrázok~\ref{fig:gravitating_body}).  V~karteziánskych súradniciach 
-(rovnica~\ref{eq:dtau_cart}) takáto závislosť neexistuje 
-(rovnica~\ref{eq:dtau_cart}).
+Obrázok~\ref{fig:gravitating_body}).  V~karteziánskych súradniciach takáto 
+závislosť neexistuje (rovnica~\ref{eq:dtau_cart}).
 
 S~využitím vzťahov~(\ref{eq:iiint_change_of_variable}) a~(\ref{eq:dtau_sph}) 
 získame Newtonov integrál vo sférických súradniciach
@@ -1868,7 +1867,7 @@ výpočtovým bodom~$P$ a~integračným elementom~$\diff\tau(Q)$,
 \ell = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \, \cos\psi}{,}
 \end{equation}
 %
-a~na záver~$\psi = \psi(\varphi, \lambda, \varphi', \lambda')$ je uhol 
+a~napokon~$\psi = \psi(\varphi, \lambda, \varphi', \lambda')$ je uhol 
 v~rovinnom trojuholníku~$OPQ$ medzi spojnicami~$OQ$ a~$OP$ 
 (Obrázok~\ref{fig:distance_l}),
 %
@@ -2128,9 +2127,12 @@ e_3^\mathrm{s} \, \frac{\partial}{\partial r}\left( \frac{GM}{r} \right)
 \end{equation}
 %
 Nulové prvky v~smere osí~$x^\mathrm{s}$ a~$y^\mathrm{s}$ znamenajú, že 
-vektor~$\vec g_\gidx(P)$ smeruje do ťažiska homogénnej gule, teda v~zápornom 
-smere osi~$z^\mathrm{s}$ (pozri Obrázky~\ref{fig:cart_sph} 
-a~\ref{fig:gravity_vector}).  Pre veľkosť vektora~$\vec g_\gidx(P)$ platí vzťah
+vektor~$\vec g_\gidx(P)$ leží na osi~$z^\mathrm{s}$.  Záporná hodnota tretieho 
+prvku znamená, že smer vektora je opačný ako smer narastania 
+súradnice~$z^\mathrm{s}$ (pozri Obrázok~\ref{fig:cart_sph}).  To znamená, že 
+vektor~$\vec g_\gidx(P)$ smeruje do ťažiska homogénnej gule 
+(Obrázok~\ref{fig:gravity_vector}).  Pre veľkosť vektora~$\vec g_\gidx(P)$ 
+platí vzťah
 %
 \begin{equation}
 \label{eq:gg_ball_out_magnitude}
@@ -2362,7 +2364,11 @@ krivka) a~veľkosť gravitačného zrýchlenia (oranžová krivka) vo vnútri, n
 povrchu a~mimo homogénnej nerotujúcej gule.  Vidíme, že gravitačný potenciál 
 klesá s~narastajúcou vzdialenosťou~$r$ od ťažiska gule a~limitne sa blíži 
 k~nule (pozri rovnicu~\ref{eq:vg_at_infty}).  V~bode~$r = R$ má inflexný bod, 
-pretože~funkcia sa mení z~konkávnej ($r < R$) na konvexnú ($r > R$).
+pretože~funkcia sa mení z~konkávnej~($r < R$) na konvexnú~($r > R$).  Veľkosť 
+gravitačného zrýchlenia nadobúda nulovú hodnotu v~ťažisku homogénnej gule 
+a~následne lineárne narastá až po povrch gule, kde dosahuje maximum.  Mimo 
+homogénnej gule veľkosť tiažového zrýchlenia klesá s~druhou mocninou 
+vzdialenosti od ťažiska gule a~limitne sa blíži k~nule.
 
 \begin{figure}[bt]
 \centering
@@ -2376,11 +2382,6 @@ Obe veličiny majú samostatnú vertikálnu os.  Obrázok bol pripravený Zdrojo
 kódom~\ref{src:ball} z~Prílohy~\ref{app:ball}.}
 \label{fig:homogeneous_ball_plot}
 \end{figure}
-
-Veľkosť gravitačného zrýchlenia (oranžová krivka) vo vnútri gule ($r < R$) 
-lineárne narastá z~nuly ($r = 0$) a~maximum nadobúda na povrchu gule ($r = R$).  
-Mimo homogénnej gule klesá s~druhou mocninou vzdialenosti od ťažiska gule 
-a~limitne sa blíži k~nule.
 
 Obrázok~\ref{fig:homogeneous_ball_plot} možno vnímať ako najjednoduchšiu 
 aproximáciu gravitačného potenciálu a~veľkosti gravitačného zrýchlenia v~okolí 
