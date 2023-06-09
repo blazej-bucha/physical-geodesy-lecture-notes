@@ -2008,7 +2008,8 @@ O~vzdialenosti~$\ell$ z~rovnice~(\ref{eq:l_sph_ball}) vieme povedať, že musí
 byť nezáporná.  Zo vzťahov~(\ref{eq:vg_ball_l21})~a~(\ref{eq:vg_ball_l22}) 
 preto ponúka správne riešenie rovnica~(\ref{eq:vg_ball_l21}), pretože iba tá 
 dáva kladnú vzdialenosť pre~$r > R = \max(r')$ (predpoklad zo začiatku 
-podkapitoly) a~všetky~diferenciálne elementy~$r'$.  Teda~$\ell_2 = \ell_{2,1}$.
+podkapitoly) a~všetky~diferenciálne elementy~$\diff \tau(Q)$ so sférickým 
+sprievodičom~$r'$.  Teda~$\ell_2 = \ell_{2,1}$.
 
 Dosaďme vzťahy pre~$\ell_1$ a~$\ell_{2,1}$ do~(\ref{eq:vg_ball_sph_tmp}) 
 a~vypočítajme oba integrály,
@@ -2071,8 +2072,8 @@ vypočítame vzťahom
 r = \sqrt{x^2 + y^2 + z^2}.
 \end{equation}
 %
-Ak~$x' = y' = z' = 0$ v~rovnici~(\ref{eq:l}) pre~$\ell$, potom~$r = \ell$.  
-Platnosť Laplaceovej rovnice tak môžeme dokázať 
+Ak v~rovnici~(\ref{eq:l}) pre~$\ell$ platí~$x' = y' = z' = 0$, potom~$r 
+= \ell$.  Platnosť Laplaceovej rovnice tak môžeme dokázať 
 vzťahmi~(\ref{eq:l_2nd_derivatives}) rovnako ako v~prípade hmotného bodu.  
 Presvedčme sa teraz o~platnosti Laplaceovej rovnice v~lokálnom súradnicovom 
 systéme~$x^\mathrm{s}, y^\mathrm{s}, z^\mathrm{s}$ s~pohyblivým začiatkom vo 
@@ -3249,8 +3250,8 @@ P_5(t) & = \frac{1}{8}(63t^5 - 70t^3 + 15t){.}\\
 \end{split}
 \end{equation}
 %
-V~praktických numerických aplikáciách je väčšinou najvýhodnejšie počítať
-Legendreove polynómy rekurentnými vzorcami.  Jeden z~najznámejších vzťahov je
+V~numerických aplikáciách je väčšinou najvýhodnejšie počítať Legendreove 
+polynómy rekurentnými vzorcami.  Jeden z~najznámejších vzťahov je 
 \emph{Bonnetov rekurentný vzorec}
 %
 \begin{equation}
@@ -3732,19 +3733,20 @@ f_{nk} = \frac{(2 - \delta_{k0}) \, (2n + 1)}{4\pi} \, \frac{(n - |k|)!}{(n
 \lambda) \, \diff \sigma{.}
 \end{equation}
 
-Vidíme teda, že ak je splnená podmienka~(\ref{eq:f_l2}), potom možno 
-funkciu~$f(\varphi, \lambda)$ rozložiť pomocou sférických harmonických funkcií 
-na súradnice $f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) a~následne ju spätne 
-zrekonštruovať (vzťah~\ref{eq:f_shs_no_norm}).  V~priestore funkcií $f(\varphi, 
-\lambda)$, ktoré sú definované na sfére a~spĺňajú podmienku~($\ref{eq:f_l2}$), 
-plnia sférické harmonické funkcie $Y_{nk}(\varphi, \lambda)$ podobnú úlohu ako 
-plnia jednotkové vektory $\vec e_i$ v~priestore trojrozmerných vektorov $\vec 
-r$.  Funkcia $f(\varphi,\lambda)$ môže byť napríklad gravitačný či magnetický 
-potenciál telesa na sfére obopínajúcej celé teleso, topografia Zeme či inej 
-planéty a~mnoho ďalších funkcií.  Každú takúto funkciu možno rozvinúť do 
-vlastného radu sférických harmonických funkcií (vzťah~\ref{eq:f_shs_no_norm}), 
-pričom každá funkcia bude mať vlastné súradnice $f_{nk}$, podobne ako každý 
-vektor $\vec r$ má vlastné súradnice $r_i$.  Všimnime si, že ak označíme
+Vidíme teda, že ak je splnená podmienka~(\ref{eq:f_l2}), potom 
+funkciu~$f(\varphi, \lambda)$ možno rozložiť pomocou sférických harmonických 
+funkcií na súradnice $f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) a~následne ju 
+spätne zrekonštruovať (vzťah~\ref{eq:f_shs_no_norm}).  V~priestore funkcií 
+$f(\varphi, \lambda)$, ktoré sú definované na sfére a~spĺňajú 
+podmienku~($\ref{eq:f_l2}$), plnia sférické harmonické funkcie $Y_{nk}(\varphi, 
+\lambda)$ podobnú úlohu ako plnia jednotkové vektory $\vec e_i$ v~priestore 
+trojrozmerných vektorov $\vec r$.  Funkcia $f(\varphi,\lambda)$ môže byť 
+napríklad gravitačný či magnetický potenciál telesa na sfére obopínajúcej celé 
+teleso, topografia Zeme či inej planéty a~mnoho ďalších funkcií.  Každú takúto 
+funkciu možno rozvinúť do vlastného radu sférických harmonických funkcií 
+(vzťah~\ref{eq:f_shs_no_norm}), pričom každá funkcia bude mať vlastné súradnice 
+$f_{nk}$, podobne ako každý vektor $\vec r$ má vlastné súradnice $r_i$.  
+Všimnime si, že ak označíme
 %
 \begin{equation}
 \label{eq:sh_norm}
