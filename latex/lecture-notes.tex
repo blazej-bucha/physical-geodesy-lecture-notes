@@ -19,12 +19,12 @@
 % =============================================================================
 
 \documentclass[a4paper, 12pt]{book}
+\usepackage[utf8]{inputenc}
 \usepackage[backend=biber,
             style=iso-authoryear,
             maxcitenames=2,
             uniquelist=false]{biblatex}
 \usepackage[main=slovak]{babel}
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
 \usepackage{amsmath}
@@ -4223,9 +4223,8 @@ alebo bez uváženia batymetrie.  Model DTM2006.0 je dostupný do stupňa~$2190$
 Maximálny stupeň modelu Earth2014 je~$10\, 800$.
 
 Zo sférických harmonických modelov topografie nebeských telies spomeňme aspoň 
-model topografie zemského Mesiaca do stupňa~2600, MoonTopo2600pa.shape 
-\parencite{Wieczorek2015}, a~model tvaru asteroidu~Eros do stupňa~24 
-\parencite{Zuber2000}.
+model zemského Mesiaca do stupňa~2600 \parencite{Wieczorek2015} a~model 
+asteroidu~Eros do stupňa~24 \parencite{Zuber2000}.
 
 
 
@@ -4896,8 +4895,8 @@ však znalosť hustoty v~normálnom telese potrebná \parencite{Karcol2017}.
 V~takýchto situáciách nemusí byť voľba ekvipotenciálneho elipsoidu tá 
 najvýhodnejšia.  Diskusiu k~možnostiam priestorového rozloženia hustoty vo 
 vnútri ekvipotenciálneho elipsoidu je možné nájsť napríklad v~prácach 
-\textcite{MoritzTheFigureOfTheEarth}, \textcite{TorgeGeodesy}, 
-\textcite{Conway2000} či \textcite{Karcol2017}.
+\textcite{MoritzTheFigureOfTheEarth}, \textcite{Conway2000}, 
+\textcite{TorgeGeodesy} či \textcite{Karcol2017}.
 
 Inými slovami, tak ako homogénna rotujúca guľa, ani ekvipotenciálny elipsoid 
 nie je ideálne riešenie, ktoré by bolo fyzikálne odôvodniteľné.  Z~hľadiska 
@@ -7846,11 +7845,12 @@ hladká.\footnote{Pozri napríklad \textcite{SansoGeoidDetermination}.}  Táto
 podmienka je splnená, pretože geoid je ekvipoteciálna plocha 
 (Kapitola~\ref{sec:equipotential_surface}).  Symbolom $\overline{\Omega} 
 = \Omega \cup \partial\Omega$ budeme označovať zemské teleso spolu s~jeho 
-povrchom.  Ďalej, nech sa mimo telesa~$\overline{\Omega}$ nenachádzajú hmoty, 
-teda napríklad ani nebeské telesá, ani zemská atmosféra či ani topografické 
-hmoty.\footnote{Regularizáciou zemského telesa \parencite[pozri][]{Janak2006} 
-je možné splniť tento predpoklad s~rozumnou presnosťou.}  Túto vonkajšiu oblasť 
-označme~$\mathbb{R}^3 - \overline{\Omega}$.
+povrchom.  Nech sa mimo telesa~$\overline{\Omega}$ nenachádzajú hmoty, teda 
+napríklad ani nebeské telesá, ani zemská atmosféra či ani topografické 
+hmoty.\footnote{Pre odstránenie gravitačného účinku topografických 
+a~atmosférických hmôt pozri regularizáciu zemského telesa 
+v~práci~\textcite{Janak2006}.}  Túto vonkajšiu oblasť označme~$\mathbb{R}^3 
+- \overline{\Omega}$.
 
 \begin{figure}[bt]
 \centering
@@ -8172,7 +8172,8 @@ Všimnime si, že vo vzťahoch~(\ref{eq:stokes_kernel_general}),
 (\ref{eq:stokes_kernel}) a~(\ref{eq:stokes_spectral}) sa \emph{nenachádza} 
 vplyv nultého harmonického stupňa (sumácia v~rovnici~\ref{eq:stokes_spectral} 
 začína od stupňa~$2$ a~pravé strany týchto rovníc sú si rovné).  S~uvážením 
-nultého harmonického stupňa má Stokesovo integračné jadro nasledovný tvar,
+nultého harmonického stupňa nadobudne Stokesovo integračné jadro nasledovné 
+tvary,
 %
 \begin{align}
 S(r, \psi) &= \frac{2R}{\ell} - 3\frac{R \, \ell}{r^2} - \frac{R^2}{r^2} \, 
@@ -8191,7 +8192,7 @@ S(r, \psi) &= \sum_{n = 0{,}\, n \neq 1}^{\infty} \frac{2n + 1}{n - 1} \,
 \label{eq:stokes_spectral_n0}
 \end{align}
 %
-Tieto tvary je potrebné použiť vtedy, keď anomálie tiažového zrýchlenia vo 
+Tieto rovnice je potrebné použiť vtedy, keď anomálie tiažového zrýchlenia vo 
 vzťahu~(\ref{eq:stokes}) obsahujú aj vplyv nultého harmonického člena 
 z~rovnice~(\ref{eq:Dg_sh_sa}).  Všimnime si tiež, že stupeň~$n$ 
 v~rovnici~(\ref{eq:stokes_spectral_n0}) nesmie byť rovný~$1$ (aby bolo 
@@ -8228,16 +8229,16 @@ kde symbol~$*$ označuje konvolučné násobenie funkcií~$S$ a~$\Delta g$.
 
 Vo fyzikálnej geodézii sa stretávame s~konvolučnými integrálmi veľmi často 
 (pozri napríklad \cite{Jekeli2017}).  Konvolučným integrálom je napríklad aj 
-samotný Newtonov integrál~(\ref{eq:vg_body}) a~ďalšie integrály, ktoré sú 
-z~neho odvodené (napríklad integrál~\ref{eq:gg_body}).  Vo 
-vzťahu~(\ref{eq:vg_body}) hrá hustota~$\rho$ podobnú úlohu ako anomálie 
-tiažového zrýchlenia~$\Delta g$ vo vzťahu~(\ref{eq:stokes}) a~prevrátená 
-hodnota vzdialenosti~$1 \slash \ell$ predstavuje integračné jadro.  Všimnime 
-si, že vo vzťahu~(\ref{eq:gg_body}) vystupuje v~úlohe meraných dát tá istá 
-hustota ako v~rovnici~(\ref{eq:vg_body}); keďže ale vzťah medzi gravitačným 
-zrýchlením z~rovnice~(\ref{eq:gg_body}) a~hustotou je iný ako vzťah medzi 
-gravitačným potenciálom (\ref{eq:vg_body}) a~hustotou, konvolučné jadro, $\vec 
-r \slash \ell^3$, je tentokrát iné ako v~rovnici~(\ref{eq:vg_body}).  Rozličné 
+Newtonov integrál~(\ref{eq:vg_body}).  Vo vzťahu~(\ref{eq:vg_body}) hrajú 
+hustota~$\rho$ a~prevrátená hodnota vzdialenosti~$1 \slash \ell$ podobnú úlohu 
+akú majú anomálie tiažového zrýchlenia~$\Delta g$ a~Stokesovo jadro~$S$ vo 
+vzťahu~(\ref{eq:stokes}). Konvolučnými integrálmi sú tiež~integrály, ktoré sú 
+odvodené z~Newtonovho integrálu.  Všimnime si napríklad, že vo 
+vzťahu~(\ref{eq:gg_body}), ktorý je odvodený z~Newtonovho integrálu, vystupuje 
+tá istá hustota ako v~rovnici~(\ref{eq:vg_body}).  Keďže ale vzťah medzi 
+gravitačným zrýchlením a~hustotou je iný ako vzťah medzi gravitačným 
+potenciálom a~hustotou, konvolučné jadro~$\vec r \slash \ell^3$ 
+v~rovnici~(\ref{eq:gg_body}) je iné ako v~rovnici~(\ref{eq:vg_body}).  Rozličné 
 integračné jadrá teda transformujú tú istú funkciu rozdielne.
 
 Konvolučné integrály sa vyskytujú aj v~mnohých oblasti matematiky, fyziky 
@@ -9865,8 +9866,8 @@ a~polomer homogénnej gule boli zvolené tak, aby aproximovali skutočnú Zem.
 
 \lstinputlisting[caption=Výpočet a~zobrazenie gravitačného potenciálu 
 a~veľkosti gravitačného zrýchlenia homogénnej gule v~programovacom jazyku 
-Python, language=mypython, label=src:ball,
-captionpos=t]{../python/homogeneous-ball.py}
+Python, language=mypython, label=src:ball, 
+captionpos=t]{../python/homogeneous_ball.py}
 
 
 
@@ -9885,7 +9886,7 @@ funkciou \texttt{scipy.special.eval\_legendre} z~modulu \texttt{scipy}.
 
 \lstinputlisting[caption=Výpočet a~zobrazenie Legendreových polynómov
 v~programovacom jazyku Python, language=mypython, label=src:lp,
-captionpos=t]{../python/legendre-polynomials.py}
+captionpos=t]{../python/legendre_polynomials.py}
 
 
 
@@ -9912,7 +9913,7 @@ strane~\pageref{fn:icgem_link}).
 
 \lstinputlisting[caption=Výpočet a~zobrazenie nenormovaných sférických
 harmonických funkcií v~programovacom jazyku Python, label=src:ynk,
-language=mypython, captionpos=t]{../python/spherical-harmonics.py}
+language=mypython, captionpos=t]{../python/spherical_harmonics.py}
 
 
 
