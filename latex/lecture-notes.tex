@@ -353,7 +353,7 @@ doktoranda J.~B.~Listinga~(1808--1882) nazývame túto plochu \emph{geoid}.
 Konštantnou veličinou na povrchu geoidu je \emph{tiažový potenciál}.
 
 \emph{Fyzikálna geodézia} je vedná disciplína zaoberajúca sa určovaním tvaru 
-Zeme, jej tiažovým poľom a~ich zmenami v~čase.  Študované sú oba vyššie opísané 
+Zeme, jej tiažového poľa a~ich zmenami v~čase.  Študované sú oba vyššie opísané 
 prístupy k~tvaru Zeme, pričom historicky bol predmetom záujmu ako prvý geoid.  
 Matematicky odvážna myšlienka určovať priamo fyzický povrch Zeme pochádza už od 
 E.~H.~Brunsa~(1848--1919), no do popredia záujmu ju dostal až 
@@ -809,7 +809,7 @@ V_\gidx(P) = \frac{G \, m}{\ell}{.}
 Overme, či tento vzťah vyhovuje rovniciam~(\ref{eq:gg_grad_vg}) 
 a~(\ref{eq:vg_at_infty}).  Aplikujme operátor gradient 
 z~rovnice~(\ref{eq:gradient}) na gravitačný potenciál~(\ref{eq:vg_point_mass}).  
-S~využitím rovnice~(\ref{eq:l}) dostaneme vzťah
+S~využitím rovníc~(\ref{eq:r}) a~(\ref{eq:l}) dostaneme vzťah
 %
 \begin{equation}
 \label{eq:gg_from_vg_point_mass}
@@ -833,7 +833,10 @@ G \, m
 \dfrac{y - y'}{\ell^3}{,}\\[2ex]
 \dfrac{z - z'}{\ell^3}
 \end{bmatrix}
-{.}
+%
+=
+%
+-G \, \frac{m}{\ell^3} \, \vec{r}{.}
 \end{equation}
 %
 Využili sme pritom vlastnosť operátora gradient~(\ref{eq:gradient_homogenity}), 
