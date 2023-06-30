@@ -876,7 +876,7 @@ $\diff m = \rho \, \diff \tau$ a~gravitačný potenciál získame integráciou,
 %
 \begin{equation}
 \label{eq:vg_body}
-V_\gidx(P) = G \iiint\limits_{\tau} \frac{\rho}{\ell} \diff\tau{.}
+V_\gidx(P) = G \iiint\limits_{\tau} \frac{\rho}{\ell} \, \diff\tau{.}
 \end{equation}
 %
 Dôkaz, že rovnica~(\ref{eq:vg_body}) vyhovuje prijatej definícii gravitačného
@@ -2881,16 +2881,14 @@ konštanty~$G$.  Tento jav však doposiaľ nebol experimentálne potvrdený
 
 Newtonov integrál~(\ref{eq:vg_body}) nie je vhodný na priamy praktický výpočet 
 gravitačného poľa Zeme.  Predpokladá totiž, že poznáme dve matematické funkcie: 
-jednu, ktorá definuje tvar telesa a~druhú, ktorá opisuje jeho hustotu.  
+jednu, ktorá definuje tvar Zeme a~druhú, ktorá opisuje jej hustotu.  
 Problematická je obzvlášť hustota.  Hoci približné hustotné modely zemského 
-telesa existujú \parencite[napríklad][]{Dziewonski1981}, ich použitie vo 
-vzťahu~(\ref{eq:vg_body}) neposkytuje vyžadovanú geodetickú presnosť.  V~tejto 
-situácii nie sú postačujúce ani regionálne hustotné modely.  Tie majú síce 
-vyššiu presnosť a~aj lepšie priestorové rozlíšenie, no vo~fyzikálnej geodézii 
-sú spravidla používané nanajvýš ako cenná (niekedy aj nutná) doplnková 
-informácia o~zdroji gravitačného poľa.  V~tejto kapitole sa zameriame na 
-praktický spôsob modelovania gravitačného poľa Zeme \emph{bez potreby priamej 
-znalosti hustoty}.
+telesa existujú \parencite[napríklad][]{Dziewonski1981}, pre ich nízku presnosť 
+nedokážeme vzťahom~(\ref{eq:vg_body}) naplniť súčasné nároky na modelovanie 
+gravitačného poľa Zeme.  Postačujúce nie sú ani regionálne hustotné modely, 
+a~to napriek tomu, že sú presnejšie ako globálne modely.  V~tejto kapitole 
+popíšeme jeden z~praktických spôsobov modelovania gravitačného poľa Zeme 
+\emph{bez potreby priamej znalosti hustoty}.
 
 
 
@@ -2901,10 +2899,10 @@ znalosti hustoty}.
 \label{sec:sh_motivation}
 
 Nech je daný trojrozmerný karteziánsky súradnicový systém so začiatkom 
-v~bode~$O$ a~so súradnicovými osami~$x, y, z$.  Symbolmi~$\vec e_1, \vec e_2, 
-\vec e_3$ označme jednotkové vektory v~smere týchto súradnicových osí (pozri 
-rovnicu~\ref{eq:unit_vectors}).  Nech~$\vec r$ je ľubovoľný vektor v~tomto 
-priestore (Obrázok~\ref{fig:unit_vectors}),
+v~bode~$O$ a~so súradnicovými osami~$x, y, z$ (Obrázok~\ref{fig:unit_vectors}).  
+Symbolmi~$\vec e_1, \vec e_2, \vec e_3$ označme jednotkové vektory v~smere 
+súradnicových osí (rovnica~\ref{eq:unit_vectors}).  Nech~$\vec r$ je ľubovoľný 
+vektor v~tomto priestore,
 %
 \begin{figure}
 \centering
@@ -2948,15 +2946,15 @@ r_i = \vec r \cdot \vec e_i{.}
 Povedané slovne, vzťah~(\ref{eq:r_synthesis}) hovorí, že ak poznáme koeficienty 
 $r_i$, poznáme vektor~$\vec r$.  Vzťah~(\ref{eq:r_analysis}) hovorí, ako tieto 
 koeficienty vypočítať z~vektora~$\vec r$.  Bolo by výhodné, ak by sme obdobným 
-spôsobom dokázali vyjadriť aj gravitačný potenciál~$V_g$, teda istým spôsobom 
-ho rozložiť na súradnice a~následne ho z~týchto súradníc zrekonštruovať.  
-Samozrejme, gravitačný potenciál nepatrí do vyššie opísaného trojrozmerného 
-priestoru vektorov~$\vec r$.  V~abstraktnejšom chápaní slova priestor je však 
-aj gravitačný potenciál súčasťou nejakého priestoru, napríklad priestoru 
-funkcií, ktoré sú harmonické mimo Zeme.  Vieme už, že medzi takéto funkcie 
-patrí okrem gravitačného potenciálu napríklad aj funkcia~$1 \slash \ell$, 
-pričom~$\ell$ je v~tomto prípade vzdialenosť bodu nachádzajúceho sa mimo Zeme 
-od diferenciálneho hmotného elementu Zeme (pozri 
+spôsobom dokázali vyjadriť aj gravitačný potenciál~$V_\gidx$, teda istým 
+spôsobom ho rozložiť na súradnice a~následne ho z~týchto súradníc 
+zrekonštruovať.  Samozrejme, gravitačný potenciál nepatrí do vyššie opísaného 
+trojrozmerného priestoru vektorov~$\vec r$.  V~abstraktnejšom chápaní slova 
+priestor je však aj gravitačný potenciál súčasťou nejakého priestoru, napríklad 
+priestoru funkcií, ktoré sú harmonické mimo Zeme.  Vieme už, že medzi takéto 
+funkcie patrí okrem gravitačného potenciálu napríklad aj funkcia~$1 \slash 
+\ell$, pričom~$\ell$ je v~tomto prípade vzdialenosť bodu nachádzajúceho sa mimo 
+Zeme od diferenciálneho hmotného elementu Zeme (pozri 
 Obrázok~\ref{fig:gravitating_body} a~rovnice~\ref{eq:nabla_l} 
 a~\ref{eq:l_2nd_derivatives}).  Takýchto funkcií je nespočetné množstvo 
 a~v~matematickom zmysle tvoria istý priestor.  Podobne ako v~trojrozmernom 
@@ -2966,7 +2964,7 @@ gravitačný potenciál, rozložiť na súradnice,
 %
 \begin{equation}
 \label{eq:vg_analysis}
-v_{nk} = \frac{N^2_{n|k|}}{4\pi} \, \iint\limits_{\sigma} V_\gidx(r, \varphi, 
+v_{nk} = \frac{N^2_{nk}}{4\pi} \, \iint\limits_{\sigma} V_\gidx(r, \varphi, 
 \lambda) \, Y_{nk}(\varphi, \lambda) \, \diff \sigma{,}
 \end{equation}
 %
@@ -2982,7 +2980,7 @@ Koeficienty~$v_{nk}$ vo vzťahu~(\ref{eq:vg_analysis}) predstavujú súradnice
 gravitačného potenciálu~$V_\gidx(r, \varphi, \lambda)$ vo vyššie opísanom
 abstraktom priestore harmonických funkcií mimo Zeme a~symbol~$Y_{nk}(\varphi, 
 \lambda)$
-označuje \emph{sférické harmonické funkcie}.  Koeficienty~$N_{n|k|}$ závisia
+označuje \emph{sférické harmonické funkcie}.  Koeficienty~$N_{nk}$ závisia
 iba od~$n$ a~$k$ a~budú diskutované neskôr.  Vzťah~(\ref{eq:vg_analysis}) je
 tak obdobou vzťahu (\ref{eq:r_analysis}), súradnice~$v_{nk}$ možno prirovnať
 k~súradniciam~$r_i$ a~sférické harmonické funkcie~$Y_{nk}(\varphi, \lambda)$
@@ -3006,7 +3004,7 @@ priameho použitia hustoty.  Hustota Zeme je pritom obsiahnutá
 v~súradniciach~$v_{nk}$.  Cieľom nasledujúcich strán je ukázať, akým spôsobom 
 sa v~nich táto hustota nachádza, ako je možné prejsť od 
 vzťahu~(\ref{eq:vg_body}) až k~formálne veľmi odlišnému 
-vzťahu~(\ref{eq:vg_synthesis}) či ukázať, ako je možné vypočítať 
+vzťahu~(\ref{eq:vg_synthesis}) a~tiež ukázať, ako je možné vypočítať 
 súradnice~$v_{nk}$.
 
 
@@ -3027,20 +3025,25 @@ Nech je dané všeobecné teleso s~objemom~$\tau$ a~hustotou~$\rho$
 no budeme predpokladať, že v~každom diferenciálnom elemente~$\diff \tau(Q)$ je
 konečná.  Nech je ďalej daný bod~$P$, ktorý sa nachádza \emph{mimo} všeobecného
 telesa, teda v~tej časti priestoru, v~ktorom je gravitačný potenciál harmonický
-(Kapitola~\ref{sec:laplace_equation_cart}).  Trojicu sférických súradníc 
+(Kapitola~\ref{sec:harmonic_function}).  Trojicu sférických súradníc 
 (Obrázok~\ref{fig:cart_sph}) bodov~$P$ a~$Q$ označme symbolmi~$r, \varphi,
 \lambda$~a~$r', \varphi', \lambda'$.  Symbolom~$\ell$ budeme označovať 
 vzdialenosť medzi bodmi~$P$~a~$Q$ (rovnica~\ref{eq:l_sph} 
 a~Obrázok~\ref{fig:distance_l}).
 
-Vyjadrime prevrátenú hodnotu vzdialenosti~$1 \slash \ell$, ktorá vystupuje 
-v~rovnici~(\ref{eq:vg_body}), pomocou vzťahu~(\ref{eq:l_sph}),
+Upravme člen~$1 \slash \ell$ z~rovnice~(\ref{eq:vg_body}) pomocou 
+vzťahu~(\ref{eq:l_sph}),
 %
 \begin{equation}
 \label{eq:1l}
-\frac{1}{\ell} = \frac{1}{\sqrt{ r^2 + (r')^2 - 2 \, r \, r' \, \cos\psi
-}} = \frac{1}{r} \, \left[1 + \left( \dfrac{r'}{r}
-\right)^2 - 2 \dfrac{r'}{r} \, \cos\psi \right]^{-\frac{1}{2}}{.}
+\begin{split}
+\frac{1}{\ell} &= \frac{1}{\sqrt{ r^2 + (r')^2 - 2 \, r \, r' \, \cos\psi
+}} = \frac{1}{r \, \sqrt{1 + \left( \dfrac{r'}{r}
+\right)^2 - 2 \dfrac{r'}{r} \cos\psi}}\\
+%
+&=\frac{1}{r} \, \left[1 + \left( \dfrac{r'}{r}
+\right)^2 - 2 \dfrac{r'}{r} \cos\psi \right]^{-\frac{1}{2}}{.}
+\end{split}
 \end{equation}
 %
 Ak by sme dosadili túto rovnicu do vzťahu~(\ref{eq:vg_body}), ďalšie 
@@ -3048,7 +3051,7 @@ matematické úpravy by sa vykonávali pomerne zložito, pretože hranatá zátv
 obsahuje tri sčítance umocnené na exponent~$-\frac{1}{2}$.  Výhodnejšie je 
 rozvinúť tento člen do mocninového radu.  Jeden zo spôsobov rozvinutia funkcie 
 do mocninového radu je pomocou Taylorovho, resp. Maclaurinovho radu.  
-\emph{MacLaurinov rad} získame z~Taylorovho radu~(\ref{eq:f_taylor}), keď~$x_0 
+\emph{Maclaurinov rad} získame z~Taylorovho radu~(\ref{eq:f_taylor}), keď~$x_0 
 = 0$,
 %
 \begin{equation}
@@ -3070,8 +3073,15 @@ t &= \cos\psi{,}\\
 H(\alpha, t) &= \left(1 + \alpha^2 - 2 \, \alpha\, t \right)^{-\frac{1}{2}}{.}
 \end{align}
 %
-Pre~$\alpha < 1$ môžeme rozvinúť funkciu~$H(\alpha, t)$ do Maclaurinovho 
-radu~(\ref{eq:f_maclaurin}).  Získame tak rozvoj
+Ak
+%
+\begin{equation}
+\label{eq:alpha_lt_1}
+\alpha < 1{,}
+\end{equation}
+%
+potom funkcia~$H(\alpha, t)$ môže byť rozvinutá do Maclaurinovho 
+radu~(\ref{eq:f_maclaurin}),
 %
 \begin{equation}
 \label{eq:maclaurin_series_of_generic_function}
@@ -3095,7 +3105,8 @@ objaviteľa, francúzskeho matematika A.--M.~Legendrea, a~nazývajú sa
 (\ref{eq:maclaurin_series_of_generic_function}) 
 a~(\ref{eq:generic_function_for_lps}) do~(\ref{eq:1l}) a~po uvážením 
 substitúcií~(\ref{eq:alpha}) a~(\ref{eq:t}) získame rozvoj funkcie~$1 \slash 
-\ell$ do radu Legendreových polynómov,
+\ell$ do radu Legendreových polynómov pre~$r > r'$ (pozri 
+nerovnosť~\ref{eq:alpha_lt_1}),
 %
 \begin{equation}
 \label{eq:1l_legpol}
@@ -3117,7 +3128,7 @@ V_\gidx(P) = \frac{G}{r} \, \iiint\limits_{\tau} \rho(r', \varphi', \lambda')
 Z~pohľadu sférických súradníc je Legendreov polynóm~$P_n(\cos\psi)$ vo 
 vzťahu~(\ref{eq:vg_legpol}) zložená funkcia, pretože je funkciou~$\cos\psi$, 
 pričom samotná funkcia~$\cos\psi$ závisí od uhlovej časti sférických súradníc 
-bodov~$Q$ a~$P$ (pozri rovnicu~\ref{eq:cospsi}).  Bolo by preto vhodné nájsť 
+bodov~$P$ a~$Q$ (pozri rovnicu~\ref{eq:cospsi}).  Bolo by preto vhodné nájsť 
 taký vzťah pre Legendreov polynóm~$P_n(\cos\psi)$,
 v~ktorom by každá prípadná funkcia závisela iba od jednej z~premenných
 $\varphi,  \lambda, \varphi', \lambda'$, a~nie od viacerých
@@ -3150,22 +3161,24 @@ P_{nm}(\sin\varphi') \, \sin(m\lambda')\right]{.}
 \end{split}
 \end{equation}
 %
-Člen~$P_{nm}(t)$ sa nazýva \emph{pridružená Legendreova funkcia prvého druhu}
+Novozavedený člen~$P_{nm}(t)$, $t \in [-1, 1]$, sa nazýva \emph{pridružená 
+Legendreova funkcia prvého druhu}
 a~je daný vzťahom
 %
 \begin{equation}
 \label{eq:pnm_def}
-P_{nm}(t) = (1 - t^2)^{m \slash 2} \, \frac{\diff^m P_n(t)}{\diff t^m}{,}
+P_{nm}(t) = (1 - t^2)^{m \slash 2} \, \frac{\diff^m P_n(t)}{\diff t^m}{.}
 \end{equation}
 %
-kde symbol~$m$ sa nazýva \emph{rád} a~môže nadobúdať hodnoty $m = 0, 1, \dots, 
-n$ (pozri druhú sumáciu vo vzťahu~\ref{eq:pn_decomposition_formula}).  Ak je 
-rád Legendreovej funkcie nulový, zvykne sa v~zápise vynechať, teda $P_n(t) 
-= P_{n0}(t)$.  Zo vzťahu~(\ref{eq:pnm_def}) vidíme, že Legendreova funkcia 
-stupňa~$n$ a~rádu~$m$ súvisí s~$m$-tou deriváciou Legendreoveho polynómu stupňa 
-$n$ podľa premennej~$t$.  Vo vzťahu~(\ref{eq:pn_decomposition_formula}) 
-pribudol ešte člen~$\delta_{m0}$, ktorý má názov Kroneckerovo delta.  Všeobecná 
-definícia pre~$m$ a~$\ell$ má tvar
+Symbol~$m$ sa nazýva \emph{rád} a~môže nadobúdať hodnoty $m = 0, 1, \dots, n$ 
+(pozri druhú sumáciu vo vzťahu~\ref{eq:pn_decomposition_formula}).  Zo 
+vzťahu~(\ref{eq:pnm_def}) vidíme, že Legendreova funkcia stupňa~$n$ a~rádu~$m$ 
+súvisí s~$m$-tou deriváciou Legendreoveho polynómu stupňa $n$ podľa 
+premennej~$t$.  Všimnime si, že Legendreova funkcia stupňa~$n$ a~rádu~$m = 0$ 
+je totožná s~Legendreovým polynómom stupňa~$n$, $P_{n0}(t) = P_n(t)$.   Vo 
+vzťahu~(\ref{eq:pn_decomposition_formula}) pribudol ešte člen~$\delta_{m0}$, 
+ktorý má názov Kroneckerovo delta.  Všeobecná definícia pre~$m$ a~$\ell$ má 
+tvar
 %
 \begin{equation}
 \delta_{ml} =
@@ -3176,7 +3189,7 @@ definícia pre~$m$ a~$\ell$ má tvar
 \end{cases}
 \end{equation}
 
-Dosadením rovnice~(\ref{eq:pn_decomposition_formula}) do~(\ref{eq:vg_legpol})
+Dosadením~(\ref{eq:pn_decomposition_formula}) do~(\ref{eq:vg_legpol})
 získame výsledný vzťah
 %
 \begin{equation}
@@ -3236,17 +3249,17 @@ spôsobmi, napríklad riešením Laplaceovej diferenciálnej
 rovnice~(\ref{eq:vg_laplace_sph}) metódou separácie premenných 
 \parencite{MoritzPhysicalGeodesy,Janak2006}.
 
-V~nasledujúcich kapitolách sa budeme podrobnejšie venovať 
-vzťahu~(\ref{eq:vg_sh_no_norm}).  V~Kapitolách~\ref{sec:legendre_polynomials}, 
-\ref{sec:legendre_functions} a~\ref{sec:spherical_harmonics} sa budeme zaoberať 
-Legendreovými polynómami, Legendreovými funkciami a~sférickými harmonickými 
-funkciami.  Cieľom je nielen popísať základné vlastnosti týchto nových funkcií, 
-ale i~predstaviť ich v~širšom kontexte.  V~Kapitolách~\ref{sec:normalization}, 
+Na nasledujúcich stranách sa budeme podrobnejšie zaoberať 
+vzťahom~(\ref{eq:vg_sh_no_norm}).  Kapitoly~\ref{sec:legendre_polynomials}, 
+\ref{sec:legendre_functions} a~\ref{sec:spherical_harmonics} budú venované 
+Legendreovým polynómom, Legendreovým funkciám a~sférickým harmonickým funkciám.  
+Cieľom je nielen popísať základné vlastnosti týchto nových funkcií, ale 
+i~predstaviť ich v~širšom kontexte.  V~Kapitolách~\ref{sec:normalization}, 
 \ref{sec:physical_meaning_of_spherical_harmonic_coefficients} 
 a~\ref{sec:spherical_harmonics_applications} následne popíšeme normovanie 
-sférických harmonických funkcií a~koeficientov, fyzikálny význam niektorých 
-sférických harmonických koeficientov a~praktické aplikácie 
-rovnice~(\ref{eq:vg_sh_no_norm}).
+sférických harmonických funkcií a~sférických harmonických koeficientov, 
+fyzikálny význam niektorých sférických harmonických koeficientov a~praktické 
+aplikácie rovnice~(\ref{eq:vg_sh_no_norm}).
 
 
 
@@ -3258,11 +3271,11 @@ rovnice~(\ref{eq:vg_sh_no_norm}).
 
 Legendreove polynómy nízkych stupňov možno vypočítať priamo
 rovnicou~(\ref{eq:pn}), prípadne \emph{Rodriguesovým vzorcom}
-\parencite{SansoGeoidDetermination},
+\parencite{SansoGeoidDetermination}
 %
 \begin{equation}
 \label{eq:pn_rodrigues}
-P_n(t) = \frac{1}{2^n \, n!} \, \frac{\diff^n (t^2 - 1)^n}{\diff t^n}{,}
+P_n(t) = \frac{1}{2^n \, n!} \, \frac{\diff^n (t^2 - 1)^n}{\diff t^n}
 \end{equation}
 %
 či explicitným vzťahom \parencite{Freeden2009}
@@ -3301,19 +3314,21 @@ P_n(t) = \frac{2n - 1}{n} \, t \, P_{n - 1}(t) - \frac{n - 1}{n} \, P_{n
 so začiatočnými hodnotami~$P_0(t) = 1$ a~$P_1(t) = t$ (pozri
 rovnicu~\ref{eq:p0_to_p5}).
 
-Grafické znázornenie Legendreových polynómov stupňov $n =0, \dots, 5$ je
-uvedené na Obrázku~\ref{fig:lp}.  Z~rovnice~(\ref{eq:pn_bonnet}) je zrejmé
-(pozri tiež Obrázok~\ref{fig:lp} a~vzťahy~\ref{eq:p0_to_p5}), že Legendreove
-polynómy párnych stupňov $n = 0, 2, 4, \dots$ sú párne funkcie a~Legendreove
-polynómy nepárnych stupňov $n = 1, 3, 5, \dots$ sú nepárne funkcie.
+Grafické znázornenie Legendreových polynómov stupňov $n =0, \dots, 5$ je 
+uvedené na Obrázku~\ref{fig:lp}.  Z~rovnice~(\ref{eq:pn_bonnet}) je zrejmé, že 
+Legendreove polynómy párnych stupňov $n = 0, 2, 4, \dots$ sú párne funkcie 
+a~Legendreove polynómy nepárnych stupňov $n = 1, 3, 5, \dots$ sú nepárne 
+funkcie (pozri tiež Obrázok~\ref{fig:lp} a~vzťahy~\ref{eq:p0_to_p5}).
 
 \begin{figure}[bt]
 \centering
 \includegraphics{./fig-legendre-polynomials.pdf}
-\caption{Legendreove polynómy argumentu~$t \in [-1, 1]$.  V~úlohách súvisiacich 
-s~tiažovým poľom parameter~$t$ často označuje funkciu~$\sin\varphi$ (napríklad 
-rovnica~\ref{eq:vg_sh_no_norm}) alebo~$\cos\psi$ (napríklad 
-rovnica~\ref{eq:1l_legpol}).  Obrázok bol pripravený Zdrojovým
+\caption{Legendreove polynómy~$P_n(t)$ argumentu~$t \in [-1, 1]$ pre~$n = 0, 1, 
+\dots, 5$.  V~úlohách súvisiacich s~tiažovým poľom zvykne parameter~$t$ 
+reprezentovať napríklad funkciu~$\sin\varphi$ 
+(rovnica~\ref{eq:pn_decomposition_formula} alebo vzťah~\ref{eq:vg_sh_no_norm} 
+pre~$m = 0$) alebo funkciu~$\cos\psi$ (rovnica~\ref{eq:1l_legpol}).  Obrázok 
+bol pripravený Zdrojovým
 kódom~\ref{src:lp} z~Prílohy~\ref{app:lp}.}
 \label{fig:lp}
 \end{figure}
@@ -3337,7 +3352,7 @@ pre ľubovoľné $t \in [-1, 1]$.  Vzťah~(\ref{eq:f_synthesis}) je možné vní
 ako analógiu vzťahu~(\ref{eq:r_synthesis}), pričom~$f_n$ sú súradnice funkcie
 $f(t)$ a~Legendreove polynómy~$P_n(t)$ plnia podobnú úlohu ako jednotkové
 vektory~$\vec e_i$.  Koeficienty~$f_n$ sú dané skalárnym súčinom funkcií~$f(t)$
-a~$P_n(t)$ (porovnaj so vzťahom~\ref{eq:r_analysis}),
+a~$P_n(t)$ (porovnaj so skalárnym súčinom~\ref{eq:r_analysis}),
 %
 \begin{equation}
 \label{eq:f_analysis}
@@ -3349,9 +3364,9 @@ nájsť napríklad vo \textcite{Freeden2009}
 a~v~\textcite{SansoGeoidDetermination}.
 
 Pokračujme ďalej v~analógii s~jednotkovými vektormi.  Podobne ako skalárny 
-súčin dvoch rôznych jednotkových vektorov~$\vec e_i$ a~$ \vec e_j$ je nulový 
+súčin dvoch rôznych jednotkových vektorov je nulový 
 (rovnica~\ref{eq:ei_orthogonality}), nulový je i~skalárny súčin dvoch rôznych 
-Legendreovych polynómov~$P_n(t)$ a~$P_\ell(t)$,
+Legendreovych polynómov,
 %
 \begin{equation}
 \label{eq:lp_orthogonality}
@@ -3371,34 +3386,39 @@ Rovnicu~(\ref{eq:lp_orthogonality}) možno zovšeobecniť doplnením prípadu~$n
 
 Vo fyzikálnej geodézii sú rovnice~(\ref{eq:f_synthesis}) 
 a~(\ref{eq:f_analysis}) využívané veľmi často a~v~istej miere sme sa s~nimi 
-stretli už v~predchádzajúcej kapitole.  Nech~$r$ a~$r'$ 
-z~rovnice~(\ref{eq:1l_legpol}) sú konštanty, pre ktoré platí~$r > r'$ (pozri 
-podmienku $\alpha < 1$ v~rovnici~\ref{eq:generic_function_for_lps}).  Keď 
-označíme $f(t) = 1 \slash \ell(t)$, $t = \cos\psi$, pomocou 
-rovníc~(\ref{eq:lp_orthogonality_2}) a~(\ref{eq:1l_legpol}) sa môžeme 
-presvedčiť, že koeficienty~$f_n$ z~rovnice~(\ref{eq:f_analysis}) sú dané 
-vzťahom
+stretli už v~predchádzajúcej kapitole.  Nech~$f(t)$ je funkcia~$1 \slash \ell$ 
+z~rovnice~(\ref{eq:1l_legpol}), $f(t) = 1 \slash \ell(t)$, $t = \cos\psi$, 
+pričom~$r$ a~$r'$ sú konštanty, pre ktoré platí~$r > r'$ (pozri 
+nerovnosť~\ref{eq:alpha_lt_1}).  Koeficienty~$f_n$ 
+z~rovnice~(\ref{eq:f_analysis}) potom získame vzťahmi~(\ref{eq:1l_legpol}) 
+a~(\ref{eq:lp_orthogonality_2}),
 %
 \begin{equation}
-f_n = \frac{1}{r'} \, \frac{2}{2n + 1} \, \left( \frac{r'}{r} \right)^{n
+f_n = \frac{2}{2n + 1} \, \frac{1}{r'} \, \left( \frac{r'}{r} \right)^{n
 + 1}{.}
 \end{equation}
 %
 Dosadením týchto koeficientov do vzťahu~(\ref{eq:f_synthesis}) získame pôvodný 
 vzťah~(\ref{eq:1l_legpol}).  Hoci ide o~triviálny príklad, demonštruje 
-rozvinutie funkcie do radu Legendreových polynómov.  Takéto rozvinutie funkcie 
-$f(t)$ pomocou Legendreových polynómov~$P_n(t)$ je v~istom zmysle obdobné 
-vyjadreniu vektora~$\vec r$ pomocou jednotkových vektorov~$\vec e_i$ 
-z~Kapitoly~\ref{sec:sh_motivation}.  Tento rozvoj je v~mnohých situáciách 
-výhodný, pretože môže napríklad zjednodušiť odvodenie.  Napokon, najlepšie to 
-demonštruje azda samotná Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme 
-funkciu~$1 \slash \ell$ rozvinuli do radu Legendreových polynómov a~následne do 
-radu Legendreových funkcií, čím sme získali vzťah~(\ref{eq:vg_sh_no_norm}).
+rozvinutie funkcie do radu Legendreových polynómov.  Takéto rozvinutie je 
+v~istom zmysle obdobné vyjadreniu vektora~$\vec r$ pomocou jednotkových 
+vektorov~$\vec e_i$ z~Kapitoly~\ref{sec:sh_motivation}.  Tento rozvoj je 
+v~mnohých situáciách výhodný, pretože môže napríklad zjednodušiť odvodenie.  
+Napokon, najlepšie to demonštruje azda samotná 
+Kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme funkciu~$1 \slash \ell$ 
+rozvinuli do radu Legendreových polynómov (rovnica~\ref{eq:1l_legpol}) 
+a~následne do radu Legendreových funkcií, čím sme získali 
+vzťah~(\ref{eq:vg_sh_no_norm}).
 
-V~niektorých aplikáciách fyzikálnej geodézie sa stretávame aj s~deriváciami 
-Legendreových polynómov (Kapitola~\ref{sec:normal_gravity_in_sph_coords}).  
-Deriváciu~$P'_n(t) = \diff P_n(t) \slash \diff t$ môžeme vypočítať napríklad 
-rekurentným vzťahom \parencite{Freeden2009}
+V~niektorých aplikáciách fyzikálnej geodézie (napríklad 
+Kapitola~\ref{sec:normal_gravity_in_sph_coords}) sa stretávame aj s~deriváciami 
+Legendreových polynómov.  Deriváciu
+%
+\begin{equation}
+P'_n(t) = \frac{\diff P_n(t)}{\diff t}
+\end{equation}
+%
+môžeme vypočítať napríklad rekurentným vzťahom \parencite{Freeden2009}
 %
 \begin{equation}
 P'_n(t) = n \, P_{n - 1}(t) + t \, P'_{n - 1}(t){.}
@@ -3421,7 +3441,8 @@ rekurentných vzťahov \parencite{Tscherning1976b},
 - 1}(\cos\psi) + \frac{\diff P_{n - 2}(\cos\psi)}{\diff \psi}{.}
 \end{align}
 %
-Začiatočné hodnoty získame opäť z~rovníc~(\ref{eq:p0_to_p5}),
+Začiatočné hodnoty získame opäť z~rovníc~(\ref{eq:p0_to_p5}) po uvážení~$t 
+= \sin\varphi$ alebo~$t = \cos\psi$,
 %
 \begin{alignat}{2}
 \frac{\diff P_0(\sin\varphi)}{\diff \varphi} &= 0{,} \quad \frac{\diff 
@@ -3434,30 +3455,30 @@ P_1(\cos\psi)}{\diff \psi} &&= -\sin\psi{.}
 Legendreove polynómy majú mnoho zaujimavých a~užitočných vlastností.  Uveďme 
 aspoň niektoré z~nich \parencite{Freeden2009},
 %
-\begin{align}
+\begin{alignat}{2}
 \label{eq:pn_property1}
-P_n(1) &= 1{,}\\
+P_n(1) &= 1{,} && \quad n \geq 0{,}\\
 %
 \label{eq:pn_property2}
-P_n(-t) &= (-1)^n \, P_n(t){,}\\
+P_n(-t) &= (-1)^n \, P_n(t){,} && \quad n \geq 0{,}\\
 %
 \label{eq:pn_property3}
-|P_n(t)| \leq P_n(1) &= 1{,} \quad t \in [-1, 1]{,}\\
+|P_n(t)| \leq P_n(1) &= 1{,} && \quad n \geq 0{,}\\
+%
+\int\limits_{-1}^{1} P_n(t) \, \diff t &= 0{,} && \quad n \geq 1{,}\\
 %
 \label{eq:pn_property4}
-P_n'(1) &= \frac{n \, (n + 1)}{2}{,}
-\end{align}
+P_n'(1) &= \frac{n \, (n + 1)}{2}{,} && \quad n \geq 0{.}
+\end{alignat}
 %
-kde $P_n'(t) = \diff P_n(t) \slash \diff t$.  Vzťahy~(\ref{eq:pn_property1}) až
-(\ref{eq:pn_property4}) platia pre~$n \geq 0$.   Širokú škálu ďalších
-vlastností Legendreovych polynómov, ich derivácií či integrálov je možné nájsť
-napríklad v~prácach \textcite{Gradshteyn2007}, \textcite{Freeden2009}
-a~\textcite{Olver2010}.
+Širokú škálu ďalších vlastností Legendreovych polynómov, ich derivácií či 
+integrálov je možné nájsť napríklad v~prácach \textcite{Gradshteyn2007}, 
+\textcite{Freeden2009} a~\textcite{Olver2010}.
 
-Na záver pre úplnosť dodajme, že vzťahy~(\ref{eq:f_synthesis})
-a~(\ref{eq:f_analysis}) možno aplikovať nielen na spojité funkcie~$f(t)$ na
-intervale $t \in [-1, 1]$, ale i~na širšiu množinu funkcií.  Podrobnosti možno
-nájsť napríklad v~prácach \textcite{Freeden2009} a~\textcite{Arfken2005}.
+Na záver pre úplnosť dodajme, že vzťahy~(\ref{eq:f_synthesis}) 
+a~(\ref{eq:f_analysis}) možno aplikovať nielen na spojité funkcie, ale i~na 
+širšiu množinu funkcií.  Podrobnosti možno nájsť napríklad v~prácach 
+\textcite{Freeden2009} a~\textcite{Arfken2005}.
 
 
 
@@ -3477,12 +3498,12 @@ P_{nm}(t) = \frac{1}{2^n \, n!} (1 - t^2)^{ m \slash 2} \, \frac{\diff^{n + m}
 \end{equation}
 %
 kde~$n = 0, 1, \dots$ a~$m = 0, 1, \dots n$.  Existuje tiež explicitný vzťah 
-\parencite{Freeden2009},
+\parencite{Freeden2009}
 %
 \begin{equation}
 P_{nm}(t) = \frac{1}{2^n}(1 - t^2)^{m \slash 2} \sum_{s = 0}^{\left\lfloor
 \frac{n - m}{2} \right\rfloor} (-1)^s \, \frac{(2n - 2s)!}{s! \, (n - s)! \, (n
-- m - 2s)!} \, t^{n - m - 2s}{,}
+- m - 2s)!} \, t^{n - m - 2s}
 \end{equation}
 %
 či mnoho rekurentných vzorcov, napríklad \parencite{Freeden2009}
@@ -3511,7 +3532,9 @@ P_{2,2}(t) & = 3(1 - t^2){.}\\
 \begin{figure}[bt]
 \centering
 \includegraphics{./fig-legendre-functions.pdf}
-\caption{Legendreove funkcie.}
+\caption{Legendreove funkcie~$P_{nm}(t)$ argumentu~$t \in [-1, 1]$ pre~$n = 0, 
+1, 2$ a~$m = 0, \dots, n$.  Symbol~$t$ môže označovať napríklad 
+funkciu~$\sin\varphi$ (rovnica~\ref{eq:vg_sh_no_norm}).}
 \label{fig:lf}
 \end{figure}
 
@@ -3525,10 +3548,11 @@ ortogonálne \parencite{Freeden2009},
 \end{equation}
 %
 Pre dve Legendreove funkcie rovnakého stupňa a~rádu platí
+%
 \begin{equation}
 \label{eq:pnm_times_pnm}
-\int\limits_{-1}^{1} P^2_{nm}(t) \, \diff t = \frac{2}{2n + 1} \, \frac{(n 
-+ m)!}{(n - m)!}{.}
+\int\limits_{-1}^{1} \left( P_{nm}(t) \right)^2 \, \diff t = \frac{2}{2n + 1} 
+\, \frac{(n + m)!}{(n - m)!}{.}
 \end{equation}
 
 Legendreove funkcie vyhovujú diferenciálnej rovnici druhého rádu 
@@ -3588,16 +3612,16 @@ t^m}\\
 \end{equation}
 %
 Rád Legendreovej funkcie~$m$ sa v~takom prípade zvykne zapisovať do horného 
-indexu.  Člen $(-1)^{m}$ sa nazýva Condonov--Shortleyho fázový faktor.  Medzi 
-$P_{nm}(t)$ (rovnica~\ref{eq:pnm_ferrer}) a~$P_n^m(t)$ 
+indexu.  Člen $(-1)^{m}$ sa nazýva \emph{Condonov--Shortleyho fázový faktor}.  
+Medzi $P_{nm}(t)$ (rovnica~\ref{eq:pnm_ferrer}) a~$P_n^m(t)$ 
 (rovnica~\ref{eq:pnm_cs_phase_factor}) platí vzťah
 %
 \begin{equation}
 P_{nm}(t) = (-1)^m \, P_n^m(t){.}
 \end{equation}
 %
-V ďalších častiach práce budeme používať iba Legendreove funkcie $P_{nm}(t)$ 
-definované vzťahom~(\ref{eq:pnm_ferrer}).
+Ďalej budeme používať iba Legendreove funkcie $P_{nm}(t)$ definované 
+vzťahom~(\ref{eq:pnm_ferrer}).
 
 
 
@@ -3625,7 +3649,10 @@ funkcia~$Y_{nk}(\varphi, \lambda)$ obsahuje trigonometrickú
 funkciu~$\cos(k\lambda)$ alebo~$\sin(|k|\lambda)$.  Všimnime si, že 
 v~rovnici~(\ref{eq:ynk_no_norm}) je rád Legendreovej 
 funkcie~$P_{n|k|}(\sin\varphi)$ vždy nezáporný v~súlade s~definíciou 
-Legendreových funkcií z~rovnice~(\ref{eq:pnm_def}).}
+Legendreových funkcií z~rovnice~(\ref{eq:pnm_def}).  V~ďalších častiach práce 
+je potrebné rozlišovať medzi indexami~$m = 0, 1, \dots, n$ (napríklad 
+rovnica~\ref{eq:vg_sh_no_norm}) a~$k = -n, \dots, n$ (napríklad 
+rovnica~\ref{eq:ynk_no_norm}).}
 
 \begin{figure}[bt]
 \centering
@@ -3697,10 +3724,10 @@ a~$2|k|$-krát v~smere sférickej dĺžky.  Takáto funkcia sa nazýva
 \emph{sektorálna sférická harmonická funkcia}.
 \end{itemize}
 
-Podobne ako jednotkové vektory, Legendreove polynómy či niektoré Legendreove
-funkcie, i~sférické harmonické funkcie sú ortogonálne.  Táto vlastnosť vyplýva
-z~nulového skalárneho súčinu dvoch rôznych sférických harmonických funkcií
-$Y_{nk}(\varphi, \lambda)$ a~$Y_{rs}(\varphi, \lambda)$,
+Podobne ako jednotkové vektory, Legendreove polynómy či Legendreove funkcie 
+rovnakého rádu, i~sférické harmonické funkcie sú ortogonálne.  Táto vlastnosť 
+vyplýva z~nulového skalárneho súčinu dvoch rôznych sférických harmonických 
+funkcií,
 %
 \begin{equation}
 \label{eq:ynk_no_norm_orthogonality}
@@ -3709,12 +3736,12 @@ $Y_{nk}(\varphi, \lambda)$ a~$Y_{rs}(\varphi, \lambda)$,
 \end{equation}
 %
 pričom buď $n \neq r$ alebo $k \neq s$ alebo platia obe podmienky súčasne.  Pre
-skalárny súčin dvoch rovnakých sférických harmonických funkcií platí
+skalárny súčin dvoch rovnakých sférických harmonických funkcií platí vzťah
 %
 \begin{equation}
 \label{eq:ynk_times_ynk}
-\iint\limits_{\sigma} Y_{nk}(\varphi, \lambda) \, Y_{nk}(\varphi, \lambda) \, 
-\diff \sigma =
+\iint\limits_{\sigma} \left( Y_{nk}(\varphi, \lambda) \right)^2 \, \diff \sigma 
+=
 %
 \dfrac{4\pi}{(2 - \delta_{k0}) \, (2n + 1)} \, \dfrac{(n + |k|)!}{(n
 - |k|)!}{.}
@@ -3731,7 +3758,7 @@ rovnice~(\ref{eq:pnm_orthogonality}), (\ref{eq:pnm_times_pnm}),
 \end{equation}
 %
 Vo vzťahoch~(\ref{eq:pnm_orthogonality}) a~(\ref{eq:pnm_times_pnm}) je potrebné
-aplikovať substitúciu integračnej premennej,
+aplikovať zámenu integračnej premennej
 %
 \begin{equation}
 \int\limits_{-1}^{1} P_{nm}(t) \, P_{rs}(t) \, \diff
@@ -3740,12 +3767,13 @@ P_{rs}(\sin\varphi) \, \cos\varphi \, \diff \varphi{.}
 \end{equation}
 
 
-Nech $f(\varphi, \lambda)$ je funkcia na jednotkovej sfére $\sigma$.  Nech pre
-$f(\varphi, \lambda)$ ďalej platí
+Nech $f(\varphi, \lambda)$ je funkcia na jednotkovej sfére $\sigma$ vyhovujúca 
+nerovnosti
 %
 \begin{equation}
 \label{eq:f_l2}
-\iint\limits_\sigma f^2(\varphi, \lambda) \, \diff \sigma < \infty{.}
+\iint\limits_\sigma \left( f(\varphi, \lambda) \right)^2 \, \diff \sigma 
+< \infty{.}
 \end{equation}
 %
 Podmienku~(\ref{eq:f_l2}) spĺňa napríklad každá spojitá funkcia na jednotkovej
@@ -3788,7 +3816,7 @@ Všimnime si, že ak označíme
 %
 \begin{equation}
 \label{eq:sh_norm}
-N_{n|k|} = \sqrt{(2 - \delta_{k0}) (2n + 1) \, \frac{(n - |k|)!}{(n
+N_{nk} = \sqrt{(2 - \delta_{k0}) (2n + 1) \, \frac{(n - |k|)!}{(n
 + |k|)!}}{,}
 \end{equation}
 %
@@ -3818,7 +3846,7 @@ Pre skalárny súčin dvoch rovnakých jednotkových vektorov $\vec e_i$ platí
 vzťah~(\ref{eq:ei_unit_length}).  Z~teoretického aj z~praktického hľadiska by 
 bolo výhodné, aby aj skalárny súčin dvoch rovnakých sférických harmonických 
 funkcií bol rovný~$1$.  Túto vlastnosť možno zabezpečiť vynásobením 
-Legendreových funkcií $P_{nm}(\sin\varphi)$ členom $N_{n|k|}$ 
+Legendreových funkcií $P_{nm}(\sin\varphi)$ členom $N_{nk}$ 
 (rovnica~\ref{eq:sh_norm}), ktorý nazývame \emph{úplná norma}.  Získame tým 
 \emph{úplne normované Legendreove funkcie},
 %
@@ -3833,7 +3861,7 @@ a~\emph{úplne normované sférické harmonické funkcie}
 \begin{equation}
 \label{eq:ynk_norm}
 \begin{split}
-\bar{Y}_{nk}(\varphi, \lambda) = N_{n|k|} \, Y_{nk}(\varphi, \lambda)
+\bar{Y}_{nk}(\varphi, \lambda) = N_{nk} \, Y_{nk}(\varphi, \lambda)
 = \bar{P}_{n|k|}(\sin\varphi)
 %
 \begin{cases}
@@ -3882,8 +3910,8 @@ P_n(\cos\psi) = \frac{1}{2n + 1} \, \sum_{k = -n}^n \bar{Y}_{nk}(\varphi,
 \lambda) \, \bar{Y}_{nk}(\varphi', \lambda')
 \end{equation}
 %
-a~prevrátenú hodnotu vzdialenosti $1 \slash \ell$ z~rovnice~(\ref{eq:1l}) 
-v~tvare
+a~prevrátenú hodnotu vzdialenosti $1 \slash \ell$ 
+z~rovnice~(\ref{eq:1l_legpol}) v~tvare
 %
 \begin{equation}
 \label{eq:1l_sh}
@@ -3946,9 +3974,9 @@ V_\gidx(P) = \frac{GM}{R} \sum_{n = 0}^\infty \left( \frac{R}{r} \right)^{n
 \, \sin(m\lambda)\right) \, P_{nm}(\sin\varphi){.}
 \end{equation}
 
-Ak sú sférické harmonické funkcie normované členom $N_{n|k|}$ (pozri 
-rovnicu~\ref{eq:sh_norm}), potom sférické harmonické koeficienty musia byť 
-normou $N_{n|k|}$ vydelené, aby sa zachovala rovnosť vo 
+Ak sú sférické harmonické funkcie normované členom $N_{nk}$ 
+(rovnica~\ref{eq:ynk_norm}), potom sférické harmonické koeficienty musia byť 
+normou $N_{nk}$ vydelené, aby sa zachovala rovnosť vo 
 vzťahoch~(\ref{eq:vg_sh_no_norm}) a~(\ref{eq:vg_sh_1st_norm}).  Druhá norma 
 sférických harmonických koeficientov je preto daná nasledovne,
 %
@@ -4038,8 +4066,9 @@ obmedzenia nekonečných rozvojov~(\ref{eq:vg_sh_no_norm}),
 a~(\ref{eq:vg_sh_2nd_norm_ynk}) na maximálny stupeň $N = 0$ je teda taká, že 
 získame gravitačný potenciál homogénnej gule, ktorá nahrádza skutočné teleso.
 
-Vydeľme rovnicu~(\ref{eq:vg_shc_no_norm}) hmotnosťou $M$ a~zopakujme postup pre
-stupeň $n = 1$ a~rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) získame
+Vydeľme rovnicu~(\ref{eq:vg_shc_no_norm}) hmotnosťou $M$ a~zopakujme uvedený 
+postup pre stupeň $n = 1$ a~rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) 
+získame
 %
 \begin{equation}
 \begin{split}
@@ -4052,15 +4081,17 @@ stupeň $n = 1$ a~rády $m = 0, 1$.  Po uvážení~(\ref{eq:sph2cart}) získame
 \end{split}
 \end{equation}
 %
-Súradnice $x_\mathrm{c}, y_\mathrm{c}, z_\mathrm{c}$ predstavujú posun
-začiatku súradnicového systému voči ťažisku telesa.  V~praktických aplikáciách 
-pracujeme veľmi často v~geocentrickom súradnicovom systéme so
-začiatkom v~ťažisku Zeme, preto všetky koeficienty stupňa $n = 1$ sú často 
-nulové, $C_{1,0} = C_{1,1} = S_{1,1} = 0$.
+Súradnice $x_\mathrm{c}, y_\mathrm{c}, z_\mathrm{c}$ predstavujú posun začiatku 
+súradnicového systému, v~ktorom vyjadrujeme polohu bodu~$P$ 
+v~rovniciach~(\ref{eq:vg_sh_no_norm}), (\ref{eq:vg_sh_1st_norm}), 
+(\ref{eq:vg_sh_2nd_norm}) a~(\ref{eq:vg_sh_2nd_norm_ynk}), voči ťažisku telesa.  
+V~praktických aplikáciách pracujeme veľmi často v~geocentrickom súradnicovom 
+systéme so začiatkom v~ťažisku Zeme, preto všetky koeficienty stupňa $n = 1$ sú 
+často nulové, $C_{1,0} = C_{1,1} = S_{1,1} = 0$.
 
-Je možné ukázať \parencite[napríklad][]{MoritzPhysicalGeodesy}, že koeficienty
-stupňa $n = 2$ súvisia s~momentom zotrvačnosti.  Koeficienty vyšších stupňov
-už, zdá sa, nemajú priamočiaru fyzikálnu interpretáciu.
+Je možné ukázať \parencite[napríklad][]{MoritzPhysicalGeodesy}, že koeficienty 
+stupňa $n = 2$ súvisia s~momentom zotrvačnosti.  Zdá sa, že koeficienty 
+stupňov~$n \geq 3$ už nemajú priamočiaru fyzikálnu interpretáciu.
 
 
 
@@ -4173,7 +4204,7 @@ premenlivé modely zemského gravitačného poľa (pozri
 Kapitolu~\ref{sec:time_variable_gravity}).  Tieto modely zachytávajú časové 
 variácie gravitačného poľa, ktoré sú spôsobené napríklad hydrologickými zmenami 
 na regionálnej úrovni (napríklad Amazonský prales), presunom vodných más 
-v~oceánoch, úbytkom ľadovcov v~Grónsku a~Antarktíde či zmeny spôsobené 
+v~oceánoch, úbytkom ľadovcov v~Grónsku a~v~Antarktíde či zmeny spôsobené 
 zemetraseniami \parencite{Wahr2007}.  ICGEM tiež poskytuje službu na výpočet 
 vzťahu~(\ref{eq:vg_sh_2nd_norm}) či modely gravitačného poľa nebeských telies 
 (napríklad Mars, Venuša, Mesiac či asteroidy Slnečnej sústavy).
@@ -4232,16 +4263,16 @@ miera detailu stúpa od vrchnej mapy smerom nadol.  Spôsobené je to tým, že
 maximálny stupeň~$N$, ktorý udáva priestorové rozlíšenie funkcie 
 $H(\varphi,\lambda)$, narastá postupne od~$30$ cez~$90$ až do~$360$.  Odhad 
 veľkosti najmenšieho priestorového prvku, ktorý môže byť reprezentovaný 
-sférickým harmonickým rozvojom do stupňa~$N$, je možné získať vzťahom
+sférickým harmonickým rozvojom do stupňa~$N$, je možné získať vzťahom 
+\parencite{Barthelmes2013}
 %
 \begin{equation}
 l_{\min}(N) = \frac{\pi \, R}{N}{,}
 \end{equation}
 %
 kde $l_{\min}$ je sférická vzdialenosť v~dĺžkových jednotkách na sfére 
-s~polomerom $R$ \parencite{Barthelmes2013}.  Zvyšovaním
-maximálneho stupňa $N$ teda zvyšujeme priestorovú podrobnosť (rozlíšenie) 
-funkcie $H(\varphi, \lambda)$.
+s~polomerom $R$.  Zvyšovaním maximálneho stupňa $N$ teda zvyšujeme priestorovú 
+podrobnosť (rozlíšenie) funkcie $H(\varphi, \lambda)$.
 
 \begin{figure}
 \centering
@@ -4275,9 +4306,9 @@ asteroidu~Eros do stupňa~24 \parencite{Zuber2000}.
 
 Pred rozvinutím generickej funkcie pre Legendreove polynómy do Maclaurinovho 
 radu (vzťah~\ref{eq:maclaurin_series_of_generic_function}) sme vyslovili 
-predpoklad $\frac{r'}{r} < 1$.  Bez splnenia tejto podmienky 
-rad~(\ref{eq:maclaurin_series_of_generic_function}) nemusí konvergovať.  
-V~takom prípade nie je možné pokračovať v~odvodení 
+predpoklad $\frac{r'}{r} < 1$ (nerovnosť~\ref{eq:alpha_lt_1}).  Bez splnenia 
+tejto podmienky rad~(\ref{eq:maclaurin_series_of_generic_function}) nemusí 
+konvergovať.  V~takom prípade nie je možné pokračovať v~odvodení 
 z~Kapitoly~\ref{sec:vg_sh_expansion}, pretože zámena poradia integrácie 
 a~sumácie nie je možná.  Na získanie vzťahu~(\ref{eq:vg_sh_no_norm}) sme preto 
 museli predpokladať, že podmienka $\frac{r'}{r} < 1$ je splnená.
@@ -4314,13 +4345,26 @@ Nanešťastie, celý povrch Zeme sa nachádza v~oblasti, v~ktorej sférický
 harmonický rozvoj gravitačného potenciálu nemusí konvergovať.  Našťastie, zdá 
 sa, že otázka konvergencie, resp. divergencie radu~(\ref{eq:vg_sh_no_norm}) nie 
 je v~súčasnosti z~praktického hľadiska relevantná pre nízke až stredné stupne 
-a~svoju závažnosť nadobúda až približne od stupňa $10{,}800$ 
+a~svoju závažnosť nadobúda približne až od stupňa $10{,}800$ 
 \parencite{Hirt2016,Rexer2017}.
 
 Konvergencia radu sférických harmonických funkcií na povrchu Zeme je často 
 diskutovanou témou geodetickej literatúry 
-\parencite{Hotine,Borre_chapter4,MoritzAdvancedGeodesy,Sjoberg1980,Jekeli1983,SansoGeoidDetermination}.
-
+\parencite{Hotine,Borre_chapter4,MoritzAdvancedGeodesy,Sjoberg1980,Jekeli1983,SansoGeoidDetermination}.  
+Dodajme, že funkcia~$1 \slash \ell$ môže byť rozvinutá do radu Legendreových 
+polynómov a~do radu sférických harmonických funkcií aj pre~$r < r'$ 
+\parencite[napríklad][]{Martinec1998,MoritzPhysicalGeodesy}.  Získame tým 
+rozvoje, ktoré sú formálne podobné radom~(\ref{eq:1l_legpol}) 
+a~(\ref{eq:1l_sh}).  Týmto spôsobom je možné odvodiť iný typ sférického 
+harmonického rozvoja gravitačného potenciálu, ktorý je konvergentný aj pre~$r 
+< R$, ak je v~tejto oblasti gravitačný potenciál harmonický.  V~literatúre sa 
+preto rozlišuje medzi vonkajšími (podmienka~$r > R$) a~vnútornými priestorovými 
+sférickými harmonickými funkciami (podmienka~$r < R$).  Vonkajšie a~vnútorné 
+rozvoje sa zvyknú aj kombinovať, vďaka čomu je možné získať konvergentný 
+sférický harmonický rozvoj gravitačného potenciálu aj v~oblastiach so 
+sprievodičom~$r < R$, a~to dokonca aj~vo vnútri Zeme 
+\parencite[napríklad][]{Sjoberg1977,Jekeli1983,Grafarend1993,Wang1997,Martinec1998,Wang2013}.  
+Tieto postupy však nie sú predmetom tejto práce.
 
 
 
