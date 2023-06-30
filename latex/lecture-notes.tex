@@ -4388,26 +4388,28 @@ sférických súradniciach, ale v~súradniciach, ktoré sú akýmsi spôsobom
 prirodzenejšie pre sploštené telesá.  Použité môžu byť napríklad 
 \emph{redukované elipsoidické súradnice}, ktoré vedú ku \emph{sféroidickému 
 harmonickému rozvoju} gravitačného potenciálu.  Prívlastok \emph{sféroidický} 
-označuje, že harmonický rozvoj je vztiahnutý ku sféroidu, teda k~dvojosovému 
-elipsoidu.  Hoci dvojosový elipsoid môže byť sploštený buď na póloch alebo na 
-rovníku, pre modelovanie gravitačného poľa Zeme má praktické využitie takmer 
-výlučne len prvý z~nich.  Ďalej sa preto budeme venovať iba elipsoidom, ktoré 
-sú sploštené na póloch.  Výhodou sféroidického harmonického rozvoja je 
-spravidla väčšia oblasť konvergencie harmonického radu v~porovnaní so sférickým 
-rozvojom (pozri Obrázok~\ref{fig:spheroidal_harmonics_convergence}).
+označuje, že harmonický rozvoj je vztiahnutý ku sféroidu, v~tomto prípade 
+k~dvojosovému elipsoidu.  Hoci dvojosový elipsoid môže byť sploštený buď na 
+póloch alebo na rovníku, pre modelovanie gravitačného poľa Zeme má praktické 
+využitie takmer výlučne len prvý z~nich.  Ďalej sa preto budeme venovať iba 
+elipsoidom, ktoré sú sploštené na póloch.  Výhodou sféroidického harmonického 
+rozvoja je spravidla väčšia oblasť konvergencie harmonického radu v~porovnaní 
+so sférickým rozvojom (pozri 
+Obrázok~\ref{fig:spheroidal_harmonics_convergence}).
 
 V~tejto kapitole popíšeme redukované elipsoidické súradnice 
-(Kapitola~\ref{sec:reduced_ell_coords}), sféroidické harmonické funkcie 
-(Kapitola~\ref{sec:spheroidal_harmonics}) a~rozvoj gravitačného potenciálu do 
-sféroidického harmonického radu 
+(Kapitola~\ref{sec:reduced_ell_coords}), vyjadríme v~nich Laplaceovu rovnicu 
+(Kapitola~\ref{sec:laplace_in_reduced_ell_coords}), predstavíme sféroidické 
+harmonické funkcie (Kapitola~\ref{sec:spheroidal_harmonics}) a~na záver 
+rozvinieme gravitačný potenciál do sféroidického harmonického radu 
 (Kapitola~\ref{sec:spheroidal_harmonic_expansion}).  Kvôli náročnosti nebudeme 
-odvádzať sféroidické harmonické funkcie rovnako podrobne ako sme odvodili 
-sférické harmonické funkcie v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  
-Namiesto toho sa budeme snažiť prirovnávať diskutované témy k~problematike 
-známej už z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.  Získané poznatky 
-potom využijeme v~Kapitole~\ref{sec:normal_gravity_field}, v~ktorej je 
-študované gravitačné a~tiažové pole s~konštantným tiažovým potenciálom na 
-povrchu dvojosového elipsoidu.
+odvádzať sféroidické harmonické funkcie tak podrobne ako sme odvodili sférické 
+harmonické funkcie v~Kapitole~\ref{sec:spherical_harmonic_expansion}.  Namiesto 
+toho sa budeme snažiť prirovnávať diskutované témy k~problematike známej už 
+z~Kapitoly~\ref{sec:spherical_harmonic_expansion}.  Získané poznatky potom 
+využijeme v~Kapitole~\ref{sec:normal_gravity_field}, v~ktorej je študované 
+gravitačné a~tiažové pole s~konštantným tiažovým potenciálom na povrchu 
+dvojosového elipsoidu.
 
 \begin{figure}
 \centering
@@ -4454,6 +4456,7 @@ elipsoidická dĺžka $\lambda$ je definovaná rovnako ako sférická dĺžka~$\
 pomocou referenčného elipsoidu s~hlavnou polosou~$a$ a~vedľajšou polosou~$b$.}
 \label{fig:reduced_ell_coords}
 \end{figure}
+
 Jednoduchým spôsobom možno overiť, že medzi redukovanými elipsoidickými 
 súradnicami a~karteziánskymi súradnicami platia nasledovné vzťahy,
 %
@@ -4468,7 +4471,7 @@ z &= u \, \sin\beta{,}
 %
 kde $\sqrt{u^2 + E^2}$ je dĺžka hlavnej polosi konfokálneho elipsoidu.  Ak $E 
 = 0$, teda ak referenčný elipsoid nie je sploštený, potom 
-vzťah~(\ref{eq:ellred2cart}) má rovnaký tvar ako transformácia sférických 
+vzťahy~(\ref{eq:ellred2cart}) majú rovnaký tvar ako transformácia sférických 
 súradníc na karteziánske súradnice~(\ref{eq:sph2cart}).  Pre transformáciu 
 karteziánskych súradníc~$x, y, z$ na redukované elipsoidické súradnice~$u, 
 \beta, \lambda$ pozri napríklad \textcite{MoritzPhysicalGeodesy}.
@@ -4514,12 +4517,12 @@ x(\beta, \lambda, u)\\
 y(\beta, \lambda, u)\\
 z(\beta, u)
 \end{bmatrix}
-{,}
+{.}
 %
 \end{equation}
 %
-pričom funkcie $x(\beta, \lambda, u)$, $y(\beta, \lambda, u)$, $z(\beta, u)$ sú 
-dané vzťahmi~(\ref{eq:ellred2cart}).  Začiatok a~smery vektorov~$\hat{\vec 
+Funkcie $x(\beta, \lambda, u)$, $y(\beta, \lambda, u)$, $z(\beta, u)$ sú dané 
+vzťahmi~(\ref{eq:ellred2cart}).  Začiatok a~smery vektorov~$\hat{\vec 
 e}_i^\mathrm{r}$, $i = 1, 2, 3$, definujú lokálny karteziánsky súradnicový 
 systém~$x^\mathrm{r}, y^\mathrm{r}, z^\mathrm{r}$ s~pohyblivým 
 začiatkom~v~bode~$P$.  Os~$z^\mathrm{r}$ je daná smerom vonkajšej normály ku 
@@ -4599,11 +4602,11 @@ V_\gidx}{\partial u} +  \frac{\partial^2 V_\gidx}{\partial\beta^2} - \tan\beta
 V~Kapitole~\ref{sec:vg_sh_expansion} sme uviedli, že rozvoj gravitačného 
 potenciálu do radu sférických harmonických funkcií~(rovnica 
 \ref{eq:vg_sh_no_norm}) môžeme získať aj riešením Laplaceovej diferenciálnej 
-rovnice metódou separácie premenných vo sférických 
-súradniciach~(rovnica~\ref{eq:vg_laplace_sph}).  Cieľom takéhoto prístupu je 
-nájsť tri funkcie, $f_{\mathrm{s}}(r)$, $g_{\mathrm{s}}(\varphi)$ 
-a $h_{\mathrm{s}}(\lambda)$.  Je možne ukázať, že tieto funkcie majú tvar 
-(porovnaj s~rovnicou~\ref{eq:vg_sh_no_norm})
+rovnice vo sférických súradniciach~(rovnica~\ref{eq:vg_laplace_sph}) metódou 
+separácie premenných.  Cieľom takéhoto prístupu je nájsť tri funkcie, 
+$f_{\mathrm{s}}(r)$, $g_{\mathrm{s}}(\varphi)$ a $h_{\mathrm{s}}(\lambda)$.  Je 
+možne ukázať, že tieto funkcie majú tvar (porovnaj 
+s~rovnicou~\ref{eq:vg_sh_no_norm})
 %
 \begin{align}
 \label{eq:fs}
@@ -4628,7 +4631,7 @@ sa využíva na rozvoj \emph{harmonickej} funkcie vo vnútri sféry
 práce.  Takisto funkcia~$g_\mathrm{s}(\varphi)$ môže mať aj ďalší 
 tvar~$Q_{nm}(\sin\varphi)$, ktorý bude diskutovaný neskôr v~tejto kapitole.}
 
-Jeden z~možných prístupov získania sféroidických harmonických funkcií je práve 
+Jeden z~možných spôsobov získania sféroidických harmonických funkcií je práve 
 riešením Laplaceovej diferenciálnej rovnice v~redukovaných elipsoidických 
 súradniciach~(\ref{eq:vg_laplace_ellred}) metódou separácie premenných.  
 Získame tým funkcie \parencite{MoritzPhysicalGeodesy}
@@ -4654,7 +4657,8 @@ kde $i^2 = -1$ je imaginárna jednotka.\footnote{Podobne ako
 v~rovnici~(\ref{eq:fs}), funkcia~$f_{\mathrm{r}}(u)$ môže mať ďalší tvar 
 $f_{\mathrm{r}}(u) = P_{nm}\left( i \frac{u}{E} \right)$, ktorý sa využíva na 
 rozvoj \emph{harmonickej} funkcie vo vnútri referenčného elipsoidu.  Druhý 
-možný tvar funkcie~$g_\mathrm{r}(\beta)$ je~$Q_{nm}(\sin\beta)$.}
+možný tvar funkcie~$g_\mathrm{r}(\beta)$ z~rovnice~(\ref{eq:gr}) 
+je~$Q_{nm}(\sin\beta)$.}
 
 Člen $Q_{nm}\left( i \frac{u}{E} \right)$ v~rovnici~(\ref{eq:fr}) sa nazýva 
 \emph{pridružená Legendreova funkcia druhého druhu}.  Pre komplexný argument $z 
@@ -4669,8 +4673,8 @@ kde
 %
 \begin{equation}
 \label{eq:qn0_imag_def}
-Q_{n}(z) = \frac{1}{2} \, P_n(z) \, \ln\frac{z + 1}{z - 1} - \sum_{s = 1}^n 
-\frac{1}{s} \, P_{s - 1}(z) \, P_{n - s}(z){.}
+Q_{n}(z) = Q_{n0}(z) = \frac{1}{2} \, P_n(z) \, \ln\frac{z + 1}{z - 1} 
+- \sum_{s = 1}^n \frac{1}{s} \, P_{s - 1}(z) \, P_{n - s}(z){.}
 \end{equation}
 %
 Pre reálny argument $t$ je definovaná vzťahom\footnote{V~niektorej literatúre 
@@ -4688,21 +4692,25 @@ kde
 %
 \begin{equation}
 \label{eq:qn0_real_def}
-Q_{n}(t) = \frac{1}{2} \, P_n(t) \, \ln\frac{1 + t}{1 - t} - \sum_{s = 1}^n 
-\frac{1}{s} \, P_{s - 1}(t) \, P_{n - s}(t){.}
+Q_{n}(t) = Q_{n0}(t) = \frac{1}{2} \, P_n(t) \, \ln\frac{1 + t}{1 - t} 
+- \sum_{s = 1}^n \frac{1}{s} \, P_{s - 1}(t) \, P_{n - s}(t){.}
 \end{equation}
 
 \begin{figure}
 \centering
 \includegraphics{./fig-legendre-polynomials-qn.pdf}
-\caption{Legendreove polynómy druhého druhu reálneho argumentu $t$.}
+\caption{Legendreove polynómy~$Q_n(t)$ druhého druhu reálneho argumentu $t \in 
+(-1, 1)$ pre~$n = 0, 1, \dots, 5$.  Z~dôvodu singularity nie sú Legendreove 
+polynómy vypočítané pre~$t = -1$ a~$t = 1$.}
 \label{fig:lp_2nd}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{./fig-legendre-functions-qnm.pdf}
-\caption{Legendreove funkcie druhého druhu reálneho argumentu $t$.}
+\caption{Legendreove funkcie druhého druhu~$Q_{nm}(t)$ reálneho argumentu $t 
+\in (-1, 1)$ pre~$n = 0, 1, 2$ a~$m = 0, \dots, n$.  Pre singularitu nie sú 
+funkcie~$Q_{nm}(t)$ vypočítané v~koncových bodoch~$t = -1$ a~$t = 1$.}
 \label{fig:lf_2nd}
 \end{figure}
 
@@ -4710,7 +4718,7 @@ Rovnica~(\ref{eq:qnm_real_def}) je formálne podobná rovnici~(\ref{eq:pnm_def})
 Napriek tomu, v~dôsledku rozdielnej definície derivovaných členov~$Q_n(t)$ ide 
 o~funkcie s~odlišným priebehom ako~$P_{nm}(t)$.  Uveďme pre názornosť 
 explicitné vzťahy na výpočet funkcií~$Q_0\left( t \right)$, $Q_1\left( 
-t \right)$ a~$Q_2\left( t \right)$ a~porovnajme ich 
+t \right)$ a~$Q_2\left( t \right)$ reálneho argumentu~$t$ a~porovnajme ich 
 s~rovnicami~(\ref{eq:p0_to_p5})
 \parencite{MoritzPhysicalGeodesy},
 %
@@ -4732,11 +4740,11 @@ kde
 %
 \begin{equation}
 \label{eq:tanh}
-\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \mathrm{arctanh} \, (t){,}
+\frac{1}{2} \, \ln \frac{1 + t}{1 - t} = \mathrm{arctanh} \, (t){.}
 \end{equation}
 %
-pričom $\mathrm{arctanh}$ označuje inverznú funkciu k~hyperbolickému tangensu, 
-ktorý je daný vzťahom \parencite{Gradshteyn2007}
+Zápis $\mathrm{arctanh}$ označuje inverznú funkciu k~hyperbolickému 
+tangensu~$\tanh$, ktorý je daný vzťahom \parencite{Gradshteyn2007}
 %
 \begin{equation}
 \tanh t = \frac{e^t - e^{-t}}{e^t + e^{-t}}{.}
@@ -4744,18 +4752,27 @@ ktorý je daný vzťahom \parencite{Gradshteyn2007}
 %
 Funkcie $Q_{nm}(t)$ pre niekoľko prvých stupňov~$n$ a~rádov~$m$ sú znázornené 
 na Obrázkoch~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd} (porovnaj 
-s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).  Funkcie $Q_0\left( z \right)$, 
-$Q_1\left( z \right)$ a~$Q_2\left( z \right)$ komplexného argumentu~$z$ získame 
-nahradením~výrazu~(\ref{eq:tanh}) vo vzťahoch~(\ref{eq:q0t}) až (\ref{eq:q2t}) 
-výrazom (porovnaj rovnice~\ref{eq:qn0_imag_def} a~\ref{eq:qn0_real_def})
+s Obrázkami~\ref{fig:lp} a~\ref{fig:lf}).
+
+Funkcie~$Q_0\left( z \right)$, $Q_1\left( z \right)$ a~$Q_2\left( z \right)$ 
+komplexného argumentu~$z$ majú tvar
 %
-\begin{equation}
-\label{eq:arccoth}
-\frac{1}{2} \, \ln \frac{z + 1}{z - 1} = \mathrm{arccoth} \, z{,}
-\end{equation}
+\begin{align}
+\label{eq:q0z}
+Q_0(z) &= \frac{1}{2} \, \ln\frac{z + 1}{z - 1} = \mathrm{arccoth}(z){,}\\
 %
-kde $\mathrm{arccoth}$ je inverzná funkcia k hyperbolickému kotangensu, ktorý 
-je daný vzťahom \parencite{Gradshteyn2007}
+\label{eq:q1z}
+Q_1(z) &= \frac{z}{2} \, \ln\frac{z + 1}{z - 1} - 1 = z \, \mathrm{arccoth}(z)- 
+ 1{,}\\
+%
+\label{eq:q2z}
+Q_2(z) &= \left( \frac{3}{4} z^2 - \frac{1}{4} \right) \, \ln\frac{z + 1}{z 
+- 1} - \frac{3}{2}z = \left( \frac{3}{2} z^2 - \frac{1}{2} \right) \, 
+\mathrm{arccoth}(z) - \frac{3}{2}z{,}
+\end{align}
+%
+pričom~$\mathrm{arccoth}$ je inverzná funkcia k hyperbolickému 
+kotangensu~$\coth$ \parencite{Gradshteyn2007},
 %
 \begin{equation}
 \coth z = \frac{1}{\tanh z} =  \frac{e^z + e^{-z}}{e^z - e^{-z}}{.}
@@ -4772,7 +4789,7 @@ si tiež, že pre $t \rightarrow \pm 1$, teda pre $\beta \rightarrow \pm
 a Obrázky~\ref{fig:lp_2nd} a~\ref{fig:lf_2nd}).  Túto vlastnosť budeme nazývať 
 \emph{singularita}.  Práve kvôli singularite sa Legendreove funkcie druhého 
 druhu nepoužívajú v~praktických aplikáciách ako riešenie pre funkcie 
-$g_\mathrm{s}(\varphi)$ a~$g_\mathrm{r}(\beta)$ (pozri rovnice~\ref{eq:gs} 
+$g_\mathrm{s}(\varphi)$ a~$g_\mathrm{r}(\beta)$ (rovnice~\ref{eq:gs} 
 a~\ref{eq:gr}), a~to napriek tomu, že sú taktiež riešením Legendreovej 
 diferenciálnej rovnice \parencite{MoritzPhysicalGeodesy}.
 
@@ -4809,8 +4826,8 @@ koeficienty} gravitačného potenciálu.
 Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je lineárnou kombináciou funkcií 
 (\ref{eq:fr}), (\ref{eq:gr}) a~(\ref{eq:hr}) (pozri tiež 
 vzťah~\ref{eq:ynk_norm}), ktoré boli získané riešením Laplaceovej 
-diferenciálnej rovnice metódou separácie premenných v~redukovaných 
-elipsoidických súradniciach.  Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je 
+diferenciálnej rovnice v~redukovaných elipsoidických súradniciach metódou 
+separácie premenných.  Rovnica~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) je 
 formálne podobná vzťahu~(\ref{eq:vg_sh_2nd_norm_ynk}).  Môže byť tiež 
 jednoducho prepísaná do tvaru, ktorý využíva index~$m = 0, 1, \dots, n$ 
 (porovnaj rovnice~\ref{eq:vg_sh_2nd_norm} a~\ref{eq:vg_sh_2nd_norm_ynk}) či do 
@@ -5523,7 +5540,7 @@ vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime vzťa
 %
 potom $Q_0$ a~$Q_2$ komplexného argumentu $i \frac{u}{E}$ 
 z rovnice~(\ref{eq:ug_spheroidal}) môžeme prepísať do tvaru (pozri 
-rovnice~\ref{eq:q0t}, \ref{eq:q2t} a~\ref{eq:arccoth})
+rovnice~\ref{eq:q0z} až~\ref{eq:q2z})
 %
 \begin{align}
 Q_0\left( i \, \frac{u}{E} \right) &= -i \, \arctan\frac{E}{u}{,}\\
