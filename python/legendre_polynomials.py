@@ -7,7 +7,7 @@ rc('text', usetex=True)
 # Maximálny stupeň Legendreových polynómov
 nmax = 5
 
-# Vzorkovanie sférických šírok a ich sínusov
+# Vzorkovanie sférických šírok a ich sínusy
 lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 101)
 t   = np.sin(lat)
 
