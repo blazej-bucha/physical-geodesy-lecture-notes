@@ -971,7 +971,7 @@ vlastnosťami gravitačného potenciálu, ktoré vyplývajú z~teórie potenciá
 
 Gravitačný potenciál hmotného bodu a~gravitačný potenciál všeobecného telesa sú 
 regulárne funkcie v~nekonečne.  Funkcia~$U$ je \emph{regulárna v~nekonečne}, ak 
-platí
+platí \parencite{Kellogg1967,Pick1973}
 %
 \begin{equation}
 \label{eq:regular_function}
@@ -982,8 +982,7 @@ U}{\partial y} \right| < C{,} \quad \lim_{\ell \rightarrow \infty}\left| \ell^2
 \, \frac{\partial U}{\partial z} \right| < C{,}
 \end{equation}
 %
-kde~$\ell$ je vzdialenosť od ľubovoľného pevného bodu a~$C$ je konštanta 
-\parencite{Kellogg1967,Pick1973}.
+kde~$\ell$ je vzdialenosť od ľubovoľného pevného bodu a~$C$ je konštanta.
 
 V~tejto práci sa obmedzíme iba na dôkaz, že prvá 
 limita~(\ref{eq:regular_function}) pre gravitačný potenciál hmotného 
@@ -1741,7 +1740,7 @@ zavesenej olovnice).
 Z~pohľadu geodetických meraní je nutné, aby zvislá os prístroja (napríklad 
 teodolitu) bola totožná s~lokálnou zvislicou.  Táto podmienka je splnená po 
 zhorizontovaní prístroja za predpokladu, že vertikálna os prístroja je kolmá na 
-horizontálna os prístroja.  K~lokálnej zvislici sa vzťahujú napríklad merané 
+horizontálnu os prístroja.  K~lokálnej zvislici sa vzťahujú napríklad merané 
 vertikálne uhly.  Približne sférický tvar Zeme a~zvlnenie ekvipotenciálnych 
 plôch spôsobujú, že vertikálne osi zhorizontovaných prístrojov nie sú medzi 
 stanoviskami vo všeobecnosti rovnobežné.  V~úlohách, ktoré vyžadujú vysokú 
@@ -2648,7 +2647,7 @@ spolu so~vzťahom~(\ref{eq:geopotential_number}) využívajú na definíciu
 rozličných typov výšok 
 \parencite{Jekeli2000a,MoritzPhysicalGeodesy,SansoGeodeticHeights}.  Ak totiž 
 z~rovnice~(\ref{eq:w_totdiff_plumb}) vyjadríme diferenciál~$\diff H$ a~získanú 
-rovnicu zintegrujeme od~$W_0$ po~$W$, získame vzťah na výpočet dĺžky tiažnice 
+rovnicu zintegrujeme od~$W_0$ po~$W$, dostaneme vzťah na výpočet dĺžky tiažnice 
 od bodu~$P_0$ na geoide po bod~$P$ (Obrázok~\ref{fig:total_differential}),
 %
 \begin{equation}
@@ -3469,7 +3468,7 @@ P_1(\sin\varphi)}{\diff \varphi} &&= \cos\varphi{,}\\
 P_1(\cos\psi)}{\diff \psi} &&= -\sin\psi{.}
 \end{alignat}
 
-Legendreove polynómy majú mnoho zaujimavých a~užitočných vlastností.  Uveďme 
+Legendreove polynómy majú mnoho zaujímavých a~užitočných vlastností.  Uveďme 
 aspoň niektoré z~nich \parencite{Freeden2009},
 %
 \begin{alignat}{2}
@@ -3667,7 +3666,7 @@ funkciu~$\cos(k\lambda)$ alebo~$\sin(|k|\lambda)$.  Všimnime si, že
 v~rovnici~(\ref{eq:ynk_no_norm}) je rád Legendreovej 
 funkcie~$P_{n|k|}(\sin\varphi)$ vždy nezáporný v~súlade s~definíciou 
 Legendreových funkcií z~rovnice~(\ref{eq:pnm_def}).  V~ďalších častiach práce 
-je potrebné rozlišovať medzi indexami~$m = 0, 1, \dots, n$ (napríklad 
+je potrebné rozlišovať medzi indexmi~$m = 0, 1, \dots, n$ (napríklad 
 rovnica~\ref{eq:vg_sh_no_norm}) a~$k = -n, \dots, n$ (napríklad 
 rovnica~\ref{eq:ynk_no_norm}).}
 
@@ -3824,9 +3823,9 @@ $f(\varphi, \lambda)$, ktoré sú definované na sfére a~spĺňajú
 podmienku~($\ref{eq:f_l2}$), plnia sférické harmonické funkcie $Y_{nk}(\varphi, 
 \lambda)$ podobnú úlohu ako plnia jednotkové vektory $\vec e_i$ v~priestore 
 trojrozmerných vektorov $\vec r$.  Funkcia $f(\varphi,\lambda)$ môže byť 
-napríklad gravitačný či magnetický potenciál telesa na sfére obopínajúcej celé 
-teleso, topografia Zeme či inej planéty a~mnoho ďalších funkcií.  Každú takúto 
-funkciu možno rozvinúť do vlastného radu sférických harmonických funkcií 
+napríklad gravitačný či magnetický potenciál telesa na sfére, ktorá obopína 
+celé teleso, topografia Zeme či inej planéty a~mnoho ďalších funkcií.  Každú 
+takúto funkciu možno rozvinúť do vlastného radu sférických harmonických funkcií 
 (vzťah~\ref{eq:f_shs_no_norm}), pričom každá funkcia bude mať vlastné súradnice 
 $f_{nk}$, podobne ako každý vektor $\vec r$ má vlastné súradnice $r_i$.  
 Všimnime si, že ak označíme
@@ -4139,11 +4138,12 @@ bezprostrednej blízkosti Zeme sú priestorové variácie zemského gravitačné
 poľa dostatočne silné na to, aby ovplyvnili dráhu družice inak v~oblasti so 
 silným gravitačným poľom (napríklad nad masívnymi pohoriami) a~inak 
 v~oblastiach so slabším gravitačným poľom.  Skutočná dráha družice je preto 
-komplikovaná priestorová krivka, reflektujúca gravitačné pole v~danej oblasti, 
-a~elipsa je len jej priblíženie (Obrázok~\ref{fig:orbital_motion_real}).  Ak by 
-sme teda poznali skutočnú dráhu družice, mali by sme byť schopní inverzným 
-spôsobom vypočítať to pole, ktoré je príčinou neeliptickej dráhy.  Inými 
-slovami, zo skutočnej dráhy družice je možné vypočítať sférické harmonické 
+komplikovaná priestorová krivka, ktorá reflektuje gravitačné pole v~danej 
+oblasti, a~elipsa je len jej priblížením 
+(Obrázok~\ref{fig:orbital_motion_real}).  Ak by sme teda poznali skutočnú dráhu 
+družice, mali by sme byť schopní inverzným spôsobom vypočítať to pole, ktoré je 
+príčinou neeliptickej dráhy.  Inými slovami, zo skutočnej dráhy družice je 
+možné vypočítať sférické harmonické 
 koeficienty~$\bar{C}_{nm}$~a~$\bar{S}_{nm}$.  
 Koeficienty~$\bar{C}_{nm}$~a~$\bar{S}_{nm}$ je možné vypočítať i~z mnohých 
 iných geodetických meraní, či už družicových alebo pozemných.  Podrobnejšie 
@@ -4376,12 +4376,11 @@ a~(\ref{eq:1l_sh}).  Týmto spôsobom je možné odvodiť iný typ sférického
 harmonického rozvoja gravitačného potenciálu, ktorý je konvergentný aj pre~$r 
 < R$, ak je v~tejto oblasti gravitačný potenciál harmonický.  V~literatúre sa 
 preto rozlišuje medzi vonkajšími (podmienka~$r > R$) a~vnútornými priestorovými 
-sférickými harmonickými funkciami (podmienka~$r < R$).  Vonkajšie a~vnútorné 
-rozvoje sa zvyknú aj kombinovať, vďaka čomu je možné získať konvergentný 
-sférický harmonický rozvoj gravitačného potenciálu aj v~oblastiach so 
-sprievodičom~$r < R$, a~to dokonca aj~vo vnútri Zeme 
-\parencite[napríklad][]{Sjoberg1977,Jekeli1983,Grafarend1993,Wang1997,Martinec1998,Wang2013}.  
-Tieto postupy však nie sú predmetom tejto práce.
+sférickými harmonickými funkciami ($r < R$).  Vonkajšie a~vnútorné rozvoje sa 
+zvyknú aj kombinovať, vďaka čomu je možné získať konvergentný sférický 
+harmonický rozvoj gravitačného potenciálu aj v~oblastiach so sprievodičom~$r 
+< R$, a~to dokonca aj~vo vnútri Zeme 
+\parencite[napríklad][]{Sjoberg1977,Jekeli1983,Grafarend1993,Wang1997,Martinec1998,Wang2013}.
 
 
 
@@ -5548,7 +5547,7 @@ vzťah~(\ref{eq:ug_spheroidal}) v~obore reálnych čísel.  Keď uvážime vzťa
 %
 potom $Q_0$ a~$Q_2$ komplexného argumentu $i \frac{u}{E}$ 
 z rovnice~(\ref{eq:ug_spheroidal}) môžeme prepísať do tvaru (pozri 
-rovnice~\ref{eq:q0z} až~\ref{eq:q2z})
+rovnice~\ref{eq:q0z} a~\ref{eq:q2z})
 %
 \begin{align}
 Q_0\left( i \, \frac{u}{E} \right) &= -i \, \arctan\frac{E}{u}{,}\\
@@ -5897,7 +5896,7 @@ súradníc môže byť jednoducho transformovaná; pre transformačné vzťahy p
 napríklad \cite{MoritzPhysicalGeodesy}).  Tento prístup je ale dôležitý 
 obzvlášť z~teoretického hľadiska a~z~pohľadu numerických simulácií, lebo 
 využíva uzavreté matematické vzťahy.  
-V~Kapitole~\ref{sec:normal_gravity_taylor} je následne uvedený najčastejší 
+V~Kapitole~\ref{sec:normal_gravity_taylor} je následne uvedený najpoužívanejší 
 spôsob výpočtu pomocou Taylorovho rozvoja v~elipsoidických súradniciach.  Hoci 
 táto metóda je iba približná, pretože nekonečný Taylorov rozvoj musí byť 
 v~číselných výpočtoch obmedzený na konečný počet členov, rýchla konvergencia 
@@ -6051,7 +6050,7 @@ Z~predchádzajúcich častí vieme, že na povrchu ekvipotenciálneho elipsoidu
 platí~$\gamma_{x^\mathrm{r}} = \gamma_{y^\mathrm{r}} = 0$.  Na výpočet veľkosti 
 normálneho tiažového zrýchlenia na elipsoide preto potrebujeme iba poslednú 
 z~rovníc~(\ref{eq:gamma_lambda}) až~(\ref{eq:gamma_u}).  
-S~využitím~(\ref{eq:linear_eccentricity}) a~$u = b$ upravme člen~$b^2 + E^2 \, 
+S~využitím~(\ref{eq:linear_eccentricity}) a~$u = b$ upravme člen~$u^2 + E^2 \, 
 \sin^2\beta$ z~rovnice~(\ref{eq:gamma_u}) nasledovne,
 %
 \begin{equation}
@@ -6229,7 +6228,7 @@ napríklad][]{MoritzPhysicalGeodesy},
 %
 \label{eq:ddgama_ddh}
 \frac{\partial^2 \gamma_0(\phi)}{\partial h^2} &\approx 
-\frac{6\gamma_0(\phi)}{a^2}{,}
+\frac{6\gamma_0(\phi)}{a^2}
 \end{align}
 %
 predstavujú prvú a~druhú deriváciu normálneho tiažového zrýchlenia na 
@@ -7441,7 +7440,7 @@ veličina.
 
 Bližšie podrobnosti o~gravitačnom účinku topografických hmôt, o~anomáliách 
 tiažového zrýchlenia, o~Bouguerových anomáliách tiažového zrýchlenia a~o~ich 
-historickom pozadí je možné nájsť napríklad v~publikáciach 
+historickom pozadí je možné nájsť napríklad v~publikáciách 
 \textcite{Meurers2017}, \textcite{Mikuska2017} a~\textcite{Vajda2020}.
 
 
