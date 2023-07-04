@@ -61,5 +61,6 @@ ax2.set_xlim([0, rmax])
 ax2.axhspan(ylim[0], ylim[1], xmin=0, xmax=R / rmax, facecolor='0', alpha=0.15)
 
 ax1.set_xlabel('$r \ (\mathrm{m})$')
+plt.tight_layout()
 fig.savefig('./fig-homogeneous-ball-vg-gg.pdf')
 

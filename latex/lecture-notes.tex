@@ -1040,7 +1040,7 @@ zapísať pomocou už známeho operátora gradient~(\ref{eq:gradient})
 \begin{equation}
 \label{eq:laplace_cart_grad_grad_notation}
 \begin{split}
-\nabla^2 f &= \nabla \cdot \nabla f = \left( \vec e_1 \, 
+\nabla^2 f &= \nabla \cdot \left( \nabla f \right) = \left( \vec e_1 \, 
 \frac{\partial}{\partial x} + \vec e_2 \, \frac{\partial}{\partial y} + \vec 
 e_3 \, \frac{\partial}{\partial z} \right) \cdot \left( \vec e_1 \, 
 \frac{\partial f}{\partial x} + \vec e_2 \, \frac{\partial f}{\partial y} 
@@ -7933,58 +7933,65 @@ a~zvislicové odchýlky~$\xi, \eta$.  Geoid preto určujeme spravidla z~týchto
 veličín.  Z~rovnice~(\ref{eq:N}) ďalej vieme, že na určenie výšky geoidu~$N$ 
 nad referenčným elipsoidom (Obrázok~\ref{fig:geoid}) postačuje určiť poruchový 
 potenciál na geoide~$T(P_0)$.\footnote{Normálne tiažové 
-zrýchlenie~$\gamma(Q_0)$ vystupujúce v~rovnici~(\ref{eq:N}) môžeme vypočítať 
-jednoducho Somiglianovým vzťahom~(\ref{eq:somigliana}).}  \emph{Linearizované} 
-vzťahy medzi merateľnými veličinami fyzikálnej geodézie a~neznámym poruchovým 
-potenciálom už poznáme (vzťahy~\ref{eq:dg_normals}, 
-\ref{eq:Dg_fundamental_equation_earth}, 
-\ref{eq:Dg_fundamental_equation_earth_sph}, \ref{eq:deflection_grav_nat}, 
+zrýchlenie~$\gamma(Q_0)$, ktoré vystupuje v~rovnici~(\ref{eq:N}), môžeme 
+vypočítať jednoducho Somiglianovým vzťahom~(\ref{eq:somigliana}).}  
+\emph{Linearizované} vzťahy medzi merateľnými veličinami fyzikálnej geodézie 
+a~neznámym poruchovým potenciálom už poznáme (vzťahy~\ref{eq:dg_normals}, 
+\ref{eq:Dg_fundamental_equation_geoid}, \ref{eq:Dg_fundamental_equation_earth}, 
+\ref{eq:Dg_fundamental_equation_earth_sph}, 
+\ref{eq:Dg_fundamental_equation_geoid_sph}, \ref{eq:deflection_grav_nat}, 
 \ref{eq:deflection_grav_e}, \ref{eq:deflection_grav_s}).  Všimnime si však, že 
 v~týchto rovniciach síce vystupuje poruchový potenciál, ktorý potrebujeme 
-určiť, ale vystupuje v~nich vo forme \emph{derivácie}, či už vertikálnej alebo 
-horizontálnej.
+určiť, ale nachádza sa v~nich vo forme \emph{derivácie}, či už vertikálnej 
+alebo horizontálnej.
 
-Označme symbolmi~$\DIFF_{\Delta g}$ a~$\DIFF_{\delta g}$ \emph{diferenciálne 
-operátory}, ktoré transformujú poruchový potenciál na anomáliu tiažového 
-zrýchlenia~$\Delta g$ a~na poruchu tiažového zrýchlenia~$\delta g$.  Napríklad 
-diferenciálny operátor
+Nech~$\DIFF_{\Delta g}$ a~$\DIFF_{\delta g}$ sú \emph{diferenciálne operátory}, 
+ktoré transformujú poruchový potenciál na anomáliu a~poruchu tiažového 
+zrýchlenia~$\Delta g$ a~$\delta g$.  Vo sférickej aproximácii majú tvar 
+(rovnice~\ref{eq:Dg_fundamental_equation_geoid_sph} a~\ref{eq:dg_normals})
 %
 \begin{equation}
 \label{eq:diff_Dg}
-\DIFF_{\Delta g} = -\frac{\partial}{\partial r} - \frac{2}{r}
+\begin{split}
+\DIFF_{\Delta g} &= -\frac{\partial}{\partial r} - \frac{2}{r}{,}\\
+%
+\DIFF_{\delta g} &= -\frac{\partial}{\partial r}{.}
+\end{split}
 \end{equation}
 %
-transformuje poruchový potenciál na sférickú aproximáciu anomálie tiažového 
-zrýchlenia (porovnaj rovnice~\ref{eq:Dg_fundamental_equation_earth_sph} 
-a~\ref{eq:diff_Dg}),
-%
-\begin{equation}
-\Delta g = \DIFF_{\Delta g} T{.}
-\end{equation}
-%
-Získame tak vzťahy
+Anomáliu a~poruchu tiažového zrýchlenia vo sférickej aproximácii potom môžeme 
+zapísať nasledovne,
 %
 \begin{equation}
 \label{eq:diff_operators}
-\Delta g = \DIFF_{\Delta g}T{,} \quad \delta g = \DIFF_{\delta g}T{.}
+\begin{split}
+\Delta g &= \DIFF_{\Delta g}T{,}\\
+%
+\delta g &= \DIFF_{\delta g}T{.}
+\end{split}
 \end{equation}
 %
 Aby sme dokázali vypočítať poruchový potenciál, na ktorý 
-v~rovnici~(\ref{eq:diff_operators}) pôsobia diferenciálne operátory, 
+v~rovniciach~(\ref{eq:diff_operators}) pôsobia diferenciálne operátory, 
 potrebujeme nájsť \emph{integrálne operátory}~$\INT_{\Delta g}$ a~$\INT_{\delta 
-g}$.  Tie aplikujeme na anomálie tiažového zrýchlenia~$\Delta g$ a~poruchy 
-tiažového zrýchlenia~$\delta g$, čím získame hľadaný poruchový potenciál,
+g}$.  Tie následne aplikujeme na anomálie a~poruchy tiažového zrýchlenia na 
+geoide, $\Delta g_0$ a~$\delta g_0$, čím získame hľadaný poruchový potenciál 
+kdekoľvek na geoide alebo v~jeho vonkajšom priestore,
 %
 \begin{equation}
 \label{eq:int_operators}
-T = \INT_{\Delta g} \Delta g{,} \quad T = \INT_{\delta g}\delta g{.}
+\begin{split}
+T &= \INT_{\Delta g} \Delta g_0{,}\\
+%
+T &= \INT_{\delta g}\delta g_0{.}
+\end{split}
 \end{equation}
 
 Integrálne vzťahy~(\ref{eq:int_operators}) budeme hľadať pomocou okrajových 
 úloh pre poruchový potenciál.  S~pojmom okrajová úloha sme sa už čiastočne 
 stretli v~Kapitole~\ref{sec:u_boundary_value_problem} a~nepriamo aj 
-v~Kapitole~\ref{sec:meaning_of_laplace_equation_in_practice}.  V~nasledujúcej 
-Kapitole~\ref{sec:boundary_value_problem} najprv načrtneme princíp určovania 
+v~Kapitole~\ref{sec:meaning_of_laplace_equation_in_practice}.  
+V~Kapitole~\ref{sec:boundary_value_problem} najprv načrtneme princíp určovania 
 poruchového potenciálu pomocou okrajových úloh.  
 V~Kapitolách~\ref{sec:stokes_integral} až~\ref{sec:poisson_integral} potom 
 popíšeme rôzne typy okrajových úloh, s~ktorými sa vo fyzikálnej geodézii často 
@@ -8003,16 +8010,15 @@ jednoduchý (vzťah~\ref{eq:N}).
 K~výpočtu geoidu zo zvislicových odchýlok pristúpime iným spôsobom.  Zatiaľ čo 
 poruchy a~anomálie tiažového zrýchlenia možno chápať skôr fyzikálne, pretože 
 priamo súvisia s~\emph{veľkosťou} tiažového zrýchlenia, zvislicové odchýlky 
-možno vnímať geometricky (pozri Obrázok~\ref{fig:deflections}), pretože sú 
-spojené so \emph{smerom} tiažového zrýchlenia 
-\parencite{MoritzPhysicalGeodesy}.  Na výpočet geoidu zo zvislicových odchýlok 
-využijeme v~Kapitole~\ref{sec:geoid_astrogeodetic} práve geometrickú 
-interpretáciu zvislicových odchýlok.
+možno vnímať geometricky (Obrázok~\ref{fig:deflections}), pretože sú spojené so 
+\emph{smerom} tiažového zrýchlenia \parencite{MoritzPhysicalGeodesy}.  Na 
+výpočet geoidu zo zvislicových odchýlok využijeme 
+v~Kapitole~\ref{sec:geoid_astrogeodetic} práve geometrickú interpretáciu 
+zvislicových odchýlok.
 
-Následne v~Kapitole~\ref{sec:other_geoid_determination_methods} spomenieme 
-ďalšie metódy určovania geoidu a~na záver v~Kapitole~\ref{sec:vm_integral} pre 
-úplnosť uvedieme spôsob, ktorým možno vypočítať zvislicové odchýlky 
-z~gravimetrických dát.
+V~Kapitole~\ref{sec:other_geoid_determination_methods} spomenieme ďalšie metódy 
+určovania geoidu a~na záver v~Kapitole~\ref{sec:vm_integral} pre úplnosť 
+uvedieme spôsob výpočtu zvislicových odchýlok z~gravimetrických dát.
 
 
 \section{Okrajová úloha pre poruchový potenciál}
@@ -8022,12 +8028,12 @@ Nech~$\Omega$ je vnútorná časť Zemského telesa ohraničená povrchom~$\part
 \Omega$, v~tomto prípade geoidom (Obrázok~\ref{fig:boundary_value_problems}).  
 O~hranici~$\partial \Omega$ budeme predpokladať, že je dostatočne 
 hladká.\footnote{Pozri napríklad \textcite{SansoGeoidDetermination}.}  Táto 
-podmienka je splnená, pretože geoid je ekvipoteciálna plocha 
-(Kapitola~\ref{sec:equipotential_surface}).  Symbolom $\overline{\Omega} 
-= \Omega \cup \partial\Omega$ budeme označovať zemské teleso spolu s~jeho 
-povrchom.  Nech sa mimo telesa~$\overline{\Omega}$ nenachádzajú hmoty, teda 
-napríklad ani nebeské telesá, ani zemská atmosféra či ani topografické 
-hmoty.\footnote{Pre odstránenie gravitačného účinku topografických 
+podmienka je splnená, pretože geoid je ekvipoteciálna plocha (pozri vlastnosti 
+ekvipotenciálnych plôch v~Kapitole~\ref{sec:equipotential_surface}).  Symbolom 
+$\overline{\Omega} = \Omega \cup \partial\Omega$ budeme označovať zemské teleso 
+spolu s~jeho povrchom.  Nech sa mimo telesa~$\overline{\Omega}$ nenachádzajú 
+hmoty, teda napríklad ani nebeské telesá, ani zemská atmosféra či ani 
+topografické hmoty.\footnote{Pre odstránenie gravitačného účinku topografických 
 a~atmosférických hmôt pozri regularizáciu zemského telesa 
 v~práci~\textcite{Janak2006}.}  Túto vonkajšiu oblasť označme~$\mathbb{R}^3 
 - \overline{\Omega}$.
@@ -8062,7 +8068,7 @@ z~nasledovných veličín:
 \begin{itemize}
 \item lineárna kombinácia poruchového potenciálu~$T$ a~jeho prvej derivácie 
 v~smere vonkajšej normály v~podobe anomálie tiažového zrýchlenia~$\DIFF_{\Delta 
-g}T$ (rovnica~\ref{eq:Dg_fundamental_equation_earth_sph}) (táto okrajová 
+g}T$ (rovnica~\ref{eq:Dg_fundamental_equation_geoid_sph}) (táto okrajová 
 podmienka sa zvykne nazývať \emph{Newtonova okrajová podmienka}; 
 Kapitola~\ref{sec:stokes_integral}),
 %
@@ -8082,13 +8088,14 @@ V~praxi závisí voľba okrajovej podmienky najmä od typu dostupných dát.
 Vzťahy~(\ref{eq:int_operators}) označujú všeobecný zápis riešenia získaného 
 z~prvých dvoch uvedených okrajových úloh.  Na pravej strane týchto rovníc 
 vystupujú okrajové podmienky na hranici~$\partial \Omega$ (odmerané vstupné 
-dáta) a~na ľavej strane vystupuje hľadaný poruchový potenciál~$T$, ktorý možno 
-vypočítať nielen na hranici~$\partial\Omega$ ale aj v~oblasti~$\mathbb{R}^3 
-- \overline\Omega$.  Spomeňme, že poruchový potenciál získaný z~každej z~týchto 
-okrajových úloh je totožný, teda napríklad
+dáta~$\Delta g_0$ alebo~$\delta g_0$ na geoide) a~na ľavej strane vystupuje 
+hľadaný poruchový potenciál~$T$, ktorý možno vypočítať nielen na 
+hranici~$\partial\Omega$ ale aj v~oblasti~$\mathbb{R}^3 - \overline\Omega$.  
+Spomeňme, že poruchový potenciál získaný z~každej z~týchto okrajových úloh je 
+totožný, teda napríklad
 %
 \begin{equation}
-T = \INT_{\Delta g} \Delta g = \INT_{\delta g}\delta g{.}
+T = \INT_{\Delta g} \Delta g_0 = \INT_{\delta g}\delta g_0{.}
 \end{equation}
 %
 Rozdielne sú iba okrajové podmienky, a~teda následne aj integrálne 
@@ -8099,13 +8106,14 @@ operátory~$\INT_{\Delta g}$ a~$\INT_{\delta g}$.
 
 V~matematike je \emph{okrajová úloha} všeobecný pojem, ktorý označuje riešenie 
 diferenciálnej rovnice so zadanou okrajovou podmienkou.  Okrajová podmienka sa 
-spravidla vzťahuje k~priestoru (napríklad povrch telesa).  Naproti tomu, pojmom 
-\emph{počiatočná úloha} označujeme riešenie diferenciálnej rovnice so zadanou 
-počiatočnou podmienkou.  Počiatočná podmienka sa zvyčajne vzťahuje k~časovému 
-okamihu.  Počiatočné úlohy sa teda zaoberajú vývojom diferenciálnej rovnice 
-v~čase.  Podrobnejšie informácie o~okrajových a~počiatočných úlohách, o~ich 
-klasifikácii a~o~metódach ich riešenia je možné nájsť napríklad v~prácach 
-\textcite{Janak2006} a~\textcite{Macak2021}.
+spravidla vzťahuje k~priestoru (napríklad povrch telesa) a~diferenciálna 
+rovnica je riešená v~priestore.  Naproti tomu, pojmom \emph{počiatočná úloha} 
+označujeme riešenie diferenciálnej rovnice so zadanou počiatočnou podmienkou.  
+Počiatočná podmienka sa zvyčajne vzťahuje k~časovému okamihu.  Počiatočné úlohy 
+sa teda zaoberajú vývojom diferenciálnej rovnice v~čase.  Podrobnejšie 
+informácie o~okrajových a~počiatočných úlohách, o~ich klasifikácii a~o~metódach 
+ich riešenia je možné nájsť napríklad v~prácach \textcite{Janak2006} 
+a~\textcite{Macak2021}.
 
 
 
@@ -8152,10 +8160,11 @@ T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(P, P') \, \Delta g(P') \,
 \end{equation}
 %
 ktorý sa nazýva \emph{Stokesov integrál}.  Symbol~$P(r, \varphi, \lambda)$ 
-označuje bod, v~ktorom je počítaný poruchový potenciál, $P'(R, \varphi', 
-\lambda')$ je bod na geoide (Obrázok~\ref{fig:surface_integral}), $R$~označuje 
-polomer referenčnej sféry (napríklad stredný či rovníkový polomer Zeme), 
-$\sigma$ je jednotková sféra, $\diff\sigma(P')$ je jej diferenciál v~bode~$P'$,
+označuje bod, v~ktorom je počítaný poruchový potenciál 
+(Obrázok~\ref{fig:surface_integral}), $P'(R, \varphi', \lambda')$ je bod na 
+geoide, $R$~označuje polomer referenčnej sféry (napríklad stredný či rovníkový 
+polomer Zeme), $\sigma$ je jednotková sféra, $\diff\sigma(P')$ je jej 
+diferenciál v~bode~$P'$,
 %
 \begin{equation}
 \label{eq:diff_sigma}
@@ -8221,7 +8230,8 @@ tiažového zrýchlenia na geoide (pozri Kapitolu~\ref{sec:gravity_anomaly}).
 
 Dosadením rovnice~(\ref{eq:stokes_simplified}) do Brunsovho vzorca~(\ref{eq:N}) 
 získame vzťah na výpočet výšky geoidu nad referenčným elipsoidom z~anomálií 
-tiažového zrýchlenia, teda v~širšom zmysle z~meraného tiažového zrýchlenia,
+tiažového zrýchlenia na geoide, teda v~širšom zmysle z~meraného tiažového 
+zrýchlenia,
 %
 \begin{equation}
 \label{eq:stokes_N}
@@ -8233,7 +8243,7 @@ kde $\gamma_0 = \gamma(Q_0)$.  Rovnica~(\ref{eq:stokes_N}) predstavuje jednu zo
 základných rovníc fyzikálnej geodézie.
 
 Dodajme, že zo vzťahu~(\ref{eq:stokes}) vyplýva tvar hľadaného integrálneho 
-operátora~$\mathcal{I}_{\Delta g}$ (pozri rovnicu~\ref{eq:int_operators}),
+operátora~$\mathcal{I}_{\Delta g}$ z~rovnice~(\ref{eq:int_operators}),
 %
 \begin{equation}
 \label{eq:iDg}
@@ -8324,6 +8334,7 @@ S(r, \psi) = \sum_{n = 2}^{\infty} \frac{2n + 1}{n - 1} \, \left( \frac{R}{r}
 \right)^{n + 1} \, P_n(\cos\psi){.}
 \end{equation}
 %
+Ide pritom o~rozvoj typu~(\ref{eq:f_synthesis}).  
 Rovnice~(\ref{eq:stokes_kernel_general}) a~(\ref{eq:stokes_kernel}) nazývame 
 \emph{priestorový tvar} Stokesovho integračného jadra.  
 Vzťah~(\ref{eq:stokes_spectral}) nazývame \emph{spektrálny tvar} Stokesovho 
@@ -8384,20 +8395,20 @@ k~rovnici~\ref{eq:Dg_sh_sa}).
 \subsection{Stokesov integrál ako konvolučný integrál}
 \label{sec:stokes_convolution}
 
-Výpočtom integrálu na pravej strane rovnice~(\ref{eq:stokes}) získame poruchový 
-potenciál v~bode~$P$, teda jedno číslo.  Ak chceme získať poruchový potenciál 
-v~ďalšom bode~$P_1$, integráciu je potrebné zopakovať s~novým výpočtovým 
-bodom~$P_1$.  Dôvod je ten, že hoci anomálie tiažového zrýchlenia~$\Delta 
-g(P')$ sú identické (daná funkcia na hranici~$\partial\Omega$), zmena polohy 
-výpočtového bodu z~$P$ na~$P_1$ spôsobí, že nové Stokesovo integračné 
-jadro~$S(P_1, P')$ bude vážiť tie isté anomálie tiažového zrýchlenia~$\Delta 
-g(P')$ iným spôsobom ako predošlé integračné jadro~$S(P, P')$.  Ak teda chceme 
-získať poruchový potenciál~$P$ v~každom bode na Zemi, výpočtový bod~$P$ je 
-potrebné vnímať ako premennú a~integráciu opakovať vo všetkých bodoch na sfére.  
-Výsledkom bude nová funkcia, ktorou je poruchový potenciál na celej sfére.  
-Transformovali sme teda dve funkcie, Stokesovo integračné jadro~$S$ a~anomálie 
-tiažového zrýchlenia~$\Delta g$, na tretiu funkciu, poruchový potenciál~$T$.  
-Tento proces sa nazýva \emph{konvolúcia} a~symbolicky ho zapisujeme nasledovne,
+Výpočtom integrálu~(\ref{eq:stokes}) získame poruchový potenciál v~bode~$P$, 
+teda jedno číslo.  Ak chceme získať poruchový potenciál v~ďalšom bode~$P_1$, 
+integráciu je potrebné zopakovať s~novým výpočtovým bodom~$P_1$.  Dôvod je ten, 
+že hoci anomálie tiažového zrýchlenia~$\Delta g(P')$ sú identické (daná funkcia 
+na hranici~$\partial\Omega$), zmena polohy výpočtového bodu z~$P$ na~$P_1$ 
+spôsobí, že nové Stokesovo integračné jadro~$S(P_1, P')$ bude vážiť tie isté 
+anomálie tiažového zrýchlenia~$\Delta g(P')$ iným spôsobom ako predošlé 
+integračné jadro~$S(P, P')$.  Ak teda chceme získať poruchový potenciál~$P$ 
+v~každom bode na Zemi, výpočtový bod~$P$ je potrebné vnímať ako premennú 
+a~integráciu opakovať vo všetkých bodoch na sfére.  Výsledkom bude nová 
+funkcia, ktorou je poruchový potenciál na celej sfére.  Transformovali sme teda 
+dve funkcie, Stokesovo integračné jadro~$S$ a~anomálie tiažového 
+zrýchlenia~$\Delta g$, na tretiu funkciu, poruchový potenciál~$T$.  Tento 
+proces sa nazýva \emph{konvolúcia} a~symbolicky ho zapisujeme nasledovne,
 %
 \begin{equation}
 \label{eq:stokes_convolution}
@@ -8421,8 +8432,8 @@ potenciálom a~hustotou, konvolučné jadro~$\vec r \slash \ell^3$
 v~rovnici~(\ref{eq:gg_body}) je iné ako v~rovnici~(\ref{eq:vg_body}).  Rozličné 
 integračné jadrá teda transformujú tú istú funkciu rozdielne.
 
-Konvolučné integrály sa vyskytujú aj v~mnohých oblasti matematiky, fyziky 
-a~ďalších vedných disciplínach.  Jednou z~praktických aplikácií konvolúcie je 
+Konvolučné integrály sa vyskytujú aj v~mnohých oblastiach matematiky, fyziky 
+a~v~ďalších vedných disciplínach.  Jednou z~praktických aplikácií konvolúcie je 
 potlačenie šumu na zvukových nahrávkach.  Vstupný signál, teda pôvodná 
 nahrávka, je konvolučne vynásobený vhodným integračným jadrom, výsledkom čoho 
 je upravená nahrávka s~potlačeným šumom, teda výstupný signál.  Aplikáciou 
@@ -8454,12 +8465,11 @@ tiažové zrýchlenie~$\gamma_0$ v~rovnici~(\ref{eq:stokes_N}) má byť počíta
 Somiglianovým vzťahom pre ekvipotenciálny elipsoid 
 (rovnica~\ref{eq:somigliana}).
 
-Sférická aproximácia spôsobuje relatívnu chybu v~určení geoidu na úrovni~$3 
-\times 10^{-3} N$, teda dosahuje hodnoty menšie ako 1~m 
-\parencite{MoritzPhysicalGeodesy}.  Pre spresnenie riešenia je potrebné zaviesť 
-korekciu zo sploštenia referenčného elipsoidu \parencite[pozri 
-napríklad][]{Claessens2006}, prípadne integrovať priamo na ekvipotenciálnom 
-elipsoide \parencite{Martinec1997}.
+Sférická aproximácia spôsobuje relatívnu chybu v~určení geoidu na úrovni~$0.003 
+\, N$, teda dosahuje hodnoty menšie ako 1~m \parencite{MoritzPhysicalGeodesy}.  
+Pre spresnenie riešenia je potrebné zaviesť korekciu zo sploštenia referenčného 
+elipsoidu \parencite{Claessens2006}, prípadne integrovať priamo na 
+ekvipotenciálnom elipsoide \parencite{Martinec1997}.
 
 
 \section{Hotineov integrál}
@@ -8531,11 +8541,12 @@ intervale~$[5^\circ, 180^\circ]$.}
 \end{figure}
 
 Hotineovo integračné jadro má podobné vlastnosti ako Stokesovo integračné jadro 
-(pozri Kapitolu~\ref{sec:stokes_kernel}), teda je singulárne, homogénne 
-a izotropné.  Na rozdiel od Stokesovho jadra ide o~monotónne klesajúcu funkciu, 
-teda čím ďalej sa nachádza integračný element $\diff\sigma$ od výpočtového 
-bodu~$P$, tým menšia váha~$H$ je v~Hotineovom integráli~(\ref{eq:hotine}) 
-pridelená príslušnej poruche tiažového zrýchlenia.
+(Kapitola~\ref{sec:stokes_kernel}), teda je singulárne, homogénne a izotropné.  
+Na rozdiel od Stokesovho jadra ide o~monotónne klesajúcu funkciu 
+(Obrázok~\ref{fig:hotine_kernel}), teda čím ďalej sa nachádza integračný 
+element $\diff\sigma$ od výpočtového bodu~$P$, tým menšia váha~$H$ je 
+v~Hotineovom integráli~(\ref{eq:hotine}) pridelená príslušnej poruche tiažového 
+zrýchlenia.
 
 Dosadením vzťahu~(\ref{eq:hotine}) pre~$P \in \partial\Omega$ do Brunsovho 
 vzorca~(\ref{eq:N}) získame vzťah na výpočet geoidu z~porúch tiažového 
@@ -8564,8 +8575,10 @@ poruchového potenciálu:
 \begin{alignat}{2}
 \nabla^2 T(P) &= 0{,} &&P \in \mathbb{R}^3 
 - \overline\Omega{,}\label{eq:bvp_t_laplace}\\
+%
 T(P) &= f(P){,} \quad &&P \in 
 \partial\Omega{,}\label{eq:bvp_t_boundary_condition}\\
+%
 T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow 
 \infty{,}\label{eq:bvp_t_t_infty}
 \end{alignat}
@@ -8609,13 +8622,14 @@ byť harmonická.  Poissonov integrál sa často používa aj inverzným spôsob
 pokračovanie nadol, hoci táto úloha je vo všeobecnosti nestabilná 
 \parencite{SansoGeodeticBoundaryValueProblem}.  Okrem poruchového potenciálu je 
 možné aplikovať Poissonov integrál aj na ďalšie harmonické funkcie, napríklad 
-na gravitačný potenciál~$V$ či na funkciu~$r \, \Delta g$, ktorá je taktiež 
-harmonická (samotná funkcia~$\Delta g$ však harmonická nie je).  Poissonov 
-integrál teda umožňuje riešiť mnohé kľúčové úlohy fyzikálnej geodézie.  Priamo 
-na výpočet geoidu sa ale nezvykne používať, pretože predpokladá dostupnosť 
-poruchového potenciálu na geoide.  Ak by bol ale poruchový potenciál na geoide 
-známy, mohol by byť priamo použitý v~Brunsovom vzorci~(\ref{eq:N}) bez potreby 
-formulovania a~riešenia okrajovej úlohy.
+na gravitačný potenciál~$V_\gidx$ či na funkciu~$r \, \Delta g$, ktorá je 
+taktiež harmonická (samotná funkcia~$\Delta g$ však harmonická nie je).  
+Poissonov integrál teda umožňuje riešiť mnohé kľúčové úlohy fyzikálnej 
+geodézie.  Priamo na výpočet geoidu sa ale nezvykne používať, pretože 
+predpokladá dostupnosť poruchového potenciálu na geoide 
+(rovnica~\ref{eq:bvp_t_boundary_condition}).  Ak by bol ale poruchový potenciál 
+na geoide známy, mohol by byť priamo použitý v~Brunsovom vzorci~(\ref{eq:N}) 
+bez potreby formulovania a~riešenia okrajovej úlohy.
 
 
 
@@ -8648,9 +8662,9 @@ geoidu medzi bodmi~$A$ a~$B$ je dané vzťahom \parencite{MoritzPhysicalGeodesy}
 kde $\varepsilon_0$ je priemet zvislicovej odchýlky do spojnice bodov~$A$, $B$ 
 (vzťah~\ref{eq:deflection_vareps}).  Znamienko mínus je konvenčne dohodnuté, 
 podobne ako sme konvenčne použili v~rovnici~(\ref{eq:deflection_eps}) vektory 
-vonkajších normál~$\vec n_W$, $\vec n_U$ a~nie vektory vnútorných normál~$-\vec 
-n_W$, $-\vec n_U$.  Integráciou rovnice od bodu~$A$ po bod~$B$ získame výšku 
-geoidu v~bode~$B$,
+vonkajších normál~$\vec n_W$, $\vec n_U$, a~nie vektory vnútorných 
+normál~$-\vec n_W$, $-\vec n_U$.  Integráciou rovnice od bodu~$A$ po bod~$B$ 
+získame výšku geoidu v~bode~$B$,
 %
 \begin{equation}
 \label{eq:N_deflections_nb}
@@ -8731,7 +8745,7 @@ telies alebo plôch.  Tento krok umožní riešiť úlohu lokálne v~rámci jedn
 elementu, a~následne postupovať v~riešení úlohy v~susednom elemente.  
 V~okrajových úlohách, ktoré sú definované v~trojrozmernom priestore, môže byť 
 ako elementárne teleso použitá napríklad kocka či hranol.  Takéto riešenie je 
-síce približné, no v~mnohých úlohách matematiky, fyziky a~ďalších vedných 
+síce približné, no v~mnohých úlohách matematiky, fyziky a~v~ďalších vedných 
 disciplínach je často jediné, ktoré je možné prakticky získať.  \emph{Numerické 
 riešenie okrajových úloh pre poruchový potenciál} tak predstavuje ďalšiu vetvu 
 metód určovania tvaru Zeme a~jej vonkajšieho tiažového poľa.  Je potešením 
@@ -8845,7 +8859,7 @@ a~\cite{Zahorec2017}).
 
 Z~podrobných regionálnych anomálií tiažového zrýchlenia sa preto zvykne 
 odstrániť (angl.~\emph{remove}) dlhovlnný trend, ktorý je vypočítaný spravidla 
-zo sférického harmonického modelu do stupňa~$N$, Získame tým \emph{reziduálne 
+zo sférického harmonického modelu do stupňa~$N$.  Získame tým \emph{reziduálne 
 anomálie tiažového zrýchlenia}, ktoré sú následne použité na výpočet 
 (angl.~\emph{compute}) \emph{reziduálnej výšky geoidu} nad referenčným 
 elipsoidom, napríklad pomocou Stokesovho integrálu.  Na záver je k~získanej 
@@ -8902,17 +8916,18 @@ medzi gravimetrickými zvislicovými odchýlkami a~tiažovým poľom Zeme
 (vzťah~\ref{eq:deflection_grav_s}).  Rovnicu~(\ref{eq:deflection_grav_s}) ale 
 spravidla nevieme priamo vypočítať, pretože poruchový potenciál vystupuje vo 
 fyzikálnej geodézii väčšinou ako neznáma funkcia 
-(Kapitola~\ref{sec:disturbing_potential}).  Jeden zo spôsobov výpočtu je 
-pomocou sférického harmonického rozvoja poruchového potenciálu 
-(rovnica~\ref{eq:deflection_grav_s_sph}).  V~tejto kapitole ukážeme ďalší 
-prístup, ktorý kombinuje geometrickú interpretáciu zvislicových odchýlok na 
-geoide (vzťah~\ref{eq:N_deflections}) a~Stokesov integrál 
-(vzťah~\ref{eq:stokes_N}).  Kapitola je spracovaná podľa 
+(Kapitola~\ref{sec:disturbing_potential}).  Jeden zo spôsobov výpočtu 
+vzťahu~(\ref{eq:deflection_grav_s}) je pomocou sférického harmonického rozvoja 
+poruchového potenciálu (rovnica~\ref{eq:deflection_grav_s_sph}).  V~tejto 
+kapitole ukážeme ďalší prístup, ktorý kombinuje geometrickú interpretáciu 
+zvislicových odchýlok na geoide (vzťah~\ref{eq:N_deflections}) a~Stokesov 
+integrál (vzťah~\ref{eq:stokes_N}).  Kapitola je spracovaná podľa 
 \textcite{MoritzPhysicalGeodesy} a~využíva sférickú aproximáciu zvislicových 
 odchýlok s~využitím lokálneho kartenziánskeho súradnicového 
 systému~$x^\mathrm{s}, y^\mathrm{s}, z^\mathrm{s}$ s~pohyblivým začiatkom 
 (pozri Obrázok~\ref{fig:cart_sph}).  Zvislicové odchýlky budeme hľadať na 
-geoide.
+geoide, ktorý v~tomto prístupe aproximujeme sférou s~polomerom~$R$ (pozri tiež 
+Kapitolu~\ref{sec:stokes_spherical_approximation}).
 
 Vyjadrime z~rovnice~(\ref{eq:N_deflections}) zvislicovú 
 odchýlku~$\varepsilon_0$,
@@ -8924,12 +8939,13 @@ odchýlku~$\varepsilon_0$,
 %
 Z~Kapitoly~\ref{sec:deflections} vieme, že priemet zvislicovej 
 odchýlky~$\varepsilon_0$ môžeme popísať dvoma kolmými zložkami~$\xi_0$ 
-a~$\eta_0$, ktoré sú udávané v~smere sever--juh a~v~smere východ--západ.  
-Podobne, $\diff s$~je diferenciál dĺžky v~smere priemetu~$\varepsilon_0$.  
-Potrebujeme preto získať zložky diferenciálu~$\diff s$ v~smere meridiánu 
-a~v~smere prvého vertikálu v~lokálnom karteziánskom súradnicovom 
-systéme~$x^\mathrm{s}, y^\mathrm{s}, z^\mathrm{s}$ s~pohyblivým začiatkom v~tom 
-bode, v~ktorom je určovaná zvislicová odchýlka.  Z~rovnice~(\ref{eq:diffr2}) 
+a~$\eta_0$, ktoré udávajú vychýlenie zvislice v~smere sever--juh a~v~smere 
+východ--západ.  Podobne, $\diff s$~je diferenciál dĺžky v~smere 
+priemetu~$\varepsilon_0$.  Potrebujeme preto získať zložky diferenciálu~$\diff 
+s$ v~smere meridiánu a~v~smere prvého vertikálu v~lokálnom karteziánskom 
+súradnicovom systéme~$x^\mathrm{s}, y^\mathrm{s}, z^\mathrm{s}$ s~pohyblivým 
+začiatkom v~tom bode, v~ktorom je určovaná zvislicová odchýlka.  
+Z~rovnice~(\ref{eq:diffr2}) 
 Prílohy~\ref{app:differential_of_line_element_in_sph_coords} vyplývajú 
 nasledovné vzťahy pre zložky diferenciálu~$\diff s$ v~horizontálnej 
 rovine~$x^\mathrm{s}, y^\mathrm{s}$,
@@ -8937,26 +8953,25 @@ rovine~$x^\mathrm{s}, y^\mathrm{s}$,
 \begin{equation}
 \label{eq:ds}
 \begin{split}
-\diff s_\varphi &= R \, \diff \varphi{,}\\
+\diff s_{x^\mathrm{s}} &= R \, \diff \varphi{,}\\
 %
-\diff s_\lambda &= R \, \cos\varphi \, \diff \lambda{,}
+\diff s_{y^\mathrm{s}} &= R \, \cos\varphi \, \diff \lambda{.}
 \end{split}
 \end{equation}
 %
-kde~$R$ je polomer referenčnej sféry, ktorá aproximuje geoid (pozri 
-Kapitolu~\ref{sec:stokes_integral}).  Ak je zvislica vychýlená iba v~smere 
-sever--juh, vzťah~(\ref{eq:eps0}) prejde do tvaru
+Ak je zvislica vychýlená iba v~smere sever--juh, vzťah~(\ref{eq:eps0}) prejde 
+do tvaru
 %
 \begin{equation}
 \label{eq:xi0}
-\xi_0 = -\frac{\diff N}{\diff s_\varphi}{.}
+\xi_0 = -\frac{\diff N}{\diff s_{x^{\mathrm{s}}}}{.}
 \end{equation}
 %
 Ak je zvislica vychýlená iba v~smere východ--západ, dostaneme vzťah
 %
 \begin{equation}
 \label{eq:lambda0}
-\eta_0 = -\frac{\diff N}{\diff s_\lambda}{.}
+\eta_0 = -\frac{\diff N}{\diff s_{y^{\mathrm{s}}}}{.}
 \end{equation}
 %
 Kombináciou rovníc~(\ref{eq:ds}), (\ref{eq:xi0}) a~(\ref{eq:lambda0}) získame 
@@ -8983,15 +8998,16 @@ vzťahov~(\ref{eq:xi0_eta0_der}) získame rovnice
 \begin{split}
 \xi_0 &= -\frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\partial 
 S(\psi)}{\partial \varphi} \, \Delta g_0 \, \diff\sigma{,}\\
-\eta_0 &= -\frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\partial 
-S(\psi)}{\cos\varphi \, \partial \lambda} \, \Delta g_0 \, \diff\sigma{.}
+\eta_0 &= -\frac{1}{4\pi \, \gamma_0 \, \cos\varphi} \iint\limits_\sigma 
+\frac{\partial S(\psi)}{\partial \lambda} \, \Delta g_0 \, \diff\sigma{.}
 \end{split}
 \end{equation}
 %
 Nájdime teraz derivácie~$\partial S(\psi) \slash \partial\varphi$ a~$\partial 
 S(\psi) \slash \partial\lambda$.  Z~rovnice~(\ref{eq:stokes_kernel}) vieme, že 
-Stokesovo jadro~$S(\psi)$ je funkciou sférickej vzdialenosti~$\psi$, ktorá však 
-závisí od sférickej šírky~$\varphi$ aj od~sférickej dĺžky~$\lambda$ 
+Stokesovo jadro~$S(\psi)$ je funkciou sférickej vzdialenosti~$\psi$.  Tá však 
+závisí od sférickej šírky aj od~sférickej dĺžky výpočtového bodu~$(R, \varphi, 
+\lambda)$ a~integračného elementu~$(R, \varphi', \lambda')$ 
 (vzťah~\ref{eq:cospsi}).  Derivujeme teda zloženú funkciu,
 %
 \begin{equation}
@@ -9063,9 +9079,9 @@ a~sférickej dĺžky~$\lambda$,
 \end{equation}
 %
 Dosadením~(\ref{eq:stokes_kernel_partials2}) do~(\ref{eq:vm}) získame výsledné 
-vzťahy,
-    %
-    \begin{equation}
+vzťahy
+%
+\begin{equation}
 \label{eq:vm2}
 \begin{split}
 \xi_0 &= \frac{1}{4\pi\,\gamma_0} \iint\limits_\sigma \frac{\diff 
@@ -9075,8 +9091,8 @@ S(\psi)}{\diff \psi} \, \sin\alpha \, \Delta g_0 \, \diff\sigma{.}
 \end{split}
 \end{equation}
 
-Rovnice~(\ref{eq:vm2}) sa nazývajú \emph{Veningove Meineszove integrály} a~sú 
-pomenované po holandskom geofyzikovi a~geodetovi F.~A.~Veningovi Meineszovi 
+Rovnice~(\ref{eq:vm2}) sa nazývajú \emph{Veningove Meineszove integrály}.  
+Pomenované sú po holandskom geofyzikovi a~geodetovi F.~A.~Veningovi Meineszovi 
 (1887~-- 1966), ktorý ich odvodil v~roku 1928.  Tieto integrály~umožňujú 
 výpočet gravimetrických zvislicových odchýlok na geoide z~anomálií tiažového 
 zrýchlenia na geoide.  Deriváciu~$\diff S(\psi) \slash \diff\psi$ nebudeme 
@@ -9101,7 +9117,7 @@ S(\psi)}{\diff\psi} \, \sin\alpha
 %
 sú singulárne a~homogénne, avšak nie sú izotropné (pozri 
 Kapitolu~\ref{sec:stokes_kernel}).  Anizotropnosť je spôsobená závislosťou od 
-azimutu~$\alpha$ (Obrázok~\ref{fig:surface_integral}).
+azimutu~$\alpha$.
 
 Dodajme, že do rovnice~(\ref{eq:xi0_eta0_der}) môže byť dosadený Hotineov 
 integrál~(\ref{eq:hotine_N}) namiesto Stokesovho integrálu~(\ref{eq:stokes_N}).  
@@ -9127,29 +9143,30 @@ zrýchlenia~$\Delta g_0$.
 Súčasná geodézia stojí na mnohých pilieroch.  Jedným z~nich je znalosť 
 tiažového poľa Zeme.  Vďaka schopnosti merať a~modelovať tiažové pole dokážeme 
 určiť mnohé geodetické veličiny presnejšie, než keby sme vplyv tiažového poľa 
-neuvažovali.  Medzi tieto údaje patria napríklad merané vodorovné smery 
-a~zvislé uhly či~nivelačné a~GNSS merania.  Aby sme lepšie porozumeli geodézii, 
-je výhodné pochopiť fyzikálnu podstatu princípov, na ktorých sú geodetické 
-merania založené alebo ich implicitne využívajú.  Princípy niektorých 
-geodetických metód môžu totiž pôsobiť ako očividné, no až podrobnejším 
-premýšľaním si uvedomíme, že táto zrejmosť je len zdanlivá.  Videli sme, že 
-nemalé úsilie si vyžaduje opis už i~tak bežných geodetických konceptov, akými 
-sú lokálny horizont či smer zavesenej olovnice.  S~pokrokom vedy, výskumu 
-a~technológií sa výsledky výskumu tiažového poľa Zeme využívajú čoraz častejšie 
-aj v~bežnej geodetickej praxi, hoci to (opäť) nemusí byť na prvý pohlaď zrejmé.  
-Príkladom je určovanie výšky bodu na povrchu Zeme metódami GNSS.  Tie umožňujú 
-vypočítať elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od 
-povrchu elipsoidu po daný bod.  Táto výška má geometrický charakter, ktorý 
-nereflektuje skutočné tiažové pole Zeme.  Práve z~tohto dôvodu nie je vhodná 
-pre mnohé úlohy geodézie, napríklad na vytýčenie \emph{vodorovnej} roviny 
-v~teréne.  Potenciál GNSS meraní však v~tejto úlohe predsa len dokážeme využiť, 
-keď si uvedomíme, že odčítaním výšky geoidu~$N$ od elipsoidickej výšky~$h$ 
-získame ortometrickú výšku~$H^\mathrm{O}$ (Obrázok~\ref{fig:heights}).  Táto 
-výška už má fyzikálny charakter, a~tak je rozumnejšie využiť ju na vytýčenie 
-napríklad vodorovnej roviny.  V~súčasnosti je takýto prepočet medzi výškami 
-bežnou činnosťou geodetov, pričom je uskutočňovaný buď priamo v~GNSS prijímači 
-alebo v~následnom spracovaní, niekedy azda i~bez vedomia samotného geodeta.  
-Porozumieť tiažovému poľu Zeme sa teda oplatí.
+neuvažovali.  Príkladom sú redukcia vodorovných uhlov a~dĺžok do~roviny mapy, 
+prevýšenia medzi bodmi určené niveláciou či~geocentrické súradnice bodov 
+získané GNSS meraniami.  Aby sme lepšie porozumeli geodézii, je výhodné 
+pochopiť fyzikálnu podstatu princípov, na ktorých sú geodetické merania 
+založené alebo ich implicitne využívajú.  Princípy niektorých geodetických 
+metód môžu totiž pôsobiť ako očividné, no až podrobnejším premýšľaním si 
+uvedomíme, že táto zrejmosť je len zdanlivá.  Videli sme, že nemalé úsilie si 
+vyžaduje opis už i~tak bežných geodetických konceptov, akými sú lokálny 
+horizont či smer zavesenej olovnice.  S~pokrokom vedy, výskumu a~technológií sa 
+výsledky výskumu tiažového poľa Zeme využívajú čoraz častejšie aj v~bežnej 
+geodetickej praxi, hoci to (opäť) nemusí byť na prvý pohlaď zrejmé.  Príkladom 
+je určovanie výšky bodu na povrchu Zeme metódami GNSS.  Tie umožňujú vypočítať 
+elipsoidickú výšku, teda výšku meranú po normále k~elipsoidu od povrchu 
+elipsoidu po daný bod.  Táto výška má geometrický charakter, ktorý nereflektuje 
+skutočné tiažové pole Zeme.  Práve z~tohto dôvodu nie je vhodná pre mnohé úlohy 
+geodézie, napríklad na vytýčenie \emph{vodorovnej} roviny v~teréne.  Potenciál 
+GNSS meraní však v~tejto úlohe predsa len dokážeme využiť, keď si uvedomíme, že 
+odčítaním výšky geoidu~$N$ od elipsoidickej výšky~$h$ získame ortometrickú 
+výšku~$H^\mathrm{O}$ (Obrázok~\ref{fig:heights}).  Táto výška už má fyzikálny 
+charakter, a~tak je rozumnejšie využiť ju na vytýčenie napríklad vodorovnej 
+roviny.  V~súčasnosti je takýto prepočet medzi výškami bežnou činnosťou 
+geodetov, pričom je uskutočňovaný buď priamo v~GNSS prijímači alebo v~následnom 
+spracovaní, niekedy azda i~bez vedomia samotného geodeta.  Porozumieť tiažovému 
+poľu Zeme sa teda oplatí.
 
 O~poskytnutie poznatkov, ktoré by napomohli porozumieť základom teórie 
 gravitačného a~tiažového poľa, sa snažila aj táto práca.  Niektoré koncepty 
@@ -9196,11 +9213,11 @@ geodetickú literatúru v~anglickom jazyku, napríklad
 
 Zrejme nebudeme ďaleko od pravdy, keď budeme tvrdiť, že vedecká a~akademická 
 literatúra, nevynímajúc tieto strany, sa v~istom zmysle rodí veľmi ťažko.  
-Objavovať poznatky je totiž zložité, rovnako tak ako je náročné sa ich snažiť 
+Objavovať poznatky je totiž zložité, rovnako ako je náročné sa ich snažiť 
 sprostredkovať čitateľovi, ktorý nevybočuje z~tohto začarovaného kruhu a~pre 
 porozumenie textu musí neraz vynaložiť podobné alebo aj väčšie úsilie ako 
 samotný autor.  Mohli by sme teda povedať, že ide tak trochu o~vzájomnú hru, 
-ktorá, pokiaľ je hraná s~otvorenou mysľou, spravidla stojí za to.
+ktorá, pokiaľ sa hrá s~otvorenou mysľou, spravidla stojí za to.
 
 
 
@@ -9243,6 +9260,8 @@ gradientu~(\ref{eq:gradf}) na~intervale $x, y \in [-1, 1]$ je uvedená
 v~Zdrojovom~kóde~\ref{src:f_gradf}.  Grafické znázornenie je uvedené na 
 Obrázku~\ref{fig:f_gradf}.  Všímajme si smer šípky a~jej veľkosť v~závislosti 
 od polohy a~pokúsme sa danú situáciu interpretovať.
+
+\vspace{2ex}
 
 \lstinputlisting[caption=Výpočet a~zobrazenie funkcie dvoch premenných a~jej
 gradientu v~programovacom jazyku Python, language=mypython, label=src:f_gradf,
@@ -9300,7 +9319,7 @@ e^\mathrm{s}_3 \, \frac{\partial f}{\partial z^{\mathrm{s}}}{.}
 Cieľom tejto kapitoly je vyjadriť parciálne derivácie $\partial f \slash 
 \partial x^{\mathrm{s}}, \partial f \slash \partial y^{\mathrm{s}}, \partial 
 f \slash \partial z^{\mathrm{s}}$ pomocou ortogonálnych \emph{krivočiarych} 
-súradníc $\varphi, \lambda, r$ (pozri Obrázok~\ref{fig:cart_sph}).
+súradníc $\varphi, \lambda, r$.
 
 Je zrejmé, že potrebujeme nájsť parciálne derivácie $\partial f \slash \partial 
 \varphi, \partial f \slash \partial \lambda, \partial f \slash \partial r$.  
@@ -9314,12 +9333,12 @@ preto zloženú funkciu troch premenných,
 \frac{\partial f}{\partial \varphi} &= \frac{\partial f}{\partial x} \, 
 \frac{\partial x}{\partial \varphi} + \frac{\partial f}{\partial y} \, 
 \frac{\partial y}{\partial \varphi} + \frac{\partial f}{\partial z} \, 
-\frac{\partial z}{\partial \varphi}{,}\\[2ex]
+\frac{\partial z}{\partial \varphi}{,}\\
 %
 \frac{\partial f}{\partial \lambda} &= \frac{\partial f}{\partial x} \, 
 \frac{\partial x}{\partial \lambda} + \frac{\partial f}{\partial y} \, 
 \frac{\partial y}{\partial \lambda} + \frac{\partial f}{\partial z} \, 
-\frac{\partial z}{\partial \lambda}{,}\\[2ex]
+\frac{\partial z}{\partial \lambda}{,}\\
 %
 \frac{\partial f}{\partial r} &= \frac{\partial f}{\partial x} \, 
 \frac{\partial x}{\partial r} + \frac{\partial f}{\partial y} \, \frac{\partial 
@@ -9362,7 +9381,7 @@ Rovnicu~(\ref{eq:f_partials_rlatlon}) môžeme zapísať v~maticovom tvare
 
 Zaveďme vektorovú funkciu~$\vec r$, ktorá bude popisovať začiatok lokálneho 
 súradnicového systému $x^\mathrm{s}, y^\mathrm{s}, z^\mathrm{s}$ v~globálnom 
-súradnicovom systéme $x, y, z$,
+súradnicovom systéme $x, y, z$ (rovnice~\ref{eq:sph2cart}),
 %
 \begin{equation}
 \label{eq:vector_r}
@@ -9372,6 +9391,14 @@ súradnicovom systéme $x, y, z$,
 x(\varphi, \lambda, r)\\
 y(\varphi, \lambda, r)\\
 z(\varphi, r)
+\end{bmatrix}
+%
+=
+%
+\begin{bmatrix}
+r \, \cos\varphi \, \cos\lambda\\
+r \, \cos\varphi \, \sin\lambda\\
+r \, \sin\varphi
 \end{bmatrix}
 %
 {.}
@@ -9410,8 +9437,7 @@ kde symboly
 %
 \begin{equation}
 \label{eq:er_elat_elon}
-\begin{split}
-\hat{\vec e}_1^\mathrm{s} &= \frac{\partial \vec r}{\partial \varphi} = 
+\hat{\vec e}_1^\mathrm{s} = \frac{\partial \vec r}{\partial \varphi} = 
 %
 \begin{bmatrix}
 -r \, \sin\varphi \, \cos\lambda\\
@@ -9419,9 +9445,9 @@ kde symboly
 r \, \cos\varphi
 \end{bmatrix}
 %
-{,}\\
+{,}\quad
 %
-\hat{\vec e}_2^\mathrm{s} &= \frac{\partial \vec r}{\partial \lambda} = 
+\hat{\vec e}_2^\mathrm{s} = \frac{\partial \vec r}{\partial \lambda} = 
 %
 \begin{bmatrix}
 -r \, \cos\varphi \, \sin\lambda\\
@@ -9429,9 +9455,9 @@ r \, \cos\varphi \, \cos\lambda\\
 0
 \end{bmatrix}
 %
-{,}\\
+{,}\quad
 %
-\hat{\vec e}_3^\mathrm{s} &= \frac{\partial \vec r}{\partial r} = 
+\hat{\vec e}_3^\mathrm{s} = \frac{\partial \vec r}{\partial r} = 
 %
 \begin{bmatrix}
 \cos\varphi \, \cos\lambda\\
@@ -9439,7 +9465,6 @@ r \, \cos\varphi \, \cos\lambda\\
 \sin\varphi
 \end{bmatrix}
 %
-\end{split}
 \end{equation}
 %
 predstavujú vektory v~smere osí $x^{\mathrm{s}}, y^{\mathrm{s}}, 
@@ -9451,15 +9476,29 @@ f \slash \partial z$ vyjadríme pomocou parciálnych derivácií $\partial f \sl
 použitím niektorej z~metód lineárnej algebry.
 
 Obzvlášť jednoduchá metóda riešenia systému rovníc~(\ref{eq:grad_cart2sph}) je 
-nasledovná.  Normovaním vektorov~(\ref{eq:er_elat_elon}) ich veľkosťami získame 
-jednotkové vektory v~smere súradnicových osí~$x^\mathrm{s}, y^\mathrm{s}, 
-z^\mathrm{s}$,
+nasledovná.  Normovaním vektorov~(\ref{eq:er_elat_elon}) ich veľkosťami
+%
+\begin{equation}
+\begin{aligned}
+\| \hat{\vec e}_1^\mathrm{s} \| &= \sqrt{(-r \, \sin\varphi \, \cos\lambda)^2 
++ (-r \, \sin\varphi \, \sin\lambda)^2 + (r \, \cos\varphi)^2} = r{,}\\
+%
+\| \hat{\vec e}_2^\mathrm{s} \| &= \sqrt{(-r \, \cos\varphi \, \sin\lambda)^2 
++ (r \, \cos\varphi \, \cos\lambda)^2} = r \, \cos\varphi{,}\\
+%
+\| \hat{\vec e}_3^\mathrm{s} \| &= \sqrt{(\cos\varphi \, \cos\lambda)^2 
++ (\cos\varphi \, \sin\lambda)^2 + \sin^2\varphi} = 1
+%
+\end{aligned}
+\end{equation}
+%
+získame jednotkové vektory v~smere súradnicových osí~$x^\mathrm{s}, 
+y^\mathrm{s}, z^\mathrm{s}$,
 %
 \begin{equation}
 \label{eq:er_elat_elon_unit}
-\begin{aligned}
 %
-\vec e^\mathrm{s}_1 &= \frac{\hat{\vec e}_1^\mathrm{s}}{\| \hat{\vec 
+\vec e^\mathrm{s}_1 = \frac{\hat{\vec e}_1^\mathrm{s}}{\| \hat{\vec 
 e}_1^\mathrm{s} \|} = 
 %
 \begin{bmatrix}
@@ -9468,9 +9507,9 @@ e}_1^\mathrm{s} \|} =
 \cos\varphi
 \end{bmatrix}
 %
-{,} \quad &\| \hat{\vec e}_1^\mathrm{s} \| &= r{,}\\
+{,}\quad
 %
-\vec e^\mathrm{s}_2 &= \frac{\hat{\vec e}_2^\mathrm{s}}{\| \hat{\vec 
+\vec e^\mathrm{s}_2 = \frac{\hat{\vec e}_2^\mathrm{s}}{\| \hat{\vec 
 e}_2^\mathrm{s} \|} = 
 %
 \begin{bmatrix}
@@ -9479,9 +9518,9 @@ e}_2^\mathrm{s} \|} =
 0
 \end{bmatrix}
 %
-{,}  \quad &\| \hat{\vec e}_2^\mathrm{s} \| &= r \, \cos\varphi{,}\\
+{,}\quad
 %
-\vec e^\mathrm{s}_3 &= \frac{\hat{\vec e}_3^\mathrm{s}}{\| \hat{\vec 
+\vec e^\mathrm{s}_3 = \frac{\hat{\vec e}_3^\mathrm{s}}{\| \hat{\vec 
 e}_3^\mathrm{s} \|} = 
 %
 \begin{bmatrix}
@@ -9490,12 +9529,12 @@ e}_3^\mathrm{s} \|} =
 \sin\varphi
 \end{bmatrix}
 %
-{,} \quad &\| \hat{\vec e}_3^\mathrm{s} \| &= 1{.}
+{.}
 %
-\end{aligned}
 \end{equation}
 %
-Lineárny systém rovníc~(\ref{eq:grad_cart2sph}) potom môžeme prepísať do tvaru
+Systém lineárnych rovníc~(\ref{eq:grad_cart2sph}) potom môžeme prepísať do 
+tvaru
 %
 \begin{equation}
 \label{eq:grad_cart2sph_2}
@@ -9527,7 +9566,7 @@ r \, \cos\varphi \, \left(\vec e^\mathrm{s}_2\right)^\top\\
 O~vektoroch $\vec e^\mathrm{s}_1, \vec e^\mathrm{s}_2, \vec e^\mathrm{s}_3$ 
 vieme, že sú ortogonálne (pozri rovnicu~\ref{eq:ei_orthogonality}) a~ich 
 veľkosť je rovná~$1$, čo možno overiť vzťahmi~(\ref{eq:er_elat_elon_unit}).  
-Inverzia matice systému lineárnych rovníc~(\ref{eq:grad_cart2sph_2}) je tak 
+Inverzia matice systému lineárnych rovníc~(\ref{eq:grad_cart2sph_2}) je potom 
 daná vzťahom \parencite{MichelLectures}
 %
 \begin{equation}
@@ -9669,7 +9708,7 @@ rovnice~(\ref{eq:laplace_cart_grad_grad_notation}),
 %
 \begin{align}
 \label{eq:grad_grad_sph}
-\nabla^2 f &= \nabla \cdot \nabla f\nonumber\\
+\nabla^2 f &= \nabla \cdot \left( \nabla f \right)\nonumber\\
 %
 &= \left( \vec e_1^\mathrm{s} \, \frac{1}{r} \, \frac{\partial}{\partial 
 \varphi} + \vec e_2^\mathrm{s} \, \frac{1}{r \, \cos\varphi} \, 
@@ -9747,10 +9786,8 @@ e_3^\mathrm{s}$ z~predošlej rovnice sú dané
 vzťahmi~(\ref{eq:er_elat_elon_unit}).  Ich derivácie podľa sférických súradníc 
 majú nasledovný tvar,
 %
-\begin{equation}
-\label{eq:er_elat_elon_unit_derivatives}
-\begin{split}
-\frac{\partial \vec e_1^\mathrm{s}}{\partial \varphi} &=
+\begin{alignat}{3}
+&\frac{\partial \vec e_1^\mathrm{s}}{\partial \varphi} =
 %
 \begin{bmatrix}
 -\cos\varphi \, \cos\lambda\\
@@ -9760,9 +9797,9 @@ majú nasledovný tvar,
 %
 = -\vec e_3^\mathrm{s}
 %
-{,}\\
+{,}\quad
 %
-\frac{\partial \vec e_1^\mathrm{s}}{\partial \lambda} &=
+&&\frac{\partial \vec e_1^\mathrm{s}}{\partial \lambda} =
 %
 \begin{bmatrix}
  \sin\varphi \, \sin\lambda\\
@@ -9772,13 +9809,14 @@ majú nasledovný tvar,
 %
 = -\sin\varphi \, \vec e_2^\mathrm{s}
 %
-{,}\\
+{,}\quad
 %
-\frac{\partial \vec e_1^\mathrm{s}}{\partial r} &= \vec 0{,}\\
+&&\frac{\partial \vec e_1^\mathrm{s}}{\partial r} = \vec 0{,}\nonumber\\
 %
-\frac{\partial \vec e_2^\mathrm{s}}{\partial \varphi} &= \vec 0{,}\\
+\label{eq:er_elat_elon_unit_derivatives}
+&\frac{\partial \vec e_2^\mathrm{s}}{\partial \varphi} = \vec 0{,}
 %
-\frac{\partial \vec e_2^\mathrm{s}}{\partial \lambda} &=
+&&\frac{\partial \vec e_2^\mathrm{s}}{\partial \lambda} =
 %
 \begin{bmatrix}
 -\cos\lambda\\
@@ -9786,11 +9824,11 @@ majú nasledovný tvar,
 0\\
 \end{bmatrix}
 %
-{,}\\
+{,}
 %
-\frac{\partial \vec e_2^\mathrm{s}}{\partial r} &= \vec 0{,}\\
+&&\frac{\partial \vec e_2^\mathrm{s}}{\partial r} = \vec 0{,}\\
 %
-\frac{\partial \vec e_3^\mathrm{s}}{\partial \varphi} &=
+&\frac{\partial \vec e_3^\mathrm{s}}{\partial \varphi} =
 %
 \begin{bmatrix}
 -\sin\varphi \, \cos\lambda\\
@@ -9800,9 +9838,9 @@ majú nasledovný tvar,
 %
 = \vec e_1^\mathrm{s}
 %
-{,}\\
+{,}
 %
-\frac{\partial \vec e_3^\mathrm{s}}{\partial \lambda} &=
+&&\frac{\partial \vec e_3^\mathrm{s}}{\partial \lambda} =
 %
 \begin{bmatrix}
 -\cos\varphi \, \sin\lambda\\
@@ -9812,15 +9850,15 @@ majú nasledovný tvar,
 %
 = \cos\varphi \, \vec e_2^\mathrm{s}
 %
-{,}\\
+{,}
 %
-\frac{\partial \vec e_3^\mathrm{s}}{\partial r} &= \vec 0{.}
-\end{split}
-\end{equation}
+&&\frac{\partial \vec e_3^\mathrm{s}}{\partial r} = \vec 0{.}
+\nonumber
+\end{alignat}
 %
 Kombináciou rovníc~(\ref{eq:grad_grad_sph}) 
-a~(\ref{eq:er_elat_elon_unit_derivatives}) získame tvar Laplaceovho operátora 
-vo sférických súradniciach,
+a~(\ref{eq:er_elat_elon_unit_derivatives}) získame Laplaceov operátor vo 
+sférických súradniciach,
 %
 \begin{equation}
 \label{eq:laplace_sph}
@@ -9847,10 +9885,10 @@ a~(\ref{eq:grad_orthogonal_system}),
 \begin{equation}
 \label{eq:laplace_orthogonal_system_1}
 \begin{split}
-\nabla^2 f &= \nabla \cdot \nabla f = \left( \sum_{i = 1}^3 \frac{\hat{\vec 
-e}_i}{\| \hat{\vec e}_i \|^2} \, \frac{\partial}{\partial \xi_i}\right) \cdot 
-\left( \sum_{j = 1}^3 \frac{\hat{\vec e}_j}{\| \hat{\vec e}_j \|^2} \, 
-\frac{\partial f}{\partial \xi_j}
+\nabla^2 f &= \nabla \cdot \left( \nabla f \right) = \left( \sum_{i = 1}^3 
+\frac{\hat{\vec e}_i}{\| \hat{\vec e}_i \|^2} \, \frac{\partial}{\partial 
+\xi_i}\right) \cdot \left( \sum_{j = 1}^3 \frac{\hat{\vec e}_j}{\| \hat{\vec 
+e}_j \|^2} \, \frac{\partial f}{\partial \xi_j}
 \right)\\
 %
 &= \sum_{i = 1}^{3} \sum_{j = 1}^3 \frac{1}{\| \hat{\vec e}_i \|^2 \, \| 
@@ -9917,14 +9955,19 @@ rovnice~(\ref{eq:laplace_orthogonal_system_2}) a~následne jej tretí člen.  Na
 záver použijeme výsledky oboch úprav, čím získame výsledný tvar Laplaceovho 
 operátora v~ľubovoľnom ortogonálnom súradnicovom systéme~$\xi_1, \xi_2, \xi_3$.
 
-Nech $j = 1$.  S~využitím vzťahu
+Nech $j = 1$.  Pomocou
 %
 \begin{equation}
 \hat{\vec e}_i \cdot \frac{\partial \hat{\vec e}_i}{\partial \xi_j} 
 = \frac{1}{2} \, \frac{\partial}{\partial \xi_j} \, \left( \hat{\vec e}_i \cdot 
 \hat{\vec e}_i \right) = \frac{1}{2} \, \frac{\partial \| \hat{\vec e}_i 
 \|^2}{\partial \xi_j} = \| \hat{\vec e}_i \| \, \frac{\partial \| \hat{\vec 
-e}_i \|}{\partial \xi_j}
+e}_i \|}{\partial \xi_j}{,}
+\end{equation}
+%
+\begin{equation}
+\label{eq:e_laplace}
+E = \| \hat{\vec e}_1  \| \, \| \hat{\vec e}_2  \| \, \| \hat{\vec e}_3  \|
 \end{equation}
 %
 môžeme upraviť prvé dva členy rovnice~(\ref{eq:laplace_orthogonal_system_2}) 
@@ -9955,21 +9998,15 @@ e}_3 \|}{\partial \xi_1} \, \frac{\partial f}{\partial \xi_1}\\
 &= \frac{1}{\| \hat{\vec e}_1 \| \, \| \hat{\vec e}_2 \| \, \| \hat{\vec e}_3 
 \|} \, \frac{\partial}{\partial \xi_1} \, \left( \frac{\| \hat{\vec e}_2 \| \, 
 \| \hat{\vec e}_3 \|}{\| \hat{\vec e}_1 \|} \right) \, \frac{\partial 
-f}{\partial \xi_1}{.}
+f}{\partial \xi_1} = \frac{1}{E} \, \frac{\partial}{\partial \xi_1} \left( 
+\frac{E}{\| \hat{\vec e}_1 \|^2} \right) \, \frac{\partial f}{\partial 
+\xi_1}{.}
 \end{split}
 \end{equation}
 %
-Použitím substitúcie
-%
-\begin{equation}
-\label{eq:e_laplace}
-E = \| \hat{\vec e}_1  \| \, \| \hat{\vec e}_2  \| \, \| \hat{\vec e}_3  \|
-\end{equation}
-%
-a spôsobom podobným odvodeniu 
-vzťahu~(\ref{eq:laplace_orthogonal_system_two_terms}) možno upraviť prvé dva 
-členy rovnice~(\ref{eq:laplace_orthogonal_system_2}) pre všetky $j = 1, 2, 3$ 
-do konečného tvaru
+Podobným spôsobom možno upraviť prvé dva členy 
+rovnice~(\ref{eq:laplace_orthogonal_system_2}) pre všetky $j = 1, 2, 3$ do 
+konečného tvaru
 %
 \begin{equation}
 \label{eq:laplace_orthogonal_system_two_terms_final}
@@ -10042,7 +10079,7 @@ Zdrojový kód~\ref{src:ball} vypočíta a~zobrazí gravitačný potenciál a~ve
 gravitačného zrýchlenia v~okolí homogénnej nerotujúcej gule.  Hmotnosť 
 a~polomer homogénnej gule boli zvolené tak, aby aproximovali skutočnú Zem.
 
-\vspace{4ex}
+\vspace{2ex}
 
 \lstinputlisting[caption=Výpočet a~zobrazenie gravitačného potenciálu 
 a~veľkosti gravitačného zrýchlenia homogénnej gule v~programovacom jazyku 
@@ -10108,10 +10145,10 @@ Niektoré odkazy na literatúru zo state \texttt{References} a~mnohé sférické
 harmonické koeficienty sú pre stručnosť vynechané.  Preskočené časti sú 
 označené značkou \texttt{[...]}.  Pôvodný súbor je dostupný zo stránky služby 
 ICGEM (pre link pozri poznámku pod čiarou~\ref{fn:icgem_link} na 
-strane~\pageref{fn:icgem_link}).  Sférický harmonický stupeň~$n$ a~rád~$m$ sú 
-v~modeli označené písmenami~\texttt{L} a~\texttt{M}.  Stĺpce 
-s~označením~\texttt{sigma C} a~\texttt{sigma S} obsahujú formálne stredné chyby 
-príslušných sférických harmonických koeficientov.
+strane~\pageref{fn:icgem_link}).  Sférický harmonický stupeň~$n$ a~sférický 
+harmonický rád~$m$ sú v~modeli označené písmenami~\texttt{L} a~\texttt{M}.  
+Stĺpce s~označením~\texttt{sigma C} a~\texttt{sigma S} obsahujú formálne 
+stredné chyby príslušných sférických harmonických koeficientov.
 
 \vspace{10ex}
 \footnotesize
@@ -10212,7 +10249,7 @@ topografie}
 
 Zdrojovým kódom~\ref{src:h_shs} je možné vypočítať a~zobraziť sférický 
 harmonický rozvoj topografie Zeme.  Sférické harmonické koeficienty 
-$\bar{h}_{nk}$ (pozri rovnicu~\ref{eq:h_shs}) sú prevzaté z~modelu DTM2006.0 
+$\bar{h}_{nk}$ (rovnica~\ref{eq:h_shs}) sú prevzaté z~modelu DTM2006.0 
 \parencite{DTM2006}.  Výpočet používa program GrafLab \parencite{GrafLab}, 
 ktorý je voľne dostupný na adrese 
 \url{https://github.com/blazej-bucha/graflab}.  Návody na prácu v~programe 
@@ -10235,7 +10272,7 @@ V~tejto prílohe odvodíme vzťah pre druhú mocninu diferenciálu
 vzdialenosti~$\diff s^2$ vo sférických súradniciach~$r, \varphi, \lambda$.
 
 Definujme polohový vektor~$\vec r$ pomocou globálnych karteziánskych 
-súradníc~$x, y, z$ nasledovne (pozri vzťahy~\ref{eq:sph2cart}),
+súradníc~$x, y, z$ nasledovne (rovnice~\ref{eq:sph2cart}),
 %
 \begin{equation}
 \vec r =
@@ -10300,6 +10337,11 @@ r \, \diff \varphi + \vec e_2^\mathrm{s} \, r \, \cos\varphi \, \diff \lambda
 + \vec e_3^\mathrm{s} \, \diff r \right) \cdot \left( \vec e_1^\mathrm{s} \, 
 r \, \diff \varphi + \vec e_2^\mathrm{s} \, r \, \cos\varphi \, \diff \lambda 
 + \vec e_3^\mathrm{s} \, \diff r \right)\\
+%
+&= r^2 \, \diff \varphi^2 \, \vec e_1^\mathrm{s} \cdot \vec e_1^\mathrm{s} 
++ r^2 \, \cos\varphi \, \diff\varphi \, \diff\lambda \, \vec e_1^\mathrm{s} 
+\cdot \vec e_2^\mathrm{s} + \dots + \diff r^2 \, \vec e_3^\mathrm{s} \cdot \vec 
+e_3^\mathrm{s}\\
 %
 &=  r^2 \, \diff\varphi^2 + r^2 \, \cos^2\varphi \, \diff\lambda^2 + \diff 
 r^2{.}

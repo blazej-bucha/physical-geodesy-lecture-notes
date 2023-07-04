@@ -4,9 +4,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy.special import lpmv
 
-# Sférický harmonický stupeň "n = 0, 1, ..." a rád "k = -n, ..., n"
-n = 3
-k = 1
+# Sférický harmonický stupeň "n" a sférický harmonický rád "k"
+n, k = 3, 1
 
 # "False" pre zobrazenie na jednotkovej sfére, "True" pre zobrazenie pomocou
 # odhľahlostí od jednotkovej sféry
@@ -17,20 +16,31 @@ lat      = np.linspace(-np.pi / 2.0, np.pi / 2.0, 181)
 lon      = np.linspace(0.0, 2.0 * np.pi, 361)
 lon, lat = np.meshgrid(lon, lat)
 
+# Výpočet nenormovanej Legendreovej funkcie stupňa "n" a rádu "|k|"
+pnk = lpmv(np.abs(k), n, np.sin(lat))
+
 # Výpočet sférickej harmonickej funkcie
 if k >= 0:
-    ynm = lpmv(k, n, np.sin(lat)) * np.cos(k * lon)
+    ynk = pnk * np.cos(k * lon)
 else:
-    ynm = lpmv(np.abs(k), n, np.sin(lat)) * np.sin(np.abs(k) * lon)
+    ynk = pnk * np.sin(np.abs(k) * lon)
 
 # Odstránenie Condonovho--Shortleyho fázového faktora
-ynm *= (-1)**np.abs(k)
+ynk *= (-1)**np.abs(k)
 
 # Sprievodič
 if zobrazenie_3d:
-    r = 1.0 + 0.5 * ynm / np.abs(ynm).max()
+    # Zobrazenie odľahlosťami od jednotkovej sféry.
+    #
+    # Hodnota "1.0" reprezentuje polomer jednotkovej sféry.  Hodnota "0.5" je
+    # amplitúdový faktor, ktorý pre účely zobrazenia pozmení amplitúdu
+    # oscilácií sférických harmonických funkcií tak, aby bol zreteľný
+    # zobrazovaný tvar.  Člen "ynk / np.abs(ynk).max()" zabezpečuje, že
+    # hodnoty "ynk" sa budú nachádzať v jednotnom intervale "[-1.0, 1.0]" pre
+    # ľuboľné "n" a "k", čo je opäť výhodné pre vizualizačné účely.
+    r = 1.0 + 0.5 * ynk / np.abs(ynk).max()
 else:
-    r = 1.0
+    r = 1.0  # Zobrazenie na jednotkovej sfére
 
 # Transformácia sférických súradnic na pravouhlé suradnice
 x = r * np.cos(lat) * np.cos(lon)
@@ -43,7 +53,7 @@ fig, ax = plt.subplots(figsize=(4.0 / 2.54, 4.0 / 2.54),
 ax.set_box_aspect((np.ptp(x), np.ptp(y), np.ptp(z)))
 norm = mpl.colors.Normalize()
 ax.plot_surface(x, y, z, rstride=1, cstride=1, cmap=plt.cm.bwr,
-                facecolors=plt.cm.bwr(norm(ynm)))
+                facecolors=plt.cm.bwr(norm(ynk)))
 ax.set_axis_off()
 ax.set_rasterized(True)
 plt.tight_layout(pad=-2.0)
