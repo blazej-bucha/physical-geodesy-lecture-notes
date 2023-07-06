@@ -226,6 +226,24 @@
 
 % =============================================================================
 
+% Suppress the following warnings when including the "pdf_tex" figs from 
+% Inkscape: "multiple pdfs with page group included in a single page".
+\pdfsuppresswarningpagegroup=1
+
+% Set the output PDF version to "1.7", so that it matches the PDF maps from 
+% GMT.  This is just to suppress some warnings.
+\pdfmajorversion=1
+\pdfminorversion=7
+
+% =============================================================================
+
+
+
+
+
+
+% =============================================================================
+
 \sloppy
 \begin{document}
 
@@ -281,15 +299,15 @@ zdokonaľujúci sa materiál.  Všetky zdrojové kódy sú preto voľne prístup
 a~pripomienkovateľné na adrese 
 \url{https://github.com/blazej-bucha/physical-geodesy-lecture-notes}.
 
-Práca bola napísaná v~textovom editore Vim~v8.2 použitím typografického 
+Práca bola napísaná v~textovom editore Vim~v9.0 použitím typografického 
 systému~\TeX.  Skompilovaná bola programom 
-\texttt{pdfTex}~v3.14159265-2.6-1.40.21.  Mapy boli pripravené 
-v~\texttt{GMT}~v6.1.1.  Obrázky boli zhotovené v~programe 
-\texttt{Inkscape}~v1.0.2.  Väčšina výpočtového kódu je napísaná v~jazyku 
-\texttt{Python}~v3.9.2 s~využitím modulov \texttt{NumPy}~v1.20.3, 
-\texttt{Matplotlib}~v3.5.0 a~\texttt{SciPy}~v1.7.3.  Časť výpočtov je 
+\texttt{pdfTex}~v3.141592653-2.6-1.40.24.  Mapy boli pripravené 
+v~\texttt{GMT}~v6.4.0.  Obrázky boli zhotovené v~programe 
+\texttt{Inkscape}~v1.2.2.  Väčšina výpočtového kódu je napísaná v~jazyku 
+\texttt{Python}~v3.11.2 s~využitím modulov \texttt{NumPy}~v1.24.3, 
+\texttt{Matplotlib}~v3.7.1 a~\texttt{SciPy}~v1.10.1.  Časť výpočtov je 
 napísaná~v~prostredí~MATLAB~R2021b.  S~týmito aplikáciami sme interagovali pod 
-operačným systémom Debian GNU/Linux~11 (Bullseye).  S~výnimkou programu MATLAB 
+operačným systémom Debian GNU/Linux~12 (bookworm).  S~výnimkou programu MATLAB 
 ide o~slobodný voľne šíriteľný softvér.  Vyslovujeme preto vďaku a~slová 
 ocenenia veľkej komunite excelentných programátorov za to, že poskytujú 
 prvotriedny slobodný softvér.
@@ -4299,7 +4317,8 @@ podrobnosť (rozlíšenie) funkcie $H(\varphi, \lambda)$.
 \caption{Sférický harmonický rozvoj zemskej topografie (jednotky~m) do 
 stupňov~$N = 30$ (vrchná mapa), $90$~ (prostredná mapa) a~$360$~(spodná mapa).  
 Výpočet bol uskutočnený Zdrojovým kódom~\ref{src:h_shs} 
-z~Prílohy~\ref{app:shs_topography}.} \label{fig:shs_h}
+z~Prílohy~\ref{app:shs_topography}.}
+\label{fig:shs_h}
 \end{figure}
 
 Okrem modelu~DTM2006.0 je voľne prístupný aj model Earth2014 
