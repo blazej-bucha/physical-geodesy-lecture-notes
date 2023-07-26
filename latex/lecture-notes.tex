@@ -253,19 +253,19 @@
 
 Mnohé geodetické úkony a~merania využívajú pôsobenie tiažového poľa Zeme alebo 
 sú ním ovplyvnené, od použitia olovnice až po určovanie polohy pomocou 
-globálnych navigačných družicových systémov.  Táto práca sa zaoberá tiažovým 
-poľom s~dôrazom na geodetický kontext.  Určená je predovšetkým ako doplňujúci 
-učebný text k~predmetom \emph{Fyzikálna geodézia~1} a~\emph{Fyzikálna 
-geodézia~2} pre študentov odboru Geodézia a~kartografia Stavebnej fakulty 
-Slovenskej technickej univerzity v~Bratislave.  Niektoré časti by azda mohli 
-byť užitočné aj pre~študentov príbuzných vedných odborov alebo jednoducho pre 
+globálnych navigačných družicových systémov.  Tieto skriptá sa zaoberajú 
+tiažovým poľom s~dôrazom na geodetický kontext.  Určené sú predovšetkým pre 
+študentov odboru Geodézia a~kartografia Stavebnej fakulty Slovenskej technickej 
+univerzity v~Bratislave ako doplňujúci učebný text k~predmetom \emph{Fyzikálna 
+geodézia~1} a~\emph{Fyzikálna geodézia~2}.  Niektoré časti by azda mohli byť 
+užitočné aj pre~študentov príbuzných vedných odborov alebo jednoducho pre 
 záujemcov o~problematiku gravitačného a~tiažového poľa.
 
-Popísané sú základné princípy gravitačného a~tiažového poľa vychádzajúce 
+Skriptá popisujú základné princípy gravitačného a~tiažového poľa vychádzajúce 
 z~Newtonovho gravitačného zákona 
 (Kapitola~\ref{sec:gravitational_and_gravity_field}), sférické a~sféroidické 
 harmonické funkcie (Kapitoly~\ref{sec:spherical_harmonic_expansion} 
-a~\ref{sec:spheroidal_harmonics_chapter}), normálne tiažové pole Zeme 
+a~\ref{sec:spheroidal_harmonics_chapter}), normálne tiažové pole 
 (Kapitola~\ref{sec:normal_gravity_field}), poruchové pole a~zvislicové odchýlky 
 (Kapitola~\ref{sec:disturbing_field_deflections}) a~na záver geoid 
 (Kapitola~\ref{sec:geoid}).  Hoci intelektuálne potešenie zo spoznávania týchto 
@@ -274,22 +274,23 @@ a~nepochybne aj~isté zanietenie.  Zvolili sme preto formu, ktorú na základe
 desaťročných skúseností s~výučbou fyzikálnej geodézie považujeme za 
 najvhodnejšiu pre očakávaných čitateľov, študentov geodézie a~kartografie.  
 Snažili sme sa o~výklad, ktorý by bol jednoduchý, zrozumiteľný, úplný, 
-nápomocný a~súčasne i~podnecujúci.  Na miestach, kde sme to považovali za 
-vhodné, text sme doplnili o~počítačový kód, ktorý prakticky demonštruje 
-diskutovanú problematiku.  Nádejame sa, že jeho vlastným štúdiom, testovaním 
-a~úpravou je možné niektorým konceptom porozumieť jednoduchšie.
+nápomocný a~súčasne i~podnecujúci.  Na niektorých miestach sme text doplnili 
+o~počítačový kód, ktorý prakticky demonštruje diskutovanú problematiku.  
+Nádejame sa, že jeho vlastným štúdiom, testovaním a~úpravou je možné niektorým 
+konceptom porozumieť jednoduchšie.
 
 Pri písaní textu sme predpokladali, že čitateľ má znalosti zo sférickej 
 trigonometrie a~z~vektorového, diferenciálneho a~integrálneho počtu na úrovni 
 prvého stupňa vysokoškolského štúdia.  Pre doplnenie poznatkov zo sférickej 
 trigonometrie je možné nahliadnuť napríklad do~skrípt \textcite{Husar2017} 
-a~\textcite{Minarechova2019}.  Integrálny a~diferenciálny počet je diskutovaný 
-v~skriptách \textcite{Minarechova2019} a~\textcite{Macak2021}.  Podrobnosti 
-o~súradnicových systémoch používaných v~geodézii a~o~transformáciách medzi nimi 
-sú uvedené napríklad v~prácach~\textcite{Melicher1993}, 
-\textcite{Kostelecky2008}, \textcite{Melicher2009} a~\textcite{Husar2017}.  
-Ďalšie informácie z~oblasti fyzikálnej geodézie a~gravimetrie je možné nájsť 
-v~skriptách \textcite{Janak2006} a~\textcite{Janak2010}.
+alebo~\textcite{Minarechova2019}.  Integrálny a~diferenciálny počet je 
+vysvetlený v~skriptách \textcite{Minarechova2019} a~\textcite{Macak2021}.  
+Podrobnosti o~súradnicových systémoch používaných v~geodézii 
+a~o~transformáciách medzi nimi sú uvedené napríklad 
+v~prácach~\textcite{Melicher1993}, \textcite{Kostelecky2008}, 
+\textcite{Melicher2009} a~\textcite{Husar2017}.  Ďalšie informácie z~oblasti 
+fyzikálnej geodézie a~gravimetrie je možné nájsť v~skriptách 
+\textcite{Janak2006} a~\textcite{Janak2010}.
 
 Aj keď napísaniu tejto práce bolo venované veľké úsilie, bolo by prekvapivé, ak 
 by sa v~nej nenašli časti, ktoré mohli byť spracované zrozumiteľnejšie, alebo 
@@ -316,14 +317,14 @@ prvotriedny slobodný softvér.
 mi pomáhali počas písania práce.  Za starostlivé prečítanie textu a~za 
 pripomienky, ktoré významne prispeli k~zlepšeniu tejto práce, ďakujem 
 recenzentom, Petrovi Vajdovi z~Ústavu vied o~Zemi Slovenskej akadémie vied, 
-Josefovi Seberovi z~Astronomického ústavu Akadémie Vied Českej republiky 
+Josefovi Seberovi z~Astronomického ústavu Akadémie vied Českej republiky 
 a~Milošovi Vaľkovi z~Geodetického observatória Pecný Výskumného ústavu 
 geodetického, topografického a kartografického.  Zuzane Minarechovej ďakujem za 
 neúnavné viacnásobné čítanie textu a~za mnoho hodnotných postrehov a~korekcií.  
 Za cenné pripomienky k~forme a~k~štylistike veľmi ďakujem Eme Nogovej.  
 Jurajovi Janákovi a~Martinovi Pitoňákovi ďakujem za obsahové komentáre, ktoré 
 mi pomohli lepšie formovať štruktúru a~obsah práce.  Za cenné postrehy a~za 
-povzbudivé slová vďačím Palovi Zahorcovi.  Za mnohonásobné prečítanie, za hŕbu 
+povzbudivé slová vďačím Pavlovi Zahorcovi.  Za mnohonásobné prečítanie, za hŕbu 
 štylistických korektúr a~za neutíchajúcu podporu ďakujem Saške.
 
 
@@ -422,8 +423,8 @@ spojnice bodov~$P$ a~$Q$.}
 \end{figure}
 
 Rovnica~(\ref{eq:newton_law}) sa nazýva \emph{gravitačný zákon} a~bola 
-publikovaná I.~Newtonom (1642--1727) v~práci \emph{Philosophi\ae Naturalis 
-Principia Mathematica} z~roku 1687.  Hovorí, že každý hmotný bod vo vesmíre 
+publikovaná I.~Newtonom (1642--1727) v~roku~1687 v~práci \emph{Philosophi\ae 
+Naturalis Principia Mathematica}.  Hovorí, že každý hmotný bod vo vesmíre 
 priťahuje každý iný hmotný bod silou, ktorej veľkosť je priamo úmerná súčinu 
 hmotností dvoch priťahovaných hmotných bodov a~nepriamo úmerná štvorcu ich 
 vzdialenosti; smer sily je daný spojnicou hmotných bodov 
@@ -473,7 +474,7 @@ potvrdenou Einsteinovou špeciálnou teóriou relativity.  Tá hovorí, že žia
 signál, ani gravitačný, sa nemôže šíriť rýchlosťou väčšou ako je rýchlosť 
 svetla.  Pre účely fyzikálnej geodézie sú však nepresnosti Newtonovho 
 gravitačného zákona väčšinou zanedbateľné.  Newtonova teória gravitácie tak aj 
-dnes, viac ako tristo rokov po jej vzniku, tvorí chrbtovú kosť fyzikálnej 
+dnes, viac ako tristo rokov po svojom vzniku, tvorí chrbtovú kosť fyzikálnej 
 geodézie.
 
 
@@ -543,13 +544,13 @@ hmotnosti priťahovaného telesa experimentálne potvrdil Gaileo Gailei
 (1564--1642).
 
 Nájdime teraz vzťah pre gravitačné zrýchlenie, ktoré je generované sústavou~$N$ 
-hmotných bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Keďže 
-\uv{\textit{[\dots] každý hmotný bod [\dots] priťahuje každý iný hmotný bod 
-[\dots]}} (Kapitola~\ref{sec:newton_law}), celkové gravitačné zrýchlenie 
-v~bode~$P$ je dané vektorovým súčtom čiastkových gravitačných zrýchlení, ktoré 
-sú generované jednotlivými hmotnými bodmi.  Táto vlastnosť sa nazýva 
-\emph{princíp superpozície} \parencite{Hotine}.  Gravitačné zrýchlenie 
-generované~$N$ hmotnými bodmi tak získame vzťahom
+hmotných bodov (Obrázok~\ref{fig:gg_n_point_masses}).  Podľa Newtonovho 
+gravitačného zákona \uv{\textit{[\dots] každý hmotný bod [\dots] priťahuje 
+každý iný hmotný bod [\dots]}} (Kapitola~\ref{sec:newton_law}), preto celkové 
+gravitačné zrýchlenie v~bode~$P$ je dané vektorovým súčtom čiastkových 
+gravitačných zrýchlení, ktoré sú generované jednotlivými hmotnými bodmi.  Táto 
+vlastnosť sa nazýva \emph{princíp superpozície} \parencite{Hotine}.  Gravitačné 
+zrýchlenie generované~$N$ hmotnými bodmi tak získame vzťahom
 %
 \begin{equation}
 \label{eq:gg_N_point_masses}
