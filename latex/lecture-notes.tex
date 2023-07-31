@@ -274,12 +274,12 @@ a~nepochybne aj~isté zanietenie.  Zvolili sme preto formu, ktorú na základe
 desaťročných skúseností s~výučbou fyzikálnej geodézie považujeme za 
 najvhodnejšiu pre očakávaných čitateľov, študentov geodézie a~kartografie.  
 Snažili sme sa o~výklad, ktorý by bol jednoduchý, zrozumiteľný, úplný, 
-nápomocný a~súčasne i~podnecujúci.  Na niektorých miestach sme text doplnili 
+nápomocný a~súčasne i~podnecujúci.   Text sme na niektorých miestach doplnili 
 o~počítačový kód, ktorý prakticky demonštruje diskutovanú problematiku.  
 Nádejame sa, že jeho vlastným štúdiom, testovaním a~úpravou je možné niektorým 
 konceptom porozumieť jednoduchšie.
 
-Pri písaní textu sme predpokladali, že čitateľ má znalosti zo sférickej 
+Pri písaní skrípt sme predpokladali, že čitateľ má znalosti zo sférickej 
 trigonometrie a~z~vektorového, diferenciálneho a~integrálneho počtu na úrovni 
 prvého stupňa vysokoškolského štúdia.  Pre doplnenie poznatkov zo sférickej 
 trigonometrie je možné nahliadnuť napríklad do~skrípt \textcite{Husar2017} 
@@ -1914,22 +1914,21 @@ pomocou vzťahov~(\ref{eq:iiint_change_of_variable}) a~(\ref{eq:dtau_sph}),
 %
 \begin{equation}
 \label{eq:vg_body_sph}
-V = G \, \iiint\limits_{\tau'} \frac{\rho}{\ell} \, (r')^2 \, \cos\varphi' \, 
-\diff r' \, \diff \varphi' \, \diff \lambda'{,}
+V(P) = G \, \iiint\limits_{\tau'} \frac{\rho}{\ell} \, (r')^2 \, \cos\varphi' 
+\, \diff r' \, \diff \varphi' \, \diff \lambda'{,}
 \end{equation}
 %
-kde~$\rho = \rho(r', \varphi', \lambda')$ je hustota diferenciálneho 
-elementu~$\diff\tau(Q)$, ďalej~$\ell = \ell(r, \psi, r')$ je vzdialenosť medzi 
-výpočtovým bodom~$P(r, \varphi, \lambda)$ a~bodom~$Q(r', \varphi', \lambda')$ 
-(Obrázok~\ref{fig:gravitating_body}),
+kde~$P(r, \varphi, \lambda)$ je výpočtový bod, $\rho = \rho(r', \varphi', 
+\lambda')$ je hustota diferenciálneho elementu~$\diff\tau(Q)$, $\ell = \ell(r, 
+\psi, r')$ je vzdialenosť medzi~$P$ a~$Q$ (Obrázok~\ref{fig:gravitating_body}),
 %
 \begin{equation}
 \label{eq:l_sph}
 \ell = \sqrt{r^2 + (r')^2 - 2 \, r \, r' \, \cos\psi}{,}
 \end{equation}
 %
-a~napokon~$\psi = \psi(\varphi, \lambda, \varphi', \lambda')$ je uhol 
-v~rovinnom trojuholníku~$OPQ$ medzi spojnicami~$OQ$ a~$OP$ 
+a~napokon~$\psi = \psi(\varphi, \lambda, \varphi', \lambda')$ je uhol medzi 
+spojnicami~$OQ$ a~$OP$ v~rovinnom trojuholníku~$OPQ$ 
 (Obrázok~\ref{fig:distance_l}),
 %
 \begin{equation}
@@ -1951,7 +1950,7 @@ v~rovinnom trojuholníku~$OPQ$ medzi spojnicami~$OQ$ a~$OP$
 V~tejto kapitole popíšeme gravitačný potenciál a~gravitačné zrýchlenie 
 homogénnej gule v~celom priestore.
 
-Nech je daná homogénna guľa s~polomerom~$R$ a~konštantnou hustotu~$\rho$ 
+Nech je daná homogénna guľa s~polomerom~$R$ a~konštantnou hustotou~$\rho$ 
 (Obrázok~\ref{fig:homogeneous_ball_out}).  Polohu bodov budeme vyjadrovať 
 v~trojrozmernom karteziánskom súradnicovom systéme~$x, y, z$.  Začiatok 
 súradnicového systému~$O$ nech je v~geometrickom strede gule, ktorý je z~dôvodu 
@@ -1961,7 +1960,7 @@ ani od sférickej dĺžky výpočtového bodu.  Sférickú šírku a~sférickú 
 výpočtového bodu preto môžeme zvoliť tak, aby nám umožnili čo najjednoduchší 
 výpočet Newtonovho integrálu~(\ref{eq:vg_body_sph}).  Vhodnou voľbou sa javia 
 byť body ležiace na osi~$z$.  V~celej tejto podkapitole budeme teda 
-predpokladať, že výpočtové body ležia na osi~$z$, pokiaľ nebude uvedené inak.  
+predpokladať, že výpočtový bod~$P$ leží na osi~$z$, pokiaľ nebude uvedené inak.  
 Vzťahy budeme hľadať pomocou Newtonovho integrálu~(\ref{eq:vg_body_sph}) zvlášť 
 v~bodoch mimo gule ($r > R$), na povrchu gule ($r = R$) a~na záver vo vnútri 
 gule ($r < R$).
@@ -2118,9 +2117,9 @@ gravitačný potenciál hmotného bodu~(\ref{eq:vg_point_mass}).  Dodajme tiež,
 ak~$M$ predstavuje hmotnosť Zeme, potom súčin~$GM$ 
 z~rovnice~(\ref{eq:vg_ball_out}) sa nazýva \emph{geocentrická gravitačná 
 konštanta}.  Vo fyzikálnej geodézii sa častejšie stretávame s~geocentrickou 
-gravitačnou konštantou~$GM$ než so samotnou hmotnosťou~$M$.  Dôvod je ten, že 
-z~meraní je možné získať súčin~konštánt~$G$ a~$M$ presnejšie ako konštantu~$M$ 
-\parencite{Pick2000}.
+gravitačnou konštantou~$GM$ než so samotnou hmotnosťou Zeme~$M$.  Dôvod je ten, 
+že geocentrickú gravitačnú konštantu~$GM$ dokážeme odmerať presnejšie ako 
+hmotnosť Zeme~$M$ \parencite{Pick2000}.
 
 Overme, či gravitačný potenciál~(\ref{eq:vg_ball_out}) vyhovuje Laplaceovej 
 rovnici~(\ref{eq:vg_laplace_cart}) v~bodoch mimo gule ($r > R$).  Nech~$x, y, 
@@ -2206,7 +2205,7 @@ platí vzťah
 \end{equation}
 %
 pretože~$\vec e_3^\mathrm{s}$ je jednotkový vektor (pozri 
-vzťahy~\ref{eq:er_elat_elon_unit})
+vzťahy~\ref{eq:er_elat_elon_unit}),
 %
 \begin{equation}
 \| \vec e_3^\mathrm{s} \| = \sqrt{\cos^2\varphi \, \cos^2\lambda 
@@ -2231,8 +2230,8 @@ Získaný vzťah je totožný so vzťahom~(\ref{eq:gg_ball_out_magnitude}).
 
 \subsubsection{Gravitačné pole na povrchu homogénnej gule}
 
-Nech~$P$ je bod nachádzajúci sa na povrchu homogénnej gule~($r = R$).  Obdobným 
-odvodením ako v~predošlej časti získame nasledovné vzťahy,
+Nech~$P$ je výpočtový bod nachádzajúci sa na povrchu homogénnej gule~($r = R$).  
+Obdobným odvodením ako v~predošlej časti získame nasledovné vzťahy,
 %
 \begin{align}
 \label{eq:vg_ball_on}
@@ -2892,8 +2891,8 @@ Rotačná os Zeme neustále mení svoju polohu voči Zemi.  Jedným z~dôsledkov
 \emph{pohyb pólu}, ktorý na povrchu Zeme dosahuje niekoľko metrov (desatín 
 uhlovej sekundy) za rok \parencite{MoritzPhysicalGeodesy}.  Pohyb rotačnej osi 
 tak spôsobuje zmenu súradníc bodov na povrchu Zeme ako aj~zmenu odstredivého 
-(rovnica~\ref{eq:gc}) a~tiažového zrýchlenia (rovnica~\ref{eq:g}).  Pohyb pólu 
-má najväčší vplyv na tiažové zrýchlenie v~oblastiach so zemepisnou 
+zrýchlenia (rovnica~\ref{eq:gc}) a~tiažového zrýchlenia (rovnica~\ref{eq:g}).  
+Pohyb pólu má najväčší vplyv na tiažové zrýchlenie v~oblastiach so zemepisnou 
 šírkou~$45^{\circ}$, kde nadobúda maximálnu hodnotu približne~$0.008\ 
 \mathrm{mGal}$ \parencite{Torge1989}.  Okrem polohy rotačnej osi sa mení aj 
 uhlová rýchlosť rotácie Zeme.  Jej vplyv na zmenu tiažového zrýchlenia však nie 
@@ -2901,8 +2900,8 @@ je väčší ako zhruba~$0.0007\ \mathrm{mGal}$ \parencite{Torge1989}.
 
 Zmeny gravitačného a~tiažového poľa v~okolí Zeme môžu byť spôsobené aj mnohými 
 ďalšími faktormi, vymenujme aspoň pohyb magmy v~zemskom plášti, postglaciálny 
-zdvih, seizmické vlny, hydrologické zmeny, roztápanie ľadovcov a pod.  
-V~literatúre sa niekedy diskutuje aj o~časovej variácii Newtonovej gravitačnej 
+zdvih, seizmické vlny, hydrologické zmeny či roztápanie ľadovcov.  V~literatúre 
+sa niekedy diskutuje aj o~časovej variácii Newtonovej gravitačnej 
 konštanty~$G$.  Tento jav však doposiaľ nebol experimentálne potvrdený 
 \parencite{Torge1989}.
 
@@ -4340,6 +4339,7 @@ asteroidu~Eros do stupňa~24 \parencite{Zuber2000}.
 
 % -----------------------------------------------------------------------------
 
+\newpage
 \section{Konvergencia sférického harmonického rozvoja na povrchu Zeme}
 \label{sec:convergence_of_spherical_harmonics}
 
@@ -5913,10 +5913,10 @@ V~nasledujúcej kapitole ukážeme exaktný spôsob výpočtu normálneho tiažo
 zrýchlenia v~redukovaných elipsoidických súradniciach 
 (Kapitola~\ref{sec:normal_gravity_in_reduced_ell_coords}).  Táto metóda je 
 v~praktických aplikáciách využívaná zriedkavo.  Jeden z~dôvodov je zrejme ten, 
-že poloha bodu, v~ktorom je merané skutočné tiažové zrýchlenie, nie je v~praxi 
-zväčša vyjadrovaná v~redukovaných elipsoidických súradniciach (hoci do týchto 
-súradníc môže byť jednoducho transformovaná; pre transformačné vzťahy pozri 
-napríklad \cite{MoritzPhysicalGeodesy}).  Tento prístup je ale dôležitý 
+že poloha bodu, v~ktorom býva merané skutočné tiažové zrýchlenie, v~praxi 
+zväčša nie je vyjadrovaná v~redukovaných elipsoidických súradniciach (hoci do 
+týchto súradníc môže byť jednoducho transformovaná; pre transformačné vzťahy 
+pozri napríklad \cite{MoritzPhysicalGeodesy}).  Tento prístup je ale dôležitý 
 obzvlášť z~teoretického hľadiska a~z~pohľadu numerických simulácií, lebo 
 využíva uzavreté matematické vzťahy.  
 V~Kapitole~\ref{sec:normal_gravity_taylor} je následne uvedený najpoužívanejší 
