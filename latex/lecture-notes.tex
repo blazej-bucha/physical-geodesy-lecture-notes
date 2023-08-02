@@ -1458,7 +1458,7 @@ Rovnicu~(\ref{eq:vg_poisson_equation}) publikoval v~roku 1813 v~práci
 Posledná oblasť, v~ktorej sa môže bod~$P$ nachádzať, no nie je pokrytá ani 
 Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Druhé 
 derivácie gravitačného potenciálu vystupujúce v~operátore $\nabla^2$ (pozri 
-rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph}) nie sú vo 
+rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph2}) nie sú vo 
 všeobecnosti v~takom prípade definované \parencite{Kellogg1967}.  Dôvodom je 
 nespojitosť hustoty~$\rho$, ktorá sa na povrchu telesa mení z~$\rho > 0$ na 0, 
 resp. naopak, v~závislosti od smeru prechodu.
@@ -1553,20 +1553,19 @@ y\\
 {.}
 \end{equation}
 %
-Veľkosť odstredivého zrýchlenia~$\vec g_\cidx(P)$ sa mení iba so 
+Veľkosť odstredivého zrýchlenia~$\| \vec g_\cidx(P) \|$ sa mení iba so 
 vzdialenosťou~$p = \| \vec p \|$ od rotačnej osi 
 (Obrázok~\ref{fig:gravity_vector}),
 %
 \begin{equation}
 \label{eq:gc_magnitude}
-\| \vec g_\cidx \| = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2} = \omega^2 \, 
-r \, \cos\varphi{.}
+\| \vec g_\cidx(P) \| = \omega^2 \, p = \omega^2 \, \sqrt{x^2 + y^2} = \omega^2 
+\, r \, \cos\varphi{.}
 \end{equation}
 %
-Čím je vzdialenosť~$p$ väčšia, tým je väčšie i~odstredivé zrýchlenie a~naopak.
-Smer vektora~$\vec g_\cidx(P)$ je kolmý na os
-rotácie (pozri vzťah~\ref{eq:gc} a~Obrázok~\ref{fig:gravity_vector}).  Uhlová 
-rýchlosť rotácie Zeme je približne
+Čím je vzdialenosť~$p$ väčšia, tým je väčšie i~odstredivé zrýchlenie a~naopak.  
+Vektor~$\vec g_\cidx(P)$ je kolmý na os rotácie (pozri vzťah~\ref{eq:gc} 
+a~Obrázok~\ref{fig:gravity_vector}).  Uhlová rýchlosť rotácie Zeme je približne 
 rovná~$\omega = 7\, 292\, 115 \times 10^{-11} \ \mathrm{rad} \ \mathrm{s}^{-1}$ 
 \parencite{GRS80}{.}
 
@@ -2494,13 +2493,12 @@ výpočet tiažového zrýchlenia~$\vec g$ vektorovým súčtom~(\ref{eq:g}) je 
 potrebné najprv vyjadriť oba vektory v~rovnakom súradnicovom systéme.  Ak 
 postačuje vypočítať veľkosť tiažového zrýchlenia~$\| \vec g \|$, potom môžu byť 
 použité vzťahy~(\ref{eq:gc_magnitude}) a~(\ref{eq:gg_ball_on_magnitude}).  Je 
-potrebné však vziať do úvahy skutočnosť, že vektory~$\vec g_\gidx$ a~$\vec 
-g_\cidx$ majú rozdielny smer a~tiež že tento smer závisí od sférickej 
-šírky~$\varphi$ výpočtového bodu.  Veľkosť tiažového zrýchlenia je najväčšia na 
-póloch, pretože na póloch je odstredivé zrýchlenie nulové.  Naopak, najmenšiu 
-hodnotu dosahuje na rovníku, pretože odstredivé zrýchlenie je na rovníku 
-najväčšie a~súčasne má opačný smer ako gravitačné zrýchlenie (pozri 
-Obrázok~\ref{fig:gravity_vector}).
+však potrebné uvážiť, že vektory~$\vec g_\gidx$ a~$\vec g_\cidx$ majú rozdielne 
+smery, ktoré navyše závisia od sférickej šírky~$\varphi$ výpočtového bodu.  
+Veľkosť tiažového zrýchlenia je najväčšia na póloch, pretože na póloch je 
+odstredivé zrýchlenie nulové.  Naopak, najmenšiu hodnotu dosahuje na rovníku, 
+pretože odstredivé zrýchlenie je na rovníku najväčšie a~súčasne má opačný smer 
+ako gravitačné zrýchlenie (pozri Obrázok~\ref{fig:gravity_vector}).
 
 \section{Výšky}
 \label{sec:heights}
@@ -3841,7 +3839,7 @@ funkcií na súradnice $f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) a~následne ju
 spätne zrekonštruovať (vzťah~\ref{eq:f_shs_no_norm}).  V~priestore funkcií 
 $f(\varphi, \lambda)$, ktoré sú definované na sfére a~spĺňajú 
 podmienku~($\ref{eq:f_l2}$), plnia sférické harmonické funkcie $Y_{nk}(\varphi, 
-\lambda)$ podobnú úlohu ako plnia jednotkové vektory $\vec e_i$ v~priestore 
+\lambda)$ podobnú úlohu, akú plnia jednotkové vektory $\vec e_i$ v~priestore 
 trojrozmerných vektorov $\vec r$.  Funkcia $f(\varphi,\lambda)$ môže byť 
 napríklad gravitačný či magnetický potenciál telesa na sfére, ktorá obopína 
 celé teleso, topografia Zeme či inej planéty a~mnoho ďalších funkcií.  Každú 
@@ -7942,10 +7940,10 @@ a~zložkami zvislicovej odchýlky (pozri rovnice~\ref{eq:deflection_grav_s_sph})
 \chapter{Geoid}
 \label{sec:geoid}
 
-Vráťme sa na chvíľu do úvodnej kapitoly, v~ktorej sme načrtli dva prístupy 
-k~definícii tvaru Zeme.  V~zmysle prvej definície je tvar Zeme daný jej 
-skutočným fyzickým povrchom.  Určovaním takto chápaného tvaru Zeme a~jej 
-vonkajšieho tiažového poľa sa zaoberá Molodenského teória 
+V~úvodnej kapitole sme načrtli dva prístupy k~definícii tvaru Zeme.  V~zmysle 
+prvej definície je tvar Zeme daný jej skutočným fyzickým povrchom.  Určovaním 
+takto chápaného tvaru Zeme a~jej vonkajšieho tiažového poľa sa zaoberá 
+Molodenského teória 
 \parencite{Molodensky1962,Borre_chapter8,MoritzAdvancedGeodesy,MoritzPhysicalGeodesy}.  
 V~druhom prístupe je tvar Zeme definovaný geoidom, teda ekvipotenciálnou 
 plochou.  Na týchto stranách sa budeme bližšie zaoberať iba druhým 
