@@ -1044,17 +1044,18 @@ spĺňa v~priestore \emph{mimo} hmôt rovnicu
 %
 \begin{equation}
 \label{eq:vg_laplace_cart}
-\nabla^2 V_\gidx = \Delta V_\gidx = \frac{\partial^2 V_\gidx}{\partial x^2}
-+ \frac{\partial^2 V_\gidx}{\partial y^2} + \frac{\partial^2 V_\gidx}{\partial
-z^2} = 0{.}
+\nabla^2 V_\gidx = \frac{\partial^2 V_\gidx}{\partial x^2} + \frac{\partial^2 
+V_\gidx}{\partial y^2} + \frac{\partial^2 V_\gidx}{\partial z^2} = 0{.}
 \end{equation}
 %
-Operátor~$\nabla^2 = \Delta$ sa nazýva \emph{Laplaceov operátor} 
+Operátor~$\nabla^2$ sa nazýva \emph{Laplaceov operátor} 
 a rovnica~(\ref{eq:vg_laplace_cart}) sa nazýva \emph{Laplaceova rovnica} pre
-gravitačný potenciál.
+gravitačný potenciál.  V~niektorej literatúre sa Laplaceov operátor označuje 
+symbolom~$\Delta$.
 
-Aplikáciu Laplaceovho operátora na dvakrát diferencovateľnú funkciu~$f$ môžeme 
-zapísať pomocou už známeho operátora gradient~(\ref{eq:gradient}) 
+Aplikáciu Laplaceovho operátora~$\nabla^2$ na dvakrát diferencovateľnú 
+funkciu~$f$ môžeme zapísať pomocou už známeho operátora gradient~$\nabla$, 
+ktorý bol definovaný rovnicou~(\ref{eq:gradient}) 
 \parencite{SansoGeoidDetermination},
 %
 \begin{equation}
@@ -1296,17 +1297,6 @@ V_\gidx}{\partial \varphi^2} - \frac{\tan\varphi}{r^2} \, \frac{\partial
 V_\gidx}{\partial \varphi} + \frac{1}{r^2 \,
 \cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
-%
-V~niektorých situáciách je výhodné vynásobiť ešte 
-rovnicu~(\ref{eq:vg_laplace_sph2}) členom~$r^2$,
-%
-\begin{equation}
-\label{eq:vg_laplace_sph3}
-r^2 \, \frac{\partial^2 V_\gidx}{\partial r^2} + 2r \, \frac{\partial 
-V_\gidx}{\partial r} + \frac{\partial^2 V_\gidx}{\partial \varphi^2} 
-- \tan\varphi \, \frac{\partial V_\gidx}{\partial \varphi} 
-+ \frac{1}{\cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
-\end{equation}
 
 
 
@@ -1317,12 +1307,12 @@ Jedným z~cieľov fyzikálnej geodézie je určiť vonkajšie gravitačné pole 
 z odmeraných veličín gravitačného poľa.  Z~praktických dôvodov je ale možné 
 vykonávať merania iba v~malej časti priestoru mimo Zeme, napríklad 
 v~bezprostrednej blízkosti zemského povrchu či na dráhe umelej družice Zeme.  
-Preto ak chceme určiť gravitačné pole aj v~iných častiach priestoru mimo Zeme, 
-bolo by vhodné porozumieť tomu, ako sa gravitačný potenciál v~tomto priestore 
-mení.  Ak by nejaký princíp existoval a~bol by objavený, znamenalo by to, že 
-hoci naše merania sú dostupné iba v~malej časti vonkajšieho priestoru Zeme, 
-gravitačný potenciál mimo Zeme môže byť z~týchto meraní vypočítaný aj v~nových 
-oblastiach, ktoré nie sú pokryté meraniami.
+Preto ak chceme určiť gravitačné pole aj v~iných oblastiach mimo Zeme, je 
+potrebné porozumieť tomu, ako sa gravitačný potenciál v~tomto priestore mení.  
+Ak by nejaký princíp existoval a~bol by objavený, znamenalo by to, že hoci naše 
+merania sú dostupné iba v~malej časti vonkajšieho priestoru Zeme, gravitačný 
+potenciál mimo Zeme môže byť z~týchto meraní vypočítaný aj v~tých oblastiach, 
+ktoré nie sú pokryté meraniami.
 
 Tento princíp bol objavený a~je ním práve Laplaceova rovnica.  
 V~Kapitole~\ref{sec:newton_law} sme ukázali, ako Newtonov gravitačný 
@@ -1333,17 +1323,17 @@ gravitačnej sily, ktorá pôsobí medzi Slnkom a~planétou) a~poloha planéty m
 byť vypočítaná v~ľubovoľnom čase v~budúcnosti či v~minulosti.  Situácia je síce 
 výrazne komplikovanejšia, ak uvážime prítomnosť ďalších nebeských telies, no aj 
 táto úloha je riešiteľná v~princípe rovnakým spôsobom.  V~prípade Laplaceovej 
-rovnice je situácia veľmi podobná.  Ak poznáme napríklad gravitačný potenciál 
-či gravitačné zrýchlenie na celom povrchu Zeme a~ak poznáme aj tvar zemského 
-povrchu, potom znalosť \emph{princípu} zmeny gravitačného 
-potenciálu\footnote{Presnejšie by azda bolo hovoriť o~\textit{zmene zmeny} 
-gravitačného potenciálu, keďže Laplaceova rovnica~(\ref{eq:vg_laplace_cart}) 
-obsahuje druhé derivácie.} mimo Zeme v~podobe Laplaceovej rovnice umožňuje 
-zistiť hodnotu gravitačného potenciálu v~ľubovoľnom bode tejto oblasti.  
-Laplaceova rovnica má preto kľúčový význam pre určovanie vonkajšieho 
-gravitačného poľa Zeme.  Dodajme, že Laplaceova rovnica platí mimo Zeme až po 
-matematickom odstránení alebo zanedbaní hmôt zemskej atmosféry \parencite[pozri 
-napríklad][]{Janak2006}.
+rovnice je situácia veľmi podobná.  Predpokladajme, že poznáme napríklad 
+gravitačný potenciál či gravitačné zrýchlenie na celom povrchu Zeme a~tiež 
+predpokladajme, že tvar zemského povrchu je známy.  Znalosť \emph{princípu} 
+zmeny gravitačného potenciálu\footnote{Keďže Laplaceova 
+rovnica~(\ref{eq:vg_laplace_cart}) obsahuje druhé derivácie, presnejšie by azda 
+bolo hovoriť o~\textit{zmene zmeny} gravitačného potenciálu.} mimo Zeme 
+v~podobe Laplaceovej rovnice potom umožňuje zistiť hodnotu gravitačného 
+potenciálu v~ľubovoľnom bode tejto oblasti.  Laplaceova rovnica má preto 
+kľúčový význam pre určovanie vonkajšieho gravitačného poľa Zeme.  Dodajme, že 
+Laplaceova rovnica platí mimo Zeme až po matematickom odstránení alebo 
+zanedbaní hmôt zemskej atmosféry \parencite[pozri napríklad][]{Janak2006}.
 
 
 
@@ -1360,13 +1350,12 @@ uzavretej plochy, potom musí navyše spĺňať podmienku regularity
 nerovnosti~\ref{eq:regular_function};][]{MoritzPhysicalGeodesy}.
 
 Harmonické funkcie majú niekoľko zaujímavých a~dôležitých vlastností 
-\parencite[pozri napríklad][]{Kellogg1967,Pick1973,Janak2006}.  Na tomto mieste 
-spomeňme aspoň jednu z~nich.  Každá harmonická funkcia je \emph{analytická} 
-v~oblasti, v~ktorej vyhovuje Laplaceovej rovnici.  To znamená, že každá 
-harmonická funkcia je spojitá, má spojité všetky derivácie a~v~okolí každého 
-bodu oblasti~$\Omega$ ju možno rozvinúť do Taylorovho radu 
-\parencite{MoritzPhysicalGeodesy}.  Táto vlastnosť je dôležitá, preto sa pri 
-nej na chvíľku pristavme.
+\parencite[pozri napríklad][]{Kellogg1967,Pick1973,Janak2006}.  Spomeňme aspoň 
+jednu z~nich.  Každá harmonická funkcia je \emph{analytická} v~oblasti, 
+v~ktorej vyhovuje Laplaceovej rovnici.  To znamená, že každá harmonická funkcia 
+je spojitá, má spojité všetky derivácie a~v~okolí každého bodu oblasti~$\Omega$ 
+ju možno rozvinúť do Taylorovho radu \parencite{MoritzPhysicalGeodesy}.  Táto 
+vlastnosť je kľúčová, preto sa pri nej na chvíľku pristavme.
 
 Nech~$f(x)$ je analytická funkcia, ktorá je nekonečne diferencovateľná 
 v~bode~$x_0$.  \emph{Taylorov rozvoj} funkcie~$f(x)$ v~okolí bodu~$x_0$ má tvar
@@ -1455,13 +1444,15 @@ vzťahu~(\ref{eq:vg_poisson_equation}) nachádza mimo hmôt, potom~$\rho(P) = 0$
 Rovnicu~(\ref{eq:vg_poisson_equation}) publikoval v~roku 1813 v~práci 
 \textit{Bulletin de la société philomatique}.
 
-Posledná oblasť, v~ktorej sa môže bod~$P$ nachádzať, no nie je pokrytá ani 
+Posledná oblasť, v~ktorej sa môže nachádzať bod~$P$, no nie je pokrytá ani 
 Laplaceovou, ani Poissonovou rovnicou, je \emph{povrch} telesa.  Druhé 
 derivácie gravitačného potenciálu vystupujúce v~operátore $\nabla^2$ (pozri 
 rovnice~\ref{eq:vg_laplace_cart} a~\ref{eq:vg_laplace_sph2}) nie sú vo 
 všeobecnosti v~takom prípade definované \parencite{Kellogg1967}.  Dôvodom je 
 nespojitosť hustoty~$\rho$, ktorá sa na povrchu telesa mení z~$\rho > 0$ na 0, 
-resp. naopak, v~závislosti od smeru prechodu.
+resp. naopak, v~závislosti od smeru prechodu.  Na povrchu telesa tak neplatí 
+ani Laplaceova rovnica~(\ref{eq:vg_laplace_cart}), ani Poissonova 
+rovnica~(\ref{eq:vg_poisson_equation}).
 
 
 
@@ -1593,6 +1584,7 @@ s~prijateľnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva
 \end{equation}
 
 
+\newpage
 \subsubsection{Meranie tiažového zrýchlenia}
 \label{sec:gravity_measurements}
 
