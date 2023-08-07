@@ -1474,8 +1474,8 @@ so Zemou.  Takýto súradnicový systém nie je inerciálny, pretože vzhľadom 
 inerciálny súradnicový systém v~ňom dochádza prinajmenšom k~dvom nelineárnym 
 pohybom \parencite{SansoGeoidDetermination}.  Prvý vzniká v~dôsledku rotácie 
 Zeme okolo vlastnej osi, druhý je spôsobený obehom Zeme okolo Slnka.  Aby sme 
-mohli študovať sily pôsobiace na Zemi pomocou druhého Newtonovho pohybového 
-zákona v~takomto neinerciálnom súradnicovom systéme, uvážiť musíme nielen 
+v~takomto neinerciálnom súradnicovom systéme mohli študovať sily pôsobiace na 
+Zemi pomocou druhého Newtonovho pohybového zákona, musíme uvážiť nielen 
 gravitačnú silu, ale aj~ďalšie sily.  Na objekt, ktorý sa nachádza na rotujúcej 
 Zemi, pôsobí okrem gravitačnej sily aj \emph{odstredivá sila}.  Ak je takýto 
 objekt v~pohybe, pôsobí naň aj \emph{Coriolisova sila} 
@@ -1588,14 +1588,14 @@ s~prijateľnou mierou aproximácie zanedbali.}  Toto zrýchlenie sa nazýva
 \subsubsection{Meranie tiažového zrýchlenia}
 \label{sec:gravity_measurements}
 
-Tiažové zrýchlenie je možné odmerať, a~tak predstavuje ústrednú veličinu 
+Tiažové zrýchlenie je možné odmerať, vďaka čomu predstavuje ústrednú veličinu 
 v~procese určovania tvaru Zeme.  Prístroj na meranie \emph{veľkosti} tiažového 
 zrýchlenia~$\| \vec g(P) \|$ sa nazýva \emph{absolútny gravimeter}.  Merania 
 absolútnymi gravimetrami sú časovo aj finančne náročné, preto sa využívajú aj 
 \emph{relatívne gravimetre}.  Týmito prístrojmi je ale možné určiť iba rozdiel 
-veľkostí tiažového zrýchlenia, či už medzi dvoma bodmi alebo na jednom bode, no 
-v~inom čase.  V~súčasnosti bežná presnosť určenia~$\| \vec g(P) \|$ dosahuje 
-hodnotu niekoľkých mikroGalov.  \emph{Smer} vektora~$\vec g(P)$ je daný 
+veľkostí tiažového zrýchlenia, či už medzi dvoma bodmi alebo na jednom bode 
+v~rozdielnom čase.  Presnosť určenia~$\| \vec g(P) \|$ v~súčasnosti dosahuje 
+rádovo niekoľko mikroGalov.  \emph{Smer} vektora~$\vec g(P)$ je daný 
 astronomickou šírkou a~astronomickou dĺžkou bodu~$P$, a~tak je možné odmerať ho 
 astronomickým určením polohy bodu~$P$ \parencite{MoritzPhysicalGeodesy}.  
 Presnosť určenia astronomických súradníc sa v~súčasnosti pohybuje približne 
@@ -1700,16 +1700,15 @@ tvrdenie vyplýva priamo z~rovnice~(\ref{eq:g_gradW}).
 \end{itemize}
 
 Matematický popis tvaru ekvipotenciálnych plôch reálnych telies je náročný.  
-Z~Newtonovho integrálu~(\ref{eq:vg_body}) vieme (pozri tiež 
-Kapitolu~\ref{sec:potential_theory}), že gravitačné pole je dané tvarom 
-a~hustotou telesa.  Zložité nepravidelné tvary či rozloženia hustoty spôsobujú 
-lokálne zvlnenia ekvipotenciálnych plôch.  Z~globálneho pohľadu je tvar 
-ekvipotenciálnych plôch daný celkovou geometriou telesa (napríklad sploštením 
-Zeme) či rozsiahlymi hustotnými zmenami v~jeho vnútri.  Na regionálnej úrovni 
-je zvlnenie ekvipotenciálnych plôch do veľkej miery spôsobené lokálnymi 
-nepravidelnosťami v~tvare telesa (napríklad pohoriami).  Práve tieto 
-skutočnosti výrazne komplikujú presný výpočet geoidu.  Podrobnejší popis 
-niektorých dôležitých vlastností ekvipotenciálnych plôch, napríklad ich 
+Z~Newtonovho integrálu~(\ref{eq:vg_body}) vieme, že gravitačné pole je dané 
+tvarom a~hustotou telesa.  Zložité nepravidelné tvary či rozloženia hustoty 
+spôsobujú lokálne zvlnenia ekvipotenciálnych plôch.  Z~globálneho pohľadu je 
+tvar ekvipotenciálnych plôch daný celkovou geometriou telesa (napríklad 
+sploštením Zeme) či rozsiahlymi hustotnými zmenami v~jeho vnútri.  Na 
+regionálnej úrovni je zvlnenie ekvipotenciálnych plôch do veľkej miery 
+spôsobené lokálnymi nepravidelnosťami v~tvare telesa (napríklad pohoriami).  
+Práve tieto skutočnosti výrazne komplikujú presný výpočet geoidu.  Podrobnejší 
+popis niektorých dôležitých vlastností ekvipotenciálnych plôch, napríklad ich 
 krivostí, je možné nájsť napríklad v~prácach \textcite{MoritzPhysicalGeodesy} 
 a~\textcite{Janak2006}.
 
@@ -1721,24 +1720,25 @@ ekvipotenciálnych plôch znamená veľkú zmenu tiažového poľa, teda veľké
 zrýchlenie, a~naopak.  Veľkosť tiažového zrýchlenia~$\| \vec g \|$ je tak 
 väčšia v~polárnych oblastiach ako v~okolí rovníka.
 
+Lokálny tvar ekvipotenciálnych plôch vplýva na mnohé geodetické merania.  
 Horizontovaním geodetického prístroja zabezpečujeme, že jeho horizontálna os 
 leží v~rovine lokálneho horizontu, ktorý je dotykovou rovinou 
-k~ekvipotenciálnej ploche prechádzajúcej stredom libely.  Z~dôvodu približne 
+k~ekvipotenciálnej ploche prechádzajúcej stredom libely.  V~rovine lokálneho 
+horizontu sú merané napríklad vodorovné smery.  Avšak z~dôvodu približne 
 sférického tvaru Zeme a~kvôli zvlneniu ekvipotenciálnych plôch nemožno vo 
 všeobecnosti predpokladať rovnobežnosť lokálnych horizontov na dvoch rôznych 
-stanoviskách.  V~rovine lokálneho horizontu sú merané napríklad vodorovné 
-smery.  Preto ak je vyžadovaná presnosť vysoká alebo ak je záujmová lokalita 
-rozsiahla alebo má zložitú topografiu, niektoré geodetické merania môže byť 
-potrebné korigovať o~vplyv nerovnobežnosti lokálnych horizontov.  Vzájomné 
-vzťahy medzi lokálnymi horizontmi je možné popísať pomocou tiažového poľa 
+stanoviskách.  Preto ak je vyžadovaná vysoká presnosť a~záujmová lokalita je 
+rozsiahla alebo má zložitú topografiu, môže byť potrebné korigovať niektoré 
+geodetické merania o~vplyv nerovnobežnosti lokálnych horizontov.  Vzájomné 
+vzťahy medzi lokálnymi horizontmi je možné popísať práve pomocou tiažového poľa 
 (pozri napríklad \cite{VanicekGeodesy} alebo \cite{MoritzPhysicalGeodesy}).  
-V~širšom zmysle môžeme povedať, že hoci mnohé geodetické merania sú postavené 
-na geometrických princípoch, uskutočňované sú v~tiažovom poli, ktoré ich 
-ovplyvňuje.  V~geodézii preto polohu bodov nemožno presne určovať bez znalosti 
-tiažového poľa.  Na druhú stranu, informácie o~tiažovom poli získavame z~meraní 
-v~bodoch, ktorých presnú polohu potrebujeme poznať.  Táto poloha musí byť preto 
-určená geodeticky.  Medzi geodetickými meraniami a~tiažovým poľom teda existuje 
-obojstranný vzájomne úzko prepojený vzťah.
+V~širšom zmysle môžeme povedať, že hoci sú mnohé geodetické merania postavené 
+na geometrických princípoch, uskutočňujeme ich pod vplyvom tiažového poľa.  
+V~geodézii preto polohu bodov nemožno presne určovať bez znalosti tiažového 
+poľa.  Na druhej strane, údaje o~tiažovom poli získavame z~meraní v~bodoch, 
+ktorých presnú polohu musíme poznať.  Túto polohu však určujeme opäť len tými 
+geodetickými metódami, ktoré vyžadujú znalosť tiažového poľa.  Táto cyklickosť 
+demonštruje úzko prepojený vzťah medzi geodetickými meraniami a~tiažovým poľom.
 
 \subsubsection{Tiažnica}
 \label{sec:plumbline}
