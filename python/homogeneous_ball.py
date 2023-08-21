@@ -17,7 +17,7 @@ GM = G * M  # Geocentrická gravitačná konštanta ("m**3 * s**-2")
 ri = np.arange(0.0, np.floor(R / dr) * dr + dr, dr, dtype=np.float64)
 ro = np.arange(np.ceil(R / dr) * dr, rmax + dr, dtype=np.float64)
 
-# Gravitačný potenciál a gravitačné zrýchlenie vo vnutri gule
+# Gravitačný potenciál a gravitačné zrýchlenie vo vnútri gule
 Vgi = (GM / 2.0) * (3.0 / R - ri**2 / R**3)
 ggi = (GM / R**3) * ri
 
@@ -57,7 +57,7 @@ ylim = ax2.get_ylim()
 ax2.set_ylim(ylim)
 ax2.set_xlim([0, rmax])
 
-# Vyznačenie oblasti vo vnútri homogennej gule
+# Vyznačenie oblasti vo vnútri homogénnej gule
 ax2.axhspan(ylim[0], ylim[1], xmin=0, xmax=R / rmax, facecolor='0', alpha=0.15)
 
 ax1.set_xlabel('$r \ (\mathrm{m})$')

@@ -25,7 +25,7 @@ if k >= 0:
 else:
     ynk = pnk * np.sin(np.abs(k) * lon)
 
-# Odstránenie Condonovho--Shortleyho fázového faktora
+# Odstránenie Condonovho-Shortleyho fázového faktora
 ynk *= (-1)**np.abs(k)
 
 # Sprievodič
@@ -37,12 +37,12 @@ if zobrazenie_3d:
     # oscilácií sférických harmonických funkcií tak, aby bol zreteľný
     # zobrazovaný tvar.  Člen "ynk / np.abs(ynk).max()" zabezpečuje, že
     # hodnoty "ynk" sa budú nachádzať v jednotnom intervale "[-1.0, 1.0]" pre
-    # ľuboľné "n" a "k", čo je opäť výhodné pre vizualizačné účely.
+    # ľubovoľné "n" a "k", čo je opäť výhodné pre vizualizačné účely.
     r = 1.0 + 0.5 * ynk / np.abs(ynk).max()
 else:
     r = 1.0  # Zobrazenie na jednotkovej sfére
 
-# Transformácia sférických súradnic na pravouhlé suradnice
+# Transformácia sférických súradníc na pravouhlé súradnice
 x = r * np.cos(lat) * np.cos(lon)
 y = r * np.cos(lat) * np.sin(lon)
 z = r * np.sin(lat)
@@ -58,7 +58,7 @@ ax.set_axis_off()
 ax.set_rasterized(True)
 plt.tight_layout(pad=-2.0)
 
-# Nazov výstupného súboru
+# Názov výstupného súboru
 fileout = f'./fig-spherical-harmonic-n{n}-k{k}'
 if zobrazenie_3d:
     fileout += '-3d'

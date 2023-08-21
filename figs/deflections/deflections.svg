@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="150mm"
    height="115mm"
    viewBox="0 0 150 115"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   sodipodi:docname="deflections.svg">
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="deflections.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <marker
@@ -618,7 +617,7 @@
        only_selected="false" />
     <linearGradient
        id="linearGradient1205"
-       osb:paint="solid">
+       inkscape:swatch="solid">
       <stop
          style="stop-color:#000000;stop-opacity:1;"
          offset="0"
@@ -1702,23 +1701,26 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="218.44783"
-     inkscape:cy="290.05929"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="281.07495"
+     inkscape:cy="239.35565"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="3828"
-     inkscape:window-height="2087"
+     inkscape:window-width="2548"
+     inkscape:window-height="1518"
      inkscape:window-x="0"
-     inkscape:window-y="30"
+     inkscape:window-y="34"
      inkscape:window-maximized="1"
      inkscape:snap-text-baseline="false"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-intersection-paths="true"
      inkscape:object-paths="true"
-     inkscape:snap-midpoints="true" />
+     inkscape:snap-midpoints="true"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -1931,7 +1933,7 @@
          x="103.12842"
          y="60.73204"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76389px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
-         id="tspan1508-8-3-5-4">Teluroid $(U \neq \textrm{kon\v{s}t.})$</tspan></text>
+         id="tspan1508-8-3-5-4">teluroid $(U \neq \textrm{kon\v{s}t.})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.56727px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
@@ -1964,7 +1966,7 @@
          x="102.84408"
          y="46.506062"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.76389px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
-         id="tspan1508-8-3">Povrch Zeme $(W \neq \textrm{kon\v{s}t.})$</tspan></text>
+         id="tspan1508-8-3">povrch Zeme $(W \neq \textrm{kon\v{s}t.})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.56727px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
@@ -1997,7 +1999,7 @@
          x="103.26281"
          y="102.81325"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.05382px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
-         id="tspan1508-8-3-8">Ekvipotenci\'alny</tspan><tspan
+         id="tspan1508-8-3-8">ekvipotenci\'alny</tspan><tspan
          sodipodi:role="line"
          x="103.26281"
          y="105.38052"
@@ -2024,7 +2026,7 @@
          x="103.08026"
          y="93.879013"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.05382px;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor';stroke-width:0.38509"
-         id="tspan1508-8-3-5">Geoid $(W_0 = \textrm{kon\v{s}t.})$</tspan></text>
+         id="tspan1508-8-3-5">geoid $(W_0 = \textrm{kon\v{s}t.})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
@@ -2055,11 +2057,11 @@
     <text
        xml:space="preserve"
        id="text2570"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2572);fill:#000000;fill-opacity:1;stroke:none;" />
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2572);fill:#000000;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
        id="text2576"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2578);fill:#000000;fill-opacity:1;stroke:none;" />
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect2578);fill:#000000;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
        style="font-size:4.10763px;line-height:1.25;font-family:'TeX Gyre Adventor';-inkscape-font-specification:'TeX Gyre Adventor, Normal';letter-spacing:0px;word-spacing:0px;display:inline;stroke-width:0.38509"
