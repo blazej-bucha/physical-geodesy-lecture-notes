@@ -4,8 +4,7 @@ latex/lecture-notes.blg
 latex/lecture-notes.bcf
 latex/lecture-notes.log
 latex/lecture-notes.out
+latex/lecture-notes.pdf
 latex/lecture-notes.toc
 latex/lecture-notes.run.xml
 latex/lecture-notes.synctex.gz
-*.pdf
-*.pdf_tex

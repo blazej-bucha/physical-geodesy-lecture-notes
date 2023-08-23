@@ -1,0 +1,80 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'fig-deflections.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{410.3118744bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.71712954)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig-deflections.pdf}}%
+    \put(0.69981909,0.31166138){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}teluroid $(U \neq \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.69648532,0.46374187){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$W(P) =\textrm{kon\v{s}t.}$\end{tabular}}}}%
+    \put(0.38543955,0.53012391){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0.69785472,0.40994177){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}povrch Zeme $(W \neq \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.6997999,0.37140341){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$U(Q) = W(P) = \textrm{kon\v{s}t.}$\end{tabular}}}}%
+    \put(0.35140935,0.69400766){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$n_e^{P}$\end{tabular}}}}%
+    \put(0.70074753,0.02094274){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ekvipotenci\'alny\\elipsoid $(U_0 = W_0 = \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.33887984,0.40949668){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q$\end{tabular}}}}%
+    \put(0.6994864,0.08266503){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}geoid $(W_0 = \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.20357633,0.14675622){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P_0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig-deflections.pdf}}%
+    \put(0.19384306,0.37075925){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_W^P=t_W^{P_0}$\end{tabular}}}}%
+    \put(0.24589513,0.63604144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Theta^\textrm{Helmert}$\end{tabular}}}}%
+    \put(0.22395067,0.49367451){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Theta^\textrm{Molodenskij}$\end{tabular}}}}%
+    \put(0.11930749,0.2034164){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Theta^\textrm{Pizzetti}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig-deflections.pdf}}%
+    \put(0.21318534,0.26564738){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$n_e^{P_0}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig-deflections.pdf}}%
+    \put(0.39401416,0.69414367){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$n_U^{P}$\end{tabular}}}}%
+    \put(0.35749762,0.02729919){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_0$\end{tabular}}}}%
+    \put(0.43702998,0.69389144){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z_W^{P}$\end{tabular}}}}%
+    \put(0.27524233,0.25752189){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z_W^{P_0}$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

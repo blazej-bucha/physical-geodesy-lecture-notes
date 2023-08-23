@@ -1,0 +1,76 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'fig-gravity-anomaly.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{410.3118744bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.87001032)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig-gravity-anomaly.pdf}}%
+    \put(0.69981909,0.46411918){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}teluroid $(U \neq \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.69648532,0.61619967){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$W(P) =\textrm{kon\v{s}t.}$\end{tabular}}}}%
+    \put(0.38543955,0.68258171){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0.69785472,0.56239957){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}povrch Zeme $(W \neq \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.6997999,0.52386122){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$U(Q) = W(P) = \textrm{kon\v{s}t.}$\end{tabular}}}}%
+    \put(0.2151997,0.45895066){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{g}(P)$\end{tabular}}}}%
+    \put(0.26976999,0.37209007){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\boldsymbol \gamma(Q)$\end{tabular}}}}%
+    \put(0.35140935,0.84646546){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$n_e$\end{tabular}}}}%
+    \put(0.70074753,0.17340054){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}ekvipotenci\'alny\\elipsoid $(U_0 = W_0 = \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.32823579,0.56306635){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q$\end{tabular}}}}%
+    \put(0.29288526,0.18210734){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_0$\end{tabular}}}}%
+    \put(0.6994864,0.23512283){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}geoid $(W_0 = \textrm{kon\v{s}t.})$\end{tabular}}}}%
+    \put(0.14204713,0.14467258){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{g}(P_0)$\end{tabular}}}}%
+    \put(0.34054788,0.08631136){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\boldsymbol \gamma(Q_0)$\end{tabular}}}}%
+    \put(0.20824739,0.29921402){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P_0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig-gravity-anomaly.pdf}}%
+    \put(0.44966725,0.84686602){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_W$\end{tabular}}}}%
+    \put(0.39760519,0.84702445){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_U$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

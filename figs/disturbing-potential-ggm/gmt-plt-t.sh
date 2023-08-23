@@ -64,7 +64,7 @@ colorbar_pos="h"
 
 
 # Some further GMT stuff
-gmt gmtset PAPER_MEDIA Custom_12cx7c
+gmt gmtset PAPER_MEDIA Custom_12cx13.5c
 gmt gmtset MAP_ORIGIN_X 0c
 gmt gmtset MAP_ORIGIN_Y 0c
 gmt gmtset ANNOT_FONT_SIZE_PRIMARY 8p
@@ -83,14 +83,15 @@ gmt gmtset TICK_LENGTH 0.075c
 
 # GMT plotting
 # ====================================================================
-for file in `ls disturbing-potential-*.txt`
+
+# Input and output files (no suffices)
+outfile=$outfile_prefix"disturbing-potential"
+infile="disturbing-potential-on-grs80 disturbing-potential-at-450km"
+
+
+for file in $infile
 do
-    # Prepare the input and output file names (no suffices)
-    infile=$(basename $file ".txt")
-    outfile=$outfile_prefix$infile
-
-
-    echo "Plotting $infile.txt..."
+    echo "Plotting $file.txt..."
 
 
     # Color pallet table file (deleted at the end of the script)
@@ -99,7 +100,7 @@ do
 
     # Create a GMT GRD file to be plotted
     grdfile="plt-tmp.grd"
-    gmt xyz2grd $infile.txt -G$grdfile -R$region -rg -I0.25/0.25 -fg -:
+    gmt xyz2grd $file.txt -G$grdfile -R$region -rg -I0.25/0.25 -fg -:
 
 
     # Create a shading effect
@@ -110,36 +111,55 @@ do
     gmt grd2cpt $grdfile -C$colorscale -S$colorscale_lims -Z > $cptfile
 
 
-    # Plot the grid
-    gmt grdimage $grdfile \
-                 -C$cptfile \
-                 -R$region \
-                 -J$proj \
-                 -B$geogrd \
-                 -Ishading.int \
-                 -K \
-                 -X0.6c \
-                 -Y1.2c \
-                 -E200 \
-                 -Q \
-                 -P > $outfile.ps
+    if [ $file = "disturbing-potential-on-grs80" ]
+    then
+        # Plot the grid
+        gmt grdimage $grdfile \
+                     -C$cptfile \
+                     -R$region \
+                     -J$proj \
+                     -B$geogrd \
+                     -Ishading.int \
+                     -K \
+                     -X0.6c \
+                     -Y7.8c \
+                     -E200 \
+                     -Q \
+                     -P > $outfile.ps
+    else
+        # Plot the grid
+        gmt grdimage $grdfile \
+                     -C$cptfile \
+                     -R$region \
+                     -J$proj \
+                     -B$geogrd \
+                     -Ishading.int \
+                     -O \
+                     -K \
+                     -X0.0c \
+                     -Y-6.5c \
+                     -E200 \
+                     -Q \
+                     -P >> $outfile.ps
 
 
-    # Add the colorbar
-    gmt psscale -C$cptfile \
-                -D$colorbar_loc$colorbar_pos \
-                -G$colorbar_minmax \
-                -B$colorbar_step/:$colorbar_label: \
-                -Y-0.0c \
-                -O >> $outfile.ps
+        # Add the colorbar
+        gmt psscale -C$cptfile \
+                    -D$colorbar_loc$colorbar_pos \
+                    -G$colorbar_minmax \
+                    -B$colorbar_step/:$colorbar_label: \
+                    -Y-0.0c \
+                    -O >> $outfile.ps
+    fi
 
-
-    # Convert the output "ps" file to the "pdf" format.
-    gmt psconvert $outfile.ps -P -Tf
-
-
-    rm $outfile.ps
 done
+
+
+# Convert the output "ps" file to the "pdf" format.
+gmt psconvert $outfile.ps -P -Tf
+
+
+rm $outfile.ps
 
 # ====================================================================
 

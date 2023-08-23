@@ -1,0 +1,74 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'fig-total-differential.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{295.23245243bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.66747822)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig-total-differential.pdf}}%
+    \put(0.7667376,0.32190076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$W(P) =\textrm{kon\v{s}t.}$\end{tabular}}}}%
+    \put(0.39949622,0.39709657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0.76879367,0.26875652){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}povrch Zeme ($W \neq \textrm{kon\v{s}t.}$)\end{tabular}}}}%
+    \put(0.25359073,0.19623166){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbf{g}(P)$\end{tabular}}}}%
+    \put(0.49849809,0.64400078){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}tia\v{z}nica\end{tabular}}}}%
+    \put(0.42969883,0.30922479){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{d}\mathbf{x}_5$\end{tabular}}}}%
+    \put(0.28752391,0.42878487){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{d}\mathbf{x}_2$\end{tabular}}}}%
+    \put(0.42160471,0.4516449){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{d}\mathbf{x}_3$\end{tabular}}}}%
+    \put(0.30222781,0.32256483){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{d}\mathbf{x}_1$\end{tabular}}}}%
+    \put(0.45725257,0.39209803){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathrm{d}\mathbf{x}_4$\end{tabular}}}}%
+    \put(0.45995699,0.57328742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B$\end{tabular}}}}%
+    \put(0.34882859,0.1305882){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
+    \put(0.34257378,0.08704387){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P_0$\end{tabular}}}}%
+    \put(0.76987627,0.00306199){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}geoid ($W_0 = \textrm{kon\v{s}t.}$)\end{tabular}}}}%
+    \put(0.77756511,0.52110483){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$W(B)$\end{tabular}}}}%
+    \put(0.76778827,0.04937818){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$W(A)$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

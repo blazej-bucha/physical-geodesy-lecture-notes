@@ -12,6 +12,17 @@ the normal and the disturbing gravity field, after which the basic concepts of
 the geoid determination are discussed.
 
 
+# Compilation
+
+```bash
+git clone https://github.com/blazej-bucha/physical-geodesy-lecture-notes
+cd physical-geodesy-lecture-notes/latex
+pdflatex lecture-notes.tex
+biber lecture-notes.bcf
+pdflatex lecture-notes.tex
+```
+
+
 # Notes
 
 * The textbook is written in LaTeX using UTF-8 encoding.
@@ -22,8 +33,6 @@ the geoid determination are discussed.
 
 * The numerical examples are written in Python (require NumPy, Matplotlib and
   SciPy) and MATLAB.
-
-Work in progress.
 
 
 # Contributing
