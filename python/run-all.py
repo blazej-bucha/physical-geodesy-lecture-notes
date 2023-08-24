@@ -1,5 +1,5 @@
-# Runs all Python files from this folder (except for this of course) and then
-# moves all PDF files from this folder to "../latex".
+# Runs all Python files from this folder (except for this one of course) and
+# then moves all PDF files from this folder to "../latex".
 
 
 import os

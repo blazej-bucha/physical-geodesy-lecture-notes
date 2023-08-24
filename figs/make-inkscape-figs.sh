@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# DESCRIPTION:  Generates "pdf" and "pdf_tex" from all inkscape files within
-# the directories in this folder.
+# DESCRIPTION:  Generates "pdf" and "pdf_tex" from all inkscape files stored
+# within the directories of this folder.
 
 
 set -e
