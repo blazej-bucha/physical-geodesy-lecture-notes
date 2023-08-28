@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.0.2 (e86c870879, 2021-01-15), www.inkscape.org
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'fig-gg-n-point-masses.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{223.44715265bp}%
+    \setlength{\unitlength}{223.44726078bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,22 +50,22 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.71373685)%
+  \begin{picture}(1,0.70901053)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{fig-gg-n-point-masses.pdf}}%
-    \put(0.31078972,0.48522711){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,1}$\end{tabular}}}}%
+    \put(0.31599355,0.49530293){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,1}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{fig-gg-n-point-masses.pdf}}%
-    \put(-0.00171853,0.38537481){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_5$\end{tabular}}}}%
-    \put(0.0540454,0.04161644){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_4$\end{tabular}}}}%
-    \put(0.59555942,0.0095056){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_3$\end{tabular}}}}%
-    \put(0.82719002,0.3352713){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_2$\end{tabular}}}}%
-    \put(0.43104971,0.67238482){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_1$\end{tabular}}}}%
-    \put(0.40434767,0.41833556){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
-    \put(0.55753391,0.43132765){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,2}$\end{tabular}}}}%
-    \put(0.16507856,0.38604648){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,5}$\end{tabular}}}}%
-    \put(0.18761943,0.30237242){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,4}$\end{tabular}}}}%
-    \put(0.50500357,0.27215757){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,3}$\end{tabular}}}}%
-    \put(0.34109146,0.26083942){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g}$\end{tabular}}}}%
+    \put(-0.00171852,0.38537462){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_5$\end{tabular}}}}%
+    \put(0.04797345,0.0379203){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_4$\end{tabular}}}}%
+    \put(0.59053941,0.00950559){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_3$\end{tabular}}}}%
+    \put(0.82718962,0.33527114){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_2$\end{tabular}}}}%
+    \put(0.4310495,0.66765852){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Q_1$\end{tabular}}}}%
+    \put(0.40434747,0.41833536){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0.55753364,0.43132744){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,2}$\end{tabular}}}}%
+    \put(0.16722423,0.38757895){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,5}$\end{tabular}}}}%
+    \put(0.18761934,0.30237227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,4}$\end{tabular}}}}%
+    \put(0.50880054,0.2608393){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g,3}$\end{tabular}}}}%
+    \put(0.3410913,0.2608393){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\textbf{g}_{\mathrm g}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -4,6 +4,7 @@
 %
 %
 % Author:   Blazej Bucha
+% Title:    Physical Geodesy
 % Year:     2023
 % Contact:  blazej.bucha@stuba.sk
 % Encoding: UTF-8
@@ -640,7 +641,7 @@ zrýchlenia všeobecného telesa (napríklad Zeme) v~ľubovoľnom bode~$P$ (napr
 v~ťažisku družice), pretože správne zohľadňuje tvar telesa a~rozloženie jeho 
 hustoty.
 
-V~širšom zmysle je gravitačné zrýchlenie možné odmerať, preto má pre fyzikálnu 
+V~širšom zmysle je možné gravitačné zrýchlenie odmerať, preto má pre fyzikálnu 
 geodéziu kľúčový význam.  V~sústave jednotiek SI má jednotku~$\mathrm{m}\ 
 \mathrm{s}^{-2}$.  Veľmi často sa stretneme aj s~jednotkou~$1\ \mathrm{Gal} 
 = 10^{-2}\ \mathrm{m}\ \mathrm{s}^{-2}$, ktorá je pomenovaná podľa Galilea 
@@ -1275,7 +1276,7 @@ ktorého prvky popisujú zmenu gravitačného potenciálu v~bode~$P$ v~smere
 súradnicových osí~$x^\mathrm{s}, y^\mathrm{s}, z^\mathrm{s}$.
 
 Laplaceova rovnica pre gravitačný potenciál má vo sférických súradniciach tvar 
-(Príloha~\ref{app:laplace_in_spherical_coordinates})
+(Príloha~\ref{app:laplace_in_spherical_system})
 %
 \begin{equation}
 \label{eq:vg_laplace_sph}
@@ -1286,7 +1287,7 @@ V_\gidx}{\partial \varphi} \right) + \frac{1}{r^2 \,
 \cos^2\varphi}\frac{\partial^2 V_\gidx}{\partial \lambda^2} = 0{.}
 \end{equation}
 %
-Deriváciou oboch členov v~zátvorkách môžeme zapísať Laplaceovu rovnicu aj 
+Deriváciou oboch súčinov v~zátvorkách môžeme zapísať Laplaceovu rovnicu aj 
 v~tvare
 %
 \begin{equation}
@@ -2713,7 +2714,7 @@ nazýva \emph{ortometrická výška} a~udáva dĺžku tiažnice od geoidu po bod
 (Obrázky~\ref{fig:equipotential_surfaces} a~\ref{fig:total_differential}).
 
 Z~Kapitoly~\ref{sec:potential_differences} vieme, že geopotenciálnu kótu~$C$ je 
-možné odmerať nepriamo pomocou nivelácie a~gravimetrie.  Na výpočet 
+možné nepriamo odmerať pomocou nivelácie a~gravimetrie.  Na výpočet 
 ortometrickej výšky vzťahom~(\ref{eq:orthometric_height_2}) by preto malo 
 postačovať určiť už iba priemernú hodnotu tiažového zrýchlenia~$\bar{g}$ pozdĺž 
 tiažnice od geoidu po bod, ktorého výšku chceme získať.  Exaktný výpočet 
@@ -2749,8 +2750,8 @@ H^\mathrm{HO} = \frac{C}{g + 0.0424\ \mathrm{mGal} \, \mathrm{m}^{-1}
 Vzťah~$g + 0.0424\ \mathrm{mGal} \, \mathrm{m}^{-1}$ sa nazýva 
 \emph{Poincarého-Preyova} redukcia tiažového zrýchlenia a~aproximuje skutočné 
 tiažové zrýchlenie \emph{v~hmotách}.  Symbol~$g$ označuje tiažové zrýchlenie na 
-povrchu Zeme.  Konštanta~$0.0424\ \mathrm{mGal} \, \mathrm{m}^{-1}$ bola 
-vypočítaná pre strednú hustotu hmôt nad geoidom s~použitím hustoty~$2670\ 
+povrchu Zeme v~bode, ktorého výšku určujeme.  Konštanta~$0.0424\ \mathrm{mGal} 
+\, \mathrm{m}^{-1}$ bola vypočítaná pre strednú hustotu hmôt nad geoidom~$2670\ 
 \mathrm{kg} \ \mathrm{m}^{-3}$ \parencite[pre odvodenie pozri 
 napríklad][]{Jekeli2000a,MoritzPhysicalGeodesy,SansoGeodeticHeights}.
 
@@ -2786,7 +2787,7 @@ fyzikálna veličina, ktorá nemá geometrickú interpretáciu
 \parencite{Jekeli2000a}.
 
 Vidíme, že koncept výšky bez uváženia geometrie je nepraktický.  Takéto výšky 
-sú použiteľné nanajvýš na regionálnej úrovni, kde tieto nedostatky dosahujú 
+sú použiteľné nanajvýš na regionálnej úrovni, kde dosahujú tieto nedostatky 
 zanedbateľné vplyvy voči presnosti geodetických meraní.  V~nasledujúcej 
 kapitole sa presvedčíme, že to isté platí aj o~výškach, ktoré neberú do úvahy 
 tiažové pole.
@@ -6285,7 +6286,7 @@ ktoré nevyžadujú vysokú presnosť, je niekedy možné aproximovať
 \end{equation}
 %
 Tento vzťah je užitočné poznať, pretože normálne tiažové pole je volené tak, 
-aby $\partial g \slash \partial h \approx \partial \gamma \slash \partial h$.  
+aby $\partial \gamma \slash \partial h \approx \partial g \slash \partial h$.  
 Vzťah~(\ref{eq:ddgama_ddh_approx}) tak umožňuje vypočítať približnú zmenu 
 skutočného tiažového zrýchlenia~$g$ s~výškou~$h$ na povrchu Zeme.  Pre 
 názornosť uveďme, že podľa rovnice~(\ref{eq:ddgama_ddh_approx}) klesne skutočné 
@@ -6302,8 +6303,8 @@ gradientu skutočného tiažového zrýchlenia \parencite{Vajda2020a}.
 
 Výhodou Taylorovho rozvoja~(\ref{eq:gamma_taylor}) je jeho jednoduchosť a~veľké 
 praktické vyžitie.  Za nevýhodu možno v~niektorých situáciách považovať to, že 
-umožňuje vypočítať iba veľkosť vektora $\| \gamma(\phi, h) \|$, nie celý 
-vektor~$\boldsymbol \gamma(\phi, h)$, resp. jeho jednotlivé prvky.
+umožňuje vypočítať iba veľkosť vektora $\| \boldsymbol\gamma(\phi, h) \|$, 
+a~nie celý vektor~$\boldsymbol \gamma(\phi, h)$, resp. jeho jednotlivé prvky.
 
 
 
