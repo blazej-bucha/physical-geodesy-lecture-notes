@@ -6995,7 +6995,7 @@ Okrem poruchy tiažového zrýchlenia~$\delta \vec g(P)$
 (Kapitola~\ref{sec:gravity_disturbance}) je s~tiažovým zrýchlením spojená aj 
 anomália tiažového zrýchlenia~$\Delta \vec g(P)$.  \emph{Vektorová anomália 
 tiažového zrýchlenia} je daná rozdielom skutočného tiažového zrýchlenia~$\vec 
-g(P)$ v~bode~$P$ na povrchu Zeme alebo mimo Zeme a~normálneho tiažového 
+g(P)$ v~bode~$P$ na povrchu Zeme alebo mimo nej a~normálneho tiažového 
 zrýchlenia~$\boldsymbol\gamma(Q)$ \emph{v~bode~$Q$} 
 (Obrázok~\ref{fig:gravity_anomaly}),
 %
@@ -7027,24 +7027,24 @@ približne od~$-100$~m do~$100$~m, podobne ako výška geoidu nad referenčným
 elipsoidom (pozri Kapitolu~\ref{sec:disturbing_field_deflections}).  
 \emph{Teluroid nie je ekvipotenciálna plocha}.
 
-Dôvod zavedenia anomálie tiažového zrýchlenia je najmä historický.  Ak chceme 
-určiť \emph{poruchu tiažového zrýchlenia} v~bode~$P$, je potrebné odmerať 
-jednak tiažové zrýchlenie~$g(P)$, ale tiež elipsoidickú šírku a~elipsoidickú 
-výšku bodu~$P$.  Znalosť polohy je nutná na výpočet normálneho tiažového 
-zrýchlenia v~bode merania (Kapitola~\ref{sec:normal_gravity_field}).  
-V~súčasnosti už môže byť elipsoidická výška jednoducho odmeraná GNSS metódami.  
-V~preddružicovej ére však bolo možné použiť iba niveláciu, ktorou určujeme 
-fyzikálne výšky, napríklad výšku definovanú dĺžkou normálnej tiažnice~$t_U$ 
-medzi bodmi~$Q_0$ a~$Q$ (Obrázok~\ref{fig:gravity_anomaly}).  Táto výška sa 
-nazýva \emph{normálna výška podľa Molodenského}~$H^\mathrm{N}$ 
+Dôvod zavedenia anomálie tiažového zrýchlenia je najmä historický.  Na určenie 
+\emph{poruchy tiažového zrýchlenia} v~bode~$P$ je potrebné poznať jednak 
+tiažové zrýchlenie~$g(P)$, ale tiež elipsoidickú šírku a~elipsoidickú výšku 
+bodu~$P$.  Znalosť polohy je nutná na výpočet normálneho tiažového zrýchlenia 
+v~bode merania (Kapitola~\ref{sec:normal_gravity_field}).  V~súčasnosti už môže 
+byť elipsoidická výška jednoducho určená pomocou GNSS meraní.  V~preddružicovej 
+ére však bolo možné použiť iba niveláciu, ktorou určujeme fyzikálne výšky, 
+napríklad výšku definovanú dĺžkou normálnej tiažnice~$t_U$ medzi bodmi~$Q_0$ 
+a~$Q$ (Obrázok~\ref{fig:gravity_anomaly}).  Táto výška sa nazýva \emph{normálna 
+výška podľa Molodenského}~$H^\mathrm{N}$ 
 \parencite{MoritzPhysicalGeodesy}.\footnote{Niveláciou je možné určiť aj iné 
 typy fyzikálnych výšok \parencite[pozri][]{MoritzPhysicalGeodesy}.}  Normálne 
-tiažové zrýchlenie tak bolo možné vypočítať iba v~bode~$Q$ 
-z~výšky~$H^\mathrm{N}$ určenej niveláciou, čím vznikla \emph{anomália tiažového 
-zrýchlenia}.  Vzhľadom na súčasnú dostupnosť GNSS je možné očakávať, že 
-v~budúcnosti bude vo fyzikálnej geodézii dominovať porucha tiažového zrýchlenia 
-\parencite{MoritzPhysicalGeodesy}.  V~súčasnosti sa bežne stretávame s~poruchou 
-tiažového zrýchlenia aj s~anomáliou tiažového zrýchlenia.
+tiažové zrýchlenie tak nebolo možné vypočítať vo výške~$h$ nad ekvipotenciálnym 
+elipsoidom (bod~$P$), ale iba vo výške~$H^\mathrm{N}$ (bod~$Q$), čím vznikla 
+\emph{anomália tiažového zrýchlenia}.  Vzhľadom na súčasnú dostupnosť GNSS je 
+možné očakávať, že v~budúcnosti bude vo fyzikálnej geodézii dominovať porucha 
+tiažového zrýchlenia \parencite{MoritzPhysicalGeodesy}.  V~súčasnosti sa bežne 
+stretávame s~poruchou tiažového zrýchlenia aj s~anomáliou tiažového zrýchlenia.
 
 \begin{figure}[bt]
 \centering
@@ -7058,10 +7058,9 @@ a~$Q$ (pozri Obrázok~\ref{fig:gravity_anomaly}).}
 \label{fig:heights}
 \end{figure}
 
-Hoci sú vektory~$\vec g$ a~$\boldsymbol\gamma$ dané 
-v~rovnici~(\ref{eq:Dg_vector_earth}) v~dvoch rôznych bodoch, vektor~$\Delta 
-\vec g$ budeme formálne pripisovať bodu~$P$, čomu zodpovedá zápis~$\Delta \vec 
-g(P)$.
+Hoci rovnica~(\ref{eq:Dg_vector_earth}) predpokladá vektory~$\vec g$ 
+a~$\boldsymbol\gamma$ v~dvoch rôznych bodoch, vektor~$\Delta \vec g$ budeme 
+formálne pripisovať bodu~$P$, čomu zodpovedá zápis~$\Delta \vec g(P)$.
 
 Vektorová anomália tiažového zrýchlenia môže byť definovaná aj na geoide 
 (Obrázok~\ref{fig:gravity_anomaly}),
@@ -7106,8 +7105,8 @@ Podobne ako v~súvislosti so skalárnou poruchou tiažového zrýchlenia
 \| \Delta \vec g(P_0) \| \neq \Delta g(P_0){.}
 \end{equation}
 
-Anomália tiažového zrýchlenia sa udáva väčšinou v~jednotke~mGal.  Anomália 
-a~porucha tiažového zrýchlenia patria medzi základné merateľné veličiny 
+Anomália tiažového zrýchlenia sa udáva väčšinou v~jednotke~mGal.  Spolu 
+s~poruchou tiažového zrýchlenia patrí medzi základné merateľné veličiny 
 fyzikálnej geodézie, z~ktorých určujeme tvar Zeme.  Veličiny~$\Delta \vec 
 g(P)$, $\Delta g(P)$, $\delta \vec g(P)$, $\delta g(P)$ sa využívajú prevažne 
 na určenie výškovej anomálie~$\zeta$, ktorá je spätá s~normálnou výškou podľa 
@@ -7124,7 +7123,7 @@ potenciálom, podobne ako sme našli vzťah medzi skalárnou poruchou tiažovéh
 zrýchlenia a poruchovým potenciálom (rovnica~\ref{eq:dg_normals}).  Tentokrát 
 situáciu komplikuje rozdielna poloha bodov~$P$~a~$Q$, resp.~$P_0$~a~$Q_0$ 
 a~zakrivenie normálnej tiažnice (Obrázok~\ref{fig:gravity_anomaly}).  Úlohu si 
-výrazne zjednodušíme linearizáciou problému a~využitím elipsoidickej 
+výrazne zjednodušíme linearizáciou problému a~s~využitím elipsoidickej 
 aproximácie z~Obrázku~\ref{fig:heights}.  Obe aproximácie sú postačujúce pre 
 praktické aplikácie \parencite{MoritzAdvancedGeodesy}.  Následne odvodíme vzťah 
 medzi oboma veličinami vo sférickej aproximácii.  Exaktné riešenie bolo nájdené 
@@ -7395,7 +7394,7 @@ Anomália tiažového zrýchlenia, ktorú sme definovali
 vzťahmi~(\ref{eq:Dg_vector_earth}) a~(\ref{eq:Dg_scalar_earth}), sa 
 v~literatúre nazýva aj \emph{povrchová anomália tiažového zrýchlenia vo voľnom 
 vzduchu} \parencite{SansoGeoidDetermination}.  V~tejto kapitole ju budeme 
-označovať symbolom~$\Delta g_{\mathrm{vv}}(P)$.  Okrem nej sa často môžeme 
+označovať symbolom~$\Delta g_{\mathrm{vv}}(P)$.  Okrem nej sa môžeme často 
 stretnúť aj s~\emph{anomáliou tiažového zrýchlenia vo voľnom vzduchu na 
 geoide}~$\Delta g_{\mathrm{vv}}(P_0)$ a~s~\emph{Bouguerovou anomáliou tiažového 
 zrýchlenia}~$\Delta g_{\mathrm{B}}(P)$.  V~tejto kapitole stručne popíšeme nové 
@@ -7452,7 +7451,7 @@ získavajú napríklad pomocou regularizácie zemského telesa (pozri
 Kapitolu~\ref{sec:disturbing_potential}).
 
 Druhá veličina, \emph{Bouguerova anomália tiažového zrýchlenia}~$\Delta 
-g_{\mathrm{B}}(P)$ \parencite{MoritzPhysicalGeodesy}, získala názov po 
+g_{\mathrm{B}}(P)$ \parencite{MoritzPhysicalGeodesy}, dostala názov po 
 P.~Bouguerovi (1698~-- 1758), francúzskom matematikovi, geofyzikovi, geodetovi 
 a~astronómovi.  Využíva sa najmä v~geofyzike na detekciu podpovrchových 
 hustotných kontrastov.  Na jej získanie je potrebné vypočítať gravitačný účinok 
@@ -7573,24 +7572,24 @@ systémov do bodu~$P$, v~ktorom určujeme zvislicovú odchýlku, získame situá
 znázornenú na Obrázku~\ref{fig:deflections_unit_sphere}.
 
 Zvislicovú odchýlku je možné popísať rozličnými spôsobmi, z~ktorých dva sú 
-obzvlášť výhodné (Obrázok~\ref{fig:deflections_unit_sphere}).  Jeden využíva 
-veľkosť uhlového vychýlenia~$\Theta$ medzi skutočnou zvislicou a~referenčným 
-smerom a~azimut~$\alpha$, ktorý udáva smer vychýlenia v~rovine lokálneho 
-horizontu.  Druhý prístup rozkladá zvislicovú odchýlku do dvoch kolmých smerov.  
-Jedna zložka popisuje priemet zvislicovej odchýlky do~roviny meridiánu; budeme 
-ju označovať symbolom~$\xi$.  Druhá zložka popisuje priemet zvislicovej 
-odchýlky do~roviny prvého vertikálu; označovať ju budeme symbolom~$\eta$.
+obzvlášť výhodné (Obrázok~\ref{fig:deflections_unit_sphere}).  Prvý prístup 
+využíva veľkosť uhlového vychýlenia~$\Theta$ medzi skutočnou zvislicou 
+a~referenčným smerom a~azimut~$\alpha$, ktorý udáva smer vychýlenia v~rovine 
+lokálneho horizontu.  Druhý spôsob rozkladá zvislicovú odchýlku do dvoch 
+kolmých smerov.  Jedna zložka~$\xi$ popisuje priemet zvislicovej odchýlky 
+do~roviny meridiánu a~druhá zložka~$\eta$ popisuje priemet zvislicovej odchýlky 
+do~roviny prvého vertikálu.
 
 \begin{figure}[bt]
 \centering
 \input{./fig-deflections-unit-sphere.pdf_tex}
-\caption{Vektor zvislicovej odchýlky~$\boldsymbol\Theta$ na jednotkovej sfére 
-so stredom v~bode~$P$, v~ktorom je určovaná zvislicová odchýlka.  Zvislicová 
-odchýlka je znázornená v~podobe 1)~veľkosti~$\Theta = \| \boldsymbol\Theta \|$ 
-a~azimutu~$\alpha$ a~2)~pravouhlých priemetov~$\xi$ a~$\eta$ do meridiánovej 
-roviny a~do roviny prvého vertikálu.  Symboly~$\Phi$ a~$\Lambda$ označujú 
-astronomické súradnice bodu~$P$, v~ktorom je určovaná zvislicová odchýlka 
-(pozri Obrázok~\ref{fig:deflections}).  Symboly~$\phi$ a~$\lambda$ označujú 
+\caption{Zvislicová odchýlka na jednotkovej sfére so stredom v~bode~$P$, 
+v~ktorom je určovaná zvislicová odchýlka.  Zvislicová odchýlka je znázornená 
+pomocou 1)~veľkosti~$\Theta = \| \boldsymbol\Theta \|$ a~azimutu~$\alpha$ 
+a~2)~pravouhlých priemetov~$\xi$ a~$\eta$ do meridiánovej roviny a~do roviny 
+prvého vertikálu.  Symboly~$\Phi$ a~$\Lambda$ označujú astronomické súradnice 
+bodu~$P$, v~ktorom je určovaná zvislicová odchýlka (pozri 
+Obrázok~\ref{fig:deflections}).  Symboly~$\phi$ a~$\lambda$ označujú 
 elipsoidickú šírku a~elipsoidickú dĺžku bodu~$P$.  Referenčným smerom na~tomto 
 obrázku je teda normála k~elipsoidu, ktorá prechádza bodom~$P$.}
 \label{fig:deflections_unit_sphere}
@@ -7687,8 +7686,8 @@ mimo nej.  Po regularizácii zemského telesa
 zvislicové odchýlky na geoide a~mimo neho.
 
 Gravimetrickú zvislicovú odchýlku sme definovali ako uhol medzi skutočnou 
-a~normálnou zvislicou v~bode~$P$.  Keďže smer zvislice je totožný so smerom 
-normály k~ekvipotenciálnej ploche, trojrozmerný vektor zvislicovej odchýlky je 
+a~normálnou zvislicou v~bode~$P$.  Smer zvislice je totožný so smerom normály 
+k~ekvipotenciálnej ploche, preto trojrozmerný vektor zvislicovej odchýlky je 
 daný vzťahom \parencite{SansoGeoidDetermination},
 %
 \begin{equation}
