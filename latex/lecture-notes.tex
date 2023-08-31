@@ -8172,10 +8172,10 @@ T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow
 \infty{.}\label{eq:bvp_Dg_t_infty}
 \end{alignat}
 %
-Vzťah~(\ref{eq:bvp_Dg_laplace}) definuje diferenciálnu rovnicu, ktorá je 
+Vzťah~(\ref{eq:bvp_Dg_laplace}) špecifikuje diferenciálnu rovnicu, ktorá je 
 predmetom riešenia okrajovej úlohy na oblasti~$\mathbb{R}^3 - \overline\Omega$.  
-Rovnica~(\ref{eq:bvp_Dg_boundary_condition}) špecifikuje konkrétny typ 
-okrajovej podmienky, ktorá platí na geoide~$\partial\Omega$.  
+Rovnica~(\ref{eq:bvp_Dg_boundary_condition}) udáva konkrétny typ okrajovej 
+podmienky, ktorá platí na geoide~$\partial\Omega$.  
 Vzťah~(\ref{eq:bvp_Dg_t_infty}) dodáva ďalšiu informáciu o~poruchovom 
 potenciáli; hovorí, že s~narastajúcou vzdialenosťou bodu~$P$ od 
 Zeme~$\overline\Omega$ sa poruchový potenciál~$T$ blíži k~nule (pozri 
@@ -8184,8 +8184,8 @@ a~(\ref{eq:bvp_Dg_t_infty}) by mala diferenciálna
 rovnica~(\ref{eq:bvp_Dg_laplace}) nekonečne veľa riešení.  
 Rovnice~(\ref{eq:bvp_Dg_boundary_condition}) a~(\ref{eq:bvp_Dg_t_infty}) tak 
 zabezpečujú, že získame práve jedno riešenie rovnice~(\ref{eq:bvp_Dg_laplace}).  
-Odvodenie riešenia okrajovej úlohy v~tejto práci vynecháme a~zameriame sa skôr 
-na popis získanej rovnice.  Odvodenie je možné nájsť napríklad 
+Odvodenie riešenia okrajovej úlohy vynecháme a~zameriame sa skôr na popis 
+získanej rovnice.  Podrobné odvodenie je možné nájsť napríklad 
 v~prácach~\textcite{MoritzPhysicalGeodesy} a~\textcite{Janak2006}.
 
 Riešením okrajovej úlohy~(\ref{eq:bvp_Dg_laplace}) až~(\ref{eq:bvp_Dg_t_infty}) 
@@ -8200,19 +8200,19 @@ T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} S(P, P') \, \Delta g(P') \,
 %
 ktorý sa nazýva \emph{Stokesov integrál}.  Symbol~$P(r, \varphi, \lambda)$ 
 označuje bod, v~ktorom je počítaný poruchový potenciál 
-(Obrázok~\ref{fig:surface_integral}), $P'(R, \varphi', \lambda')$ je bod na 
-geoide, $R$~označuje polomer referenčnej sféry (napríklad stredný či rovníkový 
-polomer Zeme), $\sigma$ je jednotková sféra, $\diff\sigma(P')$ je jej 
-diferenciál v~bode~$P'$,
+(Obrázok~\ref{fig:surface_integral}), $P'(R, \varphi', \lambda')$~je bod na 
+geoide, $S$~je \emph{Stokesovo integračné jadro} (niekedy tiež nazývané 
+\emph{Stokesova funkcia}), $R$~označuje polomer referenčnej sféry (napríklad 
+stredný či rovníkový polomer Zeme), $\sigma$~je jednotková sféra 
+a~$\diff\sigma(P')$ je jej diferenciál v~bode~$P'$,
 %
 \begin{equation}
 \label{eq:diff_sigma}
-\diff\sigma(P') = \cos\varphi' \, \diff\varphi' \, \diff\lambda'{,}
+\diff\sigma(P') = \cos\varphi' \, \diff\varphi' \, \diff\lambda'{.}
 \end{equation}
 %
-a~$S$ je \emph{Stokesovo integračné jadro} (niekedy tiež nazývané 
-\emph{Stokesova funkcia}).  Stokesovo jadro~$S$ závisí iba od vzájomnej polohy 
-bodov~$P$ a~$P'$ \parencite{MoritzPhysicalGeodesy},
+Stokesovo jadro~$S$ závisí iba od vzájomnej polohy bodov~$P$ a~$P'$ a~má tvar
+\parencite{MoritzPhysicalGeodesy}
 %
 \begin{equation}
 \label{eq:stokes_kernel_general}
@@ -8530,8 +8530,7 @@ T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow
 \end{alignat}
 
 Riešením okrajovej úlohy~(\ref{eq:bvp_dg_laplace}) až~(\ref{eq:bvp_dg_t_infty}) 
-je rovnica (odvodenie uvádzajú napríklad \cite{MoritzPhysicalGeodesy} alebo 
-\cite{SansoGeoidDetermination})
+je rovnica
 %
 \begin{equation}
 \label{eq:hotine}
@@ -8542,7 +8541,7 @@ T(P) = \frac{R}{4\pi} \, \iint\limits_{\sigma} H(P, P') \, \delta g(P') \,
 %
 Vzťah~(\ref{eq:hotine}) sa nazýva \emph{Hotineov integrál} a~funkcia~$H$ sa 
 nazýva \emph{Hotineovo integračné jadro}.  Všeobecný tvar Hotineovho jadra je 
-daný vzťahom \parencite{SansoGeoidDetermination}
+daný rovnicou \parencite{SansoGeoidDetermination}
 %
 \begin{equation}
 \label{eq:hotine_kernel_general}
@@ -8572,7 +8571,9 @@ medzi konvolučné integrály (Kapitola~\ref{sec:stokes_convolution}) a~bol
 získaný vo sférickej aproximácii 
 (Kapitola~\ref{sec:stokes_spherical_approximation}).  Hľadaný tvar integrálneho 
 operátora~$\mathcal{I}_{\delta g}$ z~rovnice~(\ref{eq:int_operators}) je zrejmý 
-z~porovnania rovníc~(\ref{eq:stokes}), (\ref{eq:iDg}) a~(\ref{eq:hotine}).
+z~porovnania rovníc~(\ref{eq:stokes}), (\ref{eq:iDg}) a~(\ref{eq:hotine}).  
+Odvodenie vzťahu~(\ref{eq:hotine}) uvádzajú napríklad 
+\textcite{MoritzPhysicalGeodesy} a~\textcite{SansoGeoidDetermination}.
 
 \begin{figure}[bt]
 \centering
@@ -8585,10 +8586,10 @@ intervale~$[5^\circ, 180^\circ]$.}
 Hotineovo integračné jadro má podobné vlastnosti ako Stokesovo integračné jadro 
 (Kapitola~\ref{sec:stokes_kernel}), teda je singulárne, homogénne a izotropné.  
 Na rozdiel od Stokesovho jadra ide o~monotónne klesajúcu funkciu 
-(Obrázok~\ref{fig:hotine_kernel}), teda čím ďalej sa nachádza integračný 
-element $\diff\sigma$ od výpočtového bodu~$P$, tým menšia váha~$H$ je 
-v~Hotineovom integráli~(\ref{eq:hotine}) pridelená príslušnej poruche tiažového 
-zrýchlenia.
+(Obrázok~\ref{fig:hotine_kernel}).  To znamená, že čím ďalej sa nachádza 
+integračný element $\diff\sigma$ od výpočtového bodu~$P$, tým menšia váha~$H$ 
+je v~Hotineovom integráli~(\ref{eq:hotine}) pridelená príslušnej poruche 
+tiažového zrýchlenia.
 
 Dosadením vzťahu~(\ref{eq:hotine}) pre~$P \in \partial\Omega$ do Brunsovho 
 vzorca~(\ref{eq:N}) získame vzťah na výpočet geoidu z~porúch tiažového 
