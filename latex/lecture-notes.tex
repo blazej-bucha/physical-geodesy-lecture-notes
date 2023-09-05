@@ -8629,11 +8629,10 @@ T(P) &\rightarrow 0 &&\textrm{pre} \quad P \rightarrow
 \infty{,}\label{eq:bvp_t_t_infty}
 \end{alignat}
 %
-kde~$f$ predstavuje funkciu zadanú na hranici~$\partial\Omega$, v~tomto prípade 
-samotný poruchový potenciál.
+kde~$f$ je funkcia zadaná na hranici~$\partial\Omega$, v~tomto prípade samotný 
+poruchový potenciál.
 
-Riešenie tejto okrajovej úlohy (pre odvodenie pozri napríklad 
-\cite{MoritzPhysicalGeodesy} alebo \cite{SansoGeoidDetermination}) má tvar
+Riešenie tejto okrajovej úlohy má tvar
 %
 \begin{equation}
 \label{eq:poisson}
@@ -8652,29 +8651,34 @@ integračné jadro},
 P_n(\cos\psi)\label{eq:poisson_kernel_spectral}{.}
 \end{align}
 %
-Podobne ako v~predošlých kapitolách~\ref{sec:stokes_integral} 
-a~\ref{sec:hotine_integral}, Poissonovo jadro je singulárne, homogénne 
-a~izotropné a~Poissonov integrál je konvolučný.  Vyobrazenie Poissonovho jadra 
-vynecháme, pretože pre fixnú hodnotu sprievodiča~$r$ ide o~prevrátenú hodnotu 
-známej kubickej funkcie~$c \slash \ell^3$, kde $c = r^2 - R^2$ je konštanta.
+Podobne ako v~kapitolách~\ref{sec:stokes_integral} a~\ref{sec:hotine_integral}, 
+Poissonovo jadro je singulárne, homogénne a~izotropné a~Poissonov integrál je 
+konvolučný.  Vyobrazenie Poissonovho jadra vynecháme, pretože pre fixnú hodnotu 
+sprievodiča~$r$ ide o~prevrátenú hodnotu známej kubickej funkcie~$c \slash 
+\ell^3$, kde $c = r^2 - R^2$ je konštanta.  Odvodenie vzťahu~(\ref{eq:poisson}) 
+uvádzajú napríklad \textcite{MoritzPhysicalGeodesy} 
+a~\textcite{SansoGeoidDetermination}.
 
 Poissonov integrál umožňuje získať akúkoľvek harmonickú funkciu v~celom 
 priestore~$\left( \mathbb{R}^3 - \overline\Omega \right) \cup \partial\Omega$ 
-z~hodnôt tejto funkcie na hranici~$\partial\Omega$.  
-Z~kapitoly~\ref{sec:harmonic_function} vieme, že tento proces sa niekedy nazýva 
-analytické pokračovanie nahor, v~tomto prípade tiež \emph{harmonické 
-pokračovanie nahor}, keďže funkcia~$T$ vystupujúca v~Poissonovom integráli musí 
-byť harmonická.  Poissonov integrál sa často používa aj inverzným spôsobom na 
-pokračovanie nadol, hoci táto úloha je vo všeobecnosti nestabilná 
-\parencite{SansoGeodeticBoundaryValueProblem}.  Okrem poruchového potenciálu je 
+z~hodnôt tejto funkcie na hranici~$\partial\Omega$.  Tento proces sa nazýva 
+analytické pokračovanie nahor (kapitola~\ref{sec:harmonic_function}).  
+V~súvislosti so vzťahom~(\ref{eq:poisson}) sa niekedy používa aj pojem 
+\emph{harmonické pokračovanie nahor}, keďže poruchový potenciál vystupujúci 
+v~Poissonovom integráli je v~oblasti mimo hmôt harmonická funkcia.  Poissonov 
+integrál sa často používa aj inverzným spôsobom na pokračovanie nadol.  
+Príkladom je výpočet poruchového potenciálu na povrchu Zeme z~poruchového 
+potenciálu na dráhe nízkoletiacej družice.  Táto úloha je ale vo všeobecnosti 
+nestabilná (pozri kapitolu~\ref{sec:harmonic_function} a~najmä 
+\cite{SansoGeodeticBoundaryValueProblem}).  Okrem poruchového potenciálu je 
 možné aplikovať Poissonov integrál aj na ďalšie harmonické funkcie, napríklad 
 na gravitačný potenciál~$V_\gidx$ či na funkciu~$r \, \Delta g$, ktorá je 
 taktiež harmonická (samotná funkcia~$\Delta g$ však harmonická nie je).  
 Poissonov integrál teda umožňuje riešiť mnohé kľúčové úlohy fyzikálnej 
-geodézie.  Priamo na výpočet geoidu sa však nezvykne používať, pretože 
-predpokladá dostupnosť poruchového potenciálu na geoide 
+geodézie.  Na výpočet geoidu sa však nezvykne používať, pretože predpokladá 
+dostupnosť poruchového potenciálu na geoide 
 (rovnica~\ref{eq:bvp_t_boundary_condition}).  Ak by bol ale poruchový potenciál 
-na geoide známy, mohol by byť priamo použitý v~Brunsovom vzorci~(\ref{eq:N}) 
+na geoide známy, mohol by byť použitý priamo v~Brunsovom vzorci~(\ref{eq:N}) 
 bez potreby formulovania a~riešenia okrajovej úlohy.
 
 
