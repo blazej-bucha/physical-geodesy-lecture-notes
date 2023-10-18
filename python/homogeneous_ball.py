@@ -1,8 +1,10 @@
 # Import modulov
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rc
-rc('text', usetex=True)
+import shutil
+
+# Ak je dostupný LaTeX, bude použitý na zobrazenie popisu vo výslednom obrázku
+if shutil.which('latex') is not None: plt.rc('text', usetex=True)
 
 G    = 6.67430 * 10**-11  # Newtonova gravitačná konštanta (jednotky
                           # "m**3 * kg**-1 * s**-2")

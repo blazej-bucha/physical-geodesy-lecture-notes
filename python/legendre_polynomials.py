@@ -1,11 +1,12 @@
 # Import modulov
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rc
-rc('text', usetex=True)
+import shutil
 
-# Maximálny stupeň Legendreových polynómov
-nmax = 5
+# Ak je dostupný LaTeX, bude použitý na zobrazenie popisu vo výslednom obrázku
+if shutil.which('latex') is not None: plt.rc('text', usetex=True)
+
+nmax = 5  # Maximálny stupeň Legendreových polynómov
 
 # Vzorkovanie sférických šírok a ich sínusy
 lat = np.linspace(-np.pi / 2.0, np.pi / 2.0, 101)

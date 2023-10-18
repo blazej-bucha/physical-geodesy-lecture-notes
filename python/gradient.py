@@ -1,17 +1,17 @@
 # Import modulov
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rc
-rc('text', usetex=True)
+import shutil
+
+# Ak je dostupný LaTeX, bude použitý na zobrazenie popisu vo výslednom obrázku
+if shutil.which('latex') is not None: plt.rc('text', usetex=True)
 
 # Výpočtová oblasť
-xmin, xmax = -1.0, 1.0
-xn         = 101     # Počet vzorkovacích bodov na intervale "[xmin, xmax]"
-ymin, ymax = xmin, xmax
-ymax       = xmax
-yn         = xn      # Počet vzorkovacích bodov na intervale "[ymin, ymax]"
-xngrad     = 10      # Zobrazený bude každý "xngrad" gradient v smere osi "x"
-yngrad     = xngrad  # Zobrazený bude každý "yngrad" gradient v smere osi "y"
+xmin, xmax, xn = -1.0, 1.0, 101  # Min., max. a počet hodnôt v smere osi "x"
+ymin, ymax, yn = xmin, xmax, xn  # Min., max. a počet hodnôt v smere osi "y"
+
+# Zobrazený bude každý "xngrad" a "yngrad" gradient v smere osí "x" a "y"
+xngrad, yngrad = 10, 10
 
 # Tvorba gridu
 x, y = np.meshgrid(np.linspace(xmin, xmax, xn), np.linspace(ymin, ymax, yn))
