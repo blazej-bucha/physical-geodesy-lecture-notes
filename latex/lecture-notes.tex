@@ -3051,14 +3051,14 @@ vektorov (rovnice \ref{eq:r_synthesis} a~\ref{eq:r_analysis}).  Súradníc
 $v_{nk}$ je nekonečne veľa (pozri limity prvej sumácie vo
 vzťahu~\ref{eq:vg_synthesis}), sumácia je dvojitá a~sférické harmonické funkcie
 $Y_{nk}(\varphi, \lambda)$ závisia od sférickej šírky~$\varphi$ a~sférickej
-dĺžky~$\lambda$.  Napriek tomu však zostáva samotný princíp rovnaký 
+dĺžky~$\lambda$.  Napriek tomu však samotný princíp zostáva rovnaký 
 a~demonštruje, že ak poznáme súradnice~$v_{nk}$, potom vieme vypočítať 
 integrály~(\ref{eq:gg_body}) a~(\ref{eq:vg_body}) aj bez
 priameho použitia hustoty.  Hustota Zeme je pritom obsiahnutá 
 v~súradniciach~$v_{nk}$.  Cieľom nasledujúcich strán je ukázať, akým spôsobom 
 sa v~nich táto hustota nachádza, ako možno upraviť rovnicu~(\ref{eq:vg_body}) 
 do~formálne veľmi odlišného tvaru~(\ref{eq:vg_synthesis}) a~tiež ukázať, ako 
-možno tieto súradnice vypočítať.
+môžu byť tieto súradnice vypočítané.
 
 
 
@@ -3452,7 +3452,7 @@ rozvinutie funkcie do radu Legendreových polynómov.  Takéto rozvinutie je
 v~istom zmysle obdobné vyjadreniu vektora~$\vec r$ pomocou jednotkových 
 vektorov~$\vec e_i$ z~kapitoly~\ref{sec:sh_motivation}.  Tento rozvoj je 
 v~mnohých situáciách výhodný, pretože môže napríklad zjednodušiť odvodenie 
-vzťahov pre niektoré veličiny.  Napokon, najlepšie to demonštruje azda samotná 
+vzťahov pre niektoré veličiny.  Napokon, najlepšie to azda demonštruje samotná 
 kapitola~\ref{sec:vg_sh_expansion}, v~ktorej sme funkciu~$1 \slash \ell$ 
 rozvinuli do radu Legendreových polynómov (rovnica~\ref{eq:1l_legpol}) a~potom 
 do radu Legendreových funkcií, čím sme získali vzťah pre gravitačný 
@@ -3851,7 +3851,7 @@ f_{nk} = \frac{(2 - \delta_{k0}) \, (2n + 1)}{4\pi} \, \frac{(n - |k|)!}{(n
 
 Vidíme teda, že ak je splnená podmienka~(\ref{eq:f_l2}), potom 
 funkciu~$f(\varphi, \lambda)$ možno pomocou sférických harmonických funkcií 
-rozložiť na súradnice~$f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) a~tiež ju 
+rozložiť na súradnice~$f_{nk}$ (rovnica~\ref{eq:f_sha_no_norm}) a~potom ju 
 z~týchto súradníc spätne zrekonštruovať (vzťah~\ref{eq:f_shs_no_norm}).  
 V~priestore funkcií~$f(\varphi, \lambda)$, ktoré sú definované na sfére 
 a~spĺňajú podmienku~($\ref{eq:f_l2}$), plnia sférické harmonické 
@@ -4152,8 +4152,8 @@ systéme so začiatkom v~ťažisku Zeme, preto všetky koeficienty stupňa $n = 
 často nulové, $C_{1,0} = C_{1,1} = S_{1,1} = 0$.
 
 Dá sa ukázať \parencite[napríklad][]{MoritzPhysicalGeodesy}, že koeficienty 
-stupňa $n = 2$ súvisia s~momentom zotrvačnosti.  Zdá sa, že koeficienty 
-stupňov~$n \geq 3$ už nemajú priamočiaru fyzikálnu interpretáciu.
+stupňa $n = 2$ súvisia s~momentom zotrvačnosti Zeme.  Koeficienty stupňov~$n 
+\geq 3$ už zrejme nemajú priamočiaru fyzikálnu interpretáciu.
 
 
 
@@ -4312,7 +4312,7 @@ geoidom a~fyzickým povrchom Zeme.
 V~kapitole~\ref{sec:spherical_harmonics} sme uviedli, že do radu sférických
 harmonických funkcií možno rozvinúť nielen gravitačný potenciál, ale každú
 funkciu, ktorá spĺňa podmienku~(\ref{eq:f_l2}).  Rozviňme preto do stupňa~$N$ 
-napríklad zemskú topografiu $H(\varphi, \lambda)$,
+napríklad zemskú topografiu $H(\varphi, \lambda)$ (pozri vzťah~\ref{eq:f_shs}),
 %
 \begin{equation}
 \label{eq:h_shs}
@@ -5126,9 +5126,9 @@ tiažového poľa teda postačuje definovať štyri nezávislé \emph{základné
 parametre}.  Dva z~týchto parametrov sú geometrické, resp. veľmi úzko súvisia 
 s~geometriou elipsoidu (napríklad hlavná polos a~sploštenie elipsoidu), a~dva 
 parametre sú fyzikálne (hmotnosť a~uhlová rýchlosť rotácie).  Všetky ostatné 
-veličiny normálneho tiažového poľa, či už ide o~geometrické parametre 
+parametre normálneho tiažového poľa, či už ide o~geometrické parametre 
 (napríklad vedľajšia polos či lineárna excentricita elipsoidu), alebo 
-o~fyzikálne parametre (normálny tiažový potenciál, normálne tiažové zrýchlenie 
+o~fyzikálne veličiny (normálny tiažový potenciál, normálne tiažové zrýchlenie 
 a~pod.), sú počítané z~týchto základných parametrov.  Parametre, ktoré sú 
 vypočítané zo základných parametrov, budeme nazývať \emph{odvodené parametre}.  
 Teóriu ekvipotenciálneho elipsoidu rozpracovali taliansky geodet, astronóm, 
@@ -6636,9 +6636,9 @@ v~rovniciach~(\ref{eq:c20_j20_2}) a~(\ref{eq:cell_2n}) sú totožné.  Pripomeň
 $\bar{S}_{nm}^{\mathrm{e}}$ vo vzťahoch~(\ref{eq:t_shc}) až~(\ref{eq:sell}) 
 musí byť v~zmysle rovnice~(\ref{eq:vg_sh_2nd_norm}) nezáporný.
 
-Kombináciou rovníc~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) 
-a~(\ref{eq:ug_spheroidal}) získame podobným spôsobom sféroidický harmonický 
-rozvoj poruchového potenciálu.
+Podobným spôsobom získame kombináciou 
+rovníc~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) a~(\ref{eq:ug_spheroidal}) 
+sféroidický harmonický rozvoj poruchového potenciálu.
 
 Poruchový potenciál sa udáva vo fyzikálnej jednotke~$\mathrm{m}^2 
 \ \mathrm{s}^{-2}$ a~nadobúda hodnoty približne od $-1000\ \mathrm{m}^2 
