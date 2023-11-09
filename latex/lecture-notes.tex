@@ -2870,24 +2870,25 @@ a~\textcite{Claessens2019}.
 \label{sec:time_variable_gravity}
 
 Z~Newtonovho integrálu~(\ref{eq:vg_body}) vyplýva, že gravitačné pole závisí od 
-tvaru telesa, rozloženia hustoty v~jeho vnútri a~od polohy bodu voči~telesu.  
-Zmenou tvaru telesa, a~tým aj polohy výpočtového bodu voči telesu, alebo zmenou 
-hustoty telesa v~čase dochádza k~zmene gravitačného poľa v~čase.  Ak navyše 
-teleso rotuje a~polohu vyjadrujeme v~neinerciálnom súradnicovom systéme, ktorý 
-rotuje spolu s~telesom, potom vzniká aj odstredivé pole.  Časová zmena 
-odstredivého poľa, spôsobená napríklad premenlivou uhlovou rýchlosťou rotácie, 
-potom spôsobuje časovú zmenu tiažového poľa.  V~tejto kapitole spomenieme 
-niektoré príčiny, ktoré spôsobujú časovú variáciu gravitačného a~tiažového poľa 
-v~okolí Zeme.
+tvaru telesa, rozloženia hustoty v~jeho vnútri a~od polohy výpočtového bodu 
+voči~telesu.  Zmenou tvaru telesa, a~tým aj polohy výpočtového bodu voči 
+telesu, alebo zmenou hustoty telesa v~čase dochádza k~zmene gravitačného poľa 
+v~čase.  Ak navyše teleso rotuje a~polohu vyjadrujeme v~neinerciálnom 
+súradnicovom systéme, ktorý rotuje spolu s~telesom, potom vzniká aj odstredivé 
+pole.  Časová zmena odstredivého poľa potom spôsobuje časovú zmenu tiažového 
+poľa.  V~tejto kapitole spomenieme niektoré príčiny, ktoré spôsobujú časovú 
+variáciu gravitačného a~tiažového poľa v~okolí Zeme.
 
 V~tiažovom zrýchlení odmeranom gravimetrickými metódami (pozri 
 kapitolu~\ref{sec:gravity_measurements} a~najmä~\cite{Janak2010}) je obsiahnutý 
 gravitačný účinok všetkých hmotných objektov vo vesmíre.  Okrem samotnej Zeme 
 majú merateľný gravitačný vplyv predovšetkým Mesiac a~Slnko a~v~oveľa menšej 
-miere aj Venuša, Jupiter a~Mars.  Gravitačný vplyv týchto objektov budeme 
-nazývať \emph{slapové zrýchlenie} alebo tiež \emph{priame slapy}.  Na výpočet 
-slapového zrýchlenia je potrebné poznať polohu bodu merania a~polohu nebeských 
-telies v~okamihu merania.  Podľa \textcite{Torge1989} dosahuje slapové 
+miere aj Venuša, Jupiter a~Mars.  Gravitačné zrýchlenie, ktoré generujú nebeské 
+telesá, budeme nazývať \emph{slapové zrýchlenie} alebo tiež \emph{priame 
+slapy}.  Na výpočet slapového zrýchlenia je potrebné poznať polohu bodu 
+merania, polohu nebeských telies v~okamihu merania a~hmotnosť nebeských telies.  
+Vďaka veľkej vzdialenosti od Zeme môžu byť nebeské telesá v~tomto prípade 
+považované za hmotné body.  Podľa \textcite{Torge1989} dosahuje slapové 
 zrýchlenie spôsobené Mesiacom a~Slnkom na povrchu Zeme maximálne hodnoty 
 približne~$0.165\ \mathrm{mGal}$ a~$0.075\ \mathrm{mGal}$.  Vzhľadom na súčasnú 
 rádovo mikroGalovú presnosť gravimetrických meraní tak ide o~nezanedbateľný 
@@ -6597,16 +6598,16 @@ a
 \begin{equation}
 \label{eq:cell_sell}
 \begin{split}
-\Delta \bar{C}_{nk} &= \bar{C}_{nk} - \bar{C}_{nk}^\mathrm{e} \, 
+\Delta \bar{C}_{nm} &= \bar{C}_{nm} - \bar{C}_{nm}^\mathrm{e} \, 
 \frac{GM^\mathrm{e}}{GM} \, \left( \frac{a^\mathrm{e}}{R} \right)^n{,}\\
-\Delta \bar{S}_{n|k|} &= \bar{S}_{n|k|} - \bar{S}_{n|k|}^\mathrm{e} \, 
+\Delta \bar{S}_{nm} &= \bar{S}_{nm} - \bar{S}_{nm}^\mathrm{e} \, 
 \frac{GM^\mathrm{e}}{GM} \, \left( \frac{a^\mathrm{e}}{R} \right)^n 
-= \bar{S}_{n|k|}{.}
+= \bar{S}_{nm}{.}
 \end{split}
 \end{equation}
 %
-Pre koeficienty normálneho poľa~$\bar{C}_{nk}^{\mathrm{e}}$, 
-$\bar{S}_{n|k|}^{\mathrm{e}}$ platia vzťahy (pozri rovnice~\ref{eq:sh_norm}, 
+Pre koeficienty normálneho poľa~$\bar{C}_{nm}^{\mathrm{e}}$, 
+$\bar{S}_{nm}^{\mathrm{e}}$ platia vzťahy (pozri rovnice~\ref{eq:sh_norm}, 
 \ref{eq:cnm_snm_2nd_norm}, \ref{eq:c20_j20}, \ref{eq:c20_j20_2} a~\ref{eq:j2n0} 
 a~tiež kapitoly~\ref{sec:normal_gravity_potential_in_reduced_ell_coords} 
 a~\ref{sec:normal_gravity_potential_in_spherical_coords})
@@ -6617,15 +6618,15 @@ a~\ref{sec:normal_gravity_potential_in_spherical_coords})
 + 3) \, \sqrt{4n' + 1}} \left( 1 - n' - 5^{3 \slash 2} \, n' \, 
 \frac{\bar{C}^\mathrm{e}_{2,0}}{e^2} \right){,} \quad n' = 0, 1, 2,\dots{,}\\
 %
-\bar{C}^\mathrm{e}_{2n', m} &= 0{,} \quad n' = 0, 1, 2,\dots{,} \quad 
-m > 0{,}\\
+\bar{C}^\mathrm{e}_{2n', m} &= 0{,} \quad n' = 0, 1, 2,\dots{,} \quad m = 1, 
+2,\dots, 2n'{,}\\
 %
 \bar{C}^\mathrm{e}_{2n' + 1, m} &= 0{,} \quad n' = 0, 1, 2,\dots{,} \quad 
 m = 0, 1, \dots, 2n' + 1{,}\\
 %
 \label{eq:sell}
-\bar{S}^\mathrm{e}_{nm} &= 0{,} \quad n = 0, 1, 2,\dots, \quad m = 0, 1, \dots, 
-n{.}
+\bar{S}^\mathrm{e}_{nm} &= 0{,} \quad n\phantom{'} = 0, 1, 2,\dots{,} \quad 
+m = 0, 1, \dots, n{.}
 \end{align}
 %
 Z~koeficientov normálneho poľa sú teda nenulové iba párne zonálne sférické 
@@ -6633,11 +6634,10 @@ harmonické koeficienty~$\bar{C}^{\mathrm{e}}_{0,0}$,
 $\bar{C}^{\mathrm{e}}_{2,0}$, $\bar{C}^{\mathrm{e}}_{4,0}, \dots 
 $ Koeficienty~$\bar{C}_{2,0}$ a~$\bar{C}_{2,0}^\mathrm{e}$ 
 v~rovniciach~(\ref{eq:c20_j20_2}) a~(\ref{eq:cell_2n}) sú totožné.  Pripomeňme, 
-že sférický harmonický rád koeficientov~$\bar{C}_{nm}^{\mathrm{e}}$, 
-$\bar{S}_{nm}^{\mathrm{e}}$ vo vzťahoch~(\ref{eq:t_shc}) až~(\ref{eq:sell}) 
+že sférický harmonický rád vo vzťahoch~(\ref{eq:cell_sell}) až~(\ref{eq:sell}) 
 musí byť v~zmysle rovnice~(\ref{eq:vg_sh_2nd_norm}) nezáporný.
 
-Podobným spôsobom získame kombináciou 
+Podobným spôsobom možno získať kombináciou 
 rovníc~(\ref{eq:vg_spheroidalh_2nd_norm_ynk}) a~(\ref{eq:ug_spheroidal}) 
 sféroidický harmonický rozvoj poruchového potenciálu.
 
