@@ -40,6 +40,13 @@ pdflatex lecture-notes.tex
 The final published version is available at
 [https://www.svf.stuba.sk/buxus/docs/dokumenty/skripta/2023/Fyzikalna_geodezia.pdf](https://www.svf.stuba.sk/buxus/docs/dokumenty/skripta/2023/Fyzikalna_geodezia.pdf).
 
+To reduce eye strain, you may want to use dark mode when reading the lecture
+notes.  On Android, [Book Reader](https://gitlab.com/axet/android-book-reader)
+works nicely.  On a desktop PC, color rendering can be inverted in, for
+instance, [MuPDF](https://mupdf.com/), a lightweight keyboard-oriented PDF
+viewer.  Undoubtedly, there are many other applications supporting dark mode.
+Use whichever works best for you, but use one.
+
 
 # Citing
 
