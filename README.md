@@ -1,6 +1,6 @@
 # Description
 
-The source code of lecture notes on Physical Geodesy (in Slovak).
+The source code of the lecture notes on Physical Geodesy (in Slovak).
 
 Starting with Newton's law of gravitation, discussed are fundamental quantities
 and concepts of Physical Geodesy such as the gravitational potential, the
@@ -35,10 +35,32 @@ pdflatex lecture-notes.tex
   SciPy) and MATLAB.
 
 
+# Final Published Version
+
+The final published version is available at
+[https://www.svf.stuba.sk/buxus/docs/dokumenty/skripta/2023/Fyzikalna_geodezia.pdf](https://www.svf.stuba.sk/buxus/docs/dokumenty/skripta/2023/Fyzikalna_geodezia.pdf).
+
+
+# Citing
+
+The lecture notes can be cited as
+
+> Bucha B, 2023. Fyzikálna geodézia [Physical Geodesy]. 1st edn. Spektrum STU,
+> Bratislava, p 184. ISBN 978-80-227-5368-5.
+
+
+# Licensing
+
+The source of the lecture notes is published under the BSD-3-Clause license.
+The final published version is licensed under CC BY 4.0.  Either way, you are
+free to use, share, adapt, distribute and reproduce both the source code and
+the final published version within the license terms.
+
+
 # Contributing
 
 Did you find a typo or an error?  Do you find some topics missing or excessive?
-Any contributions are welcome!
+Any feedback is appreciated!
 
 
 # Contact
